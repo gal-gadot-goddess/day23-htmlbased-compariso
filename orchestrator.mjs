@@ -50,9 +50,6 @@ async function runCycle() {
 
         // 5. Upload to Social Media
         console.log('\n⬆️ STEP 4: UPLOADING...');
-        // We'll create a python wrapper similar to day_7's publish script if needed, 
-        // or just call the python scripts directly if we have a unified one.
-        // For now, let's assume we want to run a publish script.
         if (fs.existsSync('publish_day23.py')) {
             await runCommand('python', ['publish_day23.py']);
         } else {
@@ -60,9 +57,16 @@ async function runCycle() {
         }
 
         console.log('\n✅ CYCLE COMPLETED SUCCESSFULLY!');
+        
+        if (process.argv.includes('--single-run')) {
+            process.exit(0);
+        }
 
     } catch (error) {
         console.error('\n❌ CYCLE FAILED:', error.message);
+        if (process.argv.includes('--single-run')) {
+            process.exit(1);
+        }
     }
 }
 

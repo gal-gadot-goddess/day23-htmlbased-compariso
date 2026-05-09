@@ -86,7 +86,9 @@ async function run() {
     await browser.close();
 
     console.log('💀 Killing Vite server...');
-    viteProcess.kill();
+    viteProcess.kill('SIGTERM');
+    // Force kill if necessary after a short delay
+    setTimeout(() => viteProcess.kill('SIGKILL'), 1000);
 
     if (fs.existsSync(AUDIO_FILE)) {
         console.log('🎵 Merging with audio...');
@@ -104,6 +106,9 @@ async function run() {
     } else {
         fs.renameSync(VIDEO_ONLY, FINAL_OUTPUT);
     }
+
+    console.log('🏁 Capture script finished.');
+    process.exit(0);
 }
 
 run().catch(console.error);
