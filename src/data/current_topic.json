@@ -1,92 +1,92 @@
 {
-  "topLabel": "DATABASE ARCHITECTURE",
+  "topLabel": "FRONTEND FRAMEWORKS",
   "mainTitle": {
-    "left": "PostgreSQL",
-    "right": "MongoDB",
+    "left": "Next.js",
+    "right": "Remix",
     "vs": "vs"
   },
-  "leftSub": "Relational, structured data",
-  "rightSub": "Document, flexible data",
-  "leftColor": "#4169E1",
-  "rightColor": "#3CB371",
+  "leftSub": "Server-centric React",
+  "rightSub": "Web fundamentals React",
+  "leftColor": "#000000",
+  "rightColor": "#f00070",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DATA MODEL",
-      "leftTitle": "Tables & Rows",
-      "rightTitle": "Collections & Documents",
-      "leftDesc": "Enforces schema with predefined tables, columns, and data types for consistency.",
-      "rightDesc": "Schemaless by default, allowing dynamic structures and nested documents.",
-      "leftIcon": "Database",
+      "title": "1. RENDERING",
+      "leftTitle": "SSR Focused",
+      "rightTitle": "Standard HTTP",
+      "leftDesc": "Server-Side Rendering is primary, client-side fetching available.",
+      "rightDesc": "Leverages standard web APIs like Request and Response for routing.",
+      "leftIcon": "Server",
+      "rightIcon": "Globe",
+      "leftVisualText": "SSR",
+      "rightVisualText": "Web API"
+    },
+    {
+      "title": "2. ROUTING",
+      "leftTitle": "File-based",
+      "rightTitle": "Nested Routes",
+      "leftDesc": "Pages directory defines routes automatically based on file structure.",
+      "rightDesc": "Layouts and nested routes are built-in, sharing parent data.",
+      "leftIcon": "FileCode",
       "rightIcon": "Layers",
-      "leftVisualText": "Structured",
-      "rightVisualText": "Flexible"
+      "leftVisualText": "Pages",
+      "rightVisualText": "Nested"
     },
     {
-      "title": "2. SCHEMA",
-      "leftTitle": "Strict Schema",
-      "rightTitle": "Dynamic Schema",
-      "leftDesc": "Requires defining schema before data insertion, ensuring data integrity.",
-      "rightDesc": "Schema is inferred or enforced at the application level, offering flexibility.",
-      "leftIcon": "Lock",
-      "rightIcon": "Unlock",
-      "leftVisualText": "Rigid",
-      "rightVisualText": "Adaptable"
+      "title": "3. DATA FETCHING",
+      "leftTitle": "getStatic/ServerProps",
+      "rightTitle": "Loader Functions",
+      "leftDesc": "Data fetching tied to specific functions for static or server rendering.",
+      "rightDesc": "Data fetching is collocated with routes using loader functions.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Code",
+      "leftVisualText": "Props",
+      "rightVisualText": "Loader"
     },
     {
-      "title": "3. QUERYING",
-      "leftTitle": "SQL",
-      "rightTitle": "JSON-like Queries",
-      "leftDesc": "Powerful and standardized Structured Query Language for complex data retrieval.",
-      "rightDesc": "Uses a rich query language based on JSON documents for flexible searching.",
+      "title": "4. MUTATIONS",
+      "leftTitle": "API Routes",
+      "rightTitle": "Form Actions",
+      "leftDesc": "Requires separate API routes for data mutations and form submissions.",
+      "rightDesc": "Built-in support for form submissions directly via actions.",
+      "leftIcon": "Network",
+      "rightIcon": "ArrowRightLeft",
+      "leftVisualText": "API",
+      "rightVisualText": "Actions"
+    },
+    {
+      "title": "5. DEPLOYMENT",
+      "leftTitle": "Vercel Optimized",
+      "rightTitle": "Platform Agnostic",
+      "leftDesc": "Deep integration and optimization for Vercel's hosting platform.",
+      "rightDesc": "Works well on any Node.js server or modern hosting.",
+      "leftIcon": "Server",
+      "rightIcon": "Globe",
+      "leftVisualText": "Vercel",
+      "rightVisualText": "Anywhere"
+    },
+    {
+      "title": "6. CSS SUPPORT",
+      "leftTitle": "Integrated Options",
+      "rightTitle": "Standard CSS",
+      "leftDesc": "Supports styled-jsx, Tailwind, CSS Modules, global CSS.",
+      "rightDesc": "Emphasizes standard CSS, CSS Modules, and Tailwind CSS.",
+      "leftIcon": "Paint",
+      "rightIcon": "Box",
+      "leftVisualText": "Multiple",
+      "rightVisualText": "Standard"
+    },
+    {
+      "title": "7. LEARNING CURVE",
+      "leftTitle": "Meta-framework",
+      "rightTitle": "Web Standards",
+      "leftDesc": "Steeper curve due to unique conventions and features.",
+      "rightDesc": "Easier for those familiar with web fundamentals.",
       "leftIcon": "Search",
-      "rightIcon": "Search",
-      "leftVisualText": "Complex Queries",
-      "rightVisualText": "Document Search"
-    },
-    {
-      "title": "4. SCALABILITY",
-      "leftTitle": "Vertical Scaling",
-      "rightTitle": "Horizontal Scaling",
-      "leftDesc": "Primarily scales vertically by increasing server resources (CPU, RAM).",
-      "rightDesc": "Designed for horizontal scaling by adding more servers (sharding).",
-      "leftIcon": "Cpu",
-      "rightIcon": "Server",
-      "leftVisualText": "Powerful Machine",
-      "rightVisualText": "Many Machines"
-    },
-    {
-      "title": "5. TRANSACTIONS",
-      "leftTitle": "ACID Compliance",
-      "rightTitle": "Eventual Consistency",
-      "leftDesc": "Guarantees Atomicity, Consistency, Isolation, and Durability for reliable transactions.",
-      "rightDesc": "Prioritizes availability and partition tolerance, transactions may take time to reflect.",
-      "leftIcon": "Shield",
-      "rightIcon": "Activity",
-      "leftVisualText": "Guaranteed",
-      "rightVisualText": "Asynchronous"
-    },
-    {
-      "title": "6. RELATIONSHIPS",
-      "leftTitle": "Joins",
-      "rightTitle": "Embedded Docs",
-      "leftDesc": "Handles relationships between tables using foreign keys and JOIN operations.",
-      "rightDesc": "Stores related data within a single document, simplifying reads for related items.",
-      "leftIcon": "ArrowRightLeft",
-      "rightIcon": "Layers",
-      "leftVisualText": "Linked Tables",
-      "rightVisualText": "Nested Data"
-    },
-    {
-      "title": "7. USE CASES",
-      "leftTitle": "Complex BI",
-      "rightTitle": "Content Management",
-      "leftDesc": "Ideal for complex analytical queries, financial systems, and data warehousing.",
-      "rightDesc": "Excellent for rapidly evolving applications, catalogs, and real-time analytics.",
-      "leftIcon": "Chart",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Analytics",
-      "rightVisualText": "Flexibility"
+      "rightIcon": "Lock",
+      "leftVisualText": "Meta",
+      "rightVisualText": "Std"
     }
   ]
 }
