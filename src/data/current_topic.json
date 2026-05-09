@@ -1,0 +1,92 @@
+{
+  "topLabel": "BACKEND FRAMEWORKS",
+  "mainTitle": {
+    "left": "FastAPI",
+    "right": "Django",
+    "vs": "vs"
+  },
+  "leftSub": "Python API Speed",
+  "rightSub": "Python Batteries Included",
+  "leftColor": "#00bcd4",
+  "rightColor": "#ff9800",
+  "badge": "THE 7 CORE DIFFERENCES",
+  "differences": [
+    {
+      "title": "1. PERFORMANCE",
+      "leftTitle": "Asynchronous Native",
+      "rightTitle": "Synchronous Default",
+      "leftDesc": "Built for async, offers higher throughput for I/O bound tasks.",
+      "rightDesc": "Primarily synchronous, can be extended for async with specific configurations.",
+      "leftIcon": "Zap",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Speed",
+      "rightVisualText": "Robust"
+    },
+    {
+      "title": "2. EASE OF USE",
+      "leftTitle": "Minimal Boilerplate",
+      "rightTitle": "More Setup",
+      "leftDesc": "Less code to write for basic APIs, easier to get started quickly.",
+      "rightDesc": "Includes many built-in features, requiring more initial configuration.",
+      "leftIcon": "FileCode",
+      "rightIcon": "Layers",
+      "leftVisualText": "Simple",
+      "rightVisualText": "Feature-Rich"
+    },
+    {
+      "title": "3. BUILT-IN FEATURES",
+      "leftTitle": "API Focused",
+      "rightTitle": "Full-Stack Power",
+      "leftDesc": "Specialized for building APIs, auto-generates docs.",
+      "rightDesc": "Includes ORM, admin panel, authentication, templating out-of-the-box.",
+      "leftIcon": "Terminal",
+      "rightIcon": "Globe",
+      "leftVisualText": "API",
+      "rightVisualText": "Web App"
+    },
+    {
+      "title": "4. LEARNING CURVE",
+      "leftTitle": "Gentle",
+      "rightTitle": "Steeper",
+      "leftDesc": "Easy to grasp for developers familiar with Python type hints and async.",
+      "rightDesc": "More concepts and components to learn for full-stack development.",
+      "leftIcon": "Search",
+      "rightIcon": "Settings",
+      "leftVisualText": "Quick",
+      "rightVisualText": "Deep"
+    },
+    {
+      "title": "5. COMMUNITY SIZE",
+      "leftTitle": "Growing Rapidly",
+      "rightTitle": "Mature & Large",
+      "leftDesc": "Newer framework with an active, but smaller, community.",
+      "rightDesc": "Established framework with a vast, supportive community and extensive resources.",
+      "leftIcon": "Network",
+      "rightIcon": "Share2",
+      "leftVisualText": "New",
+      "rightVisualText": "Established"
+    },
+    {
+      "title": "6. TYPE HINTS",
+      "leftTitle": "Core Dependency",
+      "rightTitle": "Optional but Recommended",
+      "leftDesc": "Heavily relies on Python type hints for validation and clarity.",
+      "rightDesc": "Supports type hints but not as fundamental to its core design.",
+      "leftIcon": "Code",
+      "rightIcon": "Box",
+      "leftVisualText": "Type-Checked",
+      "rightVisualText": "Flexible"
+    },
+    {
+      "title": "7. PROJECT TYPE",
+      "leftTitle": "APIs & Microservices",
+      "rightTitle": "Full-Scale Web Apps",
+      "leftDesc": "Ideal for building fast, modern web APIs and microservices.",
+      "rightDesc": "Best suited for complex web applications and content management systems.",
+      "leftIcon": "Server",
+      "rightIcon": "Layout",
+      "leftVisualText": "API",
+      "rightVisualText": "Monolith"
+    }
+  ]
+}
