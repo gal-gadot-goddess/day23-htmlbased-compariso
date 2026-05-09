@@ -3,5 +3,6 @@
   "Monolithic vs Microservices",
   "React vs Vue.js",
   "Next.js vs Remix",
-  "FastAPI vs Django"
+  "FastAPI vs Django",
+  "PostgreSQL vs MongoDB"
 ]
