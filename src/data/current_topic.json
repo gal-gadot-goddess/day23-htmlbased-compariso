@@ -1,92 +1,92 @@
 {
   "topLabel": "FRONTEND FRAMEWORKS",
   "mainTitle": {
-    "left": "Next.js",
-    "right": "Remix",
+    "left": "SolidJS",
+    "right": "Svelte",
     "vs": "vs"
   },
-  "leftSub": "Server-centric React",
-  "rightSub": "Web fundamentals React",
-  "leftColor": "#000000",
-  "rightColor": "#f00070",
+  "leftSub": "Fine-grained reactivity",
+  "rightSub": "Compiler-first approach",
+  "leftColor": "#4984f7",
+  "rightColor": "#f17150",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. RENDERING",
-      "leftTitle": "SSR Focused",
-      "rightTitle": "Standard HTTP",
-      "leftDesc": "Server-Side Rendering is primary, client-side fetching available.",
-      "rightDesc": "Leverages standard web APIs like Request and Response for routing.",
-      "leftIcon": "Server",
-      "rightIcon": "Globe",
-      "leftVisualText": "SSR",
-      "rightVisualText": "Web API"
-    },
-    {
-      "title": "2. ROUTING",
-      "leftTitle": "File-based",
-      "rightTitle": "Nested Routes",
-      "leftDesc": "Pages directory defines routes automatically based on file structure.",
-      "rightDesc": "Layouts and nested routes are built-in, sharing parent data.",
-      "leftIcon": "FileCode",
+      "title": "1. REACTIVITY MODEL",
+      "leftTitle": "Signals",
+      "rightTitle": "Stores",
+      "leftDesc": "Uses fine-grained reactive primitives (signals) for efficient updates.",
+      "rightDesc": "Employs reactive stores for state management and propagation.",
+      "leftIcon": "Activity",
       "rightIcon": "Layers",
-      "leftVisualText": "Pages",
-      "rightVisualText": "Nested"
+      "leftVisualText": "Signals",
+      "rightVisualText": "Stores"
     },
     {
-      "title": "3. DATA FETCHING",
-      "leftTitle": "getStatic/ServerProps",
-      "rightTitle": "Loader Functions",
-      "leftDesc": "Data fetching tied to specific functions for static or server rendering.",
-      "rightDesc": "Data fetching is collocated with routes using loader functions.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "Code",
-      "leftVisualText": "Props",
-      "rightVisualText": "Loader"
-    },
-    {
-      "title": "4. MUTATIONS",
-      "leftTitle": "API Routes",
-      "rightTitle": "Form Actions",
-      "leftDesc": "Requires separate API routes for data mutations and form submissions.",
-      "rightDesc": "Built-in support for form submissions directly via actions.",
-      "leftIcon": "Network",
-      "rightIcon": "ArrowRightLeft",
-      "leftVisualText": "API",
-      "rightVisualText": "Actions"
-    },
-    {
-      "title": "5. DEPLOYMENT",
-      "leftTitle": "Vercel Optimized",
-      "rightTitle": "Platform Agnostic",
-      "leftDesc": "Deep integration and optimization for Vercel's hosting platform.",
-      "rightDesc": "Works well on any Node.js server or modern hosting.",
+      "title": "2. COMPILATION",
+      "leftTitle": "Runtime",
+      "rightTitle": "Compile-time",
+      "leftDesc": "A small runtime is needed for reactive features.",
+      "rightDesc": "Compiles components into imperative vanilla JS code.",
       "leftIcon": "Server",
+      "rightIcon": "Code",
+      "leftVisualText": "Runtime",
+      "rightVisualText": "Compile-time"
+    },
+    {
+      "title": "3. DOM UPDATES",
+      "leftTitle": "Direct DOM",
+      "rightTitle": "No Virtual DOM",
+      "leftDesc": "Directly manipulates DOM nodes with fine-grained updates.",
+      "rightDesc": "Compiles away the need for a Virtual DOM.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Direct DOM",
+      "rightVisualText": "No VDOM"
+    },
+    {
+      "title": "4. STATE MANAGEMENT",
+      "leftTitle": "Explicit",
+      "rightTitle": "Implicit",
+      "leftDesc": "State changes are explicit via signal updates.",
+      "rightDesc": "Reactivity is often implicit within components.",
+      "leftIcon": "Settings",
+      "rightIcon": "Search",
+      "leftVisualText": "Explicit",
+      "rightVisualText": "Implicit"
+    },
+    {
+      "title": "5. SYNTAX",
+      "leftTitle": "JSX-like",
+      "rightTitle": "HTML-like",
+      "leftDesc": "Uses a JSX-like syntax for component structure.",
+      "rightDesc": "Utilizes HTML-like syntax with specific directives.",
+      "leftIcon": "FileCode",
+      "rightIcon": "FileCode",
+      "leftVisualText": "JSX-like",
+      "rightVisualText": "HTML-like"
+    },
+    {
+      "title": "6. PERFORMANCE",
+      "leftTitle": "Blazing Fast",
+      "rightTitle": "Very Fast",
+      "leftDesc": "Exceptional performance due to fine-grained reactivity and no VDOM overhead.",
+      "rightDesc": "Highly performant due to compilation and minimal boilerplate.",
+      "leftIcon": "Zap",
+      "rightIcon": "Zap",
+      "leftVisualText": "Peak Speed",
+      "rightVisualText": "Great Speed"
+    },
+    {
+      "title": "7. ECOSYSTEM",
+      "leftTitle": "Growing",
+      "rightTitle": "Mature",
+      "leftDesc": "Smaller but rapidly expanding ecosystem and community support.",
+      "rightDesc": "Well-established ecosystem with extensive tooling and community.",
+      "leftIcon": "Globe",
       "rightIcon": "Globe",
-      "leftVisualText": "Vercel",
-      "rightVisualText": "Anywhere"
-    },
-    {
-      "title": "6. CSS SUPPORT",
-      "leftTitle": "Integrated Options",
-      "rightTitle": "Standard CSS",
-      "leftDesc": "Supports styled-jsx, Tailwind, CSS Modules, global CSS.",
-      "rightDesc": "Emphasizes standard CSS, CSS Modules, and Tailwind CSS.",
-      "leftIcon": "Paint",
-      "rightIcon": "Box",
-      "leftVisualText": "Multiple",
-      "rightVisualText": "Standard"
-    },
-    {
-      "title": "7. LEARNING CURVE",
-      "leftTitle": "Meta-framework",
-      "rightTitle": "Web Standards",
-      "leftDesc": "Steeper curve due to unique conventions and features.",
-      "rightDesc": "Easier for those familiar with web fundamentals.",
-      "leftIcon": "Search",
-      "rightIcon": "Lock",
-      "leftVisualText": "Meta",
-      "rightVisualText": "Std"
+      "leftVisualText": "Newer",
+      "rightVisualText": "Established"
     }
   ]
 }
