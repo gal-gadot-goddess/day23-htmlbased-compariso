@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND FRAMEWORKS",
+  "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "SolidJS",
-    "right": "Svelte",
+    "left": "Server Components",
+    "right": "Client Components",
     "vs": "vs"
   },
-  "leftSub": "Compiler-first Library",
-  "rightSub": "Compiler-first Framework",
-  "leftColor": "#3366ff",
-  "rightColor": "#ff3366",
+  "leftSub": "Renders on server",
+  "rightSub": "Renders in browser",
+  "leftColor": "#FF7A59",
+  "rightColor": "#4CAF50",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. REACTIVITY MODEL",
-      "leftTitle": "Fine-grained Signals",
-      "rightTitle": "Component State",
-      "leftDesc": "Updates only affected parts without virtual DOM. Extremely efficient.",
-      "rightDesc": "Tracks state changes within components. Efficient re-renders.",
-      "leftIcon": "Activity",
-      "rightIcon": "Layers",
-      "leftVisualText": "Signals",
-      "rightVisualText": "State"
-    },
-    {
-      "title": "2. COMPILATION",
-      "leftTitle": "Compiler Focus",
-      "rightTitle": "Compiler Focus",
-      "leftDesc": "Compiles to efficient JavaScript. No runtime overhead.",
-      "rightDesc": "Compiles components into imperative code. Zero runtime.",
-      "leftIcon": "Code",
-      "rightIcon": "Code",
-      "leftVisualText": "Compile",
-      "rightVisualText": "Compile"
-    },
-    {
-      "title": "3. VIRTUAL DOM",
-      "leftTitle": "No Virtual DOM",
-      "rightTitle": "No Virtual DOM",
-      "leftDesc": "Direct DOM manipulation for max performance and minimal bundle size.",
-      "rightDesc": "Compiles away virtual DOM. Direct DOM updates.",
-      "leftIcon": "Zap",
-      "rightIcon": "Zap",
-      "leftVisualText": "Direct",
-      "rightVisualText": "Direct"
-    },
-    {
-      "title": "4. API STYLE",
-      "leftTitle": "Functional Components",
-      "rightTitle": "Template Syntax",
-      "leftDesc": "Emphasizes JavaScript functions and JSX. Familiar to React devs.",
-      "rightDesc": "Uses HTML-like syntax. Intuitive and easy to learn.",
-      "leftIcon": "FileCode",
-      "rightIcon": "Layout",
-      "leftVisualText": "JS/JSX",
-      "rightVisualText": "HTML-like"
-    },
-    {
-      "title": "5. REACTIVITY PRIMITIVES",
-      "leftTitle": "Signals & Effects",
-      "rightTitle": "Stores & Transitions",
-      "leftDesc": "Core primitives: signal, effect, memo. Explicit dependency tracking.",
-      "rightDesc": "Stores for global state, component state. Built-in transitions.",
-      "leftIcon": "Settings",
-      "rightIcon": "Server",
-      "leftVisualText": "Fine-tune",
-      "rightVisualText": "Store"
-    },
-    {
-      "title": "6. PERFORMANCE",
-      "leftTitle": "Top Tier Speed",
-      "rightTitle": "Excellent Speed",
-      "leftDesc": "Benchmarks consistently show leading performance due to fine-grained reactivity.",
-      "rightDesc": "Very fast due to compilation, minimal runtime.",
-      "leftIcon": "Cpu",
+      "title": "1. INITIAL LOAD",
+      "leftTitle": "Faster initial load",
+      "rightTitle": "Slower initial load",
+      "leftDesc": "Reduces initial JS bundle size, improving perceived performance and time to interactive.",
+      "rightDesc": "Requires JavaScript download and execution on the client for initial rendering.",
+      "leftIcon": "Server",
       "rightIcon": "Cpu",
-      "leftVisualText": "Benchmark",
-      "rightVisualText": "Fast"
+      "leftVisualText": "Server-rendered",
+      "rightVisualText": "Client-rendered"
     },
     {
-      "title": "7. COMMUNITY SIZE",
-      "leftTitle": "Growing Community",
-      "rightTitle": "Mature Community",
-      "leftDesc": "Smaller but highly active and engaged developer base.",
-      "rightDesc": "Larger, established community with extensive resources.",
-      "leftIcon": "Globe",
-      "rightIcon": "Globe",
-      "leftVisualText": "Newer",
-      "rightVisualText": "Established"
+      "title": "2. INTERACTIVITY",
+      "leftTitle": "Limited interactivity",
+      "rightTitle": "Full interactivity",
+      "leftDesc": "Designed for static content or initial data fetching, not direct user interactions.",
+      "rightDesc": "Ideal for dynamic UIs, state management, and real-time user input handling.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Activity",
+      "leftVisualText": "Static",
+      "rightVisualText": "Dynamic"
+    },
+    {
+      "title": "3. DATA FETCHING",
+      "leftTitle": "Server data access",
+      "rightTitle": "Browser data access",
+      "leftDesc": "Can directly access backend resources and databases without client-side API calls.",
+      "rightDesc": "Fetches data from APIs running in the browser environment.",
+      "leftIcon": "Database",
+      "rightIcon": "Network",
+      "leftVisualText": "Direct DB",
+      "rightVisualText": "API calls"
+    },
+    {
+      "title": "4. DEPENDENCIES",
+      "leftTitle": "No client JS deps",
+      "rightTitle": "Can use client JS",
+      "leftDesc": "Do not ship their JavaScript to the client, allowing for heavier backend dependencies.",
+      "rightDesc": "Can utilize any client-side JavaScript libraries and frameworks.",
+      "leftIcon": "Lock",
+      "rightIcon": "Unlock",
+      "leftVisualText": "No JS",
+      "rightVisualText": "JS ready"
+    },
+    {
+      "title": "5. SEO",
+      "leftTitle": "Excellent SEO",
+      "rightTitle": "Good SEO",
+      "leftDesc": "Content is fully rendered on the server, making it easily discoverable by search engines.",
+      "rightDesc": "Relies on JavaScript execution for SEO, which can be less reliable for some bots.",
+      "leftIcon": "Search",
+      "rightIcon": "Search",
+      "leftVisualText": "Bot friendly",
+      "rightVisualText": "Bot needs JS"
+    },
+    {
+      "title": "6. RENDERING LOCATION",
+      "leftTitle": "Server-only rendering",
+      "rightTitle": "Client-only rendering",
+      "leftDesc": "Executed exclusively on the server, ideal for content-heavy pages and initial load.",
+      "rightDesc": "Executed entirely within the user's browser, suitable for complex interactivity.",
+      "leftIcon": "Server",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Server side",
+      "rightVisualText": "Client side"
+    },
+    {
+      "title": "7. CODE EXECUTION",
+      "leftTitle": "Server-side execution",
+      "rightTitle": "Client-side execution",
+      "leftDesc": "Code runs on the server, offering access to server-side logic and benefits.",
+      "rightDesc": "Code runs in the user's browser, enabling rich user interfaces and experiences.",
+      "leftIcon": "Terminal",
+      "rightIcon": "Code",
+      "leftVisualText": "Server logic",
+      "rightVisualText": "UI logic"
     }
   ]
 }
