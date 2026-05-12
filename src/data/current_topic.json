@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND ARCHITECTURE",
+  "topLabel": "FRONTEND FRAMEWORKS",
   "mainTitle": {
-    "left": "Server Components",
-    "right": "Client Components",
+    "left": "Astro",
+    "right": "Next.js",
     "vs": "vs"
   },
-  "leftSub": "Renders on server",
-  "rightSub": "Renders in browser",
-  "leftColor": "#FF7A59",
-  "rightColor": "#4CAF50",
+  "leftSub": "Content-focused sites",
+  "rightSub": "Full-stack apps",
+  "leftColor": "#4F46E5",
+  "rightColor": "#00DCB8",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. INITIAL LOAD",
-      "leftTitle": "Faster initial load",
-      "rightTitle": "Slower initial load",
-      "leftDesc": "Reduces initial JS bundle size, improving perceived performance and time to interactive.",
-      "rightDesc": "Requires JavaScript download and execution on the client for initial rendering.",
-      "leftIcon": "Server",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Server-rendered",
-      "rightVisualText": "Client-rendered"
+      "title": "1. ARCHITECTURE",
+      "leftTitle": "Islands Architecture",
+      "rightTitle": "App Router",
+      "leftDesc": "Hydrates only necessary components, boosting initial load performance for content-heavy sites.",
+      "rightDesc": "Flexible routing and rendering options for diverse application needs, including SSR and SSG.",
+      "leftIcon": "Layers",
+      "rightIcon": "Layout",
+      "leftVisualText": "Minimal JS",
+      "rightVisualText": "Versatile"
     },
     {
-      "title": "2. INTERACTIVITY",
-      "leftTitle": "Limited interactivity",
-      "rightTitle": "Full interactivity",
-      "leftDesc": "Designed for static content or initial data fetching, not direct user interactions.",
-      "rightDesc": "Ideal for dynamic UIs, state management, and real-time user input handling.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "Activity",
-      "leftVisualText": "Static",
-      "rightVisualText": "Dynamic"
-    },
-    {
-      "title": "3. DATA FETCHING",
-      "leftTitle": "Server data access",
-      "rightTitle": "Browser data access",
-      "leftDesc": "Can directly access backend resources and databases without client-side API calls.",
-      "rightDesc": "Fetches data from APIs running in the browser environment.",
-      "leftIcon": "Database",
-      "rightIcon": "Network",
-      "leftVisualText": "Direct DB",
-      "rightVisualText": "API calls"
-    },
-    {
-      "title": "4. DEPENDENCIES",
-      "leftTitle": "No client JS deps",
-      "rightTitle": "Can use client JS",
-      "leftDesc": "Do not ship their JavaScript to the client, allowing for heavier backend dependencies.",
-      "rightDesc": "Can utilize any client-side JavaScript libraries and frameworks.",
-      "leftIcon": "Lock",
-      "rightIcon": "Unlock",
-      "leftVisualText": "No JS",
-      "rightVisualText": "JS ready"
-    },
-    {
-      "title": "5. SEO",
-      "leftTitle": "Excellent SEO",
-      "rightTitle": "Good SEO",
-      "leftDesc": "Content is fully rendered on the server, making it easily discoverable by search engines.",
-      "rightDesc": "Relies on JavaScript execution for SEO, which can be less reliable for some bots.",
-      "leftIcon": "Search",
-      "rightIcon": "Search",
-      "leftVisualText": "Bot friendly",
-      "rightVisualText": "Bot needs JS"
-    },
-    {
-      "title": "6. RENDERING LOCATION",
-      "leftTitle": "Server-only rendering",
-      "rightTitle": "Client-only rendering",
-      "leftDesc": "Executed exclusively on the server, ideal for content-heavy pages and initial load.",
-      "rightDesc": "Executed entirely within the user's browser, suitable for complex interactivity.",
-      "leftIcon": "Server",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Server side",
-      "rightVisualText": "Client side"
-    },
-    {
-      "title": "7. CODE EXECUTION",
-      "leftTitle": "Server-side execution",
-      "rightTitle": "Client-side execution",
-      "leftDesc": "Code runs on the server, offering access to server-side logic and benefits.",
-      "rightDesc": "Code runs in the user's browser, enabling rich user interfaces and experiences.",
-      "leftIcon": "Terminal",
+      "title": "2. PERFORMANCE",
+      "leftTitle": "Near-zero JS",
+      "rightTitle": "Rich JS",
+      "leftDesc": "Achieves excellent performance by sending minimal or no JavaScript to the client by default.",
+      "rightDesc": "Offers powerful features but may require more client-side JavaScript for interactive UIs.",
+      "leftIcon": "Zap",
       "rightIcon": "Code",
-      "leftVisualText": "Server logic",
-      "rightVisualText": "UI logic"
+      "leftVisualText": "Fast Load",
+      "rightVisualText": "Interactive"
+    },
+    {
+      "title": "3. USE CASE",
+      "leftTitle": "Marketing Sites",
+      "rightTitle": "Web Apps",
+      "leftDesc": "Ideal for blogs, portfolios, documentation, and marketing websites where content is primary.",
+      "rightDesc": "Well-suited for complex applications, e-commerce platforms, and dynamic user dashboards.",
+      "leftIcon": "Globe",
+      "rightIcon": "Server",
+      "leftVisualText": "Content First",
+      "rightVisualText": "App Logic"
+    },
+    {
+      "title": "4. RENDERING",
+      "leftTitle": "HTML-first",
+      "rightTitle": "Flexible",
+      "leftDesc": "Primarily renders HTML on the server, sending minimal JS for interactivity on demand.",
+      "rightDesc": "Supports SSR, SSG, ISR, and Client-side rendering for optimized performance.",
+      "leftIcon": "FileCode",
+      "rightIcon": "Settings",
+      "leftVisualText": "Static Output",
+      "rightVisualText": "Dynamic Render"
+    },
+    {
+      "title": "5. FRAMEWORK AGNOSTIC",
+      "leftTitle": "Any UI Lib",
+      "rightTitle": "React-centric",
+      "leftDesc": "Supports popular UI frameworks like React, Vue, Svelte, and Solid, or no framework.",
+      "rightDesc": "Primarily built around React, leveraging its ecosystem and features.",
+      "leftIcon": "Share2",
+      "rightIcon": "React",
+      "leftVisualText": "Flexible UI",
+      "rightVisualText": "React Ecosystem"
+    },
+    {
+      "title": "6. DEPLOYMENT",
+      "leftTitle": "Static Hosting",
+      "rightTitle": "Node.js Server",
+      "leftDesc": "Easily deployable on static hosting platforms due to its default static output.",
+      "rightDesc": "Requires a Node.js runtime environment for server-side rendering.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Server",
+      "leftVisualText": "CDN Ready",
+      "rightVisualText": "Server Required"
+    },
+    {
+      "title": "7. LEARNING CURVE",
+      "leftTitle": "Gentle",
+      "rightTitle": "Moderate",
+      "leftDesc": "Simpler concepts focused on content delivery and progressive enhancement.",
+      "rightDesc": "Steeper curve due to advanced routing, rendering, and React concepts.",
+      "leftIcon": "Search",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Easy Start",
+      "rightVisualText": "Advanced Features"
     }
   ]
 }
