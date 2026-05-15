@@ -16,5 +16,6 @@
   "WebAssembly vs JavaScript",
   "Node.js vs Deno",
   "Next.js vs Remix",
-  "Qwik vs SolidJS"
+  "Qwik vs SolidJS",
+  "Astro vs Next.js"
 ]
