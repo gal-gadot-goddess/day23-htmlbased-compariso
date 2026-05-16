@@ -1,92 +1,92 @@
 {
-  "topLabel": "BACKEND ARCHITECTURE",
+  "topLabel": "PROGRAMMING LANGUAGES",
   "mainTitle": {
-    "left": "GraphQL",
-    "right": "REST",
+    "left": "PYTHON",
+    "right": "GO",
     "vs": "vs"
   },
-  "leftSub": "Flexible API Queries",
-  "rightSub": "Standard API Endpoints",
-  "leftColor": "#4CAF50",
-  "rightColor": "#2196F3",
+  "leftSub": "Versatile, Readable Code",
+  "rightSub": "Fast, Concurrent Systems",
+  "leftColor": "#306998",
+  "rightColor": "#00ADD8",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. Data Fetching",
-      "leftTitle": "Client Specified",
-      "rightTitle": "Server Defined",
-      "leftDesc": "Clients request exactly the data they need, reducing over-fetching.",
-      "rightDesc": "Endpoints return fixed data structures; clients might get too much or too little.",
-      "leftIcon": "Search",
-      "rightIcon": "Layers",
-      "leftVisualText": "Precise",
-      "rightVisualText": "Fixed"
-    },
-    {
-      "title": "2. Endpoint Structure",
-      "leftTitle": "Single Endpoint",
-      "rightTitle": "Multiple Endpoints",
-      "leftDesc": "Typically one endpoint handles all queries and mutations for a resource.",
-      "rightDesc": "Multiple URLs are used for different resources and actions.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Layout",
-      "leftVisualText": "Unified",
-      "rightVisualText": "Distributed"
-    },
-    {
-      "title": "3. Versioning",
-      "leftTitle": "Less Frequent",
-      "rightTitle": "More Common",
-      "leftDesc": "Schema evolution allows adding fields without breaking existing clients.",
-      "rightDesc": "API changes often require new versions (v1, v2) to avoid breaking changes.",
-      "leftIcon": "Settings",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Evolving",
-      "rightVisualText": "Sequential"
-    },
-    {
-      "title": "4. Type System",
-      "leftTitle": "Strongly Typed",
-      "rightTitle": "Loosely Typed",
-      "leftDesc": "Defines a strict schema, ensuring data integrity and predictable responses.",
-      "rightDesc": "Data formats (like JSON) are flexible; validation is often application-level.",
-      "leftIcon": "Shield",
-      "rightIcon": "Unlock",
-      "leftVisualText": "Rigid",
-      "rightVisualText": "Flexible"
-    },
-    {
-      "title": "5. Tooling & Ecosystem",
-      "leftTitle": "Growing Rapidly",
-      "rightTitle": "Mature & Vast",
-      "leftDesc": "Rich tooling for introspection, auto-completion, and code generation is common.",
-      "rightDesc": "Extensive libraries and established patterns for various languages and platforms.",
-      "leftIcon": "Code",
-      "rightIcon": "Globe",
-      "leftVisualText": "Modern",
-      "rightVisualText": "Established"
-    },
-    {
-      "title": "6. Caching",
-      "leftTitle": "More Complex",
-      "rightTitle": "Simpler (HTTP)",
-      "leftDesc": "Client-side caching requires more sophisticated logic due to varied queries.",
-      "rightDesc": "Leverages standard HTTP caching mechanisms effectively due to fixed URLs.",
+      "title": "1. Performance",
+      "leftTitle": "Interpreted, Slower",
+      "rightTitle": "Compiled, Faster",
+      "leftDesc": "Python's interpretation leads to slower execution speeds for CPU-bound tasks.",
+      "rightDesc": "Go's compilation to machine code results in significantly faster performance.",
       "leftIcon": "Cpu",
-      "rightIcon": "Network",
-      "leftVisualText": "Custom",
-      "rightVisualText": "Standard"
+      "rightIcon": "Cpu",
+      "leftVisualText": "Slower",
+      "rightVisualText": "Faster"
     },
     {
-      "title": "7. Performance",
-      "leftTitle": "Efficient Fetching",
-      "rightTitle": "Potential Over-fetching",
-      "leftDesc": "Minimizes network requests and payload size by design.",
-      "rightDesc": "Can lead to larger payloads and more requests if not optimized carefully.",
-      "leftIcon": "Zap",
-      "rightIcon": "ArrowRightLeft",
-      "leftVisualText": "Optimized",
-      "rightVisualText": "Variable"
+      "title": "2. Concurrency",
+      "leftTitle": "GIL Limitations",
+      "rightTitle": "Goroutines Power",
+      "leftDesc": "Global Interpreter Lock (GIL) hinders true multi-core parallelism in CPython.",
+      "rightDesc": "Built-in lightweight goroutines enable massive concurrency with ease.",
+      "leftIcon": "Activity",
+      "rightIcon": "Layers",
+      "leftVisualText": "Limited",
+      "rightVisualText": "High"
+    },
+    {
+      "title": "3. Syntax",
+      "leftTitle": "Readable, Verbose",
+      "rightTitle": "Concise, Strict",
+      "leftDesc": "Emphasizes readability with significant whitespace, often more lines of code.",
+      "rightDesc": "Minimalistic syntax, strong typing, fewer lines, stricter formatting.",
+      "leftIcon": "FileCode",
+      "rightIcon": "Code",
+      "leftVisualText": "Readable",
+      "rightVisualText": "Strict"
+    },
+    {
+      "title": "4. Ecosystem",
+      "leftTitle": "Vast Libraries",
+      "rightTitle": "Growing Stdlib",
+      "leftDesc": "Extensive third-party libraries for data science, web dev, AI, and more.",
+      "rightDesc": "Strong standard library, ideal for networking and systems programming.",
+      "leftIcon": "Box",
+      "rightIcon": "Layers",
+      "leftVisualText": "Huge",
+      "rightVisualText": "Focused"
+    },
+    {
+      "title": "5. Typing",
+      "leftTitle": "Dynamic",
+      "rightTitle": "Static",
+      "leftDesc": "Types are checked at runtime, offering flexibility but potential errors.",
+      "rightDesc": "Types are checked at compile time, catching errors early.",
+      "leftIcon": "Search",
+      "rightIcon": "Lock",
+      "leftVisualText": "Flexible",
+      "rightVisualText": "Safe"
+    },
+    {
+      "title": "6. Use Cases",
+      "leftTitle": "AI, Web, Data",
+      "rightTitle": "Microservices, CLI",
+      "leftDesc": "Dominant in data science, machine learning, web applications, scripting.",
+      "rightDesc": "Excellent for backend services, CLIs, network tools, concurrent apps.",
+      "leftIcon": "Globe",
+      "rightIcon": "Server",
+      "leftVisualText": "Generalist",
+      "rightVisualText": "Specialist"
+    },
+    {
+      "title": "7. Learning Curve",
+      "leftTitle": "Gentle",
+      "rightTitle": "Moderate",
+      "leftDesc": "Beginner-friendly syntax and vast community support make it easy to start.",
+      "rightDesc": "Requires understanding of pointers and concurrency concepts for advanced use.",
+      "leftIcon": "Terminal",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Easy",
+      "rightVisualText": "Challenging"
     }
   ]
 }
