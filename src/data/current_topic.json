@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND FRAMEWORKS",
+  "topLabel": "BACKEND ARCHITECTURE",
   "mainTitle": {
-    "left": "Astro",
-    "right": "Next.js",
+    "left": "GraphQL",
+    "right": "REST",
     "vs": "vs"
   },
-  "leftSub": "Content-focused Static",
-  "rightSub": "Full-stack React",
-  "leftColor": "#FF4500",
-  "rightColor": "#007BFF",
+  "leftSub": "Flexible API Queries",
+  "rightSub": "Standard API Endpoints",
+  "leftColor": "#4CAF50",
+  "rightColor": "#2196F3",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. PRIMARY FOCUS",
-      "leftTitle": "Content Websites",
-      "rightTitle": "Dynamic Web Apps",
-      "leftDesc": "Optimized for speed with server-side rendering and minimal JavaScript.",
-      "rightDesc": "Versatile framework for static and dynamic applications, server-rendered React.",
-      "leftIcon": "Globe",
-      "rightIcon": "Server",
-      "leftVisualText": "Content",
-      "rightVisualText": "Full-stack"
+      "title": "1. Data Fetching",
+      "leftTitle": "Client Specified",
+      "rightTitle": "Server Defined",
+      "leftDesc": "Clients request exactly the data they need, reducing over-fetching.",
+      "rightDesc": "Endpoints return fixed data structures; clients might get too much or too little.",
+      "leftIcon": "Search",
+      "rightIcon": "Layers",
+      "leftVisualText": "Precise",
+      "rightVisualText": "Fixed"
     },
     {
-      "title": "2. RENDERING STRATEGY",
-      "leftTitle": "Islands Architecture",
-      "rightTitle": "SSR/SSG/ISR",
-      "leftDesc": "Renders components with hydration on demand, reducing JS payload.",
-      "rightDesc": "Offers static site generation, server-side rendering, incremental static regeneration.",
-      "leftIcon": "Layers",
+      "title": "2. Endpoint Structure",
+      "leftTitle": "Single Endpoint",
+      "rightTitle": "Multiple Endpoints",
+      "leftDesc": "Typically one endpoint handles all queries and mutations for a resource.",
+      "rightDesc": "Multiple URLs are used for different resources and actions.",
+      "leftIcon": "Terminal",
+      "rightIcon": "Layout",
+      "leftVisualText": "Unified",
+      "rightVisualText": "Distributed"
+    },
+    {
+      "title": "3. Versioning",
+      "leftTitle": "Less Frequent",
+      "rightTitle": "More Common",
+      "leftDesc": "Schema evolution allows adding fields without breaking existing clients.",
+      "rightDesc": "API changes often require new versions (v1, v2) to avoid breaking changes.",
+      "leftIcon": "Settings",
       "rightIcon": "HardDrive",
-      "leftVisualText": "Selective Hydration",
-      "rightVisualText": "Multiple Options"
+      "leftVisualText": "Evolving",
+      "rightVisualText": "Sequential"
     },
     {
-      "title": "3. JS BY DEFAULT",
-      "leftTitle": "Zero JS",
-      "rightTitle": "Full JS",
-      "leftDesc": "Ship zero JavaScript to the client by default for faster loads.",
-      "rightDesc": "Ships JavaScript for client-side interactivity and React's hydration.",
+      "title": "4. Type System",
+      "leftTitle": "Strongly Typed",
+      "rightTitle": "Loosely Typed",
+      "leftDesc": "Defines a strict schema, ensuring data integrity and predictable responses.",
+      "rightDesc": "Data formats (like JSON) are flexible; validation is often application-level.",
+      "leftIcon": "Shield",
+      "rightIcon": "Unlock",
+      "leftVisualText": "Rigid",
+      "rightVisualText": "Flexible"
+    },
+    {
+      "title": "5. Tooling & Ecosystem",
+      "leftTitle": "Growing Rapidly",
+      "rightTitle": "Mature & Vast",
+      "leftDesc": "Rich tooling for introspection, auto-completion, and code generation is common.",
+      "rightDesc": "Extensive libraries and established patterns for various languages and platforms.",
+      "leftIcon": "Code",
+      "rightIcon": "Globe",
+      "leftVisualText": "Modern",
+      "rightVisualText": "Established"
+    },
+    {
+      "title": "6. Caching",
+      "leftTitle": "More Complex",
+      "rightTitle": "Simpler (HTTP)",
+      "leftDesc": "Client-side caching requires more sophisticated logic due to varied queries.",
+      "rightDesc": "Leverages standard HTTP caching mechanisms effectively due to fixed URLs.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Network",
+      "leftVisualText": "Custom",
+      "rightVisualText": "Standard"
+    },
+    {
+      "title": "7. Performance",
+      "leftTitle": "Efficient Fetching",
+      "rightTitle": "Potential Over-fetching",
+      "leftDesc": "Minimizes network requests and payload size by design.",
+      "rightDesc": "Can lead to larger payloads and more requests if not optimized carefully.",
       "leftIcon": "Zap",
-      "rightIcon": "Code",
-      "leftVisualText": "No JS",
-      "rightVisualText": "With JS"
-    },
-    {
-      "title": "4. FRAMEWORK AGNOSTIC",
-      "leftTitle": "Any UI",
-      "rightTitle": "React Focused",
-      "leftDesc": "Use multiple UI frameworks (React, Vue, Svelte) in one project.",
-      "rightDesc": "Primarily built around the React ecosystem.",
-      "leftIcon": "Layout",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Flexible",
-      "rightVisualText": "React"
-    },
-    {
-      "title": "5. PERFORMANCE",
-      "leftTitle": "Ultra Fast",
-      "rightTitle": "Fast",
-      "leftDesc": "Aggressively optimizes for perceived load speed and Lighthouse scores.",
-      "rightDesc": "Excellent performance, but can have larger bundles than Astro.",
-      "leftIcon": "Activity",
-      "rightIcon": "Search",
-      "leftVisualText": "Max Speed",
-      "rightVisualText": "Optimized"
-    },
-    {
-      "title": "6. API ROUTES",
-      "leftTitle": "Not Built-in",
-      "rightTitle": "Built-in",
-      "leftDesc": "Does not have integrated API routes like Next.js.",
-      "rightDesc": "Provides built-in API routes for backend functionality.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "Server",
-      "leftVisualText": "Separate",
-      "rightVisualText": "Integrated"
-    },
-    {
-      "title": "7. COMPLEXITY",
-      "leftTitle": "Simpler",
-      "rightTitle": "More Complex",
-      "leftDesc": "Easier to grasp for content-centric sites and static generation.",
-      "rightDesc": "More features mean a steeper learning curve for advanced use cases.",
-      "leftIcon": "Unlock",
-      "rightIcon": "Lock",
-      "leftVisualText": "Beginner Friendly",
-      "rightVisualText": "Advanced"
+      "rightIcon": "ArrowRightLeft",
+      "leftVisualText": "Optimized",
+      "rightVisualText": "Variable"
     }
   ]
 }
