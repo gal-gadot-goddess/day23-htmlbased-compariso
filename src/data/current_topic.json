@@ -1,92 +1,92 @@
 {
-  "topLabel": "PROGRAMMING LANGUAGES",
+  "topLabel": "FRONTEND FRAMEWORKS",
   "mainTitle": {
-    "left": "PYTHON",
-    "right": "GO",
+    "left": "SolidJS",
+    "right": "Qwik",
     "vs": "vs"
   },
-  "leftSub": "Versatile, Readable Code",
-  "rightSub": "Fast, Concurrent Systems",
-  "leftColor": "#306998",
-  "rightColor": "#00ADD8",
+  "leftSub": "Fast & Reactive",
+  "rightSub": "Resumable UI",
+  "leftColor": "#8A2BE2",
+  "rightColor": "#00CED1",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. Performance",
-      "leftTitle": "Interpreted, Slower",
-      "rightTitle": "Compiled, Faster",
-      "leftDesc": "Python's interpretation leads to slower execution speeds for CPU-bound tasks.",
-      "rightDesc": "Go's compilation to machine code results in significantly faster performance.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Slower",
-      "rightVisualText": "Faster"
-    },
-    {
-      "title": "2. Concurrency",
-      "leftTitle": "GIL Limitations",
-      "rightTitle": "Goroutines Power",
-      "leftDesc": "Global Interpreter Lock (GIL) hinders true multi-core parallelism in CPython.",
-      "rightDesc": "Built-in lightweight goroutines enable massive concurrency with ease.",
+      "title": "1. Reactivity",
+      "leftTitle": "Fine-grained signals",
+      "rightTitle": "Built-in reactivity",
+      "leftDesc": "SolidJS uses fine-grained reactivity with signals for efficient updates without a virtual DOM.",
+      "rightDesc": "Qwik achieves reactivity through its resumability model, minimizing client-side JavaScript execution.",
       "leftIcon": "Activity",
-      "rightIcon": "Layers",
-      "leftVisualText": "Limited",
-      "rightVisualText": "High"
-    },
-    {
-      "title": "3. Syntax",
-      "leftTitle": "Readable, Verbose",
-      "rightTitle": "Concise, Strict",
-      "leftDesc": "Emphasizes readability with significant whitespace, often more lines of code.",
-      "rightDesc": "Minimalistic syntax, strong typing, fewer lines, stricter formatting.",
-      "leftIcon": "FileCode",
-      "rightIcon": "Code",
-      "leftVisualText": "Readable",
-      "rightVisualText": "Strict"
-    },
-    {
-      "title": "4. Ecosystem",
-      "leftTitle": "Vast Libraries",
-      "rightTitle": "Growing Stdlib",
-      "leftDesc": "Extensive third-party libraries for data science, web dev, AI, and more.",
-      "rightDesc": "Strong standard library, ideal for networking and systems programming.",
-      "leftIcon": "Box",
-      "rightIcon": "Layers",
-      "leftVisualText": "Huge",
-      "rightVisualText": "Focused"
-    },
-    {
-      "title": "5. Typing",
-      "leftTitle": "Dynamic",
-      "rightTitle": "Static",
-      "leftDesc": "Types are checked at runtime, offering flexibility but potential errors.",
-      "rightDesc": "Types are checked at compile time, catching errors early.",
-      "leftIcon": "Search",
-      "rightIcon": "Lock",
-      "leftVisualText": "Flexible",
-      "rightVisualText": "Safe"
-    },
-    {
-      "title": "6. Use Cases",
-      "leftTitle": "AI, Web, Data",
-      "rightTitle": "Microservices, CLI",
-      "leftDesc": "Dominant in data science, machine learning, web applications, scripting.",
-      "rightDesc": "Excellent for backend services, CLIs, network tools, concurrent apps.",
-      "leftIcon": "Globe",
       "rightIcon": "Server",
-      "leftVisualText": "Generalist",
-      "rightVisualText": "Specialist"
+      "leftVisualText": "Signals",
+      "rightVisualText": "Resumability"
     },
     {
-      "title": "7. Learning Curve",
-      "leftTitle": "Gentle",
-      "rightTitle": "Moderate",
-      "leftDesc": "Beginner-friendly syntax and vast community support make it easy to start.",
-      "rightDesc": "Requires understanding of pointers and concurrency concepts for advanced use.",
-      "leftIcon": "Terminal",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Easy",
-      "rightVisualText": "Challenging"
+      "title": "2. Rendering",
+      "leftTitle": "Compiles to JS",
+      "rightTitle": "No VDOM",
+      "leftDesc": "SolidJS compiles JSX to efficient, imperative DOM updates.",
+      "rightDesc": "Qwik prioritizes lazy loading and serialization, avoiding a traditional Virtual DOM.",
+      "leftIcon": "Code",
+      "rightIcon": "Layers",
+      "leftVisualText": "Direct DOM",
+      "rightVisualText": "Lazy Load"
+    },
+    {
+      "title": "3. Initial Load",
+      "leftTitle": "Smaller bundles",
+      "rightTitle": "Instant hydration",
+      "leftDesc": "SolidJS offers small bundle sizes due to its compilation approach.",
+      "rightDesc": "Qwik's resumability allows for instant interactivity without client-side hydration.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Zap",
+      "leftVisualText": "Fast Load",
+      "rightVisualText": "Instant UI"
+    },
+    {
+      "title": "4. State Management",
+      "leftTitle": "Signals & Stores",
+      "rightTitle": "Context API",
+      "leftDesc": "SolidJS uses primitive signals and reactive stores for state.",
+      "rightDesc": "Qwik leverages context and props for state management across components.",
+      "leftIcon": "Settings",
+      "rightIcon": "Share2",
+      "leftVisualText": "Reactive State",
+      "rightVisualText": "Contextual State"
+    },
+    {
+      "title": "5. Ecosystem",
+      "leftTitle": "Growing but smaller",
+      "rightTitle": "Focused on performance",
+      "leftDesc": "SolidJS has a growing ecosystem with good community support.",
+      "rightDesc": "Qwik's ecosystem is newer, prioritizing performance-first solutions.",
+      "leftIcon": "Globe",
+      "rightIcon": "Search",
+      "leftVisualText": "Community",
+      "rightVisualText": "Performance"
+    },
+    {
+      "title": "6. Learning Curve",
+      "leftTitle": "Familiar JSX",
+      "rightTitle": "New concepts",
+      "leftDesc": "SolidJS uses JSX, familiar to React developers, with reactive primitives.",
+      "rightDesc": "Qwik introduces new concepts like resumability, requiring a learning investment.",
+      "leftIcon": "FileCode",
+      "rightIcon": "Terminal",
+      "leftVisualText": "JSX Familiar",
+      "rightVisualText": "Resumability Learn"
+    },
+    {
+      "title": "7. Use Cases",
+      "leftTitle": "Performance-critical",
+      "rightTitle": "Content-heavy sites",
+      "leftDesc": "SolidJS excels in building performant, interactive UIs.",
+      "rightDesc": "Qwik is ideal for content-focused websites needing fast initial loads.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Server",
+      "leftVisualText": "High Perf",
+      "rightVisualText": "Fast Content"
     }
   ]
 }
