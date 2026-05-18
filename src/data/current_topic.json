@@ -1,92 +1,92 @@
 {
   "topLabel": "FRONTEND FRAMEWORKS",
   "mainTitle": {
-    "left": "Remix",
-    "right": "Next.js",
+    "left": "Qwik",
+    "right": "SolidJS",
     "vs": "vs"
   },
-  "leftSub": "Full Stack Framework",
-  "rightSub": "Hybrid Framework",
-  "leftColor": "#007bff",
-  "rightColor": "#6f42c1",
-  "badge": "7 CORE DIFFERENCES",
+  "leftSub": "Resumability First",
+  "rightSub": "Fine-Grained Reactivity",
+  "leftColor": "#FFC300",
+  "rightColor": "#00BFFF",
+  "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. Routing",
-      "leftTitle": "File-based routing",
-      "rightTitle": "File-based routing",
-      "leftDesc": "Nested routes, layouts, and error handling built-in.",
-      "rightDesc": "File-based routing with App Router & Pages Router.",
-      "leftIcon": "Layout",
-      "rightIcon": "Layout",
-      "leftVisualText": "Nested Layouts",
-      "rightVisualText": "App/Pages Router"
-    },
-    {
-      "title": "2. Data Fetching",
-      "leftTitle": "Server-centric fetching",
-      "rightTitle": "Server & Client fetching",
-      "leftDesc": "Data loading on the server before render.",
-      "rightDesc": "Supports Server, Static, and Incremental Static Regeneration.",
-      "leftIcon": "Server",
-      "rightIcon": "Server",
-      "leftVisualText": "Server Load",
-      "rightVisualText": "SSR/SSG/ISR"
-    },
-    {
-      "title": "3. Mutations",
-      "leftTitle": "Form submissions",
-      "rightTitle": "API routes / Server Actions",
-      "leftDesc": "Leverages HTML forms and web standards for mutations.",
-      "rightDesc": "Handles mutations via API routes or Server Actions.",
-      "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "HTML Forms",
-      "rightVisualText": "Server Actions"
-    },
-    {
-      "title": "4. State Management",
-      "leftTitle": "Built-in state",
-      "rightTitle": "Client-side state",
-      "leftDesc": "Server state management is core to Remix.",
-      "rightDesc": "Relies more on client-side state management solutions.",
-      "leftIcon": "Code",
-      "rightIcon": "Code",
-      "leftVisualText": "Server State",
-      "rightVisualText": "Client State"
-    },
-    {
-      "title": "5. Performance",
-      "leftTitle": "Minimal client JS",
-      "rightTitle": "Optimized client JS",
-      "leftDesc": "Focuses on shipping less JavaScript to the client.",
-      "rightDesc": "Offers advanced client-side performance optimizations.",
+      "title": "1. INITIAL LOAD",
+      "leftTitle": "Zero JS",
+      "rightTitle": "Minimal JS",
+      "leftDesc": "Qwik loads minimal JS upfront, making initial loads incredibly fast and interactive.",
+      "rightDesc": "SolidJS delivers minimal JavaScript, optimizing runtime performance with efficient reactivity.",
       "leftIcon": "Zap",
       "rightIcon": "Zap",
-      "leftVisualText": "Lean JS",
-      "rightVisualText": "Optimized JS"
+      "leftVisualText": "Instant",
+      "rightVisualText": "Fast"
     },
     {
-      "title": "6. Error Handling",
-      "leftTitle": "Route-level errors",
-      "rightTitle": "App/Page level",
-      "leftDesc": "Dedicated error boundaries for routes and components.",
-      "rightDesc": "Error handling at app or page level.",
-      "leftIcon": "Shield",
-      "rightIcon": "Shield",
-      "leftVisualText": "Route Errors",
-      "rightVisualText": "App Errors"
+      "title": "2. REACTIVITY",
+      "leftTitle": "Optimized",
+      "rightTitle": "Fine-Grained",
+      "leftDesc": "Qwik's reactivity is optimized for resumability, avoiding complex dependency tracking.",
+      "rightDesc": "SolidJS uses fine-grained reactivity, similar to Vue's Composition API, for efficient updates.",
+      "leftIcon": "Settings",
+      "rightIcon": "Layers",
+      "leftVisualText": "Smart",
+      "rightVisualText": "Precise"
     },
     {
-      "title": "7. Architecture",
-      "leftTitle": "Web Standards",
-      "rightTitle": "React Framework",
-      "leftDesc": "Built on web standards and progressive enhancement.",
-      "rightDesc": "Opinionated React framework with Vercel backing.",
-      "leftIcon": "Globe",
-      "rightIcon": "Globe",
-      "leftVisualText": "Web Standards",
-      "rightVisualText": "React Opinionated"
+      "title": "3. STATE MANAGEMENT",
+      "leftTitle": "Simple",
+      "rightTitle": "Reactive",
+      "leftDesc": "Qwik manages state with simple variables and its `useStore` hook.",
+      "rightDesc": "SolidJS leverages signals for reactive state management, updating only what's needed.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Easy",
+      "rightVisualText": "Dynamic"
+    },
+    {
+      "title": "4. RENDERING",
+      "leftTitle": "Server-first",
+      "rightTitle": "Client-side",
+      "leftDesc": "Qwik renders on the server first, then resumes on the client without re-executing.",
+      "rightDesc": "SolidJS renders primarily on the client, leveraging its reactivity for efficient updates.",
+      "leftIcon": "Server",
+      "rightIcon": "Server",
+      "leftVisualText": "Instant",
+      "rightVisualText": "Performant"
+    },
+    {
+      "title": "5. BUNDLING",
+      "leftTitle": "Lazy",
+      "rightTitle": "Minimal",
+      "leftDesc": "Qwik supports lazy loading of components and code automatically.",
+      "rightDesc": "SolidJS focuses on minimal bundles with fine-grained control over dependencies.",
+      "leftIcon": "Box",
+      "rightIcon": "Box",
+      "leftVisualText": "On-Demand",
+      "rightVisualText": "Lean"
+    },
+    {
+      "title": "6. COMPATIBILITY",
+      "leftTitle": "React-like",
+      "rightTitle": "React-like",
+      "leftDesc": "Qwik's syntax feels familiar to React developers, with a twist.",
+      "rightDesc": "SolidJS uses JSX and offers a familiar developer experience for React devs.",
+      "leftIcon": "Code",
+      "rightIcon": "Code",
+      "leftVisualText": "Intuitive",
+      "rightVisualText": "Familiar"
+    },
+    {
+      "title": "7. RESUMABILITY",
+      "leftTitle": "Core feature",
+      "rightTitle": "Not primary",
+      "leftDesc": "Qwik's defining feature is resumability, eliminating hydration completely.",
+      "rightDesc": "SolidJS prioritizes performance and reactivity, not direct resumability.",
+      "leftIcon": "Unlock",
+      "rightIcon": "Lock",
+      "leftVisualText": "Seamless",
+      "rightVisualText": "Efficient"
     }
   ]
 }
