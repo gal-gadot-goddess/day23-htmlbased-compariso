@@ -1,92 +1,92 @@
 {
   "topLabel": "FRONTEND FRAMEWORKS",
   "mainTitle": {
-    "left": "Qwik",
-    "right": "SolidJS",
+    "left": "SolidJS",
+    "right": "Qwik",
     "vs": "vs"
   },
-  "leftSub": "Resumability First",
-  "rightSub": "Fine-Grained Reactivity",
-  "leftColor": "#FFC300",
-  "rightColor": "#00BFFF",
+  "leftSub": "Reactive UI Library",
+  "rightSub": "Resumable Frontend",
+  "leftColor": "#1e3a8a",
+  "rightColor": "#9333ea",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. INITIAL LOAD",
-      "leftTitle": "Zero JS",
-      "rightTitle": "Minimal JS",
-      "leftDesc": "Qwik loads minimal JS upfront, making initial loads incredibly fast and interactive.",
-      "rightDesc": "SolidJS delivers minimal JavaScript, optimizing runtime performance with efficient reactivity.",
+      "title": "1. REACTIVITY MODEL",
+      "leftTitle": "Fine-grained reactivity",
+      "rightTitle": "Resumability at core",
+      "leftDesc": "SolidJS uses signals for direct DOM updates, offering performance benefits.",
+      "rightDesc": "Qwik optimizes initial load by pausing execution and resuming on user interaction.",
+      "leftIcon": "Activity",
+      "rightIcon": "Server",
+      "leftVisualText": "Signals",
+      "rightVisualText": "Resumability"
+    },
+    {
+      "title": "2. INITIAL LOAD",
+      "leftTitle": "Fast, no hydration",
+      "rightTitle": "Instant, no hydration",
+      "leftDesc": "SolidJS has zero hydration overhead, directly rendering components.",
+      "rightDesc": "Qwik aims for near-zero hydration with its resumability approach.",
       "leftIcon": "Zap",
       "rightIcon": "Zap",
-      "leftVisualText": "Instant",
-      "rightVisualText": "Fast"
+      "leftVisualText": "Zero Hydration",
+      "rightVisualText": "Instant Load"
     },
     {
-      "title": "2. REACTIVITY",
-      "leftTitle": "Optimized",
-      "rightTitle": "Fine-Grained",
-      "leftDesc": "Qwik's reactivity is optimized for resumability, avoiding complex dependency tracking.",
-      "rightDesc": "SolidJS uses fine-grained reactivity, similar to Vue's Composition API, for efficient updates.",
-      "leftIcon": "Settings",
-      "rightIcon": "Layers",
-      "leftVisualText": "Smart",
-      "rightVisualText": "Precise"
-    },
-    {
-      "title": "3. STATE MANAGEMENT",
-      "leftTitle": "Simple",
-      "rightTitle": "Reactive",
-      "leftDesc": "Qwik manages state with simple variables and its `useStore` hook.",
-      "rightDesc": "SolidJS leverages signals for reactive state management, updating only what's needed.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Easy",
-      "rightVisualText": "Dynamic"
-    },
-    {
-      "title": "4. RENDERING",
-      "leftTitle": "Server-first",
-      "rightTitle": "Client-side",
-      "leftDesc": "Qwik renders on the server first, then resumes on the client without re-executing.",
-      "rightDesc": "SolidJS renders primarily on the client, leveraging its reactivity for efficient updates.",
-      "leftIcon": "Server",
-      "rightIcon": "Server",
-      "leftVisualText": "Instant",
-      "rightVisualText": "Performant"
-    },
-    {
-      "title": "5. BUNDLING",
-      "leftTitle": "Lazy",
-      "rightTitle": "Minimal",
-      "leftDesc": "Qwik supports lazy loading of components and code automatically.",
-      "rightDesc": "SolidJS focuses on minimal bundles with fine-grained control over dependencies.",
-      "leftIcon": "Box",
-      "rightIcon": "Box",
-      "leftVisualText": "On-Demand",
-      "rightVisualText": "Lean"
-    },
-    {
-      "title": "6. COMPATIBILITY",
-      "leftTitle": "React-like",
-      "rightTitle": "React-like",
-      "leftDesc": "Qwik's syntax feels familiar to React developers, with a twist.",
-      "rightDesc": "SolidJS uses JSX and offers a familiar developer experience for React devs.",
+      "title": "3. COMPONENT ARCHITECTURE",
+      "leftTitle": "JSX, compilation",
+      "rightTitle": "JSX, serialization",
+      "leftDesc": "SolidJS compiles JSX to efficient vanilla JS and DOM operations.",
+      "rightDesc": "Qwik serializes component state and logic for efficient resuming.",
       "leftIcon": "Code",
-      "rightIcon": "Code",
-      "leftVisualText": "Intuitive",
-      "rightVisualText": "Familiar"
+      "rightIcon": "FileCode",
+      "leftVisualText": "Compiled JSX",
+      "rightVisualText": "Serialized State"
     },
     {
-      "title": "7. RESUMABILITY",
-      "leftTitle": "Core feature",
-      "rightTitle": "Not primary",
-      "leftDesc": "Qwik's defining feature is resumability, eliminating hydration completely.",
-      "rightDesc": "SolidJS prioritizes performance and reactivity, not direct resumability.",
+      "title": "4. STATE MANAGEMENT",
+      "leftTitle": "Signals & Stores",
+      "rightTitle": "Context & Stores",
+      "leftDesc": "Primarily uses signals, providing granular control and performance.",
+      "rightDesc": "Leverages context and stores, designed to be resumable.",
+      "leftIcon": "Layers",
+      "rightIcon": "Layers",
+      "leftVisualText": "Signals",
+      "rightVisualText": "Resumable Stores"
+    },
+    {
+      "title": "5. PERFORMANCE",
+      "leftTitle": "Runtime efficiency",
+      "rightTitle": "Load time optimization",
+      "leftDesc": "Excellent runtime performance due to fine-grained reactivity.",
+      "rightDesc": "Superior initial load times and interactivity.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Network",
+      "leftVisualText": "Runtime Speed",
+      "rightVisualText": "Load Speed"
+    },
+    {
+      "title": "6. ECOSYSTEM SIZE",
+      "leftTitle": "Growing rapidly",
+      "rightTitle": "Emerging ecosystem",
+      "leftDesc": "SolidJS has a strong and active community with growing library support.",
+      "rightDesc": "Qwik is newer, its ecosystem is still developing.",
+      "leftIcon": "Globe",
+      "rightIcon": "Globe",
+      "leftVisualText": "Mature",
+      "rightVisualText": "New"
+    },
+    {
+      "title": "7. LEARNING CURVE",
+      "leftTitle": "Familiar concepts",
+      "rightTitle": "New paradigms",
+      "leftDesc": "Easier transition for those familiar with reactive patterns.",
+      "rightDesc": "Requires understanding resumability and its implications.",
       "leftIcon": "Unlock",
       "rightIcon": "Lock",
-      "leftVisualText": "Seamless",
-      "rightVisualText": "Efficient"
+      "leftVisualText": "Easier",
+      "rightVisualText": "Steeper"
     }
   ]
 }
