@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND ARCHITECTURE",
+  "topLabel": "WEB DEVELOPMENT",
   "mainTitle": {
-    "left": "SolidJS",
-    "right": "Qwik",
+    "left": "Vite",
+    "right": "Webpack",
     "vs": "vs"
   },
-  "leftSub": "Performance Focused",
-  "rightSub": "Resumability First",
-  "leftColor": "#00D1B2",
-  "rightColor": "#FF8C00",
+  "leftSub": "Next-gen build tool",
+  "rightSub": "Mature module bundler",
+  "leftColor": "#646CFF",
+  "rightColor": "#FFD700",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. EXECUTION MODEL",
-      "leftTitle": "Fine-grained Reactivity",
-      "rightTitle": "Resumability Model",
-      "leftDesc": "Updates only changed DOM parts. Minimal overhead.",
-      "rightDesc": "Server-rendered, no hydration needed. Immediate interactivity.",
-      "leftIcon": "Activity",
-      "rightIcon": "Layers",
-      "leftVisualText": "Reactive Updates",
-      "rightVisualText": "Resumable State"
-    },
-    {
-      "title": "2. STATE MANAGEMENT",
-      "leftTitle": "Signals & Stores",
-      "rightTitle": "Scoped State",
-      "leftDesc": "Built-in reactivity primitives for efficient state updates.",
-      "rightDesc": "Component-scoped state serialized to HTML.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Signals",
-      "rightVisualText": "Serialized State"
-    },
-    {
-      "title": "3. INITIAL LOAD",
-      "leftTitle": "Fast Rendering",
-      "rightTitle": "Zero Hydration",
-      "leftDesc": "Lightweight VDOM and compilation reduce initial payload.",
-      "rightDesc": "HTML renders instantly; JavaScript resumes execution.",
+      "title": "1. PERFORMANCE",
+      "leftTitle": "Blazing fast",
+      "rightTitle": "Slower startup",
+      "leftDesc": "Leverages native ES modules for near-instant server start and HMR.",
+      "rightDesc": "Bundles everything on startup, leading to slower build and dev server times.",
       "leftIcon": "Zap",
-      "rightIcon": "Network",
-      "leftVisualText": "Quick Render",
-      "rightVisualText": "Instant UI"
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Speed",
+      "rightVisualText": "Bundling"
     },
     {
-      "title": "4. LEARNING CURVE",
-      "leftTitle": "Familiar Concepts",
-      "rightTitle": "New Paradigm",
-      "leftDesc": "Easier for React developers due to similar hooks.",
-      "rightDesc": "Requires understanding resumability and serialization.",
-      "leftIcon": "Code",
-      "rightIcon": "Search",
-      "leftVisualText": "React-like",
-      "rightVisualText": "Resumability Deep Dive"
-    },
-    {
-      "title": "5. COMPILATION",
-      "leftTitle": "JSX Transformer",
-      "rightTitle": "Optimized Builder",
-      "leftDesc": "Compiles JSX to efficient fine-grained updates.",
-      "rightDesc": "Generates minimal, resumable JavaScript.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Settings",
-      "leftVisualText": "JSX to DOM",
-      "rightVisualText": "Build Time Opt."
-    },
-    {
-      "title": "6. COMMUNITY SIZE",
-      "leftTitle": "Growing Community",
-      "rightTitle": "Emerging Ecosystem",
-      "leftDesc": "Active and enthusiastic, but smaller than established.",
-      "rightDesc": "Newer, rapidly developing, smaller but growing.",
-      "leftIcon": "Globe",
-      "rightIcon": "Share2",
-      "leftVisualText": "Solid Community",
-      "rightVisualText": "Qwik Ecosystem"
-    },
-    {
-      "title": "7. PERFORMANCE METRICS",
-      "leftTitle": "Runtime Speed",
-      "rightTitle": "Load Performance",
-      "leftDesc": "Excellent runtime performance due to reactivity.",
-      "rightDesc": "Superior initial load and Time-to-Interactive.",
-      "leftIcon": "Cpu",
+      "title": "2. ARCHITECTURE",
+      "leftTitle": "Native ESM",
+      "rightTitle": "Bundling approach",
+      "leftDesc": "Serves modules over native ESM, only bundling for production builds.",
+      "rightDesc": "Bundles all code into a few files for browser execution.",
+      "leftIcon": "Server",
       "rightIcon": "Layers",
-      "leftVisualText": "Fast Runtime",
-      "rightVisualText": "Instant Load"
+      "leftVisualText": "Native",
+      "rightVisualText": "Bundle"
+    },
+    {
+      "title": "3. CONFIGURATION",
+      "leftTitle": "Minimal config",
+      "rightTitle": "Complex config",
+      "leftDesc": "Sensible defaults, often requires no configuration for basic projects.",
+      "rightDesc": "Extensive configuration needed for plugins, loaders, and optimizations.",
+      "leftIcon": "Settings",
+      "rightIcon": "Search",
+      "leftVisualText": "Simple",
+      "rightVisualText": "Advanced"
+    },
+    {
+      "title": "4. HOT MODULE REPLACEMENT (HMR)",
+      "leftTitle": "Instant updates",
+      "rightTitle": "Slower updates",
+      "leftDesc": "HMR is extremely fast due to native ESM and optimized updates.",
+      "rightDesc": "HMR can be slower, especially in larger projects, due to the bundling process.",
+      "leftIcon": "Activity",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Real-time",
+      "rightVisualText": "Rebuild"
+    },
+    {
+      "title": "5. PLUGIN ECOSYSTEM",
+      "leftTitle": "Growing fast",
+      "rightTitle": "Mature & vast",
+      "leftDesc": "Actively developing ecosystem, with Vite-specific plugins and Rollup compatibility.",
+      "rightDesc": "Vast and mature ecosystem of loaders and plugins for almost any task.",
+      "leftIcon": "Code",
+      "rightIcon": "Globe",
+      "leftVisualText": "New",
+      "rightVisualText": "Established"
+    },
+    {
+      "title": "6. DEVELOPMENT SERVER",
+      "leftTitle": "Lightweight",
+      "rightTitle": "Feature-rich",
+      "leftDesc": "Extremely fast and lightweight dev server built on native ESM.",
+      "rightDesc": "Robust dev server with many built-in features and extensive customization.",
+      "leftIcon": "Box",
+      "rightIcon": "Server",
+      "leftVisualText": "Lean",
+      "rightVisualText": "Full"
+    },
+    {
+      "title": "7. USE CASE",
+      "leftTitle": "Modern apps",
+      "rightTitle": "Legacy & complex",
+      "leftDesc": "Ideal for modern SPAs, libraries, and projects prioritizing dev speed.",
+      "rightDesc": "Suitable for complex enterprise apps, legacy projects, and fine-grained control.",
+      "leftIcon": "Layout",
+      "rightIcon": "FileCode",
+      "leftVisualText": "Speedy",
+      "rightVisualText": "Control"
     }
   ]
 }

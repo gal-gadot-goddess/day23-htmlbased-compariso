@@ -31,5 +31,6 @@
   "Tailwind CSS vs Bootstrap",
   "Serverless vs Containers",
   "Server Components vs Client Components",
-  "SolidJS vs Qwik"
+  "SolidJS vs Qwik",
+  "Vite vs Webpack"
 ]
