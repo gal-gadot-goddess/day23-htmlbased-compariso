@@ -32,5 +32,6 @@
   "Serverless vs Containers",
   "Server Components vs Client Components",
   "SolidJS vs Qwik",
-  "Vite vs Webpack"
+  "Vite vs Webpack",
+  "Kafka vs RabbitMQ"
 ]
