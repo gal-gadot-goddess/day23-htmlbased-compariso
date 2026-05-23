@@ -1,92 +1,92 @@
 {
-  "topLabel": "WEB DEVELOPMENT",
+  "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "Astro",
-    "right": "Next.js",
+    "left": "Server Components",
+    "right": "Client Components",
     "vs": "vs"
   },
-  "leftSub": "Content-first web",
-  "rightSub": "Full-stack web",
-  "leftColor": "#FF5733",
-  "rightColor": "#33FF57",
+  "leftSub": "Rendered on server",
+  "rightSub": "Rendered in browser",
+  "leftColor": "#4299e1",
+  "rightColor": "#f59e0b",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. PERFORMANCE",
-      "leftTitle": "Zero JS default",
-      "rightTitle": "Hydration by default",
-      "leftDesc": "Astro ships zero JavaScript to the client by default, enhancing initial load times significantly.",
-      "rightDesc": "Next.js hydrates components on the client, which can impact initial load performance.",
-      "leftIcon": "Zap",
-      "rightIcon": "Layers",
-      "leftVisualText": "Fast Load",
-      "rightVisualText": "Interactive"
+      "title": "1. INITIAL LOAD",
+      "leftTitle": "Faster initial load",
+      "rightTitle": "Slower initial load",
+      "leftDesc": "Components render on the server, sending only HTML/text to the browser.",
+      "rightDesc": "Components send JS to the browser, then render, increasing load time.",
+      "leftIcon": "Server",
+      "rightIcon": "Terminal",
+      "leftVisualText": "HTML",
+      "rightVisualText": "JS"
     },
     {
-      "title": "2. ARCHITECTURE",
-      "leftTitle": "Islands Architecture",
-      "rightTitle": "App Router / Pages",
-      "leftDesc": "Astro uses Islands Architecture for selective hydration, loading components independently.",
-      "rightDesc": "Next.js offers flexible routing with App Router or Pages, and Server Components.",
-      "leftIcon": "Box",
-      "rightIcon": "Layout",
-      "leftVisualText": "Isolated",
-      "rightVisualText": "Integrated"
-    },
-    {
-      "title": "3. CONTENT SITES",
-      "leftTitle": "Content Optimized",
-      "rightTitle": "General Purpose",
-      "leftDesc": "Astro excels for content-heavy sites like blogs and marketing pages, prioritizing speed.",
-      "rightDesc": "Next.js is versatile, suitable for dynamic apps and content sites.",
-      "leftIcon": "Globe",
-      "rightIcon": "Server",
-      "leftVisualText": "Blog Ready",
-      "rightVisualText": "App Ready"
-    },
-    {
-      "title": "4. FRAMEWORK CHOICE",
-      "leftTitle": "Any (or none)",
-      "rightTitle": "React focused",
-      "leftDesc": "Astro supports multiple UI frameworks (React, Vue, Svelte) or no framework at all.",
-      "rightDesc": "Next.js is primarily built around React and its ecosystem.",
-      "leftIcon": "Share2",
-      "rightIcon": "Code",
-      "leftVisualText": "Flexible",
-      "rightVisualText": "React-centric"
-    },
-    {
-      "title": "5. SERVER SIDE",
-      "leftTitle": "Server-rendered",
-      "rightTitle": "Full-stack Capable",
-      "leftDesc": "Astro renders on the server, generating static HTML with minimal client-side JS.",
-      "rightDesc": "Next.js offers powerful server-side rendering, API routes, and Server Components.",
-      "leftIcon": "Terminal",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Static Focus",
-      "rightVisualText": "Full Stack"
-    },
-    {
-      "title": "6. DEVELOPMENT",
-      "leftTitle": "Simple & Fast",
-      "rightTitle": "Feature Rich",
-      "leftDesc": "Astro's developer experience is streamlined for content sites and performance.",
-      "rightDesc": "Next.js provides a comprehensive feature set for complex application development.",
-      "leftIcon": "Settings",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Lean Dev",
-      "rightVisualText": "Power Dev"
-    },
-    {
-      "title": "7. USE CASES",
-      "leftTitle": "Marketing Pages",
-      "rightTitle": "Web Applications",
-      "leftDesc": "Ideal for landing pages, blogs, documentation, and e-commerce product pages.",
-      "rightDesc": "Best for complex SPAs, SaaS platforms, and full-stack dynamic applications.",
+      "title": "2. INTERACTIVITY",
+      "leftTitle": "Limited interactivity",
+      "rightTitle": "Full interactivity",
+      "leftDesc": "Can't use browser APIs directly. Ideal for static content or data fetching.",
+      "rightDesc": "Can use browser APIs and event listeners. Perfect for dynamic UIs.",
       "leftIcon": "FileCode",
+      "rightIcon": "Code",
+      "leftVisualText": "Static",
+      "rightVisualText": "Dynamic"
+    },
+    {
+      "title": "3. DATA FETCHING",
+      "leftTitle": "Server-side fetching",
+      "rightTitle": "Client-side fetching",
+      "leftDesc": "Fetch data directly on the server, before sending to the client. No extra requests.",
+      "rightDesc": "Fetch data in the browser after initial load, requiring separate API calls.",
+      "leftIcon": "Database",
+      "rightIcon": "Search",
+      "leftVisualText": "Direct",
+      "rightVisualText": "API"
+    },
+    {
+      "title": "4. BUNDLE SIZE",
+      "leftTitle": "Smaller JS bundles",
+      "rightTitle": "Larger JS bundles",
+      "leftDesc": "Less JavaScript sent to the client, leading to faster parsing and execution.",
+      "rightDesc": "More JavaScript needed in the browser for hydration and interactivity.",
+      "leftIcon": "Layers",
+      "rightIcon": "Box",
+      "leftVisualText": "Lean",
+      "rightVisualText": "Heavy"
+    },
+    {
+      "title": "5. SECURITY",
+      "leftTitle": "Enhanced security",
+      "rightTitle": "Browser-based",
+      "leftDesc": "Sensitive logic and secrets remain on the server, reducing exposure.",
+      "rightDesc": "Logic runs in the user's browser, potentially exposing sensitive information.",
+      "leftIcon": "Lock",
+      "rightIcon": "Unlock",
+      "leftVisualText": "Secure",
+      "rightVisualText": "Exposed"
+    },
+    {
+      "title": "6. REUSABILITY",
+      "leftTitle": "Server-centric reuse",
+      "rightTitle": "Client-centric reuse",
+      "leftDesc": "Components can be shared between server and edge environments for consistent rendering.",
+      "rightDesc": "Components are designed to run and interact within the browser environment.",
+      "leftIcon": "Globe",
       "rightIcon": "Network",
-      "leftVisualText": "Static Content",
-      "rightVisualText": "Dynamic Apps"
+      "leftVisualText": "Universal",
+      "rightVisualText": "Browser"
+    },
+    {
+      "title": "7. STATE MANAGEMENT",
+      "leftTitle": "Simplified state",
+      "rightTitle": "Complex state",
+      "leftDesc": "State is often managed server-side or passed down, reducing client complexity.",
+      "rightDesc": "Requires robust client-side state management for dynamic interactions.",
+      "leftIcon": "Settings",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Minimal",
+      "rightVisualText": "Advanced"
     }
   ]
 }

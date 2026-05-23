@@ -34,5 +34,6 @@
   "SolidJS vs Qwik",
   "Vite vs Webpack",
   "Kafka vs RabbitMQ",
-  "Astro vs Next.js"
+  "Astro vs Next.js",
+  "Server Components vs Client Components"
 ]
