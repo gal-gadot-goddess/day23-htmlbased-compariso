@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRAMEWORKS",
+  "topLabel": "FRONTEND FRAMEWORKS",
   "mainTitle": {
-    "left": "Nuxt.js",
-    "right": "Next.js",
+    "left": "React",
+    "right": "SolidJS",
     "vs": "vs"
   },
-  "leftSub": "Vue.js Focused",
-  "rightSub": "React Focused",
-  "leftColor": "#41B883",
-  "rightColor": "#0070F3",
+  "leftSub": "Component-based library",
+  "rightSub": "Reactivity compiler",
+  "leftColor": "#61DAFB",
+  "rightColor": "#00A670",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. Ecosystem",
-      "leftTitle": "Vue.js Native",
-      "rightTitle": "React Native",
-      "leftDesc": "Leverages Vue.js ecosystem and libraries for comprehensive solutions.",
-      "rightDesc": "Built around React, integrating seamlessly with its vast ecosystem.",
-      "leftIcon": "Code",
-      "rightIcon": "Code",
-      "leftVisualText": "Vue",
-      "rightVisualText": "React"
-    },
-    {
-      "title": "2. Routing",
-      "leftTitle": "File-based",
-      "rightTitle": "File-based",
-      "leftDesc": "Automatic routing based on file structure in the `pages` directory.",
-      "rightDesc": "Automatic routing via file structure in the `pages` directory.",
-      "leftIcon": "Layout",
-      "rightIcon": "Layout",
-      "leftVisualText": "Pages",
-      "rightVisualText": "Pages"
-    },
-    {
-      "title": "3. State Management",
-      "leftTitle": "Pinia/Vuex",
-      "rightTitle": "Context/Zustand",
-      "leftDesc": "Integrates well with Vue's official Pinia or Vuex for state.",
-      "rightDesc": "Uses React Context API or popular libraries like Zustand.",
+      "title": "1. RENDERING APPROACH",
+      "leftTitle": "Virtual DOM",
+      "rightTitle": "Fine-grained reactivity",
+      "leftDesc": "React uses a Virtual DOM for efficient updates.",
+      "rightDesc": "SolidJS compiles JSX to direct DOM updates without a Virtual DOM.",
       "leftIcon": "Layers",
       "rightIcon": "Layers",
-      "leftVisualText": "Vue State",
-      "rightVisualText": "React State"
+      "leftVisualText": "VDOM",
+      "rightVisualText": "Direct DOM"
     },
     {
-      "title": "4. Server-Side Rendering (SSR)",
-      "leftTitle": "Flexible Options",
-      "rightTitle": "Built-in SSR",
-      "leftDesc": "Offers multiple SSR modes, including static generation and hybrid.",
-      "rightDesc": "Robust built-in SSR and static site generation capabilities.",
+      "title": "2. REACTIVITY MODEL",
+      "leftTitle": "State updates",
+      "rightTitle": "Signals",
+      "leftDesc": "State changes trigger re-renders of components.",
+      "rightDesc": "Signals track dependencies for precise updates.",
+      "leftIcon": "Settings",
+      "rightIcon": "Settings",
+      "leftVisualText": "Renders",
+      "rightVisualText": "Signals"
+    },
+    {
+      "title": "3. PERFORMANCE",
+      "leftTitle": "Generally fast",
+      "rightTitle": "Exceptional speed",
+      "leftDesc": "React offers good performance with optimizations.",
+      "rightDesc": "SolidJS is often faster due to its compilation and reactivity.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Good",
+      "rightVisualText": "Best"
+    },
+    {
+      "title": "4. BUNDLE SIZE",
+      "leftTitle": "Larger runtime",
+      "rightTitle": "Smaller runtime",
+      "leftDesc": "React's runtime adds to the bundle size.",
+      "rightDesc": "SolidJS has a minimal runtime, resulting in smaller bundles.",
+      "leftIcon": "Box",
+      "rightIcon": "Box",
+      "leftVisualText": "Bigger",
+      "rightVisualText": "Smaller"
+    },
+    {
+      "title": "5. LEARNING CURVE",
+      "leftTitle": "Familiar JSX",
+      "rightTitle": "New concepts",
+      "leftDesc": "Familiar JSX syntax, but learning React concepts.",
+      "rightDesc": "Requires understanding signals and reactivity principles.",
+      "leftIcon": "Code",
+      "rightIcon": "Code",
+      "leftVisualText": "JSX",
+      "rightVisualText": "Signals"
+    },
+    {
+      "title": "6. SERVER SIDE RENDERING",
+      "leftTitle": "Mature support",
+      "rightTitle": "SolidStart framework",
+      "leftDesc": "Robust SSR with frameworks like Next.js.",
+      "rightDesc": "SSR available via the SolidStart meta-framework.",
       "leftIcon": "Server",
       "rightIcon": "Server",
-      "leftVisualText": "Nuxt SSR",
-      "rightVisualText": "Next SSR"
+      "leftVisualText": "Next.js",
+      "rightVisualText": "SolidStart"
     },
     {
-      "title": "5. Data Fetching",
-      "leftTitle": "Unique Hooks",
-      "rightTitle": "Standard Methods",
-      "leftDesc": "Provides dedicated data fetching hooks like `useFetch`.",
-      "rightDesc": "Uses `getServerSideProps` and `getStaticProps` methods.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Nuxt Fetch",
-      "rightVisualText": "Next Fetch"
-    },
-    {
-      "title": "6. Templating",
-      "leftTitle": "Vue SFCs",
-      "rightTitle": "JSX/TSX",
-      "leftDesc": "Uses Single File Components (.vue) with HTML-based templates.",
-      "rightDesc": "Primarily uses JSX or TSX for component structure.",
-      "leftIcon": "FileCode",
-      "rightIcon": "FileCode",
-      "leftVisualText": ".vue",
-      "rightVisualText": ".jsx"
-    },
-    {
-      "title": "7. Community & Adoption",
-      "leftTitle": "Strong Vue Base",
-      "rightTitle": "Largest React",
-      "leftDesc": "Benefits from the growing and dedicated Vue.js community.",
-      "rightDesc": "Backed by the massive and widely adopted React ecosystem.",
+      "title": "7. ECOSYSTEM & COMMUNITY",
+      "leftTitle": "Vast community",
+      "rightTitle": "Growing community",
+      "leftDesc": "Huge ecosystem, many libraries and developers.",
+      "rightDesc": "Smaller but active and rapidly expanding community.",
       "leftIcon": "Globe",
       "rightIcon": "Globe",
-      "leftVisualText": "Vue Devs",
-      "rightVisualText": "React Devs"
+      "leftVisualText": "Large",
+      "rightVisualText": "Growing"
     }
   ]
 }
