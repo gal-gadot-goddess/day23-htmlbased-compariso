@@ -1,92 +1,92 @@
 {
-  "topLabel": "DATABASE ARCHITECTURE",
+  "topLabel": "AI FRAMEWORKS",
   "mainTitle": {
-    "left": "PostgreSQL",
-    "right": "MongoDB",
+    "left": "PyTorch",
+    "right": "TensorFlow",
     "vs": "vs"
   },
-  "leftSub": "Relational, Structured Data",
-  "rightSub": "Document, Flexible Schema",
-  "leftColor": "#007bff",
-  "rightColor": "#4CAF50",
+  "leftSub": "Dynamic, Pythonic, Flexible",
+  "rightSub": "Static, Production, Robust",
+  "leftColor": "#EE4C2C",
+  "rightColor": "#FF6F00",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DATA MODEL",
-      "leftTitle": "Tables and Rows",
-      "rightTitle": "Documents and Collections",
-      "leftDesc": "Organized into predefined tables with fixed schemas.",
-      "rightDesc": "Flexible JSON-like documents within collections.",
-      "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "Structured",
-      "rightVisualText": "Flexible"
+      "title": "1. GRAPH DEFINITION",
+      "leftTitle": "Dynamic Graphs",
+      "rightTitle": "Static Graphs",
+      "leftDesc": "Define graphs on-the-fly during execution for easier debugging.",
+      "rightDesc": "Define graphs first, then execute for optimization and deployment.",
+      "leftIcon": "Code",
+      "rightIcon": "FileCode",
+      "leftVisualText": "Define-Run",
+      "rightVisualText": "Define-Then-Run"
     },
     {
-      "title": "2. SCHEMA",
-      "leftTitle": "Strict Schema",
-      "rightTitle": "Dynamic Schema",
-      "leftDesc": "Schema must be defined before data insertion.",
-      "rightDesc": "Schema can evolve easily, no predefined structure.",
-      "leftIcon": "Lock",
-      "rightIcon": "Unlock",
-      "leftVisualText": "Rigid",
-      "rightVisualText": "Adaptive"
-    },
-    {
-      "title": "3. QUERY LANGUAGE",
-      "leftTitle": "SQL",
-      "rightTitle": "MongoDB Query Language",
-      "leftDesc": "Standardized, powerful SQL for complex queries and joins.",
-      "rightDesc": "JSON-based queries, optimized for document retrieval.",
-      "leftIcon": "Search",
+      "title": "2. EASE OF USE",
+      "leftTitle": "More Pythonic",
+      "rightTitle": "Steeper Curve",
+      "leftDesc": "Feels more like native Python, easier for beginners.",
+      "rightDesc": "Requires learning TensorFlow's specific API and concepts.",
+      "leftIcon": "Terminal",
       "rightIcon": "Search",
-      "leftVisualText": "SQL Power",
-      "rightVisualText": "JSON Style"
+      "leftVisualText": "Pythonic Feel",
+      "rightVisualText": "Framework Specific"
     },
     {
-      "title": "4. SCALABILITY",
-      "leftTitle": "Vertical Scaling",
-      "rightTitle": "Horizontal Scaling",
-      "leftDesc": "Primarily scales by increasing server resources (CPU, RAM).",
-      "rightDesc": "Scales out by adding more servers to the cluster.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Server",
-      "leftVisualText": "Scale Up",
-      "rightVisualText": "Scale Out"
-    },
-    {
-      "title": "5. ACID COMPLIANCE",
-      "leftTitle": "Strong ACID",
-      "rightTitle": "Tunable ACID",
-      "leftDesc": "Ensures Atomicity, Consistency, Isolation, Durability for transactions.",
-      "rightDesc": "Offers ACID compliance but often relaxed for performance.",
-      "leftIcon": "Shield",
-      "rightIcon": "Shield",
-      "leftVisualText": "Guaranteed",
-      "rightVisualText": "Flexible"
-    },
-    {
-      "title": "6. USE CASES",
-      "leftTitle": "Complex Relations",
-      "rightTitle": "Unstructured Data",
-      "leftDesc": "Ideal for financial systems, CRM, and applications with complex relationships.",
-      "rightDesc": "Best for content management, catalogs, and rapidly changing data.",
-      "leftIcon": "Network",
-      "rightIcon": "Globe",
-      "leftVisualText": "Structured Apps",
-      "rightVisualText": "Dynamic Apps"
-    },
-    {
-      "title": "7. DATA INTEGRITY",
-      "leftTitle": "High Integrity",
-      "rightTitle": "Flexible Integrity",
-      "leftDesc": "Enforces data integrity through constraints and relationships.",
-      "rightDesc": "Integrity managed more at the application level.",
-      "leftIcon": "HardDrive",
+      "title": "3. PRODUCTION DEPLOYMENT",
+      "leftTitle": "Developing",
+      "rightTitle": "Mature",
+      "leftDesc": "Gaining traction, but deployment tools are evolving.",
+      "rightDesc": "Extensive ecosystem for production deployment (TF Serving, Lite).",
+      "leftIcon": "Server",
       "rightIcon": "HardDrive",
-      "leftVisualText": "Enforced",
-      "rightVisualText": "Application-Managed"
+      "leftVisualText": "Growing",
+      "rightVisualText": "Production Ready"
+    },
+    {
+      "title": "4. COMMUNITY SUPPORT",
+      "leftTitle": "Strong Academia",
+      "rightTitle": "Industry Giant",
+      "leftDesc": "Popular in research and academia, vibrant community.",
+      "rightDesc": "Backed by Google, massive industry adoption and resources.",
+      "leftIcon": "Globe",
+      "rightIcon": "Layers",
+      "leftVisualText": "Research Hub",
+      "rightVisualText": "Industry Powerhouse"
+    },
+    {
+      "title": "5. HARDWARE ACCELERATION",
+      "leftTitle": "Broad Support",
+      "rightTitle": "Optimized",
+      "leftDesc": "Supports various hardware including GPUs and TPUs.",
+      "rightDesc": "Excellent optimization for Google's TPUs and broad hardware.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Settings",
+      "leftVisualText": "Flexible",
+      "rightVisualText": "TPU Focused"
+    },
+    {
+      "title": "6. API STYLE",
+      "leftTitle": "Imperative",
+      "rightTitle": "Declarative",
+      "leftDesc": "Code executes immediately, step-by-step control.",
+      "rightDesc": "Define computation first, then execute.",
+      "leftIcon": "Zap",
+      "rightIcon": "Box",
+      "leftVisualText": "Run Now",
+      "rightVisualText": "Build First"
+    },
+    {
+      "title": "7. MODEL SHARING",
+      "leftTitle": "Torch Hub",
+      "rightTitle": "TF Hub",
+      "leftDesc": "Centralized place for pre-trained models and utilities.",
+      "rightDesc": "Comprehensive repository for shared models and datasets.",
+      "leftIcon": "Share2",
+      "rightIcon": "Share2",
+      "leftVisualText": "Community Models",
+      "rightVisualText": "Official Models"
     }
   ]
 }
