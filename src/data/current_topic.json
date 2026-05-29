@@ -1,92 +1,92 @@
 {
-  "topLabel": "AI FRAMEWORKS",
+  "topLabel": "WEB DEVELOPMENT",
   "mainTitle": {
-    "left": "PyTorch",
-    "right": "TensorFlow",
+    "left": "Vite",
+    "right": "Webpack",
     "vs": "vs"
   },
-  "leftSub": "Dynamic, Pythonic, Flexible",
-  "rightSub": "Static, Production, Robust",
-  "leftColor": "#EE4C2C",
-  "rightColor": "#FF6F00",
+  "leftSub": "Next-Gen Bundler",
+  "rightSub": "Established Bundler",
+  "leftColor": "#42b883",
+  "rightColor": "#8dd6f9",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. GRAPH DEFINITION",
-      "leftTitle": "Dynamic Graphs",
-      "rightTitle": "Static Graphs",
-      "leftDesc": "Define graphs on-the-fly during execution for easier debugging.",
-      "rightDesc": "Define graphs first, then execute for optimization and deployment.",
-      "leftIcon": "Code",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Define-Run",
-      "rightVisualText": "Define-Then-Run"
-    },
-    {
-      "title": "2. EASE OF USE",
-      "leftTitle": "More Pythonic",
-      "rightTitle": "Steeper Curve",
-      "leftDesc": "Feels more like native Python, easier for beginners.",
-      "rightDesc": "Requires learning TensorFlow's specific API and concepts.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Search",
-      "leftVisualText": "Pythonic Feel",
-      "rightVisualText": "Framework Specific"
-    },
-    {
-      "title": "3. PRODUCTION DEPLOYMENT",
-      "leftTitle": "Developing",
-      "rightTitle": "Mature",
-      "leftDesc": "Gaining traction, but deployment tools are evolving.",
-      "rightDesc": "Extensive ecosystem for production deployment (TF Serving, Lite).",
+      "title": "1. DEVELOPMENT SERVER",
+      "leftTitle": "Native ESM",
+      "rightTitle": "Bundled",
+      "leftDesc": "Leverages native browser ESM for instant server start.",
+      "rightDesc": "Bundles code before serving, leading to slower starts.",
       "leftIcon": "Server",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Growing",
-      "rightVisualText": "Production Ready"
+      "rightIcon": "Server",
+      "leftVisualText": "⚡️ Fast Start",
+      "rightVisualText": "🐌 Slower Start"
     },
     {
-      "title": "4. COMMUNITY SUPPORT",
-      "leftTitle": "Strong Academia",
-      "rightTitle": "Industry Giant",
-      "leftDesc": "Popular in research and academia, vibrant community.",
-      "rightDesc": "Backed by Google, massive industry adoption and resources.",
-      "leftIcon": "Globe",
-      "rightIcon": "Layers",
-      "leftVisualText": "Research Hub",
-      "rightVisualText": "Industry Powerhouse"
-    },
-    {
-      "title": "5. HARDWARE ACCELERATION",
-      "leftTitle": "Broad Support",
-      "rightTitle": "Optimized",
-      "leftDesc": "Supports various hardware including GPUs and TPUs.",
-      "rightDesc": "Excellent optimization for Google's TPUs and broad hardware.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Settings",
-      "leftVisualText": "Flexible",
-      "rightVisualText": "TPU Focused"
-    },
-    {
-      "title": "6. API STYLE",
-      "leftTitle": "Imperative",
-      "rightTitle": "Declarative",
-      "leftDesc": "Code executes immediately, step-by-step control.",
-      "rightDesc": "Define computation first, then execute.",
+      "title": "2. BUILD SPEED",
+      "leftTitle": "Blazing Fast",
+      "rightTitle": "Slower",
+      "leftDesc": "Significantly faster build times due to esbuild.",
+      "rightDesc": "Can be slow for large projects with complex configurations.",
       "leftIcon": "Zap",
-      "rightIcon": "Box",
-      "leftVisualText": "Run Now",
-      "rightVisualText": "Build First"
+      "rightIcon": "Clock",
+      "leftVisualText": "🚀 Rocket Speed",
+      "rightVisualText": "⏳ Extended Wait"
     },
     {
-      "title": "7. MODEL SHARING",
-      "leftTitle": "Torch Hub",
-      "rightTitle": "TF Hub",
-      "leftDesc": "Centralized place for pre-trained models and utilities.",
-      "rightDesc": "Comprehensive repository for shared models and datasets.",
-      "leftIcon": "Share2",
-      "rightIcon": "Share2",
-      "leftVisualText": "Community Models",
-      "rightVisualText": "Official Models"
+      "title": "3. DEPENDENCY HANDLING",
+      "leftTitle": "Pre-Bundling",
+      "rightTitle": "Full Bundling",
+      "leftDesc": "Pre-bundles dependencies with esbuild on first run.",
+      "rightDesc": "Bundles all project code and dependencies together.",
+      "leftIcon": "Box",
+      "rightIcon": "Layers",
+      "leftVisualText": "📦 Optimized",
+      "rightVisualText": "🗂️ All-in-One"
+    },
+    {
+      "title": "4. CONFIGURATION",
+      "leftTitle": "Minimal",
+      "rightTitle": "Extensive",
+      "leftDesc": "Simple and opinionated configuration, often works out-of-the-box.",
+      "rightDesc": "Highly configurable but can be complex to set up.",
+      "leftIcon": "Settings",
+      "rightIcon": "Settings",
+      "leftVisualText": "✅ Easy Setup",
+      "rightVisualText": "⚙️ Complex Setup"
+    },
+    {
+      "title": "5. HOT MODULE REPLACEMENT (HMR)",
+      "leftTitle": "Native ESM HMR",
+      "rightTitle": "Custom HMR",
+      "leftDesc": "Leverages native ESM for faster HMR updates.",
+      "rightDesc": "Requires custom implementation for HMR.",
+      "leftIcon": "Terminal",
+      "rightIcon": "Terminal",
+      "leftVisualText": "⚡️ Instant Updates",
+      "rightVisualText": "🔄 Delayed Updates"
+    },
+    {
+      "title": "6. ECOSYSTEM",
+      "leftTitle": "Growing",
+      "rightTitle": "Mature",
+      "leftDesc": "Rapidly growing ecosystem and community support.",
+      "rightDesc": "Vast ecosystem, extensive plugins, and long-standing community.",
+      "leftIcon": "Globe",
+      "rightIcon": "Globe",
+      "leftVisualText": "🌟 Emerging",
+      "rightVisualText": "🏛️ Established"
+    },
+    {
+      "title": "7. PLUGINS",
+      "leftTitle": "Rollup Based",
+      "rightTitle": "Webpack Plugins",
+      "leftDesc": "Uses Rollup for plugin system, supporting existing Rollup plugins.",
+      "rightDesc": "Has a dedicated and extensive plugin API.",
+      "leftIcon": "Code",
+      "rightIcon": "Code",
+      "leftVisualText": "🧩 Flexible",
+      "rightVisualText": "🛠️ Powerful"
     }
   ]
 }
