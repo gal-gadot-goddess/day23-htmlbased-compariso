@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND ARCHITECTURE",
+  "topLabel": "FRAMEWORKS",
   "mainTitle": {
-    "left": "Next.js",
-    "right": "Remix",
+    "left": "Astro",
+    "right": "Next.js",
     "vs": "vs"
   },
-  "leftSub": "React Framework",
-  "rightSub": "Web Framework",
-  "leftColor": "#007acc",
-  "rightColor": "#b00050",
+  "leftSub": "Content-first Web",
+  "rightSub": "Full-stack React",
+  "leftColor": "#F98000",
+  "rightColor": "#0070F3",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DATA FETCHING",
-      "leftTitle": "getServerSideProps/getStaticProps",
-      "rightTitle": "Loader functions",
-      "leftDesc": "Pages export data fetching functions; pre-rendering focus.",
-      "rightDesc": "Routes export loaders; runs on server or client.",
-      "leftIcon": "Server",
-      "rightIcon": "Server",
-      "leftVisualText": "Page-based",
-      "rightVisualText": "Route-based"
-    },
-    {
-      "title": "2. RENDERING",
-      "leftTitle": "Hybrid Rendering",
-      "rightTitle": "Server-centric",
-      "leftDesc": "Supports SSR, SSG, ISR, and client-side rendering.",
-      "rightDesc": "Primarily SSR, dynamic server rendering.",
+      "title": "1. ARCHITECTURE",
+      "leftTitle": "Islands Architecture",
+      "rightTitle": "React App Router",
+      "leftDesc": "Hydrates components on demand. Ships minimal JS.",
+      "rightDesc": "Server-rendered React components. Hydrates fully.",
       "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "Flexible",
-      "rightVisualText": "Server-first"
-    },
-    {
-      "title": "3. ROUTING",
-      "leftTitle": "File-system based",
-      "rightTitle": "File-system based",
-      "leftDesc": "Pages directory dictates routes. App Router adds more.",
-      "rightDesc": "Routes directory dictates routes. Dynamic segments supported.",
-      "leftIcon": "Layout",
-      "rightIcon": "Layout",
-      "leftVisualText": "Pages/App",
-      "rightVisualText": "Routes"
-    },
-    {
-      "title": "4. DATA MUTATIONS",
-      "leftTitle": "API Routes/Server Actions",
-      "rightTitle": "Form actions",
-      "leftDesc": "Separate API routes or integrated Server Actions.",
-      "rightDesc": "Built-in form handling and mutations.",
-      "leftIcon": "ArrowRightLeft",
-      "rightIcon": "ArrowRightLeft",
-      "leftVisualText": "API/Actions",
-      "rightVisualText": "Forms"
-    },
-    {
-      "title": "5. CODE SPLITTING",
-      "leftTitle": "Automatic",
-      "rightTitle": "Automatic",
-      "leftDesc": "Splits based on pages/routes for efficient loading.",
-      "rightDesc": "Splits code based on routes and dynamic imports.",
-      "leftIcon": "Code",
-      "rightIcon": "Code",
-      "leftVisualText": "Per Page",
-      "rightVisualText": "Per Route"
-    },
-    {
-      "title": "6. STYLING",
-      "leftTitle": "Flexible Options",
-      "rightTitle": "CSS Modules/Import",
-      "leftDesc": "Supports CSS Modules, Tailwind, Styled Components, etc.",
-      "rightDesc": "Prefers CSS Modules, global CSS, and style imports.",
-      "leftIcon": "FileCode",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Any Style",
-      "rightVisualText": "CSS Native"
-    },
-    {
-      "title": "7. DEPLOYMENT",
-      "leftTitle": "Vercel Optimized",
-      "rightTitle": "Any Node.js Server",
-      "leftDesc": "Excellent integration with Vercel, but versatile.",
-      "rightDesc": "Deploy to any Node.js-compatible server.",
-      "leftIcon": "Server",
       "rightIcon": "Server",
-      "leftVisualText": "Vercel/Any",
-      "rightVisualText": "Node.js"
+      "leftVisualText": "On-demand JS",
+      "rightVisualText": "Full Hydration"
+    },
+    {
+      "title": "2. CONTENT FOCUS",
+      "leftTitle": "Static First",
+      "rightTitle": "Dynamic First",
+      "leftDesc": "Optimized for static sites & content.",
+      "rightDesc": "Built for dynamic applications.",
+      "leftIcon": "FileCode",
+      "rightIcon": "Code",
+      "leftVisualText": "Content Sites",
+      "rightVisualText": "Web Apps"
+    },
+    {
+      "title": "3. CLIENT JS",
+      "leftTitle": "Minimal by default",
+      "rightTitle": "Full JS bundle",
+      "leftDesc": "Little to no client-side JavaScript required.",
+      "rightDesc": "Leverages React's full JavaScript ecosystem.",
+      "leftIcon": "Zap",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Less JS",
+      "rightVisualText": "More JS"
+    },
+    {
+      "title": "4. DATA FETCHING",
+      "leftTitle": "Multiple strategies",
+      "rightTitle": "Server-centric",
+      "leftDesc": "Fetch data at build time or on request.",
+      "rightDesc": "Primarily fetches data on the server.",
+      "leftIcon": "Search",
+      "rightIcon": "Server",
+      "leftVisualText": "Flexible Fetch",
+      "rightVisualText": "Server Fetch"
+    },
+    {
+      "title": "5. COMPONENT FRAMEWORKS",
+      "leftTitle": "Framework Agnostic",
+      "rightTitle": "React Exclusive",
+      "leftDesc": "Supports React, Vue, Preact, and more.",
+      "rightDesc": "Strictly built around React components.",
+      "leftIcon": "Share2",
+      "rightIcon": "Code",
+      "leftVisualText": "Any UI Lib",
+      "rightVisualText": "React Only"
+    },
+    {
+      "title": "6. PERFORMANCE",
+      "leftTitle": "Ultra Fast",
+      "rightTitle": "Very Fast",
+      "leftDesc": "Zero JS shipped by default for static content.",
+      "rightDesc": "Server rendering enhances initial load times.",
+      "leftIcon": "Activity",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Zero JS",
+      "rightVisualText": "SSR Speed"
+    },
+    {
+      "title": "7. USE CASES",
+      "leftTitle": "Blogs, Docs, Marketing",
+      "rightTitle": "Complex Apps, Dashboards",
+      "leftDesc": "Ideal for content-heavy static websites.",
+      "rightDesc": "Suits highly interactive and dynamic applications.",
+      "leftIcon": "Globe",
+      "rightIcon": "Layout",
+      "leftVisualText": "Static Content",
+      "rightVisualText": "Dynamic Apps"
     }
   ]
 }
