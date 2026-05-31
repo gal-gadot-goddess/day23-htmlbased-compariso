@@ -1,92 +1,92 @@
 {
-  "topLabel": "STATE MANAGEMENT",
+  "topLabel": "DATABASE ARCHITECTURE",
   "mainTitle": {
-    "left": "Zustand",
-    "right": "Redux",
+    "left": "Vector DB",
+    "right": "Relational DB",
     "vs": "vs"
   },
-  "leftSub": "Simple global state",
-  "rightSub": "Predictable global state",
-  "leftColor": "#3D9970",
-  "rightColor": "#FF4136",
+  "leftSub": "Similarity Search",
+  "rightSub": "Structured Data",
+  "leftColor": "#6A0DAD",
+  "rightColor": "#00CED1",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. Boilerplate",
-      "leftTitle": "Minimal boilerplate",
-      "rightTitle": "Extensive boilerplate",
-      "leftDesc": "Requires very little setup, straight to the point.",
-      "rightDesc": "Involves actions, reducers, and store configuration.",
-      "leftIcon": "Code",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Light",
-      "rightVisualText": "Heavy"
-    },
-    {
-      "title": "2. Learning Curve",
-      "leftTitle": "Gentle learning curve",
-      "rightTitle": "Steeper learning curve",
-      "leftDesc": "Easy to grasp and implement quickly.",
-      "rightDesc": "Requires understanding concepts like immutability and middleware.",
-      "leftIcon": "Search",
+      "title": "1. DATA MODEL",
+      "leftTitle": "High-dimensional vectors",
+      "rightTitle": "Tables and rows",
+      "leftDesc": "Stores data as numerical representations for complex relationships and semantic meaning.",
+      "rightDesc": "Organizes data into predefined tables with fixed schemas and relationships.",
+      "leftIcon": "Layers",
       "rightIcon": "Layers",
-      "leftVisualText": "Easy",
-      "rightVisualText": "Complex"
+      "leftVisualText": "Vectors",
+      "rightVisualText": "Tables"
     },
     {
-      "title": "3. Bundle Size",
-      "leftTitle": "Tiny bundle size",
-      "rightTitle": "Larger bundle size",
-      "leftDesc": "Adds minimal overhead to your application's size.",
-      "rightDesc": "Includes more features, contributing to a larger footprint.",
-      "leftIcon": "Zap",
-      "rightIcon": "Box",
-      "leftVisualText": "Small",
-      "rightVisualText": "Big"
-    },
-    {
-      "title": "4. Dev Tools",
-      "leftTitle": "Basic dev tools",
-      "rightTitle": "Powerful dev tools",
-      "leftDesc": "Offers basic debugging capabilities.",
-      "rightDesc": "Rich debugging with time-travel and action inspection.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Activity",
-      "leftVisualText": "Simple",
-      "rightVisualText": "Advanced"
-    },
-    {
-      "title": "5. Immutability",
-      "leftTitle": "Implicit immutability",
-      "rightTitle": "Explicit immutability",
-      "leftDesc": "Mutations are allowed, managed by its own hooks.",
-      "rightDesc": "Requires strict adherence to immutable updates.",
-      "leftIcon": "Unlock",
-      "rightIcon": "Lock",
-      "leftVisualText": "Flexible",
-      "rightVisualText": "Strict"
-    },
-    {
-      "title": "6. Middleware",
-      "leftTitle": "No built-in middleware",
-      "rightTitle": "Extensible middleware",
-      "leftDesc": "External libraries needed for async operations.",
-      "rightDesc": "Supports middleware for async actions and logging.",
-      "leftIcon": "Network",
-      "rightIcon": "Settings",
-      "leftVisualText": "External",
-      "rightVisualText": "Integrated"
-    },
-    {
-      "title": "7. Use Case",
-      "leftTitle": "Small to medium apps",
-      "rightTitle": "Large complex apps",
-      "leftDesc": "Ideal for projects needing simple global state management.",
-      "rightDesc": "Best for enterprise-level applications with complex state needs.",
-      "leftIcon": "Server",
+      "title": "2. PRIMARY USE CASE",
+      "leftTitle": "AI/ML similarity search",
+      "rightTitle": "Transaction processing",
+      "leftDesc": "Ideal for AI applications like recommendation engines, image/text search, and anomaly detection.",
+      "rightDesc": "Best suited for applications requiring ACID compliance and structured data management.",
+      "leftIcon": "Search",
       "rightIcon": "HardDrive",
-      "leftVisualText": "Simple",
-      "rightVisualText": "Robust"
+      "leftVisualText": "AI Search",
+      "rightVisualText": "Transactions"
+    },
+    {
+      "title": "3. QUERYING",
+      "leftTitle": "Approximate Nearest Neighbor",
+      "rightTitle": "SQL queries",
+      "leftDesc": "Efficiently finds items similar to a query vector, not exact matches.",
+      "rightDesc": "Precisely retrieves data based on structured query language and exact conditions.",
+      "leftIcon": "Network",
+      "rightIcon": "Code",
+      "leftVisualText": "Approximate",
+      "rightVisualText": "Exact"
+    },
+    {
+      "title": "4. SCALABILITY",
+      "leftTitle": "High for embeddings",
+      "rightTitle": "Mature scaling",
+      "leftDesc": "Scales well for large numbers of high-dimensional vector data and concurrent queries.",
+      "rightDesc": "Well-established methods for scaling, but can be complex for massive datasets.",
+      "leftIcon": "Server",
+      "rightIcon": "Server",
+      "leftVisualText": "Embeddings",
+      "rightVisualText": "Structured"
+    },
+    {
+      "title": "5. PERFORMANCE",
+      "leftTitle": "Fast similarity retrieval",
+      "rightTitle": "Complex joins",
+      "leftDesc": "Optimized for rapid retrieval of similar items from vast amounts of vector data.",
+      "rightDesc": "Excellent for complex data relationships and joins but can be slower for unstructured data.",
+      "leftIcon": "Zap",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Similarity",
+      "rightVisualText": "Joins"
+    },
+    {
+      "title": "6. SCHEMA FLEXIBILITY",
+      "leftTitle": "Flexible schema",
+      "rightTitle": "Strict schema",
+      "leftDesc": "Less rigid schema requirements, accommodating diverse and evolving vector data.",
+      "rightDesc": "Requires predefined schemas, ensuring data integrity and consistency.",
+      "leftIcon": "Settings",
+      "rightIcon": "Lock",
+      "leftVisualText": "Adaptable",
+      "rightVisualText": "Rigid"
+    },
+    {
+      "title": "7. INTEGRATION",
+      "leftTitle": "AI/ML ecosystems",
+      "rightTitle": "Traditional apps",
+      "leftDesc": "Designed to integrate seamlessly with machine learning frameworks and pipelines.",
+      "rightDesc": "Widely integrated into enterprise applications and business intelligence tools.",
+      "leftIcon": "Globe",
+      "rightIcon": "Globe",
+      "leftVisualText": "ML Native",
+      "rightVisualText": "Enterprise"
     }
   ]
 }

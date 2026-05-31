@@ -47,5 +47,6 @@
   "Vite vs Webpack",
   "Next.js vs Remix",
   "Astro vs Next.js",
-  "Zustand vs Redux"
+  "Zustand vs Redux",
+  "Vector DB vs Relational DB"
 ]
