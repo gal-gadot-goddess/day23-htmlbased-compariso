@@ -46,5 +46,6 @@
   "PyTorch vs TensorFlow",
   "Vite vs Webpack",
   "Next.js vs Remix",
-  "Astro vs Next.js"
+  "Astro vs Next.js",
+  "Zustand vs Redux"
 ]
