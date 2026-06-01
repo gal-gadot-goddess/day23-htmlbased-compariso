@@ -1,92 +1,92 @@
 {
-  "topLabel": "DATABASE ARCHITECTURE",
+  "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "Vector DB",
-    "right": "Relational DB",
+    "left": "Vite",
+    "right": "Webpack",
     "vs": "vs"
   },
-  "leftSub": "Similarity Search",
-  "rightSub": "Structured Data",
-  "leftColor": "#6A0DAD",
-  "rightColor": "#00CED1",
+  "leftSub": "Next-Gen Build Tool",
+  "rightSub": "Established Bundler",
+  "leftColor": "#4ECDC4",
+  "rightColor": "#FF6B6B",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DATA MODEL",
-      "leftTitle": "High-dimensional vectors",
-      "rightTitle": "Tables and rows",
-      "leftDesc": "Stores data as numerical representations for complex relationships and semantic meaning.",
-      "rightDesc": "Organizes data into predefined tables with fixed schemas and relationships.",
-      "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "Vectors",
-      "rightVisualText": "Tables"
-    },
-    {
-      "title": "2. PRIMARY USE CASE",
-      "leftTitle": "AI/ML similarity search",
-      "rightTitle": "Transaction processing",
-      "leftDesc": "Ideal for AI applications like recommendation engines, image/text search, and anomaly detection.",
-      "rightDesc": "Best suited for applications requiring ACID compliance and structured data management.",
-      "leftIcon": "Search",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "AI Search",
-      "rightVisualText": "Transactions"
-    },
-    {
-      "title": "3. QUERYING",
-      "leftTitle": "Approximate Nearest Neighbor",
-      "rightTitle": "SQL queries",
-      "leftDesc": "Efficiently finds items similar to a query vector, not exact matches.",
-      "rightDesc": "Precisely retrieves data based on structured query language and exact conditions.",
-      "leftIcon": "Network",
-      "rightIcon": "Code",
-      "leftVisualText": "Approximate",
-      "rightVisualText": "Exact"
-    },
-    {
-      "title": "4. SCALABILITY",
-      "leftTitle": "High for embeddings",
-      "rightTitle": "Mature scaling",
-      "leftDesc": "Scales well for large numbers of high-dimensional vector data and concurrent queries.",
-      "rightDesc": "Well-established methods for scaling, but can be complex for massive datasets.",
+      "title": "1. DEVELOPMENT SERVER",
+      "leftTitle": "Native ESM",
+      "rightTitle": "Bundling",
+      "leftDesc": "Leverages native ES modules for faster cold starts and instant hot updates.",
+      "rightDesc": "Bundles all modules into fewer files, leading to slower initial startup.",
       "leftIcon": "Server",
-      "rightIcon": "Server",
-      "leftVisualText": "Embeddings",
-      "rightVisualText": "Structured"
+      "rightIcon": "Layers",
+      "leftVisualText": "ESM",
+      "rightVisualText": "Bundle"
     },
     {
-      "title": "5. PERFORMANCE",
-      "leftTitle": "Fast similarity retrieval",
-      "rightTitle": "Complex joins",
-      "leftDesc": "Optimized for rapid retrieval of similar items from vast amounts of vector data.",
-      "rightDesc": "Excellent for complex data relationships and joins but can be slower for unstructured data.",
+      "title": "2. BUILD SPEED",
+      "leftTitle": "Lightning Fast",
+      "rightTitle": "Slower",
+      "leftDesc": "Significantly faster build times due to optimized dependency handling and native tooling.",
+      "rightDesc": "Can be slow for large projects due to its complex bundling process.",
       "leftIcon": "Zap",
-      "rightIcon": "Terminal",
-      "leftVisualText": "Similarity",
-      "rightVisualText": "Joins"
+      "rightIcon": "Clock",
+      "leftVisualText": "Fast",
+      "rightVisualText": "Slow"
     },
     {
-      "title": "6. SCHEMA FLEXIBILITY",
-      "leftTitle": "Flexible schema",
-      "rightTitle": "Strict schema",
-      "leftDesc": "Less rigid schema requirements, accommodating diverse and evolving vector data.",
-      "rightDesc": "Requires predefined schemas, ensuring data integrity and consistency.",
+      "title": "3. PLUGIN SYSTEM",
+      "leftTitle": "Rollup Based",
+      "rightTitle": "Custom",
+      "leftDesc": "Uses Rollup for production builds, offering efficient tree-shaking and code-splitting.",
+      "rightDesc": "Extensive and flexible plugin API, but can be complex to manage.",
+      "leftIcon": "Code",
+      "rightIcon": "Settings",
+      "leftVisualText": "Rollup",
+      "rightVisualText": "Custom API"
+    },
+    {
+      "title": "4. DEPENDENCY HANDLING",
+      "leftTitle": "Pre-bundling",
+      "rightTitle": "Full Bundling",
+      "leftDesc": "Pre-bundles dependencies using esbuild for rapid server start.",
+      "rightDesc": "Bundles all project code and dependencies together from the start.",
+      "leftIcon": "Box",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Pre-bundle",
+      "rightVisualText": "Full Bundle"
+    },
+    {
+      "title": "5. CONFIGURATION",
+      "leftTitle": "Minimal",
+      "rightTitle": "Extensive",
+      "leftDesc": "Sensible defaults, often requires minimal configuration.",
+      "rightDesc": "Highly configurable, but can be complex to set up and maintain.",
       "leftIcon": "Settings",
-      "rightIcon": "Lock",
-      "leftVisualText": "Adaptable",
-      "rightVisualText": "Rigid"
+      "rightIcon": "Settings",
+      "leftVisualText": "Simple",
+      "rightVisualText": "Complex"
     },
     {
-      "title": "7. INTEGRATION",
-      "leftTitle": "AI/ML ecosystems",
-      "rightTitle": "Traditional apps",
-      "leftDesc": "Designed to integrate seamlessly with machine learning frameworks and pipelines.",
-      "rightDesc": "Widely integrated into enterprise applications and business intelligence tools.",
+      "title": "6. SUPPORTED FRAMEWORKS",
+      "leftTitle": "Broad",
+      "rightTitle": "Very Broad",
+      "leftDesc": "Excellent support for React, Vue, Preact, Lit, and vanilla JS.",
+      "rightDesc": "Supports almost all frameworks and libraries with appropriate loaders.",
       "leftIcon": "Globe",
       "rightIcon": "Globe",
-      "leftVisualText": "ML Native",
-      "rightVisualText": "Enterprise"
+      "leftVisualText": "Wide",
+      "rightVisualText": "Extensive"
+    },
+    {
+      "title": "7. COMMUNITY & ECOSYSTEM",
+      "leftTitle": "Growing Rapidly",
+      "rightTitle": "Mature & Large",
+      "leftDesc": "Fast-growing community, modern tooling, and active development.",
+      "rightDesc": "Vast, mature ecosystem with extensive documentation and community support.",
+      "leftIcon": "Users",
+      "rightIcon": "Users",
+      "leftVisualText": "New",
+      "rightVisualText": "Established"
     }
   ]
 }

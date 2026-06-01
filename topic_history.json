@@ -1,5 +1,4 @@
 [
-  "Svelte vs Vue.js",
   "Monolithic vs Microservices",
   "React vs Vue.js",
   "Next.js vs Remix",
@@ -48,5 +47,6 @@
   "Next.js vs Remix",
   "Astro vs Next.js",
   "Zustand vs Redux",
-  "Vector DB vs Relational DB"
+  "Vector DB vs Relational DB",
+  "Vite vs Webpack"
 ]
