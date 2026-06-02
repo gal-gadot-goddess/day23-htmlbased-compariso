@@ -1,5 +1,4 @@
 [
-  "Monolithic vs Microservices",
   "React vs Vue.js",
   "Next.js vs Remix",
   "FastAPI vs Django",
@@ -48,5 +47,6 @@
   "Astro vs Next.js",
   "Zustand vs Redux",
   "Vector DB vs Relational DB",
-  "Vite vs Webpack"
+  "Vite vs Webpack",
+  "Zustand vs Jotai"
 ]

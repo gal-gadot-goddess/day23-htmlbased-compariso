@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND ARCHITECTURE",
+  "topLabel": "FRONTEND STATE MANAGEMENT",
   "mainTitle": {
-    "left": "Vite",
-    "right": "Webpack",
+    "left": "Zustand",
+    "right": "Jotai",
     "vs": "vs"
   },
-  "leftSub": "Next-Gen Build Tool",
-  "rightSub": "Established Bundler",
-  "leftColor": "#4ECDC4",
-  "rightColor": "#FF6B6B",
+  "leftSub": "Simple, Scalable State",
+  "rightSub": "Atomic State Primitives",
+  "leftColor": "#5A67D8",
+  "rightColor": "#E53E3E",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DEVELOPMENT SERVER",
-      "leftTitle": "Native ESM",
-      "rightTitle": "Bundling",
-      "leftDesc": "Leverages native ES modules for faster cold starts and instant hot updates.",
-      "rightDesc": "Bundles all modules into fewer files, leading to slower initial startup.",
-      "leftIcon": "Server",
-      "rightIcon": "Layers",
-      "leftVisualText": "ESM",
-      "rightVisualText": "Bundle"
-    },
-    {
-      "title": "2. BUILD SPEED",
-      "leftTitle": "Lightning Fast",
-      "rightTitle": "Slower",
-      "leftDesc": "Significantly faster build times due to optimized dependency handling and native tooling.",
-      "rightDesc": "Can be slow for large projects due to its complex bundling process.",
-      "leftIcon": "Zap",
-      "rightIcon": "Clock",
-      "leftVisualText": "Fast",
-      "rightVisualText": "Slow"
-    },
-    {
-      "title": "3. PLUGIN SYSTEM",
-      "leftTitle": "Rollup Based",
-      "rightTitle": "Custom",
-      "leftDesc": "Uses Rollup for production builds, offering efficient tree-shaking and code-splitting.",
-      "rightDesc": "Extensive and flexible plugin API, but can be complex to manage.",
+      "title": "1. API DESIGN",
+      "leftTitle": "Hook-based API",
+      "rightTitle": "Atom-based API",
+      "leftDesc": "Uses a hook for state access, similar to React's useState.",
+      "rightDesc": "Focuses on small, independent pieces of state called atoms.",
       "leftIcon": "Code",
-      "rightIcon": "Settings",
-      "leftVisualText": "Rollup",
-      "rightVisualText": "Custom API"
+      "rightIcon": "Layers",
+      "leftVisualText": "Hooks",
+      "rightVisualText": "Atoms"
     },
     {
-      "title": "4. DEPENDENCY HANDLING",
-      "leftTitle": "Pre-bundling",
-      "rightTitle": "Full Bundling",
-      "leftDesc": "Pre-bundles dependencies using esbuild for rapid server start.",
-      "rightDesc": "Bundles all project code and dependencies together from the start.",
-      "leftIcon": "Box",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Pre-bundle",
-      "rightVisualText": "Full Bundle"
+      "title": "2. BOILERPLATE",
+      "leftTitle": "Minimal boilerplate",
+      "rightTitle": "Very minimal boilerplate",
+      "leftDesc": "Requires very little setup for basic state management.",
+      "rightDesc": "Achieves extreme simplicity with few lines of code.",
+      "leftIcon": "FileCode",
+      "rightIcon": "FileCode",
+      "leftVisualText": "Less Code",
+      "rightVisualText": "Least Code"
     },
     {
-      "title": "5. CONFIGURATION",
-      "leftTitle": "Minimal",
-      "rightTitle": "Extensive",
-      "leftDesc": "Sensible defaults, often requires minimal configuration.",
-      "rightDesc": "Highly configurable, but can be complex to set up and maintain.",
+      "title": "3. IMMUTABILITY",
+      "leftTitle": "Mutable updates possible",
+      "rightTitle": "Strictly immutable",
+      "leftDesc": "Allows direct mutation in reducers for ease of use.",
+      "rightDesc": "Forces immutable updates for predictable state changes.",
+      "leftIcon": "Unlock",
+      "rightIcon": "Lock",
+      "leftVisualText": "Flexible",
+      "rightVisualText": "Strict"
+    },
+    {
+      "title": "4. SELECTORS",
+      "leftTitle": "Built-in selectors",
+      "rightTitle": "Automatic selectors",
+      "leftDesc": "Includes built-in support for memoized selectors.",
+      "rightDesc": "Selectors are automatically derived from atom dependencies.",
+      "leftIcon": "Search",
+      "rightIcon": "Search",
+      "leftVisualText": "Explicit",
+      "rightVisualText": "Implicit"
+    },
+    {
+      "title": "5. CONCURRENCY",
+      "leftTitle": "React concurrent mode",
+      "rightTitle": "React concurrent mode",
+      "leftDesc": "Designed to work seamlessly with React's concurrent features.",
+      "rightDesc": "Also designed for optimal performance with concurrent rendering.",
+      "leftIcon": "Activity",
+      "rightIcon": "Activity",
+      "leftVisualText": "Concurrent",
+      "rightVisualText": "Concurrent"
+    },
+    {
+      "title": "6. DEBUGGING",
+      "leftTitle": "DevTools integration",
+      "rightTitle": "DevTools integration",
+      "leftDesc": "Can be integrated with Redux DevTools for time-travel debugging.",
+      "rightDesc": "Can also leverage Redux DevTools for inspection.",
       "leftIcon": "Settings",
       "rightIcon": "Settings",
+      "leftVisualText": "Standard",
+      "rightVisualText": "Standard"
+    },
+    {
+      "title": "7. COMPLEXITY",
+      "leftTitle": "Easier for beginners",
+      "rightTitle": "More granular control",
+      "leftDesc": "Lower learning curve due to simpler hook-based abstraction.",
+      "rightDesc": "Provides fine-grained control over state updates.",
+      "leftIcon": "Terminal",
+      "rightIcon": "Terminal",
       "leftVisualText": "Simple",
-      "rightVisualText": "Complex"
-    },
-    {
-      "title": "6. SUPPORTED FRAMEWORKS",
-      "leftTitle": "Broad",
-      "rightTitle": "Very Broad",
-      "leftDesc": "Excellent support for React, Vue, Preact, Lit, and vanilla JS.",
-      "rightDesc": "Supports almost all frameworks and libraries with appropriate loaders.",
-      "leftIcon": "Globe",
-      "rightIcon": "Globe",
-      "leftVisualText": "Wide",
-      "rightVisualText": "Extensive"
-    },
-    {
-      "title": "7. COMMUNITY & ECOSYSTEM",
-      "leftTitle": "Growing Rapidly",
-      "rightTitle": "Mature & Large",
-      "leftDesc": "Fast-growing community, modern tooling, and active development.",
-      "rightDesc": "Vast, mature ecosystem with extensive documentation and community support.",
-      "leftIcon": "Users",
-      "rightIcon": "Users",
-      "leftVisualText": "New",
-      "rightVisualText": "Established"
+      "rightVisualText": "Granular"
     }
   ]
 }
