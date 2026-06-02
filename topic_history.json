@@ -1,5 +1,4 @@
 [
-  "React vs Vue.js",
   "Next.js vs Remix",
   "FastAPI vs Django",
   "PostgreSQL vs MongoDB",
@@ -48,5 +47,6 @@
   "Zustand vs Redux",
   "Vector DB vs Relational DB",
   "Vite vs Webpack",
-  "Zustand vs Jotai"
+  "Zustand vs Jotai",
+  "Server Components vs Client Components"
 ]
