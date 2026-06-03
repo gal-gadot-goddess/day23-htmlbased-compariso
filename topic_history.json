@@ -1,5 +1,4 @@
 [
-  "Next.js vs Remix",
   "FastAPI vs Django",
   "PostgreSQL vs MongoDB",
   "Next.js vs Remix",
@@ -48,5 +47,6 @@
   "Vector DB vs Relational DB",
   "Vite vs Webpack",
   "Zustand vs Jotai",
+  "Server Components vs Client Components",
   "Server Components vs Client Components"
 ]
