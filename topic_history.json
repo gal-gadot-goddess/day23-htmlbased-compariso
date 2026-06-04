@@ -1,5 +1,4 @@
 [
-  "PostgreSQL vs MongoDB",
   "Next.js vs Remix",
   "SolidJS vs Svelte",
   "SolidJS vs Svelte",
@@ -48,5 +47,6 @@
   "Zustand vs Jotai",
   "Server Components vs Client Components",
   "Server Components vs Client Components",
-  "Vite vs Webpack"
+  "Vite vs Webpack",
+  "React Server Components vs React Client Components"
 ]

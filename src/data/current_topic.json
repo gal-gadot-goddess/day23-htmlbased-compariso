@@ -1,92 +1,92 @@
 {
   "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "Vite",
-    "right": "Webpack",
+    "left": "React Server Components",
+    "right": "React Client Components",
     "vs": "vs"
   },
-  "leftSub": "Next Gen Build",
-  "rightSub": "Classic Bundler",
-  "leftColor": "#4CAF50",
-  "rightColor": "#FFC107",
+  "leftSub": "Server-rendered HTML",
+  "rightSub": "Interactive UI",
+  "leftColor": "#61DAFB",
+  "rightColor": "#007ACC",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DEVELOPMENT SERVER",
-      "leftTitle": "Native ESM",
-      "rightTitle": "Bundled Output",
-      "leftDesc": "Uses native ES modules for instant cold starts and fast HMR.",
-      "rightDesc": "Bundles code upfront, leading to slower initial server starts.",
+      "title": "1. Rendering Location",
+      "leftTitle": "Server-side",
+      "rightTitle": "Client-side",
+      "leftDesc": "Renders on the server, sends HTML. Reduces client bundle size.",
+      "rightDesc": "Renders in the browser after hydration. Enables interactivity and state.",
       "leftIcon": "Server",
-      "rightIcon": "Box",
-      "leftVisualText": "Fast",
-      "rightVisualText": "Slower"
+      "rightIcon": "Cpu",
+      "leftVisualText": "Server",
+      "rightVisualText": "Client"
     },
     {
-      "title": "2. BUILD SPEED",
-      "leftTitle": "Blazing Fast",
-      "rightTitle": "Slower Build",
-      "leftDesc": "Leverages esbuild for initial builds, significantly faster than Webpack.",
-      "rightDesc": "Relies on plugins and loaders, can be time-consuming for large projects.",
-      "leftIcon": "Zap",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Quick",
-      "rightVisualText": "Time"
-    },
-    {
-      "title": "3. CONFIGURATION",
-      "leftTitle": "Minimal Config",
-      "rightTitle": "Extensive Config",
-      "leftDesc": "Opinionated defaults, requires little to no configuration for common use cases.",
-      "rightDesc": "Highly customizable but complex, often requiring significant setup.",
-      "leftIcon": "Settings",
-      "rightIcon": "Settings",
-      "leftVisualText": "Simple",
-      "rightVisualText": "Complex"
-    },
-    {
-      "title": "4. PLUGINS & LOADERS",
-      "leftTitle": "Unified Approach",
-      "rightTitle": "Diverse Ecosystem",
-      "leftDesc": "Uses Rollup-compatible plugins, streamlined plugin system.",
-      "rightDesc": "Vast ecosystem of loaders and plugins, but can lead to version conflicts.",
+      "title": "2. Bundle Size",
+      "leftTitle": "Smaller bundles",
+      "rightTitle": "Larger bundles",
+      "leftDesc": "Code is not shipped to the client, reducing initial load.",
+      "rightDesc": "Code is downloaded and executed by the browser.",
       "leftIcon": "Layers",
       "rightIcon": "Layers",
-      "leftVisualText": "Consistent",
-      "rightVisualText": "Varied"
+      "leftVisualText": "Optimized",
+      "rightVisualText": "Full"
     },
     {
-      "title": "5. HOT MODULE REPLACEMENT",
-      "leftTitle": "Near Instant",
-      "rightTitle": "Reliable HMR",
-      "leftDesc": "Extremely fast HMR updates due to native ESM.",
-      "rightDesc": "Generally reliable HMR, but can be slower depending on configuration.",
-      "leftIcon": "Activity",
+      "title": "3. Data Fetching",
+      "leftTitle": "Direct access",
+      "rightTitle": "API calls",
+      "leftDesc": "Can directly access server-side resources, databases, or file systems.",
+      "rightDesc": "Must fetch data via APIs or client-side fetching libraries.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Network",
+      "leftVisualText": "Direct",
+      "rightVisualText": "API"
+    },
+    {
+      "title": "4. Interactivity",
+      "leftTitle": "Limited",
+      "rightTitle": "Full",
+      "leftDesc": "Cannot use browser-specific APIs or event handlers directly.",
+      "rightDesc": "Can use all browser APIs, state management, and event listeners.",
+      "leftIcon": "Lock",
+      "rightIcon": "Unlock",
+      "leftVisualText": "Static",
+      "rightVisualText": "Dynamic"
+    },
+    {
+      "title": "5. State Management",
+      "leftTitle": "No client state",
+      "rightTitle": "Client state",
+      "leftDesc": "Primarily for UI rendering, not managing client-side interactive state.",
+      "rightDesc": "Manages UI state, user interactions, and dynamic updates.",
+      "leftIcon": "FileCode",
       "rightIcon": "Activity",
-      "leftVisualText": "Instant",
-      "rightVisualText": "Stable"
+      "leftVisualText": "Render",
+      "rightVisualText": "State"
     },
     {
-      "title": "6. COMMUNITY SUPPORT",
-      "leftTitle": "Growing Fast",
-      "rightTitle": "Mature Ecosystem",
-      "leftDesc": "Rapidly expanding community and adoption.",
-      "rightDesc": "Well-established and widely used with extensive documentation.",
-      "leftIcon": "Globe",
-      "rightIcon": "Globe",
-      "leftVisualText": "New",
-      "rightVisualText": "Established"
-    },
-    {
-      "title": "7. PERFORMANCE FOCUS",
-      "leftTitle": "Dev Experience",
-      "rightTitle": "Production Optimized",
-      "leftDesc": "Prioritizes lightning-fast development server and HMR.",
-      "rightDesc": "Historically focused on highly optimized production bundles.",
+      "title": "6. Dependencies",
+      "leftTitle": "Server-only deps",
+      "rightTitle": "Browser deps",
+      "leftDesc": "Can import modules not available in the browser environment.",
+      "rightDesc": "Imports must be compatible with browser execution.",
       "leftIcon": "Terminal",
+      "rightIcon": "Globe",
+      "leftVisualText": "Server",
+      "rightVisualText": "Browser"
+    },
+    {
+      "title": "7. Reusability",
+      "leftTitle": "Shared components",
+      "rightTitle": "Client components",
+      "leftDesc": "Can be used by both server and client components, sharing logic.",
+      "rightDesc": "Typically used for highly interactive UI elements and user interfaces.",
+      "leftIcon": "Share2",
       "rightIcon": "Code",
-      "leftVisualText": "Speed",
-      "rightVisualText": "Bundle"
+      "leftVisualText": "Shared",
+      "rightVisualText": "UI"
     }
   ]
 }
