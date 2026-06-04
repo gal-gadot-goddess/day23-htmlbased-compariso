@@ -1,5 +1,4 @@
 [
-  "FastAPI vs Django",
   "PostgreSQL vs MongoDB",
   "Next.js vs Remix",
   "SolidJS vs Svelte",
@@ -48,5 +47,6 @@
   "Vite vs Webpack",
   "Zustand vs Jotai",
   "Server Components vs Client Components",
-  "Server Components vs Client Components"
+  "Server Components vs Client Components",
+  "Vite vs Webpack"
 ]
