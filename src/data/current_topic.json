@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND FRAMEWORKS",
+  "topLabel": "JAVASCRIPT FRAMEWORKS",
   "mainTitle": {
-    "left": "Vue.js",
-    "right": "Angular",
+    "left": "SolidJS",
+    "right": "Qwik",
     "vs": "vs"
   },
-  "leftSub": "Component-driven JavaScript",
-  "rightSub": "Comprehensive TypeScript",
-  "leftColor": "#42b883",
-  "rightColor": "#dd0031",
+  "leftSub": "Fine-grained reactivity",
+  "rightSub": "Resumability first",
+  "leftColor": "#47A3FF",
+  "rightColor": "#FF914D",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. LEARNING CURVE",
-      "leftTitle": "Gentle & Gradual",
-      "rightTitle": "Steeper Curve",
-      "leftDesc": "Easier to pick up with familiar HTML-like templates and clear reactivity.",
-      "rightDesc": "Requires understanding RxJS, TypeScript, and a more opinionated structure.",
-      "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "Easier",
-      "rightVisualText": "Complex"
-    },
-    {
-      "title": "2. ARCHITECTURE",
-      "leftTitle": "Progressive Framework",
-      "rightTitle": "Full-fledged Framework",
-      "leftDesc": "Can be adopted incrementally, core library focuses on view layer.",
-      "rightDesc": "Includes routing, state management, and more out-of-the-box.",
-      "leftIcon": "Box",
-      "rightIcon": "Box",
-      "leftVisualText": "Flexible",
-      "rightVisualText": "Opinionated"
-    },
-    {
-      "title": "3. STATE MANAGEMENT",
-      "leftTitle": "Vuex/Pinia",
-      "rightTitle": "Services/NgRx",
-      "leftDesc": "Dedicated state management libraries, Pinia is the current recommended choice.",
-      "rightDesc": "Uses RxJS-based services or NgRx for complex state.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Simple",
-      "rightVisualText": "Robust"
-    },
-    {
-      "title": "4. TEMPLATING",
-      "leftTitle": "HTML-based",
-      "rightTitle": "JSX/HTML",
-      "leftDesc": "Uses familiar HTML syntax with directives, easy for designers.",
-      "rightDesc": "Uses extended HTML with directives, or can use JSX.",
+      "title": "1. EXECUTION MODEL",
+      "leftTitle": "Compiler translates",
+      "rightTitle": "Resumable execution",
+      "leftDesc": "Compiles JSX to highly optimized vanilla JS. No VDOM.",
+      "rightDesc": "Pauses and resumes execution without re-rendering. Code splitting.",
       "leftIcon": "Code",
-      "rightIcon": "Code",
-      "leftVisualText": "Intuitive",
-      "rightVisualText": "Versatile"
+      "rightIcon": "Layers",
+      "leftVisualText": "Compiled JS",
+      "rightVisualText": "Resumable"
     },
     {
-      "title": "5. PERFORMANCE",
-      "leftTitle": "Excellent Virtual DOM",
-      "rightTitle": "Fast Change Detection",
-      "leftDesc": "Virtual DOM implementation is highly optimized for performance.",
-      "rightDesc": "Leverages Zone.js and optimized change detection for speed.",
+      "title": "2. STATE MANAGEMENT",
+      "leftTitle": "Signals & Stores",
+      "rightTitle": "Context & State",
+      "leftDesc": "Fine-grained reactivity via signals and stores. Minimal overhead.",
+      "rightDesc": "Leverages context and dedicated state primitives for efficient sharing.",
       "leftIcon": "Activity",
-      "rightIcon": "Activity",
+      "rightIcon": "Share2",
+      "leftVisualText": "Signals",
+      "rightVisualText": "Context"
+    },
+    {
+      "title": "3. INITIAL LOAD",
+      "leftTitle": "Zero initial JS",
+      "rightTitle": "Minimal initial JS",
+      "leftDesc": "Outputs minimal, efficient vanilla JS, no framework overhead.",
+      "rightDesc": "Loads only necessary JS to resume interactive. Instant TTI.",
+      "leftIcon": "Zap",
+      "rightIcon": "Zap",
       "leftVisualText": "Fast",
-      "rightVisualText": "Fast"
+      "rightVisualText": "Instant"
     },
     {
-      "title": "6. TOOLING",
-      "leftTitle": "Vite/Vue CLI",
-      "rightTitle": "Angular CLI",
-      "leftDesc": "Modern tooling with fast build times and great developer experience.",
-      "rightDesc": "Mature and powerful CLI, integrated into the framework.",
-      "leftIcon": "Settings",
+      "title": "4. RENDERING",
+      "leftTitle": "Direct DOM updates",
+      "rightTitle": "Optimized hydration",
+      "leftDesc": "Updates the DOM directly without a virtual DOM diffing step.",
+      "rightDesc": "Smart hydration that picks up where the server left off.",
+      "leftIcon": "Terminal",
+      "rightIcon": "Layout",
+      "leftVisualText": "Direct",
+      "rightVisualText": "Smart"
+    },
+    {
+      "title": "5. REACTIVITY",
+      "leftTitle": "Fine-grained",
+      "rightTitle": "Opt-in",
+      "leftDesc": "Reactions update only what's needed. Highly performant.",
+      "rightDesc": "Resumability enables controlled, efficient updates without re-execution.",
+      "leftIcon": "Activity",
       "rightIcon": "Settings",
-      "leftVisualText": "Modern",
-      "rightVisualText": "Integrated"
+      "leftVisualText": "Precise",
+      "rightVisualText": "Controlled"
     },
     {
-      "title": "7. ECOSYSTEM",
-      "leftTitle": "Growing & Flexible",
-      "rightTitle": "Mature & Large",
-      "leftDesc": "Strong community, excellent Vue ecosystem, plugin-based.",
-      "rightDesc": "Vast, established ecosystem with many third-party libraries.",
+      "title": "6. MEMORY USAGE",
+      "leftTitle": "Low footprint",
+      "rightTitle": "Resource efficient",
+      "leftDesc": "Minimal memory overhead due to compiler and reactivity model.",
+      "rightDesc": "Avoids storing large amounts of application state on the client.",
+      "leftIcon": "Box",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Minimal",
+      "rightVisualText": "Efficient"
+    },
+    {
+      "title": "7. COMMUNITY & ECOSYSTEM",
+      "leftTitle": "Growing",
+      "rightTitle": "Emerging",
+      "leftDesc": "Strong community, gaining traction for performance-focused apps.",
+      "rightDesc": "Newer, focused on novel resumability and performance paradigms.",
       "leftIcon": "Globe",
       "rightIcon": "Globe",
-      "leftVisualText": "Community",
-      "rightVisualText": "Enterprise"
+      "leftVisualText": "Active",
+      "rightVisualText": "Innovative"
     }
   ]
 }
