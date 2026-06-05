@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND ARCHITECTURE",
+  "topLabel": "FRONTEND FRAMEWORKS",
   "mainTitle": {
-    "left": "React Server Components",
-    "right": "React Client Components",
+    "left": "Vue.js",
+    "right": "Angular",
     "vs": "vs"
   },
-  "leftSub": "Server-rendered HTML",
-  "rightSub": "Interactive UI",
-  "leftColor": "#61DAFB",
-  "rightColor": "#007ACC",
+  "leftSub": "Component-driven JavaScript",
+  "rightSub": "Comprehensive TypeScript",
+  "leftColor": "#42b883",
+  "rightColor": "#dd0031",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. Rendering Location",
-      "leftTitle": "Server-side",
-      "rightTitle": "Client-side",
-      "leftDesc": "Renders on the server, sends HTML. Reduces client bundle size.",
-      "rightDesc": "Renders in the browser after hydration. Enables interactivity and state.",
-      "leftIcon": "Server",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Server",
-      "rightVisualText": "Client"
-    },
-    {
-      "title": "2. Bundle Size",
-      "leftTitle": "Smaller bundles",
-      "rightTitle": "Larger bundles",
-      "leftDesc": "Code is not shipped to the client, reducing initial load.",
-      "rightDesc": "Code is downloaded and executed by the browser.",
+      "title": "1. LEARNING CURVE",
+      "leftTitle": "Gentle & Gradual",
+      "rightTitle": "Steeper Curve",
+      "leftDesc": "Easier to pick up with familiar HTML-like templates and clear reactivity.",
+      "rightDesc": "Requires understanding RxJS, TypeScript, and a more opinionated structure.",
       "leftIcon": "Layers",
       "rightIcon": "Layers",
-      "leftVisualText": "Optimized",
-      "rightVisualText": "Full"
+      "leftVisualText": "Easier",
+      "rightVisualText": "Complex"
     },
     {
-      "title": "3. Data Fetching",
-      "leftTitle": "Direct access",
-      "rightTitle": "API calls",
-      "leftDesc": "Can directly access server-side resources, databases, or file systems.",
-      "rightDesc": "Must fetch data via APIs or client-side fetching libraries.",
+      "title": "2. ARCHITECTURE",
+      "leftTitle": "Progressive Framework",
+      "rightTitle": "Full-fledged Framework",
+      "leftDesc": "Can be adopted incrementally, core library focuses on view layer.",
+      "rightDesc": "Includes routing, state management, and more out-of-the-box.",
+      "leftIcon": "Box",
+      "rightIcon": "Box",
+      "leftVisualText": "Flexible",
+      "rightVisualText": "Opinionated"
+    },
+    {
+      "title": "3. STATE MANAGEMENT",
+      "leftTitle": "Vuex/Pinia",
+      "rightTitle": "Services/NgRx",
+      "leftDesc": "Dedicated state management libraries, Pinia is the current recommended choice.",
+      "rightDesc": "Uses RxJS-based services or NgRx for complex state.",
       "leftIcon": "HardDrive",
-      "rightIcon": "Network",
-      "leftVisualText": "Direct",
-      "rightVisualText": "API"
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Simple",
+      "rightVisualText": "Robust"
     },
     {
-      "title": "4. Interactivity",
-      "leftTitle": "Limited",
-      "rightTitle": "Full",
-      "leftDesc": "Cannot use browser-specific APIs or event handlers directly.",
-      "rightDesc": "Can use all browser APIs, state management, and event listeners.",
-      "leftIcon": "Lock",
-      "rightIcon": "Unlock",
-      "leftVisualText": "Static",
-      "rightVisualText": "Dynamic"
-    },
-    {
-      "title": "5. State Management",
-      "leftTitle": "No client state",
-      "rightTitle": "Client state",
-      "leftDesc": "Primarily for UI rendering, not managing client-side interactive state.",
-      "rightDesc": "Manages UI state, user interactions, and dynamic updates.",
-      "leftIcon": "FileCode",
-      "rightIcon": "Activity",
-      "leftVisualText": "Render",
-      "rightVisualText": "State"
-    },
-    {
-      "title": "6. Dependencies",
-      "leftTitle": "Server-only deps",
-      "rightTitle": "Browser deps",
-      "leftDesc": "Can import modules not available in the browser environment.",
-      "rightDesc": "Imports must be compatible with browser execution.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Globe",
-      "leftVisualText": "Server",
-      "rightVisualText": "Browser"
-    },
-    {
-      "title": "7. Reusability",
-      "leftTitle": "Shared components",
-      "rightTitle": "Client components",
-      "leftDesc": "Can be used by both server and client components, sharing logic.",
-      "rightDesc": "Typically used for highly interactive UI elements and user interfaces.",
-      "leftIcon": "Share2",
+      "title": "4. TEMPLATING",
+      "leftTitle": "HTML-based",
+      "rightTitle": "JSX/HTML",
+      "leftDesc": "Uses familiar HTML syntax with directives, easy for designers.",
+      "rightDesc": "Uses extended HTML with directives, or can use JSX.",
+      "leftIcon": "Code",
       "rightIcon": "Code",
-      "leftVisualText": "Shared",
-      "rightVisualText": "UI"
+      "leftVisualText": "Intuitive",
+      "rightVisualText": "Versatile"
+    },
+    {
+      "title": "5. PERFORMANCE",
+      "leftTitle": "Excellent Virtual DOM",
+      "rightTitle": "Fast Change Detection",
+      "leftDesc": "Virtual DOM implementation is highly optimized for performance.",
+      "rightDesc": "Leverages Zone.js and optimized change detection for speed.",
+      "leftIcon": "Activity",
+      "rightIcon": "Activity",
+      "leftVisualText": "Fast",
+      "rightVisualText": "Fast"
+    },
+    {
+      "title": "6. TOOLING",
+      "leftTitle": "Vite/Vue CLI",
+      "rightTitle": "Angular CLI",
+      "leftDesc": "Modern tooling with fast build times and great developer experience.",
+      "rightDesc": "Mature and powerful CLI, integrated into the framework.",
+      "leftIcon": "Settings",
+      "rightIcon": "Settings",
+      "leftVisualText": "Modern",
+      "rightVisualText": "Integrated"
+    },
+    {
+      "title": "7. ECOSYSTEM",
+      "leftTitle": "Growing & Flexible",
+      "rightTitle": "Mature & Large",
+      "leftDesc": "Strong community, excellent Vue ecosystem, plugin-based.",
+      "rightDesc": "Vast, established ecosystem with many third-party libraries.",
+      "leftIcon": "Globe",
+      "rightIcon": "Globe",
+      "leftVisualText": "Community",
+      "rightVisualText": "Enterprise"
     }
   ]
 }

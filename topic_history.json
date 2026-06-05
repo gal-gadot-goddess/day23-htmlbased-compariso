@@ -1,5 +1,4 @@
 [
-  "Next.js vs Remix",
   "SolidJS vs Svelte",
   "SolidJS vs Svelte",
   "Remix vs Next.js",
@@ -48,5 +47,6 @@
   "Server Components vs Client Components",
   "Server Components vs Client Components",
   "Vite vs Webpack",
-  "React Server Components vs React Client Components"
+  "React Server Components vs React Client Components",
+  "Vue.js vs Angular"
 ]
