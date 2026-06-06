@@ -1,5 +1,4 @@
 [
-  "SolidJS vs Svelte",
   "Server Components vs Client Components",
   "Astro vs Next.js",
   "Astro vs Next.js",
@@ -48,5 +47,6 @@
   "Vue.js vs Angular",
   "SolidJS vs Qwik",
   "PostgreSQL vs MongoDB",
-  "Vue.js vs React"
+  "Vue.js vs React",
+  "Vue.js vs Angular"
 ]
