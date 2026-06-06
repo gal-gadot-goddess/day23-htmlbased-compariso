@@ -1,92 +1,92 @@
 {
-  "topLabel": "DATABASE TECHNOLOGY",
+  "topLabel": "FRONTEND FRAMEWORKS",
   "mainTitle": {
-    "left": "PostgreSQL",
-    "right": "MongoDB",
+    "left": "Vue.js",
+    "right": "React",
     "vs": "vs"
   },
-  "leftSub": "Relational, Structured Data",
-  "rightSub": "NoSQL, Flexible Data",
-  "leftColor": "#4169E1",
-  "rightColor": "#FF8C00",
+  "leftSub": "Progressive JavaScript",
+  "rightSub": "Component-based UI",
+  "leftColor": "#41B883",
+  "rightColor": "#61DAFB",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DATA MODEL",
-      "leftTitle": "Tables and Rows",
-      "rightTitle": "Documents and Collections",
-      "leftDesc": "Organizes data into predefined tables with fixed schemas for consistency and integrity.",
-      "rightDesc": "Stores data in flexible, JSON-like documents within collections, ideal for evolving data structures.",
-      "leftIcon": "Layers",
+      "title": "1. TEMPLATING",
+      "leftTitle": "HTML-based templates",
+      "rightTitle": "JSX syntax",
+      "leftDesc": "Uses familiar HTML syntax for templates, easy to learn for beginners.",
+      "rightDesc": "Combines UI and logic in JavaScript, offers full programming power.",
+      "leftIcon": "Code",
+      "rightIcon": "FileCode",
+      "leftVisualText": "HTML",
+      "rightVisualText": "JS"
+    },
+    {
+      "title": "2. STATE MANAGEMENT",
+      "leftTitle": "Built-in reactivity",
+      "rightTitle": "Context/Hooks",
+      "leftDesc": "Vue's reactivity system is core, simple for local state.",
+      "rightDesc": "React uses Context API & Hooks for state sharing.",
+      "leftIcon": "Activity",
       "rightIcon": "Layers",
-      "leftVisualText": "Schema",
-      "rightVisualText": "Schema-less"
+      "leftVisualText": "Reactive",
+      "rightVisualText": "Context"
     },
     {
-      "title": "2. SCHEMA RIGIDITY",
-      "leftTitle": "Strict Schema",
-      "rightTitle": "Dynamic Schema",
-      "leftDesc": "Requires defining table structure before data insertion, ensuring data quality.",
-      "rightDesc": "Schema is not enforced at the database level, allowing for varied document structures.",
-      "leftIcon": "Lock",
-      "rightIcon": "Unlock",
-      "leftVisualText": "Enforced",
-      "rightVisualText": "Flexible"
-    },
-    {
-      "title": "3. SCALABILITY",
-      "leftTitle": "Vertical Focus",
-      "rightTitle": "Horizontal Focus",
-      "leftDesc": "Traditionally scales well vertically by increasing server resources.",
-      "rightDesc": "Designed for horizontal scaling across multiple servers, handling massive datasets.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Network",
-      "leftVisualText": "Scale Up",
-      "rightVisualText": "Scale Out"
-    },
-    {
-      "title": "4. QUERYING",
-      "leftTitle": "SQL Standard",
-      "rightTitle": "Query Language",
-      "leftDesc": "Uses Structured Query Language (SQL) for powerful, complex data retrieval and manipulation.",
-      "rightDesc": "Employs its own query language, often document-centric and easier for simple lookups.",
-      "leftIcon": "Search",
-      "rightIcon": "Search",
-      "leftVisualText": "SQL",
-      "rightVisualText": "NoSQL QL"
-    },
-    {
-      "title": "5. TRANSACTIONS",
-      "leftTitle": "ACID Compliance",
-      "rightTitle": "Eventual Consistency",
-      "leftDesc": "Guarantees Atomicity, Consistency, Isolation, and Durability for reliable transactions.",
-      "rightDesc": "Prioritizes availability and partition tolerance, with consistency achieved over time.",
-      "leftIcon": "Shield",
-      "rightIcon": "Activity",
-      "leftVisualText": "Strong",
-      "rightVisualText": "Tunable"
-    },
-    {
-      "title": "6. USE CASES",
-      "leftTitle": "Complex Relations",
-      "rightTitle": "Unstructured Data",
-      "leftDesc": "Best for applications requiring complex relationships and strict data integrity.",
-      "rightDesc": "Ideal for content management, IoT, and applications with rapidly changing data.",
-      "leftIcon": "FileCode",
-      "rightIcon": "Globe",
-      "leftVisualText": "ERP/CRM",
-      "rightVisualText": "Big Data/CMS"
-    },
-    {
-      "title": "7. JOIN OPERATIONS",
-      "leftTitle": "Native Joins",
-      "rightTitle": "Denormalized Data",
-      "leftDesc": "Efficiently handles JOIN operations between multiple tables due to relational design.",
-      "rightDesc": "Joins are typically performed at the application level or by embedding related data.",
+      "title": "3. LEARNING CURVE",
+      "leftTitle": "Gentle slope",
+      "rightTitle": "Steeper curve",
+      "leftDesc": "Easier to pick up due to HTML templates and clear structure.",
+      "rightDesc": "JSX and functional concepts can take more time to master.",
       "leftIcon": "ArrowRightLeft",
-      "rightIcon": "Share2",
+      "rightIcon": "Search",
+      "leftVisualText": "Easy",
+      "rightVisualText": "Advanced"
+    },
+    {
+      "title": "4. ECOSYSTEM SIZE",
+      "leftTitle": "Growing rapidly",
+      "rightTitle": "Vast ecosystem",
+      "leftDesc": "Strong community and official libraries like Vuex, Vue Router.",
+      "rightDesc": "Largest community, countless libraries and tools available.",
+      "leftIcon": "Globe",
+      "rightIcon": "Server",
+      "leftVisualText": "Large",
+      "rightVisualText": "Huge"
+    },
+    {
+      "title": "5. FLEXIBILITY",
+      "leftTitle": "Progressive adoption",
+      "rightTitle": "Opinionated structure",
+      "leftDesc": "Can be adopted incrementally in existing projects.",
+      "rightDesc": "React guides more towards specific patterns and practices.",
+      "leftIcon": "Settings",
+      "rightIcon": "Layout",
+      "leftVisualText": "Flexible",
+      "rightVisualText": "Structured"
+    },
+    {
+      "title": "6. PERFORMANCE",
+      "leftTitle": "Excellent out-of-box",
+      "rightTitle": "Optimized with effort",
+      "leftDesc": "Virtual DOM and efficient diffing algorithm.",
+      "rightDesc": "Virtual DOM, requires careful optimization for best results.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Zap",
+      "leftVisualText": "Fast",
+      "rightVisualText": "Optimized"
+    },
+    {
+      "title": "7. TOOLING",
+      "leftTitle": "Official devtools",
+      "rightTitle": "Community tools",
+      "leftDesc": "Excellent browser extensions for debugging and profiling.",
+      "rightDesc": "Rich development tools and linters available from community.",
+      "leftIcon": "Terminal",
+      "rightIcon": "HardDrive",
       "leftVisualText": "Built-in",
-      "rightVisualText": "Manual"
+      "rightVisualText": "Extensive"
     }
   ]
 }
