@@ -1,5 +1,4 @@
 [
-  "WebAssembly vs JavaScript",
   "Node.js vs Deno",
   "Next.js vs Remix",
   "Qwik vs SolidJS",
@@ -48,5 +47,6 @@
   "Vue.js vs Angular",
   "Remix vs Next.js",
   "Vector DB vs Relational DB",
-  "PostgreSQL vs MongoDB"
+  "PostgreSQL vs MongoDB",
+  "Svelte vs Vue.js"
 ]
