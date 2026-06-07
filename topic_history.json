@@ -1,6 +1,5 @@
 [
   "Astro vs Next.js",
-  "Astro vs Next.js",
   "WebAssembly vs JavaScript",
   "Node.js vs Deno",
   "Next.js vs Remix",
@@ -48,5 +47,6 @@
   "PostgreSQL vs MongoDB",
   "Vue.js vs React",
   "Vue.js vs Angular",
-  "Remix vs Next.js"
+  "Remix vs Next.js",
+  "Vector DB vs Relational DB"
 ]
