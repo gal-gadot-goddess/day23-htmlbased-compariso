@@ -1,92 +1,92 @@
 {
   "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "React Server Components",
-    "right": "React Client Components",
+    "left": "Server Components",
+    "right": "Client Components",
     "vs": "vs"
   },
-  "leftSub": "Rendered on server",
-  "rightSub": "Rendered in browser",
-  "leftColor": "#FF5733",
-  "rightColor": "#33AFFF",
+  "leftSub": "Renders on Server",
+  "rightSub": "Renders in Browser",
+  "leftColor": "#00bcd4",
+  "rightColor": "#ff9800",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. INITIAL RENDER",
-      "leftTitle": "Server-first HTML",
-      "rightTitle": "Client-side JS",
-      "leftDesc": "Initial HTML sent from server, faster perceived load.",
-      "rightDesc": "Requires JavaScript to download and render UI.",
+      "title": "1. EXECUTION LOCATION",
+      "leftTitle": "Server-side rendering",
+      "rightTitle": "Browser-side rendering",
+      "leftDesc": "Components execute entirely on the server, reducing client workload and improving initial load times.",
+      "rightDesc": "Components execute in the user's browser, enabling interactivity and dynamic updates after initial load.",
       "leftIcon": "Server",
-      "rightIcon": "Code",
-      "leftVisualText": "Server",
-      "rightVisualText": "Browser"
-    },
-    {
-      "title": "2. DATA FETCHING",
-      "leftTitle": "Direct server access",
-      "rightTitle": "API calls needed",
-      "leftDesc": "Can directly access server resources without API layer.",
-      "rightDesc": "Must use APIs or server functions to fetch data.",
-      "leftIcon": "Database",
-      "rightIcon": "Network",
-      "leftVisualText": "Direct",
-      "rightVisualText": "API"
-    },
-    {
-      "title": "3. BUNDLE SIZE",
-      "leftTitle": "Smaller client bundle",
-      "rightTitle": "Larger client bundle",
-      "leftDesc": "Reduces JavaScript sent to the client, improving performance.",
-      "rightDesc": "Includes all necessary UI logic and state.",
-      "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "Minimal",
-      "rightVisualText": "Full"
-    },
-    {
-      "title": "4. INTERACTIVITY",
-      "leftTitle": "Limited interactivity",
-      "rightTitle": "Full interactivity",
-      "leftDesc": "Primarily for static content and initial rendering.",
-      "rightDesc": "Ideal for dynamic UIs, state management, and events.",
-      "leftIcon": "FileCode",
-      "rightIcon": "Zap",
-      "leftVisualText": "Static",
-      "rightVisualText": "Dynamic"
-    },
-    {
-      "title": "5. SECURITY",
-      "leftTitle": "Server-side security",
-      "rightTitle": "Client-side exposure",
-      "leftDesc": "Sensitive logic and keys remain on the server.",
-      "rightDesc": "Logic is exposed in the browser's developer tools.",
-      "leftIcon": "Lock",
-      "rightIcon": "Unlock",
-      "leftVisualText": "Secure",
-      "rightVisualText": "Exposed"
-    },
-    {
-      "title": "6. STATE MANAGEMENT",
-      "leftTitle": "Server state only",
-      "rightTitle": "Client state vital",
-      "leftDesc": "State managed on the server, doesn't persist client-side.",
-      "rightDesc": "Requires robust client-side state management solutions.",
-      "leftIcon": "Server",
-      "rightIcon": "Settings",
+      "rightIcon": "Cpu",
       "leftVisualText": "Server",
       "rightVisualText": "Client"
     },
     {
-      "title": "7. SEO",
-      "leftTitle": "Excellent SEO",
-      "rightTitle": "Requires JS",
-      "leftDesc": "Content is readily available for search engine crawlers.",
-      "rightDesc": "Crawlers may struggle without JavaScript execution.",
-      "leftIcon": "Search",
+      "title": "2. INITIAL LOAD",
+      "leftTitle": "Faster initial load",
+      "rightTitle": "Slower initial load",
+      "leftDesc": "Only necessary HTML is sent initially, leading to quicker perceived page loads.",
+      "rightDesc": "Requires JavaScript to download and execute, potentially delaying content rendering.",
+      "leftIcon": "Zap",
       "rightIcon": "Search",
-      "leftVisualText": "Native",
-      "rightVisualText": "JS-Dependent"
+      "leftVisualText": "Speed",
+      "rightVisualText": "Wait"
+    },
+    {
+      "title": "3. CODE EXECUTION",
+      "leftTitle": "Server code execution",
+      "rightTitle": "Browser code execution",
+      "leftDesc": "Can access server-side resources like databases directly without exposing credentials.",
+      "rightDesc": "Relies on JavaScript to run, making it susceptible to network conditions and client device capabilities.",
+      "leftIcon": "Code",
+      "rightIcon": "FileCode",
+      "leftVisualText": "Server Code",
+      "rightVisualText": "JS Code"
+    },
+    {
+      "title": "4. INTERACTIVITY",
+      "leftTitle": "Limited direct interactivity",
+      "rightTitle": "High interactivity",
+      "leftDesc": "Interactivity handled by streaming UI or calling client components.",
+      "rightDesc": "Built for rich user interactions, state management, and dynamic UI updates.",
+      "leftIcon": "Layout",
+      "rightIcon": "Activity",
+      "leftVisualText": "Static",
+      "rightVisualText": "Dynamic"
+    },
+    {
+      "title": "5. DATA FETCHING",
+      "leftTitle": "Direct server access",
+      "rightTitle": "Client-side API calls",
+      "leftDesc": "Can fetch data directly from databases or other server resources securely.",
+      "rightDesc": "Data fetching typically done via API calls, requiring serialization and network latency.",
+      "leftIcon": "Database",
+      "rightIcon": "Network",
+      "leftVisualText": "Direct DB",
+      "rightVisualText": "API Call"
+    },
+    {
+      "title": "6. BUNDLE SIZE",
+      "leftTitle": "Smaller client bundles",
+      "rightTitle": "Larger client bundles",
+      "leftDesc": "Reduces the amount of JavaScript sent to the client, optimizing performance.",
+      "rightDesc": "Client components contribute to the JavaScript bundle size, impacting download and parse times.",
+      "leftIcon": "Box",
+      "rightIcon": "Layers",
+      "leftVisualText": "Lean",
+      "rightVisualText": "Heavy"
+    },
+    {
+      "title": "7. STATE MANAGEMENT",
+      "leftTitle": "Server state focus",
+      "rightTitle": "Client state focus",
+      "leftDesc": "State primarily managed on the server or passed down as props.",
+      "rightDesc": "Relies on client-side state management solutions for dynamic user experiences.",
+      "leftIcon": "Settings",
+      "rightIcon": "Share2",
+      "leftVisualText": "Server State",
+      "rightVisualText": "Client State"
     }
   ]
 }
