@@ -1,92 +1,92 @@
 {
-  "topLabel": "BACKEND ARCHITECTURE",
+  "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "FastAPI",
-    "right": "Flask",
+    "left": "React Server Components",
+    "right": "React Client Components",
     "vs": "vs"
   },
-  "leftSub": "Python API Speed",
-  "rightSub": "Python Microframework",
-  "leftColor": "#FF6B6B",
-  "rightColor": "#4ECDC4",
+  "leftSub": "Rendered on server",
+  "rightSub": "Rendered in browser",
+  "leftColor": "#FF5733",
+  "rightColor": "#33AFFF",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. PERFORMANCE",
-      "leftTitle": "High Performance",
-      "rightTitle": "Good Performance",
-      "leftDesc": "Built for speed using ASGI, leverages type hints for async.",
-      "rightDesc": "Mature and stable, suitable for many applications.",
-      "leftIcon": "Zap",
-      "rightIcon": "Server",
-      "leftVisualText": "Fast",
-      "rightVisualText": "Stable"
-    },
-    {
-      "title": "2. ASYNC SUPPORT",
-      "leftTitle": "Native Async",
-      "rightTitle": "WSGI Focus",
-      "leftDesc": "Designed from ground up for asynchronous operations.",
-      "rightDesc": "Primarily synchronous, async support added later.",
-      "leftIcon": "Network",
-      "rightIcon": "Layers",
-      "leftVisualText": "Async Ready",
-      "rightVisualText": "Sync Default"
-    },
-    {
-      "title": "3. TYPE HINTS",
-      "leftTitle": "Strong Typing",
-      "rightTitle": "Dynamic Typing",
-      "leftDesc": "Leverages Python type hints for better validation and IDE support.",
-      "rightDesc": "Relies on runtime checks and duck typing.",
-      "leftIcon": "FileCode",
+      "title": "1. INITIAL RENDER",
+      "leftTitle": "Server-first HTML",
+      "rightTitle": "Client-side JS",
+      "leftDesc": "Initial HTML sent from server, faster perceived load.",
+      "rightDesc": "Requires JavaScript to download and render UI.",
+      "leftIcon": "Server",
       "rightIcon": "Code",
-      "leftVisualText": "Typed",
-      "rightVisualText": "Untyped"
+      "leftVisualText": "Server",
+      "rightVisualText": "Browser"
     },
     {
-      "title": "4. DATA VALIDATION",
-      "leftTitle": "Built-in Validation",
-      "rightTitle": "External Libraries",
-      "leftDesc": "Integrated validation with Pydantic for request/response bodies.",
-      "rightDesc": "Requires extensions like Marshmallow or WTForms.",
-      "leftIcon": "Shield",
-      "rightIcon": "Box",
-      "leftVisualText": "Validated",
-      "rightVisualText": "Manual"
+      "title": "2. DATA FETCHING",
+      "leftTitle": "Direct server access",
+      "rightTitle": "API calls needed",
+      "leftDesc": "Can directly access server resources without API layer.",
+      "rightDesc": "Must use APIs or server functions to fetch data.",
+      "leftIcon": "Database",
+      "rightIcon": "Network",
+      "leftVisualText": "Direct",
+      "rightVisualText": "API"
     },
     {
-      "title": "5. API DOCUMENTATION",
-      "leftTitle": "Auto-Generated Docs",
-      "rightTitle": "Manual Docs",
-      "leftDesc": "Automatic interactive API docs (Swagger UI, ReDoc) out-of-the-box.",
-      "rightDesc": "Documentation typically written manually or with extensions.",
+      "title": "3. BUNDLE SIZE",
+      "leftTitle": "Smaller client bundle",
+      "rightTitle": "Larger client bundle",
+      "leftDesc": "Reduces JavaScript sent to the client, improving performance.",
+      "rightDesc": "Includes all necessary UI logic and state.",
+      "leftIcon": "Layers",
+      "rightIcon": "Layers",
+      "leftVisualText": "Minimal",
+      "rightVisualText": "Full"
+    },
+    {
+      "title": "4. INTERACTIVITY",
+      "leftTitle": "Limited interactivity",
+      "rightTitle": "Full interactivity",
+      "leftDesc": "Primarily for static content and initial rendering.",
+      "rightDesc": "Ideal for dynamic UIs, state management, and events.",
+      "leftIcon": "FileCode",
+      "rightIcon": "Zap",
+      "leftVisualText": "Static",
+      "rightVisualText": "Dynamic"
+    },
+    {
+      "title": "5. SECURITY",
+      "leftTitle": "Server-side security",
+      "rightTitle": "Client-side exposure",
+      "leftDesc": "Sensitive logic and keys remain on the server.",
+      "rightDesc": "Logic is exposed in the browser's developer tools.",
+      "leftIcon": "Lock",
+      "rightIcon": "Unlock",
+      "leftVisualText": "Secure",
+      "rightVisualText": "Exposed"
+    },
+    {
+      "title": "6. STATE MANAGEMENT",
+      "leftTitle": "Server state only",
+      "rightTitle": "Client state vital",
+      "leftDesc": "State managed on the server, doesn't persist client-side.",
+      "rightDesc": "Requires robust client-side state management solutions.",
+      "leftIcon": "Server",
+      "rightIcon": "Settings",
+      "leftVisualText": "Server",
+      "rightVisualText": "Client"
+    },
+    {
+      "title": "7. SEO",
+      "leftTitle": "Excellent SEO",
+      "rightTitle": "Requires JS",
+      "leftDesc": "Content is readily available for search engine crawlers.",
+      "rightDesc": "Crawlers may struggle without JavaScript execution.",
       "leftIcon": "Search",
-      "rightIcon": "Globe",
-      "leftVisualText": "Docs Ready",
-      "rightVisualText": "Docs Manual"
-    },
-    {
-      "title": "6. COMMUNITY SIZE",
-      "leftTitle": "Growing Community",
-      "rightTitle": "Large Community",
-      "leftDesc": "Rapidly expanding with strong interest and contributions.",
-      "rightDesc": "Vast, mature community with extensive resources.",
-      "leftIcon": "Activity",
-      "rightIcon": "Users",
-      "leftVisualText": "New Wave",
-      "rightVisualText": "Established"
-    },
-    {
-      "title": "7. CONFIGURATION",
-      "leftTitle": "Declarative Config",
-      "rightTitle": "Flexible Config",
-      "leftDesc": "Configuration managed via settings files and environment variables.",
-      "rightDesc": "Highly flexible, configuration can be set in various ways.",
-      "leftIcon": "Settings",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Structured",
-      "rightVisualText": "Flexible"
+      "rightIcon": "Search",
+      "leftVisualText": "Native",
+      "rightVisualText": "JS-Dependent"
     }
   ]
 }

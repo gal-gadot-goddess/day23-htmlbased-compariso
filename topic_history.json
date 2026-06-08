@@ -1,5 +1,4 @@
 [
-  "Next.js vs Remix",
   "Qwik vs SolidJS",
   "Astro vs Next.js",
   "Next.js vs Nuxt.js",
@@ -48,5 +47,6 @@
   "Vector DB vs Relational DB",
   "PostgreSQL vs MongoDB",
   "Svelte vs Vue.js",
-  "FastAPI vs Flask"
+  "FastAPI vs Flask",
+  "React Server Components vs React Client Components"
 ]
