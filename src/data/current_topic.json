@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND FRAMEWORKS",
+  "topLabel": "BACKEND ARCHITECTURE",
   "mainTitle": {
-    "left": "Svelte",
-    "right": "Vue.js",
+    "left": "FastAPI",
+    "right": "Flask",
     "vs": "vs"
   },
-  "leftSub": "Compiler-first UI",
-  "rightSub": "Progressive JS",
-  "leftColor": "#f53803",
-  "rightColor": "#42b883",
-  "badge": "7 CORE DIFFERENCES",
+  "leftSub": "Python API Speed",
+  "rightSub": "Python Microframework",
+  "leftColor": "#FF6B6B",
+  "rightColor": "#4ECDC4",
+  "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. COMPILATION",
-      "leftTitle": "Compiles away",
-      "rightTitle": "Virtual DOM",
-      "leftDesc": "Svelte compiles code at build time, no runtime overhead.",
-      "rightDesc": "Vue uses a virtual DOM for efficient updates.",
-      "leftIcon": "Code",
-      "rightIcon": "Layers",
-      "leftVisualText": "No Runtime",
-      "rightVisualText": "Virtual DOM"
-    },
-    {
-      "title": "2. REACTIVITY",
-      "leftTitle": "Compiler Magic",
-      "rightTitle": "Proxy-based",
-      "leftDesc": "Reactivity is built into Svelte's compiler, no special functions needed.",
-      "rightDesc": "Vue uses Proxies for deep reactivity tracking.",
-      "leftIcon": "Settings",
-      "rightIcon": "Share2",
-      "leftVisualText": "Direct Updates",
-      "rightVisualText": "Proxy Reactivity"
-    },
-    {
-      "title": "3. BUNDLE SIZE",
-      "leftTitle": "Tiny",
-      "rightTitle": "Small",
-      "leftDesc": "Svelte produces extremely small bundles as it ships only the necessary code.",
-      "rightDesc": "Vue has a small footprint but is larger than Svelte.",
-      "leftIcon": "Box",
-      "rightIcon": "Box",
-      "leftVisualText": "Minimal Size",
-      "rightVisualText": "Efficient Size"
-    },
-    {
-      "title": "4. LEARNING CURVE",
-      "leftTitle": "Gentle",
-      "rightTitle": "Moderate",
-      "leftDesc": "Svelte's syntax is close to plain HTML, CSS, and JS.",
-      "rightDesc": "Vue's template syntax is intuitive but has more concepts.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Terminal",
-      "leftVisualText": "Simple Syntax",
-      "rightVisualText": "Familiar Syntax"
-    },
-    {
-      "title": "5. STATE MANAGEMENT",
-      "leftTitle": "Built-in Stores",
-      "rightTitle": "Pinia/Vuex",
-      "leftDesc": "Svelte offers simple, built-in stores for state management.",
-      "rightDesc": "Vue relies on external libraries like Pinia or Vuex.",
-      "leftIcon": "Database",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Core Stores",
-      "rightVisualText": "External Stores"
-    },
-    {
-      "title": "6. PERFORMANCE",
-      "leftTitle": "Blazing Fast",
-      "rightTitle": "Very Fast",
-      "leftDesc": "Svelte's compiled output leads to exceptional runtime performance.",
-      "rightDesc": "Vue's virtual DOM provides excellent performance.",
+      "title": "1. PERFORMANCE",
+      "leftTitle": "High Performance",
+      "rightTitle": "Good Performance",
+      "leftDesc": "Built for speed using ASGI, leverages type hints for async.",
+      "rightDesc": "Mature and stable, suitable for many applications.",
       "leftIcon": "Zap",
-      "rightIcon": "Zap",
-      "leftVisualText": "Compiled Speed",
-      "rightVisualText": "Virtual DOM Speed"
+      "rightIcon": "Server",
+      "leftVisualText": "Fast",
+      "rightVisualText": "Stable"
     },
     {
-      "title": "7. ECOSYSTEM",
-      "leftTitle": "Growing",
-      "rightTitle": "Mature",
-      "leftDesc": "Svelte's ecosystem is rapidly expanding with new tools and libraries.",
-      "rightDesc": "Vue has a large, well-established ecosystem and community.",
-      "leftIcon": "Globe",
+      "title": "2. ASYNC SUPPORT",
+      "leftTitle": "Native Async",
+      "rightTitle": "WSGI Focus",
+      "leftDesc": "Designed from ground up for asynchronous operations.",
+      "rightDesc": "Primarily synchronous, async support added later.",
+      "leftIcon": "Network",
+      "rightIcon": "Layers",
+      "leftVisualText": "Async Ready",
+      "rightVisualText": "Sync Default"
+    },
+    {
+      "title": "3. TYPE HINTS",
+      "leftTitle": "Strong Typing",
+      "rightTitle": "Dynamic Typing",
+      "leftDesc": "Leverages Python type hints for better validation and IDE support.",
+      "rightDesc": "Relies on runtime checks and duck typing.",
+      "leftIcon": "FileCode",
+      "rightIcon": "Code",
+      "leftVisualText": "Typed",
+      "rightVisualText": "Untyped"
+    },
+    {
+      "title": "4. DATA VALIDATION",
+      "leftTitle": "Built-in Validation",
+      "rightTitle": "External Libraries",
+      "leftDesc": "Integrated validation with Pydantic for request/response bodies.",
+      "rightDesc": "Requires extensions like Marshmallow or WTForms.",
+      "leftIcon": "Shield",
+      "rightIcon": "Box",
+      "leftVisualText": "Validated",
+      "rightVisualText": "Manual"
+    },
+    {
+      "title": "5. API DOCUMENTATION",
+      "leftTitle": "Auto-Generated Docs",
+      "rightTitle": "Manual Docs",
+      "leftDesc": "Automatic interactive API docs (Swagger UI, ReDoc) out-of-the-box.",
+      "rightDesc": "Documentation typically written manually or with extensions.",
+      "leftIcon": "Search",
       "rightIcon": "Globe",
-      "leftVisualText": "Newer Tools",
-      "rightVisualText": "Established Tools"
+      "leftVisualText": "Docs Ready",
+      "rightVisualText": "Docs Manual"
+    },
+    {
+      "title": "6. COMMUNITY SIZE",
+      "leftTitle": "Growing Community",
+      "rightTitle": "Large Community",
+      "leftDesc": "Rapidly expanding with strong interest and contributions.",
+      "rightDesc": "Vast, mature community with extensive resources.",
+      "leftIcon": "Activity",
+      "rightIcon": "Users",
+      "leftVisualText": "New Wave",
+      "rightVisualText": "Established"
+    },
+    {
+      "title": "7. CONFIGURATION",
+      "leftTitle": "Declarative Config",
+      "rightTitle": "Flexible Config",
+      "leftDesc": "Configuration managed via settings files and environment variables.",
+      "rightDesc": "Highly flexible, configuration can be set in various ways.",
+      "leftIcon": "Settings",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Structured",
+      "rightVisualText": "Flexible"
     }
   ]
 }

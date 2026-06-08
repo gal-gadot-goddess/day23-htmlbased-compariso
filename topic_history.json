@@ -1,5 +1,4 @@
 [
-  "Node.js vs Deno",
   "Next.js vs Remix",
   "Qwik vs SolidJS",
   "Astro vs Next.js",
@@ -48,5 +47,6 @@
   "Remix vs Next.js",
   "Vector DB vs Relational DB",
   "PostgreSQL vs MongoDB",
-  "Svelte vs Vue.js"
+  "Svelte vs Vue.js",
+  "FastAPI vs Flask"
 ]
