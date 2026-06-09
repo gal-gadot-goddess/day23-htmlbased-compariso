@@ -1,5 +1,4 @@
 [
-  "Astro vs Next.js",
   "GraphQL vs REST",
   "PYTHON vs GO",
   "SolidJS vs Qwik",
@@ -48,5 +47,6 @@
   "React Server Components vs React Client Components",
   "Server Components vs Client Components",
   "Couchbase vs MongoDB",
-  "Svelte vs Vue.js"
+  "Svelte vs Vue.js",
+  "NEO4J vs MONGODB"
 ]
