@@ -1,5 +1,4 @@
 [
-  "Astro vs Next.js",
   "Next.js vs Nuxt.js",
   "Astro vs Next.js",
   "GraphQL vs REST",
@@ -48,5 +47,6 @@
   "Svelte vs Vue.js",
   "FastAPI vs Flask",
   "React Server Components vs React Client Components",
-  "Server Components vs Client Components"
+  "Server Components vs Client Components",
+  "Couchbase vs MongoDB"
 ]
