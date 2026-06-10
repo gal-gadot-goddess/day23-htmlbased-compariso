@@ -1,5 +1,4 @@
 [
-  "SolidJS vs Qwik",
   "React vs SolidJS",
   "Remix vs Next.js",
   "Qwik vs SolidJS",
@@ -48,5 +47,6 @@
   "Svelte vs Vue.js",
   "NEO4J vs MONGODB",
   "Next.js vs Astro",
-  "SolidStart vs Astro"
+  "SolidStart vs Astro",
+  "FastAPI vs Flask"
 ]

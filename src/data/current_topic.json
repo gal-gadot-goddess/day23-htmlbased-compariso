@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND ARCHITECTURE",
+  "topLabel": "BACKEND DEVELOPMENT",
   "mainTitle": {
-    "left": "SolidStart",
-    "right": "Astro",
+    "left": "FastAPI",
+    "right": "Flask",
     "vs": "vs"
   },
-  "leftSub": "Meta-framework React",
-  "rightSub": "Content Site Builder",
-  "leftColor": "#00D1B2",
-  "rightColor": "#FF6B6B",
-  "badge": "THE 7 CORE DIFFERENCES",
+  "leftSub": "Modern Python framework",
+  "rightSub": "Minimalist Python framework",
+  "leftColor": "#00BFFF",
+  "rightColor": "#FF8C00",
+  "badge": "7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. PRIMARY FOCUS",
-      "leftTitle": "Full-stack apps",
-      "rightTitle": "Content sites",
-      "leftDesc": "Built for dynamic, interactive web applications with server-side rendering and routing.",
-      "rightDesc": "Optimized for static content, performance, and easy content management.",
-      "leftIcon": "Server",
+      "title": "1. PERFORMANCE",
+      "leftTitle": "Asynchronous by default",
+      "rightTitle": "Synchronous by default",
+      "leftDesc": "Leverages Starlette for async, offering higher concurrency and better I/O bound performance.",
+      "rightDesc": "Relies on Werkzeug for WSGI, typically single-threaded unless explicitly managed.",
+      "leftIcon": "Zap",
+      "rightIcon": "Activity",
+      "leftVisualText": "Faster",
+      "rightVisualText": "Standard"
+    },
+    {
+      "title": "2. TYPE HINTS",
+      "leftTitle": "Built-in type support",
+      "rightTitle": "Optional type support",
+      "leftDesc": "Uses Python type hints for automatic data validation, serialization, and OpenAPI documentation.",
+      "rightDesc": "Relies on extensions like Marshmallow for validation and serialization.",
+      "leftIcon": "FileCode",
       "rightIcon": "FileCode",
-      "leftVisualText": "Full-Stack",
-      "rightVisualText": "Static"
-    },
-    {
-      "title": "2. REACTIVITY",
-      "leftTitle": "Fine-grained Signals",
-      "rightTitle": "Component Islands",
-      "leftDesc": "Leverages Solid's reactive primitive for highly efficient UI updates.",
-      "rightDesc": "Hydrates components on demand, minimizing JavaScript payload.",
-      "leftIcon": "Activity",
-      "rightIcon": "Layers",
-      "leftVisualText": "Reactive",
-      "rightVisualText": "Islands"
-    },
-    {
-      "title": "3. ROUTING",
-      "leftTitle": "Built-in File-based",
-      "rightTitle": "File-based",
-      "leftDesc": "Integrated routing system for defining application routes based on file structure.",
-      "rightDesc": "File-based routing to create pages and API endpoints easily.",
-      "leftIcon": "Layout",
-      "rightIcon": "Layout",
       "leftVisualText": "Integrated",
-      "rightVisualText": "Simple"
+      "rightVisualText": "Add-on"
     },
     {
-      "title": "4. SERVER SIDE",
-      "leftTitle": "SSR & API Routes",
-      "rightTitle": "Serverless Functions",
-      "leftDesc": "Robust server-side rendering, data fetching, and API endpoint creation.",
-      "rightDesc": "Supports serverless functions for dynamic behavior and API routes.",
+      "title": "3. DOCUMENTATION",
+      "leftTitle": "Auto-generated API docs",
+      "rightTitle": "Manual documentation",
+      "leftDesc": "Generates interactive API docs (Swagger UI, ReDoc) directly from code and type hints.",
+      "rightDesc": "Requires manual setup of documentation tools or writing it separately.",
+      "leftIcon": "Search",
+      "rightIcon": "Search",
+      "leftVisualText": "Automatic",
+      "rightVisualText": "Manual"
+    },
+    {
+      "title": "4. DEPENDENCY INJECTION",
+      "leftTitle": "Built-in DI",
+      "rightTitle": "Manual DI",
+      "leftDesc": "Features a powerful dependency injection system for easier testing and managing dependencies.",
+      "rightDesc": "Requires manual implementation or external libraries for dependency injection.",
+      "leftIcon": "Layers",
+      "rightIcon": "Layers",
+      "leftVisualText": "Native",
+      "rightVisualText": "External"
+    },
+    {
+      "title": "5. LEARNING CURVE",
+      "leftTitle": "Slightly steeper",
+      "rightTitle": "Gentler",
+      "leftDesc": "More features and concepts to grasp initially due to async and type system.",
+      "rightDesc": "Simpler core concepts, easier for beginners to get started quickly.",
+      "leftIcon": "Network",
+      "rightIcon": "Network",
+      "leftVisualText": "Advanced",
+      "rightVisualText": "Basic"
+    },
+    {
+      "title": "6. ECOSYSTEM",
+      "leftTitle": "Growing rapidly",
+      "rightTitle": "Mature and vast",
+      "leftDesc": "Benefits from modern Python features and active community development.",
+      "rightDesc": "Extensive third-party extensions and a large, established community.",
+      "leftIcon": "Globe",
+      "rightIcon": "Globe",
+      "leftVisualText": "New",
+      "rightVisualText": "Established"
+    },
+    {
+      "title": "7. USE CASE",
+      "leftTitle": "High-performance APIs",
+      "rightTitle": "Microservices, Prototypes",
+      "leftDesc": "Ideal for building high-throughput, I/O-bound web services and microservices.",
+      "rightDesc": "Great for simple web apps, quick prototypes, and smaller services.",
       "leftIcon": "Server",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Full SSR",
-      "rightVisualText": "Serverless"
-    },
-    {
-      "title": "5. JS BUNDLING",
-      "leftTitle": "Vite/esbuild",
-      "rightTitle": "Vite/esbuild",
-      "leftDesc": "Fast development server and build process powered by Vite.",
-      "rightDesc": "Leverages Vite for a quick development experience and optimized builds.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Terminal",
-      "leftVisualText": "Fast Build",
-      "rightVisualText": "Fast Build"
-    },
-    {
-      "title": "6. FRAMEWORK INTEGRATION",
-      "leftTitle": "React Native",
-      "rightTitle": "Multiple Frameworks",
-      "leftDesc": "Deep integration with the React ecosystem.",
-      "rightDesc": "Supports React, Vue, Svelte, and others with UI framework flexibility.",
-      "leftIcon": "Code",
-      "rightIcon": "Code",
-      "leftVisualText": "React",
-      "rightVisualText": "Multi-FW"
-    },
-    {
-      "title": "7. PERFORMANCE",
-      "leftTitle": "App Performance",
-      "rightTitle": "Content Performance",
-      "leftDesc": "Optimized for dynamic apps, efficient updates with fine-grained reactivity.",
-      "rightDesc": "Prioritizes minimal JS, fast initial load for content-heavy sites.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Zap",
-      "leftVisualText": "Dynamic",
-      "rightVisualText": "Static"
+      "rightIcon": "Server",
+      "leftVisualText": "Scalable",
+      "rightVisualText": "Flexible"
     }
   ]
 }
