@@ -1,92 +1,92 @@
 {
-  "topLabel": "DATABASE ARCHITECTURE",
+  "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "NEO4J",
-    "right": "MONGODB",
+    "left": "Next.js",
+    "right": "Astro",
     "vs": "vs"
   },
-  "leftSub": "Graph Database",
-  "rightSub": "Document Database",
-  "leftColor": "#154734",
-  "rightColor": "#47A048",
+  "leftSub": "Full-stack Framework",
+  "rightSub": "Content-focused Static",
+  "leftColor": "#222222",
+  "rightColor": "#FF7A00",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DATA MODELING",
-      "leftTitle": "Nodes & Relationships",
-      "rightTitle": "Documents & Collections",
-      "leftDesc": "Represents data as interconnected entities with properties.",
-      "rightDesc": "Stores data in flexible, JSON-like documents.",
-      "leftIcon": "Network",
-      "rightIcon": "Layers",
-      "leftVisualText": "Graph",
-      "rightVisualText": "Document"
-    },
-    {
-      "title": "2. QUERY LANGUAGE",
-      "leftTitle": "Cypher",
-      "rightTitle": "MongoDB Query API",
-      "leftDesc": "Declarative language for graph traversal and pattern matching.",
-      "rightDesc": "Rich query language for document manipulation and retrieval.",
-      "leftIcon": "Search",
-      "rightIcon": "Search",
-      "leftVisualText": "Cypher",
-      "rightVisualText": "MQL"
-    },
-    {
-      "title": "3. RELATIONSHIPS",
-      "leftTitle": "First-Class Citizen",
-      "rightTitle": "Embedded/Referenced",
-      "leftDesc": "Relationships are primary, optimized for traversal.",
-      "rightDesc": "Relationships are modeled via embedding or linking.",
-      "leftIcon": "ArrowRightLeft",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Direct",
-      "rightVisualText": "Indirect"
-    },
-    {
-      "title": "4. USE CASES",
-      "leftTitle": "Network Analysis",
-      "rightTitle": "Content Management",
-      "leftDesc": "Ideal for social networks, fraud detection, recommendations.",
-      "rightDesc": "Suitable for catalogs, user profiles, and general data storage.",
-      "leftIcon": "Globe",
-      "rightIcon": "Layers",
-      "leftVisualText": "Connected",
-      "rightVisualText": "Flexible"
-    },
-    {
-      "title": "5. SCHEMA",
-      "leftTitle": "Schema Optional",
-      "rightTitle": "Schema-less",
-      "leftDesc": "Flexible schema, can evolve with application needs.",
-      "rightDesc": "Highly flexible, no predefined structure required.",
-      "leftIcon": "Settings",
-      "rightIcon": "Settings",
-      "leftVisualText": "Dynamic",
-      "rightVisualText": "Fluid"
-    },
-    {
-      "title": "6. PERFORMANCE",
-      "leftTitle": "Relationship Traversal",
-      "rightTitle": "Document Retrieval",
-      "leftDesc": "Fast traversals across many relationships.",
-      "rightDesc": "Efficient retrieval of entire documents or specific fields.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Speedy Paths",
-      "rightVisualText": "Fast Reads"
-    },
-    {
-      "title": "7. SCALABILITY",
-      "leftTitle": "Vertical & Cluster",
-      "rightTitle": "Horizontal Sharding",
-      "leftDesc": "Scales vertically; clustering for distributed.",
-      "rightDesc": "Designed for horizontal scaling via sharding.",
+      "title": "1. RENDERING STRATEGY",
+      "leftTitle": "SSR/ISR Focused",
+      "rightTitle": "Static First",
+      "leftDesc": "Server-side rendering and Incremental Static Regeneration are core.",
+      "rightDesc": "Generates static HTML by default, can hydrate selectively.",
       "leftIcon": "Server",
-      "rightIcon": "Server",
-      "leftVisualText": "Scale Up",
-      "rightVisualText": "Scale Out"
+      "rightIcon": "Layers",
+      "leftVisualText": "SSR/ISR",
+      "rightVisualText": "Static+"
+    },
+    {
+      "title": "2. JavaScript LOAD",
+      "leftTitle": "Client-side JS",
+      "rightTitle": "Zero JS Default",
+      "leftDesc": "Runs JavaScript on the client by default for interactivity.",
+      "rightDesc": "Ships zero JavaScript to the client unless explicitly hydrated.",
+      "leftIcon": "Code",
+      "rightIcon": "Zap",
+      "leftVisualText": "Full JS",
+      "rightVisualText": "No JS"
+    },
+    {
+      "title": "3. DATA FETCHING",
+      "leftTitle": "Server & Client",
+      "rightTitle": "Server Focused",
+      "leftDesc": "Flexible data fetching on server or client sides.",
+      "rightDesc": "Primarily fetches data on the server during build time.",
+      "leftIcon": "Network",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Anywhere",
+      "rightVisualText": "Build Time"
+    },
+    {
+      "title": "4. OPTIMIZATION",
+      "leftTitle": "Image/Script",
+      "rightTitle": "Asset Optimization",
+      "leftDesc": "Built-in components for image and script optimization.",
+      "rightDesc": "Automatic optimization for various assets.",
+      "leftIcon": "Image",
+      "rightIcon": "Box",
+      "leftVisualText": "Built-in",
+      "rightVisualText": "Automatic"
+    },
+    {
+      "title": "5. FRAMEWORK TYPE",
+      "leftTitle": "Full-stack React",
+      "rightTitle": "Static Site Builder",
+      "leftDesc": "Leverages React ecosystem for dynamic features.",
+      "rightDesc": "Framework-agnostic, focuses on content delivery performance.",
+      "leftIcon": "React",
+      "rightIcon": "Globe",
+      "leftVisualText": "React",
+      "rightVisualText": "Content"
+    },
+    {
+      "title": "6. USE CASE",
+      "leftTitle": "Dynamic Apps",
+      "rightTitle": "Content Sites",
+      "leftDesc": "Ideal for highly interactive web applications.",
+      "rightDesc": "Best for blogs, marketing sites, and documentation.",
+      "leftIcon": "Activity",
+      "rightIcon": "FileCode",
+      "leftVisualText": "Apps",
+      "rightVisualText": "Docs"
+    },
+    {
+      "title": "7. INTEGRATION",
+      "leftTitle": "React Ecosystem",
+      "rightTitle": "Any Frontend",
+      "leftDesc": "Deep integration with React components and patterns.",
+      "rightDesc": "Supports multiple UI frameworks or plain HTML/JS.",
+      "leftIcon": "Layers",
+      "rightIcon": "Share2",
+      "leftVisualText": "React Native",
+      "rightVisualText": "Multi-FW"
     }
   ]
 }
