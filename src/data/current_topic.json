@@ -1,92 +1,92 @@
 {
   "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "Next.js",
+    "left": "SolidStart",
     "right": "Astro",
     "vs": "vs"
   },
-  "leftSub": "Full-stack Framework",
-  "rightSub": "Content-focused Static",
-  "leftColor": "#222222",
-  "rightColor": "#FF7A00",
+  "leftSub": "Meta-framework React",
+  "rightSub": "Content Site Builder",
+  "leftColor": "#00D1B2",
+  "rightColor": "#FF6B6B",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. RENDERING STRATEGY",
-      "leftTitle": "SSR/ISR Focused",
-      "rightTitle": "Static First",
-      "leftDesc": "Server-side rendering and Incremental Static Regeneration are core.",
-      "rightDesc": "Generates static HTML by default, can hydrate selectively.",
+      "title": "1. PRIMARY FOCUS",
+      "leftTitle": "Full-stack apps",
+      "rightTitle": "Content sites",
+      "leftDesc": "Built for dynamic, interactive web applications with server-side rendering and routing.",
+      "rightDesc": "Optimized for static content, performance, and easy content management.",
       "leftIcon": "Server",
-      "rightIcon": "Layers",
-      "leftVisualText": "SSR/ISR",
-      "rightVisualText": "Static+"
-    },
-    {
-      "title": "2. JavaScript LOAD",
-      "leftTitle": "Client-side JS",
-      "rightTitle": "Zero JS Default",
-      "leftDesc": "Runs JavaScript on the client by default for interactivity.",
-      "rightDesc": "Ships zero JavaScript to the client unless explicitly hydrated.",
-      "leftIcon": "Code",
-      "rightIcon": "Zap",
-      "leftVisualText": "Full JS",
-      "rightVisualText": "No JS"
-    },
-    {
-      "title": "3. DATA FETCHING",
-      "leftTitle": "Server & Client",
-      "rightTitle": "Server Focused",
-      "leftDesc": "Flexible data fetching on server or client sides.",
-      "rightDesc": "Primarily fetches data on the server during build time.",
-      "leftIcon": "Network",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Anywhere",
-      "rightVisualText": "Build Time"
-    },
-    {
-      "title": "4. OPTIMIZATION",
-      "leftTitle": "Image/Script",
-      "rightTitle": "Asset Optimization",
-      "leftDesc": "Built-in components for image and script optimization.",
-      "rightDesc": "Automatic optimization for various assets.",
-      "leftIcon": "Image",
-      "rightIcon": "Box",
-      "leftVisualText": "Built-in",
-      "rightVisualText": "Automatic"
-    },
-    {
-      "title": "5. FRAMEWORK TYPE",
-      "leftTitle": "Full-stack React",
-      "rightTitle": "Static Site Builder",
-      "leftDesc": "Leverages React ecosystem for dynamic features.",
-      "rightDesc": "Framework-agnostic, focuses on content delivery performance.",
-      "leftIcon": "React",
-      "rightIcon": "Globe",
-      "leftVisualText": "React",
-      "rightVisualText": "Content"
-    },
-    {
-      "title": "6. USE CASE",
-      "leftTitle": "Dynamic Apps",
-      "rightTitle": "Content Sites",
-      "leftDesc": "Ideal for highly interactive web applications.",
-      "rightDesc": "Best for blogs, marketing sites, and documentation.",
-      "leftIcon": "Activity",
       "rightIcon": "FileCode",
-      "leftVisualText": "Apps",
-      "rightVisualText": "Docs"
+      "leftVisualText": "Full-Stack",
+      "rightVisualText": "Static"
     },
     {
-      "title": "7. INTEGRATION",
-      "leftTitle": "React Ecosystem",
-      "rightTitle": "Any Frontend",
-      "leftDesc": "Deep integration with React components and patterns.",
-      "rightDesc": "Supports multiple UI frameworks or plain HTML/JS.",
-      "leftIcon": "Layers",
-      "rightIcon": "Share2",
-      "leftVisualText": "React Native",
+      "title": "2. REACTIVITY",
+      "leftTitle": "Fine-grained Signals",
+      "rightTitle": "Component Islands",
+      "leftDesc": "Leverages Solid's reactive primitive for highly efficient UI updates.",
+      "rightDesc": "Hydrates components on demand, minimizing JavaScript payload.",
+      "leftIcon": "Activity",
+      "rightIcon": "Layers",
+      "leftVisualText": "Reactive",
+      "rightVisualText": "Islands"
+    },
+    {
+      "title": "3. ROUTING",
+      "leftTitle": "Built-in File-based",
+      "rightTitle": "File-based",
+      "leftDesc": "Integrated routing system for defining application routes based on file structure.",
+      "rightDesc": "File-based routing to create pages and API endpoints easily.",
+      "leftIcon": "Layout",
+      "rightIcon": "Layout",
+      "leftVisualText": "Integrated",
+      "rightVisualText": "Simple"
+    },
+    {
+      "title": "4. SERVER SIDE",
+      "leftTitle": "SSR & API Routes",
+      "rightTitle": "Serverless Functions",
+      "leftDesc": "Robust server-side rendering, data fetching, and API endpoint creation.",
+      "rightDesc": "Supports serverless functions for dynamic behavior and API routes.",
+      "leftIcon": "Server",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Full SSR",
+      "rightVisualText": "Serverless"
+    },
+    {
+      "title": "5. JS BUNDLING",
+      "leftTitle": "Vite/esbuild",
+      "rightTitle": "Vite/esbuild",
+      "leftDesc": "Fast development server and build process powered by Vite.",
+      "rightDesc": "Leverages Vite for a quick development experience and optimized builds.",
+      "leftIcon": "Terminal",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Fast Build",
+      "rightVisualText": "Fast Build"
+    },
+    {
+      "title": "6. FRAMEWORK INTEGRATION",
+      "leftTitle": "React Native",
+      "rightTitle": "Multiple Frameworks",
+      "leftDesc": "Deep integration with the React ecosystem.",
+      "rightDesc": "Supports React, Vue, Svelte, and others with UI framework flexibility.",
+      "leftIcon": "Code",
+      "rightIcon": "Code",
+      "leftVisualText": "React",
       "rightVisualText": "Multi-FW"
+    },
+    {
+      "title": "7. PERFORMANCE",
+      "leftTitle": "App Performance",
+      "rightTitle": "Content Performance",
+      "leftDesc": "Optimized for dynamic apps, efficient updates with fine-grained reactivity.",
+      "rightDesc": "Prioritizes minimal JS, fast initial load for content-heavy sites.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Zap",
+      "leftVisualText": "Dynamic",
+      "rightVisualText": "Static"
     }
   ]
 }
