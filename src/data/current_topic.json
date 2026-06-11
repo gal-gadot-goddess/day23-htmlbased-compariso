@@ -1,92 +1,92 @@
 {
-  "topLabel": "BACKEND DEVELOPMENT",
+  "topLabel": "DATA STREAMING",
   "mainTitle": {
-    "left": "FastAPI",
-    "right": "Flask",
+    "left": "Kafka",
+    "right": "Pulsar",
     "vs": "vs"
   },
-  "leftSub": "Modern Python framework",
-  "rightSub": "Minimalist Python framework",
-  "leftColor": "#00BFFF",
-  "rightColor": "#FF8C00",
-  "badge": "7 CORE DIFFERENCES",
+  "leftSub": "Distributed Event Streaming",
+  "rightSub": "Distributed Messaging & Streaming",
+  "leftColor": "#8118E8",
+  "rightColor": "#00B8D4",
+  "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. PERFORMANCE",
-      "leftTitle": "Asynchronous by default",
-      "rightTitle": "Synchronous by default",
-      "leftDesc": "Leverages Starlette for async, offering higher concurrency and better I/O bound performance.",
-      "rightDesc": "Relies on Werkzeug for WSGI, typically single-threaded unless explicitly managed.",
-      "leftIcon": "Zap",
-      "rightIcon": "Activity",
-      "leftVisualText": "Faster",
-      "rightVisualText": "Standard"
-    },
-    {
-      "title": "2. TYPE HINTS",
-      "leftTitle": "Built-in type support",
-      "rightTitle": "Optional type support",
-      "leftDesc": "Uses Python type hints for automatic data validation, serialization, and OpenAPI documentation.",
-      "rightDesc": "Relies on extensions like Marshmallow for validation and serialization.",
-      "leftIcon": "FileCode",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Integrated",
-      "rightVisualText": "Add-on"
-    },
-    {
-      "title": "3. DOCUMENTATION",
-      "leftTitle": "Auto-generated API docs",
-      "rightTitle": "Manual documentation",
-      "leftDesc": "Generates interactive API docs (Swagger UI, ReDoc) directly from code and type hints.",
-      "rightDesc": "Requires manual setup of documentation tools or writing it separately.",
-      "leftIcon": "Search",
-      "rightIcon": "Search",
-      "leftVisualText": "Automatic",
-      "rightVisualText": "Manual"
-    },
-    {
-      "title": "4. DEPENDENCY INJECTION",
-      "leftTitle": "Built-in DI",
-      "rightTitle": "Manual DI",
-      "leftDesc": "Features a powerful dependency injection system for easier testing and managing dependencies.",
-      "rightDesc": "Requires manual implementation or external libraries for dependency injection.",
-      "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "Native",
-      "rightVisualText": "External"
-    },
-    {
-      "title": "5. LEARNING CURVE",
-      "leftTitle": "Slightly steeper",
-      "rightTitle": "Gentler",
-      "leftDesc": "More features and concepts to grasp initially due to async and type system.",
-      "rightDesc": "Simpler core concepts, easier for beginners to get started quickly.",
-      "leftIcon": "Network",
-      "rightIcon": "Network",
-      "leftVisualText": "Advanced",
-      "rightVisualText": "Basic"
-    },
-    {
-      "title": "6. ECOSYSTEM",
-      "leftTitle": "Growing rapidly",
-      "rightTitle": "Mature and vast",
-      "leftDesc": "Benefits from modern Python features and active community development.",
-      "rightDesc": "Extensive third-party extensions and a large, established community.",
-      "leftIcon": "Globe",
-      "rightIcon": "Globe",
-      "leftVisualText": "New",
-      "rightVisualText": "Established"
-    },
-    {
-      "title": "7. USE CASE",
-      "leftTitle": "High-performance APIs",
-      "rightTitle": "Microservices, Prototypes",
-      "leftDesc": "Ideal for building high-throughput, I/O-bound web services and microservices.",
-      "rightDesc": "Great for simple web apps, quick prototypes, and smaller services.",
+      "title": "1. Architecture",
+      "leftTitle": "Log-centric broker",
+      "rightTitle": "Tiered storage brokers",
+      "leftDesc": "Replication and storage managed by brokers directly. Simpler but less scalable storage.",
+      "rightDesc": "Decoupled compute and storage. Brokers handle compute, BookKeeper handles storage. Highly scalable.",
       "leftIcon": "Server",
-      "rightIcon": "Server",
-      "leftVisualText": "Scalable",
-      "rightVisualText": "Flexible"
+      "rightIcon": "Layers",
+      "leftVisualText": "Broker-centric",
+      "rightVisualText": "Tiered"
+    },
+    {
+      "title": "2. Storage",
+      "leftTitle": "Broker local disk",
+      "rightTitle": "BookKeeper cluster",
+      "leftDesc": "Relies on broker disks for data persistence. Can be a bottleneck for large data.",
+      "rightDesc": "Uses Apache BookKeeper for durable, distributed storage. More robust and scalable.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Database",
+      "leftVisualText": "Local",
+      "rightVisualText": "BookKeeper"
+    },
+    {
+      "title": "3. Multi-tenancy",
+      "leftTitle": "Limited support",
+      "rightTitle": "Built-in",
+      "leftDesc": "Primarily designed for single-tenant or controlled environments. Resource isolation can be challenging.",
+      "rightDesc": "Native support for isolating tenants with resource quotas and access controls.",
+      "leftIcon": "Lock",
+      "rightIcon": "Shield",
+      "leftVisualText": "Basic",
+      "rightVisualText": "Native"
+    },
+    {
+      "title": "4. Geo-replication",
+      "leftTitle": "Add-ons needed",
+      "rightTitle": "Built-in",
+      "leftDesc": "Requires additional configurations or tools for replicating data across data centers.",
+      "rightDesc": "Supports synchronous and asynchronous replication across regions out-of-the-box.",
+      "leftIcon": "Globe",
+      "rightIcon": "Share2",
+      "leftVisualText": "Manual",
+      "rightVisualText": "Integrated"
+    },
+    {
+      "title": "5. Message Consumption",
+      "leftTitle": "Offset-based",
+      "rightTitle": "Cursor-based",
+      "leftDesc": "Consumers track their own progress using offsets. Can lead to data loss or duplicates.",
+      "rightDesc": "Brokers manage cursors for more reliable message acknowledgement and replayability.",
+      "leftIcon": "ArrowRightLeft",
+      "rightIcon": "Activity",
+      "leftVisualText": "Offset",
+      "rightVisualText": "Cursor"
+    },
+    {
+      "title": "6. Topic Management",
+      "leftTitle": "Static partitions",
+      "rightTitle": "Dynamic scaling",
+      "leftDesc": "Partitions are fixed after creation. Resizing requires rebalancing or new topics.",
+      "rightDesc": "Supports dynamic topic and partition scaling without service interruption.",
+      "leftIcon": "FileCode",
+      "rightIcon": "Settings",
+      "leftVisualText": "Fixed",
+      "rightVisualText": "Dynamic"
+    },
+    {
+      "title": "7. Latency",
+      "leftTitle": "Lower latency",
+      "rightTitle": "Slightly higher",
+      "leftDesc": "Optimized for raw throughput and low latency in typical use cases.",
+      "rightDesc": "Tiered architecture can introduce minimal extra latency, but offers greater scalability.",
+      "leftIcon": "Zap",
+      "rightIcon": "Zap",
+      "leftVisualText": "Fast",
+      "rightVisualText": "Balanced"
     }
   ]
 }

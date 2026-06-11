@@ -1,5 +1,4 @@
 [
-  "React vs SolidJS",
   "Remix vs Next.js",
   "Qwik vs SolidJS",
   "SolidJS vs Qwik",
@@ -48,5 +47,6 @@
   "NEO4J vs MONGODB",
   "Next.js vs Astro",
   "SolidStart vs Astro",
-  "FastAPI vs Flask"
+  "FastAPI vs Flask",
+  "Kafka vs Pulsar"
 ]
