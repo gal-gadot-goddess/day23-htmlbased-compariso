@@ -1,5 +1,4 @@
 [
-  "Remix vs Next.js",
   "Qwik vs SolidJS",
   "SolidJS vs Qwik",
   "Next.js vs Remix",
@@ -48,5 +47,6 @@
   "Next.js vs Astro",
   "SolidStart vs Astro",
   "FastAPI vs Flask",
-  "Kafka vs Pulsar"
+  "Kafka vs Pulsar",
+  "Svelte vs Vue.js"
 ]
