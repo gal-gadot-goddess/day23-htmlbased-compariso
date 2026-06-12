@@ -1,5 +1,4 @@
 [
-  "Qwik vs SolidJS",
   "SolidJS vs Qwik",
   "Next.js vs Remix",
   "Tailwind CSS vs Bootstrap",
@@ -48,5 +47,6 @@
   "SolidStart vs Astro",
   "FastAPI vs Flask",
   "Kafka vs Pulsar",
-  "Svelte vs Vue.js"
+  "Svelte vs Vue.js",
+  "CQRS vs CRUD"
 ]
