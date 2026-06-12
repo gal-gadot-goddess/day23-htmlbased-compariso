@@ -1,5 +1,4 @@
 [
-  "Next.js vs Remix",
   "Tailwind CSS vs Bootstrap",
   "Serverless vs Containers",
   "Server Components vs Client Components",
@@ -48,5 +47,6 @@
   "Kafka vs Pulsar",
   "Svelte vs Vue.js",
   "CQRS vs CRUD",
-  "Remix vs Next.js"
+  "Remix vs Next.js",
+  "Svelte vs Vue.js"
 ]
