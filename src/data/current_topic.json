@@ -1,92 +1,92 @@
 {
   "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "Micro Frontends",
-    "right": "Monolith Frontend",
+    "left": "Next.js",
+    "right": "Remix",
     "vs": "vs"
   },
-  "leftSub": "Independent teams, deployments",
-  "rightSub": "Single codebase, deploy",
-  "leftColor": "#805AD5",
-  "rightColor": "#38A169",
+  "leftSub": "React Framework",
+  "rightSub": "React Framework",
+  "leftColor": "#00D8FF",
+  "rightColor": "#E23838",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. TEAM ORGANIZATION",
-      "leftTitle": "Independent teams",
-      "rightTitle": "Centralized team",
-      "leftDesc": "Teams own specific features or domains, enabling autonomy and faster development cycles.",
-      "rightDesc": "One team manages the entire frontend, potentially leading to coordination overhead.",
-      "leftIcon": "Users",
-      "rightIcon": "Users",
-      "leftVisualText": "Autonomous",
-      "rightVisualText": "Coordinated"
-    },
-    {
-      "title": "2. TECHNOLOGY STACK",
-      "leftTitle": "Flexible stacks",
-      "rightTitle": "Uniform stack",
-      "leftDesc": "Each micro frontend can use its own tech stack, optimizing for specific needs.",
-      "rightDesc": "The entire application shares a single technology stack, simplifying maintenance.",
-      "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "Diverse",
-      "rightVisualText": "Consistent"
-    },
-    {
-      "title": "3. DEPLOYMENT",
-      "leftTitle": "Independent deployments",
-      "rightTitle": "Single deployment",
-      "leftDesc": "Features can be deployed independently, reducing risk and enabling faster releases.",
-      "rightDesc": "All changes are deployed together, requiring extensive coordination and testing.",
+      "title": "1. DATA FETCHING",
+      "leftTitle": "getStaticProps/getServerSideProps",
+      "rightTitle": "Loader functions",
+      "leftDesc": "Pre-rendering via static generation or server-side rendering.",
+      "rightDesc": "Data loading happens at the route level on the server.",
       "leftIcon": "Server",
       "rightIcon": "Server",
-      "leftVisualText": "Agile",
-      "rightVisualText": "Synchronized"
+      "leftVisualText": "SSR/SSG",
+      "rightVisualText": "Loaders"
     },
     {
-      "title": "4. SCALABILITY",
-      "leftTitle": "Granular scaling",
-      "rightTitle": "Overall scaling",
-      "leftDesc": "Scale individual parts of the application based on their specific load.",
-      "rightDesc": "Scale the entire application, potentially over-provisioning resources.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Targeted",
-      "rightVisualText": "Holistic"
+      "title": "2. ROUTING",
+      "leftTitle": "File-system based",
+      "rightTitle": "File-system based",
+      "leftDesc": "Pages directory defines routes. API routes for endpoints.",
+      "rightDesc": "Nested routes and dynamic segments for complex UIs.",
+      "leftIcon": "Layout",
+      "rightIcon": "Layout",
+      "leftVisualText": "Pages",
+      "rightVisualText": "Nested"
     },
     {
-      "title": "5. CODEBASE SIZE",
-      "leftTitle": "Smaller modules",
-      "rightTitle": "Large codebase",
-      "leftDesc": "Each micro frontend is a smaller, more manageable codebase.",
-      "rightDesc": "The entire application resides in one large, potentially complex, codebase.",
+      "title": "3. DATA MUTATION",
+      "leftTitle": "API Routes/Server Actions",
+      "rightTitle": "Form actions",
+      "leftDesc": "Dedicated API endpoints or newer Server Actions.",
+      "rightDesc": "Built-in handling for form submissions and mutations.",
+      "leftIcon": "Code",
+      "rightIcon": "FileCode",
+      "leftVisualText": "APIs",
+      "rightVisualText": "Forms"
+    },
+    {
+      "title": "4. RENDERING STRATEGY",
+      "leftTitle": "SSR, SSG, ISR, CSR",
+      "rightTitle": "SSR focused",
+      "leftDesc": "Offers various rendering options for optimization.",
+      "rightDesc": "Primarily server-side rendering for faster initial loads.",
+      "leftIcon": "Layers",
+      "rightIcon": "Layers",
+      "leftVisualText": "Flexible",
+      "rightVisualText": "Server"
+    },
+    {
+      "title": "5. STATE MANAGEMENT",
+      "leftTitle": "Built-in Context/Zustand",
+      "rightTitle": "Web Standards/Hooks",
+      "leftDesc": "Leverages React context or external libraries.",
+      "rightDesc": "Uses browser APIs like Fetch, FormData, and request APIs.",
+      "leftIcon": "Box",
+      "rightIcon": "Globe",
+      "leftVisualText": "Context",
+      "rightVisualText": "Web"
+    },
+    {
+      "title": "6. DEPLOYMENT TARGET",
+      "leftTitle": "Vercel optimized",
+      "rightTitle": "Any Node.js env",
+      "leftDesc": "Highly integrated with Vercel for optimal performance.",
+      "rightDesc": "Deployable to any Node.js server or edge network.",
+      "leftIcon": "Server",
+      "rightIcon": "Server",
+      "leftVisualText": "Vercel",
+      "rightVisualText": "Universal"
+    },
+    {
+      "title": "7. ERROR HANDLING",
+      "leftTitle": "Custom Error Pages",
+      "rightTitle": "Route-level Errors",
+      "leftDesc": "Define custom pages for 404 and general errors.",
+      "rightDesc": "Handles errors within route modules for granular control.",
       "leftIcon": "FileCode",
       "rightIcon": "FileCode",
-      "leftVisualText": "Modular",
-      "rightVisualText": "Monolithic"
-    },
-    {
-      "title": "6. COMPLEXITY",
-      "leftTitle": "Integration complexity",
-      "rightTitle": "Internal complexity",
-      "leftDesc": "Managing the communication and orchestration between multiple micro frontends adds complexity.",
-      "rightDesc": "Complexity is contained within a single large codebase.",
-      "leftIcon": "Network",
-      "rightIcon": "Settings",
-      "leftVisualText": "Distributed",
-      "rightVisualText": "Centralized"
-    },
-    {
-      "title": "7. MAINTENANCE",
-      "leftTitle": "Easier maintenance",
-      "rightTitle": "Challenging maintenance",
-      "leftDesc": "Easier to refactor or replace small, independent parts.",
-      "rightDesc": "Maintaining a large, interconnected codebase can become difficult over time.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Focused",
-      "rightVisualText": "Global"
+      "leftVisualText": "Pages",
+      "rightVisualText": "Routes"
     }
   ]
 }
