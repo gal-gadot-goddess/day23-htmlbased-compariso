@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND ARCHITECTURE",
+  "topLabel": "DEVELOPMENT TOOLS",
   "mainTitle": {
-    "left": "Next.js",
-    "right": "Remix",
+    "left": "Bun",
+    "right": "Node.js",
     "vs": "vs"
   },
-  "leftSub": "React Framework",
-  "rightSub": "React Framework",
-  "leftColor": "#00D8FF",
-  "rightColor": "#E23838",
+  "leftSub": "JavaScript Runtime",
+  "rightSub": "JavaScript Runtime",
+  "leftColor": "#FF6B6B",
+  "rightColor": "#4ECDC4",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DATA FETCHING",
-      "leftTitle": "getStaticProps/getServerSideProps",
-      "rightTitle": "Loader functions",
-      "leftDesc": "Pre-rendering via static generation or server-side rendering.",
-      "rightDesc": "Data loading happens at the route level on the server.",
-      "leftIcon": "Server",
-      "rightIcon": "Server",
-      "leftVisualText": "SSR/SSG",
-      "rightVisualText": "Loaders"
+      "title": "1. PERFORMANCE",
+      "leftTitle": "Blazing Fast",
+      "rightTitle": "Mature Speed",
+      "leftDesc": "Bun offers superior speed for script execution and bundling. Significantly faster.",
+      "rightDesc": "Node.js is performant but generally slower than Bun for many tasks.",
+      "leftIcon": "Zap",
+      "rightIcon": "Cpu",
+      "leftVisualText": "🚀",
+      "rightVisualText": "⚡"
     },
     {
-      "title": "2. ROUTING",
-      "leftTitle": "File-system based",
-      "rightTitle": "File-system based",
-      "leftDesc": "Pages directory defines routes. API routes for endpoints.",
-      "rightDesc": "Nested routes and dynamic segments for complex UIs.",
-      "leftIcon": "Layout",
-      "rightIcon": "Layout",
-      "leftVisualText": "Pages",
-      "rightVisualText": "Nested"
-    },
-    {
-      "title": "3. DATA MUTATION",
-      "leftTitle": "API Routes/Server Actions",
-      "rightTitle": "Form actions",
-      "leftDesc": "Dedicated API endpoints or newer Server Actions.",
-      "rightDesc": "Built-in handling for form submissions and mutations.",
-      "leftIcon": "Code",
-      "rightIcon": "FileCode",
-      "leftVisualText": "APIs",
-      "rightVisualText": "Forms"
-    },
-    {
-      "title": "4. RENDERING STRATEGY",
-      "leftTitle": "SSR, SSG, ISR, CSR",
-      "rightTitle": "SSR focused",
-      "leftDesc": "Offers various rendering options for optimization.",
-      "rightDesc": "Primarily server-side rendering for faster initial loads.",
+      "title": "2. INTEGRATION",
+      "leftTitle": "All-in-One",
+      "rightTitle": "Modular Ecosystem",
+      "leftDesc": "Bun includes bundler, transpiler, and package manager out-of-the-box. Minimal setup.",
+      "rightDesc": "Node.js relies on separate tools like Webpack/Vite and npm/Yarn. Extensive ecosystem.",
       "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "Flexible",
-      "rightVisualText": "Server"
+      "rightIcon": "Box",
+      "leftVisualText": "📦",
+      "rightVisualText": "🧩"
     },
     {
-      "title": "5. STATE MANAGEMENT",
-      "leftTitle": "Built-in Context/Zustand",
-      "rightTitle": "Web Standards/Hooks",
-      "leftDesc": "Leverages React context or external libraries.",
-      "rightDesc": "Uses browser APIs like Fetch, FormData, and request APIs.",
-      "leftIcon": "Box",
-      "rightIcon": "Globe",
-      "leftVisualText": "Context",
-      "rightVisualText": "Web"
-    },
-    {
-      "title": "6. DEPLOYMENT TARGET",
-      "leftTitle": "Vercel optimized",
-      "rightTitle": "Any Node.js env",
-      "leftDesc": "Highly integrated with Vercel for optimal performance.",
-      "rightDesc": "Deployable to any Node.js server or edge network.",
-      "leftIcon": "Server",
-      "rightIcon": "Server",
-      "leftVisualText": "Vercel",
-      "rightVisualText": "Universal"
-    },
-    {
-      "title": "7. ERROR HANDLING",
-      "leftTitle": "Custom Error Pages",
-      "rightTitle": "Route-level Errors",
-      "leftDesc": "Define custom pages for 404 and general errors.",
-      "rightDesc": "Handles errors within route modules for granular control.",
+      "title": "3. COMPATIBILITY",
+      "leftTitle": "Native ES",
+      "rightTitle": "CommonJS Support",
+      "leftDesc": "Bun natively supports modern ECMAScript modules and TypeScript.",
+      "rightDesc": "Node.js has strong support for CommonJS modules, with ES module support evolving.",
       "leftIcon": "FileCode",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Pages",
-      "rightVisualText": "Routes"
+      "rightIcon": "Code",
+      "leftVisualText": "✅ ES",
+      "rightVisualText": "✅ CJS"
+    },
+    {
+      "title": "4. PACKAGE MANAGER",
+      "leftTitle": "Integrated",
+      "rightTitle": "External",
+      "leftDesc": "Bun has its own built-in, fast package manager (`bun install`).",
+      "rightDesc": "Node.js uses npm or Yarn, which are separate, well-established package managers.",
+      "leftIcon": "Network",
+      "rightIcon": "Share2",
+      "leftVisualText": "⬇️",
+      "rightVisualText": "📦"
+    },
+    {
+      "title": "5. API",
+      "leftTitle": "Web Standard",
+      "rightTitle": "Node Specific",
+      "leftDesc": "Bun implements Web APIs (like Fetch) for consistency across environments.",
+      "rightDesc": "Node.js has its own set of APIs (e.g., `fs` module).",
+      "leftIcon": "Globe",
+      "rightIcon": "Server",
+      "leftVisualText": "🌐",
+      "rightVisualText": "💻"
+    },
+    {
+      "title": "6. STABILITY",
+      "leftTitle": "Emerging",
+      "rightTitle": "Rock Solid",
+      "leftDesc": "Bun is newer, rapidly developing, but may have breaking changes.",
+      "rightDesc": "Node.js is mature, battle-tested, and extremely stable for production.",
+      "leftIcon": "Activity",
+      "rightIcon": "Shield",
+      "leftVisualText": "✨",
+      "rightVisualText": "🛡️"
+    },
+    {
+      "title": "7. COMMUNITY",
+      "leftTitle": "Growing Fast",
+      "rightTitle": "Massive",
+      "leftDesc": "Bun has a passionate and rapidly expanding community.",
+      "rightDesc": "Node.js boasts one of the largest and most established developer communities.",
+      "leftIcon": "Search",
+      "rightIcon": "Users",
+      "leftVisualText": "📈",
+      "rightVisualText": "🌍"
     }
   ]
 }
