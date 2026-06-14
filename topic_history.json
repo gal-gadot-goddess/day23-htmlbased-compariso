@@ -1,5 +1,4 @@
 [
-  "Vite vs Webpack",
   "Kafka vs RabbitMQ",
   "Astro vs Next.js",
   "Server Components vs Client Components",
@@ -48,5 +47,6 @@
   "Micro Frontends vs Monolith Frontend",
   "Next.js vs Remix",
   "Bun vs Node.js",
-  "Kubernetes vs Docker Swarm"
+  "Kubernetes vs Docker Swarm",
+  "Astro vs Next.js"
 ]
