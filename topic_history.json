@@ -1,5 +1,4 @@
 [
-  "SolidJS vs Qwik",
   "Vite vs Webpack",
   "Kafka vs RabbitMQ",
   "Astro vs Next.js",
@@ -48,5 +47,6 @@
   "Svelte vs Vue.js",
   "Micro Frontends vs Monolith Frontend",
   "Next.js vs Remix",
-  "Bun vs Node.js"
+  "Bun vs Node.js",
+  "Kubernetes vs Docker Swarm"
 ]
