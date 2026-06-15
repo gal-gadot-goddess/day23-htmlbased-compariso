@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND ARCHITECTURE",
+  "topLabel": "FRONTEND DEVELOPMENT",
   "mainTitle": {
-    "left": "Remix",
-    "right": "Next.js",
+    "left": "SvelteKit",
+    "right": "Astro",
     "vs": "vs"
   },
-  "leftSub": "Server-centric web",
-  "rightSub": "Hybrid web framework",
-  "leftColor": "#4F46E5",
-  "rightColor": "#0EA5E9",
+  "leftSub": "App Framework",
+  "rightSub": "Content Site",
+  "leftColor": "#41B883",
+  "rightColor": "#FF5700",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. ROUTING",
-      "leftTitle": "File-based routing",
-      "rightTitle": "File-based routing",
-      "leftDesc": "Nested routes with layout inheritance, ideal for complex UIs and shared states.",
-      "rightDesc": "App router for nested routes, pages router for static/SSR. Flexible but can be complex.",
-      "leftIcon": "Layout",
-      "rightIcon": "Layout",
-      "leftVisualText": "Nested Layouts",
-      "rightVisualText": "Flexible Routing"
-    },
-    {
-      "title": "2. DATA LOADING",
-      "leftTitle": "Server-first data",
-      "rightTitle": "Hybrid data fetching",
-      "leftDesc": "Loads data on the server via route loaders, ensures data before render.",
-      "rightDesc": "Server/Client fetching (getStaticProps, getServerSideProps, RSC). Offers choice.",
-      "leftIcon": "Server",
-      "rightIcon": "Layers",
-      "leftVisualText": "Server Loaders",
-      "rightVisualText": "Mixed Fetching"
-    },
-    {
-      "title": "3. MUTATIONS",
-      "leftTitle": "Action functions",
-      "rightTitle": "API routes/Server Actions",
-      "leftDesc": "Dedicated action functions handle form submissions and mutations server-side efficiently.",
-      "rightDesc": "API routes for REST, Server Actions for mutations. Can be separate concerns.",
-      "leftIcon": "Activity",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Built-in Actions",
-      "rightVisualText": "API Routes/Actions"
-    },
-    {
-      "title": "4. ERROR HANDLING",
-      "leftTitle": "Route-based errors",
-      "rightTitle": "Page/Component errors",
-      "leftDesc": "Explicit error boundaries for routes, provides graceful fallback UI.",
-      "rightDesc": "Handles errors at page or component level, relies on React error boundaries.",
-      "leftIcon": "Shield",
-      "rightIcon": "Zap",
-      "leftVisualText": "Route Boundaries",
-      "rightVisualText": "Component Errors"
-    },
-    {
-      "title": "5. CLIENT BUNDLE",
-      "leftTitle": "Minimal JS",
-      "rightTitle": "Can be larger",
-      "leftDesc": "Loads only essential JS for interactivity, prioritizing performance and load times.",
-      "rightDesc": "Depends on features used, potential for larger bundles with many client components.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Box",
-      "leftVisualText": "Lightweight",
-      "rightVisualText": "Feature-rich"
-    },
-    {
-      "title": "6. FOCUS",
-      "leftTitle": "Web standards",
-      "rightTitle": "React ecosystem",
-      "leftDesc": "Leverages web platform features like Fetch API and HTTP caching.",
-      "rightDesc": "Deep integration with React, Server Components, and Next.js specific features.",
-      "leftIcon": "Globe",
-      "rightIcon": "Code",
-      "leftVisualText": "Web First",
-      "rightVisualText": "React Centric"
-    },
-    {
-      "title": "7. STATE MANAGEMENT",
-      "leftTitle": "Server/Client state",
-      "rightTitle": "Multiple options",
-      "leftDesc": "Clear separation of server and client state, relies on data loaders and context.",
-      "rightDesc": "Built-in context API, external libraries (Zustand, Redux) common for complex client state.",
+      "title": "1. PRIMARY FOCUS",
+      "leftTitle": "Full-Stack Apps",
+      "rightTitle": "Content-Optimized Sites",
+      "leftDesc": "Designed for building dynamic, interactive web applications.",
+      "rightDesc": "Built for fast, static content delivery with islands.",
       "leftIcon": "Layers",
-      "rightIcon": "Search",
-      "leftVisualText": "Defined State",
-      "rightVisualText": "Flexible State"
+      "rightIcon": "Globe",
+      "leftVisualText": "Apps",
+      "rightVisualText": "Content"
+    },
+    {
+      "title": "2. REACTIVITY",
+      "leftTitle": "Compiler-Based",
+      "rightTitle": "No Runtime JS",
+      "leftDesc": "Svelte compiles components to imperative vanilla JS.",
+      "rightDesc": "Astro ships zero JS by default for UI.",
+      "leftIcon": "Code",
+      "rightIcon": "Server",
+      "leftVisualText": "Compile",
+      "rightVisualText": "Zero JS"
+    },
+    {
+      "title": "3. DATA FETCHING",
+      "leftTitle": "Server Loaders",
+      "rightTitle": "Adapter-Driven",
+      "leftDesc": "Built-in functions for fetching data on server.",
+      "rightDesc": "Fetch data server-side or client-side with adapters.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Network",
+      "leftVisualText": "Loaders",
+      "rightVisualText": "Adapters"
+    },
+    {
+      "title": "4. UI APPROACH",
+      "leftTitle": "Component-Centric",
+      "rightTitle": "Island Architecture",
+      "leftDesc": "Focuses on reusable components across the app.",
+      "rightDesc": "Isolates interactive parts, static everywhere else.",
+      "leftIcon": "Layout",
+      "rightIcon": "Box",
+      "leftVisualText": "Components",
+      "rightVisualText": "Islands"
+    },
+    {
+      "title": "5. ROUTING",
+      "leftTitle": "File-Based",
+      "rightTitle": "File-Based",
+      "leftDesc": "Automatic routing based on file structure.",
+      "rightDesc": "Automatic routing based on file structure.",
+      "leftIcon": "FileCode",
+      "rightIcon": "FileCode",
+      "leftVisualText": "Routes",
+      "rightVisualText": "Routes"
+    },
+    {
+      "title": "6. ADAPTABILITY",
+      "leftTitle": "Flexible Adapters",
+      "rightTitle": "Deployment Targets",
+      "leftDesc": "Supports various backend and deployment targets easily.",
+      "rightDesc": "Wide range of deployment options for static output.",
+      "leftIcon": "Settings",
+      "rightIcon": "Server",
+      "leftVisualText": "Adapters",
+      "rightVisualText": "Deploy"
+    },
+    {
+      "title": "7. PERFORMANCE",
+      "leftTitle": "Optimized Output",
+      "rightTitle": "Minimal JS",
+      "leftDesc": "Compiles away framework code for small bundles.",
+      "rightDesc": "Ships minimal/no JavaScript for blazing fast loads.",
+      "leftIcon": "Zap",
+      "rightIcon": "Zap",
+      "leftVisualText": "Optimized",
+      "rightVisualText": "Minimal"
     }
   ]
 }

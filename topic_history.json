@@ -1,5 +1,4 @@
 [
-  "Astro vs Next.js",
   "Server Components vs Client Components",
   "Qwik vs SolidJS",
   "Nuxt.js vs Next.js",
@@ -48,5 +47,6 @@
   "Bun vs Node.js",
   "Kubernetes vs Docker Swarm",
   "Astro vs Next.js",
-  "Remix vs Next.js"
+  "Remix vs Next.js",
+  "SvelteKit vs Astro"
 ]
