@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND DEVELOPMENT",
+  "topLabel": "ARCHITECTURE PATTERNS",
   "mainTitle": {
-    "left": "Next.js",
-    "right": "Remix",
+    "left": "Event Sourcing",
+    "right": "Event Streaming",
     "vs": "vs"
   },
-  "leftSub": "Full-stack Framework",
-  "rightSub": "Web Framework",
-  "leftColor": "#47A3FF",
-  "rightColor": "#F55A5A",
-  "badge": "THE 7 CORE DIFFERENCES",
+  "leftSub": "Source of truth",
+  "rightSub": "Data flow pipeline",
+  "leftColor": "#8B5CF6",
+  "rightColor": "#3B82F6",
+  "badge": "7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DATA FETCHING",
-      "leftTitle": "Server-only",
-      "rightTitle": "Browser-friendly",
-      "leftDesc": "Data fetching primarily in serverless functions or Node.js environment.",
-      "rightDesc": "Leverages Web Fetch API, accessible on client and server.",
-      "leftIcon": "Server",
-      "rightIcon": "Globe",
-      "leftVisualText": "Server",
-      "rightVisualText": "Web API"
-    },
-    {
-      "title": "2. RENDERING",
-      "leftTitle": "SSR/SSG/ISR",
-      "rightTitle": "SSR/CSR",
-      "leftDesc": "Offers Static Site Generation, Incremental Static Regeneration, and Server-Side Rendering.",
-      "rightDesc": "Primarily focuses on Server-Side Rendering and Client-Side Rendering.",
+      "title": "1. PRIMARY USE CASE",
+      "leftTitle": "Reconstructing State",
+      "rightTitle": "Real-time Data",
+      "leftDesc": "Captures all changes to state as a sequence of events.",
+      "rightDesc": "Continuously moves data between applications and systems.",
       "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "Static/Dynamic",
-      "rightVisualText": "Dynamic/Client"
-    },
-    {
-      "title": "3. ROUTING",
-      "leftTitle": "File-based",
-      "rightTitle": "File-based",
-      "leftDesc": "Page routing is determined by the file structure in the 'pages' directory.",
-      "rightDesc": "Routing is also file-based, mapped to your file structure.",
-      "leftIcon": "Layout",
-      "rightIcon": "Layout",
-      "leftVisualText": "Pages",
-      "rightVisualText": "Files"
-    },
-    {
-      "title": "4. MUTATIONS",
-      "leftTitle": "API Routes",
-      "rightTitle": "Form Actions",
-      "leftDesc": "Handles data mutations via separate API route handlers.",
-      "rightDesc": "Uses native HTML forms and progressive enhancement for mutations.",
-      "leftIcon": "Code",
-      "rightIcon": "FileCode",
-      "leftVisualText": "API",
-      "rightVisualText": "Forms"
-    },
-    {
-      "title": "5. STYLING",
-      "leftTitle": "Flexible",
-      "rightTitle": "CSS Modules",
-      "leftDesc": "Supports various styling solutions: CSS Modules, Tailwind CSS, styled-jsx, etc.",
-      "rightDesc": "Built-in support for CSS Modules with automatic scoping.",
-      "leftIcon": "Style",
-      "rightIcon": "Style",
-      "leftVisualText": "Any",
-      "rightVisualText": "Scoped"
-    },
-    {
-      "title": "6. DATA CACHING",
-      "leftTitle": "Built-in",
-      "rightTitle": "HTTP Cache",
-      "leftDesc": "Provides advanced data caching strategies for performance optimization.",
-      "rightDesc": "Leverages HTTP caching mechanisms for efficient data retrieval.",
-      "leftIcon": "HardDrive",
       "rightIcon": "Network",
-      "leftVisualText": "Optimized",
-      "rightVisualText": "Standard"
+      "leftVisualText": "State History",
+      "rightVisualText": "Data Flow"
     },
     {
-      "title": "7. COMPILATION",
-      "leftTitle": "Webpack",
-      "rightTitle": "Vite",
-      "leftDesc": "Traditionally uses Webpack for its build process.",
-      "rightDesc": "Leverages Vite for faster development builds and optimized production.",
-      "leftIcon": "Box",
+      "title": "2. DATA STORAGE",
+      "leftTitle": "Immutable Event Log",
+      "rightTitle": "Transient Message Queue",
+      "leftDesc": "Stores events permanently, forming the definitive history.",
+      "rightDesc": "Messages are typically consumed and deleted.",
+      "leftIcon": "FileCode",
+      "rightIcon": "Box",
+      "leftVisualText": "Permanent Log",
+      "rightVisualText": "Temporary Queue"
+    },
+    {
+      "title": "3. CONSUMPTION MODEL",
+      "leftTitle": "State Reconstruction",
+      "rightTitle": "Event Processing",
+      "leftDesc": "Rebuilds current state by replaying events.",
+      "rightDesc": "Processes individual events as they arrive.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Server",
+      "leftVisualText": "Replay State",
+      "rightVisualText": "Process Events"
+    },
+    {
+      "title": "4. READ OPERATIONS",
+      "leftTitle": "Derived Read Models",
+      "rightTitle": "Live Data Feeds",
+      "leftDesc": "Reads are served from optimized, separate projections.",
+      "rightDesc": "Reads directly from the stream as it flows.",
+      "leftIcon": "Search",
+      "rightIcon": "Activity",
+      "leftVisualText": "Read Models",
+      "rightVisualText": "Live Stream"
+    },
+    {
+      "title": "5. COMPLEXITY",
+      "leftTitle": "Higher Complexity",
+      "rightTitle": "Moderate Complexity",
+      "leftDesc": "Requires careful design of events and projections.",
+      "rightDesc": "Focuses on message reliability and throughput.",
+      "leftIcon": "Settings",
       "rightIcon": "Terminal",
-      "leftVisualText": "Bundler",
-      "rightVisualText": "Build Tool"
+      "leftVisualText": "Intricate Design",
+      "rightVisualText": "Stream Focus"
+    },
+    {
+      "title": "6. USE FOR ANALYTICS",
+      "leftTitle": "Excellent for Audit",
+      "rightTitle": "Good for Real-time",
+      "leftDesc": "Provides a complete, auditable trail of all actions.",
+      "rightDesc": "Enables real-time analytics dashboards and alerts.",
+      "leftIcon": "Lock",
+      "rightIcon": "Zap",
+      "leftVisualText": "Audit Trail",
+      "rightVisualText": "Real-time Dash"
+    },
+    {
+      "title": "7. ERROR HANDLING",
+      "leftTitle": "Idempotent Consumers",
+      "rightTitle": "At-least-once Delivery",
+      "leftDesc": "Event handlers must be robust against replays.",
+      "rightDesc": "May deliver events multiple times, requiring deduplication.",
+      "leftIcon": "Shield",
+      "rightIcon": "ArrowRightLeft",
+      "leftVisualText": "Safe Replays",
+      "rightVisualText": "Deduplication Needs"
     }
   ]
 }
