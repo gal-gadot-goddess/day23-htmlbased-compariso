@@ -1,92 +1,92 @@
 {
   "topLabel": "FRONTEND DEVELOPMENT",
   "mainTitle": {
-    "left": "SvelteKit",
-    "right": "Astro",
+    "left": "Next.js",
+    "right": "Remix",
     "vs": "vs"
   },
-  "leftSub": "App Framework",
-  "rightSub": "Content Site",
-  "leftColor": "#41B883",
-  "rightColor": "#FF5700",
+  "leftSub": "Full-stack Framework",
+  "rightSub": "Web Framework",
+  "leftColor": "#47A3FF",
+  "rightColor": "#F55A5A",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. PRIMARY FOCUS",
-      "leftTitle": "Full-Stack Apps",
-      "rightTitle": "Content-Optimized Sites",
-      "leftDesc": "Designed for building dynamic, interactive web applications.",
-      "rightDesc": "Built for fast, static content delivery with islands.",
-      "leftIcon": "Layers",
+      "title": "1. DATA FETCHING",
+      "leftTitle": "Server-only",
+      "rightTitle": "Browser-friendly",
+      "leftDesc": "Data fetching primarily in serverless functions or Node.js environment.",
+      "rightDesc": "Leverages Web Fetch API, accessible on client and server.",
+      "leftIcon": "Server",
       "rightIcon": "Globe",
-      "leftVisualText": "Apps",
-      "rightVisualText": "Content"
+      "leftVisualText": "Server",
+      "rightVisualText": "Web API"
     },
     {
-      "title": "2. REACTIVITY",
-      "leftTitle": "Compiler-Based",
-      "rightTitle": "No Runtime JS",
-      "leftDesc": "Svelte compiles components to imperative vanilla JS.",
-      "rightDesc": "Astro ships zero JS by default for UI.",
+      "title": "2. RENDERING",
+      "leftTitle": "SSR/SSG/ISR",
+      "rightTitle": "SSR/CSR",
+      "leftDesc": "Offers Static Site Generation, Incremental Static Regeneration, and Server-Side Rendering.",
+      "rightDesc": "Primarily focuses on Server-Side Rendering and Client-Side Rendering.",
+      "leftIcon": "Layers",
+      "rightIcon": "Layers",
+      "leftVisualText": "Static/Dynamic",
+      "rightVisualText": "Dynamic/Client"
+    },
+    {
+      "title": "3. ROUTING",
+      "leftTitle": "File-based",
+      "rightTitle": "File-based",
+      "leftDesc": "Page routing is determined by the file structure in the 'pages' directory.",
+      "rightDesc": "Routing is also file-based, mapped to your file structure.",
+      "leftIcon": "Layout",
+      "rightIcon": "Layout",
+      "leftVisualText": "Pages",
+      "rightVisualText": "Files"
+    },
+    {
+      "title": "4. MUTATIONS",
+      "leftTitle": "API Routes",
+      "rightTitle": "Form Actions",
+      "leftDesc": "Handles data mutations via separate API route handlers.",
+      "rightDesc": "Uses native HTML forms and progressive enhancement for mutations.",
       "leftIcon": "Code",
-      "rightIcon": "Server",
-      "leftVisualText": "Compile",
-      "rightVisualText": "Zero JS"
+      "rightIcon": "FileCode",
+      "leftVisualText": "API",
+      "rightVisualText": "Forms"
     },
     {
-      "title": "3. DATA FETCHING",
-      "leftTitle": "Server Loaders",
-      "rightTitle": "Adapter-Driven",
-      "leftDesc": "Built-in functions for fetching data on server.",
-      "rightDesc": "Fetch data server-side or client-side with adapters.",
+      "title": "5. STYLING",
+      "leftTitle": "Flexible",
+      "rightTitle": "CSS Modules",
+      "leftDesc": "Supports various styling solutions: CSS Modules, Tailwind CSS, styled-jsx, etc.",
+      "rightDesc": "Built-in support for CSS Modules with automatic scoping.",
+      "leftIcon": "Style",
+      "rightIcon": "Style",
+      "leftVisualText": "Any",
+      "rightVisualText": "Scoped"
+    },
+    {
+      "title": "6. DATA CACHING",
+      "leftTitle": "Built-in",
+      "rightTitle": "HTTP Cache",
+      "leftDesc": "Provides advanced data caching strategies for performance optimization.",
+      "rightDesc": "Leverages HTTP caching mechanisms for efficient data retrieval.",
       "leftIcon": "HardDrive",
       "rightIcon": "Network",
-      "leftVisualText": "Loaders",
-      "rightVisualText": "Adapters"
-    },
-    {
-      "title": "4. UI APPROACH",
-      "leftTitle": "Component-Centric",
-      "rightTitle": "Island Architecture",
-      "leftDesc": "Focuses on reusable components across the app.",
-      "rightDesc": "Isolates interactive parts, static everywhere else.",
-      "leftIcon": "Layout",
-      "rightIcon": "Box",
-      "leftVisualText": "Components",
-      "rightVisualText": "Islands"
-    },
-    {
-      "title": "5. ROUTING",
-      "leftTitle": "File-Based",
-      "rightTitle": "File-Based",
-      "leftDesc": "Automatic routing based on file structure.",
-      "rightDesc": "Automatic routing based on file structure.",
-      "leftIcon": "FileCode",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Routes",
-      "rightVisualText": "Routes"
-    },
-    {
-      "title": "6. ADAPTABILITY",
-      "leftTitle": "Flexible Adapters",
-      "rightTitle": "Deployment Targets",
-      "leftDesc": "Supports various backend and deployment targets easily.",
-      "rightDesc": "Wide range of deployment options for static output.",
-      "leftIcon": "Settings",
-      "rightIcon": "Server",
-      "leftVisualText": "Adapters",
-      "rightVisualText": "Deploy"
-    },
-    {
-      "title": "7. PERFORMANCE",
-      "leftTitle": "Optimized Output",
-      "rightTitle": "Minimal JS",
-      "leftDesc": "Compiles away framework code for small bundles.",
-      "rightDesc": "Ships minimal/no JavaScript for blazing fast loads.",
-      "leftIcon": "Zap",
-      "rightIcon": "Zap",
       "leftVisualText": "Optimized",
-      "rightVisualText": "Minimal"
+      "rightVisualText": "Standard"
+    },
+    {
+      "title": "7. COMPILATION",
+      "leftTitle": "Webpack",
+      "rightTitle": "Vite",
+      "leftDesc": "Traditionally uses Webpack for its build process.",
+      "rightDesc": "Leverages Vite for faster development builds and optimized production.",
+      "leftIcon": "Box",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Bundler",
+      "rightVisualText": "Build Tool"
     }
   ]
 }
