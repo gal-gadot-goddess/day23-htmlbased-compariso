@@ -1,5 +1,4 @@
 [
-  "React vs SolidJS",
   "SolidJS vs Qwik",
   "SolidJS vs Qwik",
   "SolidJS vs Qwik",
@@ -48,5 +47,6 @@
   "SvelteKit vs Astro",
   "Next.js vs Remix",
   "Event Sourcing vs Event Streaming",
-  "Astro vs Next.js"
+  "Astro vs Next.js",
+  "Next.js vs Astro"
 ]
