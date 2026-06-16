@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND ARCHITECTURE",
+  "topLabel": "DEVELOPMENT TOOLS",
   "mainTitle": {
-    "left": "Next.js",
-    "right": "Astro",
+    "left": "Bun",
+    "right": "Node.js",
     "vs": "vs"
   },
-  "leftSub": "Full-stack framework",
-  "rightSub": "Content-focused framework",
-  "leftColor": "#000000",
-  "rightColor": "#FF7F50",
+  "leftSub": "All-in-one runtime",
+  "rightSub": "JavaScript runtime",
+  "leftColor": "#FFC107",
+  "rightColor": "#2196F3",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. ISLAND ARCHITECTURE",
-      "leftTitle": "Server Rendering",
-      "rightTitle": "Zero JS by default",
-      "leftDesc": "Renders React components on server, hydrates on client.",
-      "rightDesc": "Sends minimal JS, hydrates components on demand.",
-      "leftIcon": "Server",
-      "rightIcon": "Layers",
-      "leftVisualText": "SSR + Hydration",
-      "rightVisualText": "Islands"
-    },
-    {
-      "title": "2. ROUTING",
-      "leftTitle": "File-based",
-      "rightTitle": "File-based",
-      "leftDesc": "Pages and API routes generated from file structure.",
-      "rightDesc": "Pages generated from file structure.",
-      "leftIcon": "Layout",
-      "rightIcon": "Layout",
-      "leftVisualText": "Dynamic Routes",
-      "rightVisualText": "Static Routes"
-    },
-    {
-      "title": "3. DATA FETCHING",
-      "leftTitle": "Flexible Methods",
-      "rightTitle": "Static/On-demand",
-      "leftDesc": "Supports getStaticProps, getServerSideProps, RSCs.",
-      "rightDesc": "Primarily static generation, can fetch at build time.",
-      "leftIcon": "Database",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Multiple Options",
-      "rightVisualText": "Build-time Fetch"
-    },
-    {
-      "title": "4. CLIENT-SIDE JS",
-      "leftTitle": "Full Hydration",
-      "rightTitle": "Selective Hydration",
-      "leftDesc": "All interactive components hydrate on client.",
-      "rightDesc": "Only explicitly marked components hydrate.",
+      "title": "1. PERFORMANCE",
+      "leftTitle": "Blazing Fast Speed",
+      "rightTitle": "Mature Performance",
+      "leftDesc": "Bun utilizes JavaScriptCore for significantly faster startup and execution.",
+      "rightDesc": "Node.js offers reliable and optimized performance through V8.",
       "leftIcon": "Zap",
-      "rightIcon": "Zap",
-      "leftVisualText": "Full JS Load",
-      "rightVisualText": "Minimal JS"
+      "rightIcon": "Cpu",
+      "leftVisualText": "Bun",
+      "rightVisualText": "Node.js"
     },
     {
-      "title": "5. UI FRAMEWORK",
-      "leftTitle": "React Focused",
-      "rightTitle": "Framework Agnostic",
-      "leftDesc": "Primarily built for React, but supports others.",
-      "rightDesc": "Works with React, Vue, Svelte, etc.",
-      "leftIcon": "Code",
+      "title": "2. TOOLING",
+      "leftTitle": "Integrated Toolkit",
+      "rightTitle": "Modular Ecosystem",
+      "leftDesc": "Bun includes bundler, transpiler, test runner, and package manager.",
+      "rightDesc": "Node.js relies on separate tools like Webpack, Babel, Jest.",
+      "leftIcon": "Layers",
+      "rightIcon": "Box",
+      "leftVisualText": "Bundler, Test, Run",
+      "rightVisualText": "Separate Modules"
+    },
+    {
+      "title": "3. COMPATIBILITY",
+      "leftTitle": "Native ESM & TS",
+      "rightTitle": "CommonJS Focus",
+      "leftDesc": "Bun supports ES Modules and TypeScript out-of-the-box.",
+      "rightDesc": "Node.js has stronger legacy support for CommonJS.",
+      "leftIcon": "FileCode",
       "rightIcon": "Code",
-      "leftVisualText": "React Ecosystem",
-      "rightVisualText": "Any Framework"
+      "leftVisualText": "Modern JS",
+      "rightVisualText": "Legacy JS"
     },
     {
-      "title": "6. PERFORMANCE FOCUS",
-      "leftTitle": "Balanced",
-      "rightTitle": "Content Optimization",
-      "leftDesc": "Optimizes for full-stack app performance.",
-      "rightDesc": "Optimizes for fastest content delivery.",
-      "leftIcon": "Activity",
-      "rightIcon": "Activity",
-      "leftVisualText": "App Speed",
-      "rightVisualText": "Content Speed"
-    },
-    {
-      "title": "7. USE CASES",
-      "leftTitle": "Complex Apps",
-      "rightTitle": "Content Sites",
-      "leftDesc": "Ideal for dynamic apps, dashboards, SaaS.",
-      "rightDesc": "Best for blogs, marketing sites, docs.",
+      "title": "4. PACKAGE MANAGEMENT",
+      "leftTitle": "Fastest Installer",
+      "rightTitle": "Established Manager",
+      "leftDesc": "Bun's package manager is built-in and extremely fast.",
+      "rightDesc": "NPM/Yarn are widely used but can be slower.",
       "leftIcon": "Server",
-      "rightIcon": "Globe",
-      "leftVisualText": "Dynamic Apps",
-      "rightVisualText": "Static Content"
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Bun Install",
+      "rightVisualText": "NPM/Yarn"
+    },
+    {
+      "title": "5. API",
+      "leftTitle": "Web Standard APIs",
+      "rightTitle": "Node.js Specific APIs",
+      "leftDesc": "Bun implements many Web API standards for browser compatibility.",
+      "rightDesc": "Node.js has its own set of global objects.",
+      "leftIcon": "Globe",
+      "rightIcon": "Settings",
+      "leftVisualText": "Web APIs",
+      "rightVisualText": "Node APIs"
+    },
+    {
+      "title": "6. ECOSYSTEM MATURITY",
+      "leftTitle": "Rapidly Growing",
+      "rightTitle": "Vast & Stable",
+      "leftDesc": "Bun is newer, with a smaller but fast-expanding community.",
+      "rightDesc": "Node.js has a huge, mature, and stable ecosystem.",
+      "leftIcon": "Activity",
+      "rightIcon": "Shield",
+      "leftVisualText": "New & Fast",
+      "rightVisualText": "Old & Stable"
+    },
+    {
+      "title": "7. MEMORY USAGE",
+      "leftTitle": "Efficient Memory",
+      "rightTitle": "Higher Memory Use",
+      "leftDesc": "Bun's JavaScriptCore engine is generally more memory-efficient.",
+      "rightDesc": "Node.js's V8 engine can consume more memory.",
+      "leftIcon": "Network",
+      "rightIcon": "Database",
+      "leftVisualText": "Leaner",
+      "rightVisualText": "Heavier"
     }
   ]
 }

@@ -1,7 +1,6 @@
 [
   "SolidJS vs Qwik",
   "SolidJS vs Qwik",
-  "SolidJS vs Qwik",
   "PostgreSQL vs MongoDB",
   "PyTorch vs TensorFlow",
   "Vite vs Webpack",
@@ -48,5 +47,6 @@
   "Next.js vs Remix",
   "Event Sourcing vs Event Streaming",
   "Astro vs Next.js",
-  "Next.js vs Astro"
+  "Next.js vs Astro",
+  "Bun vs Node.js"
 ]
