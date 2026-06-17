@@ -1,5 +1,4 @@
 [
-  "PostgreSQL vs MongoDB",
   "PyTorch vs TensorFlow",
   "Vite vs Webpack",
   "Next.js vs Remix",
@@ -48,5 +47,6 @@
   "Next.js vs Astro",
   "Bun vs Node.js",
   "Jotai vs Zustand",
-  "Nuxt.js vs SvelteKit"
+  "Nuxt.js vs SvelteKit",
+  "Tailwind CSS vs Styled-Components"
 ]
