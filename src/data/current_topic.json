@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND STATE MANAGEMENT",
+  "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "Jotai",
-    "right": "Zustand",
+    "left": "Nuxt.js",
+    "right": "SvelteKit",
     "vs": "vs"
   },
-  "leftSub": "Atomic State Hooks",
-  "rightSub": "Minimalist Store",
-  "leftColor": "#4ADE80",
-  "rightColor": "#22D3EE",
+  "leftSub": "Vue.js Framework",
+  "rightSub": "Svelte Framework",
+  "leftColor": "#42b983",
+  "rightColor": "#ff3e00",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. API STYLE",
-      "leftTitle": "Hook-based",
-      "rightTitle": "Store-based",
-      "leftDesc": "Uses React Hooks for state management, composable and flexible.",
-      "rightDesc": "Uses a central store with actions, simpler for global state.",
+      "title": "1. CORE LANGUAGE",
+      "leftTitle": "JavaScript/Vue",
+      "rightTitle": "Svelte Compiler",
+      "leftDesc": "Relies on JavaScript and Vue.js ecosystem for its core functionality and reactivity.",
+      "rightDesc": "Compiles Svelte code into efficient imperative JavaScript at build time.",
       "leftIcon": "Code",
-      "rightIcon": "Layers",
-      "leftVisualText": "Hooks",
-      "rightVisualText": "Store"
+      "rightIcon": "Code",
+      "leftVisualText": "Vue",
+      "rightVisualText": "Compiler"
     },
     {
-      "title": "2. ATOMICITY",
-      "leftTitle": "Atomic state",
-      "rightTitle": "Single store",
-      "leftDesc": "State is broken down into small, independent pieces (atoms).",
-      "rightDesc": "Typically has one main store for all application state.",
-      "leftIcon": "Box",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Atoms",
-      "rightVisualText": "Global"
-    },
-    {
-      "title": "3. BOILERPLATE",
-      "leftTitle": "Minimal boilerplate",
-      "rightTitle": "Minimal boilerplate",
-      "leftDesc": "Very little code needed to define and use atoms.",
-      "rightDesc": "Minimal setup for defining state and actions.",
-      "leftIcon": "FileCode",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Less code",
-      "rightVisualText": "Less code"
-    },
-    {
-      "title": "4. PERFORMANCE",
-      "leftTitle": "Fine-grained updates",
-      "rightTitle": "Optimized updates",
-      "leftDesc": "Components re-render only when their specific atom changes.",
-      "rightDesc": "Selective subscriptions ensure components only re-render on relevant changes.",
+      "title": "2. REACTIVITY",
+      "leftTitle": "Vue's Proxy",
+      "rightTitle": "Compiler-based",
+      "leftDesc": "Uses Vue's built-in reactivity system based on Proxies for state management.",
+      "rightDesc": "Reactivity is handled by the compiler, no virtual DOM at runtime.",
       "leftIcon": "Activity",
-      "rightIcon": "Network",
-      "leftVisualText": "Precise",
-      "rightVisualText": "Efficient"
+      "rightIcon": "Activity",
+      "leftVisualText": "Proxy",
+      "rightVisualText": "Compile"
     },
     {
-      "title": "5. INTEGRATION",
-      "leftTitle": "React idiomatic",
-      "rightTitle": "Framework agnostic",
-      "leftDesc": "Feels natural within React's hook-based paradigm.",
-      "rightDesc": "Can be used with various frameworks, not just React.",
-      "leftIcon": "Layout",
-      "rightIcon": "Globe",
-      "leftVisualText": "React-like",
-      "rightVisualText": "Flexible"
-    },
-    {
-      "title": "6. LEARNING CURVE",
-      "leftTitle": "Easier for hooks",
-      "rightTitle": "Easier for context",
-      "leftDesc": "Familiar for React developers due to hook usage.",
-      "rightDesc": "Easier for those familiar with Redux-like store patterns.",
-      "leftIcon": "Search",
-      "rightIcon": "Settings",
-      "leftVisualText": "Hook familiar",
-      "rightVisualText": "Store familiar"
-    },
-    {
-      "title": "7. COMMUNITY SIZE",
-      "leftTitle": "Growing community",
-      "rightTitle": "Larger community",
-      "leftDesc": "Gaining traction with its unique atomic approach.",
-      "rightDesc": "Established and widely adopted, with extensive resources.",
+      "title": "3. SERVER-SIDE",
+      "leftTitle": "Node.js",
+      "rightTitle": "Adapter-based",
+      "leftDesc": "Built with Node.js, offering flexibility and a large module ecosystem.",
+      "rightDesc": "Uses adapters for various deployment targets (Node, Vercel, Cloudflare).",
       "leftIcon": "Server",
       "rightIcon": "Server",
-      "leftVisualText": "Newer",
-      "rightVisualText": "Mature"
+      "leftVisualText": "Node",
+      "rightVisualText": "Adapter"
+    },
+    {
+      "title": "4. ROUTING",
+      "leftTitle": "File-based",
+      "rightTitle": "File-based",
+      "leftDesc": "Convention-driven file-based routing with dynamic routing capabilities.",
+      "rightDesc": "Convention-driven file-based routing, similar to Nuxt.js.",
+      "leftIcon": "Layout",
+      "rightIcon": "Layout",
+      "leftVisualText": "File Route",
+      "rightVisualText": "File Route"
+    },
+    {
+      "title": "5. DATA FETCHING",
+      "leftTitle": "Async Data",
+      "rightTitle": "Loaders",
+      "leftDesc": "Provides methods like `asyncData` and `fetch` for fetching data.",
+      "rightDesc": "Uses `load` functions in `+page.js` or `+layout.js` files.",
+      "leftIcon": "Database",
+      "rightIcon": "Database",
+      "leftVisualText": "Async",
+      "rightVisualText": "Loader"
+    },
+    {
+      "title": "6. PERFORMANCE",
+      "leftTitle": "Good Runtime",
+      "rightTitle": "Smaller Bundle",
+      "leftDesc": "Leverages Vue's runtime performance and ecosystem.",
+      "rightDesc": "Compiles to minimal JavaScript, leading to smaller bundle sizes.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Runtime",
+      "rightVisualText": "Bundle"
+    },
+    {
+      "title": "7. ECOSYSTEM",
+      "leftTitle": "Mature Vue",
+      "rightTitle": "Growing Svelte",
+      "leftDesc": "Benefits from the extensive and mature Vue.js ecosystem.",
+      "rightDesc": "A rapidly growing ecosystem centered around Svelte's unique approach.",
+      "leftIcon": "Globe",
+      "rightIcon": "Globe",
+      "leftVisualText": "Vue Eco",
+      "rightVisualText": "Svelte Eco"
     }
   ]
 }

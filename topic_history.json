@@ -1,5 +1,4 @@
 [
-  "SolidJS vs Qwik",
   "PostgreSQL vs MongoDB",
   "PyTorch vs TensorFlow",
   "Vite vs Webpack",
@@ -48,5 +47,6 @@
   "Astro vs Next.js",
   "Next.js vs Astro",
   "Bun vs Node.js",
-  "Jotai vs Zustand"
+  "Jotai vs Zustand",
+  "Nuxt.js vs SvelteKit"
 ]
