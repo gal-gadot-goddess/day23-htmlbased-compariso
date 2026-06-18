@@ -1,5 +1,4 @@
 [
-  "PyTorch vs TensorFlow",
   "Vite vs Webpack",
   "Next.js vs Remix",
   "Astro vs Next.js",
@@ -48,5 +47,6 @@
   "Bun vs Node.js",
   "Jotai vs Zustand",
   "Nuxt.js vs SvelteKit",
-  "Tailwind CSS vs Styled-Components"
+  "Tailwind CSS vs Styled-Components",
+  "Server Components vs Client Components"
 ]
