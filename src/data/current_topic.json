@@ -1,92 +1,92 @@
 {
-  "topLabel": "PROGRAMMING LANGUAGES",
+  "topLabel": "DATABASE ARCHITECTURE",
   "mainTitle": {
-    "left": "Rust",
-    "right": "Go",
+    "left": "PostgreSQL",
+    "right": "MongoDB",
     "vs": "vs"
   },
-  "leftSub": "Memory Safe Systems",
-  "rightSub": "Concurrent Systems",
-  "leftColor": "#007C00",
-  "rightColor": "#00ADD8",
+  "leftSub": "Relational, Structured",
+  "rightSub": "Document, Flexible",
+  "leftColor": "#4169E1",
+  "rightColor": "#2E8B57",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. MEMORY MANAGEMENT",
-      "leftTitle": "Ownership System",
-      "rightTitle": "Garbage Collection",
-      "leftDesc": "Compile-time checks prevent memory errors without a GC.",
-      "rightDesc": "Automatic memory management simplifies development but can cause pauses.",
-      "leftIcon": "Lock",
-      "rightIcon": "Shield",
-      "leftVisualText": "Compile-time Safety",
-      "rightVisualText": "Runtime GC"
-    },
-    {
-      "title": "2. CONCURRENCY",
-      "leftTitle": "Fearless Threads",
-      "rightTitle": "Goroutines",
-      "leftDesc": "Data race prevention at compile time through strict borrowing rules.",
-      "rightDesc": "Lightweight, concurrently executing functions managed by the Go runtime.",
-      "leftIcon": "Lock",
-      "rightIcon": "Layers",
-      "leftVisualText": "Compile-time Safety",
-      "rightVisualText": "Lightweight Tasks"
-    },
-    {
-      "title": "3. PERFORMANCE",
-      "leftTitle": "Near C Speed",
-      "rightTitle": "Very Fast",
-      "leftDesc": "Zero-cost abstractions and fine-grained control yield exceptional performance.",
-      "rightDesc": "Efficient compilation and runtime offer excellent performance for many tasks.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Bare-metal Speed",
-      "rightVisualText": "Optimized Runtime"
-    },
-    {
-      "title": "4. SYNTAX & COMPLEXITY",
-      "leftTitle": "Steeper Learning Curve",
-      "rightTitle": "Simpler Syntax",
-      "leftDesc": "Advanced features like lifetimes and traits require deeper understanding.",
-      "rightDesc": "Minimalistic syntax and fewer features make it easier to learn.",
-      "leftIcon": "Settings",
-      "rightIcon": "Settings",
-      "leftVisualText": "Advanced Concepts",
-      "rightVisualText": "Minimalist Design"
-    },
-    {
-      "title": "5. ECOSYSTEM & COMMUNITY",
-      "leftTitle": "Growing & Focused",
-      "rightTitle": "Mature & Broad",
-      "leftDesc": "Strong focus on systems programming, web assembly, and game dev.",
-      "rightDesc": "Widely adopted for backend, cloud services, and CLI tools.",
-      "leftIcon": "Globe",
-      "rightIcon": "Globe",
-      "leftVisualText": "Specialized Growth",
-      "rightVisualText": "Broad Adoption"
-    },
-    {
-      "title": "6. ERROR HANDLING",
-      "leftTitle": "Result Enum",
-      "rightTitle": "Error Interface",
-      "leftDesc": "Explicitly handles recoverable errors using `Result` types.",
-      "rightDesc": "Implicit error propagation via returned error values.",
-      "leftIcon": "FileCode",
+      "title": "1. DATA MODEL",
+      "leftTitle": "Tables, Rows",
+      "rightTitle": "Documents, Collections",
+      "leftDesc": "Predefined schemas enforce data integrity and relationships.",
+      "rightDesc": "Dynamic schemas allow for varied data structures.",
+      "leftIcon": "Layout",
       "rightIcon": "FileCode",
-      "leftVisualText": "Explicit Handling",
-      "rightVisualText": "Implicit Propagation"
+      "leftVisualText": "Structured",
+      "rightVisualText": "Flexible"
+    },
+    {
+      "title": "2. SCHEMA",
+      "leftTitle": "Strict, Fixed",
+      "rightTitle": "Dynamic, Evolving",
+      "leftDesc": "Schema must be defined before data insertion.",
+      "rightDesc": "Schema can change per document, easy iteration.",
+      "leftIcon": "Lock",
+      "rightIcon": "Unlock",
+      "leftVisualText": "Rigid",
+      "rightVisualText": "Adaptable"
+    },
+    {
+      "title": "3. SCALABILITY",
+      "leftTitle": "Vertical Focus",
+      "rightTitle": "Horizontal Focus",
+      "leftDesc": "Scales well vertically; horizontal scaling complex.",
+      "rightDesc": "Designed for horizontal scaling across distributed systems.",
+      "leftIcon": "Server",
+      "rightIcon": "Network",
+      "leftVisualText": "Up",
+      "rightVisualText": "Out"
+    },
+    {
+      "title": "4. QUERYING",
+      "leftTitle": "SQL, Powerful",
+      "rightTitle": "JSON-like, Flexible",
+      "leftDesc": "SQL offers complex joins, aggregations, and ACID transactions.",
+      "rightDesc": "Querying based on document structure, often simpler.",
+      "leftIcon": "Search",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Standardized",
+      "rightVisualText": "Native"
+    },
+    {
+      "title": "5. DATA INTEGRITY",
+      "leftTitle": "High, ACID",
+      "rightTitle": "Eventual Consistency",
+      "leftDesc": "Strongly ensures atomicity, consistency, isolation, durability.",
+      "rightDesc": "Prioritizes availability and partition tolerance.",
+      "leftIcon": "Shield",
+      "rightIcon": "Zap",
+      "leftVisualText": "Guaranteed",
+      "rightVisualText": "Flexible"
+    },
+    {
+      "title": "6. RELATIONSHIPS",
+      "leftTitle": "Explicit Joins",
+      "rightTitle": "Embedded Documents",
+      "leftDesc": "Defines relationships via foreign keys and joins.",
+      "rightDesc": "Data can be nested within documents.",
+      "leftIcon": "ArrowRightLeft",
+      "rightIcon": "Layers",
+      "leftVisualText": "Linked",
+      "rightVisualText": "Nested"
     },
     {
       "title": "7. USE CASES",
-      "leftTitle": "Systems, WebAssembly",
-      "rightTitle": "Network Services, CLI",
-      "leftDesc": "Ideal for operating systems, embedded systems, and high-performance web.",
-      "rightDesc": "Excellent for microservices, distributed systems, and command-line tools.",
-      "leftIcon": "Server",
-      "rightIcon": "Server",
-      "leftVisualText": "Low-level Control",
-      "rightVisualText": "Networked Apps"
+      "leftTitle": "Complex Apps",
+      "rightTitle": "Rapid Dev",
+      "leftDesc": "Ideal for financial, ERP, and systems requiring strict structure.",
+      "rightDesc": "Great for content management, catalogs, and fast prototyping.",
+      "leftIcon": "Code",
+      "rightIcon": "Box",
+      "leftVisualText": "Enterprise",
+      "rightVisualText": "Startup"
     }
   ]
 }
