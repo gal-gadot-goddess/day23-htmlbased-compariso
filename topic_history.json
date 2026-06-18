@@ -1,5 +1,4 @@
 [
-  "Vite vs Webpack",
   "Next.js vs Remix",
   "Astro vs Next.js",
   "Zustand vs Redux",
@@ -48,5 +47,6 @@
   "Jotai vs Zustand",
   "Nuxt.js vs SvelteKit",
   "Tailwind CSS vs Styled-Components",
-  "Server Components vs Client Components"
+  "Server Components vs Client Components",
+  "Rust vs Go"
 ]
