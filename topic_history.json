@@ -1,5 +1,4 @@
 [
-  "Astro vs Next.js",
   "Zustand vs Redux",
   "Vector DB vs Relational DB",
   "Vite vs Webpack",
@@ -48,5 +47,6 @@
   "Tailwind CSS vs Styled-Components",
   "Server Components vs Client Components",
   "Rust vs Go",
-  "PostgreSQL vs MongoDB"
+  "PostgreSQL vs MongoDB",
+  "Recoil vs Zustand"
 ]
