@@ -1,5 +1,4 @@
 [
-  "Vector DB vs Relational DB",
   "Vite vs Webpack",
   "Zustand vs Jotai",
   "Server Components vs Client Components",
@@ -48,5 +47,6 @@
   "Rust vs Go",
   "PostgreSQL vs MongoDB",
   "Recoil vs Zustand",
-  "PyTorch vs TensorFlow"
+  "PyTorch vs TensorFlow",
+  "Astro vs Next.js"
 ]
