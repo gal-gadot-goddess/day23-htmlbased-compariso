@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND STATE MANAGEMENT",
+  "topLabel": "AI FRAMEWORKS",
   "mainTitle": {
-    "left": "Recoil",
-    "right": "Zustand",
+    "left": "PyTorch",
+    "right": "TensorFlow",
     "vs": "vs"
   },
-  "leftSub": "Atomic State Management",
-  "rightSub": "Minimalist State Hook",
-  "leftColor": "#764AF1",
-  "rightColor": "#059669",
+  "leftSub": "Research & Flexibility",
+  "rightSub": "Production & Ecosystem",
+  "leftColor": "#EE4C2C",
+  "rightColor": "#FF6F00",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. CORE CONCEPT",
-      "leftTitle": "Atoms & Selectors",
-      "rightTitle": "Reducer & Store",
-      "leftDesc": "State divided into independent, self-contained units called atoms.",
-      "rightDesc": "Single store holding state, updated via reducers.",
-      "leftIcon": "Layers",
-      "rightIcon": "Box",
-      "leftVisualText": "Atoms",
-      "rightVisualText": "Store"
-    },
-    {
-      "title": "2. API SIMPLICITY",
-      "leftTitle": "More Boilerplate",
-      "rightTitle": "Less Code",
-      "leftDesc": "Defining atoms and selectors can require more initial setup.",
-      "rightDesc": "Extremely concise API, minimal code for common tasks.",
-      "leftIcon": "FileCode",
+      "title": "1. EASE OF USE",
+      "leftTitle": "Pythonic & Dynamic",
+      "rightTitle": "Static & Graph-based",
+      "leftDesc": "Easier for prototyping and research, feels more natural to Python developers.",
+      "rightDesc": "Steeper learning curve initially but offers clear advantages for deployment and optimization.",
+      "leftIcon": "Code",
       "rightIcon": "Code",
-      "leftVisualText": "Setup",
-      "rightVisualText": "Concise"
+      "leftVisualText": "Dynamic",
+      "rightVisualText": "Static"
     },
     {
-      "title": "3. PERFORMANCE",
-      "leftTitle": "Granular Updates",
-      "rightTitle": "Efficient Updates",
-      "leftDesc": "Updates only re-render components subscribed to the changed atom.",
-      "rightDesc": "Optimized re-renders based on state changes and selectors.",
-      "leftIcon": "Activity",
-      "rightIcon": "Zap",
-      "leftVisualText": "Granular",
-      "rightVisualText": "Optimized"
+      "title": "2. DEVELOPMENT SPEED",
+      "leftTitle": "Faster Iteration",
+      "rightTitle": "Slower Debugging",
+      "leftDesc": "Dynamic graphs allow for quicker experimentation and debugging during the development phase.",
+      "rightDesc": "Debugging static graphs can be more challenging, requiring specific tools and approaches.",
+      "leftIcon": "Zap",
+      "rightIcon": "Search",
+      "leftVisualText": "Iterate",
+      "rightVisualText": "Debug"
     },
     {
-      "title": "4. LEARNING CURVE",
-      "leftTitle": "Slightly Steeper",
-      "rightTitle": "Very Gentle",
-      "leftDesc": "Understanding atom/selector relationship takes a bit more effort.",
-      "rightDesc": "Hooks-based API is familiar and easy to grasp quickly.",
-      "leftIcon": "Search",
-      "rightIcon": "Terminal",
-      "leftVisualText": "Concept",
-      "rightVisualText": "Hooks"
-    },
-    {
-      "title": "5. EXTENSIBILITY",
-      "leftTitle": "Built-in Selectors",
-      "rightTitle": "Middleware Support",
-      "leftDesc": "Selectors allow deriving state and managing complex dependencies.",
-      "rightDesc": "Supports middleware for logging, persistence, and async actions.",
-      "leftIcon": "Settings",
-      "rightIcon": "Share2",
-      "leftVisualText": "Selectors",
-      "rightVisualText": "Middleware"
-    },
-    {
-      "title": "6. DEPENDENCY MANAGEMENT",
-      "leftTitle": "Explicit Dependencies",
-      "rightTitle": "Implicit Dependencies",
-      "leftDesc": "Selectors clearly define their dependencies on other atoms.",
-      "rightDesc": "Dependencies are inferred from the state accessed within selectors.",
-      "leftIcon": "Network",
-      "rightIcon": "Server",
-      "leftVisualText": "Explicit",
-      "rightVisualText": "Inferred"
-    },
-    {
-      "title": "7. COMMUNITY SIZE",
-      "leftTitle": "Growing Rapidly",
-      "rightTitle": "Very Large",
-      "leftDesc": "Strong adoption within the React ecosystem, actively developed.",
-      "rightDesc": "One of the most popular state management solutions for React.",
+      "title": "3. COMMUNITY & SUPPORT",
+      "leftTitle": "Research Focused",
+      "rightTitle": "Industry Standard",
+      "leftDesc": "Strong community in academic research, many cutting-edge papers use PyTorch.",
+      "rightDesc": "Vast community support, extensive documentation, and widespread industry adoption.",
       "leftIcon": "Globe",
+      "rightIcon": "Globe",
+      "leftVisualText": "Academic",
+      "rightVisualText": "Enterprise"
+    },
+    {
+      "title": "4. DEPLOYMENT",
+      "leftTitle": "Production Challenges",
+      "rightTitle": "Production Ready",
+      "leftDesc": "Deployment options exist but are less mature and integrated than TensorFlow's.",
+      "rightDesc": "Robust tools like TensorFlow Serving and Lite for seamless production deployment.",
+      "leftIcon": "Server",
+      "rightIcon": "Server",
+      "leftVisualText": "Less Mature",
+      "rightVisualText": "Mature"
+    },
+    {
+      "title": "5. MODEL BUILDING",
+      "leftTitle": "Imperative Style",
+      "rightTitle": "Declarative Style",
+      "leftDesc": "Define-by-run approach, code executes as written, making it intuitive.",
+      "rightDesc": "Define-and-run approach, graph is built first, then executed for optimization.",
+      "leftIcon": "Terminal",
       "rightIcon": "HardDrive",
-      "leftVisualText": "React",
-      "rightVisualText": "Popular"
+      "leftVisualText": "Define-by-run",
+      "rightVisualText": "Define-and-run"
+    },
+    {
+      "title": "6. ECOSYSTEM",
+      "leftTitle": "Growing Ecosystem",
+      "rightTitle": "Mature Ecosystem",
+      "leftDesc": "Rapidly expanding libraries and tools, but still catching up to TensorFlow.",
+      "rightDesc": "Comprehensive suite of tools: TensorBoard, TensorFlow Lite, TensorFlow.js, etc.",
+      "leftIcon": "Box",
+      "rightIcon": "Layers",
+      "leftVisualText": "Expanding",
+      "rightVisualText": "Comprehensive"
+    },
+    {
+      "title": "7. HARDWARE ACCELERATION",
+      "leftTitle": "Good GPU Support",
+      "rightTitle": "Excellent TPU Support",
+      "leftDesc": "Leverages GPUs effectively for training and inference, excellent CUDA integration.",
+      "rightDesc": "Optimized for Google's TPUs, offering unparalleled performance on specialized hardware.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Cpu",
+      "leftVisualText": "GPU Focus",
+      "rightVisualText": "TPU Focus"
     }
   ]
 }
