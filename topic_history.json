@@ -1,6 +1,5 @@
 [
   "Server Components vs Client Components",
-  "Server Components vs Client Components",
   "Vite vs Webpack",
   "React Server Components vs React Client Components",
   "Vue.js vs Angular",
@@ -48,5 +47,6 @@
   "PyTorch vs TensorFlow",
   "Astro vs Next.js",
   "Next.js vs Astro",
-  "Progressive Web Apps vs Native Mobile Apps"
+  "Progressive Web Apps vs Native Mobile Apps",
+  "Astro vs Next.js"
 ]
