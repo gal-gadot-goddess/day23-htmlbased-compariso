@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND FRAMEWORKS",
+  "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "Next.js",
-    "right": "Astro",
+    "left": "Progressive Web Apps",
+    "right": "Native Mobile Apps",
     "vs": "vs"
   },
-  "leftSub": "Full-stack React",
-  "rightSub": "Content-focused sites",
-  "leftColor": "#61DBFB",
-  "rightColor": "#FF5722",
-  "badge": "THE 7 CORE DIFFERENCES",
+  "leftSub": "Web for All",
+  "rightSub": "Device Powerhouse",
+  "leftColor": "#4DBA87",
+  "rightColor": "#007AFF",
+  "badge": "7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. PRIMARY USE CASE",
-      "leftTitle": "Dynamic Apps",
-      "rightTitle": "Static Sites",
-      "leftDesc": "Ideal for complex, data-driven applications with rich user interactions.",
-      "rightDesc": "Optimized for content-heavy sites like blogs, marketing pages, and docs.",
-      "leftIcon": "Server",
-      "rightIcon": "Globe",
-      "leftVisualText": "Web Apps",
-      "rightVisualText": "Content Sites"
-    },
-    {
-      "title": "2. RENDERING STRATEGY",
-      "leftTitle": "SSR & SSG",
-      "rightTitle": "SSG & Islands",
-      "leftDesc": "Supports Server-Side Rendering and Static Site Generation out-of-the-box.",
-      "rightDesc": "Primarily SSG with 'Islands Architecture' for interactive components.",
-      "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "Flexible",
-      "rightVisualText": "Islands"
-    },
-    {
-      "title": "3. JAVASCRIPT DEFAULTS",
-      "leftTitle": "Full JS",
-      "rightTitle": "Minimal JS",
-      "leftDesc": "Ships JavaScript by default for client-side interactivity.",
-      "rightDesc": "Ships zero JS by default, only on demand.",
-      "leftIcon": "Code",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Always On",
-      "rightVisualText": "Zero JS"
-    },
-    {
-      "title": "4. FRAMEWORK INTEGRATION",
-      "leftTitle": "React Focused",
-      "rightTitle": "Multi-FW",
-      "leftDesc": "Deeply integrated with React, extending its capabilities.",
-      "rightDesc": "Supports React, Vue, Svelte, Preact, and more.",
-      "leftIcon": "Box",
-      "rightIcon": "Box",
-      "leftVisualText": "React",
-      "rightVisualText": "Any FW"
-    },
-    {
-      "title": "5. PERFORMANCE FOCUS",
-      "leftTitle": "App Performance",
-      "rightTitle": "Load Speed",
-      "leftDesc": "Optimizes app performance with features like code splitting.",
-      "rightDesc": "Prioritizes initial page load speed through minimal JS.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Zap",
-      "leftVisualText": "App Speed",
-      "rightVisualText": "Load Speed"
-    },
-    {
-      "title": "6. DEVELOPMENT EXPERIENCE",
-      "leftTitle": "Feature Rich",
-      "rightTitle": "Simple & Fast",
-      "leftDesc": "Provides a comprehensive set of features for complex apps.",
-      "rightDesc": "Offers a streamlined, fast development workflow.",
-      "leftIcon": "Settings",
-      "rightIcon": "Terminal",
-      "leftVisualText": "Complex",
-      "rightVisualText": "Simple"
-    },
-    {
-      "title": "7. ECOSYSTEM & COMMUNITY",
-      "leftTitle": "Mature",
-      "rightTitle": "Growing",
-      "leftDesc": "Large, established ecosystem and community support.",
-      "rightDesc": "Rapidly growing community and active development.",
+      "title": "1. ACCESSIBILITY",
+      "leftTitle": "Browser Accessible",
+      "rightTitle": "App Store Access",
+      "leftDesc": "Installable from any web browser, no app store required. Works offline.",
+      "rightDesc": "Requires app store download and approval. Centralized distribution.",
       "leftIcon": "Globe",
-      "rightIcon": "Share2",
-      "leftVisualText": "Big",
-      "rightVisualText": "New"
+      "rightIcon": "Box",
+      "leftVisualText": "Web Browser",
+      "rightVisualText": "App Store"
+    },
+    {
+      "title": "2. DEVELOPMENT",
+      "leftTitle": "Single Codebase",
+      "rightTitle": "Platform Specific",
+      "leftDesc": "Develop once, deploy everywhere. Uses web technologies like HTML, CSS, JS.",
+      "rightDesc": "Requires separate development for iOS (Swift/Objective-C) and Android (Kotlin/Java).",
+      "leftIcon": "Code",
+      "rightIcon": "Server",
+      "leftVisualText": "Web Tech",
+      "rightVisualText": "Native Code"
+    },
+    {
+      "title": "3. PERFORMANCE",
+      "leftTitle": "Good Performance",
+      "rightTitle": "Superior Performance",
+      "leftDesc": "Generally good, but may not match native app speed for intensive tasks.",
+      "rightDesc": "Optimized for device hardware, offering smoother animations and faster execution.",
+      "leftIcon": "Activity",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Web Engine",
+      "rightVisualText": "Device Chip"
+    },
+    {
+      "title": "4. HARDWARE ACCESS",
+      "leftTitle": "Limited Access",
+      "rightTitle": "Full Access",
+      "leftDesc": "Access to device features like camera and location is improving but still restricted.",
+      "rightDesc": "Direct and extensive access to all device hardware and sensors.",
+      "leftIcon": "Search",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Web APIs",
+      "rightVisualText": "Device Hardware"
+    },
+    {
+      "title": "5. OFFLINE CAPABILITY",
+      "leftTitle": "Offline Support",
+      "rightTitle": "Offline Native",
+      "leftDesc": "Service workers enable offline functionality and background sync.",
+      "rightDesc": "Designed for offline use, data stored locally.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Service Workers",
+      "rightVisualText": "Local Storage"
+    },
+    {
+      "title": "6. UPDATES",
+      "leftTitle": "Automatic Updates",
+      "rightTitle": "Manual Updates",
+      "leftDesc": "Updates are seamless upon next access, no user intervention needed.",
+      "rightDesc": "Users must manually download and install updates from the app store.",
+      "leftIcon": "ArrowRightLeft",
+      "rightIcon": "Settings",
+      "leftVisualText": "Auto Sync",
+      "rightVisualText": "App Update"
+    },
+    {
+      "title": "7. DISCOVERY",
+      "leftTitle": "Web Search",
+      "rightTitle": "App Stores",
+      "leftDesc": "Discoverable via search engines and direct links.",
+      "rightDesc": "Found primarily through app store search and charts.",
+      "leftIcon": "Search",
+      "rightIcon": "Layout",
+      "leftVisualText": "Search Engines",
+      "rightVisualText": "App Market"
     }
   ]
 }

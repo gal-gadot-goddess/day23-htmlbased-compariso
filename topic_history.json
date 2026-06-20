@@ -1,5 +1,4 @@
 [
-  "Zustand vs Jotai",
   "Server Components vs Client Components",
   "Server Components vs Client Components",
   "Vite vs Webpack",
@@ -48,5 +47,6 @@
   "Recoil vs Zustand",
   "PyTorch vs TensorFlow",
   "Astro vs Next.js",
-  "Next.js vs Astro"
+  "Next.js vs Astro",
+  "Progressive Web Apps vs Native Mobile Apps"
 ]
