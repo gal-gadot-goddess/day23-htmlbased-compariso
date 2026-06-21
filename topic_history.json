@@ -1,5 +1,4 @@
 [
-  "React Server Components vs React Client Components",
   "Vue.js vs Angular",
   "SolidJS vs Qwik",
   "PostgreSQL vs MongoDB",
@@ -48,5 +47,6 @@
   "Progressive Web Apps vs Native Mobile Apps",
   "Astro vs Next.js",
   "Couchbase vs MongoDB",
-  "Server Components vs Client Components"
+  "Server Components vs Client Components",
+  "Astro vs Next.js"
 ]
