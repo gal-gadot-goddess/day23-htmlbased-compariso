@@ -1,5 +1,4 @@
 [
-  "Vite vs Webpack",
   "React Server Components vs React Client Components",
   "Vue.js vs Angular",
   "SolidJS vs Qwik",
@@ -48,5 +47,6 @@
   "Next.js vs Astro",
   "Progressive Web Apps vs Native Mobile Apps",
   "Astro vs Next.js",
-  "Couchbase vs MongoDB"
+  "Couchbase vs MongoDB",
+  "Server Components vs Client Components"
 ]
