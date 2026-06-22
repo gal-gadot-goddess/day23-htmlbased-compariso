@@ -1,92 +1,92 @@
 {
-  "topLabel": "DATABASES",
+  "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "Redis",
-    "right": "Memcached",
+    "left": "Nuxt.js",
+    "right": "SvelteKit",
     "vs": "vs"
   },
-  "leftSub": "In-Memory Data Structure",
-  "rightSub": "In-Memory Caching",
-  "leftColor": "#42A5F5",
-  "rightColor": "#66BB6A",
+  "leftSub": "Vue.js Framework",
+  "rightSub": "Svelte Framework",
+  "leftColor": "#42b883",
+  "rightColor": "#ff3e00",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DATA TYPES",
-      "leftTitle": "Rich Structure Support",
-      "rightTitle": "Simple Key-Value",
-      "leftDesc": "Supports strings, lists, sets, hashes, sorted sets, and more.",
-      "rightDesc": "Primarily stores strings associated with keys.",
-      "leftIcon": "Layers",
-      "rightIcon": "Box",
-      "leftVisualText": "Complex",
-      "rightVisualText": "Simple"
-    },
-    {
-      "title": "2. PERSISTENCE",
-      "leftTitle": "Optional Persistence",
-      "rightTitle": "No Persistence",
-      "leftDesc": "Can save data to disk for durability (RDB, AOF).",
-      "rightDesc": "Data is lost on restart; purely ephemeral.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "Server",
-      "leftVisualText": "Durable",
-      "rightVisualText": "Ephemeral"
-    },
-    {
-      "title": "3. ATOMIC OPERATIONS",
-      "leftTitle": "Full Support",
-      "rightTitle": "Limited Support",
-      "leftDesc": "Many commands operate atomically, ensuring data integrity.",
-      "rightDesc": "Basic atomic operations on values.",
-      "leftIcon": "Shield",
-      "rightIcon": "Lock",
-      "leftVisualText": "Atomic",
-      "rightVisualText": "Basic"
-    },
-    {
-      "title": "4. COMPLEX QUERIES",
-      "leftTitle": "Advanced Capabilities",
-      "rightTitle": "Basic Retrieval",
-      "leftDesc": "Supports pub/sub, Lua scripting, geospatial queries.",
-      "rightDesc": "Primarily for GET and SET operations.",
-      "leftIcon": "Search",
-      "rightIcon": "Terminal",
-      "leftVisualText": "Powerful",
-      "rightVisualText": "Basic"
-    },
-    {
-      "title": "5. MEMORY MANAGEMENT",
-      "leftTitle": "More Complex",
-      "rightTitle": "Simpler Eviction",
-      "leftDesc": "Flexible eviction policies, but can be more memory-intensive.",
-      "rightDesc": "LRU (Least Recently Used) eviction is standard.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Network",
-      "leftVisualText": "Flexible",
-      "rightVisualText": "Efficient"
-    },
-    {
-      "title": "6. COMMUNITY & ECOSYSTEM",
-      "leftTitle": "Larger Ecosystem",
-      "rightTitle": "Established Cache",
-      "leftDesc": "Broader community, more integrations, extensive documentation.",
-      "rightDesc": "Mature and widely adopted for caching.",
-      "leftIcon": "Globe",
-      "rightIcon": "Settings",
-      "leftVisualText": "Vast",
-      "rightVisualText": "Proven"
-    },
-    {
-      "title": "7. USE CASES",
-      "leftTitle": "Versatile Uses",
-      "rightTitle": "Pure Caching",
-      "leftDesc": "Caching, session stores, message brokers, real-time apps.",
-      "rightDesc": "Primarily accelerating web applications and APIs.",
-      "leftIcon": "Zap",
+      "title": "1. CORE TECHNOLOGY",
+      "leftTitle": "Vue.js",
+      "rightTitle": "Svelte",
+      "leftDesc": "Leverages Vue.js reactivity system for components and state management.",
+      "rightDesc": "Compiles components to imperative vanilla JS at build time.",
+      "leftIcon": "Code",
       "rightIcon": "FileCode",
-      "leftVisualText": "Multi-purpose",
-      "rightVisualText": "Cache"
+      "leftVisualText": "Vue",
+      "rightVisualText": "Svelte"
+    },
+    {
+      "title": "2. REACTIVITY APPROACH",
+      "leftTitle": "Runtime Reactivity",
+      "rightTitle": "Compile-Time Reactivity",
+      "leftDesc": "Vue's runtime handles updates and re-renders based on changes.",
+      "rightDesc": "Svelte detects changes at compile time, no virtual DOM.",
+      "leftIcon": "Server",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Runtime",
+      "rightVisualText": "Compile"
+    },
+    {
+      "title": "3. PERFORMANCE",
+      "leftTitle": "Excellent",
+      "rightTitle": "Exceptional",
+      "leftDesc": "Optimized Vue.js runtime performance, especially with Nuxt features.",
+      "rightDesc": "Smaller bundles, faster initial load due to no runtime overhead.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Zap",
+      "leftVisualText": "Fast",
+      "rightVisualText": "Faster"
+    },
+    {
+      "title": "4. LEARNING CURVE",
+      "leftTitle": "Moderate",
+      "rightTitle": "Gentle",
+      "leftDesc": "Familiar for Vue.js developers, slight learning curve for Nuxt concepts.",
+      "rightDesc": "Simpler syntax, easier to grasp for developers new to Svelte.",
+      "leftIcon": "Globe",
+      "rightIcon": "Globe",
+      "leftVisualText": "Vue Devs",
+      "rightVisualText": "New Devs"
+    },
+    {
+      "title": "5. BUILD TOOLING",
+      "leftTitle": "Vite / Webpack",
+      "rightTitle": "Vite",
+      "leftDesc": "Supports Vite and Webpack, offering flexibility in build processes.",
+      "rightDesc": "Primarily relies on Vite, providing a streamlined experience.",
+      "leftIcon": "Settings",
+      "rightIcon": "Settings",
+      "leftVisualText": "Flexible",
+      "rightVisualText": "Focused"
+    },
+    {
+      "title": "6. SERVER-SIDE RENDERING",
+      "leftTitle": "Robust SSR",
+      "rightTitle": "Effective SSR",
+      "leftDesc": "Mature SSR capabilities with auto-routing and server API routes.",
+      "rightDesc": "Built-in SSR with a file-system based router and API routes.",
+      "leftIcon": "Server",
+      "rightIcon": "Server",
+      "leftVisualText": "Nuxt SSR",
+      "rightVisualText": "Kit SSR"
+    },
+    {
+      "title": "7. ECOSYSTEM SIZE",
+      "leftTitle": "Larger",
+      "rightTitle": "Growing",
+      "leftDesc": "Benefits from the extensive Vue.js ecosystem and community support.",
+      "rightDesc": "Rapidly expanding Svelte ecosystem, gaining traction and tools.",
+      "leftIcon": "Layers",
+      "rightIcon": "Layers",
+      "leftVisualText": "Vue Ecosystem",
+      "rightVisualText": "Svelte Ecosystem"
     }
   ]
 }

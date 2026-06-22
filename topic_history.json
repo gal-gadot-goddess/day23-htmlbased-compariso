@@ -1,5 +1,4 @@
 [
-  "SolidJS vs Qwik",
   "PostgreSQL vs MongoDB",
   "Vue.js vs React",
   "Vue.js vs Angular",
@@ -48,5 +47,6 @@
   "Couchbase vs MongoDB",
   "Server Components vs Client Components",
   "Astro vs Next.js",
-  "Redis vs Memcached"
+  "Redis vs Memcached",
+  "Nuxt.js vs SvelteKit"
 ]
