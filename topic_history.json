@@ -1,5 +1,4 @@
 [
-  "PostgreSQL vs MongoDB",
   "Vue.js vs React",
   "Vue.js vs Angular",
   "Remix vs Next.js",
@@ -48,5 +47,6 @@
   "Server Components vs Client Components",
   "Astro vs Next.js",
   "Redis vs Memcached",
-  "Nuxt.js vs SvelteKit"
+  "Nuxt.js vs SvelteKit",
+  "Qwik vs Remix"
 ]
