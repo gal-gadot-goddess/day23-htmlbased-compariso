@@ -1,5 +1,4 @@
 [
-  "Vue.js vs React",
   "Vue.js vs Angular",
   "Remix vs Next.js",
   "Vector DB vs Relational DB",
@@ -48,5 +47,6 @@
   "Astro vs Next.js",
   "Redis vs Memcached",
   "Nuxt.js vs SvelteKit",
-  "Qwik vs Remix"
+  "Qwik vs Remix",
+  "Astro vs Next.js"
 ]
