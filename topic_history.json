@@ -1,5 +1,4 @@
 [
-  "Vue.js vs Angular",
   "Remix vs Next.js",
   "Vector DB vs Relational DB",
   "PostgreSQL vs MongoDB",
@@ -48,5 +47,6 @@
   "Redis vs Memcached",
   "Nuxt.js vs SvelteKit",
   "Qwik vs Remix",
-  "Astro vs Next.js"
+  "Astro vs Next.js",
+  "Declarative vs Imperative"
 ]
