@@ -1,92 +1,92 @@
 {
-  "topLabel": "BACKEND ARCHITECTURE",
+  "topLabel": "FRAMEWORKS",
   "mainTitle": {
-    "left": "BFF",
-    "right": "Direct Frontend Call",
+    "left": "SolidJS",
+    "right": "Vue.js",
     "vs": "vs"
   },
-  "leftSub": "Backend For Frontend",
-  "rightSub": "Single API Gateway",
-  "leftColor": "#FF6B6B",
-  "rightColor": "#4ECDC4",
-  "badge": "THE 7 CORE DIFFERENCES",
+  "leftSub": "Performance First",
+  "rightSub": "Feature Rich",
+  "leftColor": "#33ff00",
+  "rightColor": "#ff00ff",
+  "badge": "7 KEY DISTINCTIONS",
   "differences": [
     {
-      "title": "1. PURPOSE",
-      "leftTitle": "Tailored APIs",
-      "rightTitle": "Unified API",
-      "leftDesc": "Optimized backend for specific frontend needs, improving performance and developer experience.",
-      "rightDesc": "Single backend serves all frontends, simplifying initial setup but potentially causing issues.",
-      "leftIcon": "Layers",
+      "title": "1. REACTIVITY MODEL",
+      "leftTitle": "Fine-grained reactivity",
+      "rightTitle": "Proxy-based reactivity",
+      "leftDesc": "Automatic dependency tracking for precise updates without VDOM overhead.",
+      "rightDesc": "Uses JavaScript Proxies for tracking changes, benefits from VDOM diffing.",
+      "leftIcon": "Activity",
       "rightIcon": "Layers",
-      "leftVisualText": "Custom",
-      "rightVisualText": "Generic"
+      "leftVisualText": "Signals",
+      "rightVisualText": "Proxy"
     },
     {
-      "title": "2. TEAM STRUCTURE",
-      "leftTitle": "Frontend Ownership",
-      "rightTitle": "Backend Ownership",
-      "leftDesc": "Frontend teams manage their BFF, enabling faster iteration and alignment with UI requirements.",
-      "rightDesc": "Backend teams manage the main API, requiring close collaboration and potential bottlenecks.",
-      "leftIcon": "Users",
-      "rightIcon": "Users",
-      "leftVisualText": "Empowered",
-      "rightVisualText": "Centralized"
-    },
-    {
-      "title": "3. COMPLEXITY",
-      "leftTitle": "Increased Instances",
-      "rightTitle": "Reduced Instances",
-      "leftDesc": "More backend services to manage, increasing operational overhead but isolating complexity.",
-      "rightDesc": "Fewer backend services, simplifying deployment but potentially leading to monolithic concerns.",
-      "leftIcon": "Server",
-      "rightIcon": "Server",
-      "leftVisualText": "Distributed",
-      "rightVisualText": "Central"
-    },
-    {
-      "title": "4. PERFORMANCE",
-      "leftTitle": "Optimized Data",
-      "rightTitle": "General Data",
-      "leftDesc": "Fetches only necessary data, reducing payload size and improving frontend load times.",
-      "rightDesc": "May fetch excess data, increasing payload size and potentially impacting performance.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Lean",
-      "rightVisualText": "Broad"
-    },
-    {
-      "title": "5. DEVELOPMENT VELOCITY",
-      "leftTitle": "Faster Iteration",
-      "rightTitle": "Slower Iteration",
-      "leftDesc": "Frontend teams can deploy independently, leading to quicker feature delivery and experimentation.",
-      "rightDesc": "Changes require backend coordination, potentially slowing down frontend development cycles.",
-      "leftIcon": "Zap",
-      "rightIcon": "Zap",
-      "leftVisualText": "Agile",
-      "rightVisualText": "Sequential"
-    },
-    {
-      "title": "6. REUSABILITY",
-      "leftTitle": "Low Reusability",
-      "rightTitle": "High Reusability",
-      "leftDesc": "APIs are specific to a frontend, limiting reuse across different clients or platforms.",
-      "rightDesc": "APIs are designed for general use, promoting code sharing and consistency.",
-      "leftIcon": "Code",
+      "title": "2. COMPILATION",
+      "leftTitle": "Compiled to Vanilla JS",
+      "rightTitle": "Runtime compiler",
+      "leftDesc": "Compiles JSX/templates into performant, minimal vanilla JavaScript.",
+      "rightDesc": "Can compile at build time or use a runtime compiler.",
+      "leftIcon": "FileCode",
       "rightIcon": "Code",
-      "leftVisualText": "Specific",
-      "rightVisualText": "Shared"
+      "leftVisualText": "Static JS",
+      "rightVisualText": "Dynamic JS"
     },
     {
-      "title": "7. MAINTAINABILITY",
-      "leftTitle": "Isolated Concerns",
-      "rightTitle": "Centralized Logic",
-      "leftDesc": "Each BFF handles its own logic, making it easier to update or refactor without affecting others.",
-      "rightDesc": "Maintaining a single API for all can become complex and difficult to manage over time.",
-      "leftIcon": "HardDrive",
+      "title": "3. VIRTUAL DOM",
+      "leftTitle": "No Virtual DOM",
+      "rightTitle": "Uses Virtual DOM",
+      "leftDesc": "Directly manipulates the DOM for unparalleled performance.",
+      "rightDesc": "Compares VDOM trees to determine minimal DOM updates.",
+      "leftIcon": "Terminal",
+      "rightIcon": "Layout",
+      "leftVisualText": "Direct DOM",
+      "rightVisualText": "VDOM Diff"
+    },
+    {
+      "title": "4. BUNDLE SIZE",
+      "leftTitle": "Tiny Bundles",
+      "rightTitle": "Moderate Bundles",
+      "leftDesc": "Extremely small initial bundle sizes due to no runtime overhead.",
+      "rightDesc": "Generally larger bundles due to runtime features and compiler.",
+      "leftIcon": "Box",
       "rightIcon": "HardDrive",
-      "leftVisualText": "Modular",
-      "rightVisualText": "Monolithic"
+      "leftVisualText": "Minimal",
+      "rightVisualText": "Standard"
+    },
+    {
+      "title": "5. PERFORMANCE",
+      "leftTitle": "Exceptional Speed",
+      "rightTitle": "Very Good Speed",
+      "leftDesc": "Often tops benchmarks for rendering and update performance.",
+      "rightDesc": "Highly performant, but typically trails SolidJS in raw speed.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Server",
+      "leftVisualText": "Benchmark",
+      "rightVisualText": "Fast"
+    },
+    {
+      "title": "6. LEARNING CURVE",
+      "leftTitle": "Steeper Curve",
+      "rightTitle": "Gentle Curve",
+      "leftDesc": "Requires understanding of signals and reactivity primitives.",
+      "rightDesc": "Familiar concepts for many developers, easier to grasp initially.",
+      "leftIcon": "Search",
+      "rightIcon": "Settings",
+      "leftVisualText": "Advanced",
+      "rightVisualText": "Beginner"
+    },
+    {
+      "title": "7. ECOSYSTEM & COMMUNITY",
+      "leftTitle": "Growing Ecosystem",
+      "rightTitle": "Mature Ecosystem",
+      "leftDesc": "Smaller but rapidly expanding community and toolset.",
+      "rightDesc": "Large, established community, extensive libraries and tooling.",
+      "leftIcon": "Globe",
+      "rightIcon": "Share2",
+      "leftVisualText": "Emerging",
+      "rightVisualText": "Established"
     }
   ]
 }

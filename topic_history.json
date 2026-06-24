@@ -1,5 +1,4 @@
 [
-  "PostgreSQL vs MongoDB",
   "Svelte vs Vue.js",
   "FastAPI vs Flask",
   "React Server Components vs React Client Components",
@@ -48,5 +47,6 @@
   "Astro vs Next.js",
   "Declarative vs Imperative",
   "SolidJS vs Vue.js",
-  "BFF vs Direct Frontend Call"
+  "BFF vs Direct Frontend Call",
+  "SolidJS vs Vue.js"
 ]
