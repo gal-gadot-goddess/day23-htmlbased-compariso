@@ -1,92 +1,92 @@
 {
-  "topLabel": "PROGRAMMING PARADIGMS",
+  "topLabel": "FRONTEND FRAMEWORKS",
   "mainTitle": {
-    "left": "Declarative",
-    "right": "Imperative",
+    "left": "SolidJS",
+    "right": "Vue.js",
     "vs": "vs"
   },
-  "leftSub": "What to do",
-  "rightSub": "How to do",
-  "leftColor": "#FF6B6B",
-  "rightColor": "#4ECDC4",
+  "leftSub": "Performance Focused",
+  "rightSub": "Progressive & Flexible",
+  "leftColor": "#F47C7C",
+  "rightColor": "#64B075",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. FOCUS",
-      "leftTitle": "Desired outcome",
-      "rightTitle": "Step-by-step process",
-      "leftDesc": "Specifies the desired result without explicitly stating control flow.",
-      "rightDesc": "Specifies a sequence of commands to change program state.",
-      "leftIcon": "Layout",
-      "rightIcon": "Terminal",
-      "leftVisualText": "Result",
-      "rightVisualText": "Steps"
-    },
-    {
-      "title": "2. READABILITY",
-      "leftTitle": "High clarity",
-      "rightTitle": "Detailed logic",
-      "leftDesc": "Often more concise and easier to understand the intent.",
-      "rightDesc": "Can be verbose, requiring careful reading of each step.",
-      "leftIcon": "Search",
-      "rightIcon": "Code",
-      "leftVisualText": "Clear",
-      "rightVisualText": "Verbose"
-    },
-    {
-      "title": "3. FLEXIBILITY",
-      "leftTitle": "Less flexible",
-      "rightTitle": "More flexible",
-      "leftDesc": "Less control over execution path, harder to tweak details.",
-      "rightDesc": "Full control over execution, allows fine-grained adjustments.",
-      "leftIcon": "Lock",
-      "rightIcon": "Unlock",
-      "leftVisualText": "Rigid",
-      "rightVisualText": "Adaptable"
-    },
-    {
-      "title": "4. STATE MANAGEMENT",
-      "leftTitle": "Implicit",
-      "rightTitle": "Explicit",
-      "leftDesc": "State changes are often managed implicitly by the system.",
-      "rightDesc": "State mutations are explicitly coded and managed.",
-      "leftIcon": "Layers",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Hidden",
-      "rightVisualText": "Visible"
-    },
-    {
-      "title": "5. COMPLEXITY",
-      "leftTitle": "Lower complexity",
-      "rightTitle": "Higher complexity",
-      "leftDesc": "Can simplify complex problems by abstracting away details.",
-      "rightDesc": "Requires careful management of variables and control flow.",
-      "leftIcon": "Box",
-      "rightIcon": "Zap",
-      "leftVisualText": "Simple",
-      "rightVisualText": "Intricate"
-    },
-    {
-      "title": "6. SIDE EFFECTS",
-      "leftTitle": "Minimized",
-      "rightTitle": "Prevalent",
-      "leftDesc": "Aims to reduce or eliminate side effects for predictability.",
-      "rightDesc": "Side effects are common and explicitly handled.",
-      "leftIcon": "Shield",
+      "title": "1. REACTIVITY MODEL",
+      "leftTitle": "Fine-grained Signals",
+      "rightTitle": "Vue's Reactivity",
+      "leftDesc": "Zero-cost abstractions, direct DOM updates.",
+      "rightDesc": "Uses Proxies and getters/setters for reactivity.",
+      "leftIcon": "Activity",
       "rightIcon": "Activity",
-      "leftVisualText": "Safe",
-      "rightVisualText": "Active"
+      "leftVisualText": "Signals",
+      "rightVisualText": "Proxy"
     },
     {
-      "title": "7. COMMON EXAMPLES",
-      "leftTitle": "SQL, HTML, React",
-      "rightTitle": "C, Java, Python",
-      "leftDesc": "Focuses on describing the final structure and behavior.",
-      "rightDesc": "Focuses on the sequence of operations to achieve a goal.",
-      "leftIcon": "Globe",
+      "title": "2. COMPILATION STRATEGY",
+      "leftTitle": "Compiled Ahead-of-Time",
+      "rightTitle": "Runtime Compilation",
+      "leftDesc": "Compiles templates to highly optimized vanilla JS.",
+      "rightDesc": "Can compile templates, but often relies on runtime.",
+      "leftIcon": "Code",
+      "rightIcon": "Code",
+      "leftVisualText": "AOT",
+      "rightVisualText": "Runtime"
+    },
+    {
+      "title": "3. MEMORY USAGE",
+      "leftTitle": "Minimal Overhead",
+      "rightTitle": "Moderate Overhead",
+      "leftDesc": "Very low memory footprint due to compilation.",
+      "rightDesc": "Higher memory usage with reactivity system.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Low",
+      "rightVisualText": "Medium"
+    },
+    {
+      "title": "4. JSX VS TEMPLATE",
+      "leftTitle": "JSX First",
+      "rightTitle": "Template Optional",
+      "leftDesc": "Embraces JSX for component logic and UI.",
+      "rightDesc": "Offers HTML-like templates alongside JSX.",
+      "leftIcon": "FileCode",
+      "rightIcon": "FileCode",
+      "leftVisualText": "JSX",
+      "rightVisualText": "Template"
+    },
+    {
+      "title": "5. SERVER-SIDE RENDERING",
+      "leftTitle": "Built-in SSR",
+      "rightTitle": "Flexible SSR",
+      "leftDesc": "SolidStart offers robust SSR capabilities.",
+      "rightDesc": "Vue supports SSR via Nuxt.js or custom setups.",
+      "leftIcon": "Server",
       "rightIcon": "Server",
-      "leftVisualText": "Describe",
-      "rightVisualText": "Execute"
+      "leftVisualText": "SolidStart SSR",
+      "rightVisualText": "Nuxt/Custom"
+    },
+    {
+      "title": "6. COMMUNITY SIZE",
+      "leftTitle": "Growing",
+      "rightTitle": "Mature & Large",
+      "leftDesc": "Rapidly expanding community and ecosystem.",
+      "rightDesc": "Vast community, extensive resources, and tooling.",
+      "leftIcon": "Globe",
+      "rightIcon": "Globe",
+      "leftVisualText": "Rising",
+      "rightVisualText": "Established"
+    },
+    {
+      "title": "7. LEARNING CURVE",
+      "leftTitle": "Steeper",
+      "rightTitle": "Gentler",
+      "leftDesc": "Requires understanding signals and compilation.",
+      "rightDesc": "Familiar template syntax eases adoption.",
+      "leftIcon": "Search",
+      "rightIcon": "Search",
+      "leftVisualText": "Signals",
+      "rightVisualText": "HTML-like"
     }
   ]
 }
