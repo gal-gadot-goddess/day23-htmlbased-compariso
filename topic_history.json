@@ -1,5 +1,4 @@
 [
-  "FastAPI vs Flask",
   "React Server Components vs React Client Components",
   "Server Components vs Client Components",
   "Couchbase vs MongoDB",
@@ -48,5 +47,6 @@
   "SolidJS vs Vue.js",
   "BFF vs Direct Frontend Call",
   "SolidJS vs Vue.js",
-  "SolidJS vs Vue.js"
+  "SolidJS vs Vue.js",
+  "Next.js vs Remix"
 ]

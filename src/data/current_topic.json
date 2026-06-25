@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND FRAMEWORKS",
+  "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "SolidJS",
-    "right": "Vue.js",
+    "left": "Next.js",
+    "right": "Remix",
     "vs": "vs"
   },
-  "leftSub": "Declarative reactivity",
-  "rightSub": "Progressive framework",
-  "leftColor": "#FFB800",
-  "rightColor": "#35495E",
+  "leftSub": "Full-stack Framework",
+  "rightSub": "Full-stack Framework",
+  "leftColor": "#007ACC",
+  "rightColor": "#403256",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. REACTIVITY MODEL",
-      "leftTitle": "Fine-grained reactivity",
-      "rightTitle": "Vue's reactivity",
-      "leftDesc": "Updates only changed DOM nodes directly, no VDOM overhead.",
-      "rightDesc": "Uses Virtual DOM and reactivity system for efficient updates.",
-      "leftIcon": "Activity",
-      "rightIcon": "Layers",
-      "leftVisualText": "Signals",
-      "rightVisualText": "Proxy-based"
-    },
-    {
-      "title": "2. COMPILATION",
-      "leftTitle": "Compiler-first",
-      "rightTitle": "Runtime + Compiler",
-      "leftDesc": "Compiles JSX to efficient vanilla JS, minimal runtime.",
-      "rightDesc": "Combines runtime rendering with compiler optimizations.",
-      "leftIcon": "Code",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Compile time",
-      "rightVisualText": "Bundle size"
-    },
-    {
-      "title": "3. PERFORMANCE",
-      "leftTitle": "Top-tier speed",
-      "rightTitle": "Excellent speed",
-      "leftDesc": "Extremely fast, often benchmarks higher due to no VDOM.",
-      "rightDesc": "Fast and efficient with its optimized VDOM.",
-      "leftIcon": "Cpu",
+      "title": "1. Data Fetching",
+      "leftTitle": "Server-side",
+      "rightTitle": "Server-side",
+      "leftDesc": "Utilizes `getServerSideProps` or API routes for data fetching.",
+      "rightDesc": "Built-in data loading within routes, ideal for form mutations.",
+      "leftIcon": "Server",
       "rightIcon": "Server",
-      "leftVisualText": "Raw speed",
-      "rightVisualText": "Rendering"
+      "leftVisualText": "getServerSideProps",
+      "rightVisualText": "Route Loaders"
     },
     {
-      "title": "4. LEARNING CURVE",
-      "leftTitle": "Steeper curve",
-      "rightTitle": "Gentle curve",
-      "leftDesc": "Requires understanding fine-grained reactivity and JSX.",
-      "rightDesc": "Easier to pick up with clear directives and concepts.",
-      "leftIcon": "Search",
-      "rightIcon": "Globe",
-      "leftVisualText": "Concepts",
-      "rightVisualText": "Simplicity"
-    },
-    {
-      "title": "5. ECOSYSTEM",
-      "leftTitle": "Growing ecosystem",
-      "rightTitle": "Mature ecosystem",
-      "leftDesc": "Smaller but rapidly expanding community and tooling.",
-      "rightDesc": "Large, well-established community, libraries, and tools.",
-      "leftIcon": "Box",
-      "rightIcon": "Network",
-      "leftVisualText": "New tools",
-      "rightVisualText": "Established"
-    },
-    {
-      "title": "6. STATE MANAGEMENT",
-      "leftTitle": "Built-in signals",
-      "rightTitle": "Vuex/Pinia",
-      "leftDesc": "Native reactive primitives for efficient state management.",
-      "rightDesc": "Dedicated state management libraries for complex apps.",
-      "leftIcon": "Zap",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Integrated",
-      "rightVisualText": "External libs"
-    },
-    {
-      "title": "7. JSX VS TEMPLATES",
-      "leftTitle": "JSX native",
-      "rightTitle": "HTML templates",
-      "leftDesc": "Uses JSX for component structure, familiar to React devs.",
-      "rightDesc": "Uses familiar HTML-like templates with special directives.",
-      "leftIcon": "Terminal",
+      "title": "2. Routing",
+      "leftTitle": "File-based",
+      "rightTitle": "File-based",
+      "leftDesc": "Page-based routing in `pages` or `app` directory.",
+      "rightDesc": "Nested routing with route modules for parallel data fetching.",
+      "leftIcon": "Layout",
       "rightIcon": "Layout",
-      "leftVisualText": "Syntax",
-      "rightVisualText": "Structure"
+      "leftVisualText": "Pages/App",
+      "rightVisualText": "Nested Routes"
+    },
+    {
+      "title": "3. Data Mutations",
+      "leftTitle": "API Routes",
+      "rightTitle": "Forms",
+      "leftDesc": "Requires separate API routes to handle form submissions.",
+      "rightDesc": "First-class form handling with `useFetcher` and `useActionData`.",
+      "leftIcon": "ApiRoutes",
+      "rightIcon": "FileCode",
+      "leftVisualText": "API Routes",
+      "rightVisualText": "Forms"
+    },
+    {
+      "title": "4. Performance",
+      "leftTitle": "Optimized Bundles",
+      "rightTitle": "Less JS",
+      "leftDesc": "Focuses on code splitting and optimizations for fast loads.",
+      "rightDesc": "Prioritizes minimal client-side JavaScript for faster interactions.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Bundling",
+      "rightVisualText": "Client JS"
+    },
+    {
+      "title": "5. Error Handling",
+      "leftTitle": "Error Pages",
+      "rightTitle": "Error Boundaries",
+      "leftDesc": "Uses dedicated error pages for recovery.",
+      "rightDesc": "Leverages React Error Boundaries for UI resilience.",
+      "leftIcon": "FileCode",
+      "rightIcon": "Shield",
+      "leftVisualText": "Error Pages",
+      "rightVisualText": "Boundaries"
+    },
+    {
+      "title": "6. Styling",
+      "leftTitle": "Flexible",
+      "rightTitle": "Global CSS",
+      "leftDesc": "Supports various styling methods: CSS Modules, Tailwind, etc.",
+      "rightDesc": "Emphasizes global CSS with importable styles.",
+      "leftIcon": "Code",
+      "rightIcon": "Globe",
+      "leftVisualText": "Any CSS",
+      "rightVisualText": "Global CSS"
+    },
+    {
+      "title": "7. Focus",
+      "leftTitle": "Development Speed",
+      "rightTitle": "User Experience",
+      "leftDesc": "Aims for rapid development with pre-built features.",
+      "rightDesc": "Prioritizes fast user interactions and seamless data flow.",
+      "leftIcon": "Zap",
+      "rightIcon": "Activity",
+      "leftVisualText": "Dev Speed",
+      "rightVisualText": "UX Focus"
     }
   ]
 }
