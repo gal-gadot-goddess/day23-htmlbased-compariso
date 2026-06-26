@@ -1,92 +1,92 @@
 {
-  "topLabel": "WEB DEVELOPMENT",
+  "topLabel": "DATABASES",
   "mainTitle": {
-    "left": "Vite",
-    "right": "Webpack",
+    "left": "PostgreSQL",
+    "right": "SQLite",
     "vs": "vs"
   },
-  "leftSub": "Fast Dev Server",
-  "rightSub": "Bundler Powerhouse",
-  "leftColor": "#47B881",
-  "rightColor": "#0D70B7",
+  "leftSub": "Relational Powerhouse",
+  "rightSub": "Embedded Simplicity",
+  "leftColor": "#336791",
+  "rightColor": "#4780C8",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. Dev Server",
-      "leftTitle": "Native ESM",
-      "rightTitle": "Module Bundling",
-      "leftDesc": "Leverages native browser ESM for blazing fast cold starts and HMR.",
-      "rightDesc": "Bundles modules into static assets for production, slower dev server.",
-      "leftIcon": "Zap",
-      "rightIcon": "Layers",
-      "leftVisualText": "Instant",
-      "rightVisualText": "Build Time"
-    },
-    {
-      "title": "2. Build Speed",
-      "leftTitle": "Ahead-of-Time",
-      "rightTitle": "Tree Shaking",
-      "leftDesc": "Faster builds by compiling dependencies only once.",
-      "rightDesc": "Optimizes bundle size by removing unused code.",
-      "leftIcon": "ArrowRightLeft",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Rapid",
-      "rightVisualText": "Optimized"
-    },
-    {
-      "title": "3. Plugins",
-      "leftTitle": "Rollup Based",
-      "rightTitle": "Extensive Ecosystem",
-      "leftDesc": "Uses Rollup for production builds, simpler plugin API.",
-      "rightDesc": "Vast plugin ecosystem for complex configurations and transformations.",
-      "leftIcon": "Code",
-      "rightIcon": "Box",
-      "leftVisualText": "Lean",
-      "rightVisualText": "Flexible"
-    },
-    {
-      "title": "4. Configuration",
-      "leftTitle": "Minimal",
-      "rightTitle": "Complex",
-      "leftDesc": "Sensible defaults, minimal configuration needed out-of-the-box.",
-      "rightDesc": "Requires more detailed configuration for optimal performance.",
-      "leftIcon": "Settings",
-      "rightIcon": "Settings",
-      "leftVisualText": "Easy",
-      "rightVisualText": "Detailed"
-    },
-    {
-      "title": "5. HMR",
-      "leftTitle": "Near-Instant",
-      "rightTitle": "Reliable",
-      "leftDesc": "Hot Module Replacement is exceptionally fast due to native ESM.",
-      "rightDesc": "Established and reliable Hot Module Replacement capabilities.",
+      "title": "1. Architecture",
+      "leftTitle": "Client-Server",
+      "rightTitle": "Embedded",
+      "leftDesc": "Runs as a separate server process, accessed by clients over a network.",
+      "rightDesc": "Integrated directly into the application, runs in the same process.",
       "leftIcon": "Server",
-      "rightIcon": "Server",
-      "leftVisualText": "Quick",
-      "rightVisualText": "Stable"
+      "rightIcon": "Layers",
+      "leftVisualText": "Server",
+      "rightVisualText": "Embedded"
     },
     {
-      "title": "6. Community",
-      "leftTitle": "Growing",
-      "rightTitle": "Mature",
-      "leftDesc": "Rapidly expanding community and adoption.",
-      "rightDesc": "Large, established community with extensive resources.",
+      "title": "2. Concurrency",
+      "leftTitle": "High Concurrency",
+      "rightTitle": "Limited Concurrency",
+      "leftDesc": "Handles many simultaneous connections and transactions efficiently.",
+      "rightDesc": "Designed for single-user or low-concurrency scenarios.",
+      "leftIcon": "Network",
+      "rightIcon": "Lock",
+      "leftVisualText": "Many Users",
+      "rightVisualText": "Single User"
+    },
+    {
+      "title": "3. Scalability",
+      "leftTitle": "Highly Scalable",
+      "rightTitle": "Limited Scalability",
+      "leftDesc": "Scales well for large datasets and high traffic loads.",
+      "rightDesc": "Best suited for small to medium datasets, not for heavy loads.",
+      "leftIcon": "ArrowRightLeft",
+      "rightIcon": "Box",
+      "leftVisualText": "Big Data",
+      "rightVisualText": "Small Data"
+    },
+    {
+      "title": "4. Data Integrity",
+      "leftTitle": "Robust ACID",
+      "rightTitle": "ACID Compliant",
+      "leftDesc": "Ensures Atomicity, Consistency, Isolation, and Durability for transactions.",
+      "rightDesc": "Offers ACID compliance, but with limitations in concurrent writes.",
+      "leftIcon": "Shield",
+      "rightIcon": "Shield",
+      "leftVisualText": "Strong ACID",
+      "rightVisualText": "Standard ACID"
+    },
+    {
+      "title": "5. Features",
+      "leftTitle": "Feature Rich",
+      "rightTitle": "Core Features",
+      "leftDesc": "Advanced SQL, JSON support, GIS, extensions, and more.",
+      "rightDesc": "Provides essential SQL features for basic database operations.",
+      "leftIcon": "Code",
+      "rightIcon": "FileCode",
+      "leftVisualText": "Advanced",
+      "rightVisualText": "Basic"
+    },
+    {
+      "title": "6. Management",
+      "leftTitle": "Requires Admin",
+      "rightTitle": "Zero Admin",
+      "leftDesc": "Needs dedicated administration for setup, maintenance, and security.",
+      "rightDesc": "No separate server process or complex configuration needed.",
+      "leftIcon": "Settings",
+      "rightIcon": "Unlock",
+      "leftVisualText": "Admin Needed",
+      "rightVisualText": "No Admin"
+    },
+    {
+      "title": "7. Use Cases",
+      "leftTitle": "Web Apps, Analytics",
+      "rightTitle": "Mobile, Desktop Apps",
+      "leftDesc": "Ideal for web applications, data warehousing, and complex analytics.",
+      "rightDesc": "Perfect for mobile apps, desktop applications, and simple data storage.",
       "leftIcon": "Globe",
-      "rightIcon": "Globe",
-      "leftVisualText": "New",
-      "rightVisualText": "Proven"
-    },
-    {
-      "title": "7. Use Case",
-      "leftTitle": "Modern Apps",
-      "rightTitle": "Legacy Projects",
-      "leftDesc": "Ideal for new projects and frameworks needing speed.",
-      "rightDesc": "Well-suited for existing projects and complex setups.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Terminal",
-      "leftVisualText": "Future",
-      "rightVisualText": "Present"
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Server Apps",
+      "rightVisualText": "Local Apps"
     }
   ]
 }
