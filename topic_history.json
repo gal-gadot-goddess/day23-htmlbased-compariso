@@ -1,5 +1,4 @@
 [
-  "Server Components vs Client Components",
   "Couchbase vs MongoDB",
   "Svelte vs Vue.js",
   "NEO4J vs MONGODB",
@@ -48,5 +47,6 @@
   "SolidJS vs Vue.js",
   "SolidJS vs Vue.js",
   "Next.js vs Remix",
-  "Cassandra vs DynamoDB"
+  "Cassandra vs DynamoDB",
+  "PostgreSQL vs SQLite"
 ]
