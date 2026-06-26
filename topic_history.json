@@ -1,5 +1,4 @@
 [
-  "Couchbase vs MongoDB",
   "Svelte vs Vue.js",
   "NEO4J vs MONGODB",
   "Next.js vs Astro",
@@ -48,5 +47,6 @@
   "SolidJS vs Vue.js",
   "Next.js vs Remix",
   "Cassandra vs DynamoDB",
-  "PostgreSQL vs SQLite"
+  "PostgreSQL vs SQLite",
+  "Vite vs Webpack"
 ]
