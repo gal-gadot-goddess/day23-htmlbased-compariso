@@ -1,92 +1,92 @@
 {
-  "topLabel": "DATABASES",
+  "topLabel": "PROGRAMMING PARADIGMS",
   "mainTitle": {
-    "left": "PostgreSQL",
-    "right": "SQLite",
+    "left": "FUNCTIONAL PROGRAMMING",
+    "right": "OBJECT-ORIENTED PROGRAMMING",
     "vs": "vs"
   },
-  "leftSub": "Relational Powerhouse",
-  "rightSub": "Embedded Simplicity",
-  "leftColor": "#336791",
-  "rightColor": "#4780C8",
+  "leftSub": "Data immutability, pure functions",
+  "rightSub": "Objects, classes, state",
+  "leftColor": "#A78BFA",
+  "rightColor": "#F472B6",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. Architecture",
-      "leftTitle": "Client-Server",
-      "rightTitle": "Embedded",
-      "leftDesc": "Runs as a separate server process, accessed by clients over a network.",
-      "rightDesc": "Integrated directly into the application, runs in the same process.",
-      "leftIcon": "Server",
-      "rightIcon": "Layers",
-      "leftVisualText": "Server",
-      "rightVisualText": "Embedded"
-    },
-    {
-      "title": "2. Concurrency",
-      "leftTitle": "High Concurrency",
-      "rightTitle": "Limited Concurrency",
-      "leftDesc": "Handles many simultaneous connections and transactions efficiently.",
-      "rightDesc": "Designed for single-user or low-concurrency scenarios.",
-      "leftIcon": "Network",
-      "rightIcon": "Lock",
-      "leftVisualText": "Many Users",
-      "rightVisualText": "Single User"
-    },
-    {
-      "title": "3. Scalability",
-      "leftTitle": "Highly Scalable",
-      "rightTitle": "Limited Scalability",
-      "leftDesc": "Scales well for large datasets and high traffic loads.",
-      "rightDesc": "Best suited for small to medium datasets, not for heavy loads.",
-      "leftIcon": "ArrowRightLeft",
-      "rightIcon": "Box",
-      "leftVisualText": "Big Data",
-      "rightVisualText": "Small Data"
-    },
-    {
-      "title": "4. Data Integrity",
-      "leftTitle": "Robust ACID",
-      "rightTitle": "ACID Compliant",
-      "leftDesc": "Ensures Atomicity, Consistency, Isolation, and Durability for transactions.",
-      "rightDesc": "Offers ACID compliance, but with limitations in concurrent writes.",
-      "leftIcon": "Shield",
-      "rightIcon": "Shield",
-      "leftVisualText": "Strong ACID",
-      "rightVisualText": "Standard ACID"
-    },
-    {
-      "title": "5. Features",
-      "leftTitle": "Feature Rich",
-      "rightTitle": "Core Features",
-      "leftDesc": "Advanced SQL, JSON support, GIS, extensions, and more.",
-      "rightDesc": "Provides essential SQL features for basic database operations.",
-      "leftIcon": "Code",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Advanced",
-      "rightVisualText": "Basic"
-    },
-    {
-      "title": "6. Management",
-      "leftTitle": "Requires Admin",
-      "rightTitle": "Zero Admin",
-      "leftDesc": "Needs dedicated administration for setup, maintenance, and security.",
-      "rightDesc": "No separate server process or complex configuration needed.",
-      "leftIcon": "Settings",
-      "rightIcon": "Unlock",
-      "leftVisualText": "Admin Needed",
-      "rightVisualText": "No Admin"
-    },
-    {
-      "title": "7. Use Cases",
-      "leftTitle": "Web Apps, Analytics",
-      "rightTitle": "Mobile, Desktop Apps",
-      "leftDesc": "Ideal for web applications, data warehousing, and complex analytics.",
-      "rightDesc": "Perfect for mobile apps, desktop applications, and simple data storage.",
-      "leftIcon": "Globe",
+      "title": "1. State Management",
+      "leftTitle": "Immutable data",
+      "rightTitle": "Mutable state",
+      "leftDesc": "Emphasizes data that cannot be changed after creation, reducing bugs.",
+      "rightDesc": "Objects hold mutable state, which can be modified over time.",
+      "leftIcon": "Database",
       "rightIcon": "HardDrive",
-      "leftVisualText": "Server Apps",
-      "rightVisualText": "Local Apps"
+      "leftVisualText": "No change",
+      "rightVisualText": "Change state"
+    },
+    {
+      "title": "2. Core Concept",
+      "leftTitle": "Pure functions",
+      "rightTitle": "Objects & methods",
+      "leftDesc": "Functions produce same output for same input, no side effects.",
+      "rightDesc": "Encapsulates data and behavior into reusable objects.",
+      "leftIcon": "Code",
+      "rightIcon": "Layers",
+      "leftVisualText": "Predictable",
+      "rightVisualText": "Modular"
+    },
+    {
+      "title": "3. Control Flow",
+      "leftTitle": "Declarative",
+      "rightTitle": "Imperative",
+      "leftDesc": "Focuses on what to achieve, not how to achieve it.",
+      "rightDesc": "Specifies step-by-step instructions for computation.",
+      "leftIcon": "Layout",
+      "rightIcon": "Terminal",
+      "leftVisualText": "What to do",
+      "rightVisualText": "How to do"
+    },
+    {
+      "title": "4. Side Effects",
+      "leftTitle": "Minimized",
+      "rightTitle": "Common",
+      "leftDesc": "Aims to isolate and manage side effects carefully.",
+      "rightDesc": "Side effects are a natural part of state changes.",
+      "leftIcon": "Zap",
+      "rightIcon": "Activity",
+      "leftVisualText": "Isolate",
+      "rightVisualText": "Integrated"
+    },
+    {
+      "title": "5. Reusability",
+      "leftTitle": "Higher-order functions",
+      "rightTitle": "Inheritance & Composition",
+      "leftDesc": "Functions can take other functions as arguments or return them.",
+      "rightDesc": "Code reuse through class hierarchies or combining objects.",
+      "leftIcon": "Function",
+      "rightIcon": "Box",
+      "leftVisualText": "Function reuse",
+      "rightVisualText": "Class reuse"
+    },
+    {
+      "title": "6. Concurrency",
+      "leftTitle": "Easier",
+      "rightTitle": "Complex",
+      "leftDesc": "Immutability simplifies concurrent programming and prevents race conditions.",
+      "rightDesc": "Managing shared mutable state in concurrent environments is challenging.",
+      "leftIcon": "Unlock",
+      "rightIcon": "Lock",
+      "leftVisualText": "Safe",
+      "rightVisualText": "Risky"
+    },
+    {
+      "title": "7. Testability",
+      "leftTitle": "High",
+      "rightTitle": "Moderate",
+      "leftDesc": "Pure functions are deterministic and easy to unit test.",
+      "rightDesc": "Testing objects often requires mocking dependencies and state.",
+      "leftIcon": "Search",
+      "rightIcon": "Settings",
+      "leftVisualText": "Simple tests",
+      "rightVisualText": "Mocking needed"
     }
   ]
 }

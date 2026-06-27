@@ -1,5 +1,4 @@
 [
-  "NEO4J vs MONGODB",
   "Next.js vs Astro",
   "SolidStart vs Astro",
   "FastAPI vs Flask",
@@ -48,5 +47,6 @@
   "Cassandra vs DynamoDB",
   "PostgreSQL vs SQLite",
   "Vite vs Webpack",
-  "PostgreSQL vs SQLite"
+  "PostgreSQL vs SQLite",
+  "FUNCTIONAL PROGRAMMING vs OBJECT-ORIENTED PROGRAMMING"
 ]
