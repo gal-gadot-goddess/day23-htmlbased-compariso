@@ -1,5 +1,4 @@
 [
-  "Next.js vs Astro",
   "SolidStart vs Astro",
   "FastAPI vs Flask",
   "Kafka vs Pulsar",
@@ -48,5 +47,6 @@
   "PostgreSQL vs SQLite",
   "Vite vs Webpack",
   "PostgreSQL vs SQLite",
-  "FUNCTIONAL PROGRAMMING vs OBJECT-ORIENTED PROGRAMMING"
+  "FUNCTIONAL PROGRAMMING vs OBJECT-ORIENTED PROGRAMMING",
+  "PostgreSQL vs MySQL"
 ]

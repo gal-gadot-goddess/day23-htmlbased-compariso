@@ -1,92 +1,92 @@
 {
-  "topLabel": "PROGRAMMING PARADIGMS",
+  "topLabel": "DATABASE ARCHITECTURE",
   "mainTitle": {
-    "left": "FUNCTIONAL PROGRAMMING",
-    "right": "OBJECT-ORIENTED PROGRAMMING",
+    "left": "PostgreSQL",
+    "right": "MySQL",
     "vs": "vs"
   },
-  "leftSub": "Data immutability, pure functions",
-  "rightSub": "Objects, classes, state",
-  "leftColor": "#A78BFA",
-  "rightColor": "#F472B6",
+  "leftSub": "Object-Relational Powerhouse",
+  "rightSub": "Relational Standard",
+  "leftColor": "#4169E1",
+  "rightColor": "#00758F",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. State Management",
-      "leftTitle": "Immutable data",
-      "rightTitle": "Mutable state",
-      "leftDesc": "Emphasizes data that cannot be changed after creation, reducing bugs.",
-      "rightDesc": "Objects hold mutable state, which can be modified over time.",
+      "title": "1. DATA TYPES",
+      "leftTitle": "Rich & Extensible",
+      "rightTitle": "Standard & Stable",
+      "leftDesc": "Supports advanced types like JSONB, arrays, geometric, and custom types.",
+      "rightDesc": "Primarily uses standard SQL data types, well-established and predictable.",
       "leftIcon": "Database",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "No change",
-      "rightVisualText": "Change state"
+      "rightIcon": "Database",
+      "leftVisualText": "JSONB Support",
+      "rightVisualText": "Standard Types"
     },
     {
-      "title": "2. Core Concept",
-      "leftTitle": "Pure functions",
-      "rightTitle": "Objects & methods",
-      "leftDesc": "Functions produce same output for same input, no side effects.",
-      "rightDesc": "Encapsulates data and behavior into reusable objects.",
-      "leftIcon": "Code",
-      "rightIcon": "Layers",
-      "leftVisualText": "Predictable",
-      "rightVisualText": "Modular"
-    },
-    {
-      "title": "3. Control Flow",
-      "leftTitle": "Declarative",
-      "rightTitle": "Imperative",
-      "leftDesc": "Focuses on what to achieve, not how to achieve it.",
-      "rightDesc": "Specifies step-by-step instructions for computation.",
-      "leftIcon": "Layout",
-      "rightIcon": "Terminal",
-      "leftVisualText": "What to do",
-      "rightVisualText": "How to do"
-    },
-    {
-      "title": "4. Side Effects",
-      "leftTitle": "Minimized",
-      "rightTitle": "Common",
-      "leftDesc": "Aims to isolate and manage side effects carefully.",
-      "rightDesc": "Side effects are a natural part of state changes.",
-      "leftIcon": "Zap",
-      "rightIcon": "Activity",
-      "leftVisualText": "Isolate",
-      "rightVisualText": "Integrated"
-    },
-    {
-      "title": "5. Reusability",
-      "leftTitle": "Higher-order functions",
-      "rightTitle": "Inheritance & Composition",
-      "leftDesc": "Functions can take other functions as arguments or return them.",
-      "rightDesc": "Code reuse through class hierarchies or combining objects.",
-      "leftIcon": "Function",
-      "rightIcon": "Box",
-      "leftVisualText": "Function reuse",
-      "rightVisualText": "Class reuse"
-    },
-    {
-      "title": "6. Concurrency",
-      "leftTitle": "Easier",
-      "rightTitle": "Complex",
-      "leftDesc": "Immutability simplifies concurrent programming and prevents race conditions.",
-      "rightDesc": "Managing shared mutable state in concurrent environments is challenging.",
-      "leftIcon": "Unlock",
-      "rightIcon": "Lock",
-      "leftVisualText": "Safe",
-      "rightVisualText": "Risky"
-    },
-    {
-      "title": "7. Testability",
-      "leftTitle": "High",
-      "rightTitle": "Moderate",
-      "leftDesc": "Pure functions are deterministic and easy to unit test.",
-      "rightDesc": "Testing objects often requires mocking dependencies and state.",
-      "leftIcon": "Search",
+      "title": "2. EXTENSIBILITY",
+      "leftTitle": "Highly Extensible",
+      "rightTitle": "Good Extensibility",
+      "leftDesc": "Allows custom functions, operators, data types, and indexes.",
+      "rightDesc": "Supports stored procedures, functions, and triggers.",
+      "leftIcon": "Layers",
       "rightIcon": "Settings",
-      "leftVisualText": "Simple tests",
-      "rightVisualText": "Mocking needed"
+      "leftVisualText": "Custom Extensions",
+      "rightVisualText": "Stored Procedures"
+    },
+    {
+      "title": "3. ACID COMPLIANCE",
+      "leftTitle": "Fully ACID Compliant",
+      "rightTitle": "Fully ACID Compliant",
+      "leftDesc": "Ensures reliable transaction processing with Atomicity, Consistency, Isolation, Durability.",
+      "rightDesc": "Guarantees data integrity through ACID properties, widely trusted.",
+      "leftIcon": "Lock",
+      "rightIcon": "Lock",
+      "leftVisualText": "Strict ACID",
+      "rightVisualText": "Strong ACID"
+    },
+    {
+      "title": "4. PERFORMANCE",
+      "leftTitle": "Complex Queries",
+      "rightTitle": "Read Heavy",
+      "leftDesc": "Excels in complex queries, joins, and analytical workloads.",
+      "rightDesc": "Optimized for high-volume read operations and simpler queries.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Activity",
+      "leftVisualText": "Complex Joins",
+      "rightVisualText": "Fast Reads"
+    },
+    {
+      "title": "5. JSON SUPPORT",
+      "leftTitle": "Native JSONB",
+      "rightTitle": "JSON Functionality",
+      "leftDesc": "Efficient binary JSON format (JSONB) with indexing and operators.",
+      "rightDesc": "Supports JSON data type with functions for manipulation.",
+      "leftIcon": "FileCode",
+      "rightIcon": "Code",
+      "leftVisualText": "Indexed JSONB",
+      "rightVisualText": "JSON Functions"
+    },
+    {
+      "title": "6. COMMUNITY & ECOSYSTEM",
+      "leftTitle": "Robust Community",
+      "rightTitle": "Large Ecosystem",
+      "leftDesc": "Active development, extensive documentation, and broad third-party support.",
+      "rightDesc": "Vast user base, wide tooling compatibility, and abundant resources.",
+      "leftIcon": "Globe",
+      "rightIcon": "Share2",
+      "leftVisualText": "Active Devs",
+      "rightVisualText": "Wide Tools"
+    },
+    {
+      "title": "7. INDEXING",
+      "leftTitle": "Advanced Indexing",
+      "rightTitle": "Standard Indexing",
+      "leftDesc": "Supports B-tree, Hash, GiST, SP-GiST, GIN, and BRIN indexes.",
+      "rightDesc": "Primarily uses B-tree and Hash indexes.",
+      "leftIcon": "Search",
+      "rightIcon": "Search",
+      "leftVisualText": "Multi-Index Types",
+      "rightVisualText": "B-Tree Focus"
     }
   ]
 }
