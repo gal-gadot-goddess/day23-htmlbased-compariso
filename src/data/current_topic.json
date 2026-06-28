@@ -1,92 +1,92 @@
 {
-  "topLabel": "DATABASE ARCHITECTURE",
+  "topLabel": "DEVELOPER EXPERIENCE",
   "mainTitle": {
-    "left": "SQL",
-    "right": "NoSQL",
+    "left": "RIVET",
+    "right": "OPENRIVET",
     "vs": "vs"
   },
-  "leftSub": "Relational Databases",
-  "rightSub": "Non-relational Databases",
-  "leftColor": "#007bff",
-  "rightColor": "#28a745",
+  "leftSub": "Declarative UI",
+  "rightSub": "Open-source UI",
+  "leftColor": "#FF6B6B",
+  "rightColor": "#4ECDC4",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DATA MODEL",
-      "leftTitle": "Tables & Relations",
-      "rightTitle": "Diverse Models",
-      "leftDesc": "Structured data in tables with predefined schemas and relationships.",
-      "rightDesc": "Flexible schemas, supports documents, key-value, graph, or column-family.",
-      "leftIcon": "Layers",
+      "title": "1. ORIGIN",
+      "leftTitle": "Commercial Product",
+      "rightTitle": "Community Driven",
+      "leftDesc": "Developed and backed by a commercial entity with proprietary elements.",
+      "rightDesc": "Built and maintained by the open-source community with transparent development.",
+      "leftIcon": "Server",
       "rightIcon": "Globe",
-      "leftVisualText": "Schema-defined",
-      "rightVisualText": "Schema-flexible"
+      "leftVisualText": "Rivet",
+      "rightVisualText": "OpenRivet"
     },
     {
-      "title": "2. SCALABILITY",
-      "leftTitle": "Vertical Scaling",
-      "rightTitle": "Horizontal Scaling",
-      "leftDesc": "Scale up by adding more power to a single server.",
-      "rightDesc": "Scale out by adding more servers to a cluster.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Server",
-      "leftVisualText": "Scale Up",
-      "rightVisualText": "Scale Out"
-    },
-    {
-      "title": "3. QUERY LANGUAGE",
-      "leftTitle": "SQL Standard",
-      "rightTitle": "Varies Greatly",
-      "leftDesc": "Standardized Structured Query Language (SQL) for complex queries.",
-      "rightDesc": "Each NoSQL type has its own query methods or APIs.",
-      "leftIcon": "Code",
-      "rightIcon": "Search",
-      "leftVisualText": "SQL Dominant",
-      "rightVisualText": "API-driven"
-    },
-    {
-      "title": "4. SCHEMA MANAGEMENT",
-      "leftTitle": "Rigid Schema",
-      "rightTitle": "Dynamic Schema",
-      "leftDesc": "Requires upfront schema definition; changes can be complex.",
-      "rightDesc": "Schemas can evolve; easily adapt to changing data requirements.",
-      "leftIcon": "Settings",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Predefined",
-      "rightVisualText": "Evolving"
-    },
-    {
-      "title": "5. ACID COMPLIANCE",
-      "leftTitle": "Strong ACID",
-      "rightTitle": "Eventual Consistency",
-      "leftDesc": "Ensures Atomicity, Consistency, Isolation, Durability for transactions.",
-      "rightDesc": "Often prioritizes availability and partition tolerance over immediate consistency.",
+      "title": "2. LICENSING",
+      "leftTitle": "Proprietary License",
+      "rightTitle": "Permissive Open Source",
+      "leftDesc": "Requires licensing, potentially with usage restrictions and costs.",
+      "rightDesc": "Freely available, modifiable, and distributable under open-source terms.",
       "leftIcon": "Lock",
       "rightIcon": "Unlock",
-      "leftVisualText": "Transactional",
-      "rightVisualText": "Flexible Consistency"
+      "leftVisualText": "License",
+      "rightVisualText": "Free Use"
     },
     {
-      "title": "6. JOIN OPERATIONS",
-      "leftTitle": "Complex Joins",
-      "rightTitle": "Limited Joins",
-      "leftDesc": "Efficiently handles complex joins across multiple tables.",
-      "rightDesc": "Joins are typically limited or not supported; data often denormalized.",
-      "leftIcon": "ArrowRightLeft",
+      "title": "3. EXTENSIBILITY",
+      "leftTitle": "Controlled",
+      "rightTitle": "Highly Flexible",
+      "leftDesc": "Extensibility options might be limited by the commercial roadmap.",
+      "rightDesc": "Users can contribute, modify, and extend without external constraints.",
+      "leftIcon": "Settings",
+      "rightIcon": "Layers",
+      "leftVisualText": "Limited",
+      "rightVisualText": "Unlimited"
+    },
+    {
+      "title": "4. COMMUNITY SUPPORT",
+      "leftTitle": "Official Channels",
+      "rightTitle": "Broad Ecosystem",
+      "leftDesc": "Support primarily through official documentation and company-provided channels.",
+      "rightDesc": "Relies on community forums, GitHub issues, and collective knowledge sharing.",
+      "leftIcon": "Network",
       "rightIcon": "Share2",
-      "leftVisualText": "Powerful Joins",
-      "rightVisualText": "Emphasizes No Joins"
+      "leftVisualText": "Focused",
+      "rightVisualText": "Diverse"
     },
     {
-      "title": "7. USE CASES",
-      "leftTitle": "Structured Data",
-      "rightTitle": "Unstructured Data",
-      "leftDesc": "Best for financial systems, ERPs, where data integrity is key.",
-      "rightDesc": "Ideal for big data, real-time apps, content management, IoT.",
-      "leftIcon": "Database",
+      "title": "5. DEVELOPMENT MODEL",
+      "leftTitle": "Closed Source",
+      "rightTitle": "Transparent",
+      "leftDesc": "Internal development cycles and proprietary code base.",
+      "rightDesc": "Publicly accessible code, allowing for community contributions and audits.",
+      "leftIcon": "Code",
+      "rightIcon": "FileCode",
+      "leftVisualText": "Private",
+      "rightVisualText": "Public"
+    },
+    {
+      "title": "6. ROADMAP CONTROL",
+      "leftTitle": "Company Defined",
+      "rightTitle": "Community Influenced",
+      "leftDesc": "Feature development follows the commercial strategy and priorities.",
+      "rightDesc": "Direction shaped by community needs, contributions, and popular demand.",
+      "leftIcon": "ArrowRightLeft",
+      "rightIcon": "Activity",
+      "leftVisualText": "Managed",
+      "rightVisualText": "Organic"
+    },
+    {
+      "title": "7. LONG-TERM VIABILITY",
+      "leftTitle": "Commercial Stability",
+      "rightTitle": "Community Resilience",
+      "leftDesc": "Dependent on the continued success and investment of the owning company.",
+      "rightDesc": "Less risk of discontinuation if the community remains active and supportive.",
+      "leftIcon": "HardDrive",
       "rightIcon": "Box",
-      "leftVisualText": "Structured Apps",
-      "rightVisualText": "Flexible Apps"
+      "leftVisualText": "Company",
+      "rightVisualText": "Crowd"
     }
   ]
 }

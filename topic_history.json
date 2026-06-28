@@ -1,5 +1,4 @@
 [
-  "FastAPI vs Flask",
   "Kafka vs Pulsar",
   "Svelte vs Vue.js",
   "CQRS vs CRUD",
@@ -48,5 +47,6 @@
   "PostgreSQL vs SQLite",
   "FUNCTIONAL PROGRAMMING vs OBJECT-ORIENTED PROGRAMMING",
   "PostgreSQL vs MySQL",
-  "SQL vs NoSQL"
+  "SQL vs NoSQL",
+  "RIVET vs OPENRIVET"
 ]
