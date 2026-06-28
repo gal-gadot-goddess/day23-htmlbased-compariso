@@ -1,92 +1,92 @@
 {
   "topLabel": "DATABASE ARCHITECTURE",
   "mainTitle": {
-    "left": "PostgreSQL",
-    "right": "MySQL",
+    "left": "SQL",
+    "right": "NoSQL",
     "vs": "vs"
   },
-  "leftSub": "Object-Relational Powerhouse",
-  "rightSub": "Relational Standard",
-  "leftColor": "#4169E1",
-  "rightColor": "#00758F",
+  "leftSub": "Relational Databases",
+  "rightSub": "Non-relational Databases",
+  "leftColor": "#007bff",
+  "rightColor": "#28a745",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DATA TYPES",
-      "leftTitle": "Rich & Extensible",
-      "rightTitle": "Standard & Stable",
-      "leftDesc": "Supports advanced types like JSONB, arrays, geometric, and custom types.",
-      "rightDesc": "Primarily uses standard SQL data types, well-established and predictable.",
-      "leftIcon": "Database",
-      "rightIcon": "Database",
-      "leftVisualText": "JSONB Support",
-      "rightVisualText": "Standard Types"
-    },
-    {
-      "title": "2. EXTENSIBILITY",
-      "leftTitle": "Highly Extensible",
-      "rightTitle": "Good Extensibility",
-      "leftDesc": "Allows custom functions, operators, data types, and indexes.",
-      "rightDesc": "Supports stored procedures, functions, and triggers.",
+      "title": "1. DATA MODEL",
+      "leftTitle": "Tables & Relations",
+      "rightTitle": "Diverse Models",
+      "leftDesc": "Structured data in tables with predefined schemas and relationships.",
+      "rightDesc": "Flexible schemas, supports documents, key-value, graph, or column-family.",
       "leftIcon": "Layers",
-      "rightIcon": "Settings",
-      "leftVisualText": "Custom Extensions",
-      "rightVisualText": "Stored Procedures"
+      "rightIcon": "Globe",
+      "leftVisualText": "Schema-defined",
+      "rightVisualText": "Schema-flexible"
     },
     {
-      "title": "3. ACID COMPLIANCE",
-      "leftTitle": "Fully ACID Compliant",
-      "rightTitle": "Fully ACID Compliant",
-      "leftDesc": "Ensures reliable transaction processing with Atomicity, Consistency, Isolation, Durability.",
-      "rightDesc": "Guarantees data integrity through ACID properties, widely trusted.",
-      "leftIcon": "Lock",
-      "rightIcon": "Lock",
-      "leftVisualText": "Strict ACID",
-      "rightVisualText": "Strong ACID"
-    },
-    {
-      "title": "4. PERFORMANCE",
-      "leftTitle": "Complex Queries",
-      "rightTitle": "Read Heavy",
-      "leftDesc": "Excels in complex queries, joins, and analytical workloads.",
-      "rightDesc": "Optimized for high-volume read operations and simpler queries.",
+      "title": "2. SCALABILITY",
+      "leftTitle": "Vertical Scaling",
+      "rightTitle": "Horizontal Scaling",
+      "leftDesc": "Scale up by adding more power to a single server.",
+      "rightDesc": "Scale out by adding more servers to a cluster.",
       "leftIcon": "Cpu",
-      "rightIcon": "Activity",
-      "leftVisualText": "Complex Joins",
-      "rightVisualText": "Fast Reads"
+      "rightIcon": "Server",
+      "leftVisualText": "Scale Up",
+      "rightVisualText": "Scale Out"
     },
     {
-      "title": "5. JSON SUPPORT",
-      "leftTitle": "Native JSONB",
-      "rightTitle": "JSON Functionality",
-      "leftDesc": "Efficient binary JSON format (JSONB) with indexing and operators.",
-      "rightDesc": "Supports JSON data type with functions for manipulation.",
-      "leftIcon": "FileCode",
-      "rightIcon": "Code",
-      "leftVisualText": "Indexed JSONB",
-      "rightVisualText": "JSON Functions"
-    },
-    {
-      "title": "6. COMMUNITY & ECOSYSTEM",
-      "leftTitle": "Robust Community",
-      "rightTitle": "Large Ecosystem",
-      "leftDesc": "Active development, extensive documentation, and broad third-party support.",
-      "rightDesc": "Vast user base, wide tooling compatibility, and abundant resources.",
-      "leftIcon": "Globe",
-      "rightIcon": "Share2",
-      "leftVisualText": "Active Devs",
-      "rightVisualText": "Wide Tools"
-    },
-    {
-      "title": "7. INDEXING",
-      "leftTitle": "Advanced Indexing",
-      "rightTitle": "Standard Indexing",
-      "leftDesc": "Supports B-tree, Hash, GiST, SP-GiST, GIN, and BRIN indexes.",
-      "rightDesc": "Primarily uses B-tree and Hash indexes.",
-      "leftIcon": "Search",
+      "title": "3. QUERY LANGUAGE",
+      "leftTitle": "SQL Standard",
+      "rightTitle": "Varies Greatly",
+      "leftDesc": "Standardized Structured Query Language (SQL) for complex queries.",
+      "rightDesc": "Each NoSQL type has its own query methods or APIs.",
+      "leftIcon": "Code",
       "rightIcon": "Search",
-      "leftVisualText": "Multi-Index Types",
-      "rightVisualText": "B-Tree Focus"
+      "leftVisualText": "SQL Dominant",
+      "rightVisualText": "API-driven"
+    },
+    {
+      "title": "4. SCHEMA MANAGEMENT",
+      "leftTitle": "Rigid Schema",
+      "rightTitle": "Dynamic Schema",
+      "leftDesc": "Requires upfront schema definition; changes can be complex.",
+      "rightDesc": "Schemas can evolve; easily adapt to changing data requirements.",
+      "leftIcon": "Settings",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Predefined",
+      "rightVisualText": "Evolving"
+    },
+    {
+      "title": "5. ACID COMPLIANCE",
+      "leftTitle": "Strong ACID",
+      "rightTitle": "Eventual Consistency",
+      "leftDesc": "Ensures Atomicity, Consistency, Isolation, Durability for transactions.",
+      "rightDesc": "Often prioritizes availability and partition tolerance over immediate consistency.",
+      "leftIcon": "Lock",
+      "rightIcon": "Unlock",
+      "leftVisualText": "Transactional",
+      "rightVisualText": "Flexible Consistency"
+    },
+    {
+      "title": "6. JOIN OPERATIONS",
+      "leftTitle": "Complex Joins",
+      "rightTitle": "Limited Joins",
+      "leftDesc": "Efficiently handles complex joins across multiple tables.",
+      "rightDesc": "Joins are typically limited or not supported; data often denormalized.",
+      "leftIcon": "ArrowRightLeft",
+      "rightIcon": "Share2",
+      "leftVisualText": "Powerful Joins",
+      "rightVisualText": "Emphasizes No Joins"
+    },
+    {
+      "title": "7. USE CASES",
+      "leftTitle": "Structured Data",
+      "rightTitle": "Unstructured Data",
+      "leftDesc": "Best for financial systems, ERPs, where data integrity is key.",
+      "rightDesc": "Ideal for big data, real-time apps, content management, IoT.",
+      "leftIcon": "Database",
+      "rightIcon": "Box",
+      "leftVisualText": "Structured Apps",
+      "rightVisualText": "Flexible Apps"
     }
   ]
 }

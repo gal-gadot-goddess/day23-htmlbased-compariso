@@ -1,5 +1,4 @@
 [
-  "SolidStart vs Astro",
   "FastAPI vs Flask",
   "Kafka vs Pulsar",
   "Svelte vs Vue.js",
@@ -48,5 +47,6 @@
   "Vite vs Webpack",
   "PostgreSQL vs SQLite",
   "FUNCTIONAL PROGRAMMING vs OBJECT-ORIENTED PROGRAMMING",
-  "PostgreSQL vs MySQL"
+  "PostgreSQL vs MySQL",
+  "SQL vs NoSQL"
 ]
