@@ -1,5 +1,4 @@
 [
-  "Kafka vs Pulsar",
   "Svelte vs Vue.js",
   "CQRS vs CRUD",
   "Remix vs Next.js",
@@ -48,5 +47,6 @@
   "FUNCTIONAL PROGRAMMING vs OBJECT-ORIENTED PROGRAMMING",
   "PostgreSQL vs MySQL",
   "SQL vs NoSQL",
-  "RIVET vs OPENRIVET"
+  "RIVET vs OPENRIVET",
+  "Next.js vs Astro"
 ]
