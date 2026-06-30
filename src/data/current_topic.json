@@ -1,92 +1,92 @@
 {
-  "topLabel": "DATABASE TECHNOLOGY",
+  "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "PostgreSQL",
-    "right": "MySQL",
+    "left": "Server Components",
+    "right": "Client Components",
     "vs": "vs"
   },
-  "leftSub": "Powerful Relational DB",
-  "rightSub": "Popular Relational DB",
-  "leftColor": "#4169E1",
-  "rightColor": "#FF8C00",
-  "badge": "7 KEY DIFFERENCES",
+  "leftSub": "Server First",
+  "rightSub": "Client Focused",
+  "leftColor": "#4CAF50",
+  "rightColor": "#2196F3",
+  "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. ACID Compliance",
-      "leftTitle": "Full ACID",
-      "rightTitle": "Good ACID",
-      "leftDesc": "Guarantees data integrity and reliability with full ACID compliance.",
-      "rightDesc": "Offers robust ACID compliance, widely used for transactional integrity.",
-      "leftIcon": "Shield",
-      "rightIcon": "Shield",
-      "leftVisualText": "Full",
-      "rightVisualText": "Good"
-    },
-    {
-      "title": "2. Extensibility",
-      "leftTitle": "Highly Extensible",
-      "rightTitle": "Standard Features",
-      "leftDesc": "Supports custom functions, data types, and operators.",
-      "rightDesc": "Offers standard SQL features and common extensions.",
-      "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "Custom",
-      "rightVisualText": "Standard"
-    },
-    {
-      "title": "3. JSON Support",
-      "leftTitle": "Advanced JSON",
-      "rightTitle": "Basic JSON",
-      "leftDesc": "Native JSONB type for efficient querying and indexing.",
-      "rightDesc": "Supports JSON data type with limited indexing capabilities.",
-      "leftIcon": "Box",
-      "rightIcon": "Box",
-      "leftVisualText": "JSONB",
-      "rightVisualText": "JSON"
-    },
-    {
-      "title": "4. Concurrency Control",
-      "leftTitle": "MVCC",
-      "rightTitle": "Locking",
-      "leftDesc": "Multi-Version Concurrency Control for high concurrency reads.",
-      "rightDesc": "Primarily uses locking mechanisms, can impact write performance.",
-      "leftIcon": "Network",
-      "rightIcon": "Lock",
-      "leftVisualText": "MVCC",
-      "rightVisualText": "Locking"
-    },
-    {
-      "title": "5. Licensing",
-      "leftTitle": "Permissive License",
-      "rightTitle": "GPL License",
-      "leftDesc": "PostgreSQL License is very permissive, no lock-in concerns.",
-      "rightDesc": "GPL license has some copyleft restrictions.",
-      "leftIcon": "Unlock",
-      "rightIcon": "Lock",
-      "leftVisualText": "Permissive",
-      "rightVisualText": "GPL"
-    },
-    {
-      "title": "6. Replication",
-      "leftTitle": "Flexible Replication",
-      "rightTitle": "Robust Replication",
-      "leftDesc": "Offers logical and physical replication, versatile options.",
-      "rightDesc": "Provides robust statement-based and row-based replication.",
-      "leftIcon": "ArrowRightLeft",
-      "rightIcon": "ArrowRightLeft",
-      "leftVisualText": "Logical/Physical",
-      "rightVisualText": "Statement/Row"
-    },
-    {
-      "title": "7. Community & Support",
-      "leftTitle": "Strong Community",
-      "rightTitle": "Large Ecosystem",
-      "leftDesc": "Vibrant, active open-source community driving innovation.",
-      "rightDesc": "Extensive ecosystem, wide adoption, and many commercial options.",
-      "leftIcon": "Globe",
+      "title": "1. RENDERING LOCATION",
+      "leftTitle": "Server-side",
+      "rightTitle": "Client-side",
+      "leftDesc": "Rendered on the server, reduces client bundle size and improves initial load.",
+      "rightDesc": "Rendered in the browser, interactive by default but can increase bundle size.",
+      "leftIcon": "Server",
       "rightIcon": "Globe",
-      "leftVisualText": "Community",
-      "rightVisualText": "Ecosystem"
+      "leftVisualText": "Server",
+      "rightVisualText": "Browser"
+    },
+    {
+      "title": "2. DATA FETCHING",
+      "leftTitle": "Direct Access",
+      "rightTitle": "API Calls",
+      "leftDesc": "Can access databases and file systems directly on the server.",
+      "rightDesc": "Fetches data via APIs, ensuring separation and security.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Network",
+      "leftVisualText": "Direct",
+      "rightVisualText": "API"
+    },
+    {
+      "title": "3. BUNDLE SIZE",
+      "leftTitle": "Minimal",
+      "rightTitle": "Potentially Larger",
+      "leftDesc": "No JavaScript sent to the client for initial rendering.",
+      "rightDesc": "Requires JavaScript to be sent to the client for rendering and interactivity.",
+      "leftIcon": "FileCode",
+      "rightIcon": "Box",
+      "leftVisualText": "Small",
+      "rightVisualText": "Larger"
+    },
+    {
+      "title": "4. INTERACTIVITY",
+      "leftTitle": "Limited",
+      "rightTitle": "High",
+      "leftDesc": "Not inherently interactive; requires passing props or using specific patterns.",
+      "rightDesc": "Designed for rich user interactions and dynamic UIs.",
+      "leftIcon": "Settings",
+      "rightIcon": "Zap",
+      "leftVisualText": "Static",
+      "rightVisualText": "Interactive"
+    },
+    {
+      "title": "5. SEO",
+      "leftTitle": "Excellent",
+      "rightTitle": "Good",
+      "leftDesc": "Content is fully available in the initial HTML response for crawlers.",
+      "rightDesc": "Requires JavaScript execution by crawlers, which is improving but not always perfect.",
+      "leftIcon": "Search",
+      "rightIcon": "Code",
+      "leftVisualText": "Crawler Friendly",
+      "rightVisualText": "JS Dependent"
+    },
+    {
+      "title": "6. STATE MANAGEMENT",
+      "leftTitle": "Server State",
+      "rightTitle": "Client State",
+      "leftDesc": "State managed on the server, simplifying client logic.",
+      "rightDesc": "Manages UI state in the browser, enabling complex client-side interactivity.",
+      "leftIcon": "Layers",
+      "rightIcon": "Activity",
+      "leftVisualText": "Server State",
+      "rightVisualText": "Client State"
+    },
+    {
+      "title": "7. INITIAL LOAD PERFORMANCE",
+      "leftTitle": "Faster",
+      "rightTitle": "Slower (potentially)",
+      "leftDesc": "Quicker initial paint as less JavaScript needs to be downloaded and parsed.",
+      "rightDesc": "Can be slower if large JavaScript bundles need to be downloaded and executed.",
+      "leftIcon": "ArrowRightLeft",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Optimized Load",
+      "rightVisualText": "JS Heavy"
     }
   ]
 }

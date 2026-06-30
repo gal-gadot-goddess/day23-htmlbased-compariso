@@ -1,5 +1,4 @@
 [
-  "CQRS vs CRUD",
   "Remix vs Next.js",
   "Svelte vs Vue.js",
   "Micro Frontends vs Monolith Frontend",
@@ -48,5 +47,6 @@
   "SQL vs NoSQL",
   "RIVET vs OPENRIVET",
   "Next.js vs Astro",
-  "PostgreSQL vs MySQL"
+  "PostgreSQL vs MySQL",
+  "Server Components vs Client Components"
 ]
