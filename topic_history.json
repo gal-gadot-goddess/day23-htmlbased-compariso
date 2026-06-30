@@ -1,5 +1,4 @@
 [
-  "Remix vs Next.js",
   "Svelte vs Vue.js",
   "Micro Frontends vs Monolith Frontend",
   "Next.js vs Remix",
@@ -48,5 +47,6 @@
   "RIVET vs OPENRIVET",
   "Next.js vs Astro",
   "PostgreSQL vs MySQL",
+  "Server Components vs Client Components",
   "Server Components vs Client Components"
 ]
