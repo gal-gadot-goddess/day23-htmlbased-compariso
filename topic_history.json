@@ -1,5 +1,4 @@
 [
-  "Bun vs Node.js",
   "Kubernetes vs Docker Swarm",
   "Astro vs Next.js",
   "Remix vs Next.js",
@@ -48,5 +47,6 @@
   "Server Components vs Client Components",
   "FUNCTIONAL vs OBJECT-ORIENTED",
   "Signals vs Reactivity",
-  "SolidJS vs Vue.js"
+  "SolidJS vs Vue.js",
+  "Qwik vs Remix"
 ]
