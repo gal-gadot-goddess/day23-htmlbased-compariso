@@ -1,92 +1,92 @@
 {
-  "topLabel": "PROGRAMMING PARADIGMS",
+  "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "FUNCTIONAL",
-    "right": "OBJECT-ORIENTED",
+    "left": "Signals",
+    "right": "Reactivity",
     "vs": "vs"
   },
-  "leftSub": "Data Transformation",
-  "rightSub": "State Management",
-  "leftColor": "#4CAF50",
-  "rightColor": "#2196F3",
+  "leftSub": "Fine-grained updates",
+  "rightSub": "Dependency tracking",
+  "leftColor": "#00BCD4",
+  "rightColor": "#FF9800",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. CORE CONCEPT",
-      "leftTitle": "Pure Functions",
-      "rightTitle": "Objects & Classes",
-      "leftDesc": "Avoids side effects, predictable outputs for same inputs.",
-      "rightDesc": "Bundles data and methods, representing real-world entities.",
+      "title": "1. UPDATE MECHANISM",
+      "leftTitle": "Direct signal updates",
+      "rightTitle": "Computed dependency updates",
+      "leftDesc": "Changes propagate directly to DOM elements that depend on them.",
+      "rightDesc": "Updates trigger when a reactive source changes and affects derived values.",
       "leftIcon": "Zap",
       "rightIcon": "Layers",
-      "leftVisualText": "Immutable State",
-      "rightVisualText": "Mutable State"
+      "leftVisualText": "Signal",
+      "rightVisualText": "Reactivity"
     },
     {
-      "title": "2. DATA HANDLING",
-      "leftTitle": "Immutability",
-      "rightTitle": "Mutability",
-      "leftDesc": "Data structures are never changed after creation.",
-      "rightDesc": "Data structures can be modified in place.",
-      "leftIcon": "FileCode",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Safe State",
-      "rightVisualText": "Flexible State"
+      "title": "2. GRANULARITY",
+      "leftTitle": "Highly granular",
+      "rightTitle": "Component-level granularity",
+      "leftDesc": "Tracks updates to individual values, minimizing re-renders.",
+      "rightDesc": "Often triggers re-renders for entire components or larger sections.",
+      "leftIcon": "Search",
+      "rightIcon": "Layout",
+      "leftVisualText": "Fine",
+      "rightVisualText": "Coarse"
     },
     {
-      "title": "3. STATE MANAGEMENT",
-      "leftTitle": "External State",
-      "rightTitle": "Encapsulated State",
-      "leftDesc": "State is managed outside of functions.",
-      "rightDesc": "State is contained within objects.",
-      "leftIcon": "Server",
-      "rightIcon": "Lock",
-      "leftVisualText": "Global State",
-      "rightVisualText": "Private State"
-    },
-    {
-      "title": "4. CONTROL FLOW",
-      "leftTitle": "Declarative",
-      "rightTitle": "Imperative",
-      "leftDesc": "Focus on 'what' needs to be done.",
-      "rightDesc": "Focus on 'how' to do it.",
-      "leftIcon": "Layout",
-      "rightIcon": "Settings",
-      "leftVisualText": "What to Do",
-      "rightVisualText": "How to Do"
-    },
-    {
-      "title": "5. PRIMARY BUILDING BLOCKS",
-      "leftTitle": "Functions",
-      "rightTitle": "Methods",
-      "leftDesc": "First-class citizens, can be passed around.",
-      "rightDesc": "Associated with objects, operate on their data.",
-      "leftIcon": "Code",
-      "rightIcon": "Box",
-      "leftVisualText": "Function Focus",
-      "rightVisualText": "Object Focus"
-    },
-    {
-      "title": "6. COMPLEXITY HANDLING",
-      "leftTitle": "Composition",
-      "rightTitle": "Inheritance",
-      "leftDesc": "Building complex logic from simpler functions.",
-      "rightDesc": "Creating new classes based on existing ones.",
-      "leftIcon": "ArrowRightLeft",
-      "rightIcon": "Share2",
-      "leftVisualText": "Modular Logic",
-      "rightVisualText": "Hierarchical Code"
-    },
-    {
-      "title": "7. SIDE EFFECTS",
-      "leftTitle": "Minimizes",
-      "rightTitle": "Common",
-      "leftDesc": "Explicitly handled, often isolated.",
-      "rightDesc": "Can occur naturally within methods.",
-      "leftIcon": "Shield",
+      "title": "3. MEMOIZATION",
+      "leftTitle": "Automatic memoization",
+      "rightTitle": "Manual memoization needed",
+      "leftDesc": "Reactions are automatically memoized based on signal dependencies.",
+      "rightDesc": "Requires explicit use of memoization techniques like `useMemo`.",
+      "leftIcon": "Lock",
       "rightIcon": "Unlock",
-      "leftVisualText": "Controlled Effects",
-      "rightVisualText": "Integrated Effects"
+      "leftVisualText": "Built-in",
+      "rightVisualText": "Manual"
+    },
+    {
+      "title": "4. PERFORMANCE",
+      "leftTitle": "Minimal overhead",
+      "rightTitle": "Potential overhead",
+      "leftDesc": "Efficient for frequent, small updates with less computation.",
+      "rightDesc": "Can become inefficient with many small, frequent state changes.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Server",
+      "leftVisualText": "Fast",
+      "rightVisualText": "Slower"
+    },
+    {
+      "title": "5. DOM MANIPULATION",
+      "leftTitle": "Direct DOM updates",
+      "rightTitle": "Virtual DOM diffing",
+      "leftDesc": "Signals can directly target and update DOM nodes.",
+      "rightDesc": "Relies on comparing virtual DOM trees for changes.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Globe",
+      "leftVisualText": "Direct",
+      "rightVisualText": "Virtual"
+    },
+    {
+      "title": "6. ECOSYSTEM",
+      "leftTitle": "Newer paradigms",
+      "rightTitle": "Established patterns",
+      "leftDesc": "Associated with modern frameworks like Solid.js.",
+      "rightDesc": "Common in React, Vue, and other established libraries.",
+      "leftIcon": "Code",
+      "rightIcon": "FileCode",
+      "leftVisualText": "Modern",
+      "rightVisualText": "Classic"
+    },
+    {
+      "title": "7. API COMPLEXITY",
+      "leftTitle": "Simpler API",
+      "rightTitle": "More complex API",
+      "leftDesc": "Focuses on creating and consuming signals.",
+      "rightDesc": "Involves managing effects, memoization, and state within components.",
+      "leftIcon": "Settings",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Easy",
+      "rightVisualText": "Complex"
     }
   ]
 }
