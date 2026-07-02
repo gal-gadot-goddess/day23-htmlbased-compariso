@@ -1,5 +1,4 @@
 [
-  "Kubernetes vs Docker Swarm",
   "Astro vs Next.js",
   "Remix vs Next.js",
   "SvelteKit vs Astro",
@@ -48,5 +47,6 @@
   "FUNCTIONAL vs OBJECT-ORIENTED",
   "Signals vs Reactivity",
   "SolidJS vs Vue.js",
-  "Qwik vs Remix"
+  "Qwik vs Remix",
+  "Redis vs Memcached"
 ]

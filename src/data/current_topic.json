@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND ARCHITECTURE",
+  "topLabel": "DATA STORAGE",
   "mainTitle": {
-    "left": "Qwik",
-    "right": "Remix",
+    "left": "Redis",
+    "right": "Memcached",
     "vs": "vs"
   },
-  "leftSub": "Resumability First",
-  "rightSub": "Server Rendering",
-  "leftColor": "#FF9800",
-  "rightColor": "#9C27B0",
+  "leftSub": "In-Memory Data",
+  "rightSub": "In-Memory Cache",
+  "leftColor": "#E53E3E",
+  "rightColor": "#4299E1",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. INITIAL LOAD",
-      "leftTitle": "Zero JS",
-      "rightTitle": "Server HTML",
-      "leftDesc": "Resumability hydrates instantly without re-executing framework code.",
-      "rightDesc": "Sends HTML from server, hydrates on client.",
-      "leftIcon": "Zap",
-      "rightIcon": "Server",
-      "leftVisualText": "Instant Hydration",
-      "rightVisualText": "HTML First"
-    },
-    {
-      "title": "2. HYDRATION",
-      "leftTitle": "Resumability",
-      "rightTitle": "Progressive Hydration",
-      "leftDesc": "No initial JavaScript execution, state is restored.",
-      "rightDesc": "Client executes JS to make UI interactive.",
-      "leftIcon": "Unlock",
-      "rightIcon": "Layers",
-      "leftVisualText": "No Re-exec",
-      "rightVisualText": "Interactive JS"
-    },
-    {
-      "title": "3. STATE MANAGEMENT",
-      "leftTitle": "Signals",
-      "rightTitle": "Context API",
-      "leftDesc": "Fine-grained reactivity for minimal re-renders.",
-      "rightDesc": "Global state accessible via React Context.",
-      "leftIcon": "Activity",
-      "rightIcon": "Layers",
-      "leftVisualText": "Reactive State",
-      "rightVisualText": "Shared State"
-    },
-    {
-      "title": "4. ROUTING",
-      "leftTitle": "File-based",
-      "rightTitle": "File-based",
-      "leftDesc": "Convention over configuration routing system.",
-      "rightDesc": "Leverages nested routes for data loading.",
-      "leftIcon": "FileCode",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Simple Routes",
-      "rightVisualText": "Nested Routes"
-    },
-    {
-      "title": "5. DATA LOADING",
-      "leftTitle": "Server Only",
-      "rightTitle": "Server & Client",
-      "leftDesc": "Data loading primarily handled server-side.",
-      "rightDesc": "Use `loader` functions on server, `useFetcher` on client.",
-      "leftIcon": "Server",
-      "rightIcon": "Server",
-      "leftVisualText": "Server Load",
-      "rightVisualText": "Dual Load"
-    },
-    {
-      "title": "6. BUILD SIZE",
-      "leftTitle": "Very Small",
-      "rightTitle": "Standard",
-      "leftDesc": "Minimal framework JavaScript shipped to the client.",
-      "rightDesc": "Includes React and other dependencies.",
-      "leftIcon": "Box",
+      "title": "DATA STRUCTURES",
+      "leftTitle": "Rich Structures",
+      "rightTitle": "Simple Strings",
+      "leftDesc": "Supports strings, lists, sets, hashes, sorted sets, and more for complex data.",
+      "rightDesc": "Primarily stores simple key-value pairs with string values.",
+      "leftIcon": "Layers",
       "rightIcon": "Box",
-      "leftVisualText": "Tiny Bundle",
-      "rightVisualText": "Full Bundle"
+      "leftVisualText": "Complex",
+      "rightVisualText": "Simple"
     },
     {
-      "title": "7. PERFORMANCE",
-      "leftTitle": "Initial Load Speed",
-      "rightTitle": "App Responsiveness",
-      "leftDesc": "Blazing fast initial page loads due to resumability.",
-      "rightDesc": "Excellent perceived performance with server rendering.",
+      "title": "PERSISTENCE",
+      "leftTitle": "Durable Options",
+      "rightTitle": "Volatile Only",
+      "leftDesc": "Offers RDB snapshots and AOF logging for data durability.",
+      "rightDesc": "Data is lost on restart; purely a cache.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Server",
+      "leftVisualText": "Durable",
+      "rightVisualText": "Ephemeral"
+    },
+    {
+      "title": "FEATURES",
+      "leftTitle": "Advanced Features",
+      "rightTitle": "Basic Caching",
+      "leftDesc": "Includes pub/sub, transactions, Lua scripting, and geospatial indexing.",
+      "rightDesc": "Focuses on fast key-value retrieval and expiration.",
+      "leftIcon": "Settings",
+      "rightIcon": "Search",
+      "leftVisualText": "Versatile",
+      "rightVisualText": "Focused"
+    },
+    {
+      "title": "MEMORY MANAGEMENT",
+      "leftTitle": "More Control",
+      "rightTitle": "Simpler LRU",
+      "leftDesc": "More sophisticated memory policies and usage monitoring.",
+      "rightDesc": "Uses a simple Least Recently Used (LRU) eviction policy.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Managed",
+      "rightVisualText": "Basic"
+    },
+    {
+      "title": "USE CASES",
+      "leftTitle": "Versatile Datastore",
+      "rightTitle": "Pure Cache",
+      "leftDesc": "Can act as a database, cache, message broker, and more.",
+      "rightDesc": "Ideal for caching database queries or API responses.",
+      "leftIcon": "Globe",
+      "rightIcon": "Lock",
+      "leftVisualText": "Full-Stack",
+      "rightVisualText": "Cache-Layer"
+    },
+    {
+      "title": "COMPLEXITY",
+      "leftTitle": "Higher Complexity",
+      "rightTitle": "Lower Complexity",
+      "leftDesc": "More features mean a steeper learning curve and more configuration.",
+      "rightDesc": "Simpler to set up and manage for basic caching needs.",
+      "leftIcon": "Terminal",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Advanced",
+      "rightVisualText": "Simple"
+    },
+    {
+      "title": "PERFORMANCE",
+      "leftTitle": "Slightly Slower",
+      "rightTitle": "Extremely Fast",
+      "leftDesc": "Due to richer features, may have slightly higher overhead.",
+      "rightDesc": "Optimized for raw speed and minimal overhead.",
       "leftIcon": "Zap",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Fast Start",
-      "rightVisualText": "Smooth App"
+      "rightIcon": "Zap",
+      "leftVisualText": "Feature-Rich",
+      "rightVisualText": "Raw-Speed"
     }
   ]
 }
