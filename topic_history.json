@@ -1,5 +1,4 @@
 [
-  "Astro vs Next.js",
   "Remix vs Next.js",
   "SvelteKit vs Astro",
   "Next.js vs Remix",
@@ -48,5 +47,6 @@
   "Signals vs Reactivity",
   "SolidJS vs Vue.js",
   "Qwik vs Remix",
-  "Redis vs Memcached"
+  "Redis vs Memcached",
+  "FUNCTIONAL vs OBJECT-ORIENTED"
 ]
