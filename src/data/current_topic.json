@@ -1,92 +1,92 @@
 {
-  "topLabel": "PROGRAMMING PARADIGMS",
+  "topLabel": "WEB DEVELOPMENT ARCHITECTURE",
   "mainTitle": {
-    "left": "FUNCTIONAL",
-    "right": "OBJECT-ORIENTED",
+    "left": "Server-Sent Events",
+    "right": "WebSockets",
     "vs": "vs"
   },
-  "leftSub": "Data transformation flow",
-  "rightSub": "Stateful object interaction",
-  "leftColor": "#FF6B6B",
-  "rightColor": "#4ECDC4",
+  "leftSub": "One-way data stream",
+  "rightSub": "Two-way communication",
+  "leftColor": "#4CAF50",
+  "rightColor": "#FF9800",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. State Management",
-      "leftTitle": "Immutable state",
-      "rightTitle": "Mutable state",
-      "leftDesc": "Avoids side effects by keeping data unchanged.",
-      "rightDesc": "Objects can change their internal state over time.",
-      "leftIcon": "Lock",
-      "rightIcon": "Unlock",
-      "leftVisualText": "Immutable",
-      "rightVisualText": "Mutable"
-    },
-    {
-      "title": "2. Data Structure",
-      "leftTitle": "Pure functions",
-      "rightTitle": "Objects & Classes",
-      "leftDesc": "Functions produce same output for same input.",
-      "rightDesc": "Encapsulates data and methods together.",
-      "leftIcon": "Code",
-      "rightIcon": "Layers",
-      "leftVisualText": "Pure",
-      "rightVisualText": "Encapsulated"
-    },
-    {
-      "title": "3. Core Concept",
-      "leftTitle": "Computation as functions",
-      "rightTitle": "Modeling reality",
-      "leftDesc": "Focuses on evaluating expressions and composing functions.",
-      "rightDesc": "Represents entities as objects with properties and behaviors.",
-      "leftIcon": "Zap",
-      "rightIcon": "Globe",
-      "leftVisualText": "Function",
-      "rightVisualText": "Object"
-    },
-    {
-      "title": "4. Control Flow",
-      "leftTitle": "Declarative style",
-      "rightTitle": "Imperative style",
-      "leftDesc": "What to do, not how.",
-      "rightDesc": "Step-by-step instructions.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Server",
-      "leftVisualText": "What",
-      "rightVisualText": "How"
-    },
-    {
-      "title": "5. Reusability",
-      "leftTitle": "Higher-order functions",
-      "rightTitle": "Inheritance & Composition",
-      "leftDesc": "Functions that take or return other functions.",
-      "rightDesc": "Building new classes from existing ones or combining objects.",
-      "leftIcon": "FileCode",
-      "rightIcon": "Box",
-      "leftVisualText": "Compose",
-      "rightVisualText": "Inherit/Compose"
-    },
-    {
-      "title": "6. Side Effects",
-      "leftTitle": "Minimized",
-      "rightTitle": "Common",
-      "leftDesc": "Explicitly managed, often at boundaries.",
-      "rightDesc": "Often occur within object methods.",
-      "leftIcon": "Shield",
-      "rightIcon": "Activity",
-      "leftVisualText": "Control",
-      "rightVisualText": "Integrated"
-    },
-    {
-      "title": "7. Complexity",
-      "leftTitle": "Easier reasoning",
-      "rightTitle": "Can be complex",
-      "leftDesc": "Predictable behavior due to immutability and pure functions.",
-      "rightDesc": "Interdependencies between objects can be hard to track.",
-      "leftIcon": "Search",
+      "title": "1. COMMUNICATION DIRECTION",
+      "leftTitle": "Server to Client",
+      "rightTitle": "Client & Server",
+      "leftDesc": "Server pushes updates to the client. Client cannot send messages back directly.",
+      "rightDesc": "Full duplex communication. Both client and server can send messages freely.",
+      "leftIcon": "Server",
       "rightIcon": "Network",
-      "leftVisualText": "Predictable",
-      "rightVisualText": "Interdependent"
+      "leftVisualText": "Server Push",
+      "rightVisualText": "Full Duplex"
+    },
+    {
+      "title": "2. PROTOCOL",
+      "leftTitle": "HTTP/2",
+      "rightTitle": "WebSocket Protocol",
+      "leftDesc": "Built over HTTP/2, leveraging existing infrastructure and security.",
+      "rightDesc": "New protocol, established handshake over HTTP, then upgrades to persistent connection.",
+      "leftIcon": "Network",
+      "rightIcon": "Network",
+      "leftVisualText": "HTTP/2",
+      "rightVisualText": "WS Protocol"
+    },
+    {
+      "title": "3. STATE MANAGEMENT",
+      "leftTitle": "Stateless",
+      "rightTitle": "Stateful",
+      "leftDesc": "Each message is independent. Server doesn't need to maintain client-specific state.",
+      "rightDesc": "Connection is persistent, allowing server to maintain connection state for clients.",
+      "leftIcon": "Layers",
+      "rightIcon": "Server",
+      "leftVisualText": "Independent",
+      "rightVisualText": "Persistent Conn"
+    },
+    {
+      "title": "4. LATENCY FOR CLIENT WRITES",
+      "leftTitle": "Higher Latency",
+      "rightTitle": "Lower Latency",
+      "leftDesc": "Sending data to server requires new HTTP request, involving overhead.",
+      "rightDesc": "Messages sent over the open persistent connection have minimal overhead.",
+      "leftIcon": "ArrowRightLeft",
+      "rightIcon": "ArrowRightLeft",
+      "leftVisualText": "HTTP Overhead",
+      "rightVisualText": "Direct Push"
+    },
+    {
+      "title": "5. COMPLEXITY",
+      "leftTitle": "Simpler Implementation",
+      "rightTitle": "More Complex",
+      "leftDesc": "Easier to implement for server-to-client updates, fewer edge cases to handle.",
+      "rightDesc": "Requires careful management of connection lifecycle, reconnections, and message handling.",
+      "leftIcon": "Code",
+      "rightIcon": "Code",
+      "leftVisualText": "Easy Setup",
+      "rightVisualText": "Advanced Mgmt"
+    },
+    {
+      "title": "6. USE CASES",
+      "leftTitle": "Notifications, Feeds",
+      "rightTitle": "Real-time Games, Chat",
+      "leftDesc": "Ideal for broadcasting data from server. Think live scores or news updates.",
+      "rightDesc": "Perfect for applications needing rapid, bi-directional communication like multiplayer games or chats.",
+      "leftIcon": "Bell",
+      "rightIcon": "MessageSquare",
+      "leftVisualText": "Broadcast",
+      "rightVisualText": "Interactive"
+    },
+    {
+      "title": "7. RESOURCE USAGE",
+      "leftTitle": "Potentially Lower",
+      "rightTitle": "Potentially Higher",
+      "leftDesc": "Can be more efficient if only server-to-client is needed. No constant open connections.",
+      "rightDesc": "Maintaining many open WebSocket connections can consume more server resources.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Efficient Push",
+      "rightVisualText": "Connection Load"
     }
   ]
 }
