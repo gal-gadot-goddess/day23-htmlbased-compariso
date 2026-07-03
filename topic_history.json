@@ -1,5 +1,4 @@
 [
-  "Event Sourcing vs Event Streaming",
   "Astro vs Next.js",
   "Next.js vs Astro",
   "Bun vs Node.js",
@@ -48,5 +47,6 @@
   "FUNCTIONAL vs OBJECT-ORIENTED",
   "Server-Sent Events vs WebSockets",
   "Server-Sent Events vs WebSockets",
-  "CQRS vs CRUD"
+  "CQRS vs CRUD",
+  "Server Components vs Client Components"
 ]
