@@ -1,5 +1,4 @@
 [
-  "Next.js vs Remix",
   "Event Sourcing vs Event Streaming",
   "Astro vs Next.js",
   "Next.js vs Astro",
@@ -48,5 +47,6 @@
   "Redis vs Memcached",
   "FUNCTIONAL vs OBJECT-ORIENTED",
   "Server-Sent Events vs WebSockets",
-  "Server-Sent Events vs WebSockets"
+  "Server-Sent Events vs WebSockets",
+  "CQRS vs CRUD"
 ]
