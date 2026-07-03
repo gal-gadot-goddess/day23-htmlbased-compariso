@@ -1,92 +1,92 @@
 {
-  "topLabel": "WEB DEVELOPMENT ARCHITECTURE",
+  "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
     "left": "Server-Sent Events",
     "right": "WebSockets",
     "vs": "vs"
   },
-  "leftSub": "One-way data stream",
+  "leftSub": "One-way communication",
   "rightSub": "Two-way communication",
   "leftColor": "#4CAF50",
-  "rightColor": "#FF9800",
+  "rightColor": "#FFC107",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
       "title": "1. COMMUNICATION DIRECTION",
       "leftTitle": "Server to Client",
-      "rightTitle": "Client & Server",
-      "leftDesc": "Server pushes updates to the client. Client cannot send messages back directly.",
-      "rightDesc": "Full duplex communication. Both client and server can send messages freely.",
+      "rightTitle": "Client to Server",
+      "leftDesc": "Efficient for real-time updates pushed from server without client request.",
+      "rightDesc": "Enables full-duplex communication for interactive, real-time applications.",
       "leftIcon": "Server",
       "rightIcon": "Network",
-      "leftVisualText": "Server Push",
-      "rightVisualText": "Full Duplex"
+      "leftVisualText": "Unidirectional",
+      "rightVisualText": "Bidirectional"
     },
     {
-      "title": "2. PROTOCOL",
-      "leftTitle": "HTTP/2",
-      "rightTitle": "WebSocket Protocol",
-      "leftDesc": "Built over HTTP/2, leveraging existing infrastructure and security.",
-      "rightDesc": "New protocol, established handshake over HTTP, then upgrades to persistent connection.",
+      "title": "2. CONNECTION TYPE",
+      "leftTitle": "HTTP Stream",
+      "rightTitle": "Dedicated Socket",
+      "leftDesc": "Leverages existing HTTP infrastructure, simpler to implement and proxy.",
+      "rightDesc": "Maintains persistent, independent connection for constant data flow.",
       "leftIcon": "Network",
-      "rightIcon": "Network",
-      "leftVisualText": "HTTP/2",
-      "rightVisualText": "WS Protocol"
+      "rightIcon": "Terminal",
+      "leftVisualText": "HTTP-based",
+      "rightVisualText": "Socket-based"
     },
     {
-      "title": "3. STATE MANAGEMENT",
-      "leftTitle": "Stateless",
-      "rightTitle": "Stateful",
-      "leftDesc": "Each message is independent. Server doesn't need to maintain client-specific state.",
-      "rightDesc": "Connection is persistent, allowing server to maintain connection state for clients.",
-      "leftIcon": "Layers",
-      "rightIcon": "Server",
-      "leftVisualText": "Independent",
-      "rightVisualText": "Persistent Conn"
-    },
-    {
-      "title": "4. LATENCY FOR CLIENT WRITES",
-      "leftTitle": "Higher Latency",
-      "rightTitle": "Lower Latency",
-      "leftDesc": "Sending data to server requires new HTTP request, involving overhead.",
-      "rightDesc": "Messages sent over the open persistent connection have minimal overhead.",
+      "title": "3. LATENCY",
+      "leftTitle": "Lower for Server Push",
+      "rightTitle": "Minimal for Both",
+      "leftDesc": "Ideal for scenarios where server needs to push data frequently.",
+      "rightDesc": "Extremely low latency for instant message exchange.",
       "leftIcon": "ArrowRightLeft",
-      "rightIcon": "ArrowRightLeft",
-      "leftVisualText": "HTTP Overhead",
-      "rightVisualText": "Direct Push"
+      "rightIcon": "Zap",
+      "leftVisualText": "Push optimized",
+      "rightVisualText": "Instant"
     },
     {
-      "title": "5. COMPLEXITY",
-      "leftTitle": "Simpler Implementation",
-      "rightTitle": "More Complex",
-      "leftDesc": "Easier to implement for server-to-client updates, fewer edge cases to handle.",
-      "rightDesc": "Requires careful management of connection lifecycle, reconnections, and message handling.",
-      "leftIcon": "Code",
-      "rightIcon": "Code",
-      "leftVisualText": "Easy Setup",
-      "rightVisualText": "Advanced Mgmt"
-    },
-    {
-      "title": "6. USE CASES",
-      "leftTitle": "Notifications, Feeds",
-      "rightTitle": "Real-time Games, Chat",
-      "leftDesc": "Ideal for broadcasting data from server. Think live scores or news updates.",
-      "rightDesc": "Perfect for applications needing rapid, bi-directional communication like multiplayer games or chats.",
-      "leftIcon": "Bell",
-      "rightIcon": "MessageSquare",
+      "title": "4. USE CASES",
+      "leftTitle": "Live Feeds",
+      "rightTitle": "Chat Apps",
+      "leftDesc": "Best for news feeds, stock tickers, notifications, live scores.",
+      "rightDesc": "Ideal for gaming, collaborative tools, real-time chat.",
+      "leftIcon": "Layers",
+      "rightIcon": "Share2",
       "leftVisualText": "Broadcast",
       "rightVisualText": "Interactive"
     },
     {
-      "title": "7. RESOURCE USAGE",
-      "leftTitle": "Potentially Lower",
-      "rightTitle": "Potentially Higher",
-      "leftDesc": "Can be more efficient if only server-to-client is needed. No constant open connections.",
-      "rightDesc": "Maintaining many open WebSocket connections can consume more server resources.",
-      "leftIcon": "Cpu",
+      "title": "5. COMPLEXITY",
+      "leftTitle": "Simpler to Manage",
+      "rightTitle": "More Complex Setup",
+      "leftDesc": "Built on HTTP, often requires less complex server-side logic.",
+      "rightDesc": "Requires dedicated WebSocket server, potentially more state management.",
+      "leftIcon": "Code",
+      "rightIcon": "Settings",
+      "leftVisualText": "Easier",
+      "rightVisualText": "Advanced"
+    },
+    {
+      "title": "6. SCALABILITY",
+      "leftTitle": "Easier to Scale",
+      "rightTitle": "Challenging to Scale",
+      "leftDesc": "HTTP benefits like load balancing and caching are more straightforward.",
+      "rightDesc": "Managing many persistent connections can be resource-intensive.",
+      "leftIcon": "Server",
       "rightIcon": "Cpu",
-      "leftVisualText": "Efficient Push",
-      "rightVisualText": "Connection Load"
+      "leftVisualText": "HTTP Scaling",
+      "rightVisualText": "Connection Mgmt"
+    },
+    {
+      "title": "7. BROWSER SUPPORT",
+      "leftTitle": "Widely Supported",
+      "rightTitle": "Excellent Support",
+      "leftDesc": "Modern browsers support Server-Sent Events via EventSource API.",
+      "rightDesc": "Universally supported by all modern web browsers.",
+      "leftIcon": "Globe",
+      "rightIcon": "Globe",
+      "leftVisualText": "Good",
+      "rightVisualText": "Universal"
     }
   ]
 }

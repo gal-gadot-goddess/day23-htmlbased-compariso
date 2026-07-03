@@ -1,5 +1,4 @@
 [
-  "SvelteKit vs Astro",
   "Next.js vs Remix",
   "Event Sourcing vs Event Streaming",
   "Astro vs Next.js",
@@ -48,5 +47,6 @@
   "Qwik vs Remix",
   "Redis vs Memcached",
   "FUNCTIONAL vs OBJECT-ORIENTED",
+  "Server-Sent Events vs WebSockets",
   "Server-Sent Events vs WebSockets"
 ]
