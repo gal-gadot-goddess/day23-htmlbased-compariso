@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND ARCHITECTURE",
+  "topLabel": "DATABASE ARCHITECTURE",
   "mainTitle": {
-    "left": "React Server",
-    "right": "React Client",
+    "left": "PostgreSQL",
+    "right": "MySQL",
     "vs": "vs"
   },
-  "leftSub": "Server-rendered React",
-  "rightSub": "Client-rendered React",
-  "leftColor": "#448AFF",
-  "rightColor": "#FF4081",
+  "leftSub": "Relational Powerhouse",
+  "rightSub": "Popular Relational DB",
+  "leftColor": "#336791",
+  "rightColor": "#00758F",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. INITIAL LOAD",
-      "leftTitle": "Faster initial load",
-      "rightTitle": "Slower initial load",
-      "leftDesc": "HTML sent from server, less JS needed for first paint.",
-      "rightDesc": "HTML often empty, requires JS to hydrate and render.",
-      "leftIcon": "Server",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Server HTML",
-      "rightVisualText": "Client JS"
-    },
-    {
-      "title": "2. SEO",
-      "leftTitle": "Better SEO",
-      "rightTitle": "Challenging SEO",
-      "leftDesc": "Search engines easily crawl fully rendered HTML content.",
-      "rightDesc": "Requires JS execution for content, can impact indexing.",
-      "leftIcon": "Globe",
-      "rightIcon": "Search",
-      "leftVisualText": "SEO Friendly",
-      "rightVisualText": "JS Dependent"
-    },
-    {
-      "title": "3. PERFORMANCE",
-      "leftTitle": "Improved perceived performance",
-      "rightTitle": "Can feel sluggish",
-      "leftDesc": "Faster Time To First Byte (TTFB) and Contentful Paint.",
-      "rightDesc": "Initial load time depends on client-side JavaScript processing.",
-      "leftIcon": "Activity",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Fast First Paint",
-      "rightVisualText": "JS Processing"
-    },
-    {
-      "title": "4. INTERACTIVITY",
-      "leftTitle": "Requires hydration",
-      "rightTitle": "Immediately interactive",
-      "leftDesc": "Client needs to re-render and attach event listeners.",
-      "rightDesc": "Interactive upon download and execution of JS bundle.",
+      "title": "1. DATA TYPES",
+      "leftTitle": "Rich & Extensible",
+      "rightTitle": "Standard SQL Types",
+      "leftDesc": "Supports advanced types like JSONB, arrays, hstore, and custom types for complex data.",
+      "rightDesc": "Primarily uses standard SQL data types, well-understood and widely compatible.",
       "leftIcon": "Layers",
+      "rightIcon": "Layers",
+      "leftVisualText": "Advanced",
+      "rightVisualText": "Standard"
+    },
+    {
+      "title": "2. EXTENSIBILITY",
+      "leftTitle": "Highly Extensible",
+      "rightTitle": "Good Extensibility",
+      "leftDesc": "Allows custom functions, operators, data types, and procedural languages.",
+      "rightDesc": "Supports stored procedures, triggers, and user-defined functions.",
+      "leftIcon": "Zap",
       "rightIcon": "Zap",
-      "leftVisualText": "Hydration Step",
-      "rightVisualText": "Direct Interact"
+      "leftVisualText": "Custom",
+      "rightVisualText": "Defined"
     },
     {
-      "title": "5. BANDWIDTH",
-      "leftTitle": "Less client bandwidth",
-      "rightTitle": "More client bandwidth",
-      "leftDesc": "Sends pre-rendered HTML, reduces initial JavaScript payload.",
-      "rightDesc": "Requires larger JavaScript bundles to be downloaded and parsed.",
+      "title": "3. CONCURRENCY CONTROL",
+      "leftTitle": "MVCC Robustness",
+      "rightTitle": "Locking Mechanisms",
+      "leftDesc": "Uses Multi-Version Concurrency Control (MVCC) for better read/write performance.",
+      "rightDesc": "Relies more on table and row locking, can lead to contention.",
+      "leftIcon": "Activity",
+      "rightIcon": "Activity",
+      "leftVisualText": "MVCC",
+      "rightVisualText": "Locking"
+    },
+    {
+      "title": "4. ACID COMPLIANCE",
+      "leftTitle": "Strictly ACID",
+      "rightTitle": "ACID Compliant",
+      "leftDesc": "Ensures Atomicity, Consistency, Isolation, and Durability for transactions.",
+      "rightDesc": "Generally ACID compliant, with some nuances depending on storage engine.",
+      "leftIcon": "Shield",
+      "rightIcon": "Shield",
+      "leftVisualText": "Strict",
+      "rightVisualText": "Standard"
+    },
+    {
+      "title": "5. PERFORMANCE",
+      "leftTitle": "Complex Queries",
+      "rightTitle": "Read Heavy Loads",
+      "leftDesc": "Often excels with complex queries, large datasets, and analytical workloads.",
+      "rightDesc": "Typically performs very well for read-heavy applications and simpler queries.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Complex",
+      "rightVisualText": "Simple"
+    },
+    {
+      "title": "6. REPLICATION",
+      "leftTitle": "Flexible Options",
+      "rightTitle": "Established Replication",
+      "leftDesc": "Offers logical and physical replication, streaming replication, and synchronous/asynchronous options.",
+      "rightDesc": "Provides master-master and master-slave replication, often well-supported.",
       "leftIcon": "Network",
+      "rightIcon": "Network",
+      "leftVisualText": "Logical/Physical",
+      "rightVisualText": "Binary Log"
+    },
+    {
+      "title": "7. JSON SUPPORT",
+      "leftTitle": "Native JSONB",
+      "rightTitle": "JSON Data Type",
+      "leftDesc": "Advanced JSONB type with indexing and querying capabilities for JSON data.",
+      "rightDesc": "Supports JSON data type with basic validation and string manipulation.",
+      "leftIcon": "Code",
       "rightIcon": "Code",
-      "leftVisualText": "HTML Focused",
-      "rightVisualText": "JS Heavy"
-    },
-    {
-      "title": "6. COMPLEXITY",
-      "leftTitle": "Increased server load",
-      "rightTitle": "Client-side complexity",
-      "leftDesc": "Server handles rendering logic, potentially more resource intensive.",
-      "rightDesc": "Client handles rendering and state management, complex JS.",
-      "leftIcon": "Server",
-      "rightIcon": "Terminal",
-      "leftVisualText": "Server Render",
-      "rightVisualText": "Client Logic"
-    },
-    {
-      "title": "7. STATE MANAGEMENT",
-      "leftTitle": "Server-side state",
-      "rightTitle": "Client-side state",
-      "leftDesc": "State often managed on the server or passed via props.",
-      "rightDesc": "State managed entirely within the browser's JavaScript environment.",
-      "leftIcon": "Database",
-      "rightIcon": "Box",
-      "leftVisualText": "Server State",
-      "rightVisualText": "Client State"
+      "leftVisualText": "Optimized",
+      "rightVisualText": "Basic"
     }
   ]
 }
