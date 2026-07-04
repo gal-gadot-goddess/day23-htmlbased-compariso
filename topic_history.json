@@ -1,5 +1,4 @@
 [
-  "Astro vs Next.js",
   "Next.js vs Astro",
   "Bun vs Node.js",
   "Jotai vs Zustand",
@@ -48,5 +47,6 @@
   "Server-Sent Events vs WebSockets",
   "Server-Sent Events vs WebSockets",
   "CQRS vs CRUD",
-  "Server Components vs Client Components"
+  "Server Components vs Client Components",
+  "React Server vs React Client"
 ]
