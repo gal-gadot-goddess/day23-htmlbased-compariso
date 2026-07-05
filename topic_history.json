@@ -1,5 +1,4 @@
 [
-  "Nuxt.js vs SvelteKit",
   "Tailwind CSS vs Styled-Components",
   "Server Components vs Client Components",
   "Rust vs Go",
@@ -48,5 +47,6 @@
   "React Server vs React Client",
   "PostgreSQL vs MySQL",
   "Remix vs Next.js",
-  "Kafka vs RabbitMQ"
+  "Kafka vs RabbitMQ",
+  "PostgreSQL vs SQLite"
 ]
