@@ -1,5 +1,4 @@
 [
-  "Jotai vs Zustand",
   "Nuxt.js vs SvelteKit",
   "Tailwind CSS vs Styled-Components",
   "Server Components vs Client Components",
@@ -48,5 +47,6 @@
   "Server Components vs Client Components",
   "React Server vs React Client",
   "PostgreSQL vs MySQL",
-  "Remix vs Next.js"
+  "Remix vs Next.js",
+  "Kafka vs RabbitMQ"
 ]
