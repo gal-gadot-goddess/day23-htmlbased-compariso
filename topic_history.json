@@ -1,5 +1,4 @@
 [
-  "Tailwind CSS vs Styled-Components",
   "Server Components vs Client Components",
   "Rust vs Go",
   "PostgreSQL vs MongoDB",
@@ -48,5 +47,6 @@
   "PostgreSQL vs MySQL",
   "Remix vs Next.js",
   "Kafka vs RabbitMQ",
-  "PostgreSQL vs SQLite"
+  "PostgreSQL vs SQLite",
+  "Micro Frontends vs Monolithic Frontend"
 ]

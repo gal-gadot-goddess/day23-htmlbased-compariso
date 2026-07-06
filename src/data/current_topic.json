@@ -1,92 +1,92 @@
 {
-  "topLabel": "DATABASE ARCHITECTURE",
+  "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "PostgreSQL",
-    "right": "SQLite",
+    "left": "Micro Frontends",
+    "right": "Monolithic Frontend",
     "vs": "vs"
   },
-  "leftSub": "Powerful Relational DB",
-  "rightSub": "Lightweight Embedded DB",
-  "leftColor": "#4169E1",
-  "rightColor": "#8A2BE2",
-  "badge": "THE 7 CORE DIFFERENCES",
+  "leftSub": "Independent Deployments",
+  "rightSub": "Single Deployment",
+  "leftColor": "#5046E5",
+  "rightColor": "#E54646",
+  "badge": "7 KEY DISTINCTIONS",
   "differences": [
     {
-      "title": "1. PRIMARY USE CASE",
-      "leftTitle": "Client-Server Apps",
-      "rightTitle": "Single-User Apps",
-      "leftDesc": "Best for applications requiring a dedicated database server and network access.",
-      "rightDesc": "Ideal for mobile apps, desktop apps, and simple websites with local data.",
-      "leftIcon": "Server",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Server",
-      "rightVisualText": "Local"
-    },
-    {
-      "title": "2. SCALABILITY",
-      "leftTitle": "High Scalability",
-      "rightTitle": "Limited Scalability",
-      "leftDesc": "Handles large datasets and high concurrency with robust features for growth.",
-      "rightDesc": "Best for smaller, localized datasets; not designed for high concurrency.",
+      "title": "1. DEVELOPMENT TEAM",
+      "leftTitle": "Autonomous Teams",
+      "rightTitle": "Centralized Team",
+      "leftDesc": "Independent teams own their features and tech stack, boosting agility.",
+      "rightDesc": "One team manages the entire codebase, potentially causing bottlenecks.",
       "leftIcon": "Layers",
-      "rightIcon": "Box",
-      "leftVisualText": "Scale Up",
-      "rightVisualText": "Scale Down"
+      "rightIcon": "Server",
+      "leftVisualText": "Team Autonomy",
+      "rightVisualText": "Unified Control"
     },
     {
-      "title": "3. CONCURRENCY CONTROL",
-      "leftTitle": "MVCC",
-      "rightTitle": "File Locking",
-      "leftDesc": "Multi-Version Concurrency Control ensures better performance with multiple users.",
-      "rightDesc": "Relies on file-level locking, which can cause write contention.",
-      "leftIcon": "Activity",
-      "rightIcon": "Lock",
-      "leftVisualText": "MVCC",
-      "rightVisualText": "Locking"
+      "title": "2. CODEBASE ORGANIZATION",
+      "leftTitle": "Decoupled Modules",
+      "rightTitle": "Single Repository",
+      "leftDesc": "Each micro frontend is a separate, manageable unit with its own logic.",
+      "rightDesc": "All code resides in one large codebase, can become unwieldy.",
+      "leftIcon": "Box",
+      "rightIcon": "Layers",
+      "leftVisualText": "Modular Units",
+      "rightVisualText": "Cohesive Code"
     },
     {
-      "title": "4. DATA INTEGRITY",
-      "leftTitle": "Robust ACID",
-      "rightTitle": "Basic ACID",
-      "leftDesc": "Strong ACID compliance with advanced features like foreign keys and triggers.",
-      "rightDesc": "Provides ACID compliance but with fewer advanced features and potential edge cases.",
-      "leftIcon": "Shield",
-      "rightIcon": "FileCode",
-      "leftVisualText": "ACID+",
-      "rightVisualText": "ACID"
-    },
-    {
-      "title": "5. SETUP & MAINTENANCE",
-      "leftTitle": "Requires Setup",
-      "rightTitle": "Zero-Config",
-      "leftDesc": "Needs installation, configuration, and ongoing administration by a DBA.",
-      "rightDesc": "Self-contained, no server to manage, database is a single file.",
+      "title": "3. TECHNOLOGY STACK",
+      "leftTitle": "Flexible Stacks",
+      "rightTitle": "Consistent Stack",
+      "leftDesc": "Different teams can choose best-fit technologies for their micro frontend.",
+      "rightDesc": "All parts of the frontend use the same technology stack.",
       "leftIcon": "Settings",
-      "rightIcon": "Terminal",
-      "leftVisualText": "Admin",
-      "rightVisualText": "No-Op"
-    },
-    {
-      "title": "6. NETWORK ACCESS",
-      "leftTitle": "Networked Access",
-      "rightTitle": "Local Access",
-      "leftDesc": "Designed for client-server interaction over a network.",
-      "rightDesc": "Directly embedded in the application, accessed locally.",
-      "leftIcon": "Network",
-      "rightIcon": "Globe",
-      "leftVisualText": "Networked",
-      "rightVisualText": "Embedded"
-    },
-    {
-      "title": "7. COMPLEX QUERIES",
-      "leftTitle": "Advanced SQL",
-      "rightTitle": "Standard SQL",
-      "leftDesc": "Supports complex joins, window functions, and advanced SQL features.",
-      "rightDesc": "Supports standard SQL but may lack some advanced functionalities.",
-      "leftIcon": "Search",
       "rightIcon": "Code",
-      "leftVisualText": "Complex",
-      "rightVisualText": "Standard"
+      "leftVisualText": "Tech Freedom",
+      "rightVisualText": "Uniformity"
+    },
+    {
+      "title": "4. DEPLOYMENT STRATEGY",
+      "leftTitle": "Independent Releases",
+      "rightTitle": "Coordinated Release",
+      "leftDesc": "Micro frontends can be deployed and updated independently of others.",
+      "rightDesc": "All changes require a single, coordinated deployment of the entire app.",
+      "leftIcon": "Server",
+      "rightIcon": "Server",
+      "leftVisualText": "Agile Deploy",
+      "rightVisualText": "All-at-Once"
+    },
+    {
+      "title": "5. SCALABILITY",
+      "leftTitle": "Granular Scaling",
+      "rightTitle": "Global Scaling",
+      "leftDesc": "Scale specific parts of the application based on their individual needs.",
+      "rightDesc": "Scale the entire application, even if only a small part needs it.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Targeted Scale",
+      "rightVisualText": "Full Scale"
+    },
+    {
+      "title": "6. MAINTENANCE",
+      "leftTitle": "Easier Refactors",
+      "rightTitle": "Complex Refactors",
+      "leftDesc": "Maintaining and refactoring smaller, isolated codebases is less risky.",
+      "rightDesc": "Refactoring a large, intertwined codebase can be extremely challenging.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Simpler Maint",
+      "rightVisualText": "Tough Maint"
+    },
+    {
+      "title": "7. INTEGRATION COMPLEXITY",
+      "leftTitle": "Higher Initial Setup",
+      "rightTitle": "Lower Initial Setup",
+      "leftDesc": "Requires careful planning for communication and integration between micro frontends.",
+      "rightDesc": "Simpler to get started, but integration complexity grows over time.",
+      "leftIcon": "Network",
+      "rightIcon": "Network",
+      "leftVisualText": "Integration Overhead",
+      "rightVisualText": "Simpler Start"
     }
   ]
 }
