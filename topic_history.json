@@ -1,5 +1,4 @@
 [
-  "PostgreSQL vs MongoDB",
   "Recoil vs Zustand",
   "PyTorch vs TensorFlow",
   "Astro vs Next.js",
@@ -48,5 +47,6 @@
   "PostgreSQL vs SQLite",
   "Micro Frontends vs Monolithic Frontend",
   "Tailwind CSS vs Plain CSS",
-  "Server Components vs Client Components"
+  "Server Components vs Client Components",
+  "Kubernetes vs Docker Swarm"
 ]

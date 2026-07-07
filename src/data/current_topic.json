@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND ARCHITECTURE",
+  "topLabel": "INFRASTRUCTURE",
   "mainTitle": {
-    "left": "Server Components",
-    "right": "Client Components",
+    "left": "Kubernetes",
+    "right": "Docker Swarm",
     "vs": "vs"
   },
-  "leftSub": "Renders on server",
-  "rightSub": "Renders in browser",
-  "leftColor": "#FF6B6B",
-  "rightColor": "#4ECDC4",
+  "leftSub": "Orchestration Powerhouse",
+  "rightSub": "Simple Orchestration",
+  "leftColor": "#007bff",
+  "rightColor": "#28a745",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. INITIAL LOAD",
-      "leftTitle": "Faster HTML",
-      "rightTitle": "Slower HTML",
-      "leftDesc": "Sent as HTML, no JS needed initially for content.",
-      "rightDesc": "Requires JS to hydrate before content is visible.",
-      "leftIcon": "Server",
-      "rightIcon": "Terminal",
-      "leftVisualText": "HTML Only",
-      "rightVisualText": "HTML + JS"
-    },
-    {
-      "title": "2. RENDERING LOCATION",
-      "leftTitle": "Server-side",
-      "rightTitle": "Client-side",
-      "leftDesc": "Logic runs on the server, reducing client burden.",
-      "rightDesc": "Logic runs in the user's browser, consuming resources.",
-      "leftIcon": "Globe",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Server",
-      "rightVisualText": "Browser"
-    },
-    {
-      "title": "3. DATA FETCHING",
-      "leftTitle": "Direct access",
-      "rightTitle": "API calls",
-      "leftDesc": "Can fetch data directly on the server without API overhead.",
-      "rightDesc": "Must make API calls to fetch data on the client.",
-      "leftIcon": "Database",
-      "rightIcon": "Network",
-      "leftVisualText": "Direct",
-      "rightVisualText": "Via API"
-    },
-    {
-      "title": "4. BUNDLE SIZE",
-      "leftTitle": "Smaller JS",
-      "rightTitle": "Larger JS",
-      "leftDesc": "Reduces client-side JavaScript bundle size as logic is server-based.",
-      "rightDesc": "Increases client-side JavaScript bundle size due to hydration logic.",
+      "title": "1. COMPLEXITY",
+      "leftTitle": "High",
+      "rightTitle": "Low",
+      "leftDesc": "Kubernetes has a steeper learning curve but offers immense power and flexibility.",
+      "rightDesc": "Docker Swarm is significantly easier to learn and set up for basic orchestration needs.",
       "leftIcon": "Layers",
-      "rightIcon": "Box",
-      "leftVisualText": "Minimal",
-      "rightVisualText": "Full"
+      "rightIcon": "Layers",
+      "leftVisualText": "Complex",
+      "rightVisualText": "Simple"
     },
     {
-      "title": "5. INTERACTIVITY",
-      "leftTitle": "Limited dynamic",
-      "rightTitle": "Fully dynamic",
-      "leftDesc": "Primarily for static content; less dynamic client-side interaction.",
-      "rightDesc": "Ideal for highly interactive UIs with rich client-side logic.",
-      "leftIcon": "FileCode",
-      "rightIcon": "Activity",
-      "leftVisualText": "Static",
-      "rightVisualText": "Interactive"
-    },
-    {
-      "title": "6. STATE MANAGEMENT",
-      "leftTitle": "Server state",
-      "rightTitle": "Client state",
-      "leftDesc": "State managed on the server, simpler for server-rendered data.",
-      "rightDesc": "Requires robust client-side state management for complex UIs.",
-      "leftIcon": "HardDrive",
+      "title": "2. FEATURES",
+      "leftTitle": "Extensive",
+      "rightTitle": "Basic",
+      "leftDesc": "Rich features: autoscaling, self-healing, advanced load balancing, and a vast ecosystem.",
+      "rightDesc": "Core orchestration features: scaling, rolling updates, service discovery, and load balancing.",
+      "leftIcon": "Settings",
       "rightIcon": "Settings",
-      "leftVisualText": "Server-side",
-      "rightVisualText": "Client-side"
+      "leftVisualText": "Feature-Rich",
+      "rightVisualText": "Essential"
     },
     {
-      "title": "7. REFRESH BEHAVIOR",
-      "leftTitle": "Full page",
-      "rightTitle": "Partial page",
-      "leftDesc": "A full page refresh might be needed for updates.",
-      "rightDesc": "Can update specific parts of the UI without full reload.",
-      "leftIcon": "ArrowRightLeft",
-      "rightIcon": "Share2",
-      "leftVisualText": "Page Reload",
-      "rightVisualText": "Partial Update"
+      "title": "3. SCALABILITY",
+      "leftTitle": "Massive",
+      "rightTitle": "Moderate",
+      "leftDesc": "Designed for large-scale, complex deployments and enterprise-level container management.",
+      "rightDesc": "Suitable for small to medium-sized applications, scales well but not to K8s levels.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Enterprise",
+      "rightVisualText": "Medium"
+    },
+    {
+      "title": "4. ECOSYSTEM",
+      "leftTitle": "Vast",
+      "rightTitle": "Limited",
+      "leftDesc": "Huge community support, numerous integrations, tools, and a rich add-on marketplace.",
+      "rightDesc": "Relies heavily on the Docker ecosystem; fewer dedicated Swarm-specific extensions.",
+      "leftIcon": "Globe",
+      "rightIcon": "Globe",
+      "leftVisualText": "Broad",
+      "rightVisualText": "Focused"
+    },
+    {
+      "title": "5. IMPLEMENTATION",
+      "leftTitle": "Complex Setup",
+      "rightTitle": "Easy Setup",
+      "leftDesc": "Requires careful planning and often involves multiple components for a full cluster.",
+      "rightDesc": "Integrated directly into Docker Engine, very straightforward to initialize and manage.",
+      "leftIcon": "Server",
+      "rightIcon": "Server",
+      "leftVisualText": "Detailed",
+      "rightVisualText": "Quick"
+    },
+    {
+      "title": "6. COMMUNITY",
+      "leftTitle": "Large",
+      "rightTitle": "Smaller",
+      "leftDesc": "Backed by CNCF, with a massive, active, and diverse global developer community.",
+      "rightDesc": "Smaller community, primarily users of the Docker platform.",
+      "leftIcon": "Users",
+      "rightIcon": "Users",
+      "leftVisualText": "Active",
+      "rightVisualText": "Supportive"
+    },
+    {
+      "title": "7. USE CASES",
+      "leftTitle": "Enterprise, Complex",
+      "rightTitle": "Simple, Dev",
+      "leftDesc": "Ideal for microservices, large-scale apps, CI/CD, and mission-critical workloads.",
+      "rightDesc": "Great for development, testing, and small-to-medium production environments.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Production",
+      "rightVisualText": "Development"
     }
   ]
 }
