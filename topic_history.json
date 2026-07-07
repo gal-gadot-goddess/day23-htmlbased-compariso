@@ -1,5 +1,4 @@
 [
-  "Rust vs Go",
   "PostgreSQL vs MongoDB",
   "Recoil vs Zustand",
   "PyTorch vs TensorFlow",
@@ -48,5 +47,6 @@
   "Kafka vs RabbitMQ",
   "PostgreSQL vs SQLite",
   "Micro Frontends vs Monolithic Frontend",
-  "Tailwind CSS vs Plain CSS"
+  "Tailwind CSS vs Plain CSS",
+  "Server Components vs Client Components"
 ]
