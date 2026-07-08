@@ -1,92 +1,92 @@
 {
   "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "Remix",
-    "right": "Next.js",
+    "left": "SolidJS",
+    "right": "Vue.js",
     "vs": "vs"
   },
-  "leftSub": "Full Stack Framework",
-  "rightSub": "React Framework",
-  "leftColor": "#FF6B6B",
-  "rightColor": "#4ECDC4",
+  "leftSub": "Fine-grained Reactivity",
+  "rightSub": "Component-Based Vue",
+  "leftColor": "#00D1B2",
+  "rightColor": "#4FC3F7",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. ROUTING",
-      "leftTitle": "File-based routing",
-      "rightTitle": "File-based routing",
-      "leftDesc": "Standard nested routing with layout conventions for simpler structure.",
-      "rightDesc": "App Router & Pages Router offer flexibility, can be complex.",
-      "leftIcon": "Layout",
-      "rightIcon": "Layout",
-      "leftVisualText": "Nested Layouts",
-      "rightVisualText": "Router Options"
-    },
-    {
-      "title": "2. DATA LOADING",
-      "leftTitle": "Server-centric",
-      "rightTitle": "Client/Server options",
-      "leftDesc": "Uses `loader` functions for server-side data fetching before render.",
-      "rightDesc": "Supports `getServerSideProps`, `getStaticProps`, and Server Components.",
-      "leftIcon": "Server",
-      "rightIcon": "Server",
-      "leftVisualText": "Server Loader",
-      "rightVisualText": "Multiple Methods"
-    },
-    {
-      "title": "3. MUTATIONS",
-      "leftTitle": "Action functions",
-      "rightTitle": "API routes/mutations",
-      "leftDesc": "Built-in `action` functions handle form submissions and data updates.",
-      "rightDesc": "Requires separate API routes or libraries for data mutations.",
-      "leftIcon": "ArrowRightLeft",
-      "rightIcon": "Code",
-      "leftVisualText": "Integrated Actions",
-      "rightVisualText": "External APIs"
-    },
-    {
-      "title": "4. RENDERING",
-      "leftTitle": "SSR focus",
-      "rightTitle": "SSG, SSR, ISR, RSC",
-      "leftDesc": "Primarily Server-Side Rendering for dynamic, always-fresh content.",
-      "rightDesc": "Offers static generation, server rendering, and incremental static regeneration.",
-      "leftIcon": "Server",
+      "title": "1. REACTIVITY MODEL",
+      "leftTitle": "Signals",
+      "rightTitle": "Reactivity System",
+      "leftDesc": "Updates only what changed, no VDOM diffing.",
+      "rightDesc": "Vue's robust system tracks dependencies for updates.",
+      "leftIcon": "Activity",
       "rightIcon": "Layers",
-      "leftVisualText": "Always SSR",
-      "rightVisualText": "Flexible Rendering"
+      "leftVisualText": "Direct Updates",
+      "rightVisualText": "Dependency Tracking"
     },
     {
-      "title": "5. DEPENDENCIES",
-      "leftTitle": "Minimal React",
-      "rightTitle": "React Ecosystem",
-      "leftDesc": "Less reliance on React hooks; focuses on web standards.",
-      "rightDesc": "Deeply integrated with React, leverages its ecosystem heavily.",
+      "title": "2. PERFORMANCE",
+      "leftTitle": "Blazing Fast",
+      "rightTitle": "Highly Optimized",
+      "leftDesc": "Minimal overhead, exceptional runtime performance.",
+      "rightDesc": "Efficient VDOM and reactivity for good performance.",
       "leftIcon": "Zap",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Minimal Bundle",
+      "rightVisualText": "Mature Eco"
+    },
+    {
+      "title": "3. COMPILATION",
+      "leftTitle": "No VDOM",
+      "rightTitle": "Virtual DOM",
+      "leftDesc": "Compiles directly to efficient DOM operations.",
+      "rightDesc": "Uses VDOM for efficient diffing and updates.",
+      "leftIcon": "Code",
+      "rightIcon": "Layout",
+      "leftVisualText": "Direct DOM",
+      "rightVisualText": "VDOM Diffing"
+    },
+    {
+      "title": "4. LEARNING CURVE",
+      "leftTitle": "Steeper Initial",
+      "rightTitle": "Gentle Curve",
+      "leftDesc": "Unique reactivity concept requires new thinking.",
+      "rightDesc": "Familiar patterns, easy to pick up.",
+      "leftIcon": "Terminal",
       "rightIcon": "Globe",
-      "leftVisualText": "Lean React",
-      "rightVisualText": "Full React"
+      "leftVisualText": "New Paradigm",
+      "rightVisualText": "Familiar Concepts"
     },
     {
-      "title": "6. ERROR HANDLING",
-      "leftTitle": "Built-in boundary",
-      "rightTitle": "Customizable",
-      "leftDesc": "Error boundaries are part of the routing system.",
-      "rightDesc": "Requires manual implementation using Error Boundaries component.",
-      "leftIcon": "Shield",
-      "rightIcon": "Settings",
-      "leftVisualText": "Native Boundary",
-      "rightVisualText": "Manual Setup"
-    },
-    {
-      "title": "7. DEPLOYMENT",
-      "leftTitle": "Adaptable",
-      "rightTitle": "Vercel Optimized",
-      "leftDesc": "Works well with most Node.js servers and serverless platforms.",
-      "rightDesc": "Best performance and features on Vercel, but supports others.",
+      "title": "5. ECOSYSTEM",
+      "leftTitle": "Growing Fast",
+      "rightTitle": "Mature & Large",
+      "leftDesc": "Rapidly expanding, community-driven tools.",
+      "rightDesc": "Vast libraries, established tools, strong community.",
       "leftIcon": "Box",
+      "rightIcon": "Share2",
+      "leftVisualText": "Emerging Power",
+      "rightVisualText": "Established Hub"
+    },
+    {
+      "title": "6. STATE MANAGEMENT",
+      "leftTitle": "Built-in Signals",
+      "rightTitle": "Vuex/Pinia",
+      "leftDesc": "Native fine-grained state management via signals.",
+      "rightDesc": "External libraries for centralized state management.",
+      "leftIcon": "Settings",
       "rightIcon": "Server",
-      "leftVisualText": "Any Server",
-      "rightVisualText": "Vercel First"
+      "leftVisualText": "Integrated State",
+      "rightVisualText": "External State"
+    },
+    {
+      "title": "7. SYNTAX",
+      "leftTitle": "JSX-like JSX",
+      "rightTitle": "Templates/TSX",
+      "leftDesc": "Closer to JavaScript, uses JSX-like syntax.",
+      "rightDesc": "Offers HTML-like templates and TSX support.",
+      "leftIcon": "FileCode",
+      "rightIcon": "Code",
+      "leftVisualText": "JS-Centric",
+      "rightVisualText": "Template-Rich"
     }
   ]
 }

@@ -1,5 +1,4 @@
 [
-  "PyTorch vs TensorFlow",
   "Astro vs Next.js",
   "Next.js vs Astro",
   "Progressive Web Apps vs Native Mobile Apps",
@@ -48,5 +47,6 @@
   "Tailwind CSS vs Plain CSS",
   "Server Components vs Client Components",
   "Kubernetes vs Docker Swarm",
-  "Remix vs Next.js"
+  "Remix vs Next.js",
+  "SolidJS vs Vue.js"
 ]
