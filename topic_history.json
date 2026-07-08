@@ -1,5 +1,4 @@
 [
-  "Recoil vs Zustand",
   "PyTorch vs TensorFlow",
   "Astro vs Next.js",
   "Next.js vs Astro",
@@ -48,5 +47,6 @@
   "Micro Frontends vs Monolithic Frontend",
   "Tailwind CSS vs Plain CSS",
   "Server Components vs Client Components",
-  "Kubernetes vs Docker Swarm"
+  "Kubernetes vs Docker Swarm",
+  "Remix vs Next.js"
 ]
