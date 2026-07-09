@@ -1,5 +1,4 @@
 [
-  "Astro vs Next.js",
   "Next.js vs Astro",
   "Progressive Web Apps vs Native Mobile Apps",
   "Astro vs Next.js",
@@ -48,5 +47,6 @@
   "Server Components vs Client Components",
   "Kubernetes vs Docker Swarm",
   "Remix vs Next.js",
-  "SolidJS vs Vue.js"
+  "SolidJS vs Vue.js",
+  "PostgreSQL vs MySQL"
 ]
