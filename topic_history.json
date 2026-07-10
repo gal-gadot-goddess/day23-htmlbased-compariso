@@ -1,5 +1,4 @@
 [
-  "Astro vs Next.js",
   "Couchbase vs MongoDB",
   "Server Components vs Client Components",
   "Astro vs Next.js",
@@ -48,5 +47,6 @@
   "SolidJS vs Vue.js",
   "PostgreSQL vs MySQL",
   "Serverless vs Containers",
-  "BFF vs Direct"
+  "BFF vs Direct",
+  "PyTorch vs TensorFlow"
 ]
