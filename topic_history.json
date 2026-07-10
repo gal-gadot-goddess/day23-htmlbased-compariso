@@ -1,5 +1,4 @@
 [
-  "Couchbase vs MongoDB",
   "Server Components vs Client Components",
   "Astro vs Next.js",
   "Redis vs Memcached",
@@ -48,5 +47,6 @@
   "PostgreSQL vs MySQL",
   "Serverless vs Containers",
   "BFF vs Direct",
-  "PyTorch vs TensorFlow"
+  "PyTorch vs TensorFlow",
+  "Server Components vs Client Components"
 ]
