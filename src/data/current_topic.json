@@ -13,80 +13,80 @@
   "differences": [
     {
       "title": "1. INITIAL LOAD",
-      "leftTitle": "Faster, smaller",
-      "rightTitle": "Slower, larger",
-      "leftDesc": "HTML sent, no JS needed initially.",
-      "rightDesc": "JS must download and execute first.",
+      "leftTitle": "Faster initial",
+      "rightTitle": "Slower initial",
+      "leftDesc": "Zero JavaScript sent to client, leading to quicker initial page loads.",
+      "rightDesc": "Requires JavaScript download and execution, potentially delaying initial content display.",
       "leftIcon": "Server",
-      "rightIcon": "Globe",
-      "leftVisualText": "HTML First",
-      "rightVisualText": "JS First"
+      "rightIcon": "Terminal",
+      "leftVisualText": "No JS",
+      "rightVisualText": "Needs JS"
     },
     {
       "title": "2. DATA FETCHING",
-      "leftTitle": "Server-only access",
-      "rightTitle": "Browser API access",
-      "leftDesc": "Directly fetch from DB/APIs on server.",
-      "rightDesc": "Fetch using browser APIs like fetch.",
+      "leftTitle": "Server-side only",
+      "rightTitle": "Client-side fetching",
+      "leftDesc": "Fetch data directly on the server, no extra client requests needed.",
+      "rightDesc": "Fetch data using hooks or lifecycle methods in the browser.",
       "leftIcon": "Database",
       "rightIcon": "Network",
-      "leftVisualText": "Direct Fetch",
-      "rightVisualText": "Browser Fetch"
+      "leftVisualText": "Server Fetch",
+      "rightVisualText": "Client Fetch"
     },
     {
-      "title": "3. SEO",
-      "leftTitle": "Excellent",
-      "rightTitle": "Good",
-      "leftDesc": "Content is readily available for crawlers.",
-      "rightDesc": "Relies on JS execution for crawlers.",
-      "leftIcon": "Search",
-      "rightIcon": "Code",
-      "leftVisualText": "Crawler Ready",
-      "rightVisualText": "JS Dependent"
+      "title": "3. INTERACTIVITY",
+      "leftTitle": "Limited interactivity",
+      "rightTitle": "Full interactivity",
+      "leftDesc": "Cannot use hooks like `useState` or `useEffect` directly.",
+      "rightDesc": "Can use all React hooks for dynamic user interactions.",
+      "leftIcon": "Lock",
+      "rightIcon": "Unlock",
+      "leftVisualText": "Static",
+      "rightVisualText": "Dynamic"
     },
     {
-      "title": "4. INTERACTIVITY",
-      "leftTitle": "Limited",
-      "rightTitle": "Full",
-      "leftDesc": "Less direct DOM manipulation. Needs hydration.",
-      "rightDesc": "Rich client-side interactivity, event listeners.",
-      "leftIcon": "Layers",
-      "rightIcon": "Zap",
-      "leftVisualText": "Static Focus",
-      "rightVisualText": "Dynamic Focus"
+      "title": "4. CODE SIZE",
+      "leftTitle": "Smaller bundles",
+      "rightTitle": "Larger bundles",
+      "leftDesc": "Reduces client-side JavaScript bundle size significantly.",
+      "rightDesc": "Includes all necessary JavaScript for rendering and interactivity.",
+      "leftIcon": "Box",
+      "rightIcon": "Layers",
+      "leftVisualText": "Lean",
+      "rightVisualText": "Full"
     },
     {
-      "title": "5. CODE EXECUTION",
-      "leftTitle": "Server-side",
-      "rightTitle": "Client-side",
-      "leftDesc": "Runs only on the server environment.",
-      "rightDesc": "Runs in the user's web browser.",
-      "leftIcon": "Terminal",
+      "title": "5. SECURITY",
+      "leftTitle": "More secure",
+      "rightTitle": "Less secure",
+      "leftDesc": "Sensitive API keys and logic remain on the server, not exposed to client.",
+      "rightDesc": "Client-side code is visible to users, requiring careful handling of secrets.",
+      "leftIcon": "Shield",
+      "rightIcon": "Search",
+      "leftVisualText": "Secrets Safe",
+      "rightVisualText": "Secrets Exposed"
+    },
+    {
+      "title": "6. RENDERING LOCATION",
+      "leftTitle": "Server only",
+      "rightTitle": "Browser only",
+      "leftDesc": "Components are rendered on the server before sending HTML to the client.",
+      "rightDesc": "Components are rendered in the user's browser after JavaScript loads.",
+      "leftIcon": "Server",
       "rightIcon": "Cpu",
-      "leftVisualText": "Server Only",
-      "rightVisualText": "Browser Only"
+      "leftVisualText": "Server Render",
+      "rightVisualText": "Client Render"
     },
     {
-      "title": "6. STATE MANAGEMENT",
-      "leftTitle": "Simpler",
-      "rightTitle": "Complex",
-      "leftDesc": "Less need for client-side state.",
-      "rightDesc": "Requires robust client-side state handling.",
+      "title": "7. DATA DIRECTLY",
+      "leftTitle": "Direct access",
+      "rightTitle": "Indirect access",
+      "leftDesc": "Can directly access backend resources and databases without extra API calls.",
+      "rightDesc": "Relies on APIs or separate data fetching mechanisms to get data.",
       "leftIcon": "HardDrive",
-      "rightIcon": "Box",
-      "leftVisualText": "Server State",
-      "rightVisualText": "Client State"
-    },
-    {
-      "title": "7. BUNDLE SIZE",
-      "leftTitle": "Smaller",
-      "rightTitle": "Larger",
-      "leftDesc": "No client-side JS shipped for these components.",
-      "rightDesc": "JS must be sent to the browser.",
-      "leftIcon": "FileCode",
       "rightIcon": "FileCode",
-      "leftVisualText": "Minimal JS",
-      "rightVisualText": "Full JS"
+      "leftVisualText": "Direct Data",
+      "rightVisualText": "API Data"
     }
   ]
 }
