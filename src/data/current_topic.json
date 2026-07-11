@@ -1,92 +1,92 @@
 {
-  "topLabel": "DATABASE ARCHITECTURE",
+  "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "PostgreSQL",
-    "right": "MySQL",
+    "left": "Server Components",
+    "right": "Client Components",
     "vs": "vs"
   },
-  "leftSub": "Relational Powerhouse",
-  "rightSub": "Popular Relational DB",
-  "leftColor": "#4169E1",
-  "rightColor": "#FF8C00",
+  "leftSub": "Server-side rendering",
+  "rightSub": "Client-side rendering",
+  "leftColor": "#22D3EE",
+  "rightColor": "#F472B6",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DATA TYPES",
-      "leftTitle": "Rich & Extensible",
-      "rightTitle": "Standard & Robust",
-      "leftDesc": "Offers advanced types like JSONB, arrays, and custom types for complex data.",
-      "rightDesc": "Supports a wide range of standard SQL data types, well-tested and reliable.",
-      "leftIcon": "Database",
-      "rightIcon": "Database",
-      "leftVisualText": "Advanced Types",
-      "rightVisualText": "Standard Types"
-    },
-    {
-      "title": "2. EXTENSIBILITY",
-      "leftTitle": "Highly Flexible",
-      "rightTitle": "Good Extensions",
-      "leftDesc": "Supports custom functions, operators, data types, and procedural languages like PL/pgSQL.",
-      "rightDesc": "Has a good range of plugins and extensions, but less flexible than PostgreSQL.",
-      "leftIcon": "Settings",
-      "rightIcon": "Layers",
-      "leftVisualText": "Custom Code",
-      "rightVisualText": "Plugin Support"
-    },
-    {
-      "title": "3. CONCURRENCY CONTROL",
-      "leftTitle": "MVCC Efficient",
-      "rightTitle": "MVCC Standard",
-      "leftDesc": "Uses Multi-Version Concurrency Control (MVCC) for high concurrency with less locking.",
-      "rightDesc": "Also employs MVCC, but can sometimes encounter more locking issues under heavy load.",
-      "leftIcon": "Network",
-      "rightIcon": "Network",
-      "leftVisualText": "Better MVCC",
-      "rightVisualText": "Standard MVCC"
-    },
-    {
-      "title": "4. JSON SUPPORT",
-      "leftTitle": "Native JSONB",
-      "rightTitle": "JSON Data Type",
-      "leftDesc": "Excellent native support for JSONB, offering efficient indexing and querying.",
-      "rightDesc": "Supports JSON data type, but lacks the performance and indexing of JSONB.",
-      "leftIcon": "Box",
-      "rightIcon": "Box",
-      "leftVisualText": "JSONB Power",
-      "rightVisualText": "Basic JSON"
-    },
-    {
-      "title": "5. REPLICATION",
-      "leftTitle": "Flexible Options",
-      "rightTitle": "Mature & Simple",
-      "leftDesc": "Offers built-in streaming replication (physical & logical) and various third-party solutions.",
-      "rightDesc": "Provides robust master-slave replication, with semi-sync and group replication available.",
+      "title": "1. INITIAL LOAD",
+      "leftTitle": "Fast, minimal JS",
+      "rightTitle": "HTML, then JS",
+      "leftDesc": "Renders on server, sends HTML. Reduces client JS.",
+      "rightDesc": "Sends HTML and JS. Hydration needed.",
       "leftIcon": "Server",
-      "rightIcon": "Server",
-      "leftVisualText": "Diverse Replication",
-      "rightVisualText": "Solid Replication"
+      "rightIcon": "Layers",
+      "leftVisualText": "Server Render",
+      "rightVisualText": "Client Hydration"
     },
     {
-      "title": "6. COMMUNITY & ECOSYSTEM",
-      "leftTitle": "Strong & Open",
-      "rightTitle": "Largest Community",
-      "leftDesc": "Vibrant, active community with a focus on open standards and extensibility.",
-      "rightDesc": "Largest user base, extensive documentation, and wide industry adoption.",
-      "leftIcon": "Globe",
+      "title": "2. DATA FETCHING",
+      "leftTitle": "Direct server access",
+      "rightTitle": "API calls needed",
+      "leftDesc": "Fetch data directly on the server before sending.",
+      "rightDesc": "Requires separate API calls from the client.",
+      "leftIcon": "Database",
+      "rightIcon": "Network",
+      "leftVisualText": "Server Fetch",
+      "rightVisualText": "API Call"
+    },
+    {
+      "title": "3. INTERACTIVITY",
+      "leftTitle": "Limited interactivity",
+      "rightTitle": "Full interactivity",
+      "leftDesc": "Can't directly use client-side hooks or event listeners.",
+      "rightDesc": "Full access to browser APIs and events.",
+      "leftIcon": "Code",
+      "rightIcon": "Activity",
+      "leftVisualText": "Static UI",
+      "rightVisualText": "Dynamic UI"
+    },
+    {
+      "title": "4. BUNDLE SIZE",
+      "leftTitle": "Smaller client bundles",
+      "rightTitle": "Larger client bundles",
+      "leftDesc": "Less JavaScript sent to the client.",
+      "rightDesc": "More JavaScript needed for client-side logic and hydration.",
+      "leftIcon": "Box",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Lean Client",
+      "rightVisualText": "JS Heavy"
+    },
+    {
+      "title": "5. SEARCH ENGINE OPTIM.",
+      "leftTitle": "Excellent SEO",
+      "rightTitle": "Good SEO",
+      "leftDesc": "Fully rendered HTML is easily crawlable by search engines.",
+      "rightDesc": "Relies on crawlers executing JavaScript effectively.",
+      "leftIcon": "Search",
       "rightIcon": "Globe",
-      "leftVisualText": "Open Source",
-      "rightVisualText": "Widely Adopted"
+      "leftVisualText": "SEO Friendly",
+      "rightVisualText": "JS SEO"
     },
     {
-      "title": "7. PERFORMANCE",
-      "leftTitle": "Complex Queries",
-      "rightTitle": "Read Heavy Loads",
-      "leftDesc": "Excels with complex queries, large datasets, and high concurrency writes.",
-      "rightDesc": "Generally performs very well for read-heavy applications and simpler queries.",
-      "leftIcon": "Cpu",
+      "title": "6. ACCESS TO APIS",
+      "leftTitle": "Full Node.js access",
+      "rightTitle": "Browser APIs only",
+      "leftDesc": "Can directly use server-side Node.js modules and APIs.",
+      "rightDesc": "Limited to browser global objects and APIs.",
+      "leftIcon": "Terminal",
       "rightIcon": "Cpu",
-      "leftVisualText": "Complex Tasks",
-      "rightVisualText": "Read Optimized"
+      "leftVisualText": "Server Access",
+      "rightVisualText": "Browser Access"
+    },
+    {
+      "title": "7. CODE EXECUTION",
+      "leftTitle": "Server execution",
+      "rightTitle": "Client execution",
+      "leftDesc": "Code runs on the server, reducing client processing.",
+      "rightDesc": "Code runs in the user's browser.",
+      "leftIcon": "Server",
+      "rightIcon": "Zap",
+      "leftVisualText": "Server Logic",
+      "rightVisualText": "Client Logic"
     }
   ]
 }
