@@ -1,5 +1,4 @@
 [
-  "Astro vs Next.js",
   "Redis vs Memcached",
   "Nuxt.js vs SvelteKit",
   "Qwik vs Remix",
@@ -48,5 +47,6 @@
   "BFF vs Direct",
   "PyTorch vs TensorFlow",
   "Server Components vs Client Components",
-  "Server Components vs Client Components"
+  "Server Components vs Client Components",
+  "PostgreSQL vs MySQL"
 ]
