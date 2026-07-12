@@ -1,5 +1,4 @@
 [
-  "Qwik vs Remix",
   "Astro vs Next.js",
   "Declarative vs Imperative",
   "SolidJS vs Vue.js",
@@ -48,5 +47,6 @@
   "Server Components vs Client Components",
   "PostgreSQL vs MySQL",
   "Server Components vs Client Components",
-  "Server Components vs Client Components"
+  "Server Components vs Client Components",
+  "React Server vs React Client"
 ]
