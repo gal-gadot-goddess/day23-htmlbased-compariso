@@ -1,92 +1,92 @@
 {
   "topLabel": "FRONTEND ARCHITECTURE",
   "mainTitle": {
-    "left": "React Server",
-    "right": "React Client",
+    "left": "Hydration",
+    "right": "Resumability",
     "vs": "vs"
   },
-  "leftSub": "Server-Rendered HTML",
-  "rightSub": "Client-Side JS",
-  "leftColor": "#49BEFF",
-  "rightColor": "#FF6B6B",
+  "leftSub": "Client-side script",
+  "rightSub": "Server state preserved",
+  "leftColor": "#FF6B6B",
+  "rightColor": "#4ECDC4",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. Initial Load",
-      "leftTitle": "Faster HTML",
-      "rightTitle": "Slower HTML",
-      "leftDesc": "Server sends pre-rendered HTML, faster initial paint.",
-      "rightDesc": "Server sends minimal HTML, JS hydrates for full content.",
+      "title": "1. INITIAL LOAD",
+      "leftTitle": "Full re-render",
+      "rightTitle": "No re-render",
+      "leftDesc": "Browser re-executes all JavaScript to rebuild the DOM.",
+      "rightDesc": "Server state is immediately usable, no client-side re-execution needed.",
       "leftIcon": "Server",
+      "rightIcon": "Server",
+      "leftVisualText": "Heavy",
+      "rightVisualText": "Light"
+    },
+    {
+      "title": "2. INTERACTIVITY",
+      "leftTitle": "JS parses",
+      "rightTitle": "JS resumes",
+      "leftDesc": "JavaScript needs to download, parse, and execute.",
+      "rightDesc": "App state is restored from the server, no heavy JS parsing.",
+      "leftIcon": "Code",
+      "rightIcon": "Code",
+      "leftVisualText": "Slow",
+      "rightVisualText": "Fast"
+    },
+    {
+      "title": "3. USER EXPERIENCE",
+      "leftTitle": "Stale UI",
+      "rightTitle": "Instant UI",
+      "leftDesc": "Potential for a blank screen or stale UI until JS loads.",
+      "rightDesc": "Content is immediately interactive and looks like the server's response.",
+      "leftIcon": "Layers",
       "rightIcon": "Layers",
-      "leftVisualText": "Server Render",
-      "rightVisualText": "Client Hydrate"
+      "leftVisualText": "Delayed",
+      "rightVisualText": "Immediate"
     },
     {
-      "title": "2. SEO",
-      "leftTitle": "Excellent SEO",
-      "rightTitle": "Good SEO",
-      "leftDesc": "Search engines easily crawl fully rendered content.",
-      "rightDesc": "Requires JS execution for crawlers, can be slower.",
-      "leftIcon": "Search",
-      "rightIcon": "Search",
-      "leftVisualText": "Full Crawl",
-      "rightVisualText": "JS Crawl"
-    },
-    {
-      "title": "3. Interactivity",
-      "leftTitle": "Faster First Paint",
-      "rightTitle": "Faster Updates",
-      "leftDesc": "Content visible immediately, interactivity follows.",
-      "rightDesc": "Initial render may be slower, but updates are swift.",
-      "leftIcon": "Activity",
-      "rightIcon": "Activity",
-      "leftVisualText": "See First",
-      "rightVisualText": "Interact Fast"
-    },
-    {
-      "title": "4. Bundle Size",
-      "leftTitle": "Smaller Initial JS",
-      "rightTitle": "Larger Initial JS",
-      "leftDesc": "Less JavaScript needed on the client for initial render.",
-      "rightDesc": "More JavaScript required on the client for hydration.",
-      "leftIcon": "FileCode",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Less JS",
-      "rightVisualText": "More JS"
-    },
-    {
-      "title": "5. Server Load",
-      "leftTitle": "Higher Server Load",
-      "rightTitle": "Lower Server Load",
-      "leftDesc": "Server processes and renders all initial pages.",
-      "rightDesc": "Server sends static assets, client does rendering.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Server Work",
-      "rightVisualText": "Client Work"
-    },
-    {
-      "title": "6. Perceived Performance",
-      "leftTitle": "Faster Perception",
-      "rightTitle": "Can Be Slower",
-      "leftDesc": "Users see content sooner, improving perceived speed.",
-      "rightDesc": "Users might wait longer for full interactivity.",
+      "title": "4. BANDWIDTH",
+      "leftTitle": "More JS",
+      "rightTitle": "Less JS",
+      "leftDesc": "Requires sending and executing significant JavaScript on the client.",
+      "rightDesc": "Minimizes client-side JavaScript, leading to smaller bundles.",
       "leftIcon": "Network",
       "rightIcon": "Network",
-      "leftVisualText": "Quick View",
-      "rightVisualText": "Wait For It"
+      "leftVisualText": "Higher",
+      "rightVisualText": "Lower"
     },
     {
-      "title": "7. State Management",
-      "leftTitle": "Server State",
-      "rightTitle": "Client State",
-      "leftDesc": "State managed on the server, needs serialization.",
-      "rightDesc": "State managed on the client, standard React patterns.",
-      "leftIcon": "Database",
-      "rightIcon": "Layers",
-      "leftVisualText": "Server State",
-      "rightVisualText": "Client State"
+      "title": "5. PERFORMANCE",
+      "leftTitle": "CPU intensive",
+      "rightTitle": "Minimal CPU",
+      "leftDesc": "Client's CPU works hard to re-render and attach event listeners.",
+      "rightDesc": "Client CPU is minimally used, preserving battery and responsiveness.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Cpu",
+      "leftVisualText": "High Load",
+      "rightVisualText": "Low Load"
+    },
+    {
+      "title": "6. COMPLEXITY",
+      "leftTitle": "Framework heavy",
+      "rightTitle": "Progressive",
+      "leftDesc": "Frameworks often handle hydration implicitly, leading to hidden complexity.",
+      "rightDesc": "Designed for incremental enhancement, making complexity more manageable.",
+      "leftIcon": "Settings",
+      "rightIcon": "Settings",
+      "leftVisualText": "Implicit",
+      "rightVisualText": "Explicit"
+    },
+    {
+      "title": "7. STATE MANAGEMENT",
+      "leftTitle": "Re-serialized",
+      "rightTitle": "Preserved",
+      "leftDesc": "Client needs to re-fetch or re-generate state if not serialized.",
+      "rightDesc": "Server state is directly resumed on the client.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Re-init",
+      "rightVisualText": "Resume"
     }
   ]
 }

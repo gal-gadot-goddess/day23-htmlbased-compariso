@@ -1,5 +1,4 @@
 [
-  "Astro vs Next.js",
   "Declarative vs Imperative",
   "SolidJS vs Vue.js",
   "BFF vs Direct Frontend Call",
@@ -48,5 +47,6 @@
   "PostgreSQL vs MySQL",
   "Server Components vs Client Components",
   "Server Components vs Client Components",
-  "React Server vs React Client"
+  "React Server vs React Client",
+  "Hydration vs Resumability"
 ]
