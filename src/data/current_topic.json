@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND ARCHITECTURE",
+  "topLabel": "DATABASE ARCHITECTURE",
   "mainTitle": {
-    "left": "Server Components",
-    "right": "Client Components",
+    "left": "PostgreSQL",
+    "right": "SQLite",
     "vs": "vs"
   },
-  "leftSub": "Rendered on server",
-  "rightSub": "Rendered in browser",
-  "leftColor": "#FF6B6B",
-  "rightColor": "#4ECDC4",
+  "leftSub": "Relational Powerhouse",
+  "rightSub": "Embedded Simplicity",
+  "leftColor": "#4169E1",
+  "rightColor": "#32CD32",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. INITIAL LOAD",
-      "leftTitle": "Minimal JS",
-      "rightTitle": "Larger JS bundle",
-      "leftDesc": "Server Components send only HTML, reducing initial load.",
-      "rightDesc": "Client Components ship JavaScript, increasing initial load.",
+      "title": "1. DEPLOYMENT",
+      "leftTitle": "Client-Server",
+      "rightTitle": "Embedded",
+      "leftDesc": "Runs as a standalone server, accessible by multiple clients over a network.",
+      "rightDesc": "Library linked directly into the application, no separate server process.",
       "leftIcon": "Server",
-      "rightIcon": "Code",
-      "leftVisualText": "HTML Only",
-      "rightVisualText": "JS Bundle"
+      "rightIcon": "Box",
+      "leftVisualText": "Server",
+      "rightVisualText": "Embedded"
     },
     {
-      "title": "2. INTERACTIVITY",
-      "leftTitle": "Limited JS",
-      "rightTitle": "Full JS interactivity",
-      "leftDesc": "Server Components are static, less interactive by default.",
-      "rightDesc": "Client Components enable rich, dynamic user interfaces.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Activity",
-      "leftVisualText": "Static",
-      "rightVisualText": "Dynamic"
+      "title": "2. SCALABILITY",
+      "leftTitle": "High Scalability",
+      "rightTitle": "Limited Scalability",
+      "leftDesc": "Designed for concurrent connections and large datasets, scales well with hardware.",
+      "rightDesc": "Best for single-user or low-concurrency scenarios, not designed for high traffic.",
+      "leftIcon": "Network",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Scale Up",
+      "rightVisualText": "Scale Down"
     },
     {
-      "title": "3. DATA FETCHING",
-      "leftTitle": "Server-side",
-      "rightTitle": "Client-side",
-      "leftDesc": "Fetch data directly on the server, securely.",
-      "rightDesc": "Fetch data in the browser, potentially less secure.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "Network",
-      "leftVisualText": "Server Fetch",
-      "rightVisualText": "Browser Fetch"
-    },
-    {
-      "title": "4. ROUTING",
-      "leftTitle": "Server routing",
-      "rightTitle": "Client routing",
-      "leftDesc": "Navigation happens on the server, faster initial page loads.",
-      "rightDesc": "Client-side routing for seamless transitions after initial load.",
-      "leftIcon": "ArrowRightLeft",
-      "rightIcon": "Globe",
-      "leftVisualText": "Server Route",
-      "rightVisualText": "Client Route"
-    },
-    {
-      "title": "5. RENDERING",
-      "leftTitle": "Server-first",
-      "rightTitle": "Browser-first",
-      "leftDesc": "Rendered on the server before sending to the client.",
-      "rightDesc": "Rendered directly in the user's browser.",
-      "leftIcon": "Layers",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Server Render",
-      "rightVisualText": "Browser Render"
-    },
-    {
-      "title": "6. STATE MANAGEMENT",
-      "leftTitle": "Limited client state",
-      "rightTitle": "Full client state",
-      "leftDesc": "State management is primarily server-driven or passed as props.",
-      "rightDesc": "Offers robust client-side state management solutions.",
-      "leftIcon": "Settings",
-      "rightIcon": "Share2",
-      "leftVisualText": "Server State",
-      "rightVisualText": "Client State"
-    },
-    {
-      "title": "7. COMPLEXITY",
-      "leftTitle": "Simpler bundle",
-      "rightTitle": "More complex",
-      "leftDesc": "Leads to smaller client bundles and easier deployment.",
-      "rightDesc": "Requires managing hydration and client-side logic.",
-      "leftIcon": "Zap",
+      "title": "3. CONCURRENCY",
+      "leftTitle": "Robust Concurrency",
+      "rightTitle": "Basic Concurrency",
+      "leftDesc": "Handles multiple simultaneous read/write operations efficiently with MVCC.",
+      "rightDesc": "Relies on file locking; write operations can block other operations.",
+      "leftIcon": "Activity",
       "rightIcon": "Lock",
-      "leftVisualText": "Less JS",
-      "rightVisualText": "More JS"
+      "leftVisualText": "Many Users",
+      "rightVisualText": "One User"
+    },
+    {
+      "title": "4. FEATURES",
+      "leftTitle": "Rich Feature Set",
+      "rightTitle": "Core Features",
+      "leftDesc": "Supports complex SQL, JSONB, full-text search, advanced indexing, extensions.",
+      "rightDesc": "Provides essential SQL features, suitable for simpler data management needs.",
+      "leftIcon": "Code",
+      "rightIcon": "FileCode",
+      "leftVisualText": "Advanced",
+      "rightVisualText": "Basic"
+    },
+    {
+      "title": "5. ADMINISTRATION",
+      "leftTitle": "Requires Admin",
+      "rightTitle": "Zero Admin",
+      "leftDesc": "Needs setup, configuration, and ongoing maintenance by a database administrator.",
+      "rightDesc": "No server setup or administration required; database is just a file.",
+      "leftIcon": "Settings",
+      "rightIcon": "Zap",
+      "leftVisualText": "Managed",
+      "rightVisualText": "Self-Contained"
+    },
+    {
+      "title": "6. USE CASES",
+      "leftTitle": "Web Apps, Big Data",
+      "rightTitle": "Mobile, Desktop Apps",
+      "leftDesc": "Ideal for complex applications, analytics, and large-scale systems.",
+      "rightDesc": "Perfect for local storage, mobile apps, IoT devices, and simple sites.",
+      "leftIcon": "Globe",
+      "rightIcon": "Layers",
+      "leftVisualText": "Enterprise",
+      "rightVisualText": "Embedded"
+    },
+    {
+      "title": "7. DATA INTEGRITY",
+      "leftTitle": "Strong Guarantees",
+      "rightTitle": "Good Guarantees",
+      "leftDesc": "ACID compliant with robust transaction management and referential integrity.",
+      "rightDesc": "ACID compliant, but concurrency limits can impact write integrity.",
+      "leftIcon": "Shield",
+      "rightIcon": "Search",
+      "leftVisualText": "Guaranteed",
+      "rightVisualText": "Reliable"
     }
   ]
 }
