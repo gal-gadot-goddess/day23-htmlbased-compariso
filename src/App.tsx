@@ -19,8 +19,8 @@ export default function App() {
     const [step, setStep] = useState(0);
     const { topLabel, mainTitle, badge, differences } = topicData;
 
-    const leftColor = topicData.leftColor || '#00d2ff';
-    const rightColor = topicData.rightColor || '#ff5c00';
+    const leftColor = topicData.leftColor || '#38bdf8';
+    const rightColor = topicData.rightColor || '#f43f5e';
 
     const safeDifferences = (differences && differences.length > 0) ? differences : [
         {
@@ -45,7 +45,7 @@ export default function App() {
 
     const currentDiff = safeDifferences[step] || safeDifferences[0];
 
-    // Clean category title if it has numbers
+    // Clean category title
     const cleanCategoryTitle = (currentDiff.title || `DIFFERENCE #${step + 1}`)
         .replace(/^\d+[\.\s\-:]*/, '')
         .trim();
@@ -79,7 +79,7 @@ export default function App() {
                         className="title-tech" 
                         style={{ 
                             color: leftColor, 
-                            filter: `drop-shadow(0 0 25px ${leftColor}55)` 
+                            filter: `drop-shadow(0 0 25px ${leftColor}77)` 
                         }}
                     >
                         {mainTitle.left}
@@ -89,7 +89,7 @@ export default function App() {
                         className="title-tech" 
                         style={{ 
                             color: rightColor,
-                            filter: `drop-shadow(0 0 25px ${rightColor}55)` 
+                            filter: `drop-shadow(0 0 25px ${rightColor}77)` 
                         }}
                     >
                         {mainTitle.right}
@@ -149,8 +149,8 @@ export default function App() {
                     <div 
                         className="card-glass" 
                         style={{ 
-                            borderColor: `${leftColor}44`,
-                            boxShadow: `0 20px 50px rgba(0,0,0,0.6), 0 0 40px ${leftColor}15`
+                            borderColor: `${leftColor}55`,
+                            boxShadow: `0 20px 50px rgba(0,0,0,0.6), 0 0 50px ${leftColor}22`
                         }}
                     >
                         <div className="card-visual-zone">
@@ -186,8 +186,8 @@ export default function App() {
                     <div 
                         className="card-glass" 
                         style={{ 
-                            borderColor: `${rightColor}44`,
-                            boxShadow: `0 20px 50px rgba(0,0,0,0.6), 0 0 40px ${rightColor}15`
+                            borderColor: `${rightColor}55`,
+                            boxShadow: `0 20px 50px rgba(0,0,0,0.6), 0 0 50px ${rightColor}22`
                         }}
                     >
                         <div className="card-visual-zone">
@@ -237,9 +237,9 @@ const ModernVisual: React.FC<ModernVisualProps> = ({ side, data, color }) => {
 
     return (
         <motion.div 
-            initial={{ opacity: 0, scale: 0.85, y: 15 }} 
+            initial={{ opacity: 0, scale: 0.82, y: 18 }} 
             animate={{ opacity: 1, scale: 1, y: 0 }} 
-            exit={{ opacity: 0, scale: 0.85, y: -15 }} 
+            exit={{ opacity: 0, scale: 0.82, y: -18 }} 
             transition={{ duration: 0.35, ease: 'easeOut' }}
             style={{ 
                 display: 'flex', 
@@ -248,22 +248,22 @@ const ModernVisual: React.FC<ModernVisualProps> = ({ side, data, color }) => {
                 justifyContent: 'center',
                 height: '100%',
                 width: '100%',
-                gap: '24px'
+                gap: '28px'
             }}
         >
             <div 
                 className="icon-glow-frame"
                 style={{ 
-                    background: `radial-gradient(circle, ${color}28 0%, ${color}08 70%)`,
-                    border: `2px solid ${color}55`,
-                    boxShadow: `0 0 50px ${color}33, inset 0 0 30px ${color}22`
+                    background: `radial-gradient(circle, ${color}35 0%, rgba(15, 23, 42, 0.95) 75%)`,
+                    border: `2.5px solid ${color}`,
+                    boxShadow: `0 0 60px ${color}55, inset 0 0 35px ${color}44`
                 }}
             >
                 <div 
                     className="icon-ring-pulse"
-                    style={{ borderColor: `${color}66` }}
+                    style={{ borderColor: color }}
                 />
-                <IconComponent size={100} color={color} strokeWidth={1.8} />
+                <IconComponent size={105} color={color} strokeWidth={2.4} />
             </div>
 
             {badgeText && (
@@ -273,9 +273,10 @@ const ModernVisual: React.FC<ModernVisualProps> = ({ side, data, color }) => {
                     transition={{ delay: 0.15, duration: 0.3 }}
                     className="badge-tag-pill"
                     style={{ 
-                        color: color,
-                        borderColor: `${color}55`,
-                        boxShadow: `0 8px 25px ${color}22`
+                        color: '#ffffff',
+                        background: `${color}25`,
+                        borderColor: color,
+                        boxShadow: `0 8px 30px ${color}44`
                     }}
                 >
                     {badgeText}
