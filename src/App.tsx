@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-    Database, Cpu, Network, Lock, Unlock, Zap, Server, 
-    Code, Globe, Box, Layers, Shield, Activity, 
-    ArrowRightLeft, FileCode, Search, Settings, 
-    HardDrive, Layout, Share2, Terminal
-} from 'lucide-react';
+import * as LucideIcons from 'lucide-react';
 import topicData from './data/current_topic.json';
 
-const IconMap: Record<string, React.ComponentType<any>> = {
-    Database, Cpu, Network, Lock, Unlock, Zap, Server,
-    Code, Globe, Box, Layers, Shield, Activity,
-    ArrowRightLeft, FileCode, Search, Settings,
-    HardDrive, Layout, Share2, Terminal
+const getIconComponent = (iconName?: string, defaultIcon?: any) => {
+    if (!iconName) return defaultIcon || LucideIcons.Zap;
+    // Direct match
+    if ((LucideIcons as any)[iconName]) return (LucideIcons as any)[iconName];
+    // Case-insensitive / normalized match
+    const clean = iconName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const foundKey = Object.keys(LucideIcons).find(k => k.toLowerCase() === clean);
+    if (foundKey && (LucideIcons as any)[foundKey]) return (LucideIcons as any)[foundKey];
+    return defaultIcon || LucideIcons.Zap;
 };
 
 export default function App() {
@@ -223,7 +222,7 @@ interface GenericVisualProps {
 
 const GenericVisual: React.FC<GenericVisualProps> = ({ side, data, color }) => {
     const iconName = side === 'left' ? data.leftIcon : data.rightIcon;
-    const Icon = IconMap[iconName] || (side === 'left' ? Database : Server);
+    const Icon = getIconComponent(iconName, side === 'left' ? LucideIcons.Database : LucideIcons.Server);
     const badgeText = side === 'left' ? data.leftVisualText : data.rightVisualText;
 
     return (

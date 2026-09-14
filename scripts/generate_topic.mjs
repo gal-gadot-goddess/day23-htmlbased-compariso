@@ -25,7 +25,15 @@ const COLOR_PAIRS = [
     { left: "#22c55e", right: "#ef4444" }, // Vibrant Green vs Crimson Red
     { left: "#0ea5e9", right: "#f59e0b" }, // Ocean Blue vs Warm Amber
     { left: "#e11d48", right: "#2dd4bf" }, // Rose vs Mint
-    { left: "#4f46e5", right: "#fbbf24" }  // Deep Indigo vs Cyber Yellow
+    { left: "#4f46e5", right: "#fbbf24" }, // Deep Indigo vs Cyber Yellow
+    { left: "#06b6d4", right: "#f43f5e" }, // Cyan vs Rose
+    { left: "#10b981", right: "#a855f7" }, // Emerald vs Violet
+    { left: "#f59e0b", right: "#3b82f6" }, // Amber vs Sapphire
+    { left: "#d946ef", right: "#22c55e" }, // Magenta vs Mint Green
+    { left: "#38bdf8", right: "#fb7185" }, // Ice Blue vs Light Coral
+    { left: "#8b5cf6", right: "#34d399" }, // Iris Purple vs Spring Emerald
+    { left: "#f97316", right: "#0284c7" }, // Sunset Orange vs Sky Blue
+    { left: "#eab308", right: "#6366f1" }  // Electric Gold vs Modern Indigo
 ];
 
 function getRandomColorPair() {
@@ -283,8 +291,8 @@ JSON Schema:
             "rightTitle": "Point for Tech 2 (max 3 words)",
             "leftDesc": "High-value, informative educational explanation of how it works under the hood and its technical trade-offs (20 to 35 words).",
             "rightDesc": "High-value, informative educational explanation of how it works under the hood and its technical trade-offs (20 to 35 words).",
-            "leftIcon": "Choose from: Database, Cpu, Network, Lock, Unlock, Zap, Server, Code, Globe, Box, Layers, Shield, Activity, ArrowRightLeft, FileCode, Search, Settings, HardDrive, Layout, Share2, Terminal",
-            "rightIcon": "Choose from the same list",
+            "leftIcon": "Valid Lucide icon name matching the concept (e.g. Database, Cpu, Network, Zap, Server, Code, Globe, Box, Layers, Shield, Activity, HardDrive, Terminal, GitBranch, Cloud, Lock, Workflow, Radio, Flame, Compass, Key, FastForward, CheckCircle, Smartphone, Compass, etc.)",
+            "rightIcon": "Valid Lucide icon name matching the concept (e.g. Database, Cpu, Network, Zap, Server, Code, Globe, Box, Layers, Shield, Activity, HardDrive, Terminal, GitBranch, Cloud, Lock, Workflow, Radio, Flame, Compass, Key, FastForward, CheckCircle, Smartphone, Compass, etc.)",
             "leftVisualText": "Visual badge (1-2 words)",
             "rightVisualText": "Visual badge (1-2 words)"
         }
