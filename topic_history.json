@@ -49,5 +49,6 @@
   "Server Components vs Client Components",
   "Server Components vs Client Components",
   "PostgreSQL vs SQLite",
-  "BUN vs NODE.JS"
+  "BUN vs NODE.JS",
+  "Next.js App Router vs Next.js Pages Router"
 ]
