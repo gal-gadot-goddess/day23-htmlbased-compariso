@@ -244,17 +244,17 @@ const GenericVisual: React.FC<GenericVisualProps> = ({ side, data, color }) => {
             <div 
                 className="icon-glow-box"
                 style={{ 
-                    padding: '32px', 
-                    borderRadius: '30px', 
-                    background: `radial-gradient(circle, ${color}30 0%, rgba(10, 14, 24, 0.95) 80%)`, 
-                    border: `2px solid ${color}66`,
+                    padding: '38px', 
+                    borderRadius: '34px', 
+                    background: `radial-gradient(circle, ${color}35 0%, rgba(10, 14, 24, 0.95) 80%)`, 
+                    border: `2px solid ${color}77`,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    boxShadow: `0 0 45px ${color}35, inset 0 0 25px ${color}22`
+                    boxShadow: `0 0 50px ${color}40, inset 0 0 30px ${color}28`
                 }}
             >
-                <Icon size={118} color={color} strokeWidth={1.8} />
+                <Icon size={136} color={color} strokeWidth={1.85} />
             </div>
 
             {badgeText && (
@@ -264,16 +264,16 @@ const GenericVisual: React.FC<GenericVisualProps> = ({ side, data, color }) => {
                     transition={{ delay: 0.15 }}
                     className="visual-badge"
                     style={{ 
-                        fontSize: '23px', 
+                        fontSize: '25px', 
                         fontFamily: 'var(--font-mono)', 
                         color: '#ffffff',
-                        background: `${color}20`,
-                        padding: '10px 24px',
-                        borderRadius: '12px',
-                        border: `1.5px solid ${color}66`,
-                        boxShadow: `0 6px 20px ${color}33`,
-                        fontWeight: 700,
-                        letterSpacing: '1px'
+                        background: `${color}25`,
+                        padding: '12px 28px',
+                        borderRadius: '14px',
+                        border: `2px solid ${color}77`,
+                        boxShadow: `0 8px 24px ${color}35`,
+                        fontWeight: 800,
+                        letterSpacing: '1.2px'
                     }}
                 >
                     {badgeText}
