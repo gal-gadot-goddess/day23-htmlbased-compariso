@@ -281,8 +281,8 @@ JSON Schema:
             "title": "1. KEY AREA",
             "leftTitle": "Point for Tech 1 (max 3 words)",
             "rightTitle": "Point for Tech 2 (max 3 words)",
-            "leftDesc": "Concise high-impact explanation (10 to 18 words)",
-            "rightDesc": "Concise high-impact explanation (10 to 18 words)",
+            "leftDesc": "High-value, informative educational explanation of how it works under the hood and its technical trade-offs (20 to 35 words).",
+            "rightDesc": "High-value, informative educational explanation of how it works under the hood and its technical trade-offs (20 to 35 words).",
             "leftIcon": "Choose from: Database, Cpu, Network, Lock, Unlock, Zap, Server, Code, Globe, Box, Layers, Shield, Activity, ArrowRightLeft, FileCode, Search, Settings, HardDrive, Layout, Share2, Terminal",
             "rightIcon": "Choose from the same list",
             "leftVisualText": "Visual badge (1-2 words)",
@@ -293,8 +293,9 @@ JSON Schema:
 
 Rules:
 1. Provide EXACTLY 7 differences.
-2. High contrast against dark background.
-3. Concise, punchy developer language.
+2. Explanations must be DEEP, ACCURATE, and HIGHLY INFORMATIVE for developers (20-35 words per side explaining concrete mechanisms, not shallow 5-word summaries).
+3. High contrast against dark background.
+4. Engaging, viral tech-educator tone.
 `;
 
     console.log(`🚀 Requesting new topic from Pollinations (${MODEL})...`);

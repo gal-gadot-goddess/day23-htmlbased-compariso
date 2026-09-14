@@ -34,7 +34,7 @@ body {
     color: #fff;
     display: flex;
     flex-direction: column;
-    padding: 160px 80px 100px; /* Safe areas for Instagram Reels & Stories */
+    padding: 110px 70px 70px; /* Balanced Instagram safe margins without huge empty gaps */
     box-sizing: border-box;
     overflow: hidden;
     font-family: var(--font-primary);
@@ -81,25 +81,25 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
-    margin-bottom: 36px;
+    margin-bottom: 24px;
     width: 100%;
 }
 
 .top-label {
     font-family: var(--font-mono);
-    font-size: 26px;
+    font-size: 24px;
     color: #8e9bb0;
     letter-spacing: 8px;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     text-transform: uppercase;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .main-title {
-    font-size: 74px;
+    font-size: 76px;
     font-weight: 900;
     display: flex;
     justify-content: center;
@@ -109,7 +109,7 @@ body {
     text-transform: uppercase;
     flex-wrap: wrap;
     word-break: break-word;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 }
 
 .main-title span {
@@ -144,15 +144,15 @@ body {
     z-index: 2;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 45px;
+    margin-bottom: 20px;
     padding: 0 20px;
     width: 100%;
     align-items: center;
 }
 
 .timeline-step {
-    width: 52px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: 2px solid;
     display: flex;
@@ -170,14 +170,53 @@ body {
     transform: scale(1.15);
 }
 
+/* DIFFERENCE CATEGORY PILL */
+.diff-category-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.diff-category-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1.5px solid rgba(255, 255, 255, 0.16);
+    border-radius: 100px;
+    padding: 8px 26px;
+    backdrop-filter: blur(12px);
+}
+
+.diff-category-num {
+    font-family: var(--font-mono);
+    font-size: 20px;
+    font-weight: 800;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.18);
+    padding: 3px 12px;
+    border-radius: 100px;
+}
+
+.diff-category-text {
+    font-family: var(--font-primary);
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #f8fafc;
+    text-transform: uppercase;
+}
+
 /* CARDS GRID */
 .cards-grid {
     position: relative;
     z-index: 2;
     display: flex;
-    gap: 28px;
+    gap: 26px;
     flex: 1;
-    margin-bottom: 36px;
+    margin-bottom: 24px;
     width: 100%;
     overflow: hidden;
     min-height: 0;
@@ -192,16 +231,16 @@ body {
 }
 
 .card-title-group {
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     text-align: center;
     width: 100%;
 }
 
 .card-hero-title {
-    font-size: 48px;
+    font-size: 46px;
     font-weight: 900;
     font-style: italic;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -211,7 +250,7 @@ body {
 
 .card-sub {
     font-family: var(--font-mono);
-    font-size: 20px;
+    font-size: 19px;
     color: #94a3b8;
     font-weight: 700;
     text-transform: uppercase;
@@ -222,11 +261,11 @@ body {
 .comparison-card {
     background: #090b10;
     border: 2.5px solid rgba(255, 255, 255, 0.1);
-    border-radius: 38px;
+    border-radius: 36px;
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 28px;
+    padding: 26px;
     overflow: hidden;
     backdrop-filter: blur(16px);
     transition: border-color 0.4s ease, box-shadow 0.4s ease;
@@ -235,45 +274,59 @@ body {
 
 /* TOP PORTION: VISUAL & ICON */
 .viz-content {
-    flex: 1;
+    flex: 0 0 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px 0;
-    min-height: 0;
+    padding: 24px 0 28px;
 }
 
 .icon-glow-box {
     transition: all 0.3s ease;
 }
 
-/* BOTTOM PORTION: EXPLANATION FOOTER */
+/* BOTTOM PORTION: EXPANDED INFORMATIVE EXPLANATION FOOTER */
 .explanation-footer {
-    min-height: 250px;
+    flex: 1;
     background: #11141c;
-    border-radius: 26px;
-    padding: 28px 24px;
+    border-radius: 28px;
+    padding: 32px 26px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     border-top: 2px solid rgba(255, 255, 255, 0.08);
-    box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 2px 14px rgba(0, 0, 0, 0.5);
     width: 100%;
+    overflow: hidden;
+}
+
+.exp-badge {
+    align-self: flex-start;
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 8px;
+    border: 1px solid;
+    margin-bottom: 14px;
 }
 
 .exp-title {
     font-size: 34px;
     font-weight: 900;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     line-height: 1.15;
     word-break: break-word;
 }
 
 .exp-desc {
     font-family: var(--font-mono);
-    font-size: 21px;
+    font-size: 22px;
     color: #e2e8f0;
-    line-height: 1.4;
+    line-height: 1.5;
     margin: 0;
     font-weight: 500;
     word-break: break-word;
@@ -286,10 +339,10 @@ body {
     text-align: center;
     color: #475569;
     font-family: var(--font-mono);
-    font-size: 19px;
+    font-size: 18px;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 600;
-    padding-bottom: 10px;
+    padding-bottom: 6px;
 }
 

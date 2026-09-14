@@ -105,6 +105,16 @@ export default function App() {
                 ))}
             </div>
 
+            {/* DIFFERENCE CATEGORY PILL */}
+            {currentDiff.title && (
+                <div className="diff-category-container">
+                    <div className="diff-category-pill">
+                        <span className="diff-category-num">#{step + 1}</span>
+                        <span className="diff-category-text">{currentDiff.title.replace(/^\d+[\.\s\-:]*/, '').trim()}</span>
+                    </div>
+                </div>
+            )}
+
             {/* MAIN COMPARISON */}
             <main className="cards-grid">
                 {/* LEFT CARD */}
@@ -123,7 +133,7 @@ export default function App() {
                             boxShadow: `0 20px 50px rgba(0,0,0,0.7), 0 0 45px ${leftColor}18`
                         }}
                     >
-                        {/* Top: Icon & Visual Badge */}
+                        {/* Upper Section: Icon & Visual Tag */}
                         <div className="viz-content">
                             <AnimatePresence mode="wait">
                                 <GenericVisual 
@@ -136,8 +146,11 @@ export default function App() {
                             </AnimatePresence>
                         </div>
 
-                        {/* Bottom: Explanation Footer */}
+                        {/* Lower Section: Informative Educational Footer */}
                         <div className="explanation-footer" style={{ borderTopColor: `${leftColor}33` }}>
+                            <div className="exp-badge" style={{ color: leftColor, borderColor: `${leftColor}55`, background: `${leftColor}15` }}>
+                                {currentDiff.leftVisualText || 'KEY MECHANISM'}
+                            </div>
                             <h3 className="exp-title" style={{ color: leftColor }}>
                                 {currentDiff.leftTitle}
                             </h3>
@@ -164,7 +177,7 @@ export default function App() {
                             boxShadow: `0 20px 50px rgba(0,0,0,0.7), 0 0 45px ${rightColor}18`
                         }}
                     >
-                        {/* Top: Icon & Visual Badge */}
+                        {/* Upper Section: Icon & Visual Tag */}
                         <div className="viz-content">
                             <AnimatePresence mode="wait">
                                 <GenericVisual 
@@ -177,8 +190,11 @@ export default function App() {
                             </AnimatePresence>
                         </div>
 
-                        {/* Bottom: Explanation Footer */}
+                        {/* Lower Section: Informative Educational Footer */}
                         <div className="explanation-footer" style={{ borderTopColor: `${rightColor}33` }}>
+                            <div className="exp-badge" style={{ color: rightColor, borderColor: `${rightColor}55`, background: `${rightColor}15` }}>
+                                {currentDiff.rightVisualText || 'KEY MECHANISM'}
+                            </div>
                             <h3 className="exp-title" style={{ color: rightColor }}>
                                 {currentDiff.rightTitle}
                             </h3>
@@ -221,17 +237,16 @@ const GenericVisual: React.FC<GenericVisualProps> = ({ side, data, color }) => {
                 flexDirection: 'column', 
                 alignItems: 'center', 
                 justifyContent: 'center',
-                height: '100%',
                 width: '100%',
-                gap: '24px'
+                gap: '18px'
             }}
         >
             <div 
                 className="icon-glow-box"
                 style={{ 
-                    padding: '38px', 
-                    borderRadius: '34px', 
-                    background: `radial-gradient(circle, ${color}25 0%, rgba(10, 14, 24, 0.9) 80%)`, 
+                    padding: '32px', 
+                    borderRadius: '30px', 
+                    background: `radial-gradient(circle, ${color}30 0%, rgba(10, 14, 24, 0.95) 80%)`, 
                     border: `2px solid ${color}66`,
                     display: 'flex',
                     alignItems: 'center',
@@ -239,7 +254,7 @@ const GenericVisual: React.FC<GenericVisualProps> = ({ side, data, color }) => {
                     boxShadow: `0 0 45px ${color}35, inset 0 0 25px ${color}22`
                 }}
             >
-                <Icon size={124} color={color} strokeWidth={1.8} />
+                <Icon size={118} color={color} strokeWidth={1.8} />
             </div>
 
             {badgeText && (
