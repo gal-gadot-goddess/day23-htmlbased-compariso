@@ -51,5 +51,6 @@
   "PostgreSQL vs SQLite",
   "BUN vs NODE.JS",
   "Next.js App Router vs Next.js Pages Router",
-  "Next.js App Router vs Next.js Pages Router"
+  "Next.js App Router vs Next.js Pages Router",
+  "SvelteKit vs Astro"
 ]
