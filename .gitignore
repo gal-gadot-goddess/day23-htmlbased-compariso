@@ -1,0 +1,12 @@
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.*
+!.env.example
+job.log
+temp_video.mp4
+recording.mp4
+*.mp4
+!day23_sql_vs_nosql.mp4

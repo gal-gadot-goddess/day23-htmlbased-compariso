@@ -42,7 +42,7 @@ async function runCycle() {
 
         // 3. Generate AI Metadata (Captions, Hashtags)
         console.log('\n🧠 STEP 2: GENERATING METADATA...');
-        await runCommand('node', ['scripts/generate_ai_metadata.mjs', `"${title}"`, `"${tagline}"`]);
+        await runCommand('node', ['scripts/generate_ai_metadata.mjs', JSON.stringify(title), JSON.stringify(tagline)]);
 
         // 4. Record Video
         console.log('\n📹 STEP 3: RECORDING VIDEO...');

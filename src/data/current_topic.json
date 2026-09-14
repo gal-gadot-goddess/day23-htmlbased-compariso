@@ -1,92 +1,92 @@
 {
-  "topLabel": "DATABASE ARCHITECTURE",
+  "topLabel": "MODERN WEB",
   "mainTitle": {
-    "left": "PostgreSQL",
-    "right": "SQLite",
+    "left": "BUN",
+    "right": "NODE.JS",
     "vs": "vs"
   },
-  "leftSub": "Relational Powerhouse",
-  "rightSub": "Embedded Simplicity",
-  "leftColor": "#4169E1",
-  "rightColor": "#32CD32",
+  "leftSub": "All-in-one JS Runtime",
+  "rightSub": "Mature JS Runtime",
+  "leftColor": "#fde047",
+  "rightColor": "#3b82f6",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DEPLOYMENT",
-      "leftTitle": "Client-Server",
-      "rightTitle": "Embedded",
-      "leftDesc": "Runs as a standalone server, accessible by multiple clients over a network.",
-      "rightDesc": "Library linked directly into the application, no separate server process.",
-      "leftIcon": "Server",
-      "rightIcon": "Box",
-      "leftVisualText": "Server",
-      "rightVisualText": "Embedded"
-    },
-    {
-      "title": "2. SCALABILITY",
-      "leftTitle": "High Scalability",
-      "rightTitle": "Limited Scalability",
-      "leftDesc": "Designed for concurrent connections and large datasets, scales well with hardware.",
-      "rightDesc": "Best for single-user or low-concurrency scenarios, not designed for high traffic.",
-      "leftIcon": "Network",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Scale Up",
-      "rightVisualText": "Scale Down"
-    },
-    {
-      "title": "3. CONCURRENCY",
-      "leftTitle": "Robust Concurrency",
-      "rightTitle": "Basic Concurrency",
-      "leftDesc": "Handles multiple simultaneous read/write operations efficiently with MVCC.",
-      "rightDesc": "Relies on file locking; write operations can block other operations.",
-      "leftIcon": "Activity",
-      "rightIcon": "Lock",
-      "leftVisualText": "Many Users",
-      "rightVisualText": "One User"
-    },
-    {
-      "title": "4. FEATURES",
-      "leftTitle": "Rich Feature Set",
-      "rightTitle": "Core Features",
-      "leftDesc": "Supports complex SQL, JSONB, full-text search, advanced indexing, extensions.",
-      "rightDesc": "Provides essential SQL features, suitable for simpler data management needs.",
-      "leftIcon": "Code",
-      "rightIcon": "FileCode",
-      "leftVisualText": "Advanced",
-      "rightVisualText": "Basic"
-    },
-    {
-      "title": "5. ADMINISTRATION",
-      "leftTitle": "Requires Admin",
-      "rightTitle": "Zero Admin",
-      "leftDesc": "Needs setup, configuration, and ongoing maintenance by a database administrator.",
-      "rightDesc": "No server setup or administration required; database is just a file.",
-      "leftIcon": "Settings",
-      "rightIcon": "Zap",
-      "leftVisualText": "Managed",
-      "rightVisualText": "Self-Contained"
-    },
-    {
-      "title": "6. USE CASES",
-      "leftTitle": "Web Apps, Big Data",
-      "rightTitle": "Mobile, Desktop Apps",
-      "leftDesc": "Ideal for complex applications, analytics, and large-scale systems.",
-      "rightDesc": "Perfect for local storage, mobile apps, IoT devices, and simple sites.",
-      "leftIcon": "Globe",
-      "rightIcon": "Layers",
-      "leftVisualText": "Enterprise",
-      "rightVisualText": "Embedded"
-    },
-    {
-      "title": "7. DATA INTEGRITY",
-      "leftTitle": "Strong Guarantees",
-      "rightTitle": "Good Guarantees",
-      "leftDesc": "ACID compliant with robust transaction management and referential integrity.",
-      "rightDesc": "ACID compliant, but concurrency limits can impact write integrity.",
-      "leftIcon": "Shield",
-      "rightIcon": "Search",
-      "leftVisualText": "Guaranteed",
+      "title": "1. PERFORMANCE",
+      "leftTitle": "Blazing Fast",
+      "rightTitle": "Stable Performance",
+      "leftDesc": "Built in Zig, Bun boasts significantly faster startup and execution speeds for JavaScript and TypeScript.",
+      "rightDesc": "Node.js offers a robust and well-established performance profile, optimized over years of development.",
+      "leftIcon": "Zap",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Speed King",
       "rightVisualText": "Reliable"
+    },
+    {
+      "title": "2. TOOLING",
+      "leftTitle": "Integrated Toolkit",
+      "rightTitle": "Modular Ecosystem",
+      "leftDesc": "Bun includes built-in bundler, transpiler, task runner, and package manager for a streamlined dev experience.",
+      "rightDesc": "Node.js relies on an extensive ecosystem of separate tools for bundling, testing, and managing dependencies.",
+      "leftIcon": "Layers",
+      "rightIcon": "Box",
+      "leftVisualText": "All-in-One",
+      "rightVisualText": "Modular"
+    },
+    {
+      "title": "3. RUNTIME ARCHITECTURE",
+      "leftTitle": "Single Binary",
+      "rightTitle": "Process-based",
+      "leftDesc": "Bun runs as a single, efficient binary, simplifying installation and reducing overhead.",
+      "rightDesc": "Node.js typically uses separate processes and relies on `npm` or `yarn` for package management.",
+      "leftIcon": "Server",
+      "rightIcon": "Network",
+      "leftVisualText": "Unified",
+      "rightVisualText": "Distributed"
+    },
+    {
+      "title": "4. COMPATIBILITY",
+      "leftTitle": "Node.s API Support",
+      "rightTitle": "Native APIs",
+      "leftDesc": "Bun aims for high compatibility with Node.js APIs, facilitating migration.",
+      "rightDesc": "Node.js offers mature and stable native APIs, with extensive community support.",
+      "leftIcon": "Globe",
+      "rightIcon": "Database",
+      "leftVisualText": "Bridging",
+      "rightVisualText": "Native"
+    },
+    {
+      "title": "5. PACKAGE MANAGEMENT",
+      "leftTitle": "Fast & Embedded",
+      "rightTitle": "Mature & Robust",
+      "leftDesc": "Bun's `bun install` is dramatically faster than npm/yarn, with its own optimized cache.",
+      "rightDesc": "Node.js ecosystem relies on `npm` or `yarn`, which are battle-tested but slower.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Search",
+      "leftVisualText": "Swift Install",
+      "rightVisualText": "Trusted"
+    },
+    {
+      "title": "6. TYPESCRIPT SUPPORT",
+      "leftTitle": "Native TS",
+      "rightTitle": "Transpiled TS",
+      "leftDesc": "Bun supports TypeScript out-of-the-box without needing separate compilation steps.",
+      "rightDesc": "Node.js requires a transpilation step (e.g., via `tsc` or Babel) for TypeScript.",
+      "leftIcon": "FileCode",
+      "rightIcon": "Code",
+      "leftVisualText": "Direct",
+      "rightVisualText": "Indirect"
+    },
+    {
+      "title": "7. COMMUNITY & MATURITY",
+      "leftTitle": "Emerging & Vibrant",
+      "rightTitle": "Established & Large",
+      "leftDesc": "Bun is newer, rapidly evolving, and gaining strong community traction.",
+      "rightDesc": "Node.js has a massive, mature community and a vast library of established packages.",
+      "leftIcon": "Activity",
+      "rightIcon": "Shield",
+      "leftVisualText": "New Wave",
+      "rightVisualText": "Legacy"
     }
   ]
 }

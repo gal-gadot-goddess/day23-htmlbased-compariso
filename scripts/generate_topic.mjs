@@ -1,5 +1,4 @@
 import fs from 'fs';
-import https from 'https';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
@@ -25,108 +24,313 @@ function getHistory() {
 function saveToHistory(topic) {
     const history = getHistory();
     history.push(topic);
-    fs.writeFileSync(HISTORY_FILE, JSON.stringify(history.slice(-50), null, 2));
+    // Keep last 150 entries to prevent repetitive topics
+    fs.writeFileSync(HISTORY_FILE, JSON.stringify(history.slice(-150), null, 2));
 }
 
-const PROMPT = `
-Generate a valid JSON object for a technical comparison visual (Reel format).
+const curatedFallbacks = [
+    {
+        topLabel: "BACKEND ARCHITECTURE",
+        mainTitle: { left: "GraphQL", right: "REST API", vs: "vs" },
+        leftSub: "Flexible Queries",
+        rightSub: "Standard Endpoints",
+        leftColor: "#E535AB",
+        rightColor: "#009688",
+        badge: "THE 7 CORE DIFFERENCES",
+        differences: [
+            {
+                title: "1. DATA FETCHING",
+                leftTitle: "Single Request",
+                rightTitle: "Multiple Endpoints",
+                leftDesc: "Client asks for exact data needed in one single HTTP request.",
+                rightDesc: "Requires multiple roundtrips to different endpoints for related resources.",
+                leftIcon: "Zap",
+                rightIcon: "Layers",
+                leftVisualText: "Precise Query",
+                rightVisualText: "Endpoint Chaining"
+            },
+            {
+                title: "2. OVERFETCHING",
+                leftTitle: "Zero Overfetching",
+                rightTitle: "Fixed Payloads",
+                leftDesc: "Never downloads unwanted attributes or nested fields.",
+                rightDesc: "Server determines payload size, frequently transferring unnecessary data.",
+                leftIcon: "Activity",
+                rightIcon: "HardDrive",
+                leftVisualText: "Exact Payload",
+                rightVisualText: "Heavy Payload"
+            },
+            {
+                title: "3. SCHEMA & TYPING",
+                leftTitle: "Strict Schema",
+                rightTitle: "Loose Contracts",
+                leftDesc: "Strongly typed schema guarantees contract safety between frontend and backend.",
+                rightDesc: "Relies on OpenAPI or manual docs without runtime type enforcement.",
+                leftIcon: "Code",
+                rightIcon: "FileCode",
+                leftVisualText: "Strict Types",
+                rightVisualText: "Manual Specs"
+            },
+            {
+                title: "4. CACHING",
+                leftTitle: "Client-Side Cache",
+                rightTitle: "Native HTTP Caching",
+                leftDesc: "Complex POST queries bypass standard HTTP/CDN edge caching layers.",
+                rightDesc: "Leverages standard HTTP status codes, ETags, and edge CDN caches natively.",
+                leftIcon: "Cpu",
+                rightIcon: "Globe",
+                leftVisualText: "Complex Cache",
+                rightVisualText: "Edge Friendly"
+            },
+            {
+                title: "5. VERSIONING",
+                leftTitle: "Continuous Evolution",
+                rightTitle: "URI Versioning",
+                leftDesc: "Deprecate fields at granular level without creating breaking API revisions.",
+                rightDesc: "Requires major version routing like /v1, /v2 for breaking structural updates.",
+                leftIcon: "ArrowRightLeft",
+                rightIcon: "Terminal",
+                leftVisualText: "Field Deprecation",
+                rightVisualText: "v1 / v2 Break"
+            },
+            {
+                title: "6. REALTIME UPDATES",
+                leftTitle: "Built-in Subscriptions",
+                rightTitle: "WebSockets Addon",
+                leftDesc: "Native WebSocket subscriptions stream live events out of the box.",
+                rightDesc: "Requires auxiliary protocols like WebSockets or SSE architecture.",
+                leftIcon: "Network",
+                rightIcon: "Server",
+                leftVisualText: "Live Stream",
+                rightVisualText: "External Socket"
+            },
+            {
+                title: "7. COMPLEXITY",
+                leftTitle: "Higher Overhead",
+                rightTitle: "Simple & Universal",
+                leftDesc: "Requires query parser, resolver optimization, and N+1 query protection.",
+                rightDesc: "Straightforward controllers, universally understood across all tech stacks.",
+                leftIcon: "Shield",
+                rightIcon: "Box",
+                leftVisualText: "Query Resolvers",
+                rightVisualText: "Standard Routes"
+            }
+        ]
+    },
+    {
+        topLabel: "CONTAINER ORCHESTRATION",
+        mainTitle: { left: "Kubernetes", right: "Docker Swarm", vs: "vs" },
+        leftSub: "Enterprise Scale",
+        rightSub: "Lightweight Simplicity",
+        leftColor: "#326CE5",
+        rightColor: "#2496ED",
+        badge: "THE 7 CORE DIFFERENCES",
+        differences: [
+            {
+                title: "1. ARCHITECTURE",
+                leftTitle: "Distributed Cluster",
+                rightTitle: "Built-in Engine",
+                leftDesc: "Modular control plane with etcd, scheduler, kubelet, and controller manager.",
+                rightDesc: "Directly embedded inside Docker Engine CLI with zero extra installation.",
+                leftIcon: "Network",
+                rightIcon: "Box",
+                leftVisualText: "Modular Control",
+                rightVisualText: "Native Daemon"
+            },
+            {
+                title: "2. LEARNING CURVE",
+                leftTitle: "Steep Mastery",
+                rightTitle: "Instant Adoption",
+                leftDesc: "Requires deep understanding of CRDs, pods, ingress, and manifests.",
+                rightDesc: "Uses familiar docker-compose syntax and standard docker commands.",
+                leftIcon: "Cpu",
+                rightIcon: "Zap",
+                leftVisualText: "High Complexity",
+                rightVisualText: "Fast Setup"
+            },
+            {
+                title: "3. AUTO-SCALING",
+                leftTitle: "HPA & VPA Native",
+                rightTitle: "Manual / Scripted",
+                leftDesc: "Automatically scales pods and underlying cluster nodes dynamically under load.",
+                rightDesc: "Scaling requires manual replica commands or third-party monitoring webhooks.",
+                leftIcon: "Activity",
+                rightIcon: "Settings",
+                leftVisualText: "Autonomous",
+                rightVisualText: "Manual Replicas"
+            },
+            {
+                title: "4. ECOSYSTEM",
+                leftTitle: "Industry Standard",
+                rightTitle: "Niche Simplicity",
+                leftDesc: "Massive CNCF community, Helm charts, operators, and cloud managed services.",
+                rightDesc: "Smaller ecosystem, perfect for small internal tools or single-team setups.",
+                leftIcon: "Globe",
+                rightIcon: "Shield",
+                leftVisualText: "Cloud Native",
+                rightVisualText: "Single Engine"
+            },
+            {
+                title: "5. HIGH AVAILABILITY",
+                leftTitle: "Self-Healing Pods",
+                rightTitle: "Basic Recovery",
+                leftDesc: "Sophisticated health probes, automatic rescheduling, and rolling upgrades.",
+                rightDesc: "Restarts crashed tasks across surviving nodes in the swarm overlay.",
+                leftIcon: "Server",
+                rightIcon: "HardDrive",
+                leftVisualText: "Deep Healing",
+                rightVisualText: "Task Restart"
+            },
+            {
+                title: "6. NETWORKING",
+                leftTitle: "CNI Plugins",
+                rightTitle: "Overlay Mesh",
+                leftDesc: "Rich networking choices: Cilium, Calico, Flannel, and service meshes.",
+                rightDesc: "Built-in ingress routing mesh and multi-host overlay networks.",
+                leftIcon: "Share2",
+                rightIcon: "Lock",
+                leftVisualText: "eBPF / CNI",
+                rightVisualText: "Overlay Mesh"
+            },
+            {
+                title: "7. RESOURCE OVERHEAD",
+                leftTitle: "Heavy Footprint",
+                rightTitle: "Ultra Lightweight",
+                leftDesc: "Consumes significant RAM and CPU merely to run the control plane.",
+                rightDesc: "Negligible memory overhead, running smoothly on modest VPS servers.",
+                leftIcon: "Database",
+                rightIcon: "Unlock",
+                leftVisualText: "Resource Heavy",
+                rightVisualText: "Minimal RAM"
+            }
+        ]
+    }
+];
+
+async function fetchWithTimeout(url, options, timeoutMs = 25000) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+        const response = await fetch(url, { ...options, signal: controller.signal });
+        clearTimeout(timer);
+        return response;
+    } catch (err) {
+        clearTimeout(timer);
+        throw err;
+    }
+}
+
+async function generateWithPollinations() {
+    const history = getHistory();
+    const recentHistoryStr = history.slice(-40).join(', ');
+
+    const prompt = `
+Generate a valid JSON object for a technical comparison visual (Reel/Short format).
 The comparison should be between two technologies, architectures, or concepts.
-Topic MUST BE UNIQUE and different from: ${getHistory().join(', ')}.
-Choose highly engaging tech topics (e.g., "Tailwind vs CSS", "Next.js vs Remix", "Kubernetes vs Docker Swarm", "Kafka vs RabbitMQ", "PyTorch vs TensorFlow").
+Topic MUST BE FRESH and COMPLETELY DIFFERENT from these previously covered topics:
+${recentHistoryStr}
 
-Return ONLY raw JSON. No markdown. No reasoning.
+Pick from popular high-engagement areas:
+- Modern Web/Frontend (e.g. Next.js App Router vs Pages Router, Bun vs Node.js, Svelte vs React, Tailwind vs CSS Modules, Zustand vs Redux Toolkit)
+- Backend & Distributed Systems (e.g. gRPC vs REST, Kafka vs RabbitMQ, WebSockets vs Server-Sent Events, Redis vs Memcached)
+- Cloud & DevOps (e.g. Terraform vs Pulumi, Serverless vs Dedicated Containers, AWS Lambda vs Cloudflare Workers)
+- Databases & Data Engineering (e.g. ClickHouse vs Snowflake, DynamoDB vs MongoDB, OLAP vs OLTP)
+- AI & Infrastructure (e.g. PyTorch vs JAX, Vector DB vs Relational Search)
 
-Structure:
+Return ONLY valid JSON. No markdown code blocks, no explanation, no backticks.
+
+JSON Schema:
 {
-    "topLabel": "UPPERCASE CATEGORY (e.g. INFRASTRUCTURE)",
+    "topLabel": "UPPERCASE CATEGORY (e.g. DISTRIBUTED SYSTEMS)",
     "mainTitle": {
         "left": "TECH 1",
         "right": "TECH 2",
         "vs": "vs"
     },
-    "leftSub": "Short description (max 3 words)",
-    "rightSub": "Short description (max 3 words)",
-    "leftColor": "A vibrant hex color",
-    "rightColor": "A vibrant contrasting hex color",
+    "leftSub": "Max 3 words tagline",
+    "rightSub": "Max 3 words tagline",
+    "leftColor": "#hexColor (vibrant, e.g. #00d2ff, #f43f5e, #10b981, #6366f1)",
+    "rightColor": "#hexColor (vibrant contrasting color, e.g. #ff5c00, #a855f7, #eab308)",
     "badge": "THE 7 CORE DIFFERENCES",
     "differences": [
         {
-            "title": "1. CATEGORY NAME",
+            "title": "1. KEY AREA",
             "leftTitle": "Point for Tech 1 (max 3 words)",
             "rightTitle": "Point for Tech 2 (max 3 words)",
-            "leftDesc": "Concise explanation (max 15 words)",
-            "rightDesc": "Concise explanation (max 15 words)",
+            "leftDesc": "Concise high-impact explanation (10 to 18 words)",
+            "rightDesc": "Concise high-impact explanation (10 to 18 words)",
             "leftIcon": "Choose from: Database, Cpu, Network, Lock, Unlock, Zap, Server, Code, Globe, Box, Layers, Shield, Activity, ArrowRightLeft, FileCode, Search, Settings, HardDrive, Layout, Share2, Terminal",
             "rightIcon": "Choose from the same list",
-            "leftVisualText": "Visual label",
-            "rightVisualText": "Visual label"
+            "leftVisualText": "Visual badge (1-2 words)",
+            "rightVisualText": "Visual badge (1-2 words)"
         }
     ]
 }
 
 Rules:
-1. Total EXACTLY 7 differences for more depth.
-2. Ensure high contrast against black background.
-3. Use a unique topic every time.
+1. Provide EXACTLY 7 differences.
+2. High contrast against dark background.
+3. Concise, punchy developer language.
 `;
 
-async function fetchTopic() {
-    console.log(`🚀 Generating New Topic using ${MODEL}...`);
+    console.log(`🚀 Requesting new topic from Pollinations (${MODEL})...`);
+    const headers = { 'Content-Type': 'application/json' };
+    if (API_KEY) headers['Authorization'] = `Bearer ${API_KEY}`;
 
-    const postData = JSON.stringify({
-        model: MODEL,
-        messages: [
-            { role: "system", content: "You are a senior developer creating educational tech content for social media." },
-            { role: "user", content: PROMPT }
-        ],
-        jsonMode: true
-    });
-
-    const options = {
-        hostname: 'gen.pollinations.ai',
-        path: '/v1/chat/completions',
+    const res = await fetchWithTimeout('https://gen.pollinations.ai/v1/chat/completions', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${API_KEY}`,
-            'Content-Length': Buffer.byteLength(postData)
-        }
-    };
+        headers,
+        body: JSON.stringify({
+            model: MODEL,
+            messages: [
+                { role: "system", content: "You are an elite principal engineer and tech creator generating educational comparisons." },
+                { role: "user", content: prompt }
+            ],
+            jsonMode: true,
+            seed: Math.floor(Math.random() * 1000000)
+        })
+    }, 25000);
 
-    const req = https.request(options, (res) => {
-        let data = '';
-        res.on('data', (chunk) => { data += chunk; });
-        res.on('end', () => {
-            try {
-                const response = JSON.parse(data);
-                let content = response.choices?.[0]?.message?.content;
+    if (!res.ok) {
+        throw new Error(`Pollinations API HTTP ${res.status}: ${await res.text()}`);
+    }
 
-                if (!content) throw new Error('No content in response');
+    const data = await res.json();
+    let content = data.choices?.[0]?.message?.content;
+    if (!content) throw new Error("Empty AI response content");
 
-                const jsonMatch = content.match(/```json\s*(\{[\s\S]*?\})\s*```/) || content.match(/\{[\s\S]*\}/);
-                const jsonStr = jsonMatch ? (jsonMatch[1] || jsonMatch[0]) : content;
-                
-                const topic = JSON.parse(jsonStr);
-                fs.writeFileSync(OUTPUT_FILE, JSON.stringify(topic, null, 2));
-                
-                const topicName = `${topic.mainTitle.left} vs ${topic.mainTitle.right}`;
-                saveToHistory(topicName);
-                
-                console.log(`✅ Successfully generated: ${topicName}`);
-            } catch (e) {
-                console.error('❌ Generation Error:', e.message);
-                process.exit(1);
-            }
-        });
-    });
+    const jsonMatch = content.match(/```json\s*(\{[\s\S]*?\})\s*```/) || content.match(/\{[\s\S]*\}/);
+    const jsonStr = jsonMatch ? (jsonMatch[1] || jsonMatch[0]) : content;
+    const topic = JSON.parse(jsonStr.trim());
 
-    req.on('error', (e) => {
-        console.error('❌ Request Error:', e);
-        process.exit(1);
-    });
+    if (!topic.mainTitle?.left || !topic.mainTitle?.right || !Array.isArray(topic.differences) || topic.differences.length < 5) {
+        throw new Error("Parsed JSON structure does not match expected comparison schema");
+    }
 
-    req.write(postData);
-    req.end();
+    return topic;
 }
 
-fetchTopic();
+async function main() {
+    let topic = null;
+
+    try {
+        topic = await generateWithPollinations();
+    } catch (err) {
+        console.warn(`⚠️ AI generation error: ${err.message}. Selecting curated fallback...`);
+        const history = getHistory();
+        const available = curatedFallbacks.filter(f => {
+            const name = `${f.mainTitle.left} vs ${f.mainTitle.right}`;
+            return !history.includes(name);
+        });
+        topic = (available.length > 0 ? available : curatedFallbacks)[Math.floor(Math.random() * curatedFallbacks.length)];
+    }
+
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify(topic, null, 2));
+    const topicName = `${topic.mainTitle.left} vs ${topic.mainTitle.right}`;
+    saveToHistory(topicName);
+
+    console.log(`✅ Successfully generated and saved: ${topicName}`);
+    process.exit(0);
+}
+
+main();
