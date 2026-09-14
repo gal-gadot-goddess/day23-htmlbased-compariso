@@ -153,16 +153,7 @@ export default function App() {
                             boxShadow: `0 20px 50px rgba(0,0,0,0.6), 0 0 50px ${leftColor}22`
                         }}
                     >
-                        <div className="card-visual-zone">
-                            <AnimatePresence mode="wait">
-                                <ModernVisual
-                                    key={`left-${step}`}
-                                    side="left"
-                                    data={currentDiff}
-                                    color={leftColor}
-                                />
-                            </AnimatePresence>
-                        </div>
+                        {/* 1. TOP: Explanation Context & Key Points (Always Visible, Non-collapsing) */}
                         <div className="card-explanation-box">
                             <h3 className="point-title" style={{ color: leftColor }}>
                                 {currentDiff.leftTitle}
@@ -170,6 +161,16 @@ export default function App() {
                             <p className="point-description">
                                 {currentDiff.leftDesc}
                             </p>
+                        </div>
+
+                        {/* 2. CENTER / BOTTOM: Animated Visual & Badge */}
+                        <div className="card-visual-zone">
+                            <ModernVisual
+                                key={`left-${step}`}
+                                side="left"
+                                data={currentDiff}
+                                color={leftColor}
+                            />
                         </div>
                     </div>
                 </div>
@@ -190,16 +191,7 @@ export default function App() {
                             boxShadow: `0 20px 50px rgba(0,0,0,0.6), 0 0 50px ${rightColor}22`
                         }}
                     >
-                        <div className="card-visual-zone">
-                            <AnimatePresence mode="wait">
-                                <ModernVisual
-                                    key={`right-${step}`}
-                                    side="right"
-                                    data={currentDiff}
-                                    color={rightColor}
-                                />
-                            </AnimatePresence>
-                        </div>
+                        {/* 1. TOP: Explanation Context & Key Points (Always Visible, Non-collapsing) */}
                         <div className="card-explanation-box">
                             <h3 className="point-title" style={{ color: rightColor }}>
                                 {currentDiff.rightTitle}
@@ -207,6 +199,16 @@ export default function App() {
                             <p className="point-description">
                                 {currentDiff.rightDesc}
                             </p>
+                        </div>
+
+                        {/* 2. CENTER / BOTTOM: Animated Visual & Badge */}
+                        <div className="card-visual-zone">
+                            <ModernVisual
+                                key={`right-${step}`}
+                                side="right"
+                                data={currentDiff}
+                                color={rightColor}
+                            />
                         </div>
                     </div>
                 </div>
@@ -237,10 +239,9 @@ const ModernVisual: React.FC<ModernVisualProps> = ({ side, data, color }) => {
 
     return (
         <motion.div 
-            initial={{ opacity: 0, scale: 0.82, y: 18 }} 
-            animate={{ opacity: 1, scale: 1, y: 0 }} 
-            exit={{ opacity: 0, scale: 0.82, y: -18 }} 
-            transition={{ duration: 0.35, ease: 'easeOut' }}
+            initial={{ opacity: 0, scale: 0.88 }} 
+            animate={{ opacity: 1, scale: 1 }} 
+            transition={{ duration: 0.25, ease: 'easeOut' }}
             style={{ 
                 display: 'flex', 
                 flexDirection: 'column', 
@@ -248,7 +249,7 @@ const ModernVisual: React.FC<ModernVisualProps> = ({ side, data, color }) => {
                 justifyContent: 'center',
                 height: '100%',
                 width: '100%',
-                gap: '28px'
+                gap: '26px'
             }}
         >
             <div 
@@ -263,14 +264,11 @@ const ModernVisual: React.FC<ModernVisualProps> = ({ side, data, color }) => {
                     className="icon-ring-pulse"
                     style={{ borderColor: color }}
                 />
-                <IconComponent size={105} color={color} strokeWidth={2.4} />
+                <IconComponent size={120} color={color} strokeWidth={2.4} />
             </div>
 
             {badgeText && (
-                <motion.div 
-                    initial={{ y: 12, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.15, duration: 0.3 }}
+                <div 
                     className="badge-tag-pill"
                     style={{ 
                         color: '#ffffff',
@@ -280,7 +278,7 @@ const ModernVisual: React.FC<ModernVisualProps> = ({ side, data, color }) => {
                     }}
                 >
                     {badgeText}
-                </motion.div>
+                </div>
             )}
         </motion.div>
     );

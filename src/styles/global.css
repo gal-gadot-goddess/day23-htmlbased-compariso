@@ -35,7 +35,7 @@ body {
     color: #fff;
     display: flex;
     flex-direction: column;
-    padding: 130px 64px 80px;
+    padding: 85px 54px 75px;
     box-sizing: border-box;
     overflow: hidden;
     font-family: var(--font-primary);
@@ -48,7 +48,7 @@ body {
     filter: blur(140px);
     pointer-events: none;
     z-index: 0;
-    opacity: 0.18;
+    opacity: 0.22;
     transition: background-color 1.2s ease;
 }
 
@@ -83,7 +83,7 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
     width: 100%;
 }
 
@@ -91,7 +91,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
 }
 
 .top-label-pill {
@@ -99,22 +99,22 @@ body {
     align-items: center;
     gap: 10px;
     font-family: var(--font-mono);
-    font-size: 20px;
-    letter-spacing: 5px;
+    font-size: 18px;
+    letter-spacing: 4px;
     text-transform: uppercase;
     font-weight: 700;
     color: #94a3b8;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 8px 24px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 7px 22px;
     border-radius: 100px;
     backdrop-filter: blur(12px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .pulse-dot {
-    width: 10px;
-    height: 10px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
     background: #10b981;
     box-shadow: 0 0 12px #10b981;
@@ -130,16 +130,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 22px;
-    margin-bottom: 20px;
+    gap: 18px;
+    margin-bottom: 16px;
     flex-wrap: wrap;
 }
 
 .title-tech {
     font-family: var(--font-display);
-    font-size: 64px;
+    font-size: 60px;
     font-weight: 900;
-    letter-spacing: -1.5px;
+    letter-spacing: -1.2px;
     text-transform: uppercase;
     line-height: 1.05;
     text-shadow: 0 0 40px currentColor;
@@ -149,12 +149,12 @@ body {
 
 .vs-badge {
     font-family: var(--font-mono);
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 900;
-    color: #64748b;
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 6px 18px;
+    color: #94a3b8;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 5px 16px;
     border-radius: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -169,12 +169,12 @@ body {
 .differences-badge {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
     color: #090d16;
-    padding: 10px 32px;
+    padding: 8px 28px;
     border-radius: 50px;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 800;
     letter-spacing: 1.5px;
     box-shadow: 0 8px 30px rgba(255, 255, 255, 0.15), 0 2px 8px rgba(0, 0, 0, 0.4);
@@ -185,17 +185,17 @@ body {
 .timeline-section {
     position: relative;
     z-index: 2;
-    margin-bottom: 34px;
-    padding: 0 20px;
+    margin-bottom: 24px;
+    padding: 0 10px;
 }
 
 .timeline-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     font-family: var(--font-mono);
-    font-size: 16px;
+    font-size: 15px;
     color: #94a3b8;
     letter-spacing: 2px;
 }
@@ -203,11 +203,11 @@ body {
 .timeline-progress-rail {
     position: relative;
     width: 100%;
-    height: 8px;
+    height: 7px;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     overflow: hidden;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .timeline-progress-fill {
@@ -227,15 +227,15 @@ body {
 
 .timeline-step {
     flex: 1;
-    height: 48px;
+    height: 44px;
     background: rgba(15, 23, 42, 0.6);
     border: 1.5px solid rgba(255, 255, 255, 0.08);
-    border-radius: 14px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--font-mono);
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
     color: #475569;
     transition: all 0.3s ease;
@@ -262,33 +262,33 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 }
 
 .category-banner-inner {
     display: inline-flex;
     align-items: center;
-    gap: 14px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 16px;
-    padding: 10px 28px;
+    padding: 8px 24px;
     backdrop-filter: blur(10px);
 }
 
 .category-index {
     font-family: var(--font-mono);
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 800;
     color: #38bdf8;
     background: rgba(56, 189, 248, 0.15);
-    padding: 3px 12px;
+    padding: 3px 10px;
     border-radius: 8px;
 }
 
 .category-title {
     font-family: var(--font-display);
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 800;
     letter-spacing: 1px;
     color: #f1f5f9;
@@ -300,9 +300,9 @@ body {
     position: relative;
     z-index: 2;
     display: flex;
-    gap: 28px;
+    gap: 24px;
     flex: 1;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     width: 100%;
     min-height: 0;
 }
@@ -317,12 +317,12 @@ body {
 
 .card-header-group {
     text-align: center;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
 .card-hero-name {
     font-family: var(--font-display);
-    font-size: 42px;
+    font-size: 38px;
     font-weight: 900;
     letter-spacing: -0.5px;
     margin-bottom: 4px;
@@ -333,7 +333,7 @@ body {
 
 .card-hero-tagline {
     font-family: var(--font-mono);
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -345,9 +345,9 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background: rgba(13, 17, 27, 0.75);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 36px;
+    background: rgba(13, 17, 27, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    border-radius: 34px;
     padding: 24px;
     overflow: hidden;
     backdrop-filter: blur(20px);
@@ -356,6 +356,39 @@ body {
     min-height: 0;
 }
 
+/* 1. TOP: Explanation Box directly visible */
+.card-explanation-box {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 22px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+    min-height: 200px;
+    margin-bottom: 18px;
+}
+
+.point-title {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    word-break: break-word;
+}
+
+.point-description {
+    font-family: var(--font-mono);
+    font-size: 19px;
+    line-height: 1.45;
+    color: #e2e8f0;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+/* 2. CENTER / BOTTOM: Visual Zone */
 .card-visual-zone {
     flex: 1;
     display: flex;
@@ -368,9 +401,9 @@ body {
 /* Visual Icon Glow Frame */
 .icon-glow-frame {
     position: relative;
-    width: 170px;
-    height: 170px;
-    border-radius: 34px;
+    width: 190px;
+    height: 190px;
+    border-radius: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -380,9 +413,9 @@ body {
 .icon-ring-pulse {
     position: absolute;
     inset: -6px;
-    border-radius: 40px;
+    border-radius: 42px;
     border: 2px dashed;
-    opacity: 0.35;
+    opacity: 0.5;
     animation: rotateSlow 20s linear infinite;
 }
 
@@ -396,44 +429,11 @@ body {
     font-size: 20px;
     font-weight: 800;
     letter-spacing: 1px;
-    padding: 10px 22px;
+    padding: 10px 24px;
     border-radius: 12px;
     text-align: center;
-    background: rgba(0, 0, 0, 0.75);
     border: 1px solid;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
     max-width: 90%;
-    word-break: break-word;
-}
-
-/* Card Explanation Box */
-.card-explanation-box {
-    background: rgba(7, 10, 18, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
-    min-height: 210px;
-}
-
-.point-title {
-    font-family: var(--font-display);
-    font-size: 30px;
-    font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 12px;
-    word-break: break-word;
-}
-
-.point-description {
-    font-family: var(--font-mono);
-    font-size: 21px;
-    line-height: 1.45;
-    color: #cbd5e1;
-    font-weight: 500;
     word-break: break-word;
 }
 
@@ -446,7 +446,7 @@ body {
     align-items: center;
     gap: 12px;
     font-family: var(--font-mono);
-    font-size: 17px;
+    font-size: 16px;
     color: #64748b;
     letter-spacing: 2px;
     text-transform: uppercase;

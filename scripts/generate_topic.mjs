@@ -12,6 +12,26 @@ const MODEL = process.env.AI_MODEL || 'gemini-fast';
 const OUTPUT_FILE = path.join(__dirname, '../src/data/current_topic.json');
 const HISTORY_FILE = path.join(__dirname, '../topic_history.json');
 
+// Vibrant, contrasting color palettes that look cinematic on dark background
+const COLOR_PAIRS = [
+    { left: "#00d2ff", right: "#ff5c00" }, // Electric Cyan vs Neon Tangerine
+    { left: "#6366f1", right: "#10b981" }, // Indigo Violet vs Emerald Green
+    { left: "#f43f5e", right: "#38bdf8" }, // Hot Coral vs Sky Blue
+    { left: "#a855f7", right: "#eab308" }, // Purple Neon vs Amber Gold
+    { left: "#ec4899", right: "#06b6d4" }, // Pink Flamingo vs Bright Cyan
+    { left: "#3b82f6", right: "#f97316" }, // Royal Blue vs Bright Orange
+    { left: "#14b8a6", right: "#d946ef" }, // Teal vs Fuchsia
+    { left: "#84cc16", right: "#8b5cf6" }, // Lime Green vs Electric Purple
+    { left: "#22c55e", right: "#ef4444" }, // Vibrant Green vs Crimson Red
+    { left: "#0ea5e9", right: "#f59e0b" }, // Ocean Blue vs Warm Amber
+    { left: "#e11d48", right: "#2dd4bf" }, // Rose vs Mint
+    { left: "#4f46e5", right: "#fbbf24" }  // Deep Indigo vs Cyber Yellow
+];
+
+function getRandomColorPair() {
+    return COLOR_PAIRS[Math.floor(Math.random() * COLOR_PAIRS.length)];
+}
+
 function getHistory() {
     if (!fs.existsSync(HISTORY_FILE)) return [];
     try {
@@ -223,6 +243,7 @@ async function fetchWithTimeout(url, options, timeoutMs = 25000) {
 async function generateWithPollinations() {
     const history = getHistory();
     const recentHistoryStr = history.slice(-40).join(', ');
+    const randomColors = getRandomColorPair();
 
     const prompt = `
 Generate a valid JSON object for a technical comparison visual (Reel/Short format).
@@ -237,6 +258,9 @@ Pick from popular high-engagement areas:
 - Databases & Data Engineering (e.g. ClickHouse vs Snowflake, DynamoDB vs MongoDB, OLAP vs OLTP)
 - AI & Infrastructure (e.g. PyTorch vs JAX, Vector DB vs Relational Search)
 
+Color Strategy:
+Assign distinct, vibrant contrasting hex colors for leftColor and rightColor (e.g. "${randomColors.left}" and "${randomColors.right}" or other vibrant cyber neon colors like cyan, coral, emerald, indigo, amber, fuchsia, turquoise). NEVER use dull, washed-out or identical colors.
+
 Return ONLY valid JSON. No markdown code blocks, no explanation, no backticks.
 
 JSON Schema:
@@ -249,8 +273,8 @@ JSON Schema:
     },
     "leftSub": "Max 3 words tagline",
     "rightSub": "Max 3 words tagline",
-    "leftColor": "#hexColor (vibrant, e.g. #00d2ff, #f43f5e, #10b981, #6366f1)",
-    "rightColor": "#hexColor (vibrant contrasting color, e.g. #ff5c00, #a855f7, #eab308)",
+    "leftColor": "${randomColors.left}",
+    "rightColor": "${randomColors.right}",
     "badge": "THE 7 CORE DIFFERENCES",
     "differences": [
         {
@@ -307,6 +331,12 @@ Rules:
         throw new Error("Parsed JSON structure does not match expected comparison schema");
     }
 
+    // Ensure distinct vibrant colors if AI returned none or identical colors
+    if (!topic.leftColor || !topic.rightColor || topic.leftColor.toLowerCase() === topic.rightColor.toLowerCase()) {
+        topic.leftColor = randomColors.left;
+        topic.rightColor = randomColors.right;
+    }
+
     return topic;
 }
 
@@ -322,14 +352,19 @@ async function main() {
             const name = `${f.mainTitle.left} vs ${f.mainTitle.right}`;
             return !history.includes(name);
         });
-        topic = (available.length > 0 ? available : curatedFallbacks)[Math.floor(Math.random() * curatedFallbacks.length)];
+        const selectedFallback = (available.length > 0 ? available : curatedFallbacks)[Math.floor(Math.random() * curatedFallbacks.length)];
+        topic = JSON.parse(JSON.stringify(selectedFallback));
+        // Rotate colors dynamically even on fallback
+        const randomColors = getRandomColorPair();
+        topic.leftColor = randomColors.left;
+        topic.rightColor = randomColors.right;
     }
 
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(topic, null, 2));
     const topicName = `${topic.mainTitle.left} vs ${topic.mainTitle.right}`;
     saveToHistory(topicName);
 
-    console.log(`✅ Successfully generated and saved: ${topicName}`);
+    console.log(`✅ Successfully generated and saved: ${topicName} (Colors: ${topic.leftColor} vs ${topic.rightColor})`);
     process.exit(0);
 }
 
