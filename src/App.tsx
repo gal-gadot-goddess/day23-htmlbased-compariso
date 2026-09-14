@@ -19,8 +19,8 @@ export default function App() {
     const [step, setStep] = useState(0);
     const { topLabel, mainTitle, badge, differences } = topicData;
 
-    const leftColor = topicData.leftColor || '#38bdf8';
-    const rightColor = topicData.rightColor || '#f43f5e';
+    const leftColor = topicData.leftColor || '#00d2ff';
+    const rightColor = topicData.rightColor || '#ff5c00';
 
     const safeDifferences = (differences && differences.length > 0) ? differences : [
         {
@@ -39,18 +39,11 @@ export default function App() {
     useEffect(() => {
         const interval = setInterval(() => {
             setStep(s => (s + 1) % safeDifferences.length);
-        }, 2500); 
+        }, 3000); 
         return () => clearInterval(interval);
     }, [safeDifferences.length]);
 
     const currentDiff = safeDifferences[step] || safeDifferences[0];
-
-    // Clean category title
-    const cleanCategoryTitle = (currentDiff.title || `DIFFERENCE #${step + 1}`)
-        .replace(/^\d+[\.\s\-:]*/, '')
-        .trim();
-
-    const progressPercentage = ((step + 1) / safeDifferences.length) * 100;
 
     return (
         <div className="app-wrapper">
@@ -65,183 +58,164 @@ export default function App() {
             />
             <div className="bg-grid-overlay" />
 
-            {/* HEADER */}
+            {/* TOP HEADER */}
             <header className="top-header">
-                <div className="top-tag-container">
-                    <div className="top-label-pill">
-                        <span className="pulse-dot" />
-                        <span>{topLabel || 'TECH SHOWDOWN'}</span>
-                    </div>
-                </div>
-
-                <div className="main-title-container">
+                <p className="top-label">{topLabel || 'TECH SHOWDOWN'}</p>
+                <div className="main-title">
                     <span 
-                        className="title-tech" 
+                        className="text-left-topic" 
                         style={{ 
-                            color: leftColor, 
-                            filter: `drop-shadow(0 0 25px ${leftColor}77)` 
+                            color: leftColor,
+                            textShadow: `0 0 35px ${leftColor}66`
                         }}
                     >
                         {mainTitle.left}
                     </span>
-                    <span className="vs-badge">VS</span>
+                    <span className="text-vs">{mainTitle.vs || 'VS'}</span>
                     <span 
-                        className="title-tech" 
+                        className="text-right-topic" 
                         style={{ 
                             color: rightColor,
-                            filter: `drop-shadow(0 0 25px ${rightColor}77)` 
+                            textShadow: `0 0 35px ${rightColor}66`
                         }}
                     >
                         {mainTitle.right}
                     </span>
                 </div>
-
-                <div className="badge-row">
-                    <div className="differences-badge">
-                        <span>⚡ {badge || 'THE 7 CORE DIFFERENCES'}</span>
-                    </div>
+                <div className="differences-badge">
+                    <span>⚡ {badge || 'THE 7 CORE DIFFERENCES'}</span>
                 </div>
             </header>
 
-            {/* TIMELINE PROGRESS */}
-            <section className="timeline-section">
-                <div className="timeline-header">
-                    <span>PROGRESS</span>
-                    <span>{step + 1} OF {safeDifferences.length}</span>
-                </div>
-                <div className="timeline-progress-rail">
+            {/* TIMELINE */}
+            <div className="timeline">
+                <div className="timeline-track"></div>
+                {safeDifferences.map((_, i) => (
                     <div 
-                        className="timeline-progress-fill" 
-                        style={{ width: `${progressPercentage}%` }} 
-                    />
-                </div>
-                <div className="timeline-steps">
-                    {safeDifferences.map((_, i) => (
-                        <div 
-                            key={i} 
-                            className={`timeline-step ${i === step ? 'current' : (i < step ? 'active' : '')}`}
-                        >
-                            {i + 1}
-                        </div>
-                    ))}
-                </div>
-            </section>
-
-            {/* CATEGORY BANNER */}
-            <div className="category-banner">
-                <div className="category-banner-inner">
-                    <span className="category-index">#{step + 1}</span>
-                    <span className="category-title">{cleanCategoryTitle}</span>
-                </div>
+                        key={i} 
+                        className={`timeline-step ${i === step ? 'current' : (i < step ? 'active' : '')}`}
+                        style={{
+                            borderColor: i === step ? '#ffffff' : (i < step ? 'rgba(255,255,255,0.45)' : 'rgba(255,255,255,0.1)'),
+                            color: i === step ? '#000000' : (i < step ? '#ffffff' : '#666666'),
+                            background: i === step ? '#ffffff' : (i < step ? 'rgba(255,255,255,0.08)' : 'rgba(10,10,10,0.6)')
+                        }}
+                    >
+                        {i + 1}
+                    </div>
+                ))}
             </div>
 
-            {/* COMPARISON CARDS */}
+            {/* MAIN COMPARISON */}
             <main className="cards-grid">
                 {/* LEFT CARD */}
                 <div className="card-column">
-                    <div className="card-header-group">
-                        <h2 className="card-hero-name" style={{ color: leftColor }}>
+                    <div className="card-title-group">
+                        <h2 className="card-hero-title" style={{ color: leftColor }}>
                             {mainTitle.left}
                         </h2>
-                        <p className="card-hero-tagline">{topicData.leftSub || 'First Paradigm'}</p>
+                        <p className="card-sub">{topicData.leftSub || 'Standard'}</p>
                     </div>
 
                     <div 
-                        className="card-glass" 
+                        className="comparison-card" 
                         style={{ 
-                            borderColor: `${leftColor}55`,
-                            boxShadow: `0 20px 50px rgba(0,0,0,0.6), 0 0 50px ${leftColor}22`
+                            borderColor: `${leftColor}44`,
+                            boxShadow: `0 20px 50px rgba(0,0,0,0.7), 0 0 45px ${leftColor}18`
                         }}
                     >
-                        {/* 1. TOP: Explanation Context & Key Points (Always Visible, Non-collapsing) */}
-                        <div className="card-explanation-box">
-                            <h3 className="point-title" style={{ color: leftColor }}>
-                                {currentDiff.leftTitle}
-                            </h3>
-                            <p className="point-description">
-                                {currentDiff.leftDesc}
-                            </p>
+                        {/* Top: Icon & Visual Badge */}
+                        <div className="viz-content">
+                            <AnimatePresence mode="wait">
+                                <GenericVisual 
+                                    key={`left-${step}`} 
+                                    side="left" 
+                                    step={step} 
+                                    data={currentDiff} 
+                                    color={leftColor} 
+                                />
+                            </AnimatePresence>
                         </div>
 
-                        {/* 2. CENTER / BOTTOM: Animated Visual & Badge */}
-                        <div className="card-visual-zone">
-                            <ModernVisual
-                                key={`left-${step}`}
-                                side="left"
-                                data={currentDiff}
-                                color={leftColor}
-                            />
+                        {/* Bottom: Explanation Footer */}
+                        <div className="explanation-footer" style={{ borderTopColor: `${leftColor}33` }}>
+                            <h3 className="exp-title" style={{ color: leftColor }}>
+                                {currentDiff.leftTitle}
+                            </h3>
+                            <p className="exp-desc">
+                                {currentDiff.leftDesc}
+                            </p>
                         </div>
                     </div>
                 </div>
 
                 {/* RIGHT CARD */}
                 <div className="card-column">
-                    <div className="card-header-group">
-                        <h2 className="card-hero-name" style={{ color: rightColor }}>
+                    <div className="card-title-group">
+                        <h2 className="card-hero-title" style={{ color: rightColor }}>
                             {mainTitle.right}
                         </h2>
-                        <p className="card-hero-tagline">{topicData.rightSub || 'Second Paradigm'}</p>
+                        <p className="card-sub">{topicData.rightSub || 'Modern'}</p>
                     </div>
 
                     <div 
-                        className="card-glass" 
+                        className="comparison-card" 
                         style={{ 
-                            borderColor: `${rightColor}55`,
-                            boxShadow: `0 20px 50px rgba(0,0,0,0.6), 0 0 50px ${rightColor}22`
+                            borderColor: `${rightColor}44`,
+                            boxShadow: `0 20px 50px rgba(0,0,0,0.7), 0 0 45px ${rightColor}18`
                         }}
                     >
-                        {/* 1. TOP: Explanation Context & Key Points (Always Visible, Non-collapsing) */}
-                        <div className="card-explanation-box">
-                            <h3 className="point-title" style={{ color: rightColor }}>
-                                {currentDiff.rightTitle}
-                            </h3>
-                            <p className="point-description">
-                                {currentDiff.rightDesc}
-                            </p>
+                        {/* Top: Icon & Visual Badge */}
+                        <div className="viz-content">
+                            <AnimatePresence mode="wait">
+                                <GenericVisual 
+                                    key={`right-${step}`} 
+                                    side="right" 
+                                    step={step} 
+                                    data={currentDiff} 
+                                    color={rightColor} 
+                                />
+                            </AnimatePresence>
                         </div>
 
-                        {/* 2. CENTER / BOTTOM: Animated Visual & Badge */}
-                        <div className="card-visual-zone">
-                            <ModernVisual
-                                key={`right-${step}`}
-                                side="right"
-                                data={currentDiff}
-                                color={rightColor}
-                            />
+                        {/* Bottom: Explanation Footer */}
+                        <div className="explanation-footer" style={{ borderTopColor: `${rightColor}33` }}>
+                            <h3 className="exp-title" style={{ color: rightColor }}>
+                                {currentDiff.rightTitle}
+                            </h3>
+                            <p className="exp-desc">
+                                {currentDiff.rightDesc}
+                            </p>
                         </div>
                     </div>
                 </div>
             </main>
 
-            {/* WATERMARK */}
-            <footer className="bottom-footer-bar">
-                <span>⚡ @this.girl.tech</span>
-                <span>•</span>
-                <span className="brand-accent">ARCHITECTURE SHOWDOWN</span>
-                <span>•</span>
-                <span>VISUALIZED BY KREGGSCODE</span>
+            {/* FOOTER WATERMARK */}
+            <footer className="footer-watermark">
+                @this.girl.tech • visualized by kreggscode
             </footer>
         </div>
     );
 }
 
-interface ModernVisualProps {
+interface GenericVisualProps {
     side: 'left' | 'right';
+    step: number;
     data: any;
     color: string;
 }
 
-const ModernVisual: React.FC<ModernVisualProps> = ({ side, data, color }) => {
+const GenericVisual: React.FC<GenericVisualProps> = ({ side, data, color }) => {
     const iconName = side === 'left' ? data.leftIcon : data.rightIcon;
-    const IconComponent = IconMap[iconName] || (side === 'left' ? Database : Server);
+    const Icon = IconMap[iconName] || (side === 'left' ? Database : Server);
     const badgeText = side === 'left' ? data.leftVisualText : data.rightVisualText;
 
     return (
         <motion.div 
-            initial={{ opacity: 0, scale: 0.88 }} 
+            initial={{ opacity: 0, scale: 0.85 }} 
             animate={{ opacity: 1, scale: 1 }} 
-            transition={{ duration: 0.25, ease: 'easeOut' }}
+            exit={{ opacity: 0, scale: 0.85 }} 
+            transition={{ duration: 0.3, ease: 'easeOut' }}
             style={{ 
                 display: 'flex', 
                 flexDirection: 'column', 
@@ -249,37 +223,48 @@ const ModernVisual: React.FC<ModernVisualProps> = ({ side, data, color }) => {
                 justifyContent: 'center',
                 height: '100%',
                 width: '100%',
-                gap: '26px'
+                gap: '24px'
             }}
         >
             <div 
-                className="icon-glow-frame"
+                className="icon-glow-box"
                 style={{ 
-                    background: `radial-gradient(circle, ${color}35 0%, rgba(15, 23, 42, 0.95) 75%)`,
-                    border: `2.5px solid ${color}`,
-                    boxShadow: `0 0 60px ${color}55, inset 0 0 35px ${color}44`
+                    padding: '38px', 
+                    borderRadius: '34px', 
+                    background: `radial-gradient(circle, ${color}25 0%, rgba(10, 14, 24, 0.9) 80%)`, 
+                    border: `2px solid ${color}66`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: `0 0 45px ${color}35, inset 0 0 25px ${color}22`
                 }}
             >
-                <div 
-                    className="icon-ring-pulse"
-                    style={{ borderColor: color }}
-                />
-                <IconComponent size={120} color={color} strokeWidth={2.4} />
+                <Icon size={124} color={color} strokeWidth={1.8} />
             </div>
 
             {badgeText && (
-                <div 
-                    className="badge-tag-pill"
+                <motion.div 
+                    initial={{ y: 12, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.15 }}
+                    className="visual-badge"
                     style={{ 
+                        fontSize: '23px', 
+                        fontFamily: 'var(--font-mono)', 
                         color: '#ffffff',
-                        background: `${color}25`,
-                        borderColor: color,
-                        boxShadow: `0 8px 30px ${color}44`
+                        background: `${color}20`,
+                        padding: '10px 24px',
+                        borderRadius: '12px',
+                        border: `1.5px solid ${color}66`,
+                        boxShadow: `0 6px 20px ${color}33`,
+                        fontWeight: 700,
+                        letterSpacing: '1px'
                     }}
                 >
                     {badgeText}
-                </div>
+                </motion.div>
             )}
         </motion.div>
     );
 };
+
