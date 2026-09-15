@@ -146,90 +146,178 @@ const curatedFallbacks = [
         ]
     },
     {
-        topLabel: "CONTAINER ORCHESTRATION",
-        mainTitle: { left: "Kubernetes", right: "Docker Swarm", vs: "vs" },
-        leftSub: "Enterprise Scale",
-        rightSub: "Lightweight Simplicity",
-        leftColor: "#326CE5",
-        rightColor: "#2496ED",
+        topLabel: "ANALYTICS & EMBEDDED ENGINES",
+        mainTitle: { left: "DuckDB", right: "SQLite", vs: "vs" },
+        leftSub: "Columnar OLAP",
+        rightSub: "Row-based OLTP",
+        leftColor: "#FFF000",
+        rightColor: "#003B57",
         badge: "THE 7 CORE DIFFERENCES",
         differences: [
             {
-                title: "1. ARCHITECTURE",
-                leftTitle: "Distributed Cluster",
-                rightTitle: "Built-in Engine",
-                leftDesc: "Modular control plane with etcd, scheduler, kubelet, and controller manager.",
-                rightDesc: "Directly embedded inside Docker Engine CLI with zero extra installation.",
-                leftIcon: "Network",
-                rightIcon: "Box",
-                leftVisualText: "Modular Control",
-                rightVisualText: "Native Daemon"
+                title: "1. STORAGE MODEL",
+                leftTitle: "Columnar Vectorized",
+                rightTitle: "B-Tree Row Storage",
+                leftDesc: "Stores values by column in contiguous memory chunks, executing SIMD vectorized scans across millions of rows per millisecond.",
+                rightDesc: "Stores full rows contiguously inside standard B-Tree pages, optimal for single-record key lookups.",
+                leftIcon: "Layers",
+                rightIcon: "Database",
+                leftVisualText: "Column Vector",
+                rightVisualText: "B-Tree Pages"
             },
             {
-                title: "2. LEARNING CURVE",
-                leftTitle: "Steep Mastery",
-                rightTitle: "Instant Adoption",
-                leftDesc: "Requires deep understanding of CRDs, pods, ingress, and manifests.",
-                rightDesc: "Uses familiar docker-compose syntax and standard docker commands.",
-                leftIcon: "Cpu",
-                rightIcon: "Zap",
-                leftVisualText: "High Complexity",
-                rightVisualText: "Fast Setup"
-            },
-            {
-                title: "3. AUTO-SCALING",
-                leftTitle: "HPA & VPA Native",
-                rightTitle: "Manual / Scripted",
-                leftDesc: "Automatically scales pods and underlying cluster nodes dynamically under load.",
-                rightDesc: "Scaling requires manual replica commands or third-party monitoring webhooks.",
+                title: "2. TARGET WORKLOAD",
+                leftTitle: "Heavy Aggregations",
+                rightTitle: "Transactional CRUD",
+                leftDesc: "Built specifically for analytical queries like GROUP BY, window functions, and complex joins over gigabytes of Parquet.",
+                rightDesc: "Designed for high-throughput single-row transactional writes, reads, and primary key point operations.",
                 leftIcon: "Activity",
-                rightIcon: "Settings",
-                leftVisualText: "Autonomous",
-                rightVisualText: "Manual Replicas"
+                rightIcon: "Zap",
+                leftVisualText: "Deep Analytics",
+                rightVisualText: "Fast Point CRUD"
             },
             {
-                title: "4. ECOSYSTEM",
-                leftTitle: "Industry Standard",
-                rightTitle: "Niche Simplicity",
-                leftDesc: "Massive CNCF community, Helm charts, operators, and cloud managed services.",
-                rightDesc: "Smaller ecosystem, perfect for small internal tools or single-team setups.",
-                leftIcon: "Globe",
-                rightIcon: "Shield",
-                leftVisualText: "Cloud Native",
-                rightVisualText: "Single Engine"
+                title: "3. PARQUET & ARROW",
+                leftTitle: "Native Zero-Copy",
+                rightTitle: "Requires Plugins",
+                leftDesc: "Queries remote Parquet, JSON, and Apache Arrow streams directly without loading data into an internal database file.",
+                rightDesc: "Requires virtual table extensions and data loading scripts to parse and index external analytical formats.",
+                leftIcon: "HardDrive",
+                rightIcon: "FileCode",
+                leftVisualText: "Zero-Copy Parquet",
+                rightVisualText: "File Import"
             },
             {
-                title: "5. HIGH AVAILABILITY",
-                leftTitle: "Self-Healing Pods",
-                rightTitle: "Basic Recovery",
-                leftDesc: "Sophisticated health probes, automatic rescheduling, and rolling upgrades.",
-                rightDesc: "Restarts crashed tasks across surviving nodes in the swarm overlay.",
-                leftIcon: "Server",
-                rightIcon: "HardDrive",
-                leftVisualText: "Deep Healing",
-                rightVisualText: "Task Restart"
-            },
-            {
-                title: "6. NETWORKING",
-                leftTitle: "CNI Plugins",
-                rightTitle: "Overlay Mesh",
-                leftDesc: "Rich networking choices: Cilium, Calico, Flannel, and service meshes.",
-                rightDesc: "Built-in ingress routing mesh and multi-host overlay networks.",
-                leftIcon: "Share2",
+                title: "4. MULTI-THREADING",
+                leftTitle: "Parallel Execution",
+                rightTitle: "Single Writer Lock",
+                leftDesc: "Saturates all CPU cores automatically with a morsel-driven parallel query engine for batch workloads.",
+                rightDesc: "Serializes concurrent writes using WAL locks, limiting concurrent execution throughput on heavy calculations.",
+                leftIcon: "Cpu",
                 rightIcon: "Lock",
-                leftVisualText: "eBPF / CNI",
-                rightVisualText: "Overlay Mesh"
+                leftVisualText: "Multi-Core SIMD",
+                rightVisualText: "Serial Locks"
             },
             {
-                title: "7. RESOURCE OVERHEAD",
-                leftTitle: "Heavy Footprint",
-                rightTitle: "Ultra Lightweight",
-                leftDesc: "Consumes significant RAM and CPU merely to run the control plane.",
-                rightDesc: "Negligible memory overhead, running smoothly on modest VPS servers.",
-                leftIcon: "Database",
-                rightIcon: "Unlock",
-                leftVisualText: "Resource Heavy",
-                rightVisualText: "Minimal RAM"
+                title: "5. MEMORY CONSUMPTION",
+                leftTitle: "Buffer-Pool Spilling",
+                rightTitle: "Tiny Minimal Footprint",
+                leftDesc: "Allocates large RAM buffer pools and spills intermediate group states to temporary disk when memory limits are reached.",
+                rightDesc: "Runs smoothly inside embedded IoT devices, mobile apps, and smart watches with minimal megabytes of memory.",
+                leftIcon: "Server",
+                rightIcon: "Smartphone",
+                leftVisualText: "Heavy Buffer",
+                rightVisualText: "Ultra Compact"
+            },
+            {
+                title: "6. QUERY OPTIMIZER",
+                leftTitle: "Cost & Rule Based",
+                rightTitle: "Heuristic Planner",
+                leftDesc: "Advanced vectorized optimizer calculates join order reordering, filter pushdown, and dynamic runtime statistics.",
+                rightDesc: "Lean query planner prioritizing predictable, deterministic execution plans and zero runtime overhead.",
+                leftIcon: "Workflow",
+                rightIcon: "Compass",
+                leftVisualText: "Vector Optimizer",
+                rightVisualText: "Lean Planner"
+            },
+            {
+                title: "7. PRIMARY USE-CASE",
+                leftTitle: "Data Science & BI",
+                rightTitle: "Application State",
+                leftDesc: "Ideal for Python Pandas replacements, dashboard aggregation engines, and local data warehouse experiments.",
+                rightDesc: "The undisputed gold standard for edge devices, browser caches, desktop apps, and microservice databases.",
+                leftIcon: "BarChart",
+                rightIcon: "Box",
+                leftVisualText: "Data Science",
+                rightVisualText: "App Storage"
+            }
+        ]
+    },
+    {
+        topLabel: "CLIENT STATE MANAGEMENT",
+        mainTitle: { left: "Zustand", right: "Redux Toolkit", vs: "vs" },
+        leftSub: "Minimal Hooks",
+        rightSub: "Standardized Slices",
+        leftColor: "#443E38",
+        rightColor: "#764ABC",
+        badge: "THE 7 CORE DIFFERENCES",
+        differences: [
+            {
+                title: "1. BOILERPLATE",
+                leftTitle: "Zero Boilerplate",
+                rightTitle: "Structured Slices",
+                leftDesc: "Create a reactive global store in 4 lines of code without reducers, dispatchers, or context providers.",
+                rightDesc: "Requires createSlice, configureStore, action definitions, and root reducer composition.",
+                leftIcon: "Zap",
+                rightIcon: "Layers",
+                leftVisualText: "Instant Store",
+                rightVisualText: "Slice Setup"
+            },
+            {
+                title: "2. REACT PROVIDER",
+                leftTitle: "No Context Wrapper",
+                rightTitle: "Mandatory Provider",
+                leftDesc: "Consumes state outside of the React render tree with direct store subscriptions and zero provider wrapping.",
+                rightDesc: "Every consuming component must sit inside the centralized Redux Provider context tree.",
+                leftIcon: "Code",
+                rightIcon: "Box",
+                leftVisualText: "Provider-Free",
+                rightVisualText: "Provider Tree"
+            },
+            {
+                title: "3. BUNDLE SIZE",
+                leftTitle: "~1.1 kB Gzipped",
+                rightTitle: "~11 kB Gzipped",
+                leftDesc: "Ultra-lean micro library built on React 18 useSyncExternalStore with negligible bundle weight.",
+                rightDesc: "Includes Immer, Redux-Thunk, Reselect, and action creators as part of standard distribution.",
+                leftIcon: "Activity",
+                rightIcon: "HardDrive",
+                leftVisualText: "Micro Core",
+                rightVisualText: "Full Suite"
+            },
+            {
+                title: "4. ASYNC FLOWS",
+                leftTitle: "Plain Async/Await",
+                rightTitle: "createAsyncThunk",
+                leftDesc: "Update state asynchronously with plain modern JavaScript async/await functions directly inside actions.",
+                rightDesc: "Uses createAsyncThunk lifecycle actions (pending, fulfilled, rejected) or RTK Query endpoints.",
+                leftIcon: "FastForward",
+                rightIcon: "Workflow",
+                leftVisualText: "Pure Async",
+                rightVisualText: "Thunk Flow"
+            },
+            {
+                title: "5. DEVTOOLS & LOGGING",
+                leftTitle: "Middleware Plugin",
+                rightTitle: "Deep Native Integration",
+                leftDesc: "Redux DevTools support requires wrapping state creator in optional devtools middleware.",
+                rightDesc: "Comprehensive time-travel debugging, action inspection, and diffing out of the box.",
+                leftIcon: "Terminal",
+                rightIcon: "Cpu",
+                leftVisualText: "Optional DevTools",
+                rightVisualText: "Native Time Travel"
+            },
+            {
+                title: "6. RE-RENDER OPTIMIZATION",
+                leftTitle: "Selector Scoping",
+                rightTitle: "Reselect Memoization",
+                leftDesc: "Components only re-render when their explicitly selected atomic state slice changes.",
+                rightDesc: "Uses createSelector with multi-input memoization for complex derived state calculations.",
+                leftIcon: "Shield",
+                rightIcon: "Radio",
+                leftVisualText: "Atomic Pick",
+                rightVisualText: "Memoized Selectors"
+            },
+            {
+                title: "7. BEST FIT",
+                leftTitle: "Fast Agile Apps",
+                rightTitle: "Large Enterprise",
+                leftDesc: "Perfect for fast-paced modern startups, dashboard components, and interactive single page apps.",
+                rightDesc: "Ideal for massive enterprise apps with hundreds of developers needing enforced uniform architecture.",
+                leftIcon: "Globe",
+                rightIcon: "Server",
+                leftVisualText: "Lean & Fast",
+                rightVisualText: "Strict Enterprise"
             }
         ]
     }
@@ -250,30 +338,30 @@ async function fetchWithTimeout(url, options, timeoutMs = 25000) {
 
 async function generateWithPollinations() {
     const history = getHistory();
-    const recentHistoryStr = history.slice(-40).join(', ');
+    const recentHistoryStr = history.slice(-50).join(', ');
     const randomColors = getRandomColorPair();
 
     const prompt = `
 Generate a valid JSON object for a technical comparison visual (Reel/Short format).
 The comparison should be between two technologies, architectures, or concepts.
-Topic MUST BE FRESH and COMPLETELY DIFFERENT from these previously covered topics:
+Topic MUST BE COMPLETELY NEW and CANNOT BE ANY OF THESE PREVIOUS TOPICS:
 ${recentHistoryStr}
 
-Pick from popular high-engagement areas:
-- Modern Web/Frontend (e.g. Next.js App Router vs Pages Router, Bun vs Node.js, Svelte vs React, Tailwind vs CSS Modules, Zustand vs Redux Toolkit)
-- Backend & Distributed Systems (e.g. gRPC vs REST, Kafka vs RabbitMQ, WebSockets vs Server-Sent Events, Redis vs Memcached)
-- Cloud & DevOps (e.g. Terraform vs Pulumi, Serverless vs Dedicated Containers, AWS Lambda vs Cloudflare Workers)
-- Databases & Data Engineering (e.g. ClickHouse vs Snowflake, DynamoDB vs MongoDB, OLAP vs OLTP)
-- AI & Infrastructure (e.g. PyTorch vs JAX, Vector DB vs Relational Search)
+Pick an exciting comparison from one of these domains:
+- Databases & Storage Engines (e.g. SQLite vs DuckDB, ScyllaDB vs Cassandra, Pinecone vs Qdrant, RocksDB vs LevelDB)
+- Modern Systems & Runtimes (e.g. Zig vs Rust, Go vs Rust, WebAssembly vs Native Containers, Deno vs Bun)
+- Distributed Systems & Messaging (e.g. Apache Pulsar vs Kafka, NATS vs RabbitMQ, Raft vs Paxos)
+- Web & Networking (e.g. HTTP/2 vs HTTP/3, WebRTC vs WebSockets, QUIC vs TCP, tRPC vs GraphQL)
+- Security & Cloud (e.g. OAuth 2.0 vs OIDC, WireGuard vs OpenVPN, Cilium vs Calico, eBPF vs Kernel Modules)
 
 Color Strategy:
-Assign distinct, vibrant contrasting hex colors for leftColor and rightColor (e.g. "${randomColors.left}" and "${randomColors.right}" or other vibrant cyber neon colors like cyan, coral, emerald, indigo, amber, fuchsia, turquoise). NEVER use dull, washed-out or identical colors.
+Assign distinct, vibrant contrasting hex colors for leftColor and rightColor (e.g. "${randomColors.left}" and "${randomColors.right}"). NEVER use dull, washed-out or identical colors.
 
 Return ONLY valid JSON. No markdown code blocks, no explanation, no backticks.
 
 JSON Schema:
 {
-    "topLabel": "UPPERCASE CATEGORY (e.g. DISTRIBUTED SYSTEMS)",
+    "topLabel": "UPPERCASE CATEGORY",
     "mainTitle": {
         "left": "TECH 1",
         "right": "TECH 2",
@@ -289,10 +377,10 @@ JSON Schema:
             "title": "1. KEY AREA",
             "leftTitle": "Point for Tech 1 (max 3 words)",
             "rightTitle": "Point for Tech 2 (max 3 words)",
-            "leftDesc": "High-value, informative educational explanation of how it works under the hood and its technical trade-offs (20 to 35 words).",
-            "rightDesc": "High-value, informative educational explanation of how it works under the hood and its technical trade-offs (20 to 35 words).",
-            "leftIcon": "Valid Lucide icon name matching the concept (e.g. Database, Cpu, Network, Zap, Server, Code, Globe, Box, Layers, Shield, Activity, HardDrive, Terminal, GitBranch, Cloud, Lock, Workflow, Radio, Flame, Compass, Key, FastForward, CheckCircle, Smartphone, Compass, etc.)",
-            "rightIcon": "Valid Lucide icon name matching the concept (e.g. Database, Cpu, Network, Zap, Server, Code, Globe, Box, Layers, Shield, Activity, HardDrive, Terminal, GitBranch, Cloud, Lock, Workflow, Radio, Flame, Compass, Key, FastForward, CheckCircle, Smartphone, Compass, etc.)",
+            "leftDesc": "High-value educational explanation of how it works under the hood (20 to 35 words).",
+            "rightDesc": "High-value educational explanation of how it works under the hood (20 to 35 words).",
+            "leftIcon": "Valid Lucide icon name matching the concept (e.g. Database, Cpu, Network, Zap, Server, Code, Globe, Box, Layers, Shield, Activity, HardDrive, Terminal, GitBranch, Cloud, Lock, Workflow, Radio, Flame, Compass, Key, FastForward, CheckCircle, Smartphone, etc.)",
+            "rightIcon": "Valid Lucide icon name matching the concept (e.g. Database, Cpu, Network, Zap, Server, Code, Globe, Box, Layers, Shield, Activity, HardDrive, Terminal, GitBranch, Cloud, Lock, Workflow, Radio, Flame, Compass, Key, FastForward, CheckCircle, Smartphone, etc.)",
             "leftVisualText": "Visual badge (1-2 words)",
             "rightVisualText": "Visual badge (1-2 words)"
         }
@@ -301,7 +389,7 @@ JSON Schema:
 
 Rules:
 1. Provide EXACTLY 7 differences.
-2. Explanations must be DEEP, ACCURATE, and HIGHLY INFORMATIVE for developers (20-35 words per side explaining concrete mechanisms, not shallow 5-word summaries).
+2. Explanations must be DEEP, ACCURATE, and HIGHLY INFORMATIVE for developers (20-35 words per side explaining concrete mechanisms).
 3. High contrast against dark background.
 4. Engaging, viral tech-educator tone.
 `;
@@ -320,7 +408,7 @@ Rules:
                 { role: "user", content: prompt }
             ],
             jsonMode: true,
-            seed: Math.floor(Math.random() * 1000000)
+            seed: Math.floor(Math.random() * 10000000)
         })
     }, 25000);
 
@@ -349,21 +437,44 @@ Rules:
     return topic;
 }
 
+function normalizeTopicName(str) {
+    return str.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
 async function main() {
     let topic = null;
+    const history = getHistory();
+    const normalizedHistory = new Set(history.map(normalizeTopicName));
 
-    try {
-        topic = await generateWithPollinations();
-    } catch (err) {
-        console.warn(`⚠️ AI generation error: ${err.message}. Selecting curated fallback...`);
-        const history = getHistory();
+    // Try up to 4 attempts to generate a truly unique topic via AI
+    for (let attempt = 1; attempt <= 4; attempt++) {
+        try {
+            const candidate = await generateWithPollinations();
+            const candName = `${candidate.mainTitle.left} vs ${candidate.mainTitle.right}`;
+            const candNorm = normalizeTopicName(candName);
+            const candRevNorm = normalizeTopicName(`${candidate.mainTitle.right} vs ${candidate.mainTitle.left}`);
+
+            if (!normalizedHistory.has(candNorm) && !normalizedHistory.has(candRevNorm)) {
+                topic = candidate;
+                console.log(`✨ Fresh topic generated on attempt ${attempt}: ${candName}`);
+                break;
+            } else {
+                console.warn(`⚠️ Attempt ${attempt}: Topic "${candName}" was previously covered. Regenerating...`);
+            }
+        } catch (err) {
+            console.warn(`⚠️ Attempt ${attempt} failed: ${err.message}`);
+        }
+    }
+
+    // Fallback if AI repeated or failed
+    if (!topic) {
+        console.warn("⚠️ AI attempts exhausted or duplicated. Selecting curated fallback...");
         const available = curatedFallbacks.filter(f => {
             const name = `${f.mainTitle.left} vs ${f.mainTitle.right}`;
-            return !history.includes(name);
+            return !normalizedHistory.has(normalizeTopicName(name));
         });
-        const selectedFallback = (available.length > 0 ? available : curatedFallbacks)[Math.floor(Math.random() * curatedFallbacks.length)];
+        const selectedFallback = (available.length > 0 ? available : curatedFallbacks)[Math.floor(Math.random() * (available.length > 0 ? available.length : curatedFallbacks.length))];
         topic = JSON.parse(JSON.stringify(selectedFallback));
-        // Rotate colors dynamically even on fallback
         const randomColors = getRandomColorPair();
         topic.leftColor = randomColors.left;
         topic.rightColor = randomColors.right;

@@ -60,12 +60,8 @@ def main():
     except Exception as e:
         print(f"⚠️ YouTube failed: {e}")
 
-    # --- Instagram ---
-    try:
-        print("📸 Uploading to Instagram...")
-        upload_to_instagram(str(video_path), f"{title}\n\n{hashtags}")
-    except Exception as e:
-        print(f"⚠️ Instagram failed: {e}")
+    # --- Instagram (Disabled as requested) ---
+    print("📸 Instagram upload is disabled.")
 
     # --- Facebook ---
     try:
