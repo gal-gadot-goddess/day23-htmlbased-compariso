@@ -207,7 +207,7 @@ export default function App() {
 
             {/* FOOTER WATERMARK */}
             <footer className="footer-watermark">
-                @this.girl.tech • visualized by kreggscode
+                @kreggscode • Visualized Daily
             </footer>
         </div>
     );
