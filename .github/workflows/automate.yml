@@ -3,6 +3,9 @@ name: Day 23 Tech Comparison Automation
 on:
   schedule:
     - cron: '0 0,8,16 * * *' # 3 times a day (UTC)
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
