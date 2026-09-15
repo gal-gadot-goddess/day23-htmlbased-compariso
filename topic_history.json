@@ -55,5 +55,6 @@
   "SvelteKit vs Astro",
   "Zustand vs Redux Toolkit",
   "gRPC vs REST",
-  "Next.js App Router vs Next.js Pages Router"
+  "Next.js App Router vs Next.js Pages Router",
+  "SQLite vs DuckDB"
 ]
