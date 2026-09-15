@@ -58,5 +58,6 @@
   "Next.js App Router vs Next.js Pages Router",
   "SQLite vs DuckDB",
   "Pinecone vs Qdrant",
-  "ROCKSDB vs LEVELDB"
+  "ROCKSDB vs LEVELDB",
+  "APACHE PULSAR vs KAFKA"
 ]
