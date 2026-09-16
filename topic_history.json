@@ -60,5 +60,6 @@
   "Pinecone vs Qdrant",
   "ROCKSDB vs LEVELDB",
   "APACHE PULSAR vs KAFKA",
-  "HTTP/2 vs HTTP/3"
+  "HTTP/2 vs HTTP/3",
+  "tRPC vs GraphQL"
 ]
