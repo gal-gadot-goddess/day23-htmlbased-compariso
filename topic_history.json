@@ -61,5 +61,6 @@
   "ROCKSDB vs LEVELDB",
   "APACHE PULSAR vs KAFKA",
   "HTTP/2 vs HTTP/3",
-  "tRPC vs GraphQL"
+  "tRPC vs GraphQL",
+  "QUIC vs TCP"
 ]
