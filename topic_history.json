@@ -59,5 +59,6 @@
   "SQLite vs DuckDB",
   "Pinecone vs Qdrant",
   "ROCKSDB vs LEVELDB",
-  "APACHE PULSAR vs KAFKA"
+  "APACHE PULSAR vs KAFKA",
+  "HTTP/2 vs HTTP/3"
 ]
