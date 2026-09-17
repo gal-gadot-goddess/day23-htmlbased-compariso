@@ -62,5 +62,6 @@
   "APACHE PULSAR vs KAFKA",
   "HTTP/2 vs HTTP/3",
   "tRPC vs GraphQL",
-  "QUIC vs TCP"
+  "QUIC vs TCP",
+  "NATS vs RABBITMQ"
 ]
