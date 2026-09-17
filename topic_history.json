@@ -63,5 +63,6 @@
   "HTTP/2 vs HTTP/3",
   "tRPC vs GraphQL",
   "QUIC vs TCP",
-  "NATS vs RABBITMQ"
+  "NATS vs RABBITMQ",
+  "RAFT vs PAXOS"
 ]
