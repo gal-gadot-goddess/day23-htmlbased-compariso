@@ -64,5 +64,6 @@
   "tRPC vs GraphQL",
   "QUIC vs TCP",
   "NATS vs RABBITMQ",
-  "RAFT vs PAXOS"
+  "RAFT vs PAXOS",
+  "SCYLLADB vs CASSANDRA"
 ]

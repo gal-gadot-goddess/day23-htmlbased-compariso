@@ -1,91 +1,92 @@
 {
-  "topLabel": "DISTRIBUTED SYSTEMS & MESSAGING",
+  "topLabel": "DATABASES & STORAGE",
   "mainTitle": {
-    "left": "RAFT",
-    "right": "PAXOS",
+    "left": "SCYLLADB",
+    "right": "CASSANDRA",
     "vs": "vs"
   },
-  "leftSub": "Leader-based Consensus",
-  "rightSub": "Leaderless Consensus",
+  "leftSub": "NoSQL Database Powerhouse",
+  "rightSub": "Distributed NoSQL Titan",
   "leftColor": "#22d3ee",
-  "rightColor": "#f472b6",
-  "badge": "7 CORE DIFFERENCES",
+  "rightColor": "#fb923c",
+  "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. CONSENSUS MECHANISM",
-      "leftTitle": "Majority Vote",
-      "rightTitle": "Quorum Agreement",
-      "leftDesc": "Raft uses a single leader elected by a majority. All decisions flow through the leader, simplifying state management and understanding.",
-      "rightDesc": "Paxos avoids a single leader. Proposers and acceptors achieve consensus through multiple rounds of proposals and promises, making it more complex.",
-      "leftIcon": "userCheck",
-      "rightIcon": "users",
-      "leftVisualText": "Leader Election",
-      "rightVisualText": "No Single Leader"
-    },
-    {
-      "title": "2. COMPLEXITY",
-      "leftTitle": "Easier to Understand",
-      "rightTitle": "Challenging to Grasp",
-      "leftDesc": "Raft was designed for understandability, breaking consensus into distinct steps: leader election, log replication, and safety.",
-      "rightDesc": "Paxos is notoriously difficult due to its intricate proposal and acceptance phases, often leading to subtle implementation errors.",
-      "leftIcon": "brain",
-      "rightIcon": "puzzle",
-      "leftVisualText": "Clear Stages",
-      "rightVisualText": "Intricate Rounds"
-    },
-    {
-      "title": "3. LEADER ELECTION",
-      "leftTitle": "Explicit Election",
-      "rightTitle": "Implicit Agreement",
-      "leftDesc": "Raft has a well-defined leader election process involving timeouts and vote requests to ensure a stable leader emerges.",
-      "rightDesc": "Paxos does not have an explicit leader election; agreement on a chosen leader emerges implicitly from successful proposals.",
-      "leftIcon": "trophy",
-      "rightIcon": "handshake",
-      "leftVisualText": "Active Election",
-      "rightVisualText": "Passive Agreement"
-    },
-    {
-      "title": "4. LOG REPLICATION",
-      "leftTitle": "Leader-Driven",
-      "rightTitle": "Multi-Proposer",
-      "leftDesc": "In Raft, the elected leader dictates the log order and replicates entries to followers. This ensures consistency.",
-      "rightDesc": "Network",
-      "leftIcon": "copy",
-      "leftVisualText": "Single Source",
-      "rightVisualText": "Concurrent Proposals"
-    },
-    {
-      "title": "5. SAFETY GUARANTEES",
-      "leftTitle": "Strong Guarantees",
-      "rightTitle": "Guaranteed Choice",
-      "leftDesc": "Raft ensures that once a log entry is committed, it will be applied to all state machines that have received it.",
-      "rightDesc": "Paxos guarantees that if a value is chosen, it is chosen uniquely, but ensuring a value is chosen can be complex.",
-      "leftIcon": "shieldCheck",
-      "rightIcon": "lock",
-      "leftVisualText": "Committed Logs",
-      "rightVisualText": "Chosen Value"
-    },
-    {
-      "title": "6. PERFORMANCE",
-      "leftTitle": "Generally Faster",
-      "rightTitle": "Can Be Slower",
-      "leftDesc": "Raft's leader-centric approach often leads to fewer communication rounds, resulting in higher throughput and lower latency.",
-      "rightDesc": "Paxos's multi-round consensus and potential for proposer contention can introduce higher latency and lower throughput.",
+      "title": "1. PERFORMANCE",
+      "leftTitle": "Blazing Fast Writes",
+      "rightTitle": "Solid Performance",
+      "leftDesc": "ScyllaDB uses C++ and shared-nothing architecture with an event-loop model for significantly lower latency and higher throughput, especially for write-heavy workloads.",
+      "rightDesc": "Cassandra offers robust, scalable performance across distributed nodes, optimized for high availability and fault tolerance, with tunable consistency for reads and writes.",
       "leftIcon": "zap",
-      "rightIcon": "timer",
-      "leftVisualText": "High Throughput",
-      "rightVisualText": "Potential Latency"
+      "rightIcon": "server",
+      "leftVisualText": "Low Latency",
+      "rightVisualText": "High Availability"
     },
     {
-      "title": "7. PRACTICAL USAGE",
-      "leftTitle": "Widely Adopted",
-      "rightTitle": "Foundation Layer",
-      "leftDesc": "Raft is preferred in many modern distributed systems (e.g., etcd, Consul) due to its clarity and ease of implementation.",
-      "rightDesc": "Paxos is a theoretical foundation; actual implementations are rare due to its complexity, but it influenced many algorithms.",
-      "leftIcon": "laptopCode",
-      "rightIcon": "bookOpen",
-      "leftVisualText": "Commonly Used",
-      "rightVisualText": "Theoretical Basis"
+      "title": "2. ARCHITECTURE",
+      "leftTitle": "Shared-Nothing Model",
+      "rightTitle": "Peer-to-Peer",
+      "leftDesc": "ScyllaDB's C++ rewrite focuses on a shared-nothing, shard-per-core model for maximum hardware utilization and parallelism, reducing contention and garbage collection overhead.",
+      "rightDesc": "Cassandra employs a distributed, peer-to-peer architecture where all nodes are equal, simplifying cluster management and ensuring no single point of failure.",
+      "leftIcon": "cpu",
+      "rightIcon": "network",
+      "leftVisualText": "Shard-Per-Core",
+      "rightVisualText": "Decentralized"
+    },
+    {
+      "title": "3. PROGRAMMING LANGUAGE",
+      "leftTitle": "Written in C++",
+      "rightTitle": "Written in Java",
+      "leftDesc": "ScyllaDB's C++ implementation allows for fine-grained memory management and direct hardware interaction, leading to predictable performance and reduced GC pauses.",
+      "rightDesc": "Cassandra's Java foundation provides a mature ecosystem and portability, though JVM tuning and GC can sometimes impact latency consistency.",
+      "leftIcon": "code",
+      "rightIcon": "code",
+      "leftVisualText": "Performance Focus",
+      "rightVisualText": "JVM Ecosystem"
+    },
+    {
+      "title": "4. OPERATIONAL OVERHEAD",
+      "leftTitle": "Lower Footprint",
+      "rightTitle": "Higher Footprint",
+      "leftDesc": "ScyllaDB's efficient C++ code and intelligent resource management result in a smaller memory footprint and less CPU overhead per node.",
+      "rightDesc": "Cassandra, being Java-based, typically requires more memory and CPU resources per node due to the JVM and its garbage collection mechanisms.",
+      "leftIcon": "hard-drive",
+      "rightIcon": "cloud-off",
+      "leftVisualText": "Resource Efficient",
+      "rightVisualText": "Resource Intensive"
+    },
+    {
+      "title": "5. CONSISTENCY TUNING",
+      "leftTitle": "Flexible Consistency",
+      "rightTitle": "Tunable Consistency",
+      "leftDesc": "ScyllaDB offers granular consistency levels, allowing developers to balance read/write performance with data accuracy on a per-operation basis.",
+      "rightDesc": "Cassandra provides tunable consistency with options like ONE, QUORUM, and ALL, enabling trade-offs between availability and data consistency.",
+      "leftIcon": "radio",
+      "rightIcon": "sliders",
+      "leftVisualText": "Per-Operation",
+      "rightVisualText": "Cluster-Wide"
+    },
+    {
+      "title": "6. COMMUNITY & ECOSYSTEM",
+      "leftTitle": "Growing Rapidly",
+      "rightTitle": "Mature & Established",
+      "leftDesc": "ScyllaDB's community is vibrant and rapidly expanding, with active development and increasing adoption, backed by strong commercial support.",
+      "rightDesc": "Cassandra boasts a large, mature ecosystem and a vast community, benefiting from years of development, numerous integrations, and widespread industry trust.",
+      "leftIcon": "git-branch",
+      "rightIcon": "globe",
+      "leftVisualText": "Modern Growth",
+      "rightVisualText": "Industry Standard"
+    },
+    {
+      "title": "7. COMPATIBILITY",
+      "leftTitle": "CQL Compatible",
+      "rightTitle": "Native CQL",
+      "leftDesc": "ScyllaDB is designed for drop-in compatibility with Apache Cassandra, allowing easy migration and use of existing Cassandra tools and drivers.",
+      "rightDesc": "Cassandra's native implementation of CQL (Cassandra Query Language) is its primary interface, offering a familiar SQL-like experience.",
+      "leftIcon": "layers",
+      "rightIcon": "terminal",
+      "leftVisualText": "Drop-in Replacement",
+      "rightVisualText": "Primary Interface"
     }
   ]
 }
