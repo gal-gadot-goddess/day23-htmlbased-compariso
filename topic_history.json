@@ -65,5 +65,6 @@
   "QUIC vs TCP",
   "NATS vs RABBITMQ",
   "RAFT vs PAXOS",
-  "SCYLLADB vs CASSANDRA"
+  "SCYLLADB vs CASSANDRA",
+  "GraphQL vs REST API"
 ]
