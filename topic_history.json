@@ -67,5 +67,6 @@
   "RAFT vs PAXOS",
   "SCYLLADB vs CASSANDRA",
   "GraphQL vs REST API",
-  "DuckDB vs SQLite"
+  "DuckDB vs SQLite",
+  "Zig vs Rust"
 ]
