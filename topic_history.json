@@ -66,5 +66,6 @@
   "NATS vs RABBITMQ",
   "RAFT vs PAXOS",
   "SCYLLADB vs CASSANDRA",
-  "GraphQL vs REST API"
+  "GraphQL vs REST API",
+  "DuckDB vs SQLite"
 ]
