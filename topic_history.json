@@ -68,5 +68,6 @@
   "SCYLLADB vs CASSANDRA",
   "GraphQL vs REST API",
   "DuckDB vs SQLite",
-  "Zig vs Rust"
+  "Zig vs Rust",
+  "WebRTC vs WebSockets"
 ]
