@@ -70,5 +70,6 @@
   "DuckDB vs SQLite",
   "Zig vs Rust",
   "WebRTC vs WebSockets",
-  "DuckDB vs SQLite"
+  "DuckDB vs SQLite",
+  "Zustand vs Redux Toolkit"
 ]
