@@ -69,5 +69,6 @@
   "GraphQL vs REST API",
   "DuckDB vs SQLite",
   "Zig vs Rust",
-  "WebRTC vs WebSockets"
+  "WebRTC vs WebSockets",
+  "DuckDB vs SQLite"
 ]
