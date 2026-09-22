@@ -77,5 +77,6 @@
   "GraphQL vs REST API",
   "DuckDB vs SQLite",
   "DuckDB vs SQLite",
-  "WebAssembly vs Native Containers"
+  "WebAssembly vs Native Containers",
+  "Zustand vs Redux Toolkit"
 ]
