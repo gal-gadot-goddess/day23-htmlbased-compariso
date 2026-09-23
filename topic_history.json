@@ -80,5 +80,6 @@
   "WebAssembly vs Native Containers",
   "Zustand vs Redux Toolkit",
   "Zustand vs Redux Toolkit",
-  "DuckDB vs SQLite"
+  "DuckDB vs SQLite",
+  "WEB COMPONENTS vs LIT"
 ]
