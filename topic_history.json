@@ -85,5 +85,6 @@
   "Deno vs Bun",
   "DuckDB vs SQLite",
   "DuckDB vs SQLite",
-  "GraphQL vs REST API"
+  "GraphQL vs REST API",
+  "EBPF vs KERNEL MODULES"
 ]
