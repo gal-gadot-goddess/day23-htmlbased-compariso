@@ -84,5 +84,6 @@
   "WEB COMPONENTS vs LIT",
   "Deno vs Bun",
   "DuckDB vs SQLite",
-  "DuckDB vs SQLite"
+  "DuckDB vs SQLite",
+  "GraphQL vs REST API"
 ]
