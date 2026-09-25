@@ -88,5 +88,6 @@
   "GraphQL vs REST API",
   "EBPF vs KERNEL MODULES",
   "CHRONICLE vs REDIS",
-  "TiKV vs CockroachDB"
+  "TiKV vs CockroachDB",
+  "CLICKHOUSE vs SNOWFLAKE"
 ]
