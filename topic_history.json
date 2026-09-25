@@ -86,5 +86,6 @@
   "DuckDB vs SQLite",
   "DuckDB vs SQLite",
   "GraphQL vs REST API",
-  "EBPF vs KERNEL MODULES"
+  "EBPF vs KERNEL MODULES",
+  "CHRONICLE vs REDIS"
 ]
