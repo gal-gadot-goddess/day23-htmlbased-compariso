@@ -89,5 +89,6 @@
   "EBPF vs KERNEL MODULES",
   "CHRONICLE vs REDIS",
   "TiKV vs CockroachDB",
-  "CLICKHOUSE vs SNOWFLAKE"
+  "CLICKHOUSE vs SNOWFLAKE",
+  "Zustand vs Redux Toolkit"
 ]
