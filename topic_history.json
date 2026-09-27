@@ -92,5 +92,6 @@
   "CLICKHOUSE vs SNOWFLAKE",
   "Zustand vs Redux Toolkit",
   "Zustand vs Redux Toolkit",
-  "DuckDB vs SQLite"
+  "DuckDB vs SQLite",
+  "EVM vs WASM"
 ]
