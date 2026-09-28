@@ -96,5 +96,6 @@
   "EVM vs WASM",
   "APACHE KAFKA vs APACHE PULSAR",
   "GO vs RUST",
-  "DuckDB vs SQLite"
+  "DuckDB vs SQLite",
+  "Zustand vs Redux Toolkit"
 ]
