@@ -95,5 +95,6 @@
   "DuckDB vs SQLite",
   "EVM vs WASM",
   "APACHE KAFKA vs APACHE PULSAR",
-  "GO vs RUST"
+  "GO vs RUST",
+  "DuckDB vs SQLite"
 ]
