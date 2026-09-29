@@ -98,5 +98,6 @@
   "GO vs RUST",
   "DuckDB vs SQLite",
   "Zustand vs Redux Toolkit",
-  "WEBASSEMBLY vs CONTAINERS"
+  "WEBASSEMBLY vs CONTAINERS",
+  "Zustand vs Redux Toolkit"
 ]
