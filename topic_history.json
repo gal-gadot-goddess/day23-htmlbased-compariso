@@ -97,5 +97,6 @@
   "APACHE KAFKA vs APACHE PULSAR",
   "GO vs RUST",
   "DuckDB vs SQLite",
-  "Zustand vs Redux Toolkit"
+  "Zustand vs Redux Toolkit",
+  "WEBASSEMBLY vs CONTAINERS"
 ]
