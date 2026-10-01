@@ -103,5 +103,6 @@
   "Zustand vs Redux Toolkit",
   "WEBTRANSPORT vs WEBSOCKETS",
   "Zustand vs Redux Toolkit",
-  "TIGRIS DATA vs MONGODB ATLAS"
+  "TIGRIS DATA vs MONGODB ATLAS",
+  "DuckDB vs SQLite"
 ]
