@@ -111,5 +111,6 @@
   "PINECORE vs QDRANT",
   "Zustand vs Redux Toolkit",
   "DuckDB vs SQLite",
-  "DuckDB vs SQLite"
+  "DuckDB vs SQLite",
+  "GraphQL vs REST API"
 ]
