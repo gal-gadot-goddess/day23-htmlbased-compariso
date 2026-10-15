@@ -144,5 +144,6 @@
   "ROCKETDB vs ROCKSDB",
   "GraphQL vs REST API",
   "GraphQL vs REST API",
-  "GraphQL vs REST API"
+  "GraphQL vs REST API",
+  "APACHE PULSAR vs RABBITMQ"
 ]
