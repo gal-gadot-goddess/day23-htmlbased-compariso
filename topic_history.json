@@ -147,5 +147,6 @@
   "GraphQL vs REST API",
   "APACHE PULSAR vs RABBITMQ",
   "TiKV vs RocksDB",
-  "Zustand vs Redux Toolkit"
+  "Zustand vs Redux Toolkit",
+  "TiDB vs CockroachDB"
 ]
