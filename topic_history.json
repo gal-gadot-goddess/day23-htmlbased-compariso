@@ -1,5 +1,4 @@
 [
-  "Next.js vs Remix",
   "Cassandra vs DynamoDB",
   "PostgreSQL vs SQLite",
   "Vite vs Webpack",
@@ -147,6 +146,7 @@
   "TiKV vs RocksDB",
   "Zustand vs Redux Toolkit",
   "TiDB vs CockroachDB",
+  "DuckDB vs SQLite",
   "DuckDB vs SQLite",
   "DuckDB vs SQLite"
 ]
