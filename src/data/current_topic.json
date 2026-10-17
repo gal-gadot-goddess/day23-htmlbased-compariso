@@ -7,8 +7,8 @@
   },
   "leftSub": "Columnar OLAP",
   "rightSub": "Row-based OLTP",
-  "leftColor": "#8b5cf6",
-  "rightColor": "#34d399",
+  "leftColor": "#06b6d4",
+  "rightColor": "#f43f5e",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
