@@ -1,5 +1,4 @@
 [
-  "Vite vs Webpack",
   "PostgreSQL vs SQLite",
   "FUNCTIONAL PROGRAMMING vs OBJECT-ORIENTED PROGRAMMING",
   "PostgreSQL vs MySQL",
@@ -148,5 +147,6 @@
   "DuckDB vs SQLite",
   "DuckDB vs SQLite",
   "Zustand vs Redux Toolkit",
+  "DuckDB vs SQLite",
   "DuckDB vs SQLite"
 ]
