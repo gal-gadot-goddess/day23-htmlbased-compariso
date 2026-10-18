@@ -1,5 +1,4 @@
 [
-  "Cassandra vs DynamoDB",
   "PostgreSQL vs SQLite",
   "Vite vs Webpack",
   "PostgreSQL vs SQLite",
@@ -148,5 +147,6 @@
   "TiDB vs CockroachDB",
   "DuckDB vs SQLite",
   "DuckDB vs SQLite",
-  "DuckDB vs SQLite"
+  "DuckDB vs SQLite",
+  "Zustand vs Redux Toolkit"
 ]
