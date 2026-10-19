@@ -1,5 +1,4 @@
 [
-  "FUNCTIONAL PROGRAMMING vs OBJECT-ORIENTED PROGRAMMING",
   "PostgreSQL vs MySQL",
   "SQL vs NoSQL",
   "RIVET vs OPENRIVET",
@@ -148,5 +147,6 @@
   "Zustand vs Redux Toolkit",
   "DuckDB vs SQLite",
   "DuckDB vs SQLite",
-  "GraphQL vs REST API"
+  "GraphQL vs REST API",
+  "Zustand vs Redux Toolkit"
 ]
