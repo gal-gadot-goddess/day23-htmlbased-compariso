@@ -1,5 +1,4 @@
 [
-  "PostgreSQL vs MySQL",
   "SQL vs NoSQL",
   "RIVET vs OPENRIVET",
   "Next.js vs Astro",
@@ -148,5 +147,6 @@
   "DuckDB vs SQLite",
   "DuckDB vs SQLite",
   "GraphQL vs REST API",
-  "Zustand vs Redux Toolkit"
+  "Zustand vs Redux Toolkit",
+  "TiKV vs TiDB"
 ]

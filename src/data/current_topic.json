@@ -1,92 +1,92 @@
 {
-  "topLabel": "CLIENT STATE MANAGEMENT",
+  "topLabel": "DATABASES & STORAGE ENGINES",
   "mainTitle": {
-    "left": "Zustand",
-    "right": "Redux Toolkit",
+    "left": "TiKV",
+    "right": "TiDB",
     "vs": "vs"
   },
-  "leftSub": "Minimal Hooks",
-  "rightSub": "Standardized Slices",
-  "leftColor": "#0ea5e9",
-  "rightColor": "#f59e0b",
+  "leftSub": "Distributed KV Store",
+  "rightSub": "Distributed SQL DB",
+  "leftColor": "#3b82f6",
+  "rightColor": "#10b981",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. BOILERPLATE",
-      "leftTitle": "Zero Boilerplate",
-      "rightTitle": "Structured Slices",
-      "leftDesc": "Create a reactive global store in 4 lines of code without reducers, dispatchers, or context providers.",
-      "rightDesc": "Requires createSlice, configureStore, action definitions, and root reducer composition.",
-      "leftIcon": "Zap",
-      "rightIcon": "Layers",
-      "leftVisualText": "Instant Store",
-      "rightVisualText": "Slice Setup"
+      "title": "1. DATA MODEL",
+      "leftTitle": "Key-Value Pairs",
+      "rightTitle": "Relational Tables",
+      "leftDesc": "TiKV stores data as unstructured byte arrays mapped to unique keys, offering extreme flexibility for arbitrary data structures and distributed storage.",
+      "rightDesc": "TiDB presents data in structured tables with defined schemas, rows, and columns, enabling complex queries and ACID transactions for relational workloads.",
+      "leftIcon": "Key",
+      "rightIcon": "Grid",
+      "leftVisualText": "KV Store",
+      "rightVisualText": "SQL Tables"
     },
     {
-      "title": "2. REACT PROVIDER",
-      "leftTitle": "No Context Wrapper",
-      "rightTitle": "Mandatory Provider",
-      "leftDesc": "Consumes state outside of the React render tree with direct store subscriptions and zero provider wrapping.",
-      "rightDesc": "Every consuming component must sit inside the centralized Redux Provider context tree.",
+      "title": "2. CONSISTENCY",
+      "leftTitle": "MVCC & Raft",
+      "rightTitle": "MVCC & Raft",
+      "leftDesc": "Ensures strong consistency for distributed reads/writes using Multi-Version Concurrency Control and the Raft consensus algorithm across its nodes.",
+      "rightDesc": "Achieves ACID compliance and strong consistency via MVCC and Raft, guaranteeing reliable transaction processing for distributed relational data.",
+      "leftIcon": "Lock",
+      "rightIcon": "Lock",
+      "leftVisualText": "Strong",
+      "rightVisualText": "ACID"
+    },
+    {
+      "title": "3. QUERY LANGUAGE",
+      "leftTitle": "No Native Query",
+      "rightTitle": "MySQL Compatible SQL",
+      "leftDesc": "TiKV does not interpret queries directly; it serves data based on provided keys. A layer above handles query logic and translation.",
+      "rightDesc": "Supports standard SQL queries with a MySQL protocol endpoint, allowing seamless integration with existing applications and tools.",
+      "leftIcon": "Code",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Raw KV",
+      "rightVisualText": "SQL API"
+    },
+    {
+      "title": "4. ARCHITECTURE",
+      "leftTitle": "Storage Engine",
+      "rightTitle": "NewSQL Database",
+      "leftDesc": "TiKV acts as the distributed storage backend, handling the physical data storage and replication for a distributed database system.",
+      "rightDesc": "TiDB is a complete NewSQL database system, integrating a distributed SQL layer and a distributed KV storage engine (TiKV).",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Server",
+      "leftVisualText": "Bottom Layer",
+      "rightVisualText": "Full DB"
+    },
+    {
+      "title": "5. SCALABILITY",
+      "leftTitle": "Horizontal Scaling",
+      "rightTitle": "Horizontal Scaling",
+      "leftDesc": "Scales out by adding more TiKV nodes to distribute storage and read/write load, ensuring high throughput and availability.",
+      "rightDesc": "Scales out compute and storage independently by adding nodes, designed for massive, elastic growth of both data and traffic.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Cloud",
+      "leftVisualText": "Storage",
+      "rightVisualText": "Compute+Store"
+    },
+    {
+      "title": "6. USE CASE",
+      "leftTitle": "Foundation for TiDB",
+      "rightTitle": "OLTP Workloads",
+      "leftDesc": "Primarily serves as the robust, distributed storage layer for TiDB, providing the foundation for its SQL capabilities.",
+      "rightDesc": "Ideal for high-concurrency Online Transaction Processing (OLTP) with mixed workloads, web-scale applications, and cloud-native environments.",
+      "leftIcon": "Layers",
+      "rightIcon": "Activity",
+      "leftVisualText": "Backend KV",
+      "rightVisualText": "Main DB"
+    },
+    {
+      "title": "7. COMPLEXITY",
+      "leftTitle": "Lower-level Abstraction",
+      "rightTitle": "Higher-level Abstraction",
+      "leftDesc": "Requires a separate SQL layer for query execution, offering raw control over data but demanding more infrastructure management.",
+      "rightDesc": "Provides a complete, user-friendly SQL interface, simplifying database management and application development significantly.",
       "leftIcon": "Code",
       "rightIcon": "Box",
-      "leftVisualText": "Provider-Free",
-      "rightVisualText": "Provider Tree"
-    },
-    {
-      "title": "3. BUNDLE SIZE",
-      "leftTitle": "~1.1 kB Gzipped",
-      "rightTitle": "~11 kB Gzipped",
-      "leftDesc": "Ultra-lean micro library built on React 18 useSyncExternalStore with negligible bundle weight.",
-      "rightDesc": "Includes Immer, Redux-Thunk, Reselect, and action creators as part of standard distribution.",
-      "leftIcon": "Activity",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Micro Core",
-      "rightVisualText": "Full Suite"
-    },
-    {
-      "title": "4. ASYNC FLOWS",
-      "leftTitle": "Plain Async/Await",
-      "rightTitle": "createAsyncThunk",
-      "leftDesc": "Update state asynchronously with plain modern JavaScript async/await functions directly inside actions.",
-      "rightDesc": "Uses createAsyncThunk lifecycle actions (pending, fulfilled, rejected) or RTK Query endpoints.",
-      "leftIcon": "FastForward",
-      "rightIcon": "Workflow",
-      "leftVisualText": "Pure Async",
-      "rightVisualText": "Thunk Flow"
-    },
-    {
-      "title": "5. DEVTOOLS & LOGGING",
-      "leftTitle": "Middleware Plugin",
-      "rightTitle": "Deep Native Integration",
-      "leftDesc": "Redux DevTools support requires wrapping state creator in optional devtools middleware.",
-      "rightDesc": "Comprehensive time-travel debugging, action inspection, and diffing out of the box.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Optional DevTools",
-      "rightVisualText": "Native Time Travel"
-    },
-    {
-      "title": "6. RE-RENDER OPTIMIZATION",
-      "leftTitle": "Selector Scoping",
-      "rightTitle": "Reselect Memoization",
-      "leftDesc": "Components only re-render when their explicitly selected atomic state slice changes.",
-      "rightDesc": "Uses createSelector with multi-input memoization for complex derived state calculations.",
-      "leftIcon": "Shield",
-      "rightIcon": "Radio",
-      "leftVisualText": "Atomic Pick",
-      "rightVisualText": "Memoized Selectors"
-    },
-    {
-      "title": "7. BEST FIT",
-      "leftTitle": "Fast Agile Apps",
-      "rightTitle": "Large Enterprise",
-      "leftDesc": "Perfect for fast-paced modern startups, dashboard components, and interactive single page apps.",
-      "rightDesc": "Ideal for massive enterprise apps with hundreds of developers needing enforced uniform architecture.",
-      "leftIcon": "Globe",
-      "rightIcon": "Server",
-      "leftVisualText": "Lean & Fast",
-      "rightVisualText": "Strict Enterprise"
+      "leftVisualText": "Raw Storage",
+      "rightVisualText": "Managed DB"
     }
   ]
 }
