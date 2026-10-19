@@ -1,5 +1,4 @@
 [
-  "PostgreSQL vs SQLite",
   "FUNCTIONAL PROGRAMMING vs OBJECT-ORIENTED PROGRAMMING",
   "PostgreSQL vs MySQL",
   "SQL vs NoSQL",
@@ -148,5 +147,6 @@
   "DuckDB vs SQLite",
   "Zustand vs Redux Toolkit",
   "DuckDB vs SQLite",
-  "DuckDB vs SQLite"
+  "DuckDB vs SQLite",
+  "GraphQL vs REST API"
 ]
