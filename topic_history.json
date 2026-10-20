@@ -1,5 +1,4 @@
 [
-  "RIVET vs OPENRIVET",
   "Next.js vs Astro",
   "PostgreSQL vs MySQL",
   "Server Components vs Client Components",
@@ -148,5 +147,6 @@
   "GraphQL vs REST API",
   "Zustand vs Redux Toolkit",
   "TiKV vs TiDB",
-  "GraphQL vs REST API"
+  "GraphQL vs REST API",
+  "PINECODE vs QDRANT"
 ]
