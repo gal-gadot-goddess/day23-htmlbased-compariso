@@ -1,5 +1,4 @@
 [
-  "Next.js vs Astro",
   "PostgreSQL vs MySQL",
   "Server Components vs Client Components",
   "Server Components vs Client Components",
@@ -148,5 +147,6 @@
   "Zustand vs Redux Toolkit",
   "TiKV vs TiDB",
   "GraphQL vs REST API",
-  "PINECODE vs QDRANT"
+  "PINECODE vs QDRANT",
+  "DuckDB vs SQLite"
 ]
