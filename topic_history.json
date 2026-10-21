@@ -1,5 +1,4 @@
 [
-  "PostgreSQL vs MySQL",
   "Server Components vs Client Components",
   "Server Components vs Client Components",
   "FUNCTIONAL vs OBJECT-ORIENTED",
@@ -148,5 +147,6 @@
   "TiKV vs TiDB",
   "GraphQL vs REST API",
   "PINECODE vs QDRANT",
+  "DuckDB vs SQLite",
   "DuckDB vs SQLite"
 ]
