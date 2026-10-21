@@ -1,6 +1,5 @@
 [
   "Server Components vs Client Components",
-  "Server Components vs Client Components",
   "FUNCTIONAL vs OBJECT-ORIENTED",
   "Signals vs Reactivity",
   "SolidJS vs Vue.js",
@@ -148,5 +147,6 @@
   "GraphQL vs REST API",
   "PINECODE vs QDRANT",
   "DuckDB vs SQLite",
-  "DuckDB vs SQLite"
+  "DuckDB vs SQLite",
+  "GraphQL vs REST API"
 ]
