@@ -1,5 +1,4 @@
 [
-  "Signals vs Reactivity",
   "SolidJS vs Vue.js",
   "Qwik vs Remix",
   "Redis vs Memcached",
@@ -148,5 +147,6 @@
   "DuckDB vs SQLite",
   "GraphQL vs REST API",
   "GraphQL vs REST API",
-  "GraphQL vs REST API"
+  "GraphQL vs REST API",
+  "DuckDB vs SQLite"
 ]
