@@ -1,5 +1,4 @@
 [
-  "FUNCTIONAL vs OBJECT-ORIENTED",
   "Signals vs Reactivity",
   "SolidJS vs Vue.js",
   "Qwik vs Remix",
@@ -147,6 +146,7 @@
   "PINECODE vs QDRANT",
   "DuckDB vs SQLite",
   "DuckDB vs SQLite",
+  "GraphQL vs REST API",
   "GraphQL vs REST API",
   "GraphQL vs REST API"
 ]
