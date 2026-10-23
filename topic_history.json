@@ -1,5 +1,4 @@
 [
-  "FUNCTIONAL vs OBJECT-ORIENTED",
   "Server-Sent Events vs WebSockets",
   "Server-Sent Events vs WebSockets",
   "CQRS vs CRUD",
@@ -148,5 +147,6 @@
   "DuckDB vs SQLite",
   "GraphQL vs REST API",
   "Zustand vs Redux Toolkit",
-  "GraphQL vs REST API"
+  "GraphQL vs REST API",
+  "Zustand vs Redux Toolkit"
 ]
