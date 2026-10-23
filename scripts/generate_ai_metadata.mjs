@@ -4,7 +4,8 @@ import path from 'path';
 
 dotenv.config();
 
-const POLLINATIONS_API_URL = 'https://gen.pollinations.ai/v1/chat/completions';
+const API_KEY = process.env.POLLINATIONS_API_KEY;
+const MODEL = process.env.AI_MODEL || 'gemini-fast';
 
 async function fetchWithTimeout(url, options, timeoutMs = 25000) {
     const controller = new AbortController();
@@ -41,32 +42,56 @@ Rules:
 `;
 
     try {
-        const headers = { 'Content-Type': 'application/json' };
-        if (process.env.POLLINATIONS_API_KEY) {
-            headers['Authorization'] = `Bearer ${process.env.POLLINATIONS_API_KEY}`;
+        const bodyPayload = {
+            messages: [{ role: 'user', content: prompt }],
+            jsonMode: true,
+            temperature: 0.8,
+            seed: Math.floor(Math.random() * 1000000)
+        };
+
+        let response = null;
+
+        // Try gen.pollinations.ai if key exists
+        if (API_KEY) {
+            try {
+                response = await fetchWithTimeout('https://gen.pollinations.ai/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${API_KEY}`
+                    },
+                    body: JSON.stringify({ ...bodyPayload, model: MODEL })
+                }, 25000);
+            } catch (e) {
+                console.warn(`[AI Metadata] gen endpoint failed: ${e.message}. Trying public text endpoint...`);
+            }
         }
 
-        const response = await fetchWithTimeout(POLLINATIONS_API_URL, {
-            method: 'POST',
-            headers,
-            body: JSON.stringify({
-                messages: [{ role: 'user', content: prompt }],
-                model: 'gemini-fast',
-                jsonMode: true,
-                seed: Math.floor(Math.random() * 1000000)
-            })
-        }, 25000);
+        // Try public text.pollinations.ai endpoint if gen failed or no key
+        if (!response || !response.ok) {
+            response = await fetchWithTimeout('https://text.pollinations.ai/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ...bodyPayload, model: 'openai' })
+            }, 25000);
+        }
 
         if (!response.ok) {
             throw new Error(`Pollinations HTTP ${response.status}: ${await response.text()}`);
         }
 
         const fullResponse = await response.json();
-        const content = fullResponse.choices?.[0]?.message?.content || "";
+        let content = fullResponse.choices?.[0]?.message?.content || (typeof fullResponse === 'string' ? fullResponse : null);
+        
+        if (!content && typeof fullResponse === 'object' && fullResponse.title) {
+            return fullResponse;
+        }
 
-        const jsonMatch = content.match(/```json\s*(\{[\s\S]*?\})\s*```/) || content.match(/\{[\s\S]*\}/);
-        if (jsonMatch) {
-            return JSON.parse((jsonMatch[1] || jsonMatch[0]).trim());
+        if (content) {
+            const jsonMatch = content.match(/```json\s*(\{[\s\S]*?\})\s*```/) || content.match(/\{[\s\S]*\}/);
+            if (jsonMatch) {
+                return JSON.parse((jsonMatch[1] || jsonMatch[0]).trim());
+            }
         }
 
         throw new Error('No valid JSON found in AI response content');

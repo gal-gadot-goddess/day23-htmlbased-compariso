@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
+import { curatedCatalog } from './topics_catalog.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.join(__dirname, '../.env') });
@@ -12,7 +13,7 @@ const MODEL = process.env.AI_MODEL || 'gemini-fast';
 const OUTPUT_FILE = path.join(__dirname, '../src/data/current_topic.json');
 const HISTORY_FILE = path.join(__dirname, '../topic_history.json');
 
-// Vibrant, contrasting color palettes that look cinematic on dark background
+// Vibrant, high-contrast color palettes designed for dark background Reels
 const COLOR_PAIRS = [
     { left: "#00d2ff", right: "#ff5c00" }, // Electric Cyan vs Neon Tangerine
     { left: "#6366f1", right: "#10b981" }, // Indigo Violet vs Emerald Green
@@ -36,14 +37,107 @@ const COLOR_PAIRS = [
     { left: "#eab308", right: "#6366f1" }  // Electric Gold vs Modern Indigo
 ];
 
+// Rich, diverse software engineering domains to prevent topic clustering
+const DOMAINS = [
+    {
+        category: "DATA LAKEHOUSES & TABLE FORMATS",
+        guidance: "Compare two competing open table formats or data lake architectures (e.g. metadata specs, partitioning, concurrency, time-travel, catalog support)."
+    },
+    {
+        category: "MODERN RUNTIMES & COMPILERS",
+        guidance: "Compare two modern systems languages, package managers, or runtimes (e.g. memory safety, concurrency, compile-time checks, developer ergonomics)."
+    },
+    {
+        category: "EDGE RUNTIMES & WEB FRAMEWORKS",
+        guidance: "Compare two edge-ready web micro-frameworks or serverless runtimes (e.g. routing speed, type safety, cold start latency, memory footprint)."
+    },
+    {
+        category: "IN-MEMORY STORES & CACHES",
+        guidance: "Compare two high-throughput in-memory data engines, key-value stores, or caches (e.g. threading model, eviction, snapshotting, memory efficiency)."
+    },
+    {
+        category: "VECTOR DATABASES & AI SEARCH",
+        guidance: "Compare two vector databases, embedding stores, or hybrid search engines (e.g. indexing algorithms, quantization, metadata filtering, clustering)."
+    },
+    {
+        category: "SECURITY & AUTHENTICATION PROTOCOLS",
+        guidance: "Compare two authentication mechanisms, token specifications, or identity protocols (e.g. cipher suites, downgrade protection, parsing security, federation)."
+    },
+    {
+        category: "TYPESCRIPT ORMS & DATA ACCESS",
+        guidance: "Compare two modern TypeScript database access libraries or ORMs (e.g. schema definitions, query execution, cold starts, SQL parity, migrations)."
+    },
+    {
+        category: "WORKFLOW & DATA ORCHESTRATION",
+        guidance: "Compare two workflow engines or orchestration platforms (e.g. durable execution vs DAG scheduling, replay mechanics, fault tolerance, latency)."
+    },
+    {
+        category: "DESKTOP & CROSS-PLATFORM APPS",
+        guidance: "Compare two cross-platform application frameworks or desktop webview technologies (e.g. binary size, memory usage, security sandboxing, native APIs)."
+    },
+    {
+        category: "WEB SERVERS & REVERSE PROXIES",
+        guidance: "Compare two modern edge reverse proxies or HTTP/3 web servers (e.g. TLS automation, config model, memory safety, concurrency performance)."
+    },
+    {
+        category: "SEARCH ENGINES & INFORMATION RETRIEVAL",
+        guidance: "Compare two modern full-text or lexical search engines (e.g. indexing latency, typo tolerance, memory footprint, cluster management)."
+    },
+    {
+        category: "TIME-SERIES & REAL-TIME ANALYTICS",
+        guidance: "Compare two time-series databases or real-time analytical engines (e.g. data compression, ingestion throughput, retention policies, SQL support)."
+    },
+    {
+        category: "INFRASTRUCTURE AS CODE & CLOUD",
+        guidance: "Compare two infrastructure-as-code or cloud provisioning platforms (e.g. declarative vs imperative, state management, drift detection, ecosystem)."
+    },
+    {
+        category: "CONTAINERIZATION & MICROVMS",
+        guidance: "Compare two container isolation or microVM virtualization technologies (e.g. boot time, hypervisor isolation, memory footprint, syscall boundary)."
+    },
+    {
+        category: "DISTRIBUTED MESSAGING & STREAMING",
+        guidance: "Compare two distributed event streaming brokers or message queues (e.g. storage layer, consumer group balancing, log retention, backpressure)."
+    },
+    {
+        category: "CODE FORMATTERS & LINTERS",
+        guidance: "Compare two modern code quality, formatting, or linting tools (e.g. AST parsing speed, rule configurability, language coverage, memory usage)."
+    },
+    {
+        category: "GRAPH DATABASES & KNOWLEDGE GRAPHS",
+        guidance: "Compare two native graph databases or knowledge graph systems (e.g. Cypher support, index-free adjacency, transactional ACID, in-memory execution)."
+    },
+    {
+        category: "API & SERIALIZATION PROTOCOLS",
+        guidance: "Compare two modern binary serialization formats or RPC protocols (e.g. schema evolution, zero-copy decode, payload compactness, language bindings)."
+    }
+];
+
 function getRandomColorPair() {
     return COLOR_PAIRS[Math.floor(Math.random() * COLOR_PAIRS.length)];
+}
+
+function normalizeTopicName(str) {
+    if (!str) return '';
+    return str.toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
 function getHistory() {
     if (!fs.existsSync(HISTORY_FILE)) return [];
     try {
-        return JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf8'));
+        const raw = JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf8'));
+        if (!Array.isArray(raw)) return [];
+        // Return deduplicated list
+        const seen = new Set();
+        const unique = [];
+        for (const item of raw) {
+            const norm = normalizeTopicName(item);
+            if (norm && !seen.has(norm)) {
+                seen.add(norm);
+                unique.push(item);
+            }
+        }
+        return unique;
     } catch (e) {
         return [];
     }
@@ -51,277 +145,27 @@ function getHistory() {
 
 function saveToHistory(topic) {
     const history = getHistory();
-    history.push(topic);
-    // Keep last 150 entries to prevent repetitive topics
-    fs.writeFileSync(HISTORY_FILE, JSON.stringify(history.slice(-150), null, 2));
-}
+    const candNorm = normalizeTopicName(topic);
+    
+    // Only add if not already in history
+    const alreadyExists = history.some(t => {
+        const n = normalizeTopicName(t);
+        if (n === candNorm) return true;
+        // Check reverse order "B vs A" as well
+        const parts = topic.split(/\s+vs\s+/i);
+        if (parts.length === 2) {
+            const rev = normalizeTopicName(`${parts[1]} vs ${parts[0]}`);
+            if (n === rev) return true;
+        }
+        return false;
+    });
 
-const curatedFallbacks = [
-    {
-        topLabel: "BACKEND ARCHITECTURE",
-        mainTitle: { left: "GraphQL", right: "REST API", vs: "vs" },
-        leftSub: "Flexible Queries",
-        rightSub: "Standard Endpoints",
-        leftColor: "#E535AB",
-        rightColor: "#009688",
-        badge: "THE 7 CORE DIFFERENCES",
-        differences: [
-            {
-                title: "1. DATA FETCHING",
-                leftTitle: "Single Request",
-                rightTitle: "Multiple Endpoints",
-                leftDesc: "Client asks for exact data needed in one single HTTP request.",
-                rightDesc: "Requires multiple roundtrips to different endpoints for related resources.",
-                leftIcon: "Zap",
-                rightIcon: "Layers",
-                leftVisualText: "Precise Query",
-                rightVisualText: "Endpoint Chaining"
-            },
-            {
-                title: "2. OVERFETCHING",
-                leftTitle: "Zero Overfetching",
-                rightTitle: "Fixed Payloads",
-                leftDesc: "Never downloads unwanted attributes or nested fields.",
-                rightDesc: "Server determines payload size, frequently transferring unnecessary data.",
-                leftIcon: "Activity",
-                rightIcon: "HardDrive",
-                leftVisualText: "Exact Payload",
-                rightVisualText: "Heavy Payload"
-            },
-            {
-                title: "3. SCHEMA & TYPING",
-                leftTitle: "Strict Schema",
-                rightTitle: "Loose Contracts",
-                leftDesc: "Strongly typed schema guarantees contract safety between frontend and backend.",
-                rightDesc: "Relies on OpenAPI or manual docs without runtime type enforcement.",
-                leftIcon: "Code",
-                rightIcon: "FileCode",
-                leftVisualText: "Strict Types",
-                rightVisualText: "Manual Specs"
-            },
-            {
-                title: "4. CACHING",
-                leftTitle: "Client-Side Cache",
-                rightTitle: "Native HTTP Caching",
-                leftDesc: "Complex POST queries bypass standard HTTP/CDN edge caching layers.",
-                rightDesc: "Leverages standard HTTP status codes, ETags, and edge CDN caches natively.",
-                leftIcon: "Cpu",
-                rightIcon: "Globe",
-                leftVisualText: "Complex Cache",
-                rightVisualText: "Edge Friendly"
-            },
-            {
-                title: "5. VERSIONING",
-                leftTitle: "Continuous Evolution",
-                rightTitle: "URI Versioning",
-                leftDesc: "Deprecate fields at granular level without creating breaking API revisions.",
-                rightDesc: "Requires major version routing like /v1, /v2 for breaking structural updates.",
-                leftIcon: "ArrowRightLeft",
-                rightIcon: "Terminal",
-                leftVisualText: "Field Deprecation",
-                rightVisualText: "v1 / v2 Break"
-            },
-            {
-                title: "6. REALTIME UPDATES",
-                leftTitle: "Built-in Subscriptions",
-                rightTitle: "WebSockets Addon",
-                leftDesc: "Native WebSocket subscriptions stream live events out of the box.",
-                rightDesc: "Requires auxiliary protocols like WebSockets or SSE architecture.",
-                leftIcon: "Network",
-                rightIcon: "Server",
-                leftVisualText: "Live Stream",
-                rightVisualText: "External Socket"
-            },
-            {
-                title: "7. COMPLEXITY",
-                leftTitle: "Higher Overhead",
-                rightTitle: "Simple & Universal",
-                leftDesc: "Requires query parser, resolver optimization, and N+1 query protection.",
-                rightDesc: "Straightforward controllers, universally understood across all tech stacks.",
-                leftIcon: "Shield",
-                rightIcon: "Box",
-                leftVisualText: "Query Resolvers",
-                rightVisualText: "Standard Routes"
-            }
-        ]
-    },
-    {
-        topLabel: "ANALYTICS & EMBEDDED ENGINES",
-        mainTitle: { left: "DuckDB", right: "SQLite", vs: "vs" },
-        leftSub: "Columnar OLAP",
-        rightSub: "Row-based OLTP",
-        leftColor: "#FFF000",
-        rightColor: "#003B57",
-        badge: "THE 7 CORE DIFFERENCES",
-        differences: [
-            {
-                title: "1. STORAGE MODEL",
-                leftTitle: "Columnar Vectorized",
-                rightTitle: "B-Tree Row Storage",
-                leftDesc: "Stores values by column in contiguous memory chunks, executing SIMD vectorized scans across millions of rows per millisecond.",
-                rightDesc: "Stores full rows contiguously inside standard B-Tree pages, optimal for single-record key lookups.",
-                leftIcon: "Layers",
-                rightIcon: "Database",
-                leftVisualText: "Column Vector",
-                rightVisualText: "B-Tree Pages"
-            },
-            {
-                title: "2. TARGET WORKLOAD",
-                leftTitle: "Heavy Aggregations",
-                rightTitle: "Transactional CRUD",
-                leftDesc: "Built specifically for analytical queries like GROUP BY, window functions, and complex joins over gigabytes of Parquet.",
-                rightDesc: "Designed for high-throughput single-row transactional writes, reads, and primary key point operations.",
-                leftIcon: "Activity",
-                rightIcon: "Zap",
-                leftVisualText: "Deep Analytics",
-                rightVisualText: "Fast Point CRUD"
-            },
-            {
-                title: "3. PARQUET & ARROW",
-                leftTitle: "Native Zero-Copy",
-                rightTitle: "Requires Plugins",
-                leftDesc: "Queries remote Parquet, JSON, and Apache Arrow streams directly without loading data into an internal database file.",
-                rightDesc: "Requires virtual table extensions and data loading scripts to parse and index external analytical formats.",
-                leftIcon: "HardDrive",
-                rightIcon: "FileCode",
-                leftVisualText: "Zero-Copy Parquet",
-                rightVisualText: "File Import"
-            },
-            {
-                title: "4. MULTI-THREADING",
-                leftTitle: "Parallel Execution",
-                rightTitle: "Single Writer Lock",
-                leftDesc: "Saturates all CPU cores automatically with a morsel-driven parallel query engine for batch workloads.",
-                rightDesc: "Serializes concurrent writes using WAL locks, limiting concurrent execution throughput on heavy calculations.",
-                leftIcon: "Cpu",
-                rightIcon: "Lock",
-                leftVisualText: "Multi-Core SIMD",
-                rightVisualText: "Serial Locks"
-            },
-            {
-                title: "5. MEMORY CONSUMPTION",
-                leftTitle: "Buffer-Pool Spilling",
-                rightTitle: "Tiny Minimal Footprint",
-                leftDesc: "Allocates large RAM buffer pools and spills intermediate group states to temporary disk when memory limits are reached.",
-                rightDesc: "Runs smoothly inside embedded IoT devices, mobile apps, and smart watches with minimal megabytes of memory.",
-                leftIcon: "Server",
-                rightIcon: "Smartphone",
-                leftVisualText: "Heavy Buffer",
-                rightVisualText: "Ultra Compact"
-            },
-            {
-                title: "6. QUERY OPTIMIZER",
-                leftTitle: "Cost & Rule Based",
-                rightTitle: "Heuristic Planner",
-                leftDesc: "Advanced vectorized optimizer calculates join order reordering, filter pushdown, and dynamic runtime statistics.",
-                rightDesc: "Lean query planner prioritizing predictable, deterministic execution plans and zero runtime overhead.",
-                leftIcon: "Workflow",
-                rightIcon: "Compass",
-                leftVisualText: "Vector Optimizer",
-                rightVisualText: "Lean Planner"
-            },
-            {
-                title: "7. PRIMARY USE-CASE",
-                leftTitle: "Data Science & BI",
-                rightTitle: "Application State",
-                leftDesc: "Ideal for Python Pandas replacements, dashboard aggregation engines, and local data warehouse experiments.",
-                rightDesc: "The undisputed gold standard for edge devices, browser caches, desktop apps, and microservice databases.",
-                leftIcon: "BarChart",
-                rightIcon: "Box",
-                leftVisualText: "Data Science",
-                rightVisualText: "App Storage"
-            }
-        ]
-    },
-    {
-        topLabel: "CLIENT STATE MANAGEMENT",
-        mainTitle: { left: "Zustand", right: "Redux Toolkit", vs: "vs" },
-        leftSub: "Minimal Hooks",
-        rightSub: "Standardized Slices",
-        leftColor: "#443E38",
-        rightColor: "#764ABC",
-        badge: "THE 7 CORE DIFFERENCES",
-        differences: [
-            {
-                title: "1. BOILERPLATE",
-                leftTitle: "Zero Boilerplate",
-                rightTitle: "Structured Slices",
-                leftDesc: "Create a reactive global store in 4 lines of code without reducers, dispatchers, or context providers.",
-                rightDesc: "Requires createSlice, configureStore, action definitions, and root reducer composition.",
-                leftIcon: "Zap",
-                rightIcon: "Layers",
-                leftVisualText: "Instant Store",
-                rightVisualText: "Slice Setup"
-            },
-            {
-                title: "2. REACT PROVIDER",
-                leftTitle: "No Context Wrapper",
-                rightTitle: "Mandatory Provider",
-                leftDesc: "Consumes state outside of the React render tree with direct store subscriptions and zero provider wrapping.",
-                rightDesc: "Every consuming component must sit inside the centralized Redux Provider context tree.",
-                leftIcon: "Code",
-                rightIcon: "Box",
-                leftVisualText: "Provider-Free",
-                rightVisualText: "Provider Tree"
-            },
-            {
-                title: "3. BUNDLE SIZE",
-                leftTitle: "~1.1 kB Gzipped",
-                rightTitle: "~11 kB Gzipped",
-                leftDesc: "Ultra-lean micro library built on React 18 useSyncExternalStore with negligible bundle weight.",
-                rightDesc: "Includes Immer, Redux-Thunk, Reselect, and action creators as part of standard distribution.",
-                leftIcon: "Activity",
-                rightIcon: "HardDrive",
-                leftVisualText: "Micro Core",
-                rightVisualText: "Full Suite"
-            },
-            {
-                title: "4. ASYNC FLOWS",
-                leftTitle: "Plain Async/Await",
-                rightTitle: "createAsyncThunk",
-                leftDesc: "Update state asynchronously with plain modern JavaScript async/await functions directly inside actions.",
-                rightDesc: "Uses createAsyncThunk lifecycle actions (pending, fulfilled, rejected) or RTK Query endpoints.",
-                leftIcon: "FastForward",
-                rightIcon: "Workflow",
-                leftVisualText: "Pure Async",
-                rightVisualText: "Thunk Flow"
-            },
-            {
-                title: "5. DEVTOOLS & LOGGING",
-                leftTitle: "Middleware Plugin",
-                rightTitle: "Deep Native Integration",
-                leftDesc: "Redux DevTools support requires wrapping state creator in optional devtools middleware.",
-                rightDesc: "Comprehensive time-travel debugging, action inspection, and diffing out of the box.",
-                leftIcon: "Terminal",
-                rightIcon: "Cpu",
-                leftVisualText: "Optional DevTools",
-                rightVisualText: "Native Time Travel"
-            },
-            {
-                title: "6. RE-RENDER OPTIMIZATION",
-                leftTitle: "Selector Scoping",
-                rightTitle: "Reselect Memoization",
-                leftDesc: "Components only re-render when their explicitly selected atomic state slice changes.",
-                rightDesc: "Uses createSelector with multi-input memoization for complex derived state calculations.",
-                leftIcon: "Shield",
-                rightIcon: "Radio",
-                leftVisualText: "Atomic Pick",
-                rightVisualText: "Memoized Selectors"
-            },
-            {
-                title: "7. BEST FIT",
-                leftTitle: "Fast Agile Apps",
-                rightTitle: "Large Enterprise",
-                leftDesc: "Perfect for fast-paced modern startups, dashboard components, and interactive single page apps.",
-                rightDesc: "Ideal for massive enterprise apps with hundreds of developers needing enforced uniform architecture.",
-                leftIcon: "Globe",
-                rightIcon: "Server",
-                leftVisualText: "Lean & Fast",
-                rightVisualText: "Strict Enterprise"
-            }
-        ]
+    if (!alreadyExists) {
+        history.push(topic);
+        // Persist clean deduplicated history
+        fs.writeFileSync(HISTORY_FILE, JSON.stringify(history, null, 2));
     }
-];
+}
 
 async function fetchWithTimeout(url, options, timeoutMs = 25000) {
     const controller = new AbortController();
@@ -336,32 +180,105 @@ async function fetchWithTimeout(url, options, timeoutMs = 25000) {
     }
 }
 
-async function generateWithPollinations() {
-    const history = getHistory();
-    const recentHistoryStr = history.slice(-50).join(', ');
-    const randomColors = getRandomColorPair();
+async function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function callPollinationsEndpoint(prompt, selectedModel, randomColors) {
+    const bodyPayload = {
+        messages: [
+            { 
+                role: "system", 
+                content: "You are an elite principal engineer and tech creator generating educational comparisons for software developers." 
+            },
+            { role: "user", content: prompt }
+        ],
+        jsonMode: true,
+        temperature: 0.9,
+        seed: Math.floor(Math.random() * 10000000)
+    };
+
+    let response = null;
+
+    // Strategy 1: If API Key exists, call standard gen.pollinations.ai endpoint
+    if (API_KEY) {
+        try {
+            response = await fetchWithTimeout('https://gen.pollinations.ai/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${API_KEY}`
+                },
+                body: JSON.stringify({ ...bodyPayload, model: selectedModel })
+            }, 25000);
+        } catch (err) {
+            console.warn(`[AI] gen.pollinations.ai connection error: ${err.message}. Trying public endpoint...`);
+        }
+    }
+
+    // Strategy 2: If no API key or gen endpoint failed, use text.pollinations.ai
+    if (!response || !response.ok) {
+        response = await fetchWithTimeout('https://text.pollinations.ai/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ...bodyPayload, model: 'openai' })
+        }, 25000);
+    }
+
+    if (!response.ok) {
+        const errText = await response.text();
+        throw new Error(`HTTP ${response.status}: ${errText.slice(0, 200)}`);
+    }
+
+    const data = await response.json();
+    let content = data.choices?.[0]?.message?.content || (typeof data === 'string' ? data : null);
+    if (!content && typeof data === 'object') {
+        // If text.pollinations returned the JSON object directly
+        if (data.mainTitle?.left && data.mainTitle?.right) {
+            return data;
+        }
+    }
+
+    if (!content) throw new Error("Empty AI response content");
+
+    const jsonMatch = content.match(/```json\s*(\{[\s\S]*?\})\s*```/) || content.match(/\{[\s\S]*\}/);
+    const jsonStr = jsonMatch ? (jsonMatch[1] || jsonMatch[0]) : content;
+    const topic = JSON.parse(jsonStr.trim());
+
+    if (!topic.mainTitle?.left || !topic.mainTitle?.right || !Array.isArray(topic.differences) || topic.differences.length < 5) {
+        throw new Error("Parsed JSON structure does not match expected comparison schema");
+    }
+
+    // Ensure distinct vibrant colors
+    if (!topic.leftColor || !topic.rightColor || topic.leftColor.toLowerCase() === topic.rightColor.toLowerCase()) {
+        topic.leftColor = randomColors.left;
+        topic.rightColor = randomColors.right;
+    }
+
+    return topic;
+}
+
+async function generateWithPollinations(history, chosenDomain, randomColors) {
+    const historyListStr = history.map(t => `- ${t}`).join('\n');
 
     const prompt = `
-Generate a valid JSON object for a technical comparison visual (Reel/Short format).
-The comparison should be between two technologies, architectures, or concepts.
-Topic MUST BE COMPLETELY NEW and CANNOT BE ANY OF THESE PREVIOUS TOPICS:
-${recentHistoryStr}
+Generate a valid JSON object for a technical comparison visual (Reel/Short format for developers).
 
-Pick an exciting comparison from one of these domains:
-- Databases & Storage Engines (e.g. SQLite vs DuckDB, ScyllaDB vs Cassandra, Pinecone vs Qdrant, RocksDB vs LevelDB)
-- Modern Systems & Runtimes (e.g. Zig vs Rust, Go vs Rust, WebAssembly vs Native Containers, Deno vs Bun)
-- Distributed Systems & Messaging (e.g. Apache Pulsar vs Kafka, NATS vs RabbitMQ, Raft vs Paxos)
-- Web & Networking (e.g. HTTP/2 vs HTTP/3, WebRTC vs WebSockets, QUIC vs TCP, tRPC vs GraphQL)
-- Security & Cloud (e.g. OAuth 2.0 vs OIDC, WireGuard vs OpenVPN, Cilium vs Calico, eBPF vs Kernel Modules)
+DOMAIN: ${chosenDomain.category}
+FOCUS: ${chosenDomain.guidance}
+
+CRITICAL REQUIREMENT - DO NOT DUPLICATE:
+The topic MUST BE COMPLETELY FRESH and CANNOT BE ANY OF THESE PREVIOUS TOPICS:
+${historyListStr}
 
 Color Strategy:
-Assign distinct, vibrant contrasting hex colors for leftColor and rightColor (e.g. "${randomColors.left}" and "${randomColors.right}"). NEVER use dull, washed-out or identical colors.
+Assign distinct, vibrant contrasting hex colors: leftColor="${randomColors.left}" and rightColor="${randomColors.right}".
 
 Return ONLY valid JSON. No markdown code blocks, no explanation, no backticks.
 
 JSON Schema:
 {
-    "topLabel": "UPPERCASE CATEGORY",
+    "topLabel": "${chosenDomain.category}",
     "mainTitle": {
         "left": "TECH 1",
         "right": "TECH 2",
@@ -379,8 +296,8 @@ JSON Schema:
             "rightTitle": "Point for Tech 2 (max 3 words)",
             "leftDesc": "High-value educational explanation of how it works under the hood (20 to 35 words).",
             "rightDesc": "High-value educational explanation of how it works under the hood (20 to 35 words).",
-            "leftIcon": "Valid Lucide icon name matching the concept (e.g. Database, Cpu, Network, Zap, Server, Code, Globe, Box, Layers, Shield, Activity, HardDrive, Terminal, GitBranch, Cloud, Lock, Workflow, Radio, Flame, Compass, Key, FastForward, CheckCircle, Smartphone, etc.)",
-            "rightIcon": "Valid Lucide icon name matching the concept (e.g. Database, Cpu, Network, Zap, Server, Code, Globe, Box, Layers, Shield, Activity, HardDrive, Terminal, GitBranch, Cloud, Lock, Workflow, Radio, Flame, Compass, Key, FastForward, CheckCircle, Smartphone, etc.)",
+            "leftIcon": "Valid Lucide icon name matching the concept (e.g. Database, Cpu, Network, Zap, Server, Code, Globe, Box, Layers, Shield, Activity, HardDrive, Terminal, GitBranch, Cloud, Lock, Workflow, Radio, Flame, Compass, Key, FastForward, CheckCircle, Smartphone)",
+            "rightIcon": "Valid Lucide icon name matching the concept (e.g. Database, Cpu, Network, Zap, Server, Code, Globe, Box, Layers, Shield, Activity, HardDrive, Terminal, GitBranch, Cloud, Lock, Workflow, Radio, Flame, Compass, Key, FastForward, CheckCircle, Smartphone)",
             "leftVisualText": "Visual badge (1-2 words)",
             "rightVisualText": "Visual badge (1-2 words)"
         }
@@ -389,102 +306,102 @@ JSON Schema:
 
 Rules:
 1. Provide EXACTLY 7 differences.
-2. Explanations must be DEEP, ACCURATE, and HIGHLY INFORMATIVE for developers (20-35 words per side explaining concrete mechanisms).
-3. High contrast against dark background.
-4. Engaging, viral tech-educator tone.
+2. Explanations must be DEEP, ACCURATE, and HIGHLY INFORMATIVE for software engineers (20-35 words per side explaining concrete mechanisms).
+3. Both technologies must be real, widely used, or emerging production tools.
+4. DO NOT use generic or silly placeholder topics.
 `;
 
-    console.log(`🚀 Requesting new topic from Pollinations (${MODEL})...`);
-    const headers = { 'Content-Type': 'application/json' };
-    if (API_KEY) headers['Authorization'] = `Bearer ${API_KEY}`;
-
-    const res = await fetchWithTimeout('https://gen.pollinations.ai/v1/chat/completions', {
-        method: 'POST',
-        headers,
-        body: JSON.stringify({
-            model: MODEL,
-            messages: [
-                { role: "system", content: "You are an elite principal engineer and tech creator generating educational comparisons." },
-                { role: "user", content: prompt }
-            ],
-            jsonMode: true,
-            seed: Math.floor(Math.random() * 10000000)
-        })
-    }, 25000);
-
-    if (!res.ok) {
-        throw new Error(`Pollinations API HTTP ${res.status}: ${await res.text()}`);
-    }
-
-    const data = await res.json();
-    let content = data.choices?.[0]?.message?.content;
-    if (!content) throw new Error("Empty AI response content");
-
-    const jsonMatch = content.match(/```json\s*(\{[\s\S]*?\})\s*```/) || content.match(/\{[\s\S]*\}/);
-    const jsonStr = jsonMatch ? (jsonMatch[1] || jsonMatch[0]) : content;
-    const topic = JSON.parse(jsonStr.trim());
-
-    if (!topic.mainTitle?.left || !topic.mainTitle?.right || !Array.isArray(topic.differences) || topic.differences.length < 5) {
-        throw new Error("Parsed JSON structure does not match expected comparison schema");
-    }
-
-    // Ensure distinct vibrant colors if AI returned none or identical colors
-    if (!topic.leftColor || !topic.rightColor || topic.leftColor.toLowerCase() === topic.rightColor.toLowerCase()) {
-        topic.leftColor = randomColors.left;
-        topic.rightColor = randomColors.right;
-    }
-
-    return topic;
-}
-
-function normalizeTopicName(str) {
-    return str.toLowerCase().replace(/[^a-z0-9]/g, '');
+    return await callPollinationsEndpoint(prompt, MODEL, randomColors);
 }
 
 async function main() {
     let topic = null;
     const history = getHistory();
-    const normalizedHistory = new Set(history.map(normalizeTopicName));
+    const normalizedHistory = new Set();
+    
+    // Index all historical topics and their reverse pairings
+    for (const h of history) {
+        normalizedHistory.add(normalizeTopicName(h));
+        const parts = h.split(/\s+vs\s+/i);
+        if (parts.length === 2) {
+            normalizedHistory.add(normalizeTopicName(`${parts[1]} vs ${parts[0]}`));
+        }
+    }
 
-    // Try up to 4 attempts to generate a truly unique topic via AI
-    for (let attempt = 1; attempt <= 4; attempt++) {
+    console.log(`📚 Existing topic history contains ${history.length} unique topics.`);
+
+    // Shuffle domains to ensure varied coverage on every invocation
+    const shuffledDomains = [...DOMAINS].sort(() => 0.5 - Math.random());
+
+    // Try up to 6 AI attempts across different domains
+    for (let attempt = 1; attempt <= 6; attempt++) {
+        const domain = shuffledDomains[(attempt - 1) % shuffledDomains.length];
+        const randomColors = getRandomColorPair();
+
+        console.log(`\n🚀 Attempt ${attempt}/6: Requesting topic in "${domain.category}"...`);
+
         try {
-            const candidate = await generateWithPollinations();
+            const candidate = await generateWithPollinations(history, domain, randomColors);
             const candName = `${candidate.mainTitle.left} vs ${candidate.mainTitle.right}`;
             const candNorm = normalizeTopicName(candName);
             const candRevNorm = normalizeTopicName(`${candidate.mainTitle.right} vs ${candidate.mainTitle.left}`);
 
             if (!normalizedHistory.has(candNorm) && !normalizedHistory.has(candRevNorm)) {
                 topic = candidate;
-                console.log(`✨ Fresh topic generated on attempt ${attempt}: ${candName}`);
+                console.log(`✨ Success! Fresh topic generated: "${candName}"`);
                 break;
             } else {
-                console.warn(`⚠️ Attempt ${attempt}: Topic "${candName}" was previously covered. Regenerating...`);
+                console.warn(`⚠️ Attempt ${attempt}: Topic "${candName}" was already covered in history. Retrying with another domain...`);
+                await sleep(3000); // Backoff before next attempt to respect rate limits
             }
         } catch (err) {
             console.warn(`⚠️ Attempt ${attempt} failed: ${err.message}`);
+            // If rate-limited by Pollinations, back off before next attempt
+            if (err.message.includes('402') || err.message.includes('FREE_LIMIT') || err.message.includes('429')) {
+                console.log('⏳ Rate-limit hit. Waiting 5s before next attempt...');
+                await sleep(5000);
+            } else {
+                await sleep(2000);
+            }
         }
     }
 
-    // Fallback if AI repeated or failed
+    // Guaranteed Unique Curated Fallback
     if (!topic) {
-        console.warn("⚠️ AI attempts exhausted or duplicated. Selecting curated fallback...");
-        const available = curatedFallbacks.filter(f => {
-            const name = `${f.mainTitle.left} vs ${f.mainTitle.right}`;
-            return !normalizedHistory.has(normalizeTopicName(name));
+        console.warn("\n⚠️ AI attempts exhausted or network unavailable. Selecting from curated catalog...");
+        
+        // Filter catalog for topics NEVER covered before
+        const unusedCatalog = curatedCatalog.filter(c => {
+            const name = `${c.mainTitle.left} vs ${c.mainTitle.right}`;
+            const norm = normalizeTopicName(name);
+            const revNorm = normalizeTopicName(`${c.mainTitle.right} vs ${c.mainTitle.left}`);
+            return !normalizedHistory.has(norm) && !normalizedHistory.has(revNorm);
         });
-        const selectedFallback = (available.length > 0 ? available : curatedFallbacks)[Math.floor(Math.random() * (available.length > 0 ? available.length : curatedFallbacks.length))];
-        topic = JSON.parse(JSON.stringify(selectedFallback));
-        const randomColors = getRandomColorPair();
-        topic.leftColor = randomColors.left;
-        topic.rightColor = randomColors.right;
+
+        if (unusedCatalog.length > 0) {
+            const selected = unusedCatalog[Math.floor(Math.random() * unusedCatalog.length)];
+            topic = JSON.parse(JSON.stringify(selected));
+            const randomColors = getRandomColorPair();
+            topic.leftColor = randomColors.left;
+            topic.rightColor = randomColors.right;
+            console.log(`📦 Selected fresh curated topic (${unusedCatalog.length} remaining in reserve): ${topic.mainTitle.left} vs ${topic.mainTitle.right}`);
+        } else {
+            console.error("❌ Curated catalog exhausted! Resetting least recently used topics.");
+            // Pick random from catalog with new colors as emergency fallback
+            const emergency = curatedCatalog[Math.floor(Math.random() * curatedCatalog.length)];
+            topic = JSON.parse(JSON.stringify(emergency));
+            const randomColors = getRandomColorPair();
+            topic.leftColor = randomColors.left;
+            topic.rightColor = randomColors.right;
+        }
     }
 
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(topic, null, 2));
-    const topicName = `${topic.mainTitle.left} vs ${topic.mainTitle.right}`;
-    saveToHistory(topicName);
+    const finalTopicName = `${topic.mainTitle.left} vs ${topic.mainTitle.right}`;
+    saveToHistory(finalTopicName);
 
-    console.log(`✅ Successfully generated and saved: ${topicName} (Colors: ${topic.leftColor} vs ${topic.rightColor})`);
+    console.log(`\n✅ Successfully generated and saved: ${finalTopicName}`);
+    console.log(`🎨 Colors: ${topic.leftColor} vs ${topic.rightColor}`);
     process.exit(0);
 }
 
