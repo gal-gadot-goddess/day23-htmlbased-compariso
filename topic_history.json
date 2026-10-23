@@ -55,5 +55,6 @@
   "TiKV vs TiDB",
   "PINECODE vs QDRANT",
   "DELTA LAKE vs ICEBERG",
-  "Protocol Buffers vs FlatBuffers"
+  "Protocol Buffers vs FlatBuffers",
+  "Hudi vs Iceberg"
 ]

@@ -2,18 +2,17 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import { curatedCatalog } from './topics_catalog.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const API_KEY = process.env.POLLINATIONS_API_KEY;
-const MODEL = process.env.AI_MODEL || 'gemini-fast';
+const DEFAULT_MODEL = process.env.AI_MODEL || 'gemini-fast';
 
 const OUTPUT_FILE = path.join(__dirname, '../src/data/current_topic.json');
 const HISTORY_FILE = path.join(__dirname, '../topic_history.json');
 
-// Vibrant, high-contrast color palettes designed for dark background Reels
+// Vibrant, contrasting color palettes for cinematic dark background
 const COLOR_PAIRS = [
     { left: "#00d2ff", right: "#ff5c00" }, // Electric Cyan vs Neon Tangerine
     { left: "#6366f1", right: "#10b981" }, // Indigo Violet vs Emerald Green
@@ -37,81 +36,83 @@ const COLOR_PAIRS = [
     { left: "#eab308", right: "#6366f1" }  // Electric Gold vs Modern Indigo
 ];
 
-// Rich, diverse software engineering domains to prevent topic clustering
+// Broad, rotating technical domains to maximize diversity in AI topic selection
 const DOMAINS = [
     {
         category: "DATA LAKEHOUSES & TABLE FORMATS",
-        guidance: "Compare two competing open table formats or data lake architectures (e.g. metadata specs, partitioning, concurrency, time-travel, catalog support)."
+        guidance: "Compare two competing open table formats or data lake architectures (metadata specs, partitioning, concurrency, time-travel, catalog support)."
     },
     {
-        category: "MODERN RUNTIMES & COMPILERS",
-        guidance: "Compare two modern systems languages, package managers, or runtimes (e.g. memory safety, concurrency, compile-time checks, developer ergonomics)."
+        category: "MODERN RUNTIMES & SYSTEMS LANGUAGES",
+        guidance: "Compare two modern systems programming languages, package managers, or native runtimes (memory safety, concurrency, compile-time checks, developer ergonomics)."
     },
     {
         category: "EDGE RUNTIMES & WEB FRAMEWORKS",
-        guidance: "Compare two edge-ready web micro-frameworks or serverless runtimes (e.g. routing speed, type safety, cold start latency, memory footprint)."
+        guidance: "Compare two edge-ready web micro-frameworks or serverless runtimes (routing speed, type safety, cold start latency, memory footprint)."
     },
     {
         category: "IN-MEMORY STORES & CACHES",
-        guidance: "Compare two high-throughput in-memory data engines, key-value stores, or caches (e.g. threading model, eviction, snapshotting, memory efficiency)."
+        guidance: "Compare two high-throughput in-memory data engines, key-value stores, or caches (threading model, eviction, snapshotting, memory efficiency)."
     },
     {
         category: "VECTOR DATABASES & AI SEARCH",
-        guidance: "Compare two vector databases, embedding stores, or hybrid search engines (e.g. indexing algorithms, quantization, metadata filtering, clustering)."
+        guidance: "Compare two vector databases, embedding stores, or hybrid search engines (indexing algorithms, quantization, metadata filtering, clustering)."
     },
     {
         category: "SECURITY & AUTHENTICATION PROTOCOLS",
-        guidance: "Compare two authentication mechanisms, token specifications, or identity protocols (e.g. cipher suites, downgrade protection, parsing security, federation)."
+        guidance: "Compare two authentication mechanisms, token specifications, or identity protocols (cipher suites, downgrade protection, parsing security, federation)."
     },
     {
         category: "TYPESCRIPT ORMS & DATA ACCESS",
-        guidance: "Compare two modern TypeScript database access libraries or ORMs (e.g. schema definitions, query execution, cold starts, SQL parity, migrations)."
+        guidance: "Compare two modern TypeScript database access libraries or ORMs (schema definitions, query execution, cold starts, SQL parity, migrations)."
     },
     {
         category: "WORKFLOW & DATA ORCHESTRATION",
-        guidance: "Compare two workflow engines or orchestration platforms (e.g. durable execution vs DAG scheduling, replay mechanics, fault tolerance, latency)."
+        guidance: "Compare two workflow engines or orchestration platforms (durable execution vs DAG scheduling, replay mechanics, fault tolerance, latency)."
     },
     {
         category: "DESKTOP & CROSS-PLATFORM APPS",
-        guidance: "Compare two cross-platform application frameworks or desktop webview technologies (e.g. binary size, memory usage, security sandboxing, native APIs)."
+        guidance: "Compare two cross-platform application frameworks or desktop webview technologies (binary size, memory usage, security sandboxing, native APIs)."
     },
     {
         category: "WEB SERVERS & REVERSE PROXIES",
-        guidance: "Compare two modern edge reverse proxies or HTTP/3 web servers (e.g. TLS automation, config model, memory safety, concurrency performance)."
+        guidance: "Compare two modern edge reverse proxies or HTTP/3 web servers (TLS automation, config model, memory safety, concurrency performance)."
     },
     {
         category: "SEARCH ENGINES & INFORMATION RETRIEVAL",
-        guidance: "Compare two modern full-text or lexical search engines (e.g. indexing latency, typo tolerance, memory footprint, cluster management)."
+        guidance: "Compare two modern full-text or lexical search engines (indexing latency, typo tolerance, memory footprint, cluster management)."
     },
     {
         category: "TIME-SERIES & REAL-TIME ANALYTICS",
-        guidance: "Compare two time-series databases or real-time analytical engines (e.g. data compression, ingestion throughput, retention policies, SQL support)."
+        guidance: "Compare two time-series databases or real-time analytical engines (data compression, ingestion throughput, retention policies, SQL support)."
     },
     {
         category: "INFRASTRUCTURE AS CODE & CLOUD",
-        guidance: "Compare two infrastructure-as-code or cloud provisioning platforms (e.g. declarative vs imperative, state management, drift detection, ecosystem)."
+        guidance: "Compare two infrastructure-as-code or cloud provisioning platforms (declarative vs imperative, state management, drift detection, ecosystem)."
     },
     {
         category: "CONTAINERIZATION & MICROVMS",
-        guidance: "Compare two container isolation or microVM virtualization technologies (e.g. boot time, hypervisor isolation, memory footprint, syscall boundary)."
+        guidance: "Compare two container isolation or microVM virtualization technologies (boot time, hypervisor isolation, memory footprint, syscall boundary)."
     },
     {
         category: "DISTRIBUTED MESSAGING & STREAMING",
-        guidance: "Compare two distributed event streaming brokers or message queues (e.g. storage layer, consumer group balancing, log retention, backpressure)."
+        guidance: "Compare two distributed event streaming brokers or message queues (storage layer, consumer group balancing, log retention, backpressure)."
     },
     {
         category: "CODE FORMATTERS & LINTERS",
-        guidance: "Compare two modern code quality, formatting, or linting tools (e.g. AST parsing speed, rule configurability, language coverage, memory usage)."
+        guidance: "Compare two modern code quality, formatting, or linting tools (AST parsing speed, rule configurability, language coverage, memory usage)."
     },
     {
         category: "GRAPH DATABASES & KNOWLEDGE GRAPHS",
-        guidance: "Compare two native graph databases or knowledge graph systems (e.g. Cypher support, index-free adjacency, transactional ACID, in-memory execution)."
+        guidance: "Compare two native graph databases or knowledge graph systems (Cypher support, index-free adjacency, transactional ACID, in-memory execution)."
     },
     {
         category: "API & SERIALIZATION PROTOCOLS",
-        guidance: "Compare two modern binary serialization formats or RPC protocols (e.g. schema evolution, zero-copy decode, payload compactness, language bindings)."
+        guidance: "Compare two modern binary serialization formats or RPC protocols (schema evolution, zero-copy decode, payload compactness, language bindings)."
     }
 ];
+
+const BACKUP_MODELS = [DEFAULT_MODEL, 'openai', 'mistral'];
 
 function getRandomColorPair() {
     return COLOR_PAIRS[Math.floor(Math.random() * COLOR_PAIRS.length)];
@@ -127,7 +128,6 @@ function getHistory() {
     try {
         const raw = JSON.parse(fs.readFileSync(HISTORY_FILE, 'utf8'));
         if (!Array.isArray(raw)) return [];
-        // Return deduplicated list
         const seen = new Set();
         const unique = [];
         for (const item of raw) {
@@ -146,12 +146,10 @@ function getHistory() {
 function saveToHistory(topic) {
     const history = getHistory();
     const candNorm = normalizeTopicName(topic);
-    
-    // Only add if not already in history
+
     const alreadyExists = history.some(t => {
         const n = normalizeTopicName(t);
         if (n === candNorm) return true;
-        // Check reverse order "B vs A" as well
         const parts = topic.split(/\s+vs\s+/i);
         if (parts.length === 2) {
             const rev = normalizeTopicName(`${parts[1]} vs ${parts[0]}`);
@@ -162,8 +160,10 @@ function saveToHistory(topic) {
 
     if (!alreadyExists) {
         history.push(topic);
-        // Persist clean deduplicated history
         fs.writeFileSync(HISTORY_FILE, JSON.stringify(history, null, 2));
+        console.log(`📝 Committed "${topic}" to topic_history.json (Total unique: ${history.length})`);
+    } else {
+        console.log(`ℹ️ Topic "${topic}" already recorded in topic_history.json.`);
     }
 }
 
@@ -189,18 +189,18 @@ async function callPollinationsEndpoint(prompt, selectedModel, randomColors) {
         messages: [
             { 
                 role: "system", 
-                content: "You are an elite principal engineer and tech creator generating educational comparisons for software developers." 
+                content: "You are an elite principal engineer and tech creator generating educational comparisons for software developers. You must generate 100% original, novel, high-value technical comparisons." 
             },
             { role: "user", content: prompt }
         ],
         jsonMode: true,
-        temperature: 0.9,
+        temperature: 0.95,
         seed: Math.floor(Math.random() * 10000000)
     };
 
     let response = null;
 
-    // Strategy 1: If API Key exists, call standard gen.pollinations.ai endpoint
+    // Strategy 1: If API key present, call gen.pollinations.ai
     if (API_KEY) {
         try {
             response = await fetchWithTimeout('https://gen.pollinations.ai/v1/chat/completions', {
@@ -212,16 +212,17 @@ async function callPollinationsEndpoint(prompt, selectedModel, randomColors) {
                 body: JSON.stringify({ ...bodyPayload, model: selectedModel })
             }, 25000);
         } catch (err) {
-            console.warn(`[AI] gen.pollinations.ai connection error: ${err.message}. Trying public endpoint...`);
+            console.warn(`[AI] gen.pollinations.ai error: ${err.message}. Retrying via public endpoint...`);
         }
     }
 
-    // Strategy 2: If no API key or gen endpoint failed, use text.pollinations.ai
+    // Strategy 2: If no API key or gen endpoint failed, call text.pollinations.ai
     if (!response || !response.ok) {
+        const fallbackModel = selectedModel === 'gemini-fast' ? 'openai' : selectedModel;
         response = await fetchWithTimeout('https://text.pollinations.ai/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ ...bodyPayload, model: 'openai' })
+            body: JSON.stringify({ ...bodyPayload, model: fallbackModel })
         }, 25000);
     }
 
@@ -233,7 +234,6 @@ async function callPollinationsEndpoint(prompt, selectedModel, randomColors) {
     const data = await response.json();
     let content = data.choices?.[0]?.message?.content || (typeof data === 'string' ? data : null);
     if (!content && typeof data === 'object') {
-        // If text.pollinations returned the JSON object directly
         if (data.mainTitle?.left && data.mainTitle?.right) {
             return data;
         }
@@ -249,7 +249,6 @@ async function callPollinationsEndpoint(prompt, selectedModel, randomColors) {
         throw new Error("Parsed JSON structure does not match expected comparison schema");
     }
 
-    // Ensure distinct vibrant colors
     if (!topic.leftColor || !topic.rightColor || topic.leftColor.toLowerCase() === topic.rightColor.toLowerCase()) {
         topic.leftColor = randomColors.left;
         topic.rightColor = randomColors.right;
@@ -258,7 +257,7 @@ async function callPollinationsEndpoint(prompt, selectedModel, randomColors) {
     return topic;
 }
 
-async function generateWithPollinations(history, chosenDomain, randomColors) {
+async function generateWithPollinations(history, chosenDomain, modelName, randomColors) {
     const historyListStr = history.map(t => `- ${t}`).join('\n');
 
     const prompt = `
@@ -267,8 +266,8 @@ Generate a valid JSON object for a technical comparison visual (Reel/Short forma
 DOMAIN: ${chosenDomain.category}
 FOCUS: ${chosenDomain.guidance}
 
-CRITICAL REQUIREMENT - DO NOT DUPLICATE:
-The topic MUST BE COMPLETELY FRESH and CANNOT BE ANY OF THESE PREVIOUS TOPICS:
+CRITICAL REQUIREMENT - ZERO DUPLICATES:
+This topic MUST BE 100% BRAND NEW and CANNOT BE ANY OF THESE PREVIOUS TOPICS:
 ${historyListStr}
 
 Color Strategy:
@@ -311,15 +310,14 @@ Rules:
 4. DO NOT use generic or silly placeholder topics.
 `;
 
-    return await callPollinationsEndpoint(prompt, MODEL, randomColors);
+    return await callPollinationsEndpoint(prompt, modelName, randomColors);
 }
 
 async function main() {
     let topic = null;
     const history = getHistory();
     const normalizedHistory = new Set();
-    
-    // Index all historical topics and their reverse pairings
+
     for (const h of history) {
         normalizedHistory.add(normalizeTopicName(h));
         const parts = h.split(/\s+vs\s+/i);
@@ -330,33 +328,35 @@ async function main() {
 
     console.log(`📚 Existing topic history contains ${history.length} unique topics.`);
 
-    // Shuffle domains to ensure varied coverage on every invocation
+    // Shuffle domains to ensure fresh category selection on each run
     const shuffledDomains = [...DOMAINS].sort(() => 0.5 - Math.random());
 
-    // Try up to 6 AI attempts across different domains
-    for (let attempt = 1; attempt <= 6; attempt++) {
+    const MAX_ATTEMPTS = 8;
+    for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
         const domain = shuffledDomains[(attempt - 1) % shuffledDomains.length];
+        const model = BACKUP_MODELS[(attempt - 1) % BACKUP_MODELS.length];
         const randomColors = getRandomColorPair();
 
-        console.log(`\n🚀 Attempt ${attempt}/6: Requesting topic in "${domain.category}"...`);
+        console.log(`\n🚀 Attempt ${attempt}/${MAX_ATTEMPTS}: Requesting AI topic in "${domain.category}" (Model: ${model})...`);
 
         try {
-            const candidate = await generateWithPollinations(history, domain, randomColors);
+            const candidate = await generateWithPollinations(history, domain, model, randomColors);
             const candName = `${candidate.mainTitle.left} vs ${candidate.mainTitle.right}`;
             const candNorm = normalizeTopicName(candName);
             const candRevNorm = normalizeTopicName(`${candidate.mainTitle.right} vs ${candidate.mainTitle.left}`);
 
             if (!normalizedHistory.has(candNorm) && !normalizedHistory.has(candRevNorm)) {
                 topic = candidate;
-                console.log(`✨ Success! Fresh topic generated: "${candName}"`);
+                console.log(`✨ Success! Fresh AI topic generated: "${candName}"`);
                 break;
             } else {
-                console.warn(`⚠️ Attempt ${attempt}: Topic "${candName}" was already covered in history. Retrying with another domain...`);
-                await sleep(3000); // Backoff before next attempt to respect rate limits
+                console.warn(`⚠️ Attempt ${attempt}: Topic "${candName}" was already covered in history. Retrying with a different domain...`);
+                // Append this rejected topic dynamically to history exclusion so next attempts don't repeat it
+                history.push(candName);
+                await sleep(3000);
             }
         } catch (err) {
             console.warn(`⚠️ Attempt ${attempt} failed: ${err.message}`);
-            // If rate-limited by Pollinations, back off before next attempt
             if (err.message.includes('402') || err.message.includes('FREE_LIMIT') || err.message.includes('429')) {
                 console.log('⏳ Rate-limit hit. Waiting 5s before next attempt...');
                 await sleep(5000);
@@ -366,34 +366,12 @@ async function main() {
         }
     }
 
-    // Guaranteed Unique Curated Fallback
+    // STRICT: ZERO HARDCODED FALLBACKS.
+    // If AI generation could not produce a unique topic after all attempts, halt with an error.
     if (!topic) {
-        console.warn("\n⚠️ AI attempts exhausted or network unavailable. Selecting from curated catalog...");
-        
-        // Filter catalog for topics NEVER covered before
-        const unusedCatalog = curatedCatalog.filter(c => {
-            const name = `${c.mainTitle.left} vs ${c.mainTitle.right}`;
-            const norm = normalizeTopicName(name);
-            const revNorm = normalizeTopicName(`${c.mainTitle.right} vs ${c.mainTitle.left}`);
-            return !normalizedHistory.has(norm) && !normalizedHistory.has(revNorm);
-        });
-
-        if (unusedCatalog.length > 0) {
-            const selected = unusedCatalog[Math.floor(Math.random() * unusedCatalog.length)];
-            topic = JSON.parse(JSON.stringify(selected));
-            const randomColors = getRandomColorPair();
-            topic.leftColor = randomColors.left;
-            topic.rightColor = randomColors.right;
-            console.log(`📦 Selected fresh curated topic (${unusedCatalog.length} remaining in reserve): ${topic.mainTitle.left} vs ${topic.mainTitle.right}`);
-        } else {
-            console.error("❌ Curated catalog exhausted! Resetting least recently used topics.");
-            // Pick random from catalog with new colors as emergency fallback
-            const emergency = curatedCatalog[Math.floor(Math.random() * curatedCatalog.length)];
-            topic = JSON.parse(JSON.stringify(emergency));
-            const randomColors = getRandomColorPair();
-            topic.leftColor = randomColors.left;
-            topic.rightColor = randomColors.right;
-        }
+        console.error("\n❌ FATAL: AI topic generation failed after all attempts. No hardcoded fallback will be used.");
+        console.error("Halting cycle to prevent publishing duplicate or hardcoded content.");
+        process.exit(1);
     }
 
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify(topic, null, 2));
