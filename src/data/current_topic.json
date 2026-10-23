@@ -1,92 +1,92 @@
 {
-  "topLabel": "DATA LAKEHOUSES & TABLE FORMATS",
+  "topLabel": "TIME-SERIES & REAL-TIME ANALYTICS",
   "mainTitle": {
-    "left": "Hudi",
-    "right": "Iceberg",
+    "left": "TimescaleDB",
+    "right": "InfluxDB",
     "vs": "vs"
   },
-  "leftSub": "Apache Hudi",
-  "rightSub": "Apache Iceberg",
-  "leftColor": "#6366f1",
-  "rightColor": "#10b981",
+  "leftSub": "PostgreSQL-powered TSDB",
+  "rightSub": "Purpose-built TSDB",
+  "leftColor": "#06b6d4",
+  "rightColor": "#f43f5e",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. METADATA MANAGEMENT",
-      "leftTitle": "Row-level versioning",
-      "rightTitle": "Snapshot isolation",
-      "leftDesc": "Hudi uses versioning at the row level, enabling efficient upserts and deletes. It maintains a metadata log of file versions for data manipulation operations.",
-      "rightDesc": "Iceberg manages metadata through atomic commits of file manifests. Each commit represents a consistent snapshot of the table, ensuring ACID properties.",
-      "leftIcon": "GitBranch",
-      "rightIcon": "Layers",
-      "leftVisualText": "Row Versioning",
-      "rightVisualText": "Snapshot Commits"
-    },
-    {
-      "title": "2. PARTITION EVOLUTION",
-      "leftTitle": "Limited evolution",
-      "rightTitle": "Flexible evolution",
-      "leftDesc": "Hudi's partition evolution is more complex, often requiring rewriting data or using specific modes. It's less dynamic for frequent schema or partition changes.",
-      "rightDesc": "Iceberg supports seamless partition evolution without rewriting existing data files. It handles schema and partition evolution gracefully, adapting to changes easily.",
+      "title": "1. Data Compression",
+      "leftTitle": "Columnar compression",
+      "rightTitle": "Time-based compression",
+      "leftDesc": "TimescaleDB leverages PostgreSQL's columnar compression, offering efficient storage and query performance by organizing data in columns for analytical workloads.",
+      "rightDesc": "InfluxDB employs time-based compression, optimizing for high-frequency writes and reads by compressing adjacent data points with similar timestamps.",
       "leftIcon": "HardDrive",
       "rightIcon": "HardDrive",
-      "leftVisualText": "Static Partition",
-      "rightVisualText": "Dynamic Partition"
+      "leftVisualText": "Columnar",
+      "rightVisualText": "Time-based"
     },
     {
-      "title": "3. WRITE OPERATIONS",
-      "leftTitle": "Copy-on-write/Merge-on-read",
-      "rightTitle": "Append-only / Merge-on-read",
-      "leftDesc": "Hudi offers Copy-on-Write (CoW) for immediate consistency or Merge-on-Read (MoR) for efficient updates and deletes with separate delta logs.",
-      "rightDesc": "Iceberg primarily uses an append-only file model, with MoR being a common pattern. Updates are written to new files, and reads merge them.",
-      "leftIcon": "Database",
-      "rightIcon": "Database",
-      "leftVisualText": "CoW/MoR",
-      "rightVisualText": "Append/MoR"
-    },
-    {
-      "title": "4. CONCURRENCY CONTROL",
-      "leftTitle": "Optimistic locking",
-      "rightTitle": "Optimistic concurrency",
-      "leftDesc": "Hudi employs optimistic locking mechanisms, detecting and handling write conflicts based on file versions and last commit times.",
-      "rightDesc": "Iceberg uses optimistic concurrency control, relying on atomic metadata operations and version tracking to ensure consistency during concurrent writes.",
-      "leftIcon": "Lock",
-      "rightIcon": "Lock",
-      "leftVisualText": "Optimistic Lock",
-      "rightVisualText": "Optimistic Concurrency"
-    },
-    {
-      "title": "5. TABLE SCHEMA EVOLUTION",
-      "leftTitle": "Record-level schema",
-      "rightTitle": "Table-level schema",
-      "leftDesc": "Hudi can handle schema evolution at the record level within files, offering flexibility for evolving data structures.",
-      "rightDesc": "Iceberg manages schema evolution at the table level, enforcing schema compatibility and providing robust support for adding, dropping, or renaming columns.",
-      "leftIcon": "Code",
-      "rightIcon": "Code",
-      "leftVisualText": "Record Schema",
-      "rightVisualText": "Table Schema"
-    },
-    {
-      "title": "6. TIME TRAVEL",
-      "leftTitle": "Commit-based",
-      "rightTitle": "Snapshot-based",
-      "leftDesc": "Hudi's time travel is based on committed versions of data files, allowing queries against specific commits or past states.",
-      "rightDesc": "Iceberg's time travel is achieved by querying historical snapshots identified by timestamp or snapshot ID, offering precise historical views.",
-      "leftIcon": "FastForward",
+      "title": "2. Ingestion Throughput",
+      "leftTitle": "Relies on PG tuning",
+      "rightTitle": "Optimized ingestion path",
+      "leftDesc": "TimescaleDB's ingestion performance is tied to PostgreSQL's tuning capabilities, benefiting from mature connection pooling and WAL mechanisms.",
+      "rightDesc": "InfluxDB is engineered for extremely high ingestion rates, featuring a dedicated write path and optimized buffering for continuous data streams.",
+      "leftIcon": "Terminal",
       "rightIcon": "FastForward",
-      "leftVisualText": "Commit History",
-      "rightVisualText": "Snapshot History"
+      "leftVisualText": "PG Tuned",
+      "rightVisualText": "High-Rate"
     },
     {
-      "title": "7. ECOSYSTEM INTEGRATION",
-      "leftTitle": "Strong Spark/Hadoop",
-      "rightTitle": "Broad engine support",
-      "leftDesc": "Hudi has deep integration with Spark and Hadoop ecosystems, optimized for these environments and their tools.",
-      "rightDesc": "Iceberg offers broader engine support, including Spark, Flink, Trino, and Hive, making it adaptable across various processing frameworks.",
-      "leftIcon": "Cloud",
+      "title": "3. Retention Policies",
+      "leftTitle": "SQL-based lifecycle",
+      "rightTitle": "Built-in retention",
+      "leftDesc": "TimescaleDB manages data retention using standard SQL `DELETE` statements, often automated with `cron` jobs or scheduled tasks.",
+      "rightDesc": "InfluxDB offers native, declarative retention policies that automatically expire or downsample data based on defined time durations.",
+      "leftIcon": "Key",
+      "rightIcon": "Clock",
+      "leftVisualText": "SQL DELETE",
+      "rightVisualText": "Native Policy"
+    },
+    {
+      "title": "4. SQL Support",
+      "leftTitle": "Full SQL dialect",
+      "rightTitle": "Flux query language",
+      "leftDesc": "TimescaleDB provides full PostgreSQL SQL compliance, allowing seamless integration with existing SQL tools and expertise for querying.",
+      "rightDesc": "InfluxDB uses Flux, a powerful functional data scripting language, offering advanced time-series analysis and transformation capabilities.",
+      "leftIcon": "Code",
+      "rightIcon": "GitBranch",
+      "leftVisualText": "Full SQL",
+      "rightVisualText": "Flux Script"
+    },
+    {
+      "title": "5. Ecosystem Integration",
+      "leftTitle": "Vast PostgreSQL ecosystem",
+      "rightTitle": "Growing Influx ecosystem",
+      "leftDesc": "Leverages PostgreSQL's extensive driver support, ORMs, and tooling, making integration straightforward for many applications.",
+      "rightDesc": "Integrates well with its own TICK stack (Telegraf, InfluxDB, Chronograf, Kapacitor) and other monitoring tools.",
+      "leftIcon": "Globe",
       "rightIcon": "Cloud",
-      "leftVisualText": "Spark Focus",
-      "rightVisualText": "Multi-Engine"
+      "leftVisualText": "PG Native",
+      "rightVisualText": "TICK Stack"
+    },
+    {
+      "title": "6. Data Model Flexibility",
+      "leftTitle": "Relational tables",
+      "rightTitle": "Measurements & tags",
+      "leftDesc": "TimescaleDB uses traditional relational tables, providing familiar structure and the ability to join with other relational data.",
+      "rightDesc": "InfluxDB uses a schema of measurements, tags (indexed metadata), and fields (time-series values).",
+      "leftIcon": "Layers",
+      "rightIcon": "Box",
+      "leftVisualText": "Tables",
+      "rightVisualText": "Measurements"
+    },
+    {
+      "title": "7. Distributed Architecture",
+      "leftTitle": "PostgreSQL clustering",
+      "rightTitle": "Distributed by design",
+      "leftDesc": "TimescaleDB scales using PostgreSQL's proven clustering technologies like Citus, offering horizontal scalability for large deployments.",
+      "rightDesc": "InfluxDB Enterprise offers distributed capabilities out-of-the-box, designed for multi-node deployments and high availability.",
+      "leftIcon": "Server",
+      "rightIcon": "Network",
+      "leftVisualText": "PG Cluster",
+      "rightVisualText": "Native Dist."
     }
   ]
 }

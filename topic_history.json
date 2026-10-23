@@ -56,5 +56,6 @@
   "PINECODE vs QDRANT",
   "DELTA LAKE vs ICEBERG",
   "Protocol Buffers vs FlatBuffers",
-  "Hudi vs Iceberg"
+  "Hudi vs Iceberg",
+  "TimescaleDB vs InfluxDB"
 ]
