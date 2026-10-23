@@ -1,5 +1,4 @@
 [
-  "Redis vs Memcached",
   "FUNCTIONAL vs OBJECT-ORIENTED",
   "Server-Sent Events vs WebSockets",
   "Server-Sent Events vs WebSockets",
@@ -148,5 +147,6 @@
   "GraphQL vs REST API",
   "DuckDB vs SQLite",
   "GraphQL vs REST API",
-  "Zustand vs Redux Toolkit"
+  "Zustand vs Redux Toolkit",
+  "GraphQL vs REST API"
 ]
