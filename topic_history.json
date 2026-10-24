@@ -59,5 +59,6 @@
   "Hudi vs Iceberg",
   "TimescaleDB vs InfluxDB",
   "Tauri vs Electron",
-  "Ansible vs Terraform"
+  "Ansible vs Terraform",
+  "Dragonfly vs Redis"
 ]
