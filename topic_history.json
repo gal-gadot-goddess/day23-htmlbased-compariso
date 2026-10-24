@@ -61,5 +61,6 @@
   "Tauri vs Electron",
   "Ansible vs Terraform",
   "Dragonfly vs Redis",
-  "FastAPI vs Axum"
+  "FastAPI vs Axum",
+  "Milvus vs Weaviate"
 ]
