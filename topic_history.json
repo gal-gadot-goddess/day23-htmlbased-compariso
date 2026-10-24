@@ -60,5 +60,6 @@
   "TimescaleDB vs InfluxDB",
   "Tauri vs Electron",
   "Ansible vs Terraform",
-  "Dragonfly vs Redis"
+  "Dragonfly vs Redis",
+  "FastAPI vs Axum"
 ]
