@@ -1,92 +1,92 @@
 {
-  "topLabel": "VECTOR DATABASES & AI SEARCH",
+  "topLabel": "IN-MEMORY STORES & CACHES",
   "mainTitle": {
-    "left": "Milvus",
-    "right": "Weaviate",
+    "left": "Aerospike",
+    "right": "Redis",
     "vs": "vs"
   },
-  "leftSub": "Open-Source Vector DB",
-  "rightSub": "Open-Source Vector DB",
-  "leftColor": "#f97316",
-  "rightColor": "#0284c7",
+  "leftSub": "High Performance, Scalable Database",
+  "rightSub": "Versatile In-Memory Data Structure",
+  "leftColor": "#38bdf8",
+  "rightColor": "#fb7185",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. ARCHITECTURE",
-      "leftTitle": "Distributed Components",
-      "rightTitle": "Monolithic/Distributed",
-      "leftDesc": "Milvus uses a distributed architecture with distinct components (Proxy, QueryNode, DataNode) for scalability and fault tolerance, managing data and query workloads separately.",
-      "rightDesc": "Weaviate offers both monolithic (all-in-one) and distributed deployments, simplifying setup while allowing scalable horizontal partitioning for production workloads.",
-      "leftIcon": "GitBranch",
-      "rightIcon": "GitBranch",
-      "leftVisualText": "Separated",
-      "rightVisualText": "Flexible"
-    },
-    {
-      "title": "2. DATA MODELING",
-      "leftTitle": "Schema-Driven",
-      "rightTitle": "Schema-Optional",
-      "leftDesc": "Milvus enforces a strict schema for collections, defining data types and vector parameters upfront, ensuring data consistency and optimized indexing.",
-      "rightDesc": "Weaviate uses a schema that can be defined or inferred, supporting rich data types and relationships, making it flexible for evolving data needs.",
-      "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "Strict",
-      "rightVisualText": "Adaptive"
-    },
-    {
-      "title": "3. INDEXING",
-      "leftTitle": "Multiple Index Types",
-      "rightTitle": "Hybrid Indexing",
-      "leftDesc": "Milvus supports various ANN index types like IVF_FLAT, HNSW, and ANNOY, allowing users to choose based on performance and accuracy trade-offs.",
-      "rightDesc": "Weaviate features its own efficient ANN index implementation and supports multi-tenancy, automatically managing indexes for different data classes.",
+      "title": "1. DATA MODEL",
+      "leftTitle": "Hybrid Storage",
+      "rightTitle": "Key-Value",
+      "leftDesc": "Aerospike uses a hybrid memory architecture, storing indexes in RAM and data on SSDs for cost-effective scalability and persistence.",
+      "rightDesc": "Redis primarily stores data structures in RAM. Persistence is achieved via snapshots (RDB) or append-only files (AOF), with optional disk offloading.",
       "leftIcon": "HardDrive",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Diverse",
-      "rightVisualText": "Integrated"
+      "rightIcon": "Cpu",
+      "leftVisualText": "RAM + SSD",
+      "rightVisualText": "RAM Primary"
     },
     {
-      "title": "4. SCALABILITY",
-      "leftTitle": "Horizontal Scaling",
-      "rightTitle": "Auto-Scaling",
-      "leftDesc": "Milvus scales horizontally by adding more nodes for each component, enabling massive datasets and high query throughput with stateless proxies.",
-      "rightDesc": "Weaviate scales horizontally through sharding and replication, with features that can automate scaling based on load and data size.",
-      "leftIcon": "Server",
+      "title": "2. CONSISTENCY",
+      "leftTitle": "Tunable Consistency",
+      "rightTitle": "Single Master",
+      "leftDesc": "Aerospike offers strong consistency with tunable per-request read/write consistency levels, ensuring data integrity across nodes.",
+      "rightDesc": "Redis typically offers eventual consistency in clustered setups. Single-node Redis is strongly consistent but lacks high availability.",
+      "leftIcon": "Lock",
+      "rightIcon": "Shield",
+      "leftVisualText": "Strong Tune",
+      "rightVisualText": "Eventual Cluster"
+    },
+    {
+      "title": "3. SCALABILITY",
+      "leftTitle": "Distributed Architecture",
+      "rightTitle": "Sharding",
+      "leftDesc": "Aerospike scales horizontally via its distributed architecture, automatically rebalancing data and client connections across nodes.",
+      "rightDesc": "Redis scales horizontally using client-side sharding or Redis Cluster, which partitions data across multiple instances.",
+      "leftIcon": "Network",
+      "rightIcon": "GitBranch",
+      "leftVisualText": "Auto Scale",
+      "rightVisualText": "Manual Shard"
+    },
+    {
+      "title": "4. SECONDARY INDEXES",
+      "leftTitle": "Built-in Indexes",
+      "rightTitle": "Limited",
+      "leftDesc": "Aerospike supports efficient secondary indexes directly within the database, allowing complex queries on non-key fields.",
+      "rightDesc": "Redis has limited support for secondary indexes, often requiring client-side logic or Lua scripting for complex lookups.",
+      "leftIcon": "Key",
+      "rightIcon": "Compass",
+      "leftVisualText": "Native Query",
+      "rightVisualText": "Client Query"
+    },
+    {
+      "title": "5. DATA TYPES",
+      "leftTitle": "Complex Structures",
+      "rightTitle": "Rich Types",
+      "leftDesc": "Aerospike supports complex data types like lists, maps, sets, and geo-spatial types, suitable for diverse application needs.",
+      "rightDesc": "Redis excels with a variety of built-in data structures including strings, lists, sets, sorted sets, hashes, and bitmaps.",
+      "leftIcon": "Layers",
+      "rightIcon": "Box",
+      "leftVisualText": "Advanced Types",
+      "rightVisualText": "Standard Types"
+    },
+    {
+      "title": "6. OPERATIONAL MODEL",
+      "leftTitle": "Active-Active Multi-DC",
+      "rightTitle": "Primary-Replica",
+      "leftDesc": "Aerospike provides robust multi-datacenter replication with active-active capabilities, ensuring high availability and disaster recovery.",
+      "rightDesc": "Redis primarily uses primary-replica replication. Sentinel manages failover, while Cluster handles data distribution and availability.",
+      "leftIcon": "Globe",
       "rightIcon": "Server",
-      "leftVisualText": "Manual",
-      "rightVisualText": "Automated"
+      "leftVisualText": "Multi-DC HA",
+      "rightVisualText": "Replication HA"
     },
     {
-      "title": "5. QUERYING",
-      "leftTitle": "Vector & Scalar",
-      "rightTitle": "Vector & Keyword",
-      "leftDesc": "Milvus allows hybrid search by combining vector similarity search with scalar filtering on metadata attributes within collections.",
-      "rightDesc": "Weaviate excels at hybrid search, combining vector search with keyword search (BM25) and filtering, offering powerful semantic and lexical capabilities.",
-      "leftIcon": "Search",
-      "rightIcon": "Search",
-      "leftVisualText": "Combined",
-      "rightVisualText": "Rich"
-    },
-    {
-      "title": "6. DEPLOYMENT",
-      "leftTitle": "Kubernetes Focused",
-      "rightTitle": "Flexible Options",
-      "leftDesc": "Milvus is primarily designed for Kubernetes deployments, leveraging its orchestration capabilities for managing distributed services and ensuring high availability.",
-      "rightDesc": "Weaviate offers flexible deployment options including Docker, Kubernetes, and managed cloud services, catering to diverse infrastructure needs.",
-      "leftIcon": "Cloud",
-      "rightIcon": "Cloud",
-      "leftVisualText": "Orchestrated",
-      "rightVisualText": "Versatile"
-    },
-    {
-      "title": "7. DATA MANAGEMENT",
-      "leftTitle": "Partitioning",
-      "rightTitle": "Multi-Tenancy",
-      "leftDesc": "Milvus supports data partitioning by scalar fields for better query performance and data management within large collections.",
-      "rightDesc": "Weaviate offers built-in multi-tenancy, allowing different applications or teams to use the same instance with isolated data and schemas.",
-      "leftIcon": "Box",
-      "rightIcon": "Lock",
-      "leftVisualText": "Sharding",
-      "rightVisualText": "Isolation"
+      "title": "7. PERFORMANCE",
+      "leftTitle": "Consistent Low Latency",
+      "rightTitle": "High Throughput",
+      "leftDesc": "Aerospike is engineered for predictable, low-latency reads and writes, especially with large datasets and SSDs.",
+      "rightDesc": "Redis offers extremely high throughput for in-memory operations, making it ideal for caching and real-time use cases.",
+      "leftIcon": "FastForward",
+      "rightIcon": "Zap",
+      "leftVisualText": "Steady Speed",
+      "rightVisualText": "Burst Speed"
     }
   ]
 }

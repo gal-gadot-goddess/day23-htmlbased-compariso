@@ -62,5 +62,6 @@
   "Ansible vs Terraform",
   "Dragonfly vs Redis",
   "FastAPI vs Axum",
-  "Milvus vs Weaviate"
+  "Milvus vs Weaviate",
+  "Aerospike vs Redis"
 ]
