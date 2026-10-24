@@ -14,9 +14,10 @@ permissions:
 jobs:
   automate:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -27,15 +28,27 @@ jobs:
           cache: 'npm'
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
           cache: 'pip'
 
+      - name: Set up FFmpeg
+        uses: FedericoCarboni/setup-ffmpeg@v3
+        with:
+          ffmpeg-version: release
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify FFmpeg
+        run: |
+          ffmpeg -version
+          ffprobe -version
+
       - name: Install System Dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg libgbm-dev libnss3 libatk-bridge2.0-0 libgtk-3-0 libasound2t64
+          for i in 1 2 3; do
+            sudo apt-get update && sudo apt-get install -y --no-install-recommends libgbm-dev libnss3 libatk-bridge2.0-0 libgtk-3-0 libasound2t64 && break || sleep 5
+          done
 
       - name: Install Node Dependencies
         run: npm install
