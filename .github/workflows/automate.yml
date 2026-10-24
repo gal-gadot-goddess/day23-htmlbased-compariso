@@ -23,13 +23,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: '3.11'
           cache: 'pip'
 
       - name: Install System Dependencies
@@ -85,6 +85,10 @@ jobs:
           git config --global user.name 'bot'
           git config --global user.email 'bot@users.noreply.github.com'
           git add topic_history.json metadata.json src/data/current_topic.json
-          git diff --quiet && git diff --staged --quiet || git commit -m "chore: update topic history [skip ci]"
-          git pull --rebase --autostash || true
-          git push
+          if ! git diff --quiet || ! git diff --staged --quiet; then
+            git commit -m "chore: update topic history [skip ci]"
+            for i in 1 2 3; do
+              git pull --rebase --autostash origin main || (git rebase --abort 2>/dev/null || true)
+              git push origin main && break || sleep 5
+            done
+          fi

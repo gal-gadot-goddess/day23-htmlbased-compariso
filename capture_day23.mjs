@@ -12,9 +12,24 @@ const VIDEO_ONLY = path.join(__dirname, 'temp_video.mp4');
 const FINAL_OUTPUT = path.join(__dirname, 'recording.mp4');
 const VIRAL_DIR = path.join(__dirname, 'viral');
 
+async function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 async function run() {
+    // Clean up any stale temp files from prior aborted cycles
+    if (fs.existsSync(VIDEO_ONLY)) {
+        try { fs.unlinkSync(VIDEO_ONLY); } catch (e) {}
+    }
+    if (fs.existsSync(FINAL_OUTPUT)) {
+        try { fs.unlinkSync(FINAL_OUTPUT); } catch (e) {}
+    }
+
     // Pick a random audio track from the local viral folder
     const audioFiles = fs.readdirSync(VIRAL_DIR).filter(f => f.endsWith('.mp3'));
+    if (audioFiles.length === 0) {
+        throw new Error(`No mp3 audio files found in ${VIRAL_DIR}`);
+    }
     const randomAudio = audioFiles[Math.floor(Math.random() * audioFiles.length)];
     const AUDIO_FILE = path.join(VIRAL_DIR, randomAudio);
     console.log(`🎵 Selected Audio: ${randomAudio}`);
@@ -22,18 +37,22 @@ async function run() {
     const viteProcess = exec('npm run dev', { cwd: __dirname });
 
     // Auto-detect URL from vite output
-    let VITE_URL = 'http://127.0.0.1:3000'; // fallback
+    let VITE_URL = 'http://127.0.0.1:3000'; // default fallback
     const urlDetected = new Promise(resolve => {
         viteProcess.stdout.on('data', (data) => {
-            console.log(`[Vite] ${data}`);
-            const match = data.match(/http:\/\/(127\.0\.0\.1|localhost|10\.[^:\s]+|172\.[^:\s]+):3000/);
+            const str = data.toString();
+            console.log(`[Vite] ${str.trim()}`);
+            const match = str.match(/http:\/\/(127\.0\.0\.1|localhost|0\.0\.0\.0|10\.[^:\s]+|172\.[^:\s]+):(\d+)/);
             if (match) {
                 VITE_URL = match[0];
                 console.log(`📡 Detected URL: ${VITE_URL}`);
                 resolve();
             }
         });
-        // Also fallback after 10s
+        viteProcess.stderr.on('data', (data) => {
+            console.error(`[Vite ERR] ${data.toString().trim()}`);
+        });
+        // Fallback after 10s
         setTimeout(resolve, 10000);
     });
 
@@ -61,15 +80,25 @@ async function run() {
     page.on('pageerror', err => console.log(`[BROWSER ERROR] ${err.toString()}`));
 
     console.log(`🔗 Navigating to ${VITE_URL}...`);
-    try {
-        await page.goto(VITE_URL, { waitUntil: 'networkidle2', timeout: 30000 });
-        console.log('✅ Navigation successful.');
-        await page.screenshot({ path: path.join(__dirname, 'debug_view.png') });
-    } catch (err) {
-        console.warn('⚠️ Navigation timeout or error:', err.message);
+    let navigationSuccess = false;
+    for (let navAttempt = 1; navAttempt <= 3; navAttempt++) {
+        try {
+            await page.goto(VITE_URL, { waitUntil: 'networkidle2', timeout: 30000 });
+            console.log('✅ Navigation successful.');
+            navigationSuccess = true;
+            await page.screenshot({ path: path.join(__dirname, 'debug_view.png') });
+            break;
+        } catch (err) {
+            console.warn(`⚠️ Navigation attempt ${navAttempt} failed: ${err.message}`);
+            if (navAttempt < 3) await sleep(2000);
+        }
     }
 
-    await new Promise(r => setTimeout(r, 2000));
+    if (!navigationSuccess) {
+        console.warn('⚠️ Proceeding with recording despite navigation warnings...');
+    }
+
+    await sleep(2000);
 
     const recorder = new PuppeteerScreenRecorder(page, {
         fps: 60,
@@ -79,18 +108,21 @@ async function run() {
 
     console.log('⏺️ Recording started (18 seconds)...');
     await recorder.start(VIDEO_ONLY);
-    await new Promise(r => setTimeout(r, 18000));
+    await sleep(18000);
     await recorder.stop();
     console.log('⏹️ Recording stopped.');
 
     await browser.close();
 
     console.log('💀 Killing Vite server...');
-    viteProcess.kill('SIGTERM');
-    // Force kill if necessary after a short delay
-    setTimeout(() => viteProcess.kill('SIGKILL'), 1000);
+    try {
+        viteProcess.kill('SIGTERM');
+        setTimeout(() => {
+            try { viteProcess.kill('SIGKILL'); } catch (e) {}
+        }, 1000);
+    } catch (e) {}
 
-    if (fs.existsSync(AUDIO_FILE)) {
+    if (fs.existsSync(AUDIO_FILE) && fs.existsSync(VIDEO_ONLY)) {
         console.log('🎵 Merging with audio...');
         let ffmpegPath = path.join(__dirname, '../node_modules/ffmpeg-static/ffmpeg.exe');
         if (!fs.existsSync(ffmpegPath)) ffmpegPath = 'ffmpeg';
@@ -103,12 +135,19 @@ async function run() {
             console.error('❌ FFmpeg merge failed:', err);
             fs.renameSync(VIDEO_ONLY, FINAL_OUTPUT);
         }
-    } else {
+    } else if (fs.existsSync(VIDEO_ONLY)) {
         fs.renameSync(VIDEO_ONLY, FINAL_OUTPUT);
     }
 
-    console.log('🏁 Capture script finished.');
+    if (!fs.existsSync(FINAL_OUTPUT)) {
+        throw new Error(`Failed to create video file at ${FINAL_OUTPUT}`);
+    }
+
+    console.log('🏁 Capture script finished successfully.');
     process.exit(0);
 }
 
-run().catch(console.error);
+run().catch((err) => {
+    console.error('❌ Capture script fatal error:', err);
+    process.exit(1);
+});

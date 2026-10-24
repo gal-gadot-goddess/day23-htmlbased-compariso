@@ -1,11 +1,11 @@
-import { execSync, spawn } from 'child_process';
+import { spawn } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-dotenv.config();
+dotenv.config({ path: path.join(__dirname, '.env') });
 
 const INTERVAL_MS = 8 * 60 * 60 * 1000; // 8 hours = 3 times a day
 
@@ -15,6 +15,7 @@ function runCommand(command, args, options = {}) {
         const proc = spawn(command, args, {
             stdio: 'inherit',
             shell: true,
+            cwd: __dirname,
             ...options
         });
 
@@ -36,7 +37,11 @@ async function runCycle() {
         await runCommand('node', ['scripts/generate_topic.mjs']);
 
         // 2. Read Topic for Metadata
-        const topicData = JSON.parse(fs.readFileSync('src/data/current_topic.json', 'utf8'));
+        const currentTopicFile = path.join(__dirname, 'src/data/current_topic.json');
+        if (!fs.existsSync(currentTopicFile)) {
+            throw new Error(`current_topic.json not found at ${currentTopicFile}`);
+        }
+        const topicData = JSON.parse(fs.readFileSync(currentTopicFile, 'utf8'));
         const title = `${topicData.mainTitle.left} vs ${topicData.mainTitle.right}`;
         const tagline = topicData.topLabel;
 
@@ -50,7 +55,8 @@ async function runCycle() {
 
         // 5. Upload to Social Media
         console.log('\n⬆️ STEP 4: UPLOADING...');
-        if (fs.existsSync('publish_day23.py')) {
+        const publishScript = path.join(__dirname, 'publish_day23.py');
+        if (fs.existsSync(publishScript)) {
             await runCommand('python', ['publish_day23.py']);
         } else {
             console.log('⚠️ No publish_day23.py found, skipping upload.');
@@ -76,9 +82,7 @@ async function start() {
     if (isSingleRun) {
         await runCycle();
     } else {
-        // Run immediately
         await runCycle();
-        // Then schedule
         console.log(`\n🕒 Next run in 8 hours...`);
         setInterval(runCycle, INTERVAL_MS);
     }

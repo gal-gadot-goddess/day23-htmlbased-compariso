@@ -335,7 +335,8 @@ async function callPollinationsEndpoint(prompt, selectedModel, randomColors) {
 }
 
 async function generateWithPollinations(history, chosenDomain, modelName, randomColors) {
-    const historyListStr = history.map(t => `- ${t}`).join('\n');
+    // Provide up to the last 120 unique historical topics in prompt to keep prompt lean while strictly preventing repetition
+    const historyListStr = history.slice(-120).map(t => `- ${t}`).join('\n');
 
     const prompt = `
 Generate a valid JSON object for a technical comparison visual (Short/Reel format for developers).
