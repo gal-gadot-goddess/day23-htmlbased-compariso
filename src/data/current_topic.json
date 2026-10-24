@@ -1,103 +1,92 @@
 {
-  "topLabel": "DESKTOP & CROSS-PLATFORM APPS",
+  "topLabel": "INFRASTRUCTURE AS CODE & CLOUD",
   "mainTitle": {
-    "left": "Tauri",
-    "right": "Electron",
+    "left": "Ansible",
+    "right": "Terraform",
     "vs": "vs"
   },
-  "leftSub": "Rust backend, web frontend",
-  "rightSub": "Web tech for desktop",
-  "leftColor": "#00d2ff",
-  "rightColor": "#ff5c00",
+  "leftSub": "Agentless Automation Engine",
+  "rightSub": "Declarative State Management",
+  "leftColor": "#f43f5e",
+  "rightColor": "#38bdf8",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. CORE TECHNOLOGY",
-      "leftTitle": "Rust backend",
-      "rightTitle": "Node.js backend",
-      "leftDesc": "Leverages Rust for a highly performant, memory-safe, and small binary size for the backend logic and system interactions.",
-      "rightDesc": "Uses Node.js for backend logic, enabling JavaScript/TypeScript across the stack but leading to larger applications.",
-      "leftIcon": "Rust",
-      "rightIcon": "Nodejs",
-      "leftVisualText": "Rust Core",
-      "rightVisualText": "Node Core"
-    },
-    {
-      "title": "2. BINARY SIZE",
-      "leftTitle": "Significantly smaller",
-      "rightTitle": "Considerably larger",
-      "leftDesc": "Produces compact executables by only bundling necessary Rust code and assets, avoiding large runtime dependencies.",
-      "rightDesc": "Includes a full Node.js runtime and Chromium browser, resulting in significantly larger initial download and install sizes.",
-      "leftIcon": "Box",
-      "rightIcon": "Package",
-      "leftVisualText": "Tiny Binaries",
-      "rightVisualText": "Large Bundles"
-    },
-    {
-      "title": "3. MEMORY USAGE",
-      "leftTitle": "More efficient",
-      "rightTitle": "Higher overhead",
-      "leftDesc": "Rust's memory management and compilation to native code result in lower RAM consumption compared to Node.js and Chromium.",
-      "rightDesc": "The embedded Chromium browser and Node.js runtime contribute to substantial memory usage, especially with multiple windows.",
-      "leftIcon": "Activity",
-      "rightIcon": "Zap",
-      "leftVisualText": "Low RAM",
-      "rightVisualText": "High RAM"
-    },
-    {
-      "title": "3. SECURITY",
-      "leftTitle": "Enhanced by Rust",
-      "rightTitle": "Node.js concerns",
-      "leftDesc": "Rust's strong type system and memory safety features inherently reduce common security vulnerabilities found in languages like JavaScript.",
-      "rightDesc": "Relies on Node.js's security practices; potential vulnerabilities can arise from external npm packages or JavaScript runtime issues.",
-      "leftIcon": "Shield",
-      "rightIcon": "Lock",
-      "leftVisualText": "Rust Safety",
-      "rightVisualText": "JS Security"
-    },
-    {
-      "title": "4. PERFORMANCE",
-      "leftTitle": "Near-native speed",
-      "rightTitle": "Good, but slower",
-      "leftDesc": "Rust's compilation to native code and efficient event loop provide performance close to native applications for most tasks.",
-      "rightDesc": "Offers good performance for UI and typical desktop app tasks, but Node.js and browser overhead can impact CPU-intensive operations.",
-      "leftIcon": "FastForward",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Native Speed",
-      "rightVisualText": "JS Performance"
-    },
-    {
-      "title": "5. WINDOWING SYSTEM",
-      "leftTitle": "System-native UI",
-      "rightTitle": "Chromium-based UI",
-      "leftDesc": "Employs system APIs for window creation and management, potentially offering a more native look and feel.",
-      "rightDesc": "Renders UI within an embedded Chromium browser instance, providing consistent rendering but deviating from native UI elements.",
-      "leftIcon": "Globe",
-      "rightIcon": "Browser",
-      "leftVisualText": "Native Window",
-      "rightVisualText": "Web Window"
-    },
-    {
-      "title": "6. DEVELOPMENT EXPERIENCE",
-      "leftTitle": "Web + Rust",
-      "rightTitle": "Web + Node.js",
-      "leftDesc": "Requires knowledge of web technologies (HTML, CSS, JS/TS) and Rust for backend logic, offering a powerful but steeper learning curve.",
-      "rightDesc": "Leverages familiar web technologies (HTML, CSS, JS/TS) and Node.js, making it accessible for web developers.",
-      "leftIcon": "Code",
-      "rightIcon": "Terminal",
-      "leftVisualText": "Web + Rust",
-      "rightVisualText": "Web Dev"
-    },
-    {
-      "title": "7. ECOSYSTEM & COMMUNITY",
-      "leftTitle": "Growing rapidly",
-      "rightTitle": "Mature & vast",
-      "leftDesc": "A younger ecosystem with active community growth, leveraging Rust's robust libraries and web frontend flexibility.",
-      "rightDesc": "Benefits from a massive, mature ecosystem of npm packages and a vast community, with extensive documentation and support.",
-      "leftIcon": "GitBranch",
+      "title": "1. EXECUTION MODEL",
+      "leftTitle": "Procedural Push",
+      "rightTitle": "Declarative Pull",
+      "leftDesc": "Ansible executes tasks sequentially by pushing configurations from a control node to managed nodes via SSH or WinRM, making it imperative.",
+      "rightDesc": "Terraform defines desired state and calculates a plan to reach it. It then applies this plan, managing resources in a declarative way.",
+      "leftIcon": "Terminal",
       "rightIcon": "Cloud",
-      "leftVisualText": "Emerging",
-      "rightVisualText": "Established"
+      "leftVisualText": "Sequential",
+      "rightVisualText": "State-Driven"
+    },
+    {
+      "title": "2. STATE MANAGEMENT",
+      "leftTitle": "No Built-in State",
+      "rightTitle": "Managed State File",
+      "leftDesc": "Ansible doesn't maintain a persistent state file of managed resources, relying on idempotency of modules to ensure desired outcomes.",
+      "rightDesc": "Terraform uses a state file (e.g., `terraform.tfstate`) to map real-world resources to your configuration and track changes.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Database",
+      "leftVisualText": "Ephemeral",
+      "rightVisualText": "Persistent"
+    },
+    {
+      "title": "3. INFRASTRUCTURE PROVISIONING",
+      "leftTitle": "Configuration Focus",
+      "rightTitle": "Resource Provisioning",
+      "leftDesc": "Primarily excels at configuring existing infrastructure, software installation, and application deployment through its task-based modules.",
+      "rightDesc": "Designed from the ground up for provisioning and managing entire infrastructure lifecycles across various cloud providers and services.",
+      "leftIcon": "Server",
+      "rightIcon": "Layers",
+      "leftVisualText": "Configure",
+      "rightVisualText": "Provision"
+    },
+    {
+      "title": "4. AGENT REQUIREMENT",
+      "leftTitle": "Agentless",
+      "rightTitle": "Agentless (mostly)",
+      "leftDesc": "Connects to managed nodes via SSH (Linux/Unix) or WinRM (Windows) without requiring any pre-installed agent software.",
+      "rightDesc": "Typically operates agentlessly, using provider APIs to interact with cloud resources. Some specific use cases might involve agents.",
+      "leftIcon": "Shield",
+      "rightIcon": "Zap",
+      "leftVisualText": "No Agent",
+      "rightVisualText": "API Driven"
+    },
+    {
+      "title": "5. IDEMPOTENCY",
+      "leftTitle": "Module-Based",
+      "rightTitle": "Resource-Based",
+      "leftDesc": "Achieved through carefully written modules designed to be run multiple times without unintended side effects, ensuring a consistent end state.",
+      "rightDesc": "Intrinsic to resource definitions; Terraform ensures the current state matches the declared state by detecting drift and applying changes.",
+      "leftIcon": "CheckCircle",
+      "rightIcon": "GitBranch",
+      "leftVisualText": "Safe Re-runs",
+      "rightVisualText": "State Drift"
+    },
+    {
+      "title": "6. COMMUNITY & ECOSYSTEM",
+      "leftTitle": "Ansible Galaxy",
+      "rightTitle": "Terraform Registry",
+      "leftDesc": "Vast collection of community-contributed roles, playbooks, and modules available through Ansible Galaxy for rapid deployment.",
+      "rightDesc": "Extensive provider ecosystem and modules in the Terraform Registry enabling management of diverse cloud and SaaS services.",
+      "leftIcon": "Globe",
+      "rightIcon": "Box",
+      "leftVisualText": "Shared Roles",
+      "rightVisualText": "Managed Modules"
+    },
+    {
+      "title": "7. LEARNING CURVE",
+      "leftTitle": "Easier Start",
+      "rightTitle": "Steeper Curve",
+      "leftDesc": "YAML-based playbooks are generally considered more human-readable and easier to grasp initially, especially for sysadmins.",
+      "rightDesc": "HCL (HashiCorp Configuration Language) or JSON syntax, coupled with state management concepts, can present a steeper initial learning curve.",
+      "leftIcon": "Key",
+      "rightIcon": "Compass",
+      "leftVisualText": "YAML",
+      "rightVisualText": "HCL/JSON"
     }
   ]
 }

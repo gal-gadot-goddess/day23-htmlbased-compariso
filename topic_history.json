@@ -58,5 +58,6 @@
   "Protocol Buffers vs FlatBuffers",
   "Hudi vs Iceberg",
   "TimescaleDB vs InfluxDB",
-  "Tauri vs Electron"
+  "Tauri vs Electron",
+  "Ansible vs Terraform"
 ]
