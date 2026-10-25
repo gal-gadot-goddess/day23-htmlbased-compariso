@@ -5,7 +5,7 @@ import path from 'path';
 dotenv.config();
 
 const API_KEY = process.env.POLLINATIONS_API_KEY;
-const MODEL = process.env.AI_MODEL || 'gemini-fast';
+const MODEL = process.env.AI_MODEL || 'openai';
 
 async function fetchWithTimeout(url, options, timeoutMs = 25000) {
     const controller = new AbortController();
@@ -20,26 +20,106 @@ async function fetchWithTimeout(url, options, timeoutMs = 25000) {
     }
 }
 
+function sanitizeHashtags(rawTags) {
+    const clean = [];
+    clean.push('#kreggscode');
+
+    if (Array.isArray(rawTags)) {
+        for (let t of rawTags) {
+            if (typeof t !== 'string') continue;
+            let ct = t.trim().toLowerCase();
+            if (!ct.startsWith('#')) ct = '#' + ct;
+            ct = ct.replace(/[^#a-z0-9_]/g, '');
+            if (ct.length > 2 && !clean.includes(ct)) clean.push(ct);
+        }
+    }
+
+    const fallbacks = ['#systemdesign', '#softwareengineering', '#coding', '#backend', '#artificialintelligence'];
+    for (let f of fallbacks) {
+        if (clean.length >= 5) break;
+        if (!clean.includes(f)) clean.push(f);
+    }
+    return clean.slice(0, 5);
+}
+
 async function generateMetadata(title, tagline) {
     const prompt = `
-You are a senior developer and viral tech educator.
-Create a comprehensive social media release package for an architectural comparison reel/short:
+You are a senior system architect and viral social media growth engineer managing @kreggscode (https://kreggscode.com).
+We are publishing a high-retention architectural comparison reel:
 Topic: "${title}"
-Category: "${tagline}"
+Domain/Category: "${tagline}"
 
-RETURN ONLY A VALID JSON OBJECT with exactly these keys:
-- title: "Punchy, exciting comparison title (e.g. ${title}: Which One Should You Choose?)"
-- ig_caption: "Educational masterclass caption for Instagram (max 1800 chars). Breakdown why developers choose either side with key trade-offs, architecture context, and a question to prompt comments."
-- threads_caption: "Snappy developer hot-take/summary for Threads (strictly under 450 chars)."
-- fb_caption: "Conversational, highly engaging post for Facebook tech communities (no strict char limit)."
-- yt_description: "SEO-optimized YouTube Shorts description with timestamps placeholders and rich explanation (max 3000 chars)."
-- tiktok_caption: "Ultra-engaging hook caption for TikTok/Reels with call to action (max 400 chars)."
-- hashtags: ["#WebDev", "#SoftwareEngineering", "#Coding", "#Tech", "#Programming"]
+GOOGLE SEARCH TRENDS & OPTIMIZATION TARGETS:
+- Frame the comparison around questions developers and system designers search for on Google (e.g., "${title}: Which One Scales in Production? ⚡", "System Design Interview: ${title} Breakdown").
+- The FIRST 120 CHARACTERS of "ig_caption" MUST be an irresistible search hook for Google "Short Videos" crawling.
+- Emphasize trade-offs: latency, throughput, complexity, fault-tolerance, and production scaling.
+
+RETURN STRICTLY A VALID JSON OBJECT with these exact keys:
+- title: "Viral SEO comparison hook title under 65 chars with an emoji (e.g. ${title}: Which One Actually Scales? ⚡)"
+- ig_caption: "High-retention Instagram caption with:
+  * First 2 lines (under 120 chars): Target search query hook with keywords (technology, system design, software engineering).
+  * 4-6 clean bullet points breaking down mechanical trade-offs under the hood.
+  * Real-world engineering recommendation or interview tip.
+  * Debate prompt to drive comments.
+  * Mandatory brand footer:
+    🔗 Interactive visualizers & guides: https://kreggscode.com
+    📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/
+    Follow @kreggscode | AI & System Architecture Studio"
+- fb_caption: "In-depth, conversational technical write-up for Facebook engineering groups explaining production trade-offs with links to https://kreggscode.com and https://kreggscode.com/apps/."
+- threads_caption: "Punchy developer debate question with https://kreggscode.com (under 280 chars)."
+- yt_description: "High-converting YouTube Shorts description with search-optimized summary, mechanics, #Shorts tags, and official links:
+  🔗 KreggsCode Ecosystem & Verified Resources:
+  🌐 Platform & Guides: https://kreggscode.com
+  📱 iOS & AI Apps: https://kreggscode.com/apps/
+  📸 Instagram: https://www.instagram.com/kreggscode/
+  🐦 X (Twitter): https://x.com/kreggscode"
+- yt_tags: ["kreggscode", "system design", "software engineering", "coding", "technology", "artificial intelligence", "backend architecture"]
+- hashtags: strictly 5 lowercase hashtags always starting with "#kreggscode" (e.g. ["#kreggscode", "#systemdesign", "#softwareengineering", "#coding", "#backend"])
 
 Rules:
 - No Markdown formatting inside json keys (** or ##).
-- Do not output backticks or conversational preamble.
+- Do not output backticks or conversational preamble. Return JSON only.
 `;
+
+    const fallback_metadata = {
+        title: `${title}: Architectural Trade-offs & Production Scaling ⚡`,
+        ig_caption: (
+            `⚡ ${title} Architecture Breakdown!\n\n`
+            + `How modern technology, scalable backend systems, and artificial intelligence architectures choose between ${title} under the hood.\n\n`
+            + `• Category: ${tagline}\n`
+            + `• Key evaluation criteria: Latency, throughput, state management, and operational complexity\n`
+            + `• Production takeaway: Choose based on team ergonomics, data consistency contracts, and horizontal scale\n\n`
+            + `Which architecture do you rely on in production? Drop your perspective below! 👇\n\n`
+            + `🔗 Interactive visualizers & guides: https://kreggscode.com\n`
+            + `📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/\n`
+            + `Follow @kreggscode | AI & System Architecture Studio`
+        ),
+        threads_caption: `${title}: Choosing between them comes down to scalability, development velocity, and system requirements. Which one do you prefer? https://kreggscode.com | Follow @kreggscode`,
+        fb_caption: (
+            `Deep-Dive Architecture Breakdown: ${title} (${tagline})\n\n`
+            + `Every software engineering team faces architectural trade-offs when selecting their toolset. Today we examine the fundamental differences in deployment, performance, and scaling between these two approaches.\n\n`
+            + `What has your production experience been with this architecture? Let's discuss in the comments!\n\n`
+            + `Explore interactive developer tools & apps at https://kreggscode.com and https://kreggscode.com/apps/\n`
+            + `Follow @kreggscode for daily technical comparisons and software architecture breakdowns.`
+        ),
+        yt_description: (
+            `Complete technical breakdown of ${title} (${tagline}).\n\n`
+            + `Comparing architecture, scalability, complexity, and performance trade-offs to help you decide which tool fits your high-scale systems.\n\n`
+            + `🔗 KreggsCode Ecosystem & Verified Resources:\n`
+            + `🌐 Platform & Guides: https://kreggscode.com\n`
+            + `📱 iOS & AI Apps: https://kreggscode.com/apps/\n`
+            + `📸 Instagram: https://www.instagram.com/kreggscode/\n`
+            + `🐦 X (Twitter): https://x.com/kreggscode\n\n`
+            + `#Shorts #kreggscode #systemdesign #coding #softwareengineering #technology #artificialintelligence`
+        ),
+        yt_tags: [
+            "kreggscode", "system design", "software engineering", "coding",
+            "technology", "artificial intelligence", "backend architecture"
+        ],
+        hashtags: [
+            "#kreggscode", "#systemdesign", "#softwareengineering", "#coding", "#backend"
+        ]
+    };
 
     try {
         const bodyPayload = {
@@ -51,7 +131,6 @@ Rules:
 
         let response = null;
 
-        // Try gen.pollinations.ai if key exists
         if (API_KEY) {
             try {
                 response = await fetchWithTimeout('https://gen.pollinations.ai/v1/chat/completions', {
@@ -67,7 +146,6 @@ Rules:
             }
         }
 
-        // Try public text.pollinations.ai endpoint if gen failed or no key
         if (!response || !response.ok) {
             response = await fetchWithTimeout('https://text.pollinations.ai/', {
                 method: 'POST',
@@ -82,33 +160,44 @@ Rules:
 
         const fullResponse = await response.json();
         let content = fullResponse.choices?.[0]?.message?.content || (typeof fullResponse === 'string' ? fullResponse : null);
-        
-        if (!content && typeof fullResponse === 'object' && fullResponse.title) {
-            return fullResponse;
-        }
 
+        let data = null;
         if (content) {
             const jsonMatch = content.match(/```json\s*(\{[\s\S]*?\})\s*```/) || content.match(/\{[\s\S]*\}/);
             if (jsonMatch) {
-                return JSON.parse((jsonMatch[1] || jsonMatch[0]).trim());
+                data = JSON.parse((jsonMatch[1] || jsonMatch[0]).trim());
             }
+        } else if (fullResponse && typeof fullResponse === 'object' && fullResponse.title) {
+            data = fullResponse;
+        }
+
+        if (data) {
+            if (!data.ig_caption || !data.ig_caption.includes('kreggscode.com')) {
+                data.ig_caption = (data.ig_caption || fallback_metadata.ig_caption) +
+                    `\n\n🔗 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/\nFollow @kreggscode | AI & System Architecture Studio`;
+            }
+
+            if (!data.fb_caption || !data.fb_caption.includes('kreggscode.com')) {
+                data.fb_caption = (data.fb_caption || fallback_metadata.fb_caption) +
+                    `\n\nExplore interactive developer tools & apps at https://kreggscode.com and https://kreggscode.com/apps/\nFollow @kreggscode for daily technical comparisons and software architecture breakdowns.`;
+            }
+
+            if (!data.yt_description || !data.yt_description.includes('kreggscode.com')) {
+                data.yt_description = fallback_metadata.yt_description;
+            }
+
+            if (!data.yt_tags) {
+                data.yt_tags = fallback_metadata.yt_tags;
+            }
+
+            data.hashtags = sanitizeHashtags(data.hashtags || fallback_metadata.hashtags);
+            return data;
         }
 
         throw new Error('No valid JSON found in AI response content');
     } catch (error) {
-        console.warn('⚠️ Error generating AI metadata, using smart fallback template:', error.message);
-        return {
-            title: `${title}: The Complete Architectural Comparison`,
-            ig_caption: `Breaking down the architectural showdown: ${title} (${tagline})!\n\nBoth technologies solve crucial problems, but each comes with its own trade-offs across performance, complexity, scaling, and ergonomics.\n\nCheck out the 7 core differences in this breakdown to decide which one fits your stack best. Which one are you currently using in production? Let us know in the comments below!`,
-            threads_caption: `${title}: Choosing between them comes down to scalability, development speed, and architectural requirements. Which one do you prefer in your stack?`,
-            fb_caption: `Deep dive into ${title}!\n\nEvery engineering team faces architectural trade-offs when selecting their toolset. Today we examine the fundamental differences in deployment, performance, and scaling between these two approaches. Check out the visual breakdown!`,
-            yt_description: `Complete technical breakdown of ${title} (${tagline}).\n\nComparing architecture, scalability, complexity, and performance trade-offs to help you decide which tool fits your next project.\n\n#SoftwareEngineering #Tech #Programming #Coding #Developer`,
-            tiktok_caption: `${title} explained in seconds! Which one is better for your project? Drop your pick below!`,
-            hashtags: [
-                "#TechComparison", "#Coding", "#SoftwareEngineering", "#WebDev",
-                "#Architecture", "#SystemDesign", "#Developer", "#Programming"
-            ]
-        };
+        console.warn('⚠️ Error generating AI metadata, using Google Trends SEO fallback template:', error.message);
+        return fallback_metadata;
     }
 }
 
@@ -117,7 +206,7 @@ async function main() {
     const title = args[0] || 'SQL vs NoSQL';
     const tagline = args[1] || 'DATABASE ARCHITECTURE';
 
-    console.log(`🤖 Generating AI metadata for: ${title} (${tagline})...`);
+    console.log(`🤖 Generating Google Trends AI metadata for: ${title} (${tagline})...`);
     const metadata = await generateMetadata(title, tagline);
 
     fs.writeFileSync('metadata.json', JSON.stringify(metadata, null, 2));
