@@ -1,92 +1,92 @@
 {
-  "topLabel": "BUILD TOOLS & COMPILERS",
+  "topLabel": "TYPESCRIPT ORMS & DATA ACCESS",
   "mainTitle": {
-    "left": "Turbopack",
-    "right": "Vite",
+    "left": "Prisma",
+    "right": "Drizzle ORM",
     "vs": "vs"
   },
-  "leftSub": "Rust-powered bundler",
-  "rightSub": "Fast dev server",
-  "leftColor": "#4f46e5",
-  "rightColor": "#fbbf24",
+  "leftSub": "Next-gen ORM",
+  "rightSub": "Lightweight SQL builder",
+  "leftColor": "#84cc16",
+  "rightColor": "#8b5cf6",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. CORE IMPLEMENTATION",
-      "leftTitle": "Written in Rust",
-      "rightTitle": "Primarily JavaScript",
-      "leftDesc": "Turbopack leverages Rust for performance-critical operations, offering near-instant builds and updates due to its compiled nature and efficient memory management.",
-      "rightDesc": "Vite is built with ViteScript (a custom superset of JavaScript) and leverages Rollup for production builds, providing a mature and widely compatible ecosystem.",
-      "leftIcon": "Rust",
-      "rightIcon": "Languages",
-      "leftVisualText": "Rust",
-      "rightVisualText": "JS Core"
+      "title": "1. SCHEMA DEFINITION",
+      "leftTitle": "Schema File",
+      "rightTitle": "TypeScript/JS",
+      "leftDesc": "Prisma uses a dedicated SDL file for schema definition, which is then introspected to generate a client and migrations. This separation enforces a single source of truth.",
+      "rightDesc": "Drizzle ORM defines schemas directly in TypeScript or JavaScript, allowing for type inference and compile-time checks within your application code.",
+      "leftIcon": "FileText",
+      "rightIcon": "Code",
+      "leftVisualText": "SDL File",
+      "rightVisualText": "In-Code"
     },
     {
-      "title": "2. MODULE RESOLUTION",
-      "leftTitle": "Native ESM + CJS",
-      "rightTitle": "Native ESM",
-      "leftDesc": "Turbopack aims for native ESM support but also handles CommonJS seamlessly, integrating deeply with Node.js module semantics for broad compatibility.",
-      "rightDesc": "Vite uses native ES Modules during development, avoiding bundlers for faster cold starts. It leverages Rollup for production bundling to handle CJS.",
-      "leftIcon": "Box",
-      "rightIcon": "Box",
-      "leftVisualText": "Full Support",
-      "rightVisualText": "Dev ESM"
-    },
-    {
-      "title": "3. COMPILATION STRATEGY",
-      "leftTitle": "Incremental Compilation",
-      "rightTitle": "Rollup Plugins",
-      "leftDesc": "Turbopack employs an aggressive incremental compilation strategy, caching intermediate outputs to rebuild only changed parts of the dependency graph extremely quickly.",
-      "rightDesc": "Vite uses esbuild for pre-bundling dependencies and Vite's own plugin API for transformation. Production builds use Rollup, offering a rich plugin ecosystem.",
-      "leftIcon": "FastForward",
-      "rightIcon": "Layers",
-      "leftVisualText": "Rapid Updates",
-      "rightVisualText": "Plugin-driven"
-    },
-    {
-      "title": "4. DEVELOPMENT SERVER",
-      "leftTitle": "Fast Cold Starts",
-      "rightTitle": "Instant Cold Starts",
-      "leftDesc": "Turbopack prioritizes extremely fast cold starts, even for large projects, by optimizing the initial build process and enabling rapid subsequent updates.",
-      "rightDesc": "Vite's development server leverages native ES Modules and esbuild for instant cold starts and Hot Module Replacement (HMR), leading to a very fast dev experience.",
-      "leftIcon": "Zap",
-      "rightIcon": "Zap",
-      "leftVisualText": "Optimized Start",
-      "rightVisualText": "Native Speed"
-    },
-    {
-      "title": "5. PERFORMANCE FOCUS",
-      "leftTitle": "All-in-one Toolchain",
-      "rightTitle": "Dev Server Optimized",
-      "leftDesc": "Turbopack is designed as a complete, high-performance build toolchain from development to production, aiming to replace existing bundlers and compilers.",
-      "rightDesc": "Vite excels as a development server with rapid feedback loops. Its production build relies on Rollup, a mature and highly configurable bundler.",
-      "leftIcon": "Target",
-      "rightIcon": "Server",
-      "leftVisualText": "Holistic Perf",
-      "rightVisualText": "Dev Focus"
-    },
-    {
-      "title": "6. ECOSYSTEM INTEGRATION",
-      "leftTitle": "Evolving Ecosystem",
-      "rightTitle": "Mature Ecosystem",
-      "leftDesc": "Turbopack is newer, actively building its plugin system and integrations. It aims to be compatible with existing bundler configurations where possible.",
-      "rightDesc": "Vite leverages the vast JavaScript ecosystem and has a rich plugin API, integrating seamlessly with tools like React, Vue, and Svelte.",
-      "leftIcon": "GitBranch",
-      "rightIcon": "Globe",
-      "leftVisualText": "Growing",
-      "rightVisualText": "Established"
-    },
-    {
-      "title": "7. USE CASE SCENARIO",
-      "leftTitle": "Large Scale Apps",
-      "rightTitle": "Modern Web Apps",
-      "leftDesc": "Turbopack's performance optimizations and Rust core make it particularly well-suited for very large codebases and demanding build processes.",
-      "rightDesc": "Vite is an excellent choice for modern web applications, offering a smooth and fast development experience with easy configuration.",
+      "title": "2. MIGRATION SYSTEM",
+      "leftTitle": "Built-in Tooling",
+      "rightTitle": "Manual/External",
+      "leftDesc": "Prisma provides a robust, opinionated migration system with `prisma migrate dev` and `prisma migrate deploy` commands, generating SQL files.",
+      "rightDesc": "Drizzle ORM relies on external tools or manual SQL generation for migrations, offering more flexibility but requiring more setup.",
       "leftIcon": "HardDrive",
-      "rightIcon": "Smartphone",
-      "leftVisualText": "Scale Ready",
-      "rightVisualText": "Dev Friendly"
+      "rightIcon": "Database",
+      "leftVisualText": "Managed",
+      "rightVisualText": "Flexible"
+    },
+    {
+      "title": "3. TYPE SAFETY",
+      "leftTitle": "Generated Client",
+      "rightTitle": "Runtime Inference",
+      "leftDesc": "Prisma generates a fully type-safe client based on your schema, providing excellent autocompletion and compile-time guarantees for queries.",
+      "rightDesc": "Drizzle ORM leverages TypeScript's type system for its query builder, achieving type safety through inference and generic types.",
+      "leftIcon": "ShieldCheck",
+      "rightIcon": "Type",
+      "leftVisualText": "Full Safety",
+      "rightVisualText": "Inferred"
+    },
+    {
+      "title": "4. SQL GENERATION",
+      "leftTitle": "Abstracted Queries",
+      "rightTitle": "Direct SQL Builder",
+      "leftDesc": "Prisma abstracts SQL generation, translating your JavaScript/TypeScript queries into SQL. You interact with a client, not raw SQL.",
+      "rightDesc": "Drizzle ORM acts as a SQL query builder, producing type-safe SQL strings that are then executed by a database driver.",
+      "leftIcon": "Layers",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Abstracted",
+      "rightVisualText": "Builder"
+    },
+    {
+      "title": "5. DATABASE SUPPORT",
+      "leftTitle": "Broad Support",
+      "rightTitle": "Growing Support",
+      "leftDesc": "Prisma supports PostgreSQL, MySQL, SQLite, SQL Server, and MongoDB, offering a unified API across these databases.",
+      "rightDesc": "Drizzle ORM primarily targets PostgreSQL, MySQL, and SQLite, with an emphasis on SQL compliance and performance for these.",
+      "leftIcon": "Globe",
+      "rightIcon": "Compass",
+      "leftVisualText": "Wide Range",
+      "rightVisualText": "Focused"
+    },
+    {
+      "title": "6. QUERY PERFORMANCE",
+      "leftTitle": "ORM Overhead",
+      "rightTitle": "Near Native",
+      "leftDesc": "Prisma's abstraction layer can introduce minor overhead compared to raw SQL, though it's highly optimized for common operations.",
+      "rightDesc": "Drizzle ORM generates efficient SQL, resulting in performance very close to writing raw SQL queries directly.",
+      "leftIcon": "Zap",
+      "rightIcon": "FastForward",
+      "leftVisualText": "Optimized",
+      "rightVisualText": "Raw Speed"
+    },
+    {
+      "title": "7. ECOSYSTEM & TOOLING",
+      "leftTitle": "Integrated Suite",
+      "rightTitle": "Modular & Lean",
+      "leftDesc": "Prisma offers an integrated developer experience with Prisma Studio (GUI), client generation, and migrations as a cohesive package.",
+      "rightDesc": "Drizzle ORM is more modular, focusing on the query builder and type safety, often integrating with other tools for migrations or tooling.",
+      "leftIcon": "Box",
+      "rightIcon": "Layers",
+      "leftVisualText": "All-in-One",
+      "rightVisualText": "Components"
     }
   ]
 }

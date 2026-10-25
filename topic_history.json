@@ -65,5 +65,6 @@
   "Milvus vs Weaviate",
   "Aerospike vs Redis",
   "Caddy vs NGINX",
-  "Turbopack vs Vite"
+  "Turbopack vs Vite",
+  "Prisma vs Drizzle ORM"
 ]
