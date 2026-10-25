@@ -1,32 +1,63 @@
-import dotenv from 'dotenv';
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const API_KEY = process.env.POLLINATIONS_API_KEY;
-const MODEL = process.env.AI_MODEL || 'openai';
+// Top-ranking Google Trends queries for developer comparisons
+const COMPARISON_SEARCH_TRENDS = [
+    { pattern: /kafka.*rabbitmq|rabbitmq.*kafka/i, query: "Kafka vs RabbitMQ: Which Message Broker Actually Scales in Production? ⚡" },
+    { pattern: /postgres.*mysql|mysql.*postgres/i, query: "PostgreSQL vs MySQL: Key Architectural Differences & Performance Benchmarks ⚡" },
+    { pattern: /redis.*memcached|memcached.*redis/i, query: "Redis vs Memcached: Caching Architecture & Throughput Compared ⚡" },
+    { pattern: /sql.*nosql|nosql.*sql/i, query: "SQL vs NoSQL: How High-Scale Systems Choose Their Database Architecture ⚡" },
+    { pattern: /graphql.*rest|rest.*graphql/i, query: "GraphQL vs REST API: Network Latency, Over-fetching & Scaling Trade-offs ⚡" },
+    { pattern: /docker.*kubernetes|kubernetes.*docker/i, query: "Docker vs Kubernetes: Containerization vs Orchestration Explained Simply ⚡" },
+    { pattern: /monolith.*microservice/i, query: "Monolithic vs Microservices: When Should You Actually Decompose Your Architecture? ⚡" },
+    { pattern: /tcp.*udp|udp.*tcp/i, query: "TCP vs UDP: Packet Loss, Latency, and Transport Layer Performance ⚡" },
+    { pattern: /grpc.*rest|rest.*grpc/i, query: "gRPC vs REST: Protocol Buffers vs JSON for High-Throughput Microservices ⚡" },
+    { pattern: /mongodb.*postgresql|postgres.*mongo/i, query: "MongoDB vs PostgreSQL: Document Stores vs Relational ACID Explained ⚡" },
+    { pattern: /elasticsearch.*solr/i, query: "Elasticsearch vs Solr: Full-Text Search Engine Architecture Breakdown ⚡" },
+    { pattern: /websocket.*sse|sse.*websocket/i, query: "WebSockets vs Server-Sent Events (SSE): Real-Time Communication Trade-offs ⚡" },
+    { pattern: /jwt.*session|session.*jwt/i, query: "JWT vs Server Sessions: Authentication Scalability & Security In Production ⚡" }
+];
 
-async function fetchWithTimeout(url, options, timeoutMs = 25000) {
+function getTrendingSearchQuery(title) {
+    for (const item of COMPARISON_SEARCH_TRENDS) {
+        if (item.pattern.test(title)) {
+            return item.query;
+        }
+    }
+    return `${title}: Which Architecture Actually Scales in Production? ⚡`;
+}
+
+async function fetchWithTimeout(resource, options = {}, timeout = 25000) {
     const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    const id = setTimeout(() => controller.abort(), timeout);
     try {
-        const response = await fetch(url, { ...options, signal: controller.signal });
-        clearTimeout(timer);
+        const response = await fetch(resource, {
+            ...options,
+            signal: controller.signal
+        });
+        clearTimeout(id);
         return response;
-    } catch (err) {
-        clearTimeout(timer);
-        throw err;
+    } catch (e) {
+        clearTimeout(id);
+        throw e;
     }
 }
 
-function sanitizeHashtags(rawTags) {
-    const clean = [];
-    clean.push('#kreggscode');
-
-    if (Array.isArray(rawTags)) {
-        for (let t of rawTags) {
-            if (typeof t !== 'string') continue;
+function sanitizeHashtags(tags) {
+    const clean = ['#kreggscode'];
+    if (Array.isArray(tags)) {
+        for (let t of tags) {
+            let ct = String(t).trim().toLowerCase();
+            if (!ct.startsWith('#')) ct = '#' + ct;
+            ct = ct.replace(/[^#a-z0-9_]/g, '');
+            if (ct.length > 2 && !clean.includes(ct)) clean.push(ct);
+        }
+    } else if (typeof tags === 'string') {
+        for (let t of tags.split(/\s+/)) {
             let ct = t.trim().toLowerCase();
             if (!ct.startsWith('#')) ct = '#' + ct;
             ct = ct.replace(/[^#a-z0-9_]/g, '');
@@ -43,29 +74,29 @@ function sanitizeHashtags(rawTags) {
 }
 
 async function generateMetadata(title, tagline) {
+    const trendingQuery = getTrendingSearchQuery(title);
+
     const prompt = `
 You are a senior system architect and viral social media growth engineer managing @kreggscode (https://kreggscode.com).
-We are publishing a high-retention architectural comparison reel:
+We are publishing a high-retention architectural comparison post on Facebook:
 Topic: "${title}"
 Domain/Category: "${tagline}"
+Target Google Search Query Hook: "${trendingQuery}"
 
-GOOGLE SEARCH TRENDS & OPTIMIZATION TARGETS:
-- Frame the comparison around questions developers and system designers search for on Google (e.g., "${title}: Which One Scales in Production? ⚡", "System Design Interview: ${title} Breakdown").
-- The FIRST 120 CHARACTERS of "ig_caption" MUST be an irresistible search hook for Google "Short Videos" crawling.
-- Emphasize trade-offs: latency, throughput, complexity, fault-tolerance, and production scaling.
+GOOGLE SEARCH & FACEBOOK SEO OPTIMIZATION TARGETS:
+- The title MUST be a viral comparison hook under 65 chars (e.g. "${title}: Which One Actually Scales? ⚡").
+- fb_caption MUST be an SEO-optimized technical breakdown:
+  * First line: High-intent search hook ("${trendingQuery}").
+  * 3-5 clean bullet points analyzing throughput, latency, consistency, failure modes, and operational overhead.
+  * Recommendation on which one to choose for production.
+  * Clear call-to-actions linking to Instagram (@kreggscode), website, and apps:
+    ⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)
+    🌐 Interactive visualizers & guides: https://kreggscode.com
+    📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/
 
 RETURN STRICTLY A VALID JSON OBJECT with these exact keys:
-- title: "Viral SEO comparison hook title under 65 chars with an emoji (e.g. ${title}: Which One Actually Scales? ⚡)"
-- ig_caption: "High-retention Instagram caption with:
-  * First 2 lines (under 120 chars): Target search query hook with keywords (technology, system design, software engineering).
-  * 4-6 clean bullet points breaking down mechanical trade-offs under the hood.
-  * Real-world engineering recommendation or interview tip.
-  * Debate prompt to drive comments.
-  * Mandatory brand footer:
-    🔗 Interactive visualizers & guides: https://kreggscode.com
-    📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/
-    Follow @kreggscode | AI & System Architecture Studio"
-- fb_caption: "In-depth, conversational technical write-up for Facebook engineering groups explaining production trade-offs with links to https://kreggscode.com and https://kreggscode.com/apps/."
+- title: "${title}: Which One Actually Scales? ⚡"
+- fb_caption: "Complete SEO technical breakdown as described above"
 - threads_caption: "Punchy developer debate question with https://kreggscode.com (under 280 chars)."
 - yt_description: "High-converting YouTube Shorts description with search-optimized summary, mechanics, #Shorts tags, and official links:
   🔗 KreggsCode Ecosystem & Verified Resources:
@@ -83,25 +114,19 @@ Rules:
 
     const fallback_metadata = {
         title: `${title}: Architectural Trade-offs & Production Scaling ⚡`,
-        ig_caption: (
-            `⚡ ${title} Architecture Breakdown!\n\n`
-            + `How modern technology, scalable backend systems, and artificial intelligence architectures choose between ${title} under the hood.\n\n`
-            + `• Category: ${tagline}\n`
-            + `• Key evaluation criteria: Latency, throughput, state management, and operational complexity\n`
-            + `• Production takeaway: Choose based on team ergonomics, data consistency contracts, and horizontal scale\n\n`
-            + `Which architecture do you rely on in production? Drop your perspective below! 👇\n\n`
-            + `🔗 Interactive visualizers & guides: https://kreggscode.com\n`
-            + `📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/\n`
-            + `Follow @kreggscode | AI & System Architecture Studio`
+        fb_caption: (
+            `Deep-Dive Architecture Breakdown: ${trendingQuery}\n\n`
+            + `Every software engineering team faces architectural trade-offs when selecting their toolset for ${tagline}. Today we examine the fundamental differences in deployment, performance, and scaling between these two approaches.\n\n`
+            + `• Scalability & Throughput: How each handles concurrent traffic and data volume under production load.\n`
+            + `• Operational Overhead: Maintenance, observability, fault tolerance, and cluster management.\n`
+            + `• Key Takeaway: Choose based on latency requirements, consistency contracts, and team ergonomics.\n\n`
+            + `Which architecture do you rely on in production? Drop your perspective in the comments! 👇\n\n`
+            + `⚡ Looking for more software architecture breakdowns and animated visualizers?\n`
+            + `📸 Follow our official Instagram: https://instagram.com/kreggscode (@kreggscode)\n`
+            + `🌐 Explore interactive developer tools: https://kreggscode.com\n`
+            + `📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/`
         ),
         threads_caption: `${title}: Choosing between them comes down to scalability, development velocity, and system requirements. Which one do you prefer? https://kreggscode.com | Follow @kreggscode`,
-        fb_caption: (
-            `Deep-Dive Architecture Breakdown: ${title} (${tagline})\n\n`
-            + `Every software engineering team faces architectural trade-offs when selecting their toolset. Today we examine the fundamental differences in deployment, performance, and scaling between these two approaches.\n\n`
-            + `What has your production experience been with this architecture? Let's discuss in the comments!\n\n`
-            + `Explore interactive developer tools & apps at https://kreggscode.com and https://kreggscode.com/apps/\n`
-            + `Follow @kreggscode for daily technical comparisons and software architecture breakdowns.`
-        ),
         yt_description: (
             `Complete technical breakdown of ${title} (${tagline}).\n\n`
             + `Comparing architecture, scalability, complexity, and performance trade-offs to help you decide which tool fits your high-scale systems.\n\n`
@@ -128,6 +153,9 @@ Rules:
             temperature: 0.8,
             seed: Math.floor(Math.random() * 1000000)
         };
+
+        const API_KEY = process.env.POLLINATIONS_API_KEY || '';
+        const MODEL = process.env.AI_MODEL || 'openai-fast';
 
         let response = null;
 
@@ -172,14 +200,9 @@ Rules:
         }
 
         if (data) {
-            if (!data.ig_caption || !data.ig_caption.includes('kreggscode.com')) {
-                data.ig_caption = (data.ig_caption || fallback_metadata.ig_caption) +
-                    `\n\n🔗 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/\nFollow @kreggscode | AI & System Architecture Studio`;
-            }
-
             if (!data.fb_caption || !data.fb_caption.includes('kreggscode.com')) {
                 data.fb_caption = (data.fb_caption || fallback_metadata.fb_caption) +
-                    `\n\nExplore interactive developer tools & apps at https://kreggscode.com and https://kreggscode.com/apps/\nFollow @kreggscode for daily technical comparisons and software architecture breakdowns.`;
+                    `\n\n⚡ Follow our official Instagram: https://instagram.com/kreggscode (@kreggscode)\n🌐 Explore interactive developer tools & apps at https://kreggscode.com and https://kreggscode.com/apps/`;
             }
 
             if (!data.yt_description || !data.yt_description.includes('kreggscode.com')) {
