@@ -1,92 +1,92 @@
 {
-  "topLabel": "SECURITY & AUTHENTICATION",
+  "topLabel": "TIME-SERIES DATABASES",
   "mainTitle": {
-    "left": "PASETO",
-    "right": "JWT",
+    "left": "QuestDB",
+    "right": "ClickHouse",
     "vs": "vs"
   },
-  "leftSub": "Modern, Secure Token",
-  "rightSub": "Widely Adopted Token",
+  "leftSub": "Fast SQL Time-Series",
+  "rightSub": "Columnar Analytics Engine",
   "leftColor": "#eab308",
   "rightColor": "#6366f1",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. DESIGN PHILOSOPHY",
-      "leftTitle": "Security First",
-      "rightTitle": "Flexibility Focused",
-      "leftDesc": "PASETO prioritizes explicit cryptographic algorithms, preventing common vulnerabilities. It enforces strong typing and explicit key management for better security guarantees.",
-      "rightDesc": "JWT offers flexible claims and signing algorithms, allowing developers to choose. This flexibility, however, can lead to misconfigurations and security flaws if not handled carefully.",
-      "leftIcon": "Shield",
-      "rightIcon": "Lock",
-      "leftVisualText": "Secure by Design",
-      "rightVisualText": "Flexible Claims"
+      "title": "1. Architecture",
+      "leftTitle": "Shared-Nothing Shared-Memory",
+      "rightTitle": "Columnar Shared-Nothing",
+      "leftDesc": "QuestDB uses a shared-nothing architecture with shared memory for inter-thread communication, optimizing local node performance for time-series workloads.",
+      "rightDesc": "ClickHouse employs a columnar, shared-nothing architecture, excellent for analytical queries by reading only necessary columns, minimizing I/O.",
+      "leftIcon": "Server",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Shared-Nothing",
+      "rightVisualText": "Columnar"
     },
     {
-      "title": "2. CRYPTOGRAPHIC ALGORITHMS",
-      "leftTitle": "Explicit & Modern",
-      "rightTitle": "Pluggable & Varied",
-      "leftDesc": "PASETO mandates modern, well-vetted cryptographic primitives like AES-GCM and Curve25519, ensuring high security and preventing algorithm confusion attacks.",
-      "rightDesc": "JWT supports a wide array of signing algorithms (HS256, RS256, ES256, etc.), including older, less secure ones, requiring careful validation.",
+      "title": "2. SQL Dialect",
+      "leftTitle": "PostgreSQL-like SQL",
+      "rightTitle": "ANSI SQL + Extensions",
+      "leftDesc": "QuestDB offers a PostgreSQL-compatible SQL interface, easing migration and adoption for developers familiar with relational databases.",
+      "rightDesc": "ClickHouse supports ANSI SQL with extensive proprietary extensions for analytical functions, offering specialized query capabilities.",
+      "leftIcon": "Code",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Postgres SQL",
+      "rightVisualText": "ANSI+"
+    },
+    {
+      "title": "3. Indexing Strategy",
+      "leftTitle": "Sparse Primary Index",
+      "rightTitle": "Sparse Column Index",
+      "leftDesc": "QuestDB utilizes a sparse primary index on timestamp and designated columns, enabling rapid range scans and lookups for time-series data.",
+      "rightDesc": "ClickHouse builds sparse indexes on columns (often the first in table definition), allowing efficient filtering on those specific fields.",
       "leftIcon": "Key",
-      "rightIcon": "Code",
-      "leftVisualText": "Standardized Crypto",
-      "rightVisualText": "Algorithm Choice"
+      "rightIcon": "Filter",
+      "leftVisualText": "Primary Index",
+      "rightVisualText": "Column Index"
     },
     {
-      "title": "3. TOKEN FORMAT",
-      "leftTitle": "Versioned & Structured",
-      "rightTitle": "JSON-Based Standard",
-      "leftDesc": "PASETO tokens have a clear version prefix (v1, v2, v3, v4) and a structured payload, simplifying parsing and preventing version-related exploits.",
-      "rightDesc": "JWT tokens are typically JSON objects Base64Url encoded. While readable, they lack inherent versioning and can be prone to padding oracle attacks if not validated properly.",
-      "leftIcon": "Box",
+      "title": "4. Data Ingestion",
+      "leftTitle": "High Throughput Writes",
+      "rightTitle": "Batch Optimized Ingestion",
+      "leftDesc": "QuestDB is optimized for high-frequency, low-latency writes, ideal for real-time data streams and IoT scenarios.",
+      "rightDesc": "ClickHouse excels at batch inserts, efficiently processing large volumes of data at once for analytical purposes.",
+      "leftIcon": "FastForward",
+      "rightIcon": "Layers",
+      "leftVisualText": "Real-time",
+      "rightVisualText": "Batch"
+    },
+    {
+      "title": "5. Query Performance",
+      "leftTitle": "Fast Range Scans",
+      "rightTitle": "Fast Aggregations",
+      "leftDesc": "QuestDB's indexing and memory-centric design accelerate time-series range queries and point lookups significantly.",
+      "rightDesc": "ClickHouse's columnar storage and vectorization provide exceptional performance for complex analytical aggregations over large datasets.",
+      "leftIcon": "Activity",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Scans",
+      "rightVisualText": "Aggregations"
+    },
+    {
+      "title": "6. Data Storage",
+      "leftTitle": "In-Memory First",
+      "rightTitle": "Columnar Disk-Based",
+      "leftDesc": "QuestDB prioritizes memory for hot data, leveraging memory-mapped files for efficient disk access when needed.",
+      "rightDesc": "ClickHouse stores data in columnar files on disk, optimized for compression and sequential reads during analytics.",
+      "leftIcon": "Zap",
+      "rightIcon": "Cloud",
+      "leftVisualText": "Memory-centric",
+      "rightVisualText": "Columnar Disk"
+    },
+    {
+      "title": "7. Use Cases",
+      "leftTitle": "Real-time Analytics",
+      "rightTitle": "OLAP Analytics",
+      "leftDesc": "QuestDB is well-suited for operational dashboards, real-time monitoring, and applications requiring low-latency time-series data access.",
+      "rightDesc": "ClickHouse shines in business intelligence, large-scale data warehousing, and complex ad-hoc analytical querying.",
+      "leftIcon": "Radio",
       "rightIcon": "Globe",
-      "leftVisualText": "Explicit Versions",
-      "rightVisualText": "Plain JSON"
-    },
-    {
-      "title": "4. KEY MANAGEMENT",
-      "leftTitle": "Explicit Key Use",
-      "rightTitle": "Flexible Signing",
-      "leftDesc": "PASETO enforces distinct keys for encryption and signing, eliminating the risk of using a signing key for encryption or vice-versa, which is a common JWT pitfall.",
-      "rightDesc": "JWT allows using the same key for signing and verification, or separate keys. Misuse, like signing with a public key, is a critical security risk.",
-      "leftIcon": "Lock",
-      "rightIcon": "Server",
-      "leftVisualText": "Separate Keys",
-      "rightVisualText": "Shared Keys"
-    },
-    {
-      "title": "5. SECURITY VULNERABILITIES",
-      "leftTitle": "Resistant to Common Flaws",
-      "rightTitle": "Susceptible to Some",
-      "leftDesc": "PASETO's design actively prevents signature stripping, algorithm confusion, and other common JWT exploits by design, making it inherently more secure.",
-      "rightDesc": "JWTs are vulnerable to algorithm confusion attacks (none algorithm), weak key management, and insecure deserialization if not implemented with extreme care.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "Zap",
-      "leftVisualText": "Vulnerability Proof",
-      "rightVisualText": "Common Flaws"
-    },
-    {
-      "title": "6. TRANSPARENCY & AUDITABILITY",
-      "leftTitle": "Auditable by Design",
-      "rightTitle": "Requires External Tools",
-      "leftDesc": "PASETO's explicit algorithm enforcement and structured format make auditing and verifying token integrity straightforward without relying on external libraries or guesswork.",
-      "rightDesc": "Auditing JWT validity often requires specific libraries and careful checking of headers and claims to prevent security issues. It's less transparent out-of-the-box.",
-      "leftIcon": "CheckCircle",
-      "rightIcon": "Compass",
-      "leftVisualText": "Built-in Audit",
-      "rightVisualText": "External Audit"
-    },
-    {
-      "title": "7. ADOPTION & ECOSYSTEM",
-      "leftTitle": "Emerging & Growing",
-      "rightTitle": "Mature & Widespread",
-      "leftDesc": "PASETO is newer but gaining traction for its strong security stance, particularly in new projects or where security is paramount. Ecosystem is still growing.",
-      "rightDesc": "JWT has massive adoption across web frameworks, OAuth 2.0, and various services. Its extensive ecosystem and community support are unparalleled.",
-      "leftIcon": "Cloud",
-      "rightIcon": "GitBranch",
-      "leftVisualText": "Newer Adoption",
-      "rightVisualText": "Ubiquitous Use"
+      "leftVisualText": "Operational",
+      "rightVisualText": "BI Analytics"
     }
   ]
 }
