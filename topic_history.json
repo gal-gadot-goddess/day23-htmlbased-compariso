@@ -64,5 +64,6 @@
   "FastAPI vs Axum",
   "Milvus vs Weaviate",
   "Aerospike vs Redis",
-  "Caddy vs NGINX"
+  "Caddy vs NGINX",
+  "Turbopack vs Vite"
 ]
