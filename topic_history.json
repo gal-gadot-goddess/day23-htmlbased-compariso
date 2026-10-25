@@ -63,5 +63,6 @@
   "Dragonfly vs Redis",
   "FastAPI vs Axum",
   "Milvus vs Weaviate",
-  "Aerospike vs Redis"
+  "Aerospike vs Redis",
+  "Caddy vs NGINX"
 ]
