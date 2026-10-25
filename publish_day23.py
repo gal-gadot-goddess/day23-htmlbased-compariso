@@ -14,12 +14,11 @@ video_path = current_dir / "recording.mp4"
 # Import upload functions from the local 'upload' folder
 sys.path.append(str(current_dir))
 try:
-    from upload.upload_instagram import upload_to_instagram
     from upload.upload_facebook import upload_to_facebook
     from upload.upload_threads import upload_to_threads
     from upload.upload_to_youtube import upload_to_youtube
     from upload.upload_twitter import upload_to_twitter
-    print("✅ Successfully imported all upload modules.")
+    print("✅ Successfully imported upload modules.")
 except ImportError as e:
     print(f"❌ Import error: {e}")
     sys.exit(1)
@@ -51,7 +50,7 @@ def sanitize_hashtags(raw_tags):
 def main():
     load_dotenv()
 
-    # Also check if video is named day23_*.mp4 if recording.mp4 doesn't exist
+    # Discover target video file
     target_video = video_path
     if not target_video.exists():
         mp4_candidates = list(current_dir.glob("*.mp4"))
@@ -82,20 +81,16 @@ def main():
     title = metadata.get("title", fallback_title)
     hashtags = sanitize_hashtags(metadata.get("hashtags", []))
 
-    brand_footer = (
-        "🔗 Interactive visualizers & guides: https://kreggscode.com\n"
-        "📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/\n"
-        "Follow @kreggscode | AI & System Architecture Studio"
-    )
-
-    ig_caption = metadata.get("ig_caption", f"⚡ {title}\n\nKey architectural trade-offs broken down.")
-    if "kreggscode.com" not in ig_caption:
-        ig_caption = f"{ig_caption}\n\n{brand_footer}"
-    instagram_full = f"{ig_caption}\n\n.\n.\n{hashtags}"
-
+    # SEO Facebook Caption with backlinks to Instagram (@kreggscode) & Website
     fb_caption = metadata.get("fb_caption", f"Deep-Dive Technical Breakdown: {title}")
     if "kreggscode.com" not in fb_caption:
-        fb_caption = f"{fb_caption}\n\nExplore interactive developer tools & apps at https://kreggscode.com and https://kreggscode.com/apps/"
+        fb_caption = (
+            f"{fb_caption}\n\n"
+            f"⚡ Looking for more software architecture breakdowns and animated visualizers?\n"
+            f"📸 Follow our official Instagram: https://instagram.com/kreggscode (@kreggscode)\n"
+            f"🌐 Explore interactive developer tools: https://kreggscode.com\n"
+            f"📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/"
+        )
     facebook_full = f"{fb_caption}\n\n{hashtags}"
 
     threads_caption = metadata.get("threads_caption", f"{title}\n\nhttps://kreggscode.com | Follow @kreggscode")
@@ -126,23 +121,14 @@ def main():
     print(f"📂 Video: {target_video.name}")
     print(f"{'='*55}\n")
 
-    # 1. Instagram Reels (@kreggscode)
-    ig_token = os.getenv("INSTAGRAM_ACCESS_TOKEN") or os.getenv("IG_ACCESS_TOKEN")
-    if ig_token:
-        try:
-            print("📸 Uploading Reel to Instagram (@kreggscode)...")
-            res_ig = upload_to_instagram(str(target_video), instagram_full, is_story=False)
-            print(f"✅ Instagram Reel Success: {res_ig}")
-        except Exception as e:
-            print(f"⚠️ Instagram failed: {e}")
-    else:
-        print("ℹ️ Instagram skipped (INSTAGRAM_ACCESS_TOKEN not set).")
+    # 1. Instagram Reels - PERMANENTLY DISABLED PER USER INSTRUCTION
+    print("⏩ Instagram upload skipped (disabled for day23-htmlbased-compariso per user request).")
 
-    # 2. Facebook Reels
+    # 2. Facebook Reels (Primary Publication Target)
     fb_token = os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN") or os.getenv("FACEBOOK_ACCESS_TOKEN")
     if fb_token:
         try:
-            print("📘 Uploading Reel to Facebook...")
+            print("📘 Uploading Reel to Facebook (SEO Optimized)...")
             res_fb = upload_to_facebook(str(target_video), facebook_full, title=title[:100])
             print(f"✅ Facebook Reel Success: {res_fb}")
         except Exception as e:
