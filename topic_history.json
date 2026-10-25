@@ -66,5 +66,6 @@
   "Aerospike vs Redis",
   "Caddy vs NGINX",
   "Turbopack vs Vite",
-  "Prisma vs Drizzle ORM"
+  "Prisma vs Drizzle ORM",
+  "PASETO vs JWT"
 ]

@@ -1,92 +1,92 @@
 {
-  "topLabel": "TYPESCRIPT ORMS & DATA ACCESS",
+  "topLabel": "SECURITY & AUTHENTICATION",
   "mainTitle": {
-    "left": "Prisma",
-    "right": "Drizzle ORM",
+    "left": "PASETO",
+    "right": "JWT",
     "vs": "vs"
   },
-  "leftSub": "Next-gen ORM",
-  "rightSub": "Lightweight SQL builder",
-  "leftColor": "#84cc16",
-  "rightColor": "#8b5cf6",
+  "leftSub": "Modern, Secure Token",
+  "rightSub": "Widely Adopted Token",
+  "leftColor": "#eab308",
+  "rightColor": "#6366f1",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. SCHEMA DEFINITION",
-      "leftTitle": "Schema File",
-      "rightTitle": "TypeScript/JS",
-      "leftDesc": "Prisma uses a dedicated SDL file for schema definition, which is then introspected to generate a client and migrations. This separation enforces a single source of truth.",
-      "rightDesc": "Drizzle ORM defines schemas directly in TypeScript or JavaScript, allowing for type inference and compile-time checks within your application code.",
-      "leftIcon": "FileText",
+      "title": "1. DESIGN PHILOSOPHY",
+      "leftTitle": "Security First",
+      "rightTitle": "Flexibility Focused",
+      "leftDesc": "PASETO prioritizes explicit cryptographic algorithms, preventing common vulnerabilities. It enforces strong typing and explicit key management for better security guarantees.",
+      "rightDesc": "JWT offers flexible claims and signing algorithms, allowing developers to choose. This flexibility, however, can lead to misconfigurations and security flaws if not handled carefully.",
+      "leftIcon": "Shield",
+      "rightIcon": "Lock",
+      "leftVisualText": "Secure by Design",
+      "rightVisualText": "Flexible Claims"
+    },
+    {
+      "title": "2. CRYPTOGRAPHIC ALGORITHMS",
+      "leftTitle": "Explicit & Modern",
+      "rightTitle": "Pluggable & Varied",
+      "leftDesc": "PASETO mandates modern, well-vetted cryptographic primitives like AES-GCM and Curve25519, ensuring high security and preventing algorithm confusion attacks.",
+      "rightDesc": "JWT supports a wide array of signing algorithms (HS256, RS256, ES256, etc.), including older, less secure ones, requiring careful validation.",
+      "leftIcon": "Key",
       "rightIcon": "Code",
-      "leftVisualText": "SDL File",
-      "rightVisualText": "In-Code"
+      "leftVisualText": "Standardized Crypto",
+      "rightVisualText": "Algorithm Choice"
     },
     {
-      "title": "2. MIGRATION SYSTEM",
-      "leftTitle": "Built-in Tooling",
-      "rightTitle": "Manual/External",
-      "leftDesc": "Prisma provides a robust, opinionated migration system with `prisma migrate dev` and `prisma migrate deploy` commands, generating SQL files.",
-      "rightDesc": "Drizzle ORM relies on external tools or manual SQL generation for migrations, offering more flexibility but requiring more setup.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "Database",
-      "leftVisualText": "Managed",
-      "rightVisualText": "Flexible"
-    },
-    {
-      "title": "3. TYPE SAFETY",
-      "leftTitle": "Generated Client",
-      "rightTitle": "Runtime Inference",
-      "leftDesc": "Prisma generates a fully type-safe client based on your schema, providing excellent autocompletion and compile-time guarantees for queries.",
-      "rightDesc": "Drizzle ORM leverages TypeScript's type system for its query builder, achieving type safety through inference and generic types.",
-      "leftIcon": "ShieldCheck",
-      "rightIcon": "Type",
-      "leftVisualText": "Full Safety",
-      "rightVisualText": "Inferred"
-    },
-    {
-      "title": "4. SQL GENERATION",
-      "leftTitle": "Abstracted Queries",
-      "rightTitle": "Direct SQL Builder",
-      "leftDesc": "Prisma abstracts SQL generation, translating your JavaScript/TypeScript queries into SQL. You interact with a client, not raw SQL.",
-      "rightDesc": "Drizzle ORM acts as a SQL query builder, producing type-safe SQL strings that are then executed by a database driver.",
-      "leftIcon": "Layers",
-      "rightIcon": "Terminal",
-      "leftVisualText": "Abstracted",
-      "rightVisualText": "Builder"
-    },
-    {
-      "title": "5. DATABASE SUPPORT",
-      "leftTitle": "Broad Support",
-      "rightTitle": "Growing Support",
-      "leftDesc": "Prisma supports PostgreSQL, MySQL, SQLite, SQL Server, and MongoDB, offering a unified API across these databases.",
-      "rightDesc": "Drizzle ORM primarily targets PostgreSQL, MySQL, and SQLite, with an emphasis on SQL compliance and performance for these.",
-      "leftIcon": "Globe",
-      "rightIcon": "Compass",
-      "leftVisualText": "Wide Range",
-      "rightVisualText": "Focused"
-    },
-    {
-      "title": "6. QUERY PERFORMANCE",
-      "leftTitle": "ORM Overhead",
-      "rightTitle": "Near Native",
-      "leftDesc": "Prisma's abstraction layer can introduce minor overhead compared to raw SQL, though it's highly optimized for common operations.",
-      "rightDesc": "Drizzle ORM generates efficient SQL, resulting in performance very close to writing raw SQL queries directly.",
-      "leftIcon": "Zap",
-      "rightIcon": "FastForward",
-      "leftVisualText": "Optimized",
-      "rightVisualText": "Raw Speed"
-    },
-    {
-      "title": "7. ECOSYSTEM & TOOLING",
-      "leftTitle": "Integrated Suite",
-      "rightTitle": "Modular & Lean",
-      "leftDesc": "Prisma offers an integrated developer experience with Prisma Studio (GUI), client generation, and migrations as a cohesive package.",
-      "rightDesc": "Drizzle ORM is more modular, focusing on the query builder and type safety, often integrating with other tools for migrations or tooling.",
+      "title": "3. TOKEN FORMAT",
+      "leftTitle": "Versioned & Structured",
+      "rightTitle": "JSON-Based Standard",
+      "leftDesc": "PASETO tokens have a clear version prefix (v1, v2, v3, v4) and a structured payload, simplifying parsing and preventing version-related exploits.",
+      "rightDesc": "JWT tokens are typically JSON objects Base64Url encoded. While readable, they lack inherent versioning and can be prone to padding oracle attacks if not validated properly.",
       "leftIcon": "Box",
-      "rightIcon": "Layers",
-      "leftVisualText": "All-in-One",
-      "rightVisualText": "Components"
+      "rightIcon": "Globe",
+      "leftVisualText": "Explicit Versions",
+      "rightVisualText": "Plain JSON"
+    },
+    {
+      "title": "4. KEY MANAGEMENT",
+      "leftTitle": "Explicit Key Use",
+      "rightTitle": "Flexible Signing",
+      "leftDesc": "PASETO enforces distinct keys for encryption and signing, eliminating the risk of using a signing key for encryption or vice-versa, which is a common JWT pitfall.",
+      "rightDesc": "JWT allows using the same key for signing and verification, or separate keys. Misuse, like signing with a public key, is a critical security risk.",
+      "leftIcon": "Lock",
+      "rightIcon": "Server",
+      "leftVisualText": "Separate Keys",
+      "rightVisualText": "Shared Keys"
+    },
+    {
+      "title": "5. SECURITY VULNERABILITIES",
+      "leftTitle": "Resistant to Common Flaws",
+      "rightTitle": "Susceptible to Some",
+      "leftDesc": "PASETO's design actively prevents signature stripping, algorithm confusion, and other common JWT exploits by design, making it inherently more secure.",
+      "rightDesc": "JWTs are vulnerable to algorithm confusion attacks (none algorithm), weak key management, and insecure deserialization if not implemented with extreme care.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Zap",
+      "leftVisualText": "Vulnerability Proof",
+      "rightVisualText": "Common Flaws"
+    },
+    {
+      "title": "6. TRANSPARENCY & AUDITABILITY",
+      "leftTitle": "Auditable by Design",
+      "rightTitle": "Requires External Tools",
+      "leftDesc": "PASETO's explicit algorithm enforcement and structured format make auditing and verifying token integrity straightforward without relying on external libraries or guesswork.",
+      "rightDesc": "Auditing JWT validity often requires specific libraries and careful checking of headers and claims to prevent security issues. It's less transparent out-of-the-box.",
+      "leftIcon": "CheckCircle",
+      "rightIcon": "Compass",
+      "leftVisualText": "Built-in Audit",
+      "rightVisualText": "External Audit"
+    },
+    {
+      "title": "7. ADOPTION & ECOSYSTEM",
+      "leftTitle": "Emerging & Growing",
+      "rightTitle": "Mature & Widespread",
+      "leftDesc": "PASETO is newer but gaining traction for its strong security stance, particularly in new projects or where security is paramount. Ecosystem is still growing.",
+      "rightDesc": "JWT has massive adoption across web frameworks, OAuth 2.0, and various services. Its extensive ecosystem and community support are unparalleled.",
+      "leftIcon": "Cloud",
+      "rightIcon": "GitBranch",
+      "leftVisualText": "Newer Adoption",
+      "rightVisualText": "Ubiquitous Use"
     }
   ]
 }
