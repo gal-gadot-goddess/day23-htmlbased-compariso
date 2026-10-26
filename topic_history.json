@@ -70,5 +70,6 @@
   "PASETO vs JWT",
   "QuestDB vs ClickHouse",
   "NATS JetStream vs RabbitMQ",
-  "Kysely vs TypeORM"
+  "Kysely vs TypeORM",
+  "Meilisearch vs Typesense"
 ]

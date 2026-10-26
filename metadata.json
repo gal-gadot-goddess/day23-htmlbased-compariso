@@ -1,8 +1,8 @@
 {
-  "title": "Kysely vs TypeORM: Which One Actually Scales? ⚡",
-  "fb_caption": "Kysely vs TypeORM: Which Architecture Actually Scales in Production? ⚡\n\n- Throughput: Kysely generally offers higher throughput due to its compile-time checks and leaner runtime. TypeORM, with its extensive features, can introduce more overhead.\n- Latency: Kysely's direct SQL generation and minimal abstraction can lead to lower latency. TypeORM's layers of abstraction might add slight latency.\n- Consistency: Both provide strong consistency guarantees. Kysely's compile-time safety can prevent certain runtime inconsistencies.\n- Failure Modes: Kysely's simpler architecture might have fewer potential failure points. TypeORM's complexity could introduce more edge cases.\n- Operational Overhead: Kysely is often easier to set up and requires less configuration. TypeORM's feature richness can increase operational complexity.\n\nRecommendation: For production environments prioritizing performance, scalability, and simpler operations, Kysely is the stronger choice. TypeORM remains a powerful option for complex projects needing its advanced features.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "Kysely vs TypeORM: Which TS ORM truly scales in production? A deep dive into performance, consistency, and overhead. Find out which reigns supreme! ⚡ https://kreggscode.com",
-  "yt_description": "Kysely vs TypeORM: Which TypeScript ORM architecture is built for production scale? We break down performance, latency, consistency, and operational overhead to help you choose the right tool for your backend. Don't get caught with an ORM that can't keep up! #Shorts\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
+  "title": "Meilisearch vs Typesense: Which One Actually Scales? ⚡",
+  "fb_caption": "Meilisearch vs Typesense: Which Architecture Actually Scales in Production? ⚡\n\n* Throughput: Analyzing raw indexing and search speed under heavy load.\n* Latency: Examining response times for critical search queries.\n* Consistency: Understanding data synchronization and staleness trade-offs.\n* Failure Modes: Evaluating resilience and recovery mechanisms.\n* Operational Overhead: Comparing resource requirements and ease of management.\n\nFor production environments demanding high availability and predictable performance, Typesense generally offers a more robust and scalable architecture. Meilisearch excels in ease of use and speed for smaller datasets but can face scaling challenges.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "Meilisearch vs Typesense: Which search engine architecture scales best in production? ⚡ Dive deep into throughput, latency, and operational overhead. Read more & join the debate: https://kreggscode.com",
+  "yt_description": "Meilisearch vs Typesense: Which Architecture Actually Scales in Production? ⚡\n\nExplore the core architectural differences between Meilisearch and Typesense, focusing on what truly matters for production deployments. We break down throughput, latency, consistency, failure modes, and operational overhead to help you choose the right search engine for your scalable applications.\n\n#Shorts #SystemDesign #Meilisearch #Typesense #SearchEngine\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -11,19 +11,15 @@
     "technology",
     "artificial intelligence",
     "backend architecture",
-    "Kysely",
-    "TypeORM",
-    "TypeScript ORM",
-    "Database",
-    "SQL",
-    "Performance",
-    "Scalability"
+    "meilisearch",
+    "typesense",
+    "search engine"
   ],
   "hashtags": [
     "#kreggscode",
     "#systemdesign",
     "#softwareengineering",
-    "#typescript",
+    "#coding",
     "#backend"
   ]
 }
