@@ -1,8 +1,8 @@
 {
-  "title": "NATS JetStream vs RabbitMQ: Which One Actually Scales? ⚡",
-  "fb_caption": "NATS JetStream vs RabbitMQ: Which Architecture Actually Scales in Production? ⚡\n\n• Throughput: NATS JetStream offers significantly higher throughput due to its lightweight design and efficient streaming capabilities.\n• Latency: NATS JetStream generally provides lower latency, especially for high-volume streaming scenarios.\n• Consistency: RabbitMQ offers more robust transactional guarantees and complex routing options, while NATS JetStream leans towards eventual consistency with strong streaming primitives.\n• Failure Modes: Both are resilient, but NATS JetStream's simpler model can lead to more predictable behavior under load.\n• Operational Overhead: NATS JetStream is often considered simpler to operate and scale horizontally compared to RabbitMQ.\n\nRecommendation: For high-throughput, low-latency, and simpler operational scaling in production, NATS JetStream often has the edge. RabbitMQ excels in scenarios requiring complex routing and strong transactional guarantees.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "NATS JetStream vs. RabbitMQ: Which message queue *actually* scales in production? ⚡ Let's debate the architecture. Dive deeper at https://kreggscode.com",
-  "yt_description": "NATS JetStream vs RabbitMQ: Which Architecture Actually Scales in Production? ⚡ This video breaks down the core differences in throughput, latency, consistency, and operational overhead to help you choose the right distributed messaging system for your production needs.\n\nMechanics: We'll compare NATS JetStream's high-performance streaming against RabbitMQ's robust message queuing, highlighting key architectural decisions for scalable backend systems.\n\n#Shorts #SystemDesign #NATSJetStream #RabbitMQ #DistributedSystems\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
+  "title": "Kysely vs TypeORM: Which One Actually Scales? ⚡",
+  "fb_caption": "Kysely vs TypeORM: Which Architecture Actually Scales in Production? ⚡\n\n- Throughput: Kysely generally offers higher throughput due to its compile-time checks and leaner runtime. TypeORM, with its extensive features, can introduce more overhead.\n- Latency: Kysely's direct SQL generation and minimal abstraction can lead to lower latency. TypeORM's layers of abstraction might add slight latency.\n- Consistency: Both provide strong consistency guarantees. Kysely's compile-time safety can prevent certain runtime inconsistencies.\n- Failure Modes: Kysely's simpler architecture might have fewer potential failure points. TypeORM's complexity could introduce more edge cases.\n- Operational Overhead: Kysely is often easier to set up and requires less configuration. TypeORM's feature richness can increase operational complexity.\n\nRecommendation: For production environments prioritizing performance, scalability, and simpler operations, Kysely is the stronger choice. TypeORM remains a powerful option for complex projects needing its advanced features.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "Kysely vs TypeORM: Which TS ORM truly scales in production? A deep dive into performance, consistency, and overhead. Find out which reigns supreme! ⚡ https://kreggscode.com",
+  "yt_description": "Kysely vs TypeORM: Which TypeScript ORM architecture is built for production scale? We break down performance, latency, consistency, and operational overhead to help you choose the right tool for your backend. Don't get caught with an ORM that can't keep up! #Shorts\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -10,13 +10,20 @@
     "coding",
     "technology",
     "artificial intelligence",
-    "backend architecture"
+    "backend architecture",
+    "Kysely",
+    "TypeORM",
+    "TypeScript ORM",
+    "Database",
+    "SQL",
+    "Performance",
+    "Scalability"
   ],
   "hashtags": [
     "#kreggscode",
-    "#natsjetstream",
-    "#rabbitmq",
     "#systemdesign",
-    "#distributedmessaging"
+    "#softwareengineering",
+    "#typescript",
+    "#backend"
   ]
 }

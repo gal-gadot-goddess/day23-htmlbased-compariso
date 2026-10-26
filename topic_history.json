@@ -69,5 +69,6 @@
   "Prisma vs Drizzle ORM",
   "PASETO vs JWT",
   "QuestDB vs ClickHouse",
-  "NATS JetStream vs RabbitMQ"
+  "NATS JetStream vs RabbitMQ",
+  "Kysely vs TypeORM"
 ]
