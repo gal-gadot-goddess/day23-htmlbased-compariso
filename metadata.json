@@ -1,8 +1,8 @@
 {
-  "title": "QuestDB vs ClickHouse: Which One Actually Scales? ⚡",
-  "fb_caption": "QuestDB vs ClickHouse: Which Architecture Actually Scales in Production? ⚡\n\n• Throughput: ClickHouse generally leads in raw ingest and query speeds for massive datasets, while QuestDB offers competitive performance with a simpler operational model.\n• Latency: Both excel at low-latency analytical queries. QuestDB's architecture often provides more predictable latency under heavy load.\n• Consistency: ClickHouse uses a more traditional replication model. QuestDB's approach prioritizes availability and partition tolerance with eventual consistency.\n• Failure Modes: ClickHouse can be complex to manage HA. QuestDB's design inherently handles node failures more gracefully, simplifying resilience.\n• Operational Overhead: QuestDB is often cited for its ease of setup and lower operational burden, especially for teams new to time-series databases. ClickHouse requires more tuning.\n\nRecommendation: For pure, massive-scale analytical workloads with dedicated ops teams, ClickHouse is a strong contender. For teams prioritizing ease of use, faster time-to-market, and robust performance without extensive tuning, QuestDB is often the pragmatic choice.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "QuestDB vs ClickHouse: Which time-series database truly scales in production? 🤔 Dive into the architecture, performance, and operational differences. Get the full breakdown at https://kreggscode.com",
-  "yt_description": "QuestDB vs ClickHouse: Which Architecture Actually Scales in Production? ⚡\n\nComparing two titans of time-series databases! We break down QuestDB and ClickHouse, analyzing their strengths and weaknesses in throughput, latency, consistency, failure modes, and operational overhead. Understand which architecture is best suited for your production needs.\n\n#Shorts #QuestDB #ClickHouse #TimeSeriesDatabase #DatabaseArchitecture #SystemDesign #TechComparison\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
+  "title": "NATS JetStream vs RabbitMQ: Which One Actually Scales? ⚡",
+  "fb_caption": "NATS JetStream vs RabbitMQ: Which Architecture Actually Scales in Production? ⚡\n\n• Throughput: NATS JetStream offers significantly higher throughput due to its lightweight design and efficient streaming capabilities.\n• Latency: NATS JetStream generally provides lower latency, especially for high-volume streaming scenarios.\n• Consistency: RabbitMQ offers more robust transactional guarantees and complex routing options, while NATS JetStream leans towards eventual consistency with strong streaming primitives.\n• Failure Modes: Both are resilient, but NATS JetStream's simpler model can lead to more predictable behavior under load.\n• Operational Overhead: NATS JetStream is often considered simpler to operate and scale horizontally compared to RabbitMQ.\n\nRecommendation: For high-throughput, low-latency, and simpler operational scaling in production, NATS JetStream often has the edge. RabbitMQ excels in scenarios requiring complex routing and strong transactional guarantees.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "NATS JetStream vs. RabbitMQ: Which message queue *actually* scales in production? ⚡ Let's debate the architecture. Dive deeper at https://kreggscode.com",
+  "yt_description": "NATS JetStream vs RabbitMQ: Which Architecture Actually Scales in Production? ⚡ This video breaks down the core differences in throughput, latency, consistency, and operational overhead to help you choose the right distributed messaging system for your production needs.\n\nMechanics: We'll compare NATS JetStream's high-performance streaming against RabbitMQ's robust message queuing, highlighting key architectural decisions for scalable backend systems.\n\n#Shorts #SystemDesign #NATSJetStream #RabbitMQ #DistributedSystems\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -14,9 +14,9 @@
   ],
   "hashtags": [
     "#kreggscode",
+    "#natsjetstream",
+    "#rabbitmq",
     "#systemdesign",
-    "#databases",
-    "#questdb",
-    "#clickhouse"
+    "#distributedmessaging"
   ]
 }

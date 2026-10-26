@@ -68,5 +68,6 @@
   "Turbopack vs Vite",
   "Prisma vs Drizzle ORM",
   "PASETO vs JWT",
-  "QuestDB vs ClickHouse"
+  "QuestDB vs ClickHouse",
+  "NATS JetStream vs RabbitMQ"
 ]
