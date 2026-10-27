@@ -1,92 +1,92 @@
 {
-  "topLabel": "SEARCH ENGINES & RETRIEVAL",
+  "topLabel": "MODERN WEB FRAMEWORKS",
   "mainTitle": {
-    "left": "Meilisearch",
-    "right": "Typesense",
+    "left": "NestJS",
+    "right": "Fastify",
     "vs": "vs"
   },
-  "leftSub": "Blazing fast, simple search",
-  "rightSub": "Frictionless search experience",
-  "leftColor": "#38bdf8",
-  "rightColor": "#fb7185",
+  "leftSub": "Node.js Enterprise Framework",
+  "rightSub": "Fast, Low-Overhead Node.js",
+  "leftColor": "#ec4899",
+  "rightColor": "#06b6d4",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
       "title": "1. ARCHITECTURE",
-      "leftTitle": "Rust, single binary",
-      "rightTitle": "C++ core, distributed",
-      "leftDesc": "Meilisearch is built in Rust, offering a single, self-contained binary for easy deployment and excellent performance with a focus on simplicity.",
-      "rightDesc": "Typesense uses a C++ core for speed, designed from the ground up for distributed deployments with fault tolerance and horizontal scalability.",
-      "leftIcon": "Box",
-      "rightIcon": "Server",
-      "leftVisualText": "Single binary",
-      "rightVisualText": "Distributed focus"
+      "leftTitle": "Opinionated Modules",
+      "rightTitle": "Minimalist & Flexible",
+      "leftDesc": "NestJS enforces a modular architecture heavily inspired by Angular, promoting DI, decorators, and a clear separation of concerns out-of-the-box.",
+      "rightDesc": "Fastify is unopinionated, providing a core of routing and middleware, allowing developers to structure their applications with minimal constraints.",
+      "leftIcon": "Layers",
+      "rightIcon": "Box",
+      "leftVisualText": "Modular",
+      "rightVisualText": "Flexible"
     },
     {
-      "title": "2. DATA STRUCTURES",
-      "leftTitle": "Prefix-based trie",
-      "rightTitle": "Prefix-based trie",
-      "leftDesc": "Meilisearch utilizes a prefix trie (radix tree) for highly efficient prefix matching and autocomplete suggestions, optimizing for keyboard-driven searches.",
-      "rightDesc": "Typesense also employs prefix tries for fast prefix search and typo tolerance, ensuring quick results as users type their queries.",
-      "leftIcon": "GitBranch",
-      "rightIcon": "GitBranch",
-      "leftVisualText": "Prefix trie",
-      "rightVisualText": "Prefix trie"
-    },
-    {
-      "title": "3. TYPO TOLERANCE",
-      "leftTitle": "Levenshtein distance",
-      "rightTitle": "Levenshtein distance",
-      "leftDesc": "Meilisearch implements typo tolerance using Levenshtein distance, allowing fuzzy matching for common typographical errors without significant performance impact.",
-      "rightDesc": "Typesense natively supports typo tolerance through Levenshtein distance, providing a seamless experience for users who make spelling mistakes.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Fuzzy matching",
-      "rightVisualText": "Fuzzy matching"
-    },
-    {
-      "title": "4. SCALABILITY",
-      "leftTitle": "Vertical scaling",
-      "rightTitle": "Horizontal scaling",
-      "leftDesc": "Meilisearch primarily scales vertically by adding more resources to a single instance, making it ideal for smaller to medium-sized applications.",
-      "rightDesc": "Typesense is built for horizontal scaling, supporting sharding and replication across multiple nodes for high availability and massive datasets.",
+      "title": "2. PERFORMANCE",
+      "leftTitle": "Good, Extensible",
+      "rightTitle": "Extremely Fast",
+      "leftDesc": "NestJS performance is solid, but the abstraction layers can add overhead. It's optimized for developer experience over raw speed.",
+      "rightDesc": "Fastify prioritizes performance with a highly optimized engine, leveraging async hooks and avoiding unnecessary overhead for maximum throughput.",
       "leftIcon": "Cpu",
-      "rightIcon": "Server",
-      "leftVisualText": "Vertical",
-      "rightVisualText": "Horizontal"
+      "rightIcon": "FastForward",
+      "leftVisualText": "Capable",
+      "rightVisualText": "Blazing Fast"
     },
     {
-      "title": "5. CONFIGURATION",
-      "leftTitle": "Simple, opinionated",
-      "rightTitle": "Flexible, tunable",
-      "leftDesc": "Meilisearch prioritizes ease of use with sensible defaults and a straightforward configuration, reducing setup time and complexity for developers.",
-      "rightDesc": "Typesense offers a more tunable configuration, allowing fine-grained control over indexing and search parameters for specific performance needs.",
-      "leftIcon": "Wrench",
-      "rightIcon": "Settings",
-      "leftVisualText": "Easy setup",
-      "rightVisualText": "Fine-tuning"
-    },
-    {
-      "title": "6. FACETING",
-      "leftTitle": "Basic faceting",
-      "rightTitle": "Advanced faceting",
-      "leftDesc": "Meilisearch offers basic faceting capabilities to filter search results by categories or attributes, aiding in narrowing down search results.",
-      "rightDesc": "Typesense provides more advanced and efficient faceting, including multi-faceted search and custom sorting of facet values.",
-      "leftIcon": "Filter",
-      "rightIcon": "Filter",
-      "leftVisualText": "Basic filters",
-      "rightVisualText": "Advanced filters"
-    },
-    {
-      "title": "7. COMMUNITY & ECOSYSTEM",
-      "leftTitle": "Growing community",
-      "rightTitle": "Developer-centric",
-      "leftDesc": "Meilisearch has a vibrant and growing community, with increasing adoption and contributions to its open-source project.",
-      "rightDesc": "Typesense focuses on a developer-first experience with excellent documentation and SDKs, fostering a strong community around its usability.",
-      "leftIcon": "Users",
+      "title": "3. TYPING SYSTEM",
+      "leftTitle": "TypeScript First",
+      "rightTitle": "JavaScript & TS",
+      "leftDesc": "NestJS is built with TypeScript and heavily leverages its features, offering excellent type safety and developer tooling out of the box.",
+      "rightDesc": "Fastify supports TypeScript but is fundamentally JavaScript. Type safety relies on developer discipline or external TS integration.",
+      "leftIcon": "Shield",
       "rightIcon": "Code",
-      "leftVisualText": "Community",
-      "rightVisualText": "Developer focus"
+      "leftVisualText": "Typed",
+      "rightVisualText": "Dynamic"
+    },
+    {
+      "title": "4. ECOSYSTEM & PLUGINS",
+      "leftTitle": "Rich & Integrated",
+      "rightTitle": "Extensive Plugin API",
+      "leftDesc": "NestJS has a rich ecosystem of official modules for common tasks like ORMs, GraphQL, WebSockets, and authentication, simplifying integration.",
+      "rightDesc": "Fastify has a vast plugin ecosystem, but integration might require more manual configuration compared to NestJS's built-in solutions.",
+      "leftIcon": "Zap",
+      "rightIcon": "Key",
+      "leftVisualText": "Integrated",
+      "rightVisualText": "Plugin-Rich"
+    },
+    {
+      "title": "5. LEARNING CURVE",
+      "leftTitle": "Moderate",
+      "rightTitle": "Gentle",
+      "leftDesc": "NestJS's comprehensive features and opinionated structure require a steeper learning curve, especially for those new to Angular concepts.",
+      "rightDesc": "Fastify's minimalist approach and focus on core web concepts make it generally easier to pick up for developers familiar with Node.js.",
+      "leftIcon": "Compass",
+      "rightIcon": "Globe",
+      "leftVisualText": "Structured",
+      "rightVisualText": "Simple"
+    },
+    {
+      "title": "6. TESTABILITY",
+      "leftTitle": "Built-in Testing",
+      "rightTitle": "Flexible Testing",
+      "leftDesc": "NestJS provides excellent built-in testing utilities, including a testing module that simplifies unit and e2e testing of application logic.",
+      "rightDesc": "Fastify's testing approach is more conventional, relying on standard Node.js testing libraries and its request/response mocking capabilities.",
+      "leftIcon": "CheckCircle",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Testable",
+      "rightVisualText": "Mockable"
+    },
+    {
+      "title": "7. DEVELOPMENT STYLE",
+      "leftTitle": "Declarative",
+      "rightTitle": "Imperative",
+      "leftDesc": "NestJS uses decorators and dependency injection for a declarative style, focusing on defining *what* needs to be done.",
+      "rightDesc": "Fastify's style is more imperative, emphasizing explicit control flow and middleware composition for defining *how* requests are handled.",
+      "leftIcon": "Activity",
+      "rightIcon": "Workflow",
+      "leftVisualText": "Declarative",
+      "rightVisualText": "Imperative"
     }
   ]
 }

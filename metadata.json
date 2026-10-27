@@ -1,8 +1,8 @@
 {
-  "title": "Meilisearch vs Typesense: Which One Actually Scales? ⚡",
-  "fb_caption": "Meilisearch vs Typesense: Which Architecture Actually Scales in Production? ⚡\n\n* Throughput: Analyzing raw indexing and search speed under heavy load.\n* Latency: Examining response times for critical search queries.\n* Consistency: Understanding data synchronization and staleness trade-offs.\n* Failure Modes: Evaluating resilience and recovery mechanisms.\n* Operational Overhead: Comparing resource requirements and ease of management.\n\nFor production environments demanding high availability and predictable performance, Typesense generally offers a more robust and scalable architecture. Meilisearch excels in ease of use and speed for smaller datasets but can face scaling challenges.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "Meilisearch vs Typesense: Which search engine architecture scales best in production? ⚡ Dive deep into throughput, latency, and operational overhead. Read more & join the debate: https://kreggscode.com",
-  "yt_description": "Meilisearch vs Typesense: Which Architecture Actually Scales in Production? ⚡\n\nExplore the core architectural differences between Meilisearch and Typesense, focusing on what truly matters for production deployments. We break down throughput, latency, consistency, failure modes, and operational overhead to help you choose the right search engine for your scalable applications.\n\n#Shorts #SystemDesign #Meilisearch #Typesense #SearchEngine\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
+  "title": "NestJS vs Fastify: Which One Actually Scales? ⚡",
+  "fb_caption": "NestJS vs Fastify: Which Architecture Actually Scales in Production? ⚡\n\n*   **Throughput & Latency:** Fastify typically edges out NestJS in raw throughput and lower latency due to its minimal overhead and focus on performance.\n*   **Consistency & Structure:** NestJS enforces a modular, opinionated structure (inspired by Angular) promoting consistency across large teams and projects, albeit with a slight performance trade-off.\n*   **Failure Modes:** Both are robust, but NestJS's modularity can sometimes isolate failures more effectively. Fastify's simplicity can lead to fewer potential failure points.\n*   **Operational Overhead:** Fastify is simpler to set up and operate. NestJS adds more layers (DI, decorators) which can increase the learning curve and operational complexity.\n\n**Recommendation:** For maximum raw performance and minimal boilerplate, **Fastify** is often the choice. For large-scale applications demanding strong architectural patterns, maintainability, and team consistency, **NestJS** provides a more structured approach.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "NestJS vs Fastify: The ultimate backend framework showdown for production scale! Which architecture truly wins? 🤔 Dive deep with KreggsCode. https://kreggscode.com",
+  "yt_description": "NestJS vs Fastify: Which Architecture Actually Scales in Production? ⚡\n\nUnpacking the performance, consistency, and operational differences between two top Node.js backend frameworks. See which one fits your production needs!\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode\n\n#Shorts #NestJS #Fastify #NodeJS #BackendDevelopment #SystemDesign",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -10,10 +10,7 @@
     "coding",
     "technology",
     "artificial intelligence",
-    "backend architecture",
-    "meilisearch",
-    "typesense",
-    "search engine"
+    "backend architecture"
   ],
   "hashtags": [
     "#kreggscode",
