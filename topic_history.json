@@ -72,5 +72,6 @@
   "NATS JetStream vs RabbitMQ",
   "Kysely vs TypeORM",
   "Meilisearch vs Typesense",
-  "NestJS vs Fastify"
+  "NestJS vs Fastify",
+  "Apache Thrift vs gRPC"
 ]
