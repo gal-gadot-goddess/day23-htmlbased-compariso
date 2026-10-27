@@ -73,5 +73,6 @@
   "Kysely vs TypeORM",
   "Meilisearch vs Typesense",
   "NestJS vs Fastify",
-  "Apache Thrift vs gRPC"
+  "Apache Thrift vs gRPC",
+  "Hono vs Elysia"
 ]
