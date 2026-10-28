@@ -74,5 +74,6 @@
   "Meilisearch vs Typesense",
   "NestJS vs Fastify",
   "Apache Thrift vs gRPC",
-  "Hono vs Elysia"
+  "Hono vs Elysia",
+  "ElectricSQL vs Replicache"
 ]
