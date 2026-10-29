@@ -75,5 +75,6 @@
   "NestJS vs Fastify",
   "Apache Thrift vs gRPC",
   "Hono vs Elysia",
-  "ElectricSQL vs Replicache"
+  "ElectricSQL vs Replicache",
+  "Wails vs Electron"
 ]
