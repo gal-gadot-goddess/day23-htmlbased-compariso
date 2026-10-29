@@ -76,5 +76,6 @@
   "Apache Thrift vs gRPC",
   "Hono vs Elysia",
   "ElectricSQL vs Replicache",
-  "Wails vs Electron"
+  "Wails vs Electron",
+  "Temporal vs Apache Airflow"
 ]
