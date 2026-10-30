@@ -79,5 +79,6 @@
   "Wails vs Electron",
   "Temporal vs Apache Airflow",
   "Prisma vs Kysely",
-  "Grafana Loki vs Elasticsearch"
+  "Grafana Loki vs Elasticsearch",
+  "OpenTofu vs Terraform"
 ]
