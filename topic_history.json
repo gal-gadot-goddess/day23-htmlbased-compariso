@@ -77,5 +77,6 @@
   "Hono vs Elysia",
   "ElectricSQL vs Replicache",
   "Wails vs Electron",
-  "Temporal vs Apache Airflow"
+  "Temporal vs Apache Airflow",
+  "Prisma vs Kysely"
 ]
