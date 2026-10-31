@@ -1,8 +1,8 @@
 {
-  "title": "OpenTofu vs Terraform: Which One Actually Scales? ⚡",
-  "fb_caption": "OpenTofu vs Terraform: Which Architecture Actually Scales in Production? ⚡\n\n- Throughput: OpenTofu aims for comparable performance, while Terraform has a mature ecosystem for optimization.\n- Latency: Both generally perform well, with minor differences depending on state management and provider interactions.\n- Consistency: Both offer robust state locking and drift detection mechanisms for production stability.\n- Failure Modes: Differences lie in community support and rapid bug fix cycles for edge cases.\n- Operational Overhead: OpenTofu's open-source governance may offer flexibility, while Terraform's commercial support can provide dedicated assistance.\n\nRecommendation: For established teams with complex workflows and a need for extensive vendor support, Terraform often remains the default. However, OpenTofu presents a compelling, community-driven alternative for those prioritizing open-source principles and seeking a fork with a clear roadmap.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "OpenTofu vs Terraform: Which Infrastructure as Code tool actually scales in production? Discuss the architectural differences and choose wisely. Learn more at https://kreggscode.com",
-  "yt_description": "OpenTofu vs Terraform: Which Architecture Actually Scales in Production? ⚡ Dive deep into the core differences between these Infrastructure as Code giants. We break down throughput, latency, consistency, failure modes, and operational overhead to help you make the best choice for your production environments.\n\nThis Short provides a concise, technical comparison to guide your decision-making process in the world of cloud infrastructure.\n\n#OpenTofu #Terraform #IaC #CloudComputing #DevOps #Shorts\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
+  "title": "ClickHouse vs StarRocks: Which One Actually Scales? ⚡",
+  "fb_caption": "ClickHouse vs StarRocks: Which Architecture Actually Scales in Production? ⚡\n\n• Throughput: ClickHouse excels at raw ingestion & scan speeds. StarRocks offers more balanced performance with better point lookups.\n• Latency: Both offer low latency, but StarRocks often has an edge for complex queries due to its vectorized execution & optimizer.\n• Consistency: StarRocks provides stronger consistency guarantees (ACID compliant) out-of-the-box, while ClickHouse leans towards eventual consistency.\n• Failure Modes: ClickHouse has a mature distributed setup. StarRocks is also robust but might have a slightly higher operational complexity for some.\n• Operational Overhead: ClickHouse can be simpler to set up initially. StarRocks offers more advanced features that might require more tuning.\n\nRecommendation: For pure analytical speed and simpler setups, ClickHouse is great. For balanced OLAP needs with stronger consistency and easier integration with transactional workloads, StarRocks is a strong contender.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "ClickHouse vs StarRocks: Which distributed OLAP database truly scales in production? Dive into throughput, latency, and consistency. Your thoughts? 🤔 Find more insights at https://kreggscode.com",
+  "yt_description": "ClickHouse vs StarRocks: Which architecture actually scales in production? ⚡ We break down their core differences in throughput, latency, consistency, and operational overhead. Ideal for system design, backend architecture, and data engineering.\n\nKey comparison points:\n- Ingestion & Scan Speed\n- Query Latency\n- Data Consistency Models\n- Fault Tolerance\n- Ease of Management\n\nWhich one should YOU choose for your production OLAP needs? Watch to find out!\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode\n\n#Shorts #SystemDesign #Database #ClickHouse #StarRocks #DataEngineering #Backend #OLAP #KreggsCode",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -10,19 +10,13 @@
     "coding",
     "technology",
     "artificial intelligence",
-    "backend architecture",
-    "OpenTofu",
-    "Terraform",
-    "Infrastructure as Code",
-    "IaC",
-    "DevOps",
-    "Cloud Computing"
+    "backend architecture"
   ],
   "hashtags": [
     "#kreggscode",
     "#systemdesign",
-    "#softwareengineering",
-    "#coding",
-    "#backend"
+    "#databases",
+    "#olap",
+    "#distributeddatabases"
   ]
 }

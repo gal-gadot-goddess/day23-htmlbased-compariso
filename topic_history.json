@@ -80,5 +80,6 @@
   "Temporal vs Apache Airflow",
   "Prisma vs Kysely",
   "Grafana Loki vs Elasticsearch",
-  "OpenTofu vs Terraform"
+  "OpenTofu vs Terraform",
+  "ClickHouse vs StarRocks"
 ]
