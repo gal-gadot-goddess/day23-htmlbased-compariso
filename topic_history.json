@@ -81,5 +81,6 @@
   "Prisma vs Kysely",
   "Grafana Loki vs Elasticsearch",
   "OpenTofu vs Terraform",
-  "ClickHouse vs StarRocks"
+  "ClickHouse vs StarRocks",
+  "CockroachDB vs YugabyteDB"
 ]
