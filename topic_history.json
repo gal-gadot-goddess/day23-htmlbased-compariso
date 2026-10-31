@@ -82,5 +82,6 @@
   "Grafana Loki vs Elasticsearch",
   "OpenTofu vs Terraform",
   "ClickHouse vs StarRocks",
-  "CockroachDB vs YugabyteDB"
+  "CockroachDB vs YugabyteDB",
+  "Neo4j vs Memgraph"
 ]
