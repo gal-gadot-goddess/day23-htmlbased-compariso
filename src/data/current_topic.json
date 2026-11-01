@@ -1,92 +1,92 @@
 {
-  "topLabel": "WEB SERVERS & REVERSE PROXIES",
+  "topLabel": "TESTING FRAMEWORKS & AUTOMATION",
   "mainTitle": {
-    "left": "Traefik",
-    "right": "Envoy",
+    "left": "Vitest",
+    "right": "Jest",
     "vs": "vs"
   },
-  "leftSub": "Modern Edge Proxy",
-  "rightSub": "High-Performance Proxy",
-  "leftColor": "#0ea5e9",
-  "rightColor": "#f59e0b",
+  "leftSub": "Blazing fast Vite-native",
+  "rightSub": "Widely adopted standard",
+  "leftColor": "#06b6d4",
+  "rightColor": "#f43f5e",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. Configuration",
-      "leftTitle": "Dynamic & Declarative",
-      "rightTitle": "Static & Dynamic",
-      "leftDesc": "Traefik leverages dynamic configuration via providers (Docker, Kubernetes) and API, automatically updating routes and services without restarts, promoting agility.",
-      "rightDesc": "Envoy supports static configuration files or dynamic configuration via xDS APIs (Discovery Service), offering flexibility for complex, evolving routing and load balancing rules.",
-      "leftIcon": "Cloud",
-      "rightIcon": "Cloud",
-      "leftVisualText": "Auto-Update",
-      "rightVisualText": "xDS API"
-    },
-    {
-      "title": "2. Service Discovery",
-      "leftTitle": "Integrated Providers",
-      "rightTitle": "External Integration",
-      "leftDesc": "Traefik natively integrates with orchestration platforms like Docker and Kubernetes, discovering services automatically and configuring routing rules based on labels and annotations.",
-      "rightDesc": "Envoy relies on external service discovery mechanisms or the xDS API to fetch upstream cluster information, making it highly adaptable to diverse environments.",
-      "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "Native",
-      "rightVisualText": "External"
-    },
-    {
-      "title": "3. TLS Management",
-      "leftTitle": "Auto TLS/ACME",
-      "rightTitle": "Manual/Vault",
-      "leftDesc": "Traefik simplifies TLS by automatically obtaining and renewing certificates using Let's Encrypt (ACME), managing certificates dynamically for defined domains.",
-      "rightDesc": "Envoy typically manages TLS certificates via external systems like HashiCorp Vault or manual configuration, providing robust control over certificate lifecycle.",
-      "leftIcon": "Lock",
-      "rightIcon": "Lock",
-      "leftVisualText": "Auto Certs",
-      "rightVisualText": "External Certs"
-    },
-    {
-      "title": "4. Observability",
-      "leftTitle": "Built-in Dashboards",
-      "rightTitle": "Rich Metrics",
-      "leftDesc": "Traefik offers an intuitive dashboard for real-time traffic visualization and configuration inspection, alongside integrated Prometheus metrics and tracing support.",
-      "rightDesc": "Envoy provides extensive, fine-grained metrics, distributed tracing, and access logs, designed for deep operational insights in complex distributed systems.",
-      "leftIcon": "Activity",
-      "rightIcon": "Activity",
-      "leftVisualText": "Dashboard",
-      "rightVisualText": "Detailed Metrics"
-    },
-    {
-      "title": "5. Extensibility",
-      "leftTitle": "Middleware Chain",
-      "rightTitle": "Filter Chain",
-      "leftDesc": "Traefik uses a middleware pipeline concept, allowing sequential application of various functionalities like authentication, rate limiting, and request modification.",
-      "rightDesc": "Envoy employs a sophisticated filter chain architecture, enabling granular control over request/response processing at different network layers.",
-      "leftIcon": "GitBranch",
-      "rightIcon": "GitBranch",
-      "leftVisualText": "Middleware",
-      "rightVisualText": "Filters"
-    },
-    {
-      "title": "6. Protocol Support",
-      "leftTitle": "HTTP/2, HTTP/3",
-      "rightTitle": "HTTP/2, gRPC",
-      "leftDesc": "Traefik has strong support for modern HTTP protocols including HTTP/3 (QUIC), making it a capable edge proxy for the latest web standards.",
-      "rightDesc": "Envoy excels in supporting HTTP/2 and gRPC, widely used in microservice architectures, offering advanced load balancing and routing for these protocols.",
-      "leftIcon": "FastForward",
-      "rightIcon": "FastForward",
-      "leftVisualText": "HTTP/3",
-      "rightVisualText": "gRPC Focus"
-    },
-    {
-      "title": "7. Target Use Case",
-      "leftTitle": "Developer Friendly",
-      "rightTitle": "Platform Agnostic",
-      "leftDesc": "Traefik is known for its ease of use and quick setup, making it ideal for developers and smaller deployments, with a strong focus on simplicity.",
-      "rightDesc": "Envoy is a battle-tested, high-performance proxy designed for complex, large-scale distributed systems and service meshes, offering deep control and customization.",
+      "title": "1. PERFORMANCE",
+      "leftTitle": "Vite's speed",
+      "rightTitle": "Jest's speed",
+      "leftDesc": "Leverages Vite's native ESM support and esbuild for lightning-fast startup and HMR, running tests directly in the browser.",
+      "rightDesc": "Bundles code with Babel/TypeScript, leading to slower startup times but robust ecosystem for complex transformations.",
       "leftIcon": "Zap",
+      "rightIcon": "FastForward",
+      "leftVisualText": "Native ESM",
+      "rightVisualText": "Bundled Code"
+    },
+    {
+      "title": "2. CONFIGURATION",
+      "leftTitle": "Simple config",
+      "rightTitle": "Complex config",
+      "leftDesc": "Uses Vite's configuration by default, minimal setup required for most projects, highly integrated with Vite ecosystem.",
+      "rightDesc": "Requires explicit configuration, often with `jest.config.js`, offering extensive customization but with a steeper learning curve.",
+      "leftIcon": "Wrench",
+      "rightIcon": "Cog",
+      "leftVisualText": "Minimal",
+      "rightVisualText": "Extensive"
+    },
+    {
+      "title": "3. RUNTIME",
+      "leftTitle": "Browser native",
+      "rightTitle": "Node.js VM",
+      "leftDesc": "Runs tests directly in the browser using native ESM, allowing for more realistic testing environments and faster feedback loops.",
+      "rightDesc": "Executes tests in a Node.js VM, transforming code via Babel/TypeScript, which can sometimes mask environment differences.",
+      "leftIcon": "Browser",
       "rightIcon": "Server",
-      "leftVisualText": "Easy Setup",
-      "rightVisualText": "High Scale"
+      "leftVisualText": "Browser",
+      "rightVisualText": "Node VM"
+    },
+    {
+      "title": "4. TRANSFORMATIONS",
+      "leftTitle": "Vite tooling",
+      "rightTitle": "Babel/TypeScript",
+      "leftDesc": "Relies on Vite's optimized transformation pipeline (esbuild, SWC) for speed, focusing on efficient module resolution.",
+      "rightDesc": "Uses Babel or TypeScript compiler for code transpilation, providing flexibility but adding overhead to test execution.",
+      "leftIcon": "Code",
+      "rightIcon": "GitBranch",
+      "leftVisualText": "Vite Pipeline",
+      "rightVisualText": "Babel Transform"
+    },
+    {
+      "title": "5. MOCKING",
+      "leftTitle": "Built-in ESM",
+      "rightTitle": "Jests mocks",
+      "leftDesc": "Leverages native ESM `import` assertions and experimental `--experimental-vm-modules` for mocking, aligning with modern JS standards.",
+      "rightDesc": "Features a powerful, built-in mocking API (`jest.mock`) that intercepts module dependencies effectively.",
+      "leftIcon": "Lock",
+      "rightIcon": "ShieldCheck",
+      "leftVisualText": "Native Mock",
+      "rightVisualText": "Jest Mock"
+    },
+    {
+      "title": "6. COMMUNITY & ECOSYSTEM",
+      "leftTitle": "Growing adoption",
+      "rightTitle": "Mature ecosystem",
+      "leftDesc": "Rapidly gaining traction, especially within the Vite community, with active development and increasing plugin support.",
+      "rightDesc": "Vast, mature ecosystem with extensive community support, numerous plugins, and a long history of adoption.",
+      "leftIcon": "Users",
+      "rightIcon": "Network",
+      "leftVisualText": "Emerging",
+      "rightVisualText": "Established"
+    },
+    {
+      "title": "7. TYPESCRIPT SUPPORT",
+      "leftTitle": "Native integration",
+      "rightTitle": "Via Babel/TS",
+      "leftDesc": "Provides excellent out-of-the-box TypeScript support leveraging Vite's native compilation, often requiring minimal configuration.",
+      "rightDesc": "Requires explicit configuration with `@babel/preset-typescript` or `ts-jest` to transpile TypeScript code.",
+      "leftIcon": "Type",
+      "rightIcon": "Box",
+      "leftVisualText": "Native TS",
+      "rightVisualText": "Transpiled TS"
     }
   ]
 }

@@ -84,5 +84,6 @@
   "ClickHouse vs StarRocks",
   "CockroachDB vs YugabyteDB",
   "Neo4j vs Memgraph",
-  "Traefik vs Envoy"
+  "Traefik vs Envoy",
+  "Vitest vs Jest"
 ]
