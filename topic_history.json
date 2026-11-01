@@ -83,5 +83,6 @@
   "OpenTofu vs Terraform",
   "ClickHouse vs StarRocks",
   "CockroachDB vs YugabyteDB",
-  "Neo4j vs Memgraph"
+  "Neo4j vs Memgraph",
+  "Traefik vs Envoy"
 ]
