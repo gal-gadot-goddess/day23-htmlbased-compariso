@@ -1,8 +1,8 @@
 {
-  "title": "Vitest vs Jest: Which One Actually Scales? ⚡",
-  "fb_caption": "Vitest vs Jest: Which Architecture Actually Scales in Production? ⚡\n\nDive deep into the performance of two leading JavaScript testing frameworks:\n\n*   **Throughput:** Vitest leverages esbuild for faster startup & execution. Jest's transformer pipeline can add overhead.\n*   **Latency:** Vitest's parallelization and native ESM support offer lower test execution times.\n*   **Consistency:** Jest's maturing ecosystem generally provides stable, predictable results. Vitest's rapid development might introduce edge cases.\n*   **Failure Modes:** Both offer robust error reporting. Vitest's V8 isolation can provide cleaner runs.\n*   **Operational Overhead:** Vitest often has simpler configuration and faster CI builds. Jest can require more setup.\n\n**Recommendation:** For production environments demanding speed and efficient CI/CD, **Vitest** often presents a more scalable architecture due to its performance advantages. Jest remains a solid, mature choice for projects where its extensive ecosystem is crucial.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "Vitest vs Jest: Which testing architecture truly scales in production? ⚡ Explore the performance trade-offs for your next project. Learn more at https://kreggscode.com",
-  "yt_description": "Vitest vs Jest: Which Architecture Actually Scales in Production? ⚡\n\nComparing Vitest and Jest for production-ready testing frameworks. Discover which scales best for throughput, latency, consistency, and operational overhead.\n\n#Shorts #Vitest #Jest #TestingFrameworks #JavaScript\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
+  "title": "Qdrant vs Chroma: Which One Actually Scales? ⚡",
+  "fb_caption": "Qdrant vs Chroma: Which Architecture Actually Scales in Production? ⚡\n\n• Throughput: Qdrant generally offers higher throughput for large-scale deployments due to its distributed architecture and optimized indexing.\n• Latency: Both can achieve low latency, but Chroma's in-memory focus might offer an edge for smaller, specific use cases; Qdrant excels with distributed, high-volume workloads.\n• Consistency: Qdrant provides stronger consistency guarantees in distributed setups, crucial for critical production systems.\n• Failure Modes: Qdrant's distributed nature inherently offers better fault tolerance and easier recovery mechanisms.\n• Operational Overhead: Chroma can be simpler to set up initially for single-node or smaller clusters, while Qdrant's distributed deployment requires more planning but scales more predictably.\n\nRecommendation: For production environments demanding high availability, scalability, and robust consistency, Qdrant is the more battle-tested choice. Chroma is excellent for development, prototyping, and smaller-scale applications where operational simplicity is paramount.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "Qdrant vs Chroma: Which vector database architecture truly scales in production? A deep dive into throughput, latency, and fault tolerance. 🤔 #SystemDesign #VectorDatabases\n\nExplore more at https://kreggscode.com",
+  "yt_description": "Qdrant vs Chroma: Which Architecture Actually Scales in Production? ⚡\n\nA critical comparison of two leading vector databases, Qdrant and Chroma, focusing on their ability to scale for production AI search and vector embedding workloads. We break down throughput, latency, consistency, failure modes, and operational overhead to help you choose the right database for your next AI project.\n\n#Shorts #SystemDesign #VectorDatabases #AI #LLM #KreggsCode\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -10,13 +10,18 @@
     "coding",
     "technology",
     "artificial intelligence",
-    "backend architecture"
+    "backend architecture",
+    "Qdrant",
+    "Chroma",
+    "Vector Database",
+    "AI Search",
+    "LLM"
   ],
   "hashtags": [
     "#kreggscode",
-    "#vitest",
-    "#jest",
-    "#testing",
-    "#softwarearchitecture"
+    "#systemdesign",
+    "#vectorsearch",
+    "#databases",
+    "#ai"
   ]
 }

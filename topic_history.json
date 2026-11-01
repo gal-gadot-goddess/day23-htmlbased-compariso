@@ -85,5 +85,6 @@
   "CockroachDB vs YugabyteDB",
   "Neo4j vs Memgraph",
   "Traefik vs Envoy",
-  "Vitest vs Jest"
+  "Vitest vs Jest",
+  "Qdrant vs Chroma"
 ]
