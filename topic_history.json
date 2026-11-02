@@ -87,5 +87,6 @@
   "Traefik vs Envoy",
   "Vitest vs Jest",
   "Qdrant vs Chroma",
-  "NATS JetStream vs Apache Kafka"
+  "NATS JetStream vs Apache Kafka",
+  "Prometheus vs VictoriaMetrics"
 ]
