@@ -1,8 +1,8 @@
 {
-  "title": "OpenTelemetry vs Jaeger: Which One Actually Scales? ⚡",
-  "fb_caption": "OpenTelemetry vs Jaeger: Which Architecture Actually Scales in Production? ⚡\n\n🚀 Throughput: OpenTelemetry's vendor-neutral approach offers broader integration and potentially higher throughput with dedicated backends.\n⚡ Latency: Jaeger can offer lower latency for trace collection in self-hosted setups, but OpenTelemetry's sampling can manage overhead.\n⚖️ Consistency: OpenTelemetry standardizes instrumentation, leading to more consistent data across diverse services. Jaeger is more focused on its own ecosystem.\n💥 Failure Modes: OpenTelemetry's decoupled components can improve resilience. Jaeger's monolithic nature might present single points of failure if not managed.\n🔧 Operational Overhead: OpenTelemetry can have higher initial setup complexity but offers flexibility. Jaeger is simpler for basic tracing but less adaptable.\n\nRecommendation: For production environments prioritizing flexibility, broad compatibility, and future-proofing, OpenTelemetry is generally the stronger choice. Jaeger remains excellent for focused, self-contained tracing needs.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "OpenTelemetry vs Jaeger: Which observability tool truly scales in production? Let's debate! Insights & tools at https://kreggscode.com",
-  "yt_description": "OpenTelemetry vs Jaeger: Which architecture actually scales in production? Dive deep into the performance, latency, consistency, failure modes, and operational overhead of these leading observability frameworks. Understand which one is best for your production systems.\n\nMechanics:\n- Compare throughput capabilities.\n- Analyze latency implications.\n- Evaluate consistency in data collection.\n- Discuss failure modes and resilience.\n- Assess operational complexity.\n- Get a clear recommendation for production.\n\n#Shorts #OpenTelemetry #Jaeger #Observability #Monitoring #SystemDesign #TechComparison\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
+  "title": "Yjs vs Automerge: Which One Scales? ⚡",
+  "fb_caption": "Yjs vs Automerge: Which Architecture Actually Scales in Production? ⚡\n\n• Throughput: Yjs generally excels with higher throughput due to its CRDT-based approach and efficient binary encoding, while Automerge can face performance bottlenecks with large datasets or complex merge operations.\n• Latency: Both aim for low latency, but Yjs's optimized data structures can offer more predictable performance, especially in high-concurrency scenarios.\n• Consistency: Both provide strong eventual consistency. Yjs's conflict resolution is often considered more straightforward and predictable.\n• Failure Modes: Yjs tends to be more robust against network partitions and concurrent edits due to its design. Automerge's history-based approach can sometimes lead to more complex merge conflicts.\n• Operational Overhead: Yjs often has lower operational overhead due to its performance and simpler state management.\n\nRecommendation: For production environments demanding high scalability, predictable performance, and robust conflict resolution, Yjs is often the preferred choice.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "Yjs vs Automerge: The ultimate Local-First & Client Sync battle! Which CRDT scales in production? 🤔 Dive deep into throughput, latency, and failure modes. Get the full breakdown at https://kreggscode.com #SystemDesign #SoftwareEngineering",
+  "yt_description": "Yjs vs Automerge: Which Architecture Actually Scales in Production? ⚡ A deep dive into the leading CRDT libraries for local-first and client synchronization. We compare their performance characteristics, consistency models, and operational overhead to help you choose the right tool for your next scalable application.\n\nMechanics:\n- Yjs: CRDTs, efficient binary encoding, high throughput, predictable latency.\n- Automerge: History-based CRDTs, eventual consistency, potential for complex merges.\n\n#Shorts #Yjs #Automerge #CRDT #LocalFirst #ClientSync #Scalability #SystemDesign #SoftwareArchitecture #KreggsCode\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -10,13 +10,7 @@
     "coding",
     "technology",
     "artificial intelligence",
-    "backend architecture",
-    "OpenTelemetry",
-    "Jaeger",
-    "Observability",
-    "Monitoring",
-    "Cloud Native",
-    "Distributed Tracing"
+    "backend architecture"
   ],
   "hashtags": [
     "#kreggscode",
