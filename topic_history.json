@@ -88,5 +88,6 @@
   "Vitest vs Jest",
   "Qdrant vs Chroma",
   "NATS JetStream vs Apache Kafka",
-  "Prometheus vs VictoriaMetrics"
+  "Prometheus vs VictoriaMetrics",
+  "Prettier vs ESLint"
 ]
