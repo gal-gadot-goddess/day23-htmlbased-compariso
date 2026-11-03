@@ -89,5 +89,6 @@
   "Qdrant vs Chroma",
   "NATS JetStream vs Apache Kafka",
   "Prometheus vs VictoriaMetrics",
-  "Prettier vs ESLint"
+  "Prettier vs ESLint",
+  "OpenTelemetry vs Jaeger"
 ]
