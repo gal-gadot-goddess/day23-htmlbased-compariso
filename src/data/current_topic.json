@@ -1,92 +1,92 @@
 {
-  "topLabel": "FRONTEND REACTIVITY & RENDERING",
+  "topLabel": "SEARCH ENGINES & RETRIEVAL",
   "mainTitle": {
-    "left": "React",
-    "right": "Vue",
+    "left": "Elasticsearch",
+    "right": "OpenSearch",
     "vs": "vs"
   },
-  "leftSub": "Hook-driven updates",
-  "rightSub": "Proxy-based reactivity",
-  "leftColor": "#a855f7",
-  "rightColor": "#eab308",
+  "leftSub": "Hybrid search at scale",
+  "rightSub": "Open, search-first stack",
+  "leftColor": "#4f46e5",
+  "rightColor": "#fbbf24",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. UPDATE MECHANISM",
-      "leftTitle": "Render scheduling",
-      "rightTitle": "Dependency tracking",
-      "leftDesc": "React re-renders components when state/props change, driven by Hook updates and concurrent scheduling. It builds a new virtual tree, then commits minimal DOM changes based on diffing during the render/commit phases.",
-      "rightDesc": "Vue tracks reactive dependencies at the property-access level using Proxies. When a reactive value changes, it marks only dependent effects as dirty, then batches a targeted re-render for consumers.",
-      "leftIcon": "Activity",
-      "rightIcon": "Workflow",
-      "leftVisualText": "Scheduler",
-      "rightVisualText": "Deps"
+      "title": "1. CLUSTER DISTRIBUTION",
+      "leftTitle": "Elastic coordination",
+      "rightTitle": "OpenSearch coordination",
+      "leftDesc": "Elasticsearch uses a primary-shard model with sequence numbers and translog-based durability to guarantee ordered indexing and replica catch-up. Cluster state updates drive routing decisions, and shard allocation balances based on node attributes and health.",
+      "rightDesc": "OpenSearch also follows primary-shard replication with sequence numbers and translogs. Its cluster coordination and shard allocation behavior is configurable but diverges in details: the fork introduced changes in allocation deciders, defaults, and management APIs over time.",
+      "leftIcon": "Server",
+      "rightIcon": "Server",
+      "leftVisualText": "Shards",
+      "rightVisualText": "Replicas"
     },
     {
-      "title": "2. GRANULARITY",
-      "leftTitle": "Component boundaries",
-      "rightTitle": "Fine-grained effects",
-      "leftDesc": "React’s default update granularity is component-level: a state change triggers re-render of the owning function component, potentially cascading through parents unless memoization prevents it. Diffing remains structural.",
-      "rightDesc": "Vue’s reactivity is more granular because dependencies are recorded per accessed reactive key. Computed/effects re-run only where relevant, often reducing unnecessary component-wide work for localized state changes.",
+      "title": "2. MAPPING & SCHEMA EVOLUTION",
+      "leftTitle": "Dynamic mappings",
+      "rightTitle": "Flexible mappings",
+      "leftDesc": "Elasticsearch’s dynamic mapping infers field types on first sight, then locks them into mappings. It supports runtime fields (in newer versions) for late binding, but indexed mappings still dominate query-time performance and scoring consistency.",
+      "rightDesc": "OpenSearch provides dynamic mappings and a similar mapping-driven indexing model. It also supports runtime fields and schema strategies, but mapping behavior, limits, and some field-type features differ, impacting how new fields roll out safely in production.",
       "leftIcon": "Layers",
-      "rightIcon": "Key",
-      "leftVisualText": "Coarse",
-      "rightVisualText": "Fine"
-    },
-    {
-      "title": "3. STATE MUTATION SEMANTICS",
-      "leftTitle": "Immutability norms",
-      "rightTitle": "Reactive mutation",
-      "leftDesc": "React encourages immutable updates so referential equality changes can be detected by reducers, memo, and state comparisons. Mutating existing objects can lead to missed updates or stale memoized derivations.",
-      "rightDesc": "Vue allows direct mutation of reactive objects/arrays. Proxies intercept reads/writes, so changing a field automatically notifies dependents without requiring you to replace whole objects for reactivity.",
-      "leftIcon": "Shield",
-      "rightIcon": "Zap",
-      "leftVisualText": "Immutable",
-      "rightVisualText": "Mutable"
-    },
-    {
-      "title": "4. BATCHING & FLUSH",
-      "leftTitle": "Microtask batching",
-      "rightTitle": "Job queue batching",
-      "leftDesc": "React batches state updates during event handlers (and more broadly in concurrent mode), coalescing multiple Hook updates into fewer renders. The scheduler decides when to flush, yielding back to the browser when needed.",
-      "rightDesc": "Vue batches reactive-triggered updates using a job queue and flush timing (typically next microtask). Multiple mutations within a tick coalesce, and rendering occurs when the queue flushes.",
-      "leftIcon": "FastForward",
-      "rightIcon": "FastForward",
-      "leftVisualText": "Batch",
-      "rightVisualText": "Queue"
-    },
-    {
-      "title": "5. DERIVED STATE",
-      "leftTitle": "useMemo patterns",
-      "rightTitle": "computed caching",
-      "leftDesc": "React often uses useMemo/useCallback to cache derived values, but dependencies must be declared correctly. Incorrect dependency arrays can cause recomputation or stale values; derived state typically lives in render logic.",
-      "rightDesc": "Vue computed creates a cached, reactive derivation that re-evaluates lazily when its dependencies change. It tracks what it reads during evaluation, preventing needless recomputation and stale derivations.",
-      "leftIcon": "Code",
-      "rightIcon": "Terminal",
-      "leftVisualText": "Memo",
-      "rightVisualText": "Computed"
-    },
-    {
-      "title": "6. RENDER TARGET",
-      "leftTitle": "Virtual DOM diff",
-      "rightTitle": "Template-to-DOM",
-      "leftDesc": "React renders to a virtual tree and relies on reconciliation to determine what changed. Even with optimizations, it must reconcile element-by-element using keys and component boundaries to update the real DOM.",
-      "rightDesc": "Vue templates compile into render functions with DOM patching strategies. Reactivity drives which parts of the render output re-run, and Vue’s patching updates only affected DOM segments within the component’s scope.",
-      "leftIcon": "Box",
       "rightIcon": "Layers",
-      "leftVisualText": "Diff",
-      "rightVisualText": "Patch"
+      "leftVisualText": "Mappings",
+      "rightVisualText": "Runtime"
     },
     {
-      "title": "7. COMPATIBILITY WITH CONCURRENT WORK",
-      "leftTitle": "Concurrent React",
-      "rightTitle": "Async reactivity",
-      "leftDesc": "React’s concurrent features (e.g., React 18) can interrupt, resume, or defer rendering work. This impacts how state transitions schedule renders and how UI remains responsive under heavy updates.",
-      "rightDesc": "Vue’s async rendering model integrates with its job queue: updates are scheduled and flushed in controlled batches. It’s designed to keep the UI consistent while efficiently processing reactive invalidations.",
-      "leftIcon": "Globe",
+      "title": "3. QUERY EXECUTION ENGINE",
+      "leftTitle": "Lucene-backed scoring",
+      "rightTitle": "Lucene-backed scoring",
+      "leftDesc": "Elasticsearch runs queries by translating DSL into Lucene queries, then executes them on segment-level postings. Rewrites, scorers, and caches (query cache, request cache) are tuned for common workloads and emphasize fast relevance scoring under heavy concurrency.",
+      "rightDesc": "OpenSearch similarly compiles its DSL into Lucene queries and executes per-segment, with rewrites and scorers determining final ranking. Cache implementations and some query rewrites can differ by version, changing latency profiles for complex bool/aggregations.",
+      "leftIcon": "Code",
+      "rightIcon": "Code",
+      "leftVisualText": "DSL->Lucene",
+      "rightVisualText": "Segment scoring"
+    },
+    {
+      "title": "4. AGGREGATIONS & ANALYTICS",
+      "leftTitle": "Pipeline aggregations",
+      "rightTitle": "Aggregation framework",
+      "leftDesc": "Elasticsearch’s aggregation framework heavily leverages segment collection plus per-bucket data structures, enabling fast terms/histogram/date aggregations. Pipeline aggregations operate over aggregation results, with careful memory accounting and circuit breakers to prevent OOM.",
+      "rightDesc": "OpenSearch implements a largely compatible aggregation architecture on Lucene collectors, but details (execution modes, defaults, and some pipeline behaviors) can diverge. Memory breakers and internal data structures may yield different performance and stability characteristics.",
+      "leftIcon": "Activity",
+      "rightIcon": "Activity",
+      "leftVisualText": "Buckets",
+      "rightVisualText": "Pipelines"
+    },
+    {
+      "title": "5. SECURITY & MULTI-TENANCY",
+      "leftTitle": "Feature bundled security",
+      "rightTitle": "Plugin-style security",
+      "leftDesc": "Elasticsearch historically bundles more of its security story in the default distribution and uses role-based access control with index-level permissions, audit logging, and TLS support. X-Pack security controls can be tightly integrated with the stack.",
+      "rightDesc": "OpenSearch typically relies on OpenSearch Security for RBAC, TLS, and audit logging, giving a plugin-driven approach. Deployment wiring can differ (dashboards/auth, cert management), and operational hardening depends on the security plugin configuration.",
+      "leftIcon": "Shield",
+      "rightIcon": "Shield",
+      "leftVisualText": "RBAC",
+      "rightVisualText": "Security plugin"
+    },
+    {
+      "title": "6. VECTOR SEARCH & RAG PIPELINES",
+      "leftTitle": "Native vector search",
+      "rightTitle": "Vector retrieval options",
+      "leftDesc": "Elasticsearch provides native vector fields and supports approximate nearest neighbor indexing using HNSW graphs, integrating it with standard BM25 and hybrid scoring workflows. This enables end-to-end retrieval for RAG with consistent query semantics.",
+      "rightDesc": "OpenSearch supports vector search with multiple approximation options (commonly HNSW) and exposes vector query types for kNN-style retrieval. Hybrid retrieval is available, but feature availability and configuration knobs can differ, affecting recall/latency tradeoffs.",
+      "leftIcon": "Radio",
       "rightIcon": "Radio",
-      "leftVisualText": "Concurrent",
-      "rightVisualText": "Async"
+      "leftVisualText": "ANN",
+      "rightVisualText": "kNN"
+    },
+    {
+      "title": "7. ECOSYSTEM & OPERATIONS",
+      "leftTitle": "Kibana + Elastic stack",
+      "rightTitle": "OpenSearch Dashboards",
+      "leftDesc": "Elasticsearch pairs with Kibana for visualization, alerting, and operational workflows, and the broader Elastic ecosystem often provides cohesive UI/agent integrations. Upgrade paths may be influenced by licensing and distribution choices across the stack.",
+      "rightDesc": "OpenSearch pairs with OpenSearch Dashboards and an ecosystem of plugins and integrations. Operational workflows, index management tooling, and alerting capabilities can differ based on installed plugins and version alignment, influencing day-2 operations.",
+      "leftIcon": "Workflow",
+      "rightIcon": "Workflow",
+      "leftVisualText": "Dashboards",
+      "rightVisualText": "Plugins"
     }
   ]
 }

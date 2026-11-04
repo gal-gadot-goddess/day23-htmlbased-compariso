@@ -93,5 +93,6 @@
   "OpenTelemetry vs Jaeger",
   "Yjs vs Automerge",
   "QuestDB vs TDengine",
-  "React vs Vue"
+  "React vs Vue",
+  "Elasticsearch vs OpenSearch"
 ]
