@@ -1,8 +1,8 @@
 {
-  "title": "QuestDB vs TDengine: Which One Actually Scales? ⚡",
-  "fb_caption": "QuestDB vs TDengine: Which Architecture Actually Scales in Production? ⚡\n\nKey differences for production-ready time-series databases:\n\n- Throughput: Compare ingestion and query performance under heavy loads.\n- Latency: Analyze read and write latency for real-time applications.\n- Consistency: Evaluate data integrity guarantees and trade-offs.\n- Failure Modes: Understand resilience, replication, and recovery strategies.\n- Operational Overhead: Assess ease of deployment, management, and scaling.\n\nRecommendation: For most production use cases prioritizing ease of use and robust features, TDengine often presents a strong choice. QuestDB excels in raw performance for specific workloads.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "QuestDB vs TDengine: Which time-series DB architecture truly scales in production? Let's debate! 🤔 Find deep dives at https://kreggscode.com #Database #TimeSeriesDB #QuestDB #TDengine",
-  "yt_description": "QuestDB vs TDengine: Which Time-Series Database Architecture Actually Scales in Production? ⚡ Dive deep into the performance, scalability, and operational aspects of these two leading time-series databases. We break down throughput, latency, consistency, failure modes, and operational overhead to help you choose the right one for your production environment.\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode\n\n#Shorts #SystemDesign #QuestDB #TDengine #Database",
+  "title": "React vs Vue: Which One Actually Scales? ⚡",
+  "fb_caption": "React vs Vue: Which Architecture Actually Scales in Production? ⚡\n\n• Throughput: Vue's leaner core often yields slightly higher raw throughput in benchmarks.\n• Latency: Both offer excellent runtime performance; React's concurrent rendering can offer advantages for complex UIs.\n• Consistency: React's JSX and ecosystem provide a more opinionated, consistent development experience.\n• Failure Modes: Both are resilient, with React's ecosystem offering more mature error boundary patterns.\n• Operational Overhead: Vue generally has a lower learning curve, while React's larger community can offer more readily available solutions.\n\nRecommendation: For massive, complex enterprise applications with diverse teams, React's ecosystem and patterns often provide better long-term scalability. For rapid development and simpler applications, Vue is an excellent choice.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "React vs Vue: Which architecture truly scales in production? 🤔 Dive into the debate on performance, consistency, and overhead. Get the full breakdown at https://kreggscode.com!",
+  "yt_description": "React vs Vue: Which Architecture Actually Scales in Production? ⚡ Explore the deep technical differences in frontend reactivity and rendering between these two giants. Understand their throughput, latency, consistency, failure modes, and operational overhead to make the right choice for your next production application.\n\n#Shorts\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -11,15 +11,15 @@
     "technology",
     "artificial intelligence",
     "backend architecture",
-    "QuestDB",
-    "TDengine",
-    "time series database"
+    "React",
+    "Vue",
+    "frontend"
   ],
   "hashtags": [
     "#kreggscode",
     "#systemdesign",
     "#softwareengineering",
     "#coding",
-    "#backend"
+    "#frontend"
   ]
 }

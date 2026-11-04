@@ -1,92 +1,92 @@
 {
-  "topLabel": "TIME-SERIES DATABASES",
+  "topLabel": "FRONTEND REACTIVITY & RENDERING",
   "mainTitle": {
-    "left": "QuestDB",
-    "right": "TDengine",
+    "left": "React",
+    "right": "Vue",
     "vs": "vs"
   },
-  "leftSub": "Fast ingest, SQL, compression",
-  "rightSub": "IoT-first TS engine",
-  "leftColor": "#ec4899",
-  "rightColor": "#06b6d4",
+  "leftSub": "Hook-driven updates",
+  "rightSub": "Proxy-based reactivity",
+  "leftColor": "#a855f7",
+  "rightColor": "#eab308",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. INGEST PATH",
-      "leftTitle": "Vectorized writer",
-      "rightTitle": "Concurrent appenders",
-      "leftDesc": "QuestDB is built for high-throughput ingestion using columnar storage and batching; it parses and writes in tight loops to minimize per-row overhead. Backpressure is driven by partition/segment boundaries, not per-event locks.",
-      "rightDesc": "TDengine optimizes ingestion for IoT telemetry with efficient, concurrent write pipelines. It organizes data into time-partitioned structures and reduces contention via internal buffering, letting multiple producers stream without centralized row-level coordination.",
-      "leftIcon": "Zap",
-      "rightIcon": "Activity",
-      "leftVisualText": "Batching",
-      "rightVisualText": "Streaming"
-    },
-    {
-      "title": "2. STORAGE LAYOUT",
-      "leftTitle": "Column segments",
-      "rightTitle": "Time-partitioned",
-      "leftDesc": "QuestDB stores series data column-wise with compression-friendly encodings. Time is used to drive partitioning so scans can skip irrelevant segments early, while columnar reads accelerate aggregations across many series efficiently.",
-      "rightDesc": "TDengine’s on-disk model is optimized around time ranges and tags. It maintains metadata for tags and uses time-based partitions to localize reads and writes, reducing IO during time-bounded queries common in observability and IoT workloads.",
-      "leftIcon": "Layers",
-      "rightIcon": "Box",
-      "leftVisualText": "Columnar",
-      "rightVisualText": "Partitioned"
-    },
-    {
-      "title": "3. QUERY EXECUTION",
-      "leftTitle": "Vectorized SQL engine",
-      "rightTitle": "Time-series optimizer",
-      "leftDesc": "QuestDB’s SQL layer compiles queries into execution plans that favor vectorized operations for filters, projections, and windowed aggregations. This reduces CPU branchiness and increases cache locality during range scans and group-bys.",
-      "rightDesc": "TDengine focuses its query engine on time-series patterns—range predicates, downsampling, and tag-based selection. Its planner leverages time partitions and tag metadata to avoid scanning irrelevant blocks, improving tail latency for real-time dashboards.",
-      "leftIcon": "Code",
+      "title": "1. UPDATE MECHANISM",
+      "leftTitle": "Render scheduling",
+      "rightTitle": "Dependency tracking",
+      "leftDesc": "React re-renders components when state/props change, driven by Hook updates and concurrent scheduling. It builds a new virtual tree, then commits minimal DOM changes based on diffing during the render/commit phases.",
+      "rightDesc": "Vue tracks reactive dependencies at the property-access level using Proxies. When a reactive value changes, it marks only dependent effects as dirty, then batches a targeted re-render for consumers.",
+      "leftIcon": "Activity",
       "rightIcon": "Workflow",
-      "leftVisualText": "Vectorized",
-      "rightVisualText": "Optimized"
+      "leftVisualText": "Scheduler",
+      "rightVisualText": "Deps"
     },
     {
-      "title": "4. TAGS / SCHEMA MODELING",
-      "leftTitle": "Metric + labels",
-      "rightTitle": "Super tables",
-      "leftDesc": "QuestDB models each time series as a table-like structure with columns plus a lightweight symbol/metadata concept (depending on schema). Querying across dimensions leans on fast dictionary encodings for symbols to speed up group-by and filters.",
-      "rightDesc": "TDengine uses a super table concept where a schema template defines columns and tags are stored as metadata for each child table. Tag-based queries translate into metadata lookups plus partition pruning, keeping ingestion and retrieval aligned.",
-      "leftIcon": "Key",
-      "rightIcon": "GitBranch",
-      "leftVisualText": "Symbols",
-      "rightVisualText": "Super Tables"
+      "title": "2. GRANULARITY",
+      "leftTitle": "Component boundaries",
+      "rightTitle": "Fine-grained effects",
+      "leftDesc": "React’s default update granularity is component-level: a state change triggers re-render of the owning function component, potentially cascading through parents unless memoization prevents it. Diffing remains structural.",
+      "rightDesc": "Vue’s reactivity is more granular because dependencies are recorded per accessed reactive key. Computed/effects re-run only where relevant, often reducing unnecessary component-wide work for localized state changes.",
+      "leftIcon": "Layers",
+      "rightIcon": "Key",
+      "leftVisualText": "Coarse",
+      "rightVisualText": "Fine"
     },
     {
-      "title": "5. REAL-TIME CONTINUOUS QUERIES",
-      "leftTitle": "Low-latency analytics",
-      "rightTitle": "Fast downsampling",
-      "leftDesc": "QuestDB is designed for interactive analytics on fresh data: its columnar execution and partition skipping help queries that repeatedly hit “recent time windows.” Window functions operate directly over compact segments without heavy intermediate materialization.",
-      "rightDesc": "TDengine provides mechanisms for time-based aggregation patterns (often used as rollups/downsampling for dashboards). It stores aggregated results in a way that reduces re-computation across repeated queries for fixed time granularities.",
+      "title": "3. STATE MUTATION SEMANTICS",
+      "leftTitle": "Immutability norms",
+      "rightTitle": "Reactive mutation",
+      "leftDesc": "React encourages immutable updates so referential equality changes can be detected by reducers, memo, and state comparisons. Mutating existing objects can lead to missed updates or stale memoized derivations.",
+      "rightDesc": "Vue allows direct mutation of reactive objects/arrays. Proxies intercept reads/writes, so changing a field automatically notifies dependents without requiring you to replace whole objects for reactivity.",
+      "leftIcon": "Shield",
+      "rightIcon": "Zap",
+      "leftVisualText": "Immutable",
+      "rightVisualText": "Mutable"
+    },
+    {
+      "title": "4. BATCHING & FLUSH",
+      "leftTitle": "Microtask batching",
+      "rightTitle": "Job queue batching",
+      "leftDesc": "React batches state updates during event handlers (and more broadly in concurrent mode), coalescing multiple Hook updates into fewer renders. The scheduler decides when to flush, yielding back to the browser when needed.",
+      "rightDesc": "Vue batches reactive-triggered updates using a job queue and flush timing (typically next microtask). Multiple mutations within a tick coalesce, and rendering occurs when the queue flushes.",
       "leftIcon": "FastForward",
+      "rightIcon": "FastForward",
+      "leftVisualText": "Batch",
+      "rightVisualText": "Queue"
+    },
+    {
+      "title": "5. DERIVED STATE",
+      "leftTitle": "useMemo patterns",
+      "rightTitle": "computed caching",
+      "leftDesc": "React often uses useMemo/useCallback to cache derived values, but dependencies must be declared correctly. Incorrect dependency arrays can cause recomputation or stale values; derived state typically lives in render logic.",
+      "rightDesc": "Vue computed creates a cached, reactive derivation that re-evaluates lazily when its dependencies change. It tracks what it reads during evaluation, preventing needless recomputation and stale derivations.",
+      "leftIcon": "Code",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Memo",
+      "rightVisualText": "Computed"
+    },
+    {
+      "title": "6. RENDER TARGET",
+      "leftTitle": "Virtual DOM diff",
+      "rightTitle": "Template-to-DOM",
+      "leftDesc": "React renders to a virtual tree and relies on reconciliation to determine what changed. Even with optimizations, it must reconcile element-by-element using keys and component boundaries to update the real DOM.",
+      "rightDesc": "Vue templates compile into render functions with DOM patching strategies. Reactivity drives which parts of the render output re-run, and Vue’s patching updates only affected DOM segments within the component’s scope.",
+      "leftIcon": "Box",
+      "rightIcon": "Layers",
+      "leftVisualText": "Diff",
+      "rightVisualText": "Patch"
+    },
+    {
+      "title": "7. COMPATIBILITY WITH CONCURRENT WORK",
+      "leftTitle": "Concurrent React",
+      "rightTitle": "Async reactivity",
+      "leftDesc": "React’s concurrent features (e.g., React 18) can interrupt, resume, or defer rendering work. This impacts how state transitions schedule renders and how UI remains responsive under heavy updates.",
+      "rightDesc": "Vue’s async rendering model integrates with its job queue: updates are scheduled and flushed in controlled batches. It’s designed to keep the UI consistent while efficiently processing reactive invalidations.",
+      "leftIcon": "Globe",
       "rightIcon": "Radio",
-      "leftVisualText": "Rollups",
-      "rightVisualText": "Windows"
-    },
-    {
-      "title": "6. INTERNAL DATA SKIPPING",
-      "leftTitle": "Segment pruning",
-      "rightTitle": "Tag+time pruning",
-      "leftDesc": "QuestDB relies on time-driven partitioning and compact segment metadata to prune IO during range scans. When predicates narrow the time range or use symbol filters, the engine avoids reading columns/segments that cannot satisfy the query.",
-      "rightDesc": "TDengine uses both tag metadata and time partitions to decide which data blocks to read. Tag predicates narrow candidate tables first, then time windows prune partitions, minimizing disk reads for multi-device telemetry workloads.",
-      "leftIcon": "Compass",
-      "rightIcon": "Shield",
-      "leftVisualText": "Prune IO",
-      "rightVisualText": "Prune Blocks"
-    },
-    {
-      "title": "7. OPERABILITY & DEPLOYMENT",
-      "leftTitle": "Simpler local scale",
-      "rightTitle": "Cluster tooling",
-      "leftDesc": "QuestDB typically scales through sharding/partitioning strategies that can be operationally straightforward for teams starting with single-node performance. Its developer ergonomics emphasize SQL ingestion/query workflows and predictable resource usage for benchmarks.",
-      "rightDesc": "TDengine offers operational features geared toward production IoT fleets, including clustering/replication options and management workflows. It aims to keep ingestion stable under sustained streams and provide predictable query behavior across nodes.",
-      "leftIcon": "Cloud",
-      "rightIcon": "Server",
-      "leftVisualText": "SQL-first",
-      "rightVisualText": "IoT Ops"
+      "leftVisualText": "Concurrent",
+      "rightVisualText": "Async"
     }
   ]
 }

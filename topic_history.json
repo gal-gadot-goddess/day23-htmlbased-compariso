@@ -92,5 +92,6 @@
   "Prettier vs ESLint",
   "OpenTelemetry vs Jaeger",
   "Yjs vs Automerge",
-  "QuestDB vs TDengine"
+  "QuestDB vs TDengine",
+  "React vs Vue"
 ]
