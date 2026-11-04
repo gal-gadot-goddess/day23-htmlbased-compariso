@@ -94,5 +94,6 @@
   "Yjs vs Automerge",
   "QuestDB vs TDengine",
   "React vs Vue",
-  "Elasticsearch vs OpenSearch"
+  "Elasticsearch vs OpenSearch",
+  "Redpanda vs Apache Kafka"
 ]

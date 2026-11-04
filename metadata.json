@@ -1,8 +1,8 @@
 {
-  "title": "Elasticsearch vs OpenSearch: Which One Actually Scales? ⚡",
-  "fb_caption": "Elasticsearch vs OpenSearch: Which Architecture Actually Scales in Production? ⚡\n\n• Throughput: Analyzing raw indexing & query performance under load.\n• Latency: Examining response times for critical search operations.\n• Consistency: Understanding data replication & read/write guarantees.\n• Failure Modes: Evaluating resilience and recovery mechanisms.\n• Operational Overhead: Comparing management complexity & resource needs.\n\nRecommendation: For mature, feature-rich ecosystems and enterprise support, Elasticsearch often leads. For greater flexibility, community-driven innovation, and avoiding potential licensing changes, OpenSearch presents a compelling alternative.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "Elasticsearch vs OpenSearch: Which search engine architecture truly scales in production? 🤔 Let's debate! Dive deep into throughput, latency, and operational overhead. Find insights at https://kreggscode.com",
-  "yt_description": "Elasticsearch vs OpenSearch: Which Architecture Actually Scales in Production? ⚡\n\nDiscover the core differences in scalability, performance, and operational overhead between Elasticsearch and OpenSearch. This video breaks down throughput, latency, consistency, and failure modes to help you choose the right search engine for your production needs.\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode\n\n#Elasticsearch #OpenSearch #SystemDesign #SearchEngines #DevOps #TechComparison #KreggsCode #Shorts",
+  "title": "Redpanda vs Kafka: Which Scales Better? ⚡",
+  "fb_caption": "Redpanda vs Apache Kafka: Which Architecture Actually Scales in Production? ⚡\n\nComparing two giants in distributed messaging:\n\n*   **Throughput:** Kafka's distributed nature shines, while Redpanda boasts high single-node performance and simplified scaling.\n*   **Latency:** Redpanda often claims lower tail latencies due to its single-binary, vectorized design.\n*   **Consistency:** Both offer strong consistency guarantees, but Kafka's ZooKeeper dependency can add complexity.\n*   **Failure Modes:** Redpanda's WASM-based approach offers flexibility; Kafka's mature ecosystem has well-understood failure patterns.\n*   **Operational Overhead:** Redpanda aims for significant reduction with a single binary and Kafka API compatibility.\n\n**Recommendation:** For simpler operations and potentially lower latency, Redpanda is compelling. For massive, established Kafka ecosystems, sticking with Kafka might be safer.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "Redpanda vs. Kafka: Which distributed streaming architecture truly scales in production? Deep dive into performance, latency, and ops. Read more at https://kreggscode.com",
+  "yt_description": "Redpanda vs Apache Kafka: Which Architecture Actually Scales in Production? ⚡\n\nA deep dive into the performance, latency, consistency, and operational overhead of Redpanda and Apache Kafka. Which one is the right choice for your production environment?\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode\n#Shorts #SystemDesign #Redpanda #Kafka #DistributedSystems",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -10,13 +10,18 @@
     "coding",
     "technology",
     "artificial intelligence",
-    "backend architecture"
+    "backend architecture",
+    "redpanda",
+    "apache kafka",
+    "distributed systems",
+    "streaming",
+    "messaging"
   ],
   "hashtags": [
     "#kreggscode",
     "#systemdesign",
     "#softwareengineering",
-    "#coding",
-    "#backend"
+    "#backend",
+    "#distributed"
   ]
 }
