@@ -91,5 +91,6 @@
   "Prometheus vs VictoriaMetrics",
   "Prettier vs ESLint",
   "OpenTelemetry vs Jaeger",
-  "Yjs vs Automerge"
+  "Yjs vs Automerge",
+  "QuestDB vs TDengine"
 ]
