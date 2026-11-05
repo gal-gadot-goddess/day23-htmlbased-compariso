@@ -95,5 +95,6 @@
   "QuestDB vs TDengine",
   "React vs Vue",
   "Elasticsearch vs OpenSearch",
-  "Redpanda vs Apache Kafka"
+  "Redpanda vs Apache Kafka",
+  "Django vs FastAPI"
 ]
