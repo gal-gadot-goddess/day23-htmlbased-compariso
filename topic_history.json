@@ -96,5 +96,6 @@
   "React vs Vue",
   "Elasticsearch vs OpenSearch",
   "Redpanda vs Apache Kafka",
-  "Django vs FastAPI"
+  "Django vs FastAPI",
+  "Neutralinojs vs Electron"
 ]
