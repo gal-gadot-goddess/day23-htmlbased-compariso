@@ -98,5 +98,6 @@
   "Redpanda vs Apache Kafka",
   "Django vs FastAPI",
   "Neutralinojs vs Electron",
-  "Flutter vs React Native"
+  "Flutter vs React Native",
+  "Biome vs ESLint"
 ]
