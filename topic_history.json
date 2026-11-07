@@ -102,5 +102,6 @@
   "Biome vs ESLint",
   "Debezium vs Kafka Connect",
   "Kata Containers vs Firecracker",
-  "Apache Druid vs ClickHouse"
+  "Apache Druid vs ClickHouse",
+  "Apache Pulsar vs NATS JetStream"
 ]

@@ -1,92 +1,92 @@
 {
-  "topLabel": "DISTRIBUTED DATABASES & OLAP",
+  "topLabel": "DISTRIBUTED MESSAGING & STREAMING",
   "mainTitle": {
-    "left": "Apache Druid",
-    "right": "ClickHouse",
+    "left": "Apache Pulsar",
+    "right": "NATS JetStream",
     "vs": "vs"
   },
-  "leftSub": "Real-time analytics",
-  "rightSub": "Columnar OLAP",
-  "leftColor": "#e11d48",
-  "rightColor": "#2dd4bf",
+  "leftSub": "Topic + subscription model",
+  "rightSub": "Embedded streaming in NATS",
+  "leftColor": "#a855f7",
+  "rightColor": "#eab308",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. PRIMARY STORAGE MODEL",
-      "leftTitle": "Segment + rollups",
-      "rightTitle": "Columnar parts",
-      "leftDesc": "Apache Druid stores data in immutable, time-partitioned segments with pre-aggregated rollup support. Queries hit segment indexes and aggregators directly, minimizing row scans through columnar-like layouts specialized for OLAP workloads.",
-      "rightDesc": "ClickHouse persists data in columnar blocks inside data parts, typically partitioned by date or key ranges. It uses vectorized execution and late materialization, reading only required columns and applying filters/aggregations efficiently per part.",
-      "leftIcon": "Layers",
-      "rightIcon": "Database",
-      "leftVisualText": "Time segments",
-      "rightVisualText": "Columnar parts"
-    },
-    {
-      "title": "2. INGESTION PATH",
-      "leftTitle": "Streaming + indexing",
-      "rightTitle": "Batch + streaming",
-      "leftDesc": "Druid ingestion uses configurable indexing tasks (e.g., Kafka indexing) that write immutable segments and can build rollups as data lands. It decouples ingestion from query serving via segment publishing and hot-swappable availability.",
-      "rightDesc": "ClickHouse commonly ingests via tables with continuous inserts, including Kafka engines and materialized views for streaming-to-OLAP. Data is continuously appended then merged in the background into larger parts, keeping ingestion fast.",
-      "leftIcon": "Workflow",
-      "rightIcon": "Zap",
-      "leftVisualText": "Index tasks",
-      "rightVisualText": "Append + merge"
-    },
-    {
-      "title": "3. QUERY EXECUTION STRATEGY",
-      "leftTitle": "Brokered fan-out",
-      "rightTitle": "Parallel pipelines",
-      "leftDesc": "Druid’s query layer (broker/brokered execution) fans out to historical and real-time nodes, then merges results. It leverages segment-level indexing (e.g., time, dimensions) to prune work before aggregation.",
-      "rightDesc": "ClickHouse builds query pipelines executed in parallel across threads/nodes, pushing filters and projections early. It performs aggregation using hash or streaming strategies, often with specialized sorting/order by to accelerate group-by.",
-      "leftIcon": "Activity",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Broker + merge",
-      "rightVisualText": "Vectorized parallel"
-    },
-    {
-      "title": "4. INDEXING & PRUNING MECHANISMS",
-      "leftTitle": "Segment indexes",
-      "rightTitle": "Data skipping",
-      "leftDesc": "Druid maintains segment-level metadata and specialized indexes for time and dimensions, enabling aggressive pruning of segments and blocks. Rollups reduce the number of rows needing aggregation by storing aggregated states per time bucket.",
-      "rightDesc": "ClickHouse uses primary key and partitioning for data skipping indexes, plus optional secondary indexes (e.g., min-max, set, bloom filters). It can skip entire data parts or ranges, reducing I/O and speeding query execution.",
-      "leftIcon": "Key",
-      "rightIcon": "Compass",
-      "leftVisualText": "Prune segments",
-      "rightVisualText": "Skip parts"
-    },
-    {
-      "title": "5. DISTINCT / HIGH-CARDINALITY TOOLS",
-      "leftTitle": "HLL-ish aggregations",
-      "rightTitle": "Approx + exact",
-      "leftDesc": "Druid supports approximation-first patterns like theta sketches and other sketch-based aggregations for distinct counts, integrated into rollups and query-time aggregation. This keeps memory predictable for high-cardinality analytics over time slices.",
-      "rightDesc": "ClickHouse provides both exact distinct (e.g., using GROUP BY) and approximate variants like uniq sketches (e.g., HyperLogLog-like). It can trade accuracy for memory/CPU and uses streaming aggregation to handle large groups.",
-      "leftIcon": "Flame",
-      "rightIcon": "Shield",
-      "leftVisualText": "Sketch distinct",
-      "rightVisualText": "Uniq methods"
-    },
-    {
-      "title": "6. CONCURRENCY & UPDATE MODEL",
-      "leftTitle": "Immutable segments",
-      "rightTitle": "Merge-tree model",
-      "leftDesc": "Druid emphasizes immutability: new data publishes new segments, while older segments remain queryable. Updates are typically handled by re-ingesting data or using replace semantics upstream rather than in-place row mutation.",
-      "rightDesc": "ClickHouse follows MergeTree family mechanics: inserts append; background merges reorganize parts. It supports limited updates via ALTER/UPDATE with mutations (as new parts are produced), but heavy random updates can be costly versus append-only design.",
+      "title": "1. STORAGE & RETENTION",
+      "leftTitle": "Tiered log segments",
+      "rightTitle": "Stream files + snapshots",
+      "leftDesc": "Pulsar persists messages in per-topic log segments managed by the broker tier, and can tier storage across local and remote media. Retention is enforced by segment retention policies and compaction settings.",
+      "rightDesc": "JetStream stores messages inside durable streams using per-stream storage with internal indexing, plus periodic snapshots. Retention is governed by stream limits (max age/size/messages) and deletion of expired segments.",
       "leftIcon": "HardDrive",
-      "rightIcon": "GitBranch",
-      "leftVisualText": "Mostly append",
-      "rightVisualText": "Merges + mutations"
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Tiered storage",
+      "rightVisualText": "Durable streams"
     },
     {
-      "title": "7. DISTRIBUTED TOPOLOGY & SCALING",
-      "leftTitle": "Historical vs realtime",
-      "rightTitle": "Shards + replicas",
-      "leftDesc": "Druid scaling is commonly split into historical (queryable immutable segments) and real-time (serving the latest ingested data with special storage). Brokers coordinate requests; coordination policies help balance latency and freshness.",
-      "rightDesc": "ClickHouse distributes by sharding datasets across nodes with replication for fault tolerance. Distributed tables route queries to shards, where local parallel execution runs before results are merged centrally or hierarchically.",
-      "leftIcon": "Globe",
-      "rightIcon": "Cloud",
-      "leftVisualText": "Realtime split",
-      "rightVisualText": "Shard replicas"
+      "title": "2. DELIVERY SEMANTICS",
+      "leftTitle": "At-least-once options",
+      "rightTitle": "Ack-based delivery",
+      "leftDesc": "Pulsar supports multiple subscription types (exclusive/shared/failover) with configurable acknowledgment behavior. Redelivery is driven by consumer ack deadlines and replay from the persisted log using subscription cursor state.",
+      "rightDesc": "JetStream uses consumer acknowledgments and redelivery based on ack policy and delivery attempt state. Consumers maintain delivery sequences, and unacked messages are retried after configured timeouts.",
+      "leftIcon": "Workflow",
+      "rightIcon": "Workflow",
+      "leftVisualText": "Cursor replay",
+      "rightVisualText": "Ack deadlines"
+    },
+    {
+      "title": "3. CONSUMER TYPES & SCALING",
+      "leftTitle": "Subscription groups",
+      "rightTitle": "Pull + push consumers",
+      "leftDesc": "Pulsar subscriptions model fan-out and scaling via shared consumers or partitioned topics, where each consumer independently advances a subscription cursor. Failover subscriptions coordinate active consumers across brokers.",
+      "rightDesc": "JetStream provides durable consumers that can be push or pull. Scaling is achieved by creating multiple consumers or partitions via stream settings, while each consumer tracks its own sequence and ack state.",
+      "leftIcon": "Activity",
+      "rightIcon": "Activity",
+      "leftVisualText": "Shared cursors",
+      "rightVisualText": "Durable consumers"
+    },
+    {
+      "title": "4. CLUSTER TOPOLOGY & COORDINATION",
+      "leftTitle": "Broker + bookie roles",
+      "rightTitle": "Single control plane",
+      "leftDesc": "Pulsar separates responsibilities: brokers handle protocol and dispatch, while managed metadata and coordination rely on ZooKeeper/BookKeeper style components. Partitioned topics map to broker-led routing with stateful cursors.",
+      "rightDesc": "JetStream runs within the NATS ecosystem with a lightweight control/coordination path. Stream metadata and consumer state are maintained in JetStream, leveraging NATS’ clustering to route publish/subscribe operations efficiently.",
+      "leftIcon": "Layers",
+      "rightIcon": "Layers",
+      "leftVisualText": "Partition-aware",
+      "rightVisualText": "NATS-native"
+    },
+    {
+      "title": "5. ORDERING & PARTITIONING",
+      "leftTitle": "Message ordering by partition",
+      "rightTitle": "Ordering within a stream",
+      "leftDesc": "Pulsar preserves ordering within a topic partition by assigning producers to partitions consistently. Consumers read from partitions, so ordering guarantees are scoped to each partition log and not across the whole topic.",
+      "rightDesc": "JetStream preserves ordering within a stream by assigning each message a sequence number. If you need higher parallelism, you typically create multiple streams or consumers rather than relying on Kafka-like partition rebalancing.",
+      "leftIcon": "Compass",
+      "rightIcon": "Compass",
+      "leftVisualText": "Partition scope",
+      "rightVisualText": "Stream sequence"
+    },
+    {
+      "title": "6. BACKFILL, REPLAY, & OFFSETS",
+      "leftTitle": "Seek by timestamp/ID",
+      "rightTitle": "Start position controls",
+      "leftDesc": "Pulsar enables replay by configuring subscription start positions, including time-based or message-ID based seeking depending on retention. Offset-like cursor positions advance as consumers ack, supporting deterministic rewinds.",
+      "rightDesc": "JetStream consumers define their starting point (e.g., from the last acknowledged message, specific sequence, or from the earliest retained message). Delivery uses consumer state plus stream retention boundaries to enable controlled backfill.",
+      "leftIcon": "FastForward",
+      "rightIcon": "FastForward",
+      "leftVisualText": "Deterministic replay",
+      "rightVisualText": "Sequence rewind"
+    },
+    {
+      "title": "7. OPERATIONS & EFFICIENCY PROFILE",
+      "leftTitle": "Complex tuning surface",
+      "rightTitle": "Low-footprint messaging",
+      "leftDesc": "Pulsar’s multi-component architecture (brokers, topic ownership, partitioning, and metadata coordination) offers powerful features but requires careful tuning of partitions, batching, and cursors for optimal latency and throughput under load.",
+      "rightDesc": "JetStream is designed to run as an add-on streaming layer for NATS, often resulting in simpler operational footprints for teams focused on low-latency publish/consume with durable streams and straightforward ack/redelivery tuning.",
+      "leftIcon": "Shield",
+      "rightIcon": "Shield",
+      "leftVisualText": "Partition tuning",
+      "rightVisualText": "Operational simplicity"
     }
   ]
 }

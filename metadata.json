@@ -1,8 +1,8 @@
 {
-  "title": "Apache Druid vs ClickHouse: Which One Actually Scales? ⚡",
-  "fb_caption": "Apache Druid vs ClickHouse: Which Architecture Actually Scales in Production? ⚡\n\n- **Throughput**: ClickHouse generally offers higher ingestion and query throughput for raw data scanning.\n- **Latency**: Druid excels at low-latency analytical queries on aggregated and time-series data.\n- **Consistency**: Druid provides stronger consistency guarantees, especially for real-time data.\n- **Failure Modes**: Druid's distributed nature offers more resilience to node failures.\n- **Operational Overhead**: ClickHouse is often simpler to set up and manage initially.\n\n**Recommendation**: Choose Druid for real-time analytics and guaranteed consistency, ClickHouse for high-throughput batch analytics.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "Druid vs ClickHouse: Which OLAP database truly scales in production? ⚡ Let's debate! Explore system design insights at https://kreggscode.com",
-  "yt_description": "Apache Druid vs ClickHouse: Which architecture actually scales in production? Dive deep into the performance, latency, and scalability of these distributed OLAP databases. \n\nMechanics:\n- High-throughput ingestion vs. low-latency queries\n- Real-time analytics vs. batch processing\n- Consistency models and failure resilience\n- Operational complexity and cost-effectiveness\n\n#Shorts #SystemDesign #Database #OLAP #BigData\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
+  "title": "Pulsar vs NATS JetStream: Which Scales? ⚡",
+  "fb_caption": "Apache Pulsar vs NATS JetStream: Which Architecture Actually Scales in Production? ⚡\n\nDive into a high-retention architectural comparison:\n*   **Throughput:** Pulsar excels with high-volume, tiered storage; NATS JetStream offers simpler, lower-latency throughput.\n*   **Latency:** NATS JetStream generally provides lower latency for direct message delivery.\n*   **Consistency:** Pulsar offers stronger consistency guarantees (e.g., durable topics) vs. NATS JetStream's focus on availability.\n*   **Failure Modes:** Understand how each handles node failures and data durability.\n*   **Operational Overhead:** Pulsar's complexity vs. NATS JetStream's ease of deployment and management.\n\n**Recommendation:** For massive scale and complex event streaming with tiered storage, Pulsar shines. For simpler, high-performance messaging and eventing with lower operational burden, NATS JetStream is compelling.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "Pulsar vs. NATS JetStream: Which messaging architecture truly scales in production? 🤔 Let's debate! 👇 Find deep dives & visualizers at https://kreggscode.com #SystemDesign #Backend",
+  "yt_description": "Apache Pulsar vs NATS JetStream: Which Architecture Actually Scales in Production? ⚡\n\nJoin us for a critical deep-dive comparison of two leading distributed messaging and streaming platforms. We break down throughput, latency, consistency, failure modes, and operational overhead to help you choose the right architecture for your production needs.\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode\n\n#Shorts #SystemDesign #BackendArchitecture #CloudNative #Microservices",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -15,8 +15,8 @@
   "hashtags": [
     "#kreggscode",
     "#systemdesign",
-    "#softwareengineering",
-    "#coding",
-    "#backend"
+    "#backendarchitecture",
+    "#distributedmessaging",
+    "#cloudnative"
   ]
 }
