@@ -100,5 +100,6 @@
   "Neutralinojs vs Electron",
   "Flutter vs React Native",
   "Biome vs ESLint",
-  "Debezium vs Kafka Connect"
+  "Debezium vs Kafka Connect",
+  "Kata Containers vs Firecracker"
 ]
