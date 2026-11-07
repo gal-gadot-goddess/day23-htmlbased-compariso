@@ -101,5 +101,6 @@
   "Flutter vs React Native",
   "Biome vs ESLint",
   "Debezium vs Kafka Connect",
-  "Kata Containers vs Firecracker"
+  "Kata Containers vs Firecracker",
+  "Apache Druid vs ClickHouse"
 ]

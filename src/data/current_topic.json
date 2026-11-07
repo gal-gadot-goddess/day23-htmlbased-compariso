@@ -1,92 +1,92 @@
 {
-  "topLabel": "CONTAINERIZATION & MICROVMS",
+  "topLabel": "DISTRIBUTED DATABASES & OLAP",
   "mainTitle": {
-    "left": "Kata Containers",
-    "right": "Firecracker",
+    "left": "Apache Druid",
+    "right": "ClickHouse",
     "vs": "vs"
   },
-  "leftSub": "Pod-level microVMs",
-  "rightSub": "Lightning microVMs",
-  "leftColor": "#38bdf8",
-  "rightColor": "#fb7185",
+  "leftSub": "Real-time analytics",
+  "rightSub": "Columnar OLAP",
+  "leftColor": "#e11d48",
+  "rightColor": "#2dd4bf",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. THREAT MODEL",
-      "leftTitle": "OS isolation",
-      "rightTitle": "VM isolation",
-      "leftDesc": "Kata Containers runs each pod in a lightweight VM to reduce kernel-sharing risk, but it still integrates closely with the container runtime stack and relies on a Linux guest kernel boundary as the primary isolation primitive.",
-      "rightDesc": "Firecracker is built around a strong microVM boundary for workloads that can’t trust the host kernel. It minimizes exposed devices and surfaces fewer kernel-level attack paths than traditional containers.",
-      "leftIcon": "Shield",
-      "rightIcon": "Shield",
-      "leftVisualText": "Kernel boundary",
-      "rightVisualText": "MicroVM boundary"
-    },
-    {
-      "title": "2. INTEGRATION SURFACE",
-      "leftTitle": "CRI runtime shim",
-      "rightTitle": "Standalone microVM API",
-      "leftDesc": "Kata Containers integrates with container orchestration via runtime shims (e.g., containerd/CRI-O) so Kubernetes can treat pods like containers while internally launching a VM per pod or sandbox, coordinating cgroups, mounts, and networking.",
-      "rightDesc": "Firecracker is typically orchestrated by higher-level tooling that provisions microVMs via its API, using a minimal device model. Your platform is responsible for mapping workloads to microVM lifecycles.",
-      "leftIcon": "Workflow",
-      "rightIcon": "Workflow",
-      "leftVisualText": "Kubernetes-native",
-      "rightVisualText": "API-driven"
-    },
-    {
-      "title": "3. BOOT & STARTUP LATENCY",
-      "leftTitle": "VM boot path",
-      "rightTitle": "Fast minimal boot",
-      "leftDesc": "Kata’s sandbox VM startup depends on VM image, guest kernel, and the init path inside the guest. It typically performs best when VMs are reused or pre-warmed by orchestration strategies.",
-      "rightDesc": "Firecracker is optimized for short-lived workloads: it uses a minimal initramfs/boot flow, tight device emulation, and reduced configuration. This keeps time-to-ready low for bursty request patterns.",
-      "leftIcon": "FastForward",
-      "rightIcon": "FastForward",
-      "leftVisualText": "Pod latency",
-      "rightVisualText": "Burst ready"
-    },
-    {
-      "title": "4. DEVICE EMULATION",
-      "leftTitle": "More compatibility",
-      "rightTitle": "Minimal device model",
-      "leftDesc": "Kata’s guest environment aims for broad Linux container compatibility, supporting common paravirt devices and integration patterns so existing container images behave similarly inside the guest VM.",
-      "rightDesc": "Firecracker intentionally implements only the essential virtual devices (e.g., virtio-net/virtio-block) and avoids legacy emulation. Fewer virtual devices mean less complexity and smaller attack surface.",
+      "title": "1. PRIMARY STORAGE MODEL",
+      "leftTitle": "Segment + rollups",
+      "rightTitle": "Columnar parts",
+      "leftDesc": "Apache Druid stores data in immutable, time-partitioned segments with pre-aggregated rollup support. Queries hit segment indexes and aggregators directly, minimizing row scans through columnar-like layouts specialized for OLAP workloads.",
+      "rightDesc": "ClickHouse persists data in columnar blocks inside data parts, typically partitioned by date or key ranges. It uses vectorized execution and late materialization, reading only required columns and applying filters/aggregations efficiently per part.",
       "leftIcon": "Layers",
-      "rightIcon": "Layers",
-      "leftVisualText": "Paravirt",
-      "rightVisualText": "Lean devices"
+      "rightIcon": "Database",
+      "leftVisualText": "Time segments",
+      "rightVisualText": "Columnar parts"
     },
     {
-      "title": "5. RESOURCE ACCOUNTING",
-      "leftTitle": "cgroups mapping",
-      "rightTitle": "host-limited VM resources",
-      "leftDesc": "Kata maps pod/container resource limits to host mechanisms (like cgroups) and ensures CPU/memory and IO constraints apply to the VM sandbox, so quotas defined at the orchestration layer remain enforceable.",
-      "rightDesc": "Firecracker runs a microVM whose CPU/memory are constrained by the host (commonly via cgroups). The platform controlling microVM creation must enforce sizing and limits per tenant/workload.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Quota aware",
-      "rightVisualText": "Host governed"
+      "title": "2. INGESTION PATH",
+      "leftTitle": "Streaming + indexing",
+      "rightTitle": "Batch + streaming",
+      "leftDesc": "Druid ingestion uses configurable indexing tasks (e.g., Kafka indexing) that write immutable segments and can build rollups as data lands. It decouples ingestion from query serving via segment publishing and hot-swappable availability.",
+      "rightDesc": "ClickHouse commonly ingests via tables with continuous inserts, including Kafka engines and materialized views for streaming-to-OLAP. Data is continuously appended then merged in the background into larger parts, keeping ingestion fast.",
+      "leftIcon": "Workflow",
+      "rightIcon": "Zap",
+      "leftVisualText": "Index tasks",
+      "rightVisualText": "Append + merge"
     },
     {
-      "title": "6. NETWORKING MODEL",
-      "leftTitle": "CNI-friendly pod networking",
-      "rightTitle": "virtio networking",
-      "leftDesc": "Kata is designed to work smoothly with Kubernetes networking (CNI) by presenting pod-level network semantics while the workload runs inside the VM. IP, routes, and DNS are managed like standard pods.",
-      "rightDesc": "Firecracker’s networking is typically implemented using virtio-net in the guest, connected to host-side networking constructs. You compose VPC/CNI-like behavior outside Firecracker based on your platform.",
-      "leftIcon": "Network",
-      "rightIcon": "Network",
-      "leftVisualText": "CNI pods",
-      "rightVisualText": "Virtio-net"
-    },
-    {
-      "title": "7. OPERATIONAL OPTIMIZATION",
-      "leftTitle": "VM lifecycle under orchestration",
-      "rightTitle": "Workload placement & recycling",
-      "leftDesc": "Kata relies on orchestration-aware management for VM lifecycle, often benefiting from sandbox reuse patterns at the pod level. Operational tuning focuses on image management, guest kernel selection, and node-level performance.",
-      "rightDesc": "With Firecracker, operators typically focus on microVM pooling/reuse, image caching, and placement to reduce repeated boot costs. Because Firecracker is lower-level, platform tooling heavily influences operational efficiency.",
+      "title": "3. QUERY EXECUTION STRATEGY",
+      "leftTitle": "Brokered fan-out",
+      "rightTitle": "Parallel pipelines",
+      "leftDesc": "Druid’s query layer (broker/brokered execution) fans out to historical and real-time nodes, then merges results. It leverages segment-level indexing (e.g., time, dimensions) to prune work before aggregation.",
+      "rightDesc": "ClickHouse builds query pipelines executed in parallel across threads/nodes, pushing filters and projections early. It performs aggregation using hash or streaming strategies, often with specialized sorting/order by to accelerate group-by.",
       "leftIcon": "Activity",
-      "rightIcon": "Activity",
-      "leftVisualText": "Orchestrator-managed",
-      "rightVisualText": "Platform-tuned"
+      "rightIcon": "Cpu",
+      "leftVisualText": "Broker + merge",
+      "rightVisualText": "Vectorized parallel"
+    },
+    {
+      "title": "4. INDEXING & PRUNING MECHANISMS",
+      "leftTitle": "Segment indexes",
+      "rightTitle": "Data skipping",
+      "leftDesc": "Druid maintains segment-level metadata and specialized indexes for time and dimensions, enabling aggressive pruning of segments and blocks. Rollups reduce the number of rows needing aggregation by storing aggregated states per time bucket.",
+      "rightDesc": "ClickHouse uses primary key and partitioning for data skipping indexes, plus optional secondary indexes (e.g., min-max, set, bloom filters). It can skip entire data parts or ranges, reducing I/O and speeding query execution.",
+      "leftIcon": "Key",
+      "rightIcon": "Compass",
+      "leftVisualText": "Prune segments",
+      "rightVisualText": "Skip parts"
+    },
+    {
+      "title": "5. DISTINCT / HIGH-CARDINALITY TOOLS",
+      "leftTitle": "HLL-ish aggregations",
+      "rightTitle": "Approx + exact",
+      "leftDesc": "Druid supports approximation-first patterns like theta sketches and other sketch-based aggregations for distinct counts, integrated into rollups and query-time aggregation. This keeps memory predictable for high-cardinality analytics over time slices.",
+      "rightDesc": "ClickHouse provides both exact distinct (e.g., using GROUP BY) and approximate variants like uniq sketches (e.g., HyperLogLog-like). It can trade accuracy for memory/CPU and uses streaming aggregation to handle large groups.",
+      "leftIcon": "Flame",
+      "rightIcon": "Shield",
+      "leftVisualText": "Sketch distinct",
+      "rightVisualText": "Uniq methods"
+    },
+    {
+      "title": "6. CONCURRENCY & UPDATE MODEL",
+      "leftTitle": "Immutable segments",
+      "rightTitle": "Merge-tree model",
+      "leftDesc": "Druid emphasizes immutability: new data publishes new segments, while older segments remain queryable. Updates are typically handled by re-ingesting data or using replace semantics upstream rather than in-place row mutation.",
+      "rightDesc": "ClickHouse follows MergeTree family mechanics: inserts append; background merges reorganize parts. It supports limited updates via ALTER/UPDATE with mutations (as new parts are produced), but heavy random updates can be costly versus append-only design.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "GitBranch",
+      "leftVisualText": "Mostly append",
+      "rightVisualText": "Merges + mutations"
+    },
+    {
+      "title": "7. DISTRIBUTED TOPOLOGY & SCALING",
+      "leftTitle": "Historical vs realtime",
+      "rightTitle": "Shards + replicas",
+      "leftDesc": "Druid scaling is commonly split into historical (queryable immutable segments) and real-time (serving the latest ingested data with special storage). Brokers coordinate requests; coordination policies help balance latency and freshness.",
+      "rightDesc": "ClickHouse distributes by sharding datasets across nodes with replication for fault tolerance. Distributed tables route queries to shards, where local parallel execution runs before results are merged centrally or hierarchically.",
+      "leftIcon": "Globe",
+      "rightIcon": "Cloud",
+      "leftVisualText": "Realtime split",
+      "rightVisualText": "Shard replicas"
     }
   ]
 }
