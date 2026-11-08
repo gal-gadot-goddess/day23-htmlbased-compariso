@@ -105,5 +105,6 @@
   "Apache Druid vs ClickHouse",
   "Apache Pulsar vs NATS JetStream",
   "Playwright vs Cypress",
-  "NebulaGraph vs Neo4j"
+  "NebulaGraph vs Neo4j",
+  "Prefect vs Dagster"
 ]

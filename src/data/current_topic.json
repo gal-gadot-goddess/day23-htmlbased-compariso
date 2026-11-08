@@ -1,92 +1,92 @@
 {
-  "topLabel": "GRAPH DATABASES & KNOWLEDGE GRAPHS",
+  "topLabel": "WORKFLOW & DATA ORCHESTRATION",
   "mainTitle": {
-    "left": "NebulaGraph",
-    "right": "Neo4j",
+    "left": "Prefect",
+    "right": "Dagster",
     "vs": "vs"
   },
-  "leftSub": "Distributed, scalable graph database",
-  "rightSub": "Mature, ACID-compliant graph database",
-  "leftColor": "#6366f1",
-  "rightColor": "#10b981",
+  "leftSub": "Modern Data Orchestration",
+  "rightSub": "Data Aware Orchestration",
+  "leftColor": "#e11d48",
+  "rightColor": "#2dd4bf",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. Architecture",
-      "leftTitle": "Distributed, Multi-leader",
-      "rightTitle": "Single Leader, Clustered",
-      "leftDesc": "NebulaGraph employs a distributed, multi-leader architecture with separate storage and compute nodes for independent scaling and high availability.",
-      "rightDesc": "Neo4j typically uses a single leader for writes, with replicas for reads, and offers Causal Clustering for fault tolerance and scalability.",
-      "leftIcon": "Server",
-      "rightIcon": "Cluster",
-      "leftVisualText": "Distributed",
-      "rightVisualText": "Clustered"
+      "title": "1. Core Abstraction",
+      "leftTitle": "Flows & Tasks",
+      "rightTitle": "Jobs & Ops",
+      "leftDesc": "Prefect uses Python functions as Tasks, grouped into Flows, focusing on robust execution and state management with dynamic retries and caching.",
+      "rightDesc": "Dagster defines data assets and computations (Ops) orchestrated into jobs, emphasizing data lineage and asset management for end-to-end pipelines.",
+      "leftIcon": "Workflow",
+      "rightIcon": "Layers",
+      "leftVisualText": "Flows/Tasks",
+      "rightVisualText": "Jobs/Assets"
     },
     {
-      "title": "2. Data Model",
-      "leftTitle": "Property Graph Model",
-      "rightTitle": "Property Graph Model",
-      "leftDesc": "NebulaGraph uses a property graph model where nodes and edges can have arbitrary properties, enabling flexible data representation.",
-      "rightDesc": "Neo4j also uses the property graph model, with nodes having labels and properties, and relationships connecting them.",
-      "leftIcon": "GitBranch",
-      "rightIcon": "GitBranch",
-      "leftVisualText": "Property",
-      "rightVisualText": "Property"
-    },
-    {
-      "title": "3. Query Language",
-      "leftTitle": "nGQL, SQL-like",
-      "rightTitle": "Cypher, Declarative",
-      "leftDesc": "NebulaGraph's nGQL is inspired by SQL and Cypher, offering a familiar syntax with powerful graph traversal capabilities.",
-      "rightDesc": "Neo4j's Cypher is a declarative query language specifically designed for graphs, focusing on pattern matching.",
-      "leftIcon": "Code",
-      "rightIcon": "Code",
-      "leftVisualText": "nGQL",
-      "rightVisualText": "Cypher"
-    },
-    {
-      "title": "4. Scalability",
-      "leftTitle": "Horizontal Scaling",
-      "rightTitle": "Vertical & Clustered",
-      "leftDesc": "NebulaGraph is designed for massive horizontal scalability, easily handling billions of edges and trillions of properties across many machines.",
-      "rightDesc": "Neo4j scales vertically by upgrading hardware and horizontally through read replicas and Causal Clustering for write availability.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Horizontal",
-      "rightVisualText": "Clustered"
-    },
-    {
-      "title": "5. ACID Compliance",
-      "leftTitle": "Eventual Consistency",
-      "rightTitle": "Full ACID Guarantees",
-      "leftDesc": "NebulaGraph prioritizes availability and performance, offering eventual consistency in its distributed setup, which can be tuned.",
-      "rightDesc": "Neo4j provides strong ACID compliance for transactions, ensuring data integrity and consistency, crucial for critical applications.",
-      "leftIcon": "Zap",
-      "rightIcon": "Lock",
-      "leftVisualText": "Eventually Consistent",
-      "rightVisualText": "ACID Compliant"
-    },
-    {
-      "title": "6. Storage Engine",
-      "leftTitle": "RocksDB / Raft",
-      "rightTitle": "Custom, MVCC",
-      "leftDesc": "NebulaGraph leverages RocksDB for storage and Raft for consensus in its distributed mode, optimizing for performance and resilience.",
-      "rightDesc": "Neo4j uses its own custom storage engine with MVCC (Multi-Version Concurrency Control) to handle concurrent transactions efficiently.",
-      "leftIcon": "Database",
+      "title": "2. Data Awareness",
+      "leftTitle": "Task Results",
+      "rightTitle": "Data Assets",
+      "leftDesc": "Prefect passes results between tasks using its built-in serialization, offering flexibility but less inherent data lineage tracking.",
+      "rightDesc": "Dagster explicitly models data assets, enabling rich lineage, versioning, and type checking directly within the orchestration layer.",
+      "leftIcon": "Box",
       "rightIcon": "Database",
-      "leftVisualText": "RocksDB",
-      "rightVisualText": "Custom Engine"
+      "leftVisualText": "Task Output",
+      "rightVisualText": "Asset Graph"
     },
     {
-      "title": "7. Use Cases",
-      "leftTitle": "Large-Scale Analytics",
-      "rightTitle": "Complex Relationships",
-      "leftDesc": "NebulaGraph excels in scenarios requiring massive datasets, real-time analytics, and high-throughput graph queries across distributed environments.",
-      "rightDesc": "Neo4j is ideal for applications needing intricate relationship analysis, fraud detection, recommendation engines, and identity management.",
-      "leftIcon": "Activity",
+      "title": "3. Execution Model",
+      "leftTitle": "Dynamic & Reactive",
+      "rightTitle": "Graph-based",
+      "leftDesc": "Prefect's dynamic graph execution allows for on-the-fly task generation and conditional logic, making it highly adaptable to changing conditions.",
+      "rightDesc": "Dagster builds a static computation graph from Ops and Assets, providing strong guarantees about execution and dependencies before runtime.",
+      "leftIcon": "FastForward",
+      "rightIcon": "GitBranch",
+      "leftVisualText": "Dynamic",
+      "rightVisualText": "Static Graph"
+    },
+    {
+      "title": "4. UI & Observability",
+      "leftTitle": "Prefect Cloud/Server",
+      "rightTitle": "Dagster UI",
+      "leftDesc": "Prefect offers a centralized UI for monitoring runs, logs, and deployments, with Prefect Cloud providing SaaS orchestration.",
+      "rightDesc": "Dagster's UI visualizes data assets, lineage, and job runs, offering deep insights into pipeline health and data dependencies.",
+      "leftIcon": "Monitor",
       "rightIcon": "Compass",
-      "leftVisualText": "Big Data",
-      "rightVisualText": "Relationships"
+      "leftVisualText": "Run Monitoring",
+      "rightVisualText": "Lineage Viz"
+    },
+    {
+      "title": "5. Deployment",
+      "leftTitle": "Agent-based",
+      "rightTitle": "Deployment Orchestration",
+      "leftDesc": "Prefect uses agents to poll the API for work, allowing flexible deployment configurations across various infrastructures.",
+      "rightDesc": "Dagster deployments manage jobs and schedules, often integrated with CI/CD, providing a structured way to release pipelines.",
+      "leftIcon": "Server",
+      "rightIcon": "Cloud",
+      "leftVisualText": "Poll Agent",
+      "rightVisualText": "CI/CD Focus"
+    },
+    {
+      "title": "6. Testing",
+      "leftTitle": "Task/Flow testing",
+      "rightTitle": "Asset/Job testing",
+      "leftDesc": "Prefect supports testing individual tasks and entire flows programmatically, ensuring components function as expected.",
+      "rightDesc": "Dagster emphasizes testing data assets and job computations, integrating testing into the data pipeline development lifecycle.",
+      "leftIcon": "CheckCircle",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Unit/Integration",
+      "rightVisualText": "Data Quality"
+    },
+    {
+      "title": "7. Ecosystem & Philosophy",
+      "leftTitle": "Pythonic Workflows",
+      "rightTitle": "Data-centric",
+      "leftDesc": "Prefect aims to make Python workflows robust, flexible, and easy to manage, with a strong focus on developer experience.",
+      "rightDesc": "Dagster prioritizes data quality and lineage, viewing orchestration as a tool to manage and understand data pipelines holistically.",
+      "leftIcon": "Code",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Dev Experience",
+      "rightVisualText": "Data Integrity"
     }
   ]
 }
