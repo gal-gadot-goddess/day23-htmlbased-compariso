@@ -104,5 +104,6 @@
   "Kata Containers vs Firecracker",
   "Apache Druid vs ClickHouse",
   "Apache Pulsar vs NATS JetStream",
-  "Playwright vs Cypress"
+  "Playwright vs Cypress",
+  "NebulaGraph vs Neo4j"
 ]
