@@ -103,5 +103,6 @@
   "Debezium vs Kafka Connect",
   "Kata Containers vs Firecracker",
   "Apache Druid vs ClickHouse",
-  "Apache Pulsar vs NATS JetStream"
+  "Apache Pulsar vs NATS JetStream",
+  "Playwright vs Cypress"
 ]
