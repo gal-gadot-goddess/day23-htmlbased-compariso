@@ -106,5 +106,6 @@
   "Apache Pulsar vs NATS JetStream",
   "Playwright vs Cypress",
   "NebulaGraph vs Neo4j",
-  "Prefect vs Dagster"
+  "Prefect vs Dagster",
+  "WebAuthn vs OAuth 2.0"
 ]
