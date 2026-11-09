@@ -107,5 +107,6 @@
   "Playwright vs Cypress",
   "NebulaGraph vs Neo4j",
   "Prefect vs Dagster",
-  "WebAuthn vs OAuth 2.0"
+  "WebAuthn vs OAuth 2.0",
+  "Meilisearch vs Elasticsearch"
 ]
