@@ -1,92 +1,92 @@
 {
-  "topLabel": "SEARCH ENGINES & RETRIEVAL",
+  "topLabel": "CONTAINERIZATION & MICROVMS",
   "mainTitle": {
-    "left": "Meilisearch",
-    "right": "Elasticsearch",
+    "left": "Firecracker",
+    "right": "gVisor",
     "vs": "vs"
   },
-  "leftSub": "Fast developer search",
-  "rightSub": "Scalable full-text search",
-  "leftColor": "#22c55e",
-  "rightColor": "#ef4444",
+  "leftSub": "MicroVM isolation",
+  "rightSub": "User-space kernel",
+  "leftColor": "#8b5cf6",
+  "rightColor": "#34d399",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. INDEXING MODEL",
-      "leftTitle": "Atomic-ish updates",
-      "rightTitle": "Shard segments",
-      "leftDesc": "Meilisearch builds and updates indexes through configurable ingestion settings, favoring quick indexing and predictable latencies. Updates are applied in batches, then background refresh makes new documents searchable.",
-      "rightDesc": "Elasticsearch splits indexes into shards, writing documents into Lucene segments. Each refresh publishes new segments to search; merges later compact segments to reduce overhead and improve query efficiency.",
-      "leftIcon": "Workflow",
-      "rightIcon": "Layers",
-      "leftVisualText": "Instant indexing",
-      "rightVisualText": "Lucene segments"
-    },
-    {
-      "title": "2. RELEVANCE CONTROLS",
-      "leftTitle": "Simple ranking rules",
-      "rightTitle": "Powerful scoring",
-      "leftDesc": "Meilisearch exposes ranking rules and facets with a straightforward API, making it easy to tune typo tolerance, searchable attributes, and ranking factors without building complex query DSL. Defaults are optimized for fast iteration.",
-      "rightDesc": "Elasticsearch offers a full Query DSL backed by Lucene scoring, including BM25 variants, field boosts, function_score, script_score, and rescoring. This enables deep relevance engineering across many query shapes.",
-      "leftIcon": "Key",
-      "rightIcon": "Compass",
-      "leftVisualText": "Tunable relevance",
-      "rightVisualText": "Query DSL"
-    },
-    {
-      "title": "3. QUERY EXECUTION",
-      "leftTitle": "Focused full-text",
-      "rightTitle": "Hybrid query planning",
-      "leftDesc": "Meilisearch primarily targets full-text and lexical retrieval with fast response times, executing optimized inverted-index lookups. Its API encourages single-purpose search endpoints with consistent performance characteristics.",
-      "rightDesc": "Elasticsearch executes queries across shards, merges top-k results, and can run compound queries (bool, dis_max), aggregations, and filters. Coordination overhead grows with cluster size and query complexity.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Network",
-      "leftVisualText": "Low-latency",
-      "rightVisualText": "Shard fan-out"
-    },
-    {
-      "title": "4. FACETS & AGGREGATIONS",
-      "leftTitle": "Facets-first",
-      "rightTitle": "Aggregations engine",
-      "leftDesc": "Meilisearch supports facets tailored for common filtering and navigation, returning distribution counts alongside hits. It’s designed for predictable, developer-friendly facet usage with less query authoring than general-purpose aggregation trees.",
-      "rightDesc": "Elasticsearch includes a comprehensive aggregations framework (bucket, metric, pipeline). It builds aggregation trees per shard and reduces results centrally, enabling complex analytics within the same request as search.",
-      "leftIcon": "Activity",
-      "rightIcon": "Box",
-      "leftVisualText": "Facet counts",
-      "rightVisualText": "Aggregation trees"
-    },
-    {
-      "title": "5. SCHEMAS & MAPPING",
-      "leftTitle": "Flexible indexing",
-      "rightTitle": "Explicit mappings",
-      "leftDesc": "Meilisearch uses dynamic, developer-controlled settings and primarily relies on JSON attributes as fields, reducing friction. You can configure searchable and filterable attributes without the heavy mapping lifecycle typical of Elasticsearch.",
-      "rightDesc": "Elasticsearch requires mappings defining field types, analyzers, and indexing options. Correct mappings are critical because changing field types later often requires reindexing, especially for text analysis and keyword behaviors.",
-      "leftIcon": "Code",
+      "title": "1. ISOLATION MODEL",
+      "leftTitle": "MicroVM boundary",
+      "rightTitle": "Syscall sandbox",
+      "leftDesc": "Firecracker boots a minimalist Linux microVM with its own kernel and hardware device model. Containers run inside that VM, so isolation is enforced by VM boundaries, not merely process namespaces and seccomp filters.",
+      "rightDesc": "gVisor runs container workloads on top of a sandboxed “runsc” kernel implemented in user space. Instead of a VM boundary, it intercepts and mediates syscalls to prevent escapes and restrict resource access while sharing the host kernel.",
+      "leftIcon": "Shield",
       "rightIcon": "Shield",
-      "leftVisualText": "Less setup",
-      "rightVisualText": "Mapping control"
+      "leftVisualText": "VM-grade",
+      "rightVisualText": "User-space kernel"
     },
     {
-      "title": "6. SCALING & OPERATIONS",
-      "leftTitle": "Simpler ops",
-      "rightTitle": "Cluster management",
-      "leftDesc": "Meilisearch is typically operated as a simpler service with fewer moving parts. Scaling usually means adding replicas/instances and relying on built-in mechanisms for consistency and predictable resource usage.",
-      "rightDesc": "Elasticsearch scaling involves tuning shard counts, replicas, refresh intervals, merge policies, and allocation settings. Operational tasks include ILM, snapshot/restore, and monitoring resource hotspots across nodes and shards.",
-      "leftIcon": "Cloud",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Service-like",
-      "rightVisualText": "ILM tooling"
+      "title": "2. BOOT & STARTUP",
+      "leftTitle": "Fast VM boot",
+      "rightTitle": "Instant sandbox",
+      "leftDesc": "Firecracker uses KVM to start a microVM quickly with a trimmed device set and snapshot-style flows. Startup latency is dominated by VM creation and kernel initialization, optimized for cloud scaling.",
+      "rightDesc": "gVisor avoids booting a guest kernel; it starts the sandbox runtime and then traps syscalls from the containerized process. Latency is typically lower than VM start because there’s no kernel boot path.",
+      "leftIcon": "FastForward",
+      "rightIcon": "Activity",
+      "leftVisualText": "KVM-accelerated",
+      "rightVisualText": "No boot"
     },
     {
-      "title": "7. ECOSYSTEM & EXTENSIBILITY",
-      "leftTitle": "Lean feature set",
-      "rightTitle": "Large ecosystem",
-      "leftDesc": "Meilisearch prioritizes straightforward lexical retrieval features with a compact surface area, making it easier to integrate quickly. Extensibility exists, but complex analytics/search workflows may require external orchestration.",
-      "rightDesc": "Elasticsearch has a large ecosystem: ingest pipelines, enrich processors, transforms, integrations, and extensive plugin options. This supports end-to-end search-and-observability pipelines (often with Kibana).",
+      "title": "3. SYSCALL HANDLING",
+      "leftTitle": "Real kernel",
+      "rightTitle": "Intercepted syscalls",
+      "leftDesc": "Inside Firecracker, the workload talks to a real Linux kernel running in the microVM. The kernel executes syscalls normally, subject to VM constraints, cgroups, and device model permissions.",
+      "rightDesc": "gVisor translates syscalls in user space: runsc captures a syscall request, performs validation and policy checks, then emulates or proxies the behavior as permitted. Unsupported syscalls may fall back or be blocked depending on configuration.",
+      "leftIcon": "Terminal",
+      "rightIcon": "Code",
+      "leftVisualText": "Guest kernel",
+      "rightVisualText": "Syscall mediation"
+    },
+    {
+      "title": "4. HARDWARE & DEVICES",
+      "leftTitle": "Emulated devices",
+      "rightTitle": "Host resources proxy",
+      "leftDesc": "Firecracker exposes a controlled set of emulated devices (e.g., virtio-net, block devices) via its microVM device model. This reduces the host attack surface because only defined virtual hardware is visible to the guest.",
+      "rightDesc": "gVisor maps filesystem and networking through the sandbox: it emulates or proxies aspects of device interactions to the host while keeping enforcement in user space. The guest doesn’t see a separate hardware device model.",
+      "leftIcon": "Layers",
+      "rightIcon": "Network",
+      "leftVisualText": "Virtual hardware",
+      "rightVisualText": "Mediated I/O"
+    },
+    {
+      "title": "5. ATTACK SURFACE & ESCAPE RISK",
+      "leftTitle": "Kernel boundary",
+      "rightTitle": "Sandbox boundary",
+      "leftDesc": "Because Firecracker runs a separate kernel inside the microVM, exploits must cross the VM boundary in addition to conventional container isolation. This segmentation can significantly reduce host-level impact of a compromised workload.",
+      "rightDesc": "gVisor narrows escape pathways by handling syscalls in a controlled environment, but the host kernel still exists and is the foundation beneath runsc. Security depends on syscall coverage, correctness of emulation, and policy completeness.",
+      "leftIcon": "Lock",
+      "rightIcon": "Lock",
+      "leftVisualText": "Boundary hardening",
+      "rightVisualText": "Coverage matters"
+    },
+    {
+      "title": "6. PERFORMANCE TRADEOFFS",
+      "leftTitle": "VM overhead",
+      "rightTitle": "Emulation overhead",
+      "leftDesc": "Firecracker introduces virtualization costs: memory footprint, vCPU scheduling, and VM device emulation. However, syscall execution is native within the guest kernel, which can outperform heavy syscall-trapping approaches for many workloads.",
+      "rightDesc": "gVisor can add overhead from syscall interception and emulation/proxy paths. CPU cost often rises for syscall-heavy applications, and certain kernel features may not be fully supported, affecting performance and compatibility.",
+      "leftIcon": "Cpu",
+      "rightIcon": "Zap",
+      "leftVisualText": "Native syscalls",
+      "rightVisualText": "Trapped syscalls"
+    },
+    {
+      "title": "7. OPERATIONS & ECOSYSTEM",
+      "leftTitle": "VM-centric ops",
+      "rightTitle": "K8s runtime sandbox",
+      "leftDesc": "Firecracker is commonly integrated via orchestration layers that treat the microVM as the execution unit, requiring image/boot artifacts and VM lifecycle management. Tuning focuses on kernel config, device model, and VM sizing.",
+      "rightDesc": "gVisor is typically deployed as a container runtime sandbox (e.g., via Kubernetes runtimeClass). Operators tune syscall policy, filesystem/network handling, and compatibility settings, while keeping the familiar container image workflow.",
       "leftIcon": "Workflow",
-      "rightIcon": "GitBranch",
-      "leftVisualText": "Quick start",
-      "rightVisualText": "Full-stack"
+      "rightIcon": "Box",
+      "leftVisualText": "MicroVM lifecycle",
+      "rightVisualText": "RuntimeClass"
     }
   ]
 }
