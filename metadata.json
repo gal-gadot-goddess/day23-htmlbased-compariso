@@ -1,8 +1,8 @@
 {
-  "title": "TDengine vs ClickHouse: Which One Actually Scales? ⚡",
-  "fb_caption": "TDengine vs ClickHouse: Which Architecture Actually Scales in Production? ⚡\n\n🚀 Throughput: TDengine excels at ingest, ClickHouse at analytical queries.\n⚡ Latency: ClickHouse generally lower for OLAP, TDengine optimized for time-series writes.\n🛡️ Consistency: Both offer different trade-offs; TDengine leans towards availability.\n💥 Failure Modes: Understand distributed vs. clustered architectures.\n⚙️ Operational Overhead: TDengine often simpler to manage for time-series specific use cases.\n\nFor production time-series workloads prioritizing ingest speed and simplicity, TDengine often takes the lead. For complex analytical queries on large datasets, ClickHouse shines.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "TDengine vs ClickHouse: Which TSDB scales best in production? 🤔 Dive into the tech debate at https://kreggscode.com! #SystemDesign #TimeSeriesDB",
-  "yt_description": "TDengine vs ClickHouse: Which Time-Series Database Architecture Actually Scales in Production? ⚡ We break down the core differences in throughput, latency, consistency, failure modes, and operational overhead to help you choose.\n\nGet the full picture and make an informed decision for your next project!\n\n#Shorts #SystemDesign #Database #TimeScaleDB #TechComparison\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
+  "title": "vLLM vs TensorRT-LLM: Which One Actually Scales? ⚡",
+  "fb_caption": "vLLM vs TensorRT-LLM: Which Architecture Actually Scales in Production? ⚡\n\n• Throughput: vLLM excels with PagedAttention, TensorRT-LLM offers optimized kernels.\n• Latency: TensorRT-LLM often shows lower latency for single requests, vLLM better for batching.\n• Consistency: TensorRT-LLM can be more predictable with static batching, vLLM adapts dynamically.\n• Failure Modes: Consider memory management and kernel compatibility for each.\n• Operational Overhead: TensorRT-LLM requires more model compilation, vLLM is more flexible.\n\nRecommendation: For dynamic, high-throughput production loads, vLLM often leads. For latency-sensitive, predictable workloads, TensorRT-LLM shines.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "vLLM vs TensorRT-LLM: Which LLM inference engine truly scales in production? Developer debate: PagedAttention vs optimized kernels. See the breakdown at https://kreggscode.com",
+  "yt_description": "vLLM vs TensorRT-LLM: Which LLM inference architecture actually scales in production? We dive deep into throughput, latency, consistency, and operational overhead to help you choose the best engine for your AI deployment.\n\nDiscover the power of PagedAttention in vLLM and the optimized kernel performance of TensorRT-LLM. Is your production scaling strategy ready?\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode\n\n#Shorts #LLM #AI #SystemDesign #vLLM #TensorRTLLM",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -10,10 +10,7 @@
     "coding",
     "technology",
     "artificial intelligence",
-    "backend architecture",
-    "TDengine",
-    "ClickHouse",
-    "Time Series Database"
+    "backend architecture"
   ],
   "hashtags": [
     "#kreggscode",

@@ -110,5 +110,6 @@
   "WebAuthn vs OAuth 2.0",
   "Meilisearch vs Elasticsearch",
   "Firecracker vs gVisor",
-  "TDengine vs ClickHouse"
+  "TDengine vs ClickHouse",
+  "vLLM vs TensorRT-LLM"
 ]
