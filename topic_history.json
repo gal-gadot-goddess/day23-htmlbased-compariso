@@ -112,5 +112,6 @@
   "Firecracker vs gVisor",
   "TDengine vs ClickHouse",
   "vLLM vs TensorRT-LLM",
-  "vLLM vs TorchServe"
+  "vLLM vs TorchServe",
+  "Biome vs Ruff"
 ]

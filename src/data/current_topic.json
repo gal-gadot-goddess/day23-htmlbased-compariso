@@ -1,92 +1,92 @@
 {
-  "topLabel": "AI & LLM INFERENCE ENGINES",
+  "topLabel": "CODE FORMATTERS & LINTERS",
   "mainTitle": {
-    "left": "vLLM",
-    "right": "TorchServe",
+    "left": "Biome",
+    "right": "Ruff",
     "vs": "vs"
   },
-  "leftSub": "Paged-attention serving",
-  "rightSub": "PyTorch model server",
-  "leftColor": "#d946ef",
-  "rightColor": "#22c55e",
+  "leftSub": "Fast JS/TS quality",
+  "rightSub": "Python lint speed",
+  "leftColor": "#eab308",
+  "rightColor": "#6366f1",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. PRIMARY TARGET",
-      "leftTitle": "LLM throughput",
-      "rightTitle": "Model APIs",
-      "leftDesc": "vLLM is designed specifically for high-throughput transformer inference, optimizing token generation and batching across concurrent requests using continuous batching and memory-aware scheduling.",
-      "rightDesc": "TorchServe is a general PyTorch model serving framework, wrapping models behind HTTP/gRPC handlers. It focuses on standard deployment workflows, preprocessing/postprocessing, and multi-model endpoints.",
-      "leftIcon": "Flame",
-      "rightIcon": "Server",
-      "leftVisualText": "Token-first",
-      "rightVisualText": "Endpoint-first"
-    },
-    {
-      "title": "2. MEMORY MANAGEMENT",
-      "leftTitle": "Paged KV cache",
-      "rightTitle": "Tensor reuse",
-      "leftDesc": "vLLM uses a paged attention KV cache, allocating GPU memory in blocks so variable-length sequences don’t fragment VRAM. KV blocks can be reused as requests finish or extend.",
-      "rightDesc": "TorchServe relies on the model’s native tensor allocations and PyTorch runtime memory behavior. KV cache strategies are not built-in; you manage caching logic inside your model or handler.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "Box",
-      "leftVisualText": "Block cache",
-      "rightVisualText": "Manual cache"
-    },
-    {
-      "title": "3. BATCHING STRATEGY",
-      "leftTitle": "Continuous batching",
-      "rightTitle": "Request batch",
-      "leftDesc": "vLLM continuously batches active sequences at the token level, interleaving decoding work from different prompts. This keeps GPUs busy during generation and reduces tail latency.",
-      "rightDesc": "TorchServe typically batches at the handler level via custom batching utilities; generation workflows often remain request-scoped. Unless you implement token-level interleaving, batches don’t naturally align with decoding.",
-      "leftIcon": "Workflow",
-      "rightIcon": "Layers",
-      "leftVisualText": "Interleave",
-      "rightVisualText": "Batch-per-request"
-    },
-    {
-      "title": "4. DECODING WORKFLOW",
-      "leftTitle": "Speculative-ready",
-      "rightTitle": "Single-pass",
-      "leftDesc": "vLLM’s engine exposes knobs for generation-time optimization (e.g., decoding parameters and acceleration paths), making it straightforward to integrate multi-step decoding behaviors for faster throughput.",
-      "rightDesc": "TorchServe can serve any PyTorch generation code you provide, but it doesn’t include an LLM-specific decoding engine. Token-by-token loops remain in your model, not the server scheduler.",
-      "leftIcon": "FastForward",
-      "rightIcon": "Code",
-      "leftVisualText": "Engine decode",
-      "rightVisualText": "Model loop"
-    },
-    {
-      "title": "5. PERFORMANCE OBSERVABILITY",
-      "leftTitle": "Engine metrics",
-      "rightTitle": "Handler metrics",
-      "leftDesc": "vLLM provides runtime signals tied to LLM scheduling: queueing, token throughput, cache hit/block behavior, and scheduler decisions. These metrics map directly to why latency/throughput changed.",
-      "rightDesc": "TorchServe offers server-level logs/metrics, but deeper LLM performance (tokens/sec by stage, KV cache efficiency) depends on how you instrument your handler/model. Engine-level causality is limited.",
-      "leftIcon": "Activity",
+      "title": "1. PRIMARY LANE",
+      "leftTitle": "JS/TS formatting",
+      "rightTitle": "Python linting",
+      "leftDesc": "Biome targets JavaScript/TypeScript ecosystems with integrated formatting and linting. It parses modern syntax into an AST, runs rule checks, and prints deterministic output, often eliminating separate Prettier/ESLint setup.",
+      "rightDesc": "Ruff focuses on Python code quality via a rule-based linter. It parses Python into an AST, applies configurable checks (including many from flake8 and other tools), and emits fast diagnostics designed for CI and large repos.",
+      "leftIcon": "Code",
       "rightIcon": "Terminal",
-      "leftVisualText": "Token KPIs",
-      "rightVisualText": "Request logs"
+      "leftVisualText": "One tool",
+      "rightVisualText": "Python-first"
     },
     {
-      "title": "6. SCALING MODEL",
-      "leftTitle": "GPU-centric workers",
-      "rightTitle": "Replicated pods",
-      "leftDesc": "vLLM is commonly scaled by deploying GPU workers tuned for LLM parallelism. Its scheduler packs many concurrent generations onto one or more GPUs efficiently using shared KV handling.",
-      "rightDesc": "TorchServe scales via multiple replicas (often containers) behind a load balancer. Each replica runs its own model instance and caching behavior, so packing efficiency across replicas is coarse.",
-      "leftIcon": "Cloud",
-      "rightIcon": "Network",
-      "leftVisualText": "Pack on GPU",
-      "rightVisualText": "Replicate model"
+      "title": "2. ANALYSIS ENGINE",
+      "leftTitle": "Single-pass pipeline",
+      "rightTitle": "Rule selection",
+      "leftDesc": "Biome’s engine couples parsing, linting, and printing. It computes fixes/edits through the AST and format graph, aiming for consistent diffs. Under the hood, it shares structure between checks to reduce redundant work.",
+      "rightDesc": "Ruff is engineered for rapid rule evaluation: it selects only enabled rules, then runs targeted analyses over the AST. It minimizes overhead by structuring linting passes around rule categories and often avoids expensive inference.",
+      "leftIcon": "Workflow",
+      "rightIcon": "Activity",
+      "leftVisualText": "AST-driven",
+      "rightVisualText": "Pass-based"
     },
     {
-      "title": "7. DEPLOYMENT CONSTRAINTS",
-      "leftTitle": "LLM runtime deps",
-      "rightTitle": "PyTorch native",
-      "leftDesc": "vLLM requires an LLM-optimized stack (CUDA kernels, attention/KV mechanisms, and supported transformer formats). You get strong performance but with narrower assumptions than generic model servers.",
-      "rightDesc": "TorchServe depends on TorchServe infrastructure and PyTorch model artifacts. It’s flexible for custom architectures, but LLM-specific performance (KV paging, token-level scheduling) is not automatic.",
+      "title": "3. AUTO-FIX BEHAVIOR",
+      "leftTitle": "Format + fixes",
+      "rightTitle": "Deterministic fixes",
+      "leftDesc": "Biome can apply formatting fixes and many lint autofixes in one workflow. Because it owns formatting, it can coordinate whitespace, semicolons, and code structure consistently, producing fewer churny diffs than mixing unrelated formatters.",
+      "rightDesc": "Ruff supports autofix for a subset of rules, converting diagnostics into concrete code transformations. It emphasizes predictable edits, but some checks remain “diagnostic-only” to avoid behavior-changing refactors.",
+      "leftIcon": "Zap",
+      "rightIcon": "CheckCircle",
+      "leftVisualText": "Autofix",
+      "rightVisualText": "Safe fixes"
+    },
+    {
+      "title": "4. CONFIG & PRESETS",
+      "leftTitle": "Unified config",
+      "rightTitle": "Rule codes",
+      "leftDesc": "Biome uses a cohesive configuration model to control formatting options and lint rules together. Profiles can be applied per workspace, keeping JS/TS formatting and checks aligned without requiring multiple external config layers.",
+      "rightDesc": "Ruff config is organized around rule selection (e.g., “E”, “F”, “B”, “I” families) and explicit enable/disable sets. This makes it easy to replicate flake8-like behavior while tuning strictness across teams and CI stages.",
+      "leftIcon": "Layers",
+      "rightIcon": "Key",
+      "leftVisualText": "Profiles",
+      "rightVisualText": "Rule sets"
+    },
+    {
+      "title": "5. PERFORMANCE MODEL",
+      "leftTitle": "Zero-config fast runs",
+      "rightTitle": "Parallel linting",
+      "leftDesc": "Biome emphasizes quick turnaround by using efficient parsing/printing and avoiding multi-tool orchestration. In typical use, it can format and lint in a single invocation, reducing startup overhead and repeated AST builds.",
+      "rightDesc": "Ruff is built for speed in monorepos: it can lint many files concurrently and caches intermediate results across runs depending on workflow. It’s designed to keep CI times low even when enabling large rule sets.",
+      "leftIcon": "FastForward",
+      "rightIcon": "Flame",
+      "leftVisualText": "CI-ready",
+      "rightVisualText": "Blazing fast"
+    },
+    {
+      "title": "6. LANGUAGE COVERAGE & ECOSYSTEM",
+      "leftTitle": "JS/TS + web tooling",
+      "rightTitle": "Python standard + typing",
+      "leftDesc": "Biome is deeply integrated with JavaScript/TypeScript syntax realities: ESM/CJS patterns, TS type syntax, and modern JS constructs. It also plugs into editor/build workflows common in JS stacks for formatter-and-linter parity.",
+      "rightDesc": "Ruff covers Python syntax and style across typical production patterns, including checks that integrate with import sorting, common error-prone patterns, and typing-adjacent conventions. It pairs naturally with Python dependency tooling and CI linters.",
+      "leftIcon": "Globe",
+      "rightIcon": "Cloud",
+      "leftVisualText": "JS/TS",
+      "rightVisualText": "Python"
+    },
+    {
+      "title": "7. BEST-FIT WORKFLOWS",
+      "leftTitle": "Format-first teams",
+      "rightTitle": "Lint-first guardrails",
+      "leftDesc": "Choose Biome when you want formatting correctness and lint checks to share the same AST/printing logic, reducing churn. It’s strong for teams standardizing style across frontend/backend TypeScript repos with fewer tools.",
+      "rightDesc": "Choose Ruff when you want enforceable Python guardrails with granular rule codes and high-throughput linting. It excels for CI enforcement, incremental adoption, and large codebases where keeping lint costs low is crucial.",
       "leftIcon": "Shield",
-      "rightIcon": "Lock",
-      "leftVisualText": "LLM optimized",
-      "rightVisualText": "Generic serving"
+      "rightIcon": "Terminal",
+      "leftVisualText": "Style lock",
+      "rightVisualText": "Guardrails"
     }
   ]
 }
