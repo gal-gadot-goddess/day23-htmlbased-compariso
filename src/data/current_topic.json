@@ -1,92 +1,92 @@
 {
-  "topLabel": "TIME-SERIES DATABASES",
+  "topLabel": "API & SERIALIZATION PROTOCOLS",
   "mainTitle": {
-    "left": "TimescaleDB",
-    "right": "QuestDB",
+    "left": "Apache Avro",
+    "right": "Protocol Buffers",
     "vs": "vs"
   },
-  "leftSub": "Postgres-backed time-series",
-  "rightSub": "Columnar + SIMD telemetry",
-  "leftColor": "#f59e0b",
-  "rightColor": "#3b82f6",
+  "leftSub": "Schema-based, dynamic binary",
+  "rightSub": "Schema-based, compact binary",
+  "leftColor": "#0ea5e9",
+  "rightColor": "#f59e0b",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. ARCHITECTURE CORE",
-      "leftTitle": "PostgreSQL core",
-      "rightTitle": "Time-series engine",
-      "leftDesc": "TimescaleDB is an extension to PostgreSQL: hypertables, background jobs, and SQL planner integration all run inside Postgres, so queries, indexing, and transactions follow PostgreSQL semantics and tooling.",
-      "rightDesc": "QuestDB is a purpose-built time-series database optimized around columnar ingestion and query execution. It focuses on fast parsing, vectorized processing, and tight loops rather than reusing a full relational optimizer core.",
-      "leftIcon": "Server",
-      "rightIcon": "Database",
-      "leftVisualText": "SQL-first",
-      "rightVisualText": "Vector-first"
+      "title": "1. SCHEMA EVOLUTION",
+      "leftTitle": "Implicit schema",
+      "rightTitle": "Explicit schema",
+      "leftDesc": "Avro handles schema evolution via reader and writer schemas, allowing dynamic field addition/removal without code changes. It gracefully handles missing fields with defaults.",
+      "rightDesc": "Protobuf uses field tags for evolution. Adding fields is safe, but removing or reusing tags can break compatibility. Requires careful management of schema versions.",
+      "leftIcon": "GitBranch",
+      "rightIcon": "GitBranch",
+      "leftVisualText": "Dynamic",
+      "rightVisualText": "Versioned"
     },
     {
-      "title": "2. INGESTION PATH",
-      "leftTitle": "Hypertable routing",
-      "rightTitle": "O3 ingestion pipeline",
-      "leftDesc": "In TimescaleDB, writes land in a hypertable and are routed to underlying time partitions (chunks). Continuous aggregation and compression policies run asynchronously via background workers to keep ingestion smooth.",
-      "rightDesc": "QuestDB ingests into partitioned column structures optimized for append-heavy workloads. It uses an ingestion pipeline designed for minimal per-row overhead, emphasizing bulk-friendly parsing and immediate column materialization.",
-      "leftIcon": "Zap",
-      "rightIcon": "Activity",
-      "leftVisualText": "Chunks",
-      "rightVisualText": "Append"
-    },
-    {
-      "title": "3. PARTITIONING MODEL",
-      "leftTitle": "Hypertable chunks",
-      "rightTitle": "Partitioned columns",
-      "leftDesc": "TimescaleDB creates hypertables that map to many chunks. Each chunk has its own indexes and can be compressed or dropped independently, enabling retention and fast pruning using time-based constraints.",
-      "rightDesc": "QuestDB partitions data to keep column scans and aggregations localized. Query engines can skip partitions based on time predicates, while column layouts aim to improve cache locality during aggregation.",
-      "leftIcon": "Layers",
+      "title": "2. DATA ENCODING",
+      "leftTitle": "Self-describing data",
+      "rightTitle": "Compact binary",
+      "leftDesc": "Avro data includes the schema, making it self-describing. This is great for data lakes and archival, but results in larger payloads compared to Protobuf.",
+      "rightDesc": "Protobuf encodes data efficiently with field numbers and wire types. The schema is separate, leading to smaller serialized messages, ideal for high-throughput systems.",
+      "leftIcon": "Box",
       "rightIcon": "Box",
-      "leftVisualText": "Time chunks",
-      "rightVisualText": "Partition prune"
+      "leftVisualText": "Verbose",
+      "rightVisualText": "Lean"
     },
     {
-      "title": "4. QUERY ENGINE & EXECUTION",
-      "leftTitle": "Postgres planner",
-      "rightTitle": "Vectorized execution",
-      "leftDesc": "TimescaleDB leverages PostgreSQL’s optimizer and executor. It can push down predicates, use standard B-tree/GiST indexes, and compose joins/CTEs—then benefits from hypertable chunk exclusion and time-aware planning.",
-      "rightDesc": "QuestDB uses a native execution engine oriented around vectorized operations. It attempts to process batches of rows/values at once to reduce function-call overhead and accelerate aggregations and filters over compressed columns.",
-      "leftIcon": "Code",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Planner-aware",
-      "rightVisualText": "SIMD batches"
-    },
-    {
-      "title": "5. COMPRESSION & RETENTION",
-      "leftTitle": "Compression policies",
-      "rightTitle": "Compact column stores",
-      "leftDesc": "TimescaleDB supports column-level compression per chunk, typically using ordering and dictionaries appropriate for time-series patterns. Compression can be applied automatically by policies, paired with automated retention drops.",
-      "rightDesc": "QuestDB stores data in compact column representations and applies optimizations suited for telemetry characteristics. Retention and downsampling are designed to reduce scan volume by keeping historical data in efficient on-disk formats.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "Shield",
-      "leftVisualText": "Policy-driven",
-      "rightVisualText": "Compact storage"
-    },
-    {
-      "title": "6. AGGREGATIONS & MATERIALIZATION",
-      "leftTitle": "Continuous aggregates",
-      "rightTitle": "Downsampling primitives",
-      "leftDesc": "TimescaleDB provides continuous aggregates that incrementally refresh materialized summaries. Jobs track watermarks per aggregate, updating only new data and avoiding full-table recomputation for dashboards.",
-      "rightDesc": "QuestDB offers mechanisms for rollups/downsampling by designing queries and storage patterns that precompute common windows. The execution engine is tuned to compute grouped metrics efficiently across large time ranges.",
-      "leftIcon": "Workflow",
-      "rightIcon": "FastForward",
-      "leftVisualText": "Incremental refresh",
-      "rightVisualText": "Rollups"
-    },
-    {
-      "title": "7. ECOSYSTEM & OPERABILITY",
-      "leftTitle": "DB tooling ecosystem",
-      "rightTitle": "Ops for telemetry",
-      "leftDesc": "Because TimescaleDB is PostgreSQL-based, you inherit Postgres operational tooling: pg_stat views, logical replication options, backup/restore patterns, and mature extensions. Integrating with existing SQL workflows is straightforward.",
-      "rightDesc": "QuestDB is focused on telemetry workflows with purpose-built ingestion and query endpoints. Operational patterns can differ from Postgres-centric stacks, but it’s designed to minimize moving parts for event/log-style time-series workloads.",
+      "title": "3. LANGUAGE SUPPORT",
+      "leftTitle": "Broad language support",
+      "rightTitle": "Strong language support",
+      "leftDesc": "Avro has mature libraries for Java, Python, C++, and others, with excellent integration into big data ecosystems like Hadoop and Spark.",
+      "rightDesc": "Protobuf offers robust code generation for numerous languages including C++, Java, Python, Go, and JavaScript, making it versatile for polyglot environments.",
       "leftIcon": "Globe",
-      "rightIcon": "Terminal",
-      "leftVisualText": "Postgres ecosystem",
-      "rightVisualText": "Telemetry optimized"
+      "rightIcon": "Globe",
+      "leftVisualText": "Extensive",
+      "rightVisualText": "Robust"
+    },
+    {
+      "title": "4. SCHEMA DEFINITION",
+      "leftTitle": "JSON-based schema",
+      "rightTitle": ".proto files",
+      "leftDesc": "Avro schemas are defined in JSON, offering human readability and ease of integration with JSON-based tools. Schemas can be embedded directly in data files.",
+      "rightDesc": "Protobuf uses its own .proto syntax, which is concise and powerful for defining message structures, services, and enumerations.",
+      "leftIcon": "Code",
+      "rightIcon": "Code",
+      "leftVisualText": "JSON Schema",
+      "rightVisualText": ".proto syntax"
+    },
+    {
+      "title": "5. USE CASES",
+      "leftTitle": "Big Data Ecosystem",
+      "rightTitle": "RPC & Microservices",
+      "leftDesc": "Avro excels in big data scenarios like Hadoop, Kafka, and data warehousing due to its dynamic schema handling and self-describing data. Efficient for batch processing.",
+      "rightDesc": "Protobuf is widely adopted for inter-service communication (gRPC) and efficient data exchange in microservices architectures due to its performance and compactness.",
+      "leftIcon": "Cloud",
+      "rightIcon": "Server",
+      "leftVisualText": "Data Lake",
+      "rightVisualText": "RPC"
+    },
+    {
+      "title": "6. NULL HANDLING",
+      "leftTitle": "Explicit nulls",
+      "rightTitle": "Implicit nulls",
+      "leftDesc": "Avro explicitly supports nulls via union types (e.g., `[\"null\", \"string\"]`), making nullability clear and manageable within the schema definition.",
+      "rightDesc": "Protobuf fields are optional by default. For primitive types, absence implies a default value (0, false, empty string). For message fields, absence means null.",
+      "leftIcon": "Key",
+      "rightIcon": "Key",
+      "leftVisualText": "Union Type",
+      "rightVisualText": "Optional"
+    },
+    {
+      "title": "7. PERFORMANCE",
+      "leftTitle": "Good performance",
+      "rightTitle": "Excellent performance",
+      "leftDesc": "Avro offers solid serialization/deserialization speeds suitable for many applications, especially within its big data context where throughput is key.",
+      "rightDesc": "Protobuf is optimized for speed and minimal overhead, often outperforming Avro in raw serialization/deserialization benchmarks due to its compact binary format.",
+      "leftIcon": "FastForward",
+      "rightIcon": "FastForward",
+      "leftVisualText": "Solid",
+      "rightVisualText": "Blazing"
     }
   ]
 }

@@ -114,5 +114,6 @@
   "vLLM vs TensorRT-LLM",
   "vLLM vs TorchServe",
   "Biome vs Ruff",
-  "TimescaleDB vs QuestDB"
+  "TimescaleDB vs QuestDB",
+  "Apache Avro vs Protocol Buffers"
 ]
