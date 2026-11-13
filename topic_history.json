@@ -116,5 +116,6 @@
   "Biome vs Ruff",
   "TimescaleDB vs QuestDB",
   "Apache Avro vs Protocol Buffers",
-  "Pulumi vs AWS CloudFormation"
+  "Pulumi vs AWS CloudFormation",
+  "Pulumi vs AWS CDK"
 ]
