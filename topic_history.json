@@ -115,5 +115,6 @@
   "vLLM vs TorchServe",
   "Biome vs Ruff",
   "TimescaleDB vs QuestDB",
-  "Apache Avro vs Protocol Buffers"
+  "Apache Avro vs Protocol Buffers",
+  "Pulumi vs AWS CloudFormation"
 ]
