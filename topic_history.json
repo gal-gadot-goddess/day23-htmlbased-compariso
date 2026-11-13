@@ -117,5 +117,6 @@
   "TimescaleDB vs QuestDB",
   "Apache Avro vs Protocol Buffers",
   "Pulumi vs AWS CloudFormation",
-  "Pulumi vs AWS CDK"
+  "Pulumi vs AWS CDK",
+  "Caddy vs HAProxy"
 ]

@@ -1,92 +1,92 @@
 {
-  "topLabel": "INFRASTRUCTURE AS CODE & CLOUD",
+  "topLabel": "WEB SERVERS & REVERSE PROXIES",
   "mainTitle": {
-    "left": "Pulumi",
-    "right": "AWS CDK",
+    "left": "Caddy",
+    "right": "HAProxy",
     "vs": "vs"
   },
-  "leftSub": "Code-first IaC",
-  "rightSub": "AWS-native IaC",
-  "leftColor": "#06b6d4",
-  "rightColor": "#f43f5e",
+  "leftSub": "Auto HTTPS by design",
+  "rightSub": "Layer 4/7 load balancing",
+  "leftColor": "#e11d48",
+  "rightColor": "#2dd4bf",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. LANGUAGE SUPPORT",
-      "leftTitle": "Multi-Cloud",
-      "rightTitle": "AWS-First",
-      "leftDesc": "Pulumi supports Python, TypeScript, Go, Java, C#, .NET, and YAML. Enables writing IaC in familiar languages with full SDK access and abstraction over providers.",
-      "rightDesc": "AWS CDK uses TypeScript, Python, Java, .NET, Go, or C++ for AWS-native IaC. Locks logic to AWS APIs with AWS construct libraries.",
+      "title": "1. CONFIG MODEL",
+      "leftTitle": "Caddyfile blocks",
+      "rightTitle": "HAProxy directives",
+      "leftDesc": "Caddy uses a Caddyfile with opinionated directives that compile into an internal config graph. Common tasks (TLS, redirects, reverse_proxy) stay declarative and order-safe for typical HTTP reverse-proxy setups.",
+      "rightDesc": "HAProxy relies on explicit, low-level directives (frontends/backends, ACLs, rules) that map directly to runtime objects. You manually control routing decisions and traffic-flow sequencing across request/response phases.",
       "leftIcon": "Code",
-      "rightIcon": "Cloud",
-      "leftVisualText": "Cloud",
-      "rightVisualText": "AWS"
+      "rightIcon": "Workflow",
+      "leftVisualText": "Declarative",
+      "rightVisualText": "Rule-driven"
     },
     {
-      "title": "2. ABI",
-      "leftTitle": "Cross-cloud",
-      "rightTitle": "AWS-only",
-      "leftDesc": "Pulumi engine compiles to a single intermediate representation (Pulumi schema) that translates IaC to desired state across any provider. Avoids runtime interpretation.",
-      "rightDesc": "AWS CDK transforms high-level code into CloudFormation templates at synth-time. Templates are AWS-specific and evaluated by CloudFormation.",
-      "leftIcon": "Layers",
-      "rightIcon": "Database",
-      "leftVisualText": "IR",
-      "rightVisualText": "CFN"
-    },
-    {
-      "title": "3. DEPENDENCY GRAPH",
-      "leftTitle": "Automatic",
-      "rightTitle": "Manual",
-      "leftDesc": "Pulumi infers real dependencies between resources by analyzing reference edges in code, not order in file. Eliminates explicit dependency declarations.",
-      "rightDesc": "AWS CDK uses explicit `.addDependency()` calls or ordering in file to manage stack dependencies. Requires manual planning.",
-      "leftIcon": "Workflow",
-      "rightIcon": "GitBranch",
-      "leftVisualText": "Auto",
-      "rightVisualText": "Explicit"
-    },
-    {
-      "title": "4. SDK INTEGRATION",
-      "leftTitle": "Full Access",
-      "rightTitle": "AWS-Centric",
-      "leftDesc": "Pulumi integrates with any SDK or library in chosen language. Users call cloud providers’ official SDKs directly within IaC. Unrestricted extension.",
-      "rightDesc": "AWS CDK uses AWS Construct Library with limited abstractions. Some AWS features require raw CloudFormation or escape hatches.",
-      "leftIcon": "Zap",
-      "rightIcon": "Server",
-      "leftVisualText": "SDK",
-      "rightVisualText": "Limited"
-    },
-    {
-      "title": "5. STATE MANAGEMENT",
-      "leftTitle": "Encrypted",
-      "rightTitle": "AWS-Managed",
-      "leftDesc": "Pulumi stores state encrypted, supports self-hosted backends (e.g., S3 + DynamoDB), and offers full RBAC. No vendor lock-in for state lifecycle.",
-      "rightDesc": "AWS CDK uses CloudFormation to store state. State is AWS-owned, encrypted, and versioned, with limited RBAC outside AWS IAM.",
+      "title": "2. TLS AUTOMATION",
+      "leftTitle": "Automatic HTTPS",
+      "rightTitle": "Explicit TLS",
+      "leftDesc": "Caddy can automatically obtain and renew certificates via ACME, provisioning TLS assets without extra scaffolding. It also supports multiple certificate sources and can hot-reload TLS state efficiently.",
+      "rightDesc": "HAProxy generally expects you to configure certificates and verification behavior explicitly in its TLS bind lines. While it can integrate with external automation, HAProxy itself focuses on fast forwarding and precise TLS policy.",
       "leftIcon": "Lock",
-      "rightIcon": "Cloud",
-      "leftVisualText": "Encrypt",
-      "rightVisualText": "CFN"
+      "rightIcon": "Shield",
+      "leftVisualText": "ACME",
+      "rightVisualText": "Manual control"
     },
     {
-      "title": "6. EXTENSIONS & PLUGINS",
-      "leftTitle": "Ecosystem",
-      "rightTitle": "AWS Only",
-      "leftDesc": "Pulumi supports dynamic providers via plugins (e.g., Kubernetes, Azure, GCP) and custom components. Community ecosystem thrives.",
-      "rightDesc": "AWS CDK extensions are limited to AWS Construct Hub or custom CDK constructs. Cross-cloud support requires third-party tools.",
-      "leftIcon": "Globe",
-      "rightIcon": "Box",
-      "leftVisualText": "Plugin",
-      "rightVisualText": "AWS"
-    },
-    {
-      "title": "7. DEBUGGING & TESTING",
-      "leftTitle": "Dry-run",
-      "rightTitle": "Preview",
-      "leftDesc": "Pulumi supports `pulumi preview --diff` and `up --dry-run` for comprehensive state diffs. Integrates with IDE debugging for step-through IaC execution.",
-      "rightDesc": "AWS CDK uses `cdk diff` and `cdk deploy --no-execute-changeset` for preview. Debugging relies on CloudFormation drift detection.",
-      "leftIcon": "Terminal",
+      "title": "3. PROXYING ENGINE",
+      "leftTitle": "HTTP-first routing",
+      "rightTitle": "Event-driven core",
+      "leftDesc": "Caddy’s reverse_proxy is built around HTTP handling primitives: it terminates connections, applies HTTP middleware, then streams to upstreams while preserving headers and managing timeouts per-route.",
+      "rightDesc": "HAProxy uses an event-driven architecture with highly optimized I/O loops. It can handle large numbers of concurrent connections with minimal overhead and supports both HTTP and raw TCP proxying.",
+      "leftIcon": "Server",
       "rightIcon": "Activity",
-      "leftVisualText": "Dry",
-      "rightVisualText": "Preview"
+      "leftVisualText": "HTTP pipeline",
+      "rightVisualText": "High concurrency"
+    },
+    {
+      "title": "4. LOAD BALANCING STRATEGIES",
+      "leftTitle": "Simple LB defaults",
+      "rightTitle": "Advanced algorithms",
+      "leftDesc": "Caddy’s upstream selection is typically configured with straightforward policies and health checks, aiming for quick deployment. It’s great for common round-robin/least-latency style needs with clear configuration.",
+      "rightDesc": "HAProxy provides a wide set of proven load balancing methods and stickiness options, including consistent hashing and fine-grained health checks. It also supports per-backend tuning for retries, redispatch, and circuit behaviors.",
+      "leftIcon": "Radio",
+      "rightIcon": "GitBranch",
+      "leftVisualText": "Upstream selection",
+      "rightVisualText": "Policy-rich"
+    },
+    {
+      "title": "5. MIDDLEWARE / HTTP FEATURES",
+      "leftTitle": "Middleware chain",
+      "rightTitle": "Fetch/redirect rules",
+      "leftDesc": "Caddy composes HTTP capabilities via middleware-style modules (e.g., auth, headers, rate limiting) around the reverse_proxy handler, enabling clean request/response transformations without spreading logic everywhere.",
+      "rightDesc": "HAProxy expresses HTTP behavior using rules, ACLs, and message processing stages (request/response). Complex transformations often involve fetch methods and conditional actions, which can be extremely powerful but more verbose.",
+      "leftIcon": "Layers",
+      "rightIcon": "Zap",
+      "leftVisualText": "Composed modules",
+      "rightVisualText": "Staged actions"
+    },
+    {
+      "title": "6. OBSERVABILITY & STATS",
+      "leftTitle": "Native metrics",
+      "rightTitle": "Built-in stats socket",
+      "leftDesc": "Caddy commonly exposes metrics and structured logs through built-in integrations. Its runtime is designed to reload config smoothly, so observability stays consistent across deployments.",
+      "rightDesc": "HAProxy offers mature operational tooling: an HTTP stats page, runtime socket controls, and detailed per-proxy counters. You can inspect sessions, queues, and errors while tuning without full restarts.",
+      "leftIcon": "Activity",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Metrics",
+      "rightVisualText": "Stats & runtime"
+    },
+    {
+      "title": "7. BEST-FIT DEPLOYMENT USE CASES",
+      "leftTitle": "Edge HTTPS gateway",
+      "rightTitle": "High-scale LB tier",
+      "leftDesc": "Caddy shines as an edge reverse proxy where frictionless HTTPS and fast iteration matter. Its succinct configuration and automatic certificates reduce operational overhead for many web workloads.",
+      "rightDesc": "HAProxy excels when you need a central, high-scale load balancing tier with deep routing logic, multi-protocol support, and battle-tested performance characteristics for very large connection volumes.",
+      "leftIcon": "Globe",
+      "rightIcon": "Cloud",
+      "leftVisualText": "Edge gateway",
+      "rightVisualText": "Load balancer"
     }
   ]
 }
