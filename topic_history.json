@@ -119,5 +119,6 @@
   "Pulumi vs AWS CloudFormation",
   "Pulumi vs AWS CDK",
   "Caddy vs HAProxy",
-  "vLLM vs TGI"
+  "vLLM vs TGI",
+  "Neo4j vs Amazon Neptune"
 ]

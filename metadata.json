@@ -1,8 +1,8 @@
 {
-  "title": "vLLM vs TGI: Which One Actually Scales? ⚡",
-  "fb_caption": "vLLM vs TGI: Which Architecture Actually Scales in Production? ⚡\n\n- Throughput: vLLM often shows higher raw throughput due to PagedAttention, while TGI excels in batching efficiency.\n- Latency: TGI can offer lower p99 latency under high load due to optimized kernels, vLLM can be more consistent.\n- Consistency: vLLM's PagedAttention leads to more predictable memory usage and less fragmentation.\n- Failure Modes: TGI's request queue management is robust, vLLM's memory management is key.\n- Operational Overhead: Both are complex, but TGI might be slightly easier to integrate initially with Hugging Face ecosystem.\n\nRecommendation: For raw throughput and efficient memory, vLLM is a strong contender. For production environments prioritizing predictable latency and robust request handling, TGI is often preferred.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "vLLM vs TGI: Which LLM inference engine truly scales in production? A deep dive into throughput, latency, and operational nuances. Which would you choose? 🤔 Learn more at https://kreggscode.com #AI #LLM #SystemDesign #Inference",
-  "yt_description": "vLLM vs TGI: Which LLM inference engine architecture actually scales in production? We break down the key differences in throughput, latency, memory management (PagedAttention vs. batching), and operational overhead to help you choose the right engine for your AI applications.\n\n🚀 Key Mechanics:\n- PagedAttention: vLLM's memory efficiency.\n- Optimized Kernels & Batching: TGI's latency and throughput advantages.\n- Production Readiness: Scalability and reliability comparisons.\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode\n\n#LLMInference #vLLM #TGI #SystemArchitecture #AIInfrastructure #MachineLearning #MLOps #Shorts",
+  "title": "Neo4j vs Amazon Neptune: Which One Actually Scales? ⚡",
+  "fb_caption": "Neo4j vs Amazon Neptune: Which Architecture Actually Scales in Production? ⚡\n\n🔹 Throughput: Neo4j excels in complex traversals, while Neptune offers managed scaling for high-volume reads/writes.\n🔹 Latency: Neo4j's in-memory caching can offer lower latency for hot data; Neptune provides consistent low latency with managed infrastructure.\n🔹 Consistency: Neo4j typically offers ACID compliance; Neptune provides eventual consistency for replicated data, with tunable consistency options.\n🔹 Failure Modes: Neo4j requires robust HA setup; Neptune offers managed failover and multi-AZ deployments.\n🔹 Operational Overhead: Neo4j demands more self-management; Neptune significantly reduces operational burden.\n\nRecommendation: For production environments prioritizing managed scaling, reduced operational overhead, and robust availability, Amazon Neptune is often the preferred choice. Neo4j remains powerful for specialized, performance-critical applications where full control is paramount.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "Neo4j vs. Amazon Neptune: Which graph database architecture truly scales in production? A deep dive for devs. Read more at https://kreggscode.com #SystemDesign #GraphDatabases",
+  "yt_description": "Neo4j vs Amazon Neptune: Which Architecture Actually Scales in Production? ⚡\n\nDive into a high-retention architectural comparison of Neo4j and Amazon Neptune, two leading graph database solutions. We break down their performance characteristics, scalability, consistency models, failure handling, and operational overhead to help you choose the right one for your production needs.\n\nKey comparison points:\n- Throughput capabilities\n- Latency performance\n- Consistency guarantees\n- Failure modes and resilience\n- Operational complexity and management\n\nGet the insights you need to make an informed decision for your next project.\n\n#Shorts #GraphDatabase #SystemDesign #Neo4j #AmazonNeptune\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -11,16 +11,15 @@
     "technology",
     "artificial intelligence",
     "backend architecture",
-    "vLLM",
-    "TGI",
-    "LLM inference",
-    "AI infrastructure"
+    "Neo4j",
+    "Amazon Neptune",
+    "Graph Database"
   ],
   "hashtags": [
     "#kreggscode",
     "#systemdesign",
-    "#llminference",
-    "#ai",
-    "#backend"
+    "#graphdatabase",
+    "#neo4j",
+    "#amazonneptune"
   ]
 }
