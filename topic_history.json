@@ -118,5 +118,6 @@
   "Apache Avro vs Protocol Buffers",
   "Pulumi vs AWS CloudFormation",
   "Pulumi vs AWS CDK",
-  "Caddy vs HAProxy"
+  "Caddy vs HAProxy",
+  "vLLM vs TGI"
 ]

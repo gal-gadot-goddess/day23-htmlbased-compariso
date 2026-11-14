@@ -1,8 +1,8 @@
 {
-  "title": "Caddy vs HAProxy: Which One Actually Scales? ⚡",
-  "fb_caption": "Caddy vs HAProxy: Which Architecture Actually Scales in Production? ⚡\n\n*   **Throughput & Latency:** HAProxy generally excels in raw throughput for TCP/HTTP balancing due to its mature, C-based design. Caddy offers competitive performance with modern features and simpler configuration.\n*   **Consistency & Reliability:** Both are highly reliable. HAProxy has a longer track record in massive-scale deployments. Caddy's automatic HTTPS and simpler config reduce operational errors.\n*   **Failure Modes:** HAProxy's complexity can be a failure point. Caddy's simplicity can lead to easier troubleshooting and fewer misconfigurations.\n*   **Operational Overhead:** Caddy significantly lowers overhead with automatic TLS, built-in features, and a declarative config. HAProxy often requires more manual setup and external tools for features like TLS termination.\n\nFor most modern production environments prioritizing ease of use, automatic HTTPS, and fast development cycles, Caddy is often the better choice. HAProxy remains a powerhouse for extreme-scale, specialized balancing scenarios.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "Caddy vs HAProxy: Which web server architecture actually scales in production? 🤔 Dive into the debate and find out the best fit for your infra! \n\nLearn more: https://kreggscode.com #SystemDesign #Backend #DevOps",
-  "yt_description": "Caddy vs HAProxy: Which Architecture Actually Scales in Production? ⚡ Unpack the key differences in throughput, latency, reliability, and operational overhead for these leading web servers and reverse proxies.\n\nDiscover which solution best fits your production needs.\n\n#Shorts #SystemDesign #WebArchitecture #DevOps\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
+  "title": "vLLM vs TGI: Which One Actually Scales? ⚡",
+  "fb_caption": "vLLM vs TGI: Which Architecture Actually Scales in Production? ⚡\n\n- Throughput: vLLM often shows higher raw throughput due to PagedAttention, while TGI excels in batching efficiency.\n- Latency: TGI can offer lower p99 latency under high load due to optimized kernels, vLLM can be more consistent.\n- Consistency: vLLM's PagedAttention leads to more predictable memory usage and less fragmentation.\n- Failure Modes: TGI's request queue management is robust, vLLM's memory management is key.\n- Operational Overhead: Both are complex, but TGI might be slightly easier to integrate initially with Hugging Face ecosystem.\n\nRecommendation: For raw throughput and efficient memory, vLLM is a strong contender. For production environments prioritizing predictable latency and robust request handling, TGI is often preferred.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "vLLM vs TGI: Which LLM inference engine truly scales in production? A deep dive into throughput, latency, and operational nuances. Which would you choose? 🤔 Learn more at https://kreggscode.com #AI #LLM #SystemDesign #Inference",
+  "yt_description": "vLLM vs TGI: Which LLM inference engine architecture actually scales in production? We break down the key differences in throughput, latency, memory management (PagedAttention vs. batching), and operational overhead to help you choose the right engine for your AI applications.\n\n🚀 Key Mechanics:\n- PagedAttention: vLLM's memory efficiency.\n- Optimized Kernels & Batching: TGI's latency and throughput advantages.\n- Production Readiness: Scalability and reliability comparisons.\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode\n\n#LLMInference #vLLM #TGI #SystemArchitecture #AIInfrastructure #MachineLearning #MLOps #Shorts",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -10,13 +10,17 @@
     "coding",
     "technology",
     "artificial intelligence",
-    "backend architecture"
+    "backend architecture",
+    "vLLM",
+    "TGI",
+    "LLM inference",
+    "AI infrastructure"
   ],
   "hashtags": [
     "#kreggscode",
     "#systemdesign",
-    "#softwareengineering",
-    "#coding",
+    "#llminference",
+    "#ai",
     "#backend"
   ]
 }

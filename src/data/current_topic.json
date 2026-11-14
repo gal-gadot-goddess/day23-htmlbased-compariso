@@ -1,92 +1,91 @@
 {
-  "topLabel": "WEB SERVERS & REVERSE PROXIES",
+  "topLabel": "AI & LLM INFERENCE ENGINES",
   "mainTitle": {
-    "left": "Caddy",
-    "right": "HAProxy",
+    "left": "vLLM",
+    "right": "TGI",
     "vs": "vs"
   },
-  "leftSub": "Auto HTTPS by design",
-  "rightSub": "Layer 4/7 load balancing",
-  "leftColor": "#e11d48",
-  "rightColor": "#2dd4bf",
+  "leftSub": "High-throughput batching",
+  "rightSub": "Hugging Face serving",
+  "leftColor": "#4f46e5",
+  "rightColor": "#fbbf24",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. CONFIG MODEL",
-      "leftTitle": "Caddyfile blocks",
-      "rightTitle": "HAProxy directives",
-      "leftDesc": "Caddy uses a Caddyfile with opinionated directives that compile into an internal config graph. Common tasks (TLS, redirects, reverse_proxy) stay declarative and order-safe for typical HTTP reverse-proxy setups.",
-      "rightDesc": "HAProxy relies on explicit, low-level directives (frontends/backends, ACLs, rules) that map directly to runtime objects. You manually control routing decisions and traffic-flow sequencing across request/response phases.",
-      "leftIcon": "Code",
-      "rightIcon": "Workflow",
-      "leftVisualText": "Declarative",
-      "rightVisualText": "Rule-driven"
-    },
-    {
-      "title": "2. TLS AUTOMATION",
-      "leftTitle": "Automatic HTTPS",
-      "rightTitle": "Explicit TLS",
-      "leftDesc": "Caddy can automatically obtain and renew certificates via ACME, provisioning TLS assets without extra scaffolding. It also supports multiple certificate sources and can hot-reload TLS state efficiently.",
-      "rightDesc": "HAProxy generally expects you to configure certificates and verification behavior explicitly in its TLS bind lines. While it can integrate with external automation, HAProxy itself focuses on fast forwarding and precise TLS policy.",
-      "leftIcon": "Lock",
-      "rightIcon": "Shield",
-      "leftVisualText": "ACME",
-      "rightVisualText": "Manual control"
-    },
-    {
-      "title": "3. PROXYING ENGINE",
-      "leftTitle": "HTTP-first routing",
-      "rightTitle": "Event-driven core",
-      "leftDesc": "Caddy’s reverse_proxy is built around HTTP handling primitives: it terminates connections, applies HTTP middleware, then streams to upstreams while preserving headers and managing timeouts per-route.",
-      "rightDesc": "HAProxy uses an event-driven architecture with highly optimized I/O loops. It can handle large numbers of concurrent connections with minimal overhead and supports both HTTP and raw TCP proxying.",
-      "leftIcon": "Server",
-      "rightIcon": "Activity",
-      "leftVisualText": "HTTP pipeline",
-      "rightVisualText": "High concurrency"
-    },
-    {
-      "title": "4. LOAD BALANCING STRATEGIES",
-      "leftTitle": "Simple LB defaults",
-      "rightTitle": "Advanced algorithms",
-      "leftDesc": "Caddy’s upstream selection is typically configured with straightforward policies and health checks, aiming for quick deployment. It’s great for common round-robin/least-latency style needs with clear configuration.",
-      "rightDesc": "HAProxy provides a wide set of proven load balancing methods and stickiness options, including consistent hashing and fine-grained health checks. It also supports per-backend tuning for retries, redispatch, and circuit behaviors.",
-      "leftIcon": "Radio",
-      "rightIcon": "GitBranch",
-      "leftVisualText": "Upstream selection",
-      "rightVisualText": "Policy-rich"
-    },
-    {
-      "title": "5. MIDDLEWARE / HTTP FEATURES",
-      "leftTitle": "Middleware chain",
-      "rightTitle": "Fetch/redirect rules",
-      "leftDesc": "Caddy composes HTTP capabilities via middleware-style modules (e.g., auth, headers, rate limiting) around the reverse_proxy handler, enabling clean request/response transformations without spreading logic everywhere.",
-      "rightDesc": "HAProxy expresses HTTP behavior using rules, ACLs, and message processing stages (request/response). Complex transformations often involve fetch methods and conditional actions, which can be extremely powerful but more verbose.",
-      "leftIcon": "Layers",
-      "rightIcon": "Zap",
-      "leftVisualText": "Composed modules",
-      "rightVisualText": "Staged actions"
-    },
-    {
-      "title": "6. OBSERVABILITY & STATS",
-      "leftTitle": "Native metrics",
-      "rightTitle": "Built-in stats socket",
-      "leftDesc": "Caddy commonly exposes metrics and structured logs through built-in integrations. Its runtime is designed to reload config smoothly, so observability stays consistent across deployments.",
-      "rightDesc": "HAProxy offers mature operational tooling: an HTTP stats page, runtime socket controls, and detailed per-proxy counters. You can inspect sessions, queues, and errors while tuning without full restarts.",
+      "title": "1. BATCHING STRATEGY",
+      "leftTitle": "Paged attention",
+      "rightTitle": "Continuous batching",
+      "leftDesc": "vLLM uses paged attention to decouple KV cache storage from sequence length. Tokens from many concurrent requests map into a shared, dynamically allocated KV “page” pool, reducing fragmentation and maximizing GPU occupancy.",
+      "rightDesc": "TGI (Text Generation Inference) performs continuous batching while serving. It groups active sequences into one or more batches, interleaving generation steps to keep the GPU busy, but KV cache layout is less explicitly “paged.”",
       "leftIcon": "Activity",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Metrics",
-      "rightVisualText": "Stats & runtime"
+      "rightIcon": "Activity",
+      "leftVisualText": "KV pages",
+      "rightVisualText": "Smart batches"
     },
     {
-      "title": "7. BEST-FIT DEPLOYMENT USE CASES",
-      "leftTitle": "Edge HTTPS gateway",
-      "rightTitle": "High-scale LB tier",
-      "leftDesc": "Caddy shines as an edge reverse proxy where frictionless HTTPS and fast iteration matter. Its succinct configuration and automatic certificates reduce operational overhead for many web workloads.",
-      "rightDesc": "HAProxy excels when you need a central, high-scale load balancing tier with deep routing logic, multi-protocol support, and battle-tested performance characteristics for very large connection volumes.",
-      "leftIcon": "Globe",
-      "rightIcon": "Cloud",
-      "leftVisualText": "Edge gateway",
-      "rightVisualText": "Load balancer"
+      "title": "2. KV CACHE MANAGEMENT",
+      "leftTitle": "Fragmentation-aware",
+      "rightTitle": "Batch-bound KV",
+      "leftDesc": "With paged attention, vLLM preallocates KV memory in blocks and grows per request using indirection. This enables stable performance when request lengths diverge, because cache growth doesn’t require moving or re-allocating large contiguous buffers.",
+      "rightDesc": "TGI’s KV cache is structured around the active batch. As sequences finish or new ones join, cache utilization is managed by rebalancing which sequences stay resident, which can be more sensitive to skewed prompt lengths and workload churn.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Block KV",
+      "rightVisualText": "Resident KV"
+    },
+    {
+      "title": "3. PARALLELISM & SCALING",
+      "leftTitle": "Tensor-parallel focus",
+      "rightTitle": "Sharded inference",
+      "leftDesc": "vLLM is built around efficient tensor-parallel inference and tight integration with high-throughput decoding. It aims to minimize cross-GPU communication per token by aligning attention and sampling work with partitioned model weights.",
+      "rightDesc": "TGI supports tensor and pipeline-style sharding patterns via its deployment and backend integration. It focuses on production-friendly scaling for Hugging Face model ecosystems, with routing and batch formation coordinating sharded workers.",
+      "leftIcon": "Layers",
+      "rightIcon": "Layers",
+      "leftVisualText": "TP-first",
+      "rightVisualText": "Sharded"
+    },
+    {
+      "title": "4. PERFORMANCE TARGETS",
+      "leftTitle": "Low latency + max QPS",
+      "rightTitle": "Throughput with guardrails",
+      "leftDesc": "vLLM’s decoding loop prioritizes sustained tokens/sec under contention by leveraging paged KV and scheduling that keeps GPUs saturated. The design often yields higher throughput for mixed-length workloads while maintaining competitive latency.",
+      "rightDesc": "TGI targets strong serving ergonomics while staying performant for generation workloads. It emphasizes predictable batching behavior, sensible defaults, and operational hooks suited to multi-model and multi-tenant deployments.",
+      "leftIcon": "Flame",
+      "rightIcon": "Flame",
+      "leftVisualText": "Tokens/sec",
+      "rightVisualText": "Service-first"
+    },
+    {
+      "title": "5. MODEL COMPATIBILITY PATH",
+      "leftTitle": "Community-first ecosystem",
+      "rightDesc": "TGI is closely aligned with Hugging Face Transformers models, tokenizers, and model hub conventions. This tight integration reduces friction for deployment, but may constrain advanced scheduler behaviors compared to vLLM’s specialized decoding stack.",
+      "leftDesc": "vLLM supports a broad range of common open models and inference modes, often with fast iteration on performance features like KV management and decoding kernels. Compatibility typically depends on the model architecture and supported attention implementations.",
+      "rightIcon": "GitBranch",
+      "leftIcon": "GitBranch",
+      "leftVisualText": "Decode kernels",
+      "rightVisualText": "HF-native"
+    },
+    {
+      "title": "6. CONTROLS: SAMPLING & DECODING FEATURES",
+      "leftTitle": "Advanced decoding",
+      "rightTitle": "Production knobs",
+      "leftDesc": "vLLM exposes decoding parameters while optimizing the underlying sampling path for throughput. It can support features like prefix caching and various decoding controls, implemented in ways that respect the paged KV lifecycle.",
+      "rightDesc": "TGI provides a robust set of API-level generation controls (sampling params, stopping criteria) wired to its batching scheduler. These controls are designed to be predictable in a production server context, including timeouts and request-level limits.",
+      "leftIcon": "Zap",
+      "rightIcon": "Zap",
+      "leftVisualText": "Decode controls",
+      "rightVisualText": "API knobs"
+    },
+    {
+      "title": "7. OBSERVABILITY & OPERATIONS",
+      "leftTitle": "Scheduler metrics",
+      "rightTitle": "Inference server ops",
+      "leftDesc": "vLLM-style deployments tend to surface scheduler-level behavior (effective batching, token throughput, cache utilization) so engineers can tune concurrency, memory limits, and tensor-parallel settings based on live decode dynamics.",
+      "rightDesc": "TGI commonly integrates with production deployment patterns around the Hugging Face stack: health checks, versioned model loading, and server-level request handling. Operational tuning focuses on concurrency limits and stability under load.",
+      "leftIcon": "Workflow",
+      "rightIcon": "Shield",
+      "leftVisualText": "Scheduler stats",
+      "rightVisualText": "Server ops"
     }
   ]
 }
