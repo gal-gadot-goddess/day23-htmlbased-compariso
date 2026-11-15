@@ -121,5 +121,6 @@
   "Caddy vs HAProxy",
   "vLLM vs TGI",
   "Neo4j vs Amazon Neptune",
-  "Qdrant vs Weaviate"
+  "Qdrant vs Weaviate",
+  "Grafana vs Datadog"
 ]
