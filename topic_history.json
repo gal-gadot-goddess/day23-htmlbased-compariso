@@ -120,5 +120,6 @@
   "Pulumi vs AWS CDK",
   "Caddy vs HAProxy",
   "vLLM vs TGI",
-  "Neo4j vs Amazon Neptune"
+  "Neo4j vs Amazon Neptune",
+  "Qdrant vs Weaviate"
 ]
