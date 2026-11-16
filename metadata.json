@@ -1,8 +1,8 @@
 {
-  "title": "OAuth 2.0 vs SAML 2.0: Which One Scales? ⚡",
-  "fb_caption": "OAuth 2.0 vs SAML 2.0: Which Architecture Actually Scales in Production? ⚡\n\n🚀 Throughput: OAuth 2.0 generally handles higher volumes due to its token-based approach, ideal for APIs and mobile apps.\n📉 Latency: SAML can introduce higher latency with XML parsing and redirects, whereas OAuth 2.0 is often faster.\n✅ Consistency: SAML offers robust federation capabilities but can be more complex to manage across diverse systems.\n💥 Failure Modes: OAuth 2.0's distributed nature can offer better resilience, while SAML's centralized trust can be a single point of failure.\n⚙️ Operational Overhead: OAuth 2.0 is typically simpler to implement and manage for modern web/mobile apps.\n\nRecommendation: For most modern applications, especially APIs and mobile, OAuth 2.0 offers superior scalability and developer experience. SAML remains powerful for enterprise SSO scenarios.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "OAuth 2.0 vs SAML 2.0: Which authentication protocol truly scales in production? 🤯 Let's break down throughput, latency, and overhead. #SystemDesign #DevDebate Learn more at https://kreggscode.com",
-  "yt_description": "High-converting YouTube Shorts description with search-optimized summary, mechanics, #Shorts tags, and official links:\n\nOAuth 2.0 vs SAML 2.0: Which architecture actually scales in production? ⚡ Dive into a rapid comparison of these critical authentication protocols, focusing on throughput, latency, and operational overhead. Understand which one is best suited for your production environment.\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode\n\n#Shorts #OAuth #SAML #Authentication #API",
+  "title": "Apache Kafka vs Google Cloud Pub/Sub: Which One Actually Scales? ⚡",
+  "fb_caption": "Apache Kafka vs Google Cloud Pub/Sub: Which Architecture Actually Scales in Production? ⚡\n\nKafka excels with high throughput and durability, but demands significant operational overhead.\nPub/Sub offers superior managed scalability and lower latency for many use cases, with a simpler operational model.\nKafka: Best for high-volume, on-premise or self-managed, strict data ordering needs. High ops cost.\nPub/Sub: Ideal for cloud-native, event-driven systems needing rapid scaling & managed services. Lower ops cost.\n\nRecommendation: For most cloud-native applications prioritizing ease of use and managed scalability, Google Cloud Pub/Sub is the pragmatic choice. Kafka remains powerful for specific, high-control scenarios.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "Kafka vs. Google Cloud Pub/Sub: Which event-driven architecture truly scales in production? 🤔 Let's debate! Dive deep into throughput, latency, and ops at https://kreggscode.com",
+  "yt_description": "Apache Kafka vs Google Cloud Pub/Sub: Which Architecture Actually Scales in Production? ⚡ This Shorts dives into the core differences, pros, and cons of these two event-driven titans.\n\nKey comparison points:\n🔹 Throughput & Latency\n🔹 Consistency Guarantees\n🔹 Failure Modes\n🔹 Operational Overhead\n\nWhich one is right for your next production system? Watch to find out!\n\n#Shorts #SystemDesign #EventDrivenArchitecture\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -10,13 +10,17 @@
     "coding",
     "technology",
     "artificial intelligence",
-    "backend architecture"
+    "backend architecture",
+    "kafka",
+    "google cloud pub/sub",
+    "event driven architecture",
+    "scalability"
   ],
   "hashtags": [
     "#kreggscode",
     "#systemdesign",
-    "#softwareengineering",
-    "#coding",
-    "#backend"
+    "#eventdrivenarchitecture",
+    "#cloudcomputing",
+    "#kafka"
   ]
 }

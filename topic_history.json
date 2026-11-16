@@ -123,5 +123,6 @@
   "Neo4j vs Amazon Neptune",
   "Qdrant vs Weaviate",
   "Grafana vs Datadog",
-  "OAuth 2.0 vs SAML 2.0"
+  "OAuth 2.0 vs SAML 2.0",
+  "Apache Kafka vs Google Cloud Pub/Sub"
 ]
