@@ -124,5 +124,6 @@
   "Qdrant vs Weaviate",
   "Grafana vs Datadog",
   "OAuth 2.0 vs SAML 2.0",
-  "Apache Kafka vs Google Cloud Pub/Sub"
+  "Apache Kafka vs Google Cloud Pub/Sub",
+  "Signoz vs Datadog"
 ]
