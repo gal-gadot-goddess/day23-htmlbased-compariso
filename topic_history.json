@@ -126,5 +126,6 @@
   "OAuth 2.0 vs SAML 2.0",
   "Apache Kafka vs Google Cloud Pub/Sub",
   "Signoz vs Datadog",
-  "SolidJS Signals vs Vue Reactivity"
+  "SolidJS Signals vs Vue Reactivity",
+  "Debezium vs Apache Kafka Connect"
 ]
