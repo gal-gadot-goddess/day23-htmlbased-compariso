@@ -1,92 +1,92 @@
 {
-  "topLabel": "EVENT-DRIVEN ARCHITECTURES",
+  "topLabel": "FRONTEND REACTIVITY & RENDERING",
   "mainTitle": {
-    "left": "Debezium",
-    "right": "Apache Kafka Connect",
+    "left": "React Hooks",
+    "right": "SolidJS Signals",
     "vs": "vs"
   },
-  "leftSub": "Database CDC",
-  "rightSub": "Universal ETL",
-  "leftColor": "#eab308",
-  "rightColor": "#6366f1",
+  "leftSub": "Hooks state reactivity",
+  "rightSub": "Fine-grained signals",
+  "leftColor": "#f97316",
+  "rightColor": "#0284c7",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. PRIMARY USE CASE",
-      "leftTitle": "CDC Only",
-      "rightTitle": "ETL/ELT Pipes",
-      "leftDesc": "Debezium is purpose-built for capturing row-level database changes (INSERT/UPDATE/DELETE) via transaction logs, emitting events directly from transaction boundaries.",
-      "rightDesc": "Kafka Connect is a framework for scalable streaming data pipelines, handling both source (ingest) and sink (eject) connectors for diverse systems, not CDC-specific.",
-      "leftIcon": "Database",
-      "rightIcon": "Server",
-      "leftVisualText": "CDC",
-      "rightVisualText": "ETL"
+      "title": "1. GRANULARITY",
+      "leftTitle": "Component-level rerender",
+      "rightTitle": "Dependency-level updates",
+      "leftDesc": "React tracks state updates per component render function. When state changes, React schedules a rerender of the component subtree, then reconciles changes by diffing the resulting virtual DOM output.",
+      "rightDesc": "SolidJS compiles JSX into fine-grained computations. Signals form a dependency graph; only computations that read a changed signal rerun, avoiding whole-tree rerenders and minimizing reconciliation overhead.",
+      "leftIcon": "Layers",
+      "rightIcon": "Activity",
+      "leftVisualText": "Rerender",
+      "rightVisualText": "Recompute"
     },
     {
-      "title": "2. CONNECTOR TYPE",
-      "leftTitle": "Database Logs",
-      "rightTitle": "Pluggable Sink/Source",
-      "leftDesc": "Debezium uses database transaction logs (e.g., PostgreSQL WAL, MongoDB oplog) to capture changes, ensuring low latency and durability.",
-      "rightDesc": "Kafka Connect supports plugins for any source/sink system (e.g., JDBC, S3, Elasticsearch), enabling bidirectional data flow beyond just CDC.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "Box",
-      "leftVisualText": "Logs",
-      "rightVisualText": "Plugins"
-    },
-    {
-      "title": "3. SETUP COMPLEXITY",
-      "leftTitle": "Minimal Config",
-      "rightTitle": "Highly Configurable",
-      "leftDesc": "Debezium requires minimal setup: point to a database’s log, define replication slot; ideal for teams that need CDC quickly without boilerplate.",
-      "rightDesc": "Kafka Connect demands connector config (JSON/REST), parameter tuning for performance, throughput, and schema evolution, adding operational overhead.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Layers",
-      "leftVisualText": "Easy",
-      "rightVisualText": "Config"
-    },
-    {
-      "title": "4. EVENT STRUCTURE",
-      "leftTitle": "Change Events",
-      "rightTitle": "Schema-Agnostic",
-      "leftDesc": "Debezium emits structured change events (before/after state, operation type) in a consistent Avro/JSON schema, simplifying downstream processing.",
-      "rightDesc": "Kafka Connect streams raw data from sources to sinks, with schema inferred by the connector, leading to inconsistent event formats across systems.",
-      "leftIcon": "Code",
-      "rightIcon": "GitBranch",
-      "leftVisualText": "Structured",
-      "rightVisualText": "Raw"
-    },
-    {
-      "title": "5. PERFORMANCE IMPACT",
-      "leftTitle": "Low Overhead",
-      "rightTitle": "Connector Overhead",
-      "leftDesc": "Debezium leverages native database replication, adding minimal overhead by tapping into low-level event streams rather than polling.",
-      "rightDesc": "Kafka Connect connectors (e.g., JDBC) often poll for changes, introducing latency and load, especially with large tables or frequent queries.",
-      "leftIcon": "Activity",
-      "rightIcon": "Zap",
-      "leftVisualText": "Efficient",
-      "rightVisualText": "Latency"
-    },
-    {
-      "title": "6. ERROR HANDLING",
-      "leftTitle": "Idempotent Resume",
-      "rightTitle": "Connector Errors",
-      "leftDesc": "Debezium tracks offsets in the database log, allowing resuming from last committed position even after restarts, ensuring no event loss.",
-      "rightDesc": "Kafka Connect relies on connector-specific error handling; failures may require manual intervention, schema drift, or data loss if not configured properly.",
-      "leftIcon": "CheckCircle",
-      "rightIcon": "Shield",
-      "leftVisualText": "Resilient",
-      "rightVisualText": "Risky"
-    },
-    {
-      "title": "7. INTEGRATION ECOSYSTEM",
-      "leftTitle": "Kafka-Centric",
-      "rightTitle": "Multi-Platform",
-      "leftDesc": "Debezium is tightly integrated with Kafka; events are published to topics, enabling seamless stream processing with Kafka Streams or ksqlDB.",
-      "rightDesc": "Kafka Connect connects Kafka to any system (S3, BigQuery, etc.), but lacks native support for stream processing, requiring additional tooling for transformations.",
-      "leftIcon": "Cloud",
+      "title": "2. CHANGE DETECTION",
+      "leftTitle": "Explicit setState",
+      "rightTitle": "Implicit signal reads",
+      "leftDesc": "Updates originate from calls like useState setters or dispatching actions. React then re-executes the component to derive new props/state values and decides what DOM updates are needed through reconciliation.",
+      "rightDesc": "Reads of signals inside computations automatically register dependencies. When a signal changes, SolidJS notifies only downstream computations, updating derived values and the DOM bindings directly.",
+      "leftIcon": "Zap",
       "rightIcon": "Radio",
-      "leftVisualText": "Stream",
-      "rightVisualText": "Bridge"
+      "leftVisualText": "setState",
+      "rightVisualText": "Auto-track"
+    },
+    {
+      "title": "3. DERIVED STATE",
+      "leftTitle": "Memo + recalculation",
+      "rightTitle": "Computed derivations",
+      "leftDesc": "React uses useMemo/useCallback as performance hints, and correctness still depends on dependency arrays. Derived values recompute when dependencies change, but memoization can be bypassed by misuse or unstable references.",
+      "rightDesc": "SolidJS provides memoized derived signals via createMemo. Computations rerun only when their specific dependencies change, and the runtime tracks them precisely without relying on developer-provided dependency arrays.",
+      "leftIcon": "Code",
+      "rightIcon": "Workflow",
+      "leftVisualText": "useMemo",
+      "rightVisualText": "createMemo"
+    },
+    {
+      "title": "4. RENDER OUTPUT MODEL",
+      "leftTitle": "Virtual DOM diff",
+      "rightTitle": "Direct DOM wiring",
+      "leftDesc": "React renders by producing a new React element tree each time a component renders. Reconciliation compares previous and next trees to determine which DOM mutations to apply.",
+      "rightDesc": "SolidJS compiles templates into DOM nodes once. Reactive computations update node properties/text directly when dependencies change, so there’s no virtual element tree diffing on each update.",
+      "leftIcon": "Box",
+      "rightIcon": "Terminal",
+      "leftVisualText": "Diff",
+      "rightVisualText": "DOM-bindings"
+    },
+    {
+      "title": "5. BATCHING & FLUSHING",
+      "leftTitle": "Render scheduling",
+      "rightTitle": "Synchronous propagation",
+      "leftDesc": "React batches state updates and uses a scheduler to coordinate rendering work. Depending on mode and updates, React may defer, interrupt, or coalesce renders before committing changes to the DOM.",
+      "rightDesc": "SolidJS signal updates trigger propagation through the dependency graph in a predictable order. Computations rerun and commit DOM updates without the same render-scheduler model, typically yielding immediate, deterministic results.",
+      "leftIcon": "FastForward",
+      "rightIcon": "FastForward",
+      "leftVisualText": "Schedule",
+      "rightVisualText": "Propagate"
+    },
+    {
+      "title": "6. STALE DATA PITFALLS",
+      "leftTitle": "Closure gotchas",
+      "rightTitle": "Read-through reactivity",
+      "leftDesc": "Hook closures can capture outdated values if effects or callbacks depend on the wrong dependencies. Bugs often appear as stale state in event handlers, effects, or async flows.",
+      "rightDesc": "Because computations read signals at runtime (not during a one-time render), reactive values stay current. Event handlers can reference signals directly, reducing stale-closure risk while still requiring care with async boundaries.",
+      "leftIcon": "Shield",
+      "rightIcon": "Shield",
+      "leftVisualText": "Stale state",
+      "rightVisualText": "Live reads"
+    },
+    {
+      "title": "7. PERFORMANCE SHAPE",
+      "leftTitle": "Prop drilling costs",
+      "rightTitle": "Isolated updates",
+      "leftDesc": "With hooks, changing any state typically rerenders the component and its descendants (subject to memoization). Large component trees can accumulate render and reconciliation work, even if only a small leaf changes.",
+      "rightDesc": "Signal-based fine-grained reactivity keeps updates localized to the exact computations that depend on changed data. This shifts performance from subtree rerender costs toward minimal dependency-driven recomputation.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "HardDrive",
+      "leftVisualText": "Whole subtree",
+      "rightVisualText": "Just dependents"
     }
   ]
 }

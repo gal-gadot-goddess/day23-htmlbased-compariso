@@ -127,5 +127,6 @@
   "Apache Kafka vs Google Cloud Pub/Sub",
   "Signoz vs Datadog",
   "SolidJS Signals vs Vue Reactivity",
-  "Debezium vs Apache Kafka Connect"
+  "Debezium vs Apache Kafka Connect",
+  "React Hooks vs SolidJS Signals"
 ]
