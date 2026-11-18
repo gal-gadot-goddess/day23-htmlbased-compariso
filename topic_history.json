@@ -128,5 +128,6 @@
   "Signoz vs Datadog",
   "SolidJS Signals vs Vue Reactivity",
   "Debezium vs Apache Kafka Connect",
-  "React Hooks vs SolidJS Signals"
+  "React Hooks vs SolidJS Signals",
+  "InfluxDB vs ClickHouse"
 ]
