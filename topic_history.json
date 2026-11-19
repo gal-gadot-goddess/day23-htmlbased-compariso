@@ -130,5 +130,6 @@
   "Debezium vs Apache Kafka Connect",
   "React Hooks vs SolidJS Signals",
   "InfluxDB vs ClickHouse",
-  "RxDB vs WatermelonDB"
+  "RxDB vs WatermelonDB",
+  "esbuild vs SWC"
 ]

@@ -1,92 +1,92 @@
 {
-  "topLabel": "LOCAL-FIRST & CLIENT SYNC",
+  "topLabel": "BUILD TOOLS & COMPILERS",
   "mainTitle": {
-    "left": "RxDB",
-    "right": "WatermelonDB",
+    "left": "esbuild",
+    "right": "SWC",
     "vs": "vs"
   },
-  "leftSub": "Sync-First DB",
-  "rightSub": "ORM-First DB",
-  "leftColor": "#0ea5e9",
-  "rightColor": "#f59e0b",
+  "leftSub": "Lightning-fast bundling",
+  "rightSub": "Rust-based compiler",
+  "leftColor": "#06b6d4",
+  "rightColor": "#f43f5e",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. ARCHITECTURE",
-      "leftTitle": "Native JS DB",
-      "rightTitle": "SQLite ORM",
-      "leftDesc": "RxDB is a full-featured NoSQL database built in JavaScript, running directly in the browser or Node.js with IndexedDB, SQLite, or other adapters, offering offline-first capabilities and real-time sync.",
-      "rightDesc": "WatermelonDB is a reactive SQLite-based ORM for React/React Native, optimizing performance by only loading visible data and using observable queries for automatic UI reactivity.",
-      "leftIcon": "Database",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "JS",
-      "rightVisualText": "ORM"
+      "title": "1. PIPELINE ORIENTATION",
+      "leftTitle": "Bundler-first",
+      "rightTitle": "Compiler-first",
+      "leftDesc": "esbuild is designed around bundling and transform throughput: it parses once, builds a dependency graph, and emits JavaScript/CSS with tree-shaking and minification in one integrated pipeline.",
+      "rightDesc": "SWC is primarily a language tooling compiler: it focuses on fast AST transforms (TypeScript/JS/JSX/React) with configurable passes, typically integrated by higher-level bundlers.",
+      "leftIcon": "Activity",
+      "rightIcon": "Code",
+      "leftVisualText": "Graph+Emit",
+      "rightVisualText": "AST Passes"
     },
     {
-      "title": "2. SYNC MECHANISM",
-      "leftTitle": "Offline-First Sync",
-      "rightTitle": "Fine Grained",
-      "leftDesc": "RxDB supports declarative sync via plugins like RxDB-P2P or custom adapters, enabling transparent CRDT-based conflict resolution during intermittent connectivity.",
-      "rightDesc": "WatermelonDB leverages manual sync operations with optimizations like batching and delta queries to minimize payloads, but lacks built-in CRDTs.",
-      "leftIcon": "Cloud",
-      "rightIcon": "GitBranch",
-      "leftVisualText": "P2P",
-      "rightVisualText": "Delta"
-    },
-    {
-      "title": "3. PERFORMANCE",
-      "leftTitle": "Reactive Streams",
-      "rightTitle": "Lazy Loading",
-      "leftDesc": "Uses RxJS observables for reactive state streaming, ideal for complex multi-source reactivity but may introduce overhead in large datasets due to real-time propagation.",
-      "rightDesc": "Prefetches and caches only necessary records via observable queries, drastically reducing memory usage and improving performance in large datasets.",
-      "leftIcon": "Zap",
-      "rightIcon": "Activity",
-      "leftVisualText": "React",
-      "rightVisualText": "Lazy"
-    },
-    {
-      "title": "4. QUERYING",
-      "leftTitle": "Schema Agnostic",
-      "rightTitle": "TypeSafe Models",
-      "leftDesc": "Queries are schema-agnostic, using JavaScript method chaining for dynamic queries. Schema validation occurs at write time, enabling flexible data structures.",
-      "rightDesc": "Uses statically typed models with compile-time checks, allowing autocompletion and reducing runtime errors but requiring upfront schema definition.",
-      "leftIcon": "Code",
-      "rightIcon": "CheckCircle",
-      "leftVisualText": "JS",
-      "rightVisualText": "TS"
-    },
-    {
-      "title": "5. STATE MANAGEMENT",
-      "leftTitle": "Built-In State",
-      "rightTitle": "External Stores",
-      "leftDesc": "RxDB includes state management via its own observable state trees, enabling seamless integration with UI frameworks without additional libraries.",
-      "rightDesc": "Relies on external stores like Redux or MobX for global state; WatermelonDB focuses on local state management via observers linked to component lifecycles.",
-      "leftIcon": "Layers",
-      "rightIcon": "Server",
-      "leftVisualText": "Built-in",
-      "rightVisualText": "External"
-    },
-    {
-      "title": "6. OFFLINE CAPABILITIES",
-      "leftTitle": "Full Offline",
-      "rightTitle": "Optimistic UI",
-      "leftDesc": "Supports full offline operations with conflict-free replicated state transfers (CRDTs) and automatic reconnection handling via sync plugins.",
-      "rightDesc": "Optimistic UI is achieved via local writes and background sync, but conflicts require manual resolution, relying on app-level logic.",
-      "leftIcon": "Shield",
-      "rightIcon": "Smartphone",
-      "leftVisualText": "CRDT",
-      "rightVisualText": "OP UI"
-    },
-    {
-      "title": "7. DEV EXPERIENCE",
-      "leftTitle": "Flexible",
-      "rightTitle": "React Native Focus",
-      "leftDesc": "Highly configurable with adapters for various storage backends (IndexedDB, SQLite, LokiJS) and sync providers (PouchDB, custom), catering to niche use cases.",
-      "rightDesc": "Optimized for React and React Native workflows with TypeScript, offering seamless integration into modern frontend tooling but limited to these ecosystems.",
+      "title": "2. PARSING/TRANSFORM HEURISTICS",
+      "leftTitle": "Simple fast parser",
+      "rightTitle": "Spec-driven transforms",
+      "leftDesc": "esbuild uses a pragmatic, performance-optimized parser and transformer, producing stable output quickly. Some edge-case semantics are handled via transform options rather than heavyweight compilation phases.",
+      "rightDesc": "SWC implements many transforms with AST fidelity aimed at spec-accurate behavior: it models syntax features and emits code according to plugin-driven transform semantics and target environments.",
       "leftIcon": "Terminal",
-      "rightIcon": "Cloud",
-      "leftVisualText": "Multi-adapter",
-      "rightVisualText": "React"
+      "rightIcon": "Workflow",
+      "leftVisualText": "Pragmatic",
+      "rightVisualText": "Accurate"
+    },
+    {
+      "title": "3. MINIFICATION STRATEGY",
+      "leftTitle": "Integrated minify",
+      "rightTitle": "Transform-driven",
+      "leftDesc": "esbuild’s minifier is tightly coupled to its bundler: it can rename symbols, drop unreachable code, and fold constants during emission, minimizing extra passes and memory overhead.",
+      "rightDesc": "SWC minification is usually achieved via dedicated minify-related transforms or toolchain integration; minification may be orchestrated as multiple AST/codegen stages.",
+      "leftIcon": "Flame",
+      "rightIcon": "Zap",
+      "leftVisualText": "One-pass-ish",
+      "rightVisualText": "Multi-stage"
+    },
+    {
+      "title": "4. PLUGIN ECOSYSTEM",
+      "leftTitle": "Build-plugin APIs",
+      "rightTitle": "Compiler plugins",
+      "leftDesc": "esbuild offers a straightforward plugin API around resolve/load and transform hooks, enabling bundler-like behaviors without forcing deep AST manipulation by default.",
+      "rightDesc": "SWC supports compiler plugins that can operate on the AST/codegen stages, enabling deeper, transform-level customization (e.g., syntax transforms) when orchestrated by surrounding tooling.",
+      "leftIcon": "GitBranch",
+      "rightIcon": "Layers",
+      "leftVisualText": "Resolve/Load",
+      "rightVisualText": "AST Hooks"
+    },
+    {
+      "title": "5. TYPE-SCRIPT HANDLING",
+      "leftTitle": "Type stripping",
+      "rightTitle": "Type-aware passes",
+      "leftDesc": "esbuild primarily strips TypeScript syntax and performs mostly syntax-level transforms. It targets fast compilation without full type-checking, relying on separate tooling for correctness.",
+      "rightDesc": "SWC focuses on fast compilation transforms for TypeScript syntax and can support additional transformations via plugins; it still typically avoids full type-checking, but richer passes exist.",
+      "leftIcon": "Shield",
+      "rightIcon": "Lock",
+      "leftVisualText": "No typecheck",
+      "rightVisualText": "Transform rich"
+    },
+    {
+      "title": "6. TARGETING & OUTPUT CONTROL",
+      "leftTitle": "Fast target tuning",
+      "rightTitle": "Configurable emit",
+      "leftDesc": "esbuild’s target options quickly determine syntax transforms and feature downleveling during bundling. Output control is direct and typically affects emitted code in a single integrated flow.",
+      "rightDesc": "SWC’s emit behavior is driven by compiler configuration and transform plugins, allowing fine-grained output customization. Code generation reflects the selected transform set and target settings.",
+      "leftIcon": "Key",
+      "rightIcon": "Code",
+      "leftVisualText": "Target fast",
+      "rightVisualText": "Emit config"
+    },
+    {
+      "title": "7. RUNTIME PERFORMANCE PROFILE",
+      "leftTitle": "Low overhead",
+      "rightTitle": "High-throughput Rust",
+      "leftDesc": "esbuild emphasizes low startup and low overhead: it can run extremely quickly for dev servers and CI, balancing minify/bundle features with tight CPU and memory usage.",
+      "rightDesc": "SWC leverages Rust for high-throughput AST transformation, often achieving strong parallel performance in toolchains that feed it many files and transforms concurrently.",
+      "leftIcon": "FastForward",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Dev speed",
+      "rightVisualText": "Rust throughput"
     }
   ]
 }
