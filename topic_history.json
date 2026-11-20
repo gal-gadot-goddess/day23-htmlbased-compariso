@@ -131,5 +131,6 @@
   "React Hooks vs SolidJS Signals",
   "InfluxDB vs ClickHouse",
   "RxDB vs WatermelonDB",
-  "esbuild vs SWC"
+  "esbuild vs SWC",
+  "SolidJS vs React"
 ]
