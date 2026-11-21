@@ -1,8 +1,8 @@
 {
-  "title": "SQS vs Pub/Sub: Which Scales Better? ⚡",
-  "fb_caption": "Amazon SQS vs Google Cloud Pub/Sub: Which Architecture Actually Scales in Production? ⚡\n\n- Throughput: SQS offers high throughput but can face FIFO limitations. Pub/Sub excels with massive, global scale and high message rates.\n- Latency: Pub/Sub generally offers lower end-to-end latency for global distribution. SQS latency is typically low within a region.\n- Consistency: SQS Standard offers at-least-once delivery, FIFO offers exactly-once. Pub/Sub guarantees at-least-once delivery.\n- Failure Modes: SQS is highly available within a region. Pub/Sub is globally replicated, offering superior availability and disaster recovery.\n- Operational Overhead: SQS requires more manual configuration for scaling and partitioning. Pub/Sub is largely managed and auto-scales.\n\nRecommendation: For global, massive-scale, event-driven systems, Google Cloud Pub/Sub is often the superior choice due to its inherent scalability and global resilience. SQS is a strong contender for regional, less complex, or strictly ordered message processing.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "SQS vs Google Cloud Pub/Sub: Which message queue architecture truly scales in production? 🤔 Let's debate! Find deep dives & tools at https://kreggscode.com #SystemDesign #CloudComputing",
-  "yt_description": "Amazon SQS vs Google Cloud Pub/Sub: Which architecture actually scales in production? Dive into a high-retention comparison of these leading event-driven services. We break down throughput, latency, consistency, failure modes, and operational overhead to help you choose the best for your production workloads.\n\nAre you building a scalable, event-driven system? Understanding the nuances between SQS and Pub/Sub is crucial. This video provides a clear, concise technical comparison.\n\n#Shorts #SQS #PubSub #EventDriven #CloudArchitecture\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
+  "title": "Valkey vs Redis: Which One Actually Scales? ⚡",
+  "fb_caption": "Valkey vs Redis: Which Architecture Actually Scales in Production? ⚡\n\nDive deep into the performance of these leading in-memory stores:\n\n• Throughput: Valkey aims for higher throughput with multi-threading, while Redis traditionally relies on single-thread event loop.\n• Latency: Both offer sub-millisecond latency, but Valkey's architecture might introduce slightly more overhead in specific scenarios.\n• Consistency: Redis offers robust replication and sentinel for HA. Valkey is developing its own HA solutions, building on proven patterns.\n• Failure Modes: Redis has mature HA strategies (Sentinel, Cluster). Valkey is leveraging community-driven improvements and aims for resilience.\n• Operational Overhead: Redis is well-established. Valkey, being newer, may require more learning curve but benefits from active community development.\n\nRecommendation: For established, highly predictable workloads, Redis remains a solid choice. For those seeking potential performance gains, community-driven innovation, and a future-proofed fork, Valkey presents a compelling alternative. Evaluate your specific needs!\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "Valkey vs Redis: Which in-memory store truly scales in production? 🤔 Explore the architectural differences in throughput, latency, and failure modes. Make the right choice for your stack! Learn more: https://kreggscode.com",
+  "yt_description": "Valkey vs Redis: Which Architecture Actually Scales in Production? ⚡\n\nUnpack the core architectural differences between Valkey and Redis in this high-retention comparison. We break down throughput, latency, consistency, failure modes, and operational overhead to help you decide which in-memory store is best for your production environment.\n\nKey Comparison Points:\n- Performance Benchmarks\n- Scalability Factors\n- High Availability Strategies\n- Community & Development Trends\n\nThis video is essential for backend engineers, system architects, and DevOps professionals looking to optimize their caching and data storage layers.\n\n#Shorts #Valkey #Redis #SystemDesign #Database #Backend #Inmemory #Cache\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -10,19 +10,13 @@
     "coding",
     "technology",
     "artificial intelligence",
-    "backend architecture",
-    "SQS",
-    "Pub/Sub",
-    "AWS",
-    "GCP",
-    "cloud computing",
-    "event-driven architecture"
+    "backend architecture"
   ],
   "hashtags": [
     "#kreggscode",
     "#systemdesign",
     "#softwareengineering",
-    "#cloudcomputing",
-    "#eventdrivenarchitecture"
+    "#coding",
+    "#backend"
   ]
 }

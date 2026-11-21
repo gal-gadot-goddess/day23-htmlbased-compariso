@@ -134,5 +134,6 @@
   "esbuild vs SWC",
   "SolidJS vs React",
   "JanusGraph vs OrientDB",
-  "Amazon SQS vs Google Cloud Pub/Sub"
+  "Amazon SQS vs Google Cloud Pub/Sub",
+  "Valkey vs Redis"
 ]
