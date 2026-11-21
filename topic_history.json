@@ -133,5 +133,6 @@
   "RxDB vs WatermelonDB",
   "esbuild vs SWC",
   "SolidJS vs React",
-  "JanusGraph vs OrientDB"
+  "JanusGraph vs OrientDB",
+  "Amazon SQS vs Google Cloud Pub/Sub"
 ]
