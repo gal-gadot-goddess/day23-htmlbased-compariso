@@ -1,92 +1,92 @@
 {
-  "topLabel": "MODERN WEB FRAMEWORKS",
+  "topLabel": "AI & LLM INFERENCE ENGINES",
   "mainTitle": {
-    "left": "Axum",
-    "right": "Fastify",
+    "left": "llama.cpp",
+    "right": "vLLM",
     "vs": "vs"
   },
-  "leftSub": "Rust async, zero-cost",
-  "rightSub": "Node.js schema-first",
-  "leftColor": "#4f46e5",
-  "rightColor": "#fbbf24",
+  "leftSub": "CPU/GPU quantization",
+  "rightSub": "continuous batching serving",
+  "leftColor": "#22c55e",
+  "rightColor": "#ef4444",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. REQUEST PIPELINE",
-      "leftTitle": "Tower service stack",
-      "rightTitle": "Hook-based lifecycle",
-      "leftDesc": "Axum builds handlers atop the Tower ecosystem: requests flow through composable middleware (services) and extractors, with explicit types guiding routing, validation, and response conversion at compile time.",
-      "rightDesc": "Fastify uses a hook/tap architecture: plugins register lifecycle hooks (e.g., preHandler/onSend). It composes handlers dynamically and relies on a highly optimized routing layer plus serialization-aware hooks.",
-      "leftIcon": "Layers",
-      "rightIcon": "Workflow",
-      "leftVisualText": "Typed stack",
-      "rightVisualText": "Plugin hooks"
-    },
-    {
-      "title": "2. TYPE SAFETY",
-      "leftTitle": "Compile-time guarantees",
-      "rightTitle": "Runtime validation",
-      "leftDesc": "Axum’s extractors (e.g., Json, Path, Query) encode payload shapes in Rust types. Many failures become compile-time errors or deterministic runtime rejections without ad-hoc casts or loosely typed middleware.",
-      "rightDesc": "Fastify emphasizes schema-driven runtime validation: request/response JSON schemas can be checked per route. Type safety in Node is mostly provided by TypeScript tooling rather than framework-enforced compile-time types.",
-      "leftIcon": "Shield",
-      "rightIcon": "Lock",
-      "leftVisualText": "Rust types",
-      "rightVisualText": "Schema checks"
-    },
-    {
-      "title": "3. PERFORMANCE MODEL",
-      "leftTitle": "Native async runtime",
-      "rightTitle": "Event-loop efficiency",
-      "leftDesc": "Axum runs on Rust with low overhead futures under Tokio. Handler execution avoids GC pauses, and data movement is controlled via ownership/borrowing, reducing allocations along the hot path.",
-      "rightDesc": "Fastify runs on Node’s single-threaded event loop with highly optimized HTTP parsing and response handling. Performance tuning focuses on minimizing allocations, using the fastest serializers, and controlling backpressure.",
-      "leftIcon": "Flame",
-      "rightIcon": "Activity",
-      "leftVisualText": "No GC",
-      "rightVisualText": "Low overhead"
-    },
-    {
-      "title": "4. MIDDLEWARE COMPOSITION",
-      "leftTitle": "Composable Tower layers",
-      "rightTitle": "Decorators & plugins",
-      "leftDesc": "Tower layers let Axum stack cross-cutting concerns (auth, rate limiting, tracing) as strongly typed services. Middleware ordering and capabilities are expressed in trait bounds, not implicit runtime behavior.",
-      "rightDesc": "Fastify promotes composition through plugins and decorators. Plugins can add shared functionality (decorators) and register scoped hooks, enabling feature modularity while preserving encapsulation per server instance.",
-      "leftIcon": "Code",
-      "rightIcon": "GitBranch",
-      "leftVisualText": "Layered services",
-      "rightVisualText": "Scoped plugins"
-    },
-    {
-      "title": "5. ERROR HANDLING",
-      "leftTitle": "Infallible-by-type",
-      "rightTitle": "Reply-based flow",
-      "leftDesc": "Axum encourages returning Result types where error variants implement IntoResponse. This yields explicit mapping from errors to HTTP responses, and errors can carry structured data without throwing exceptions.",
-      "rightDesc": "Fastify uses explicit reply lifecycle control and error handlers: thrown errors are caught by the framework and routed to registered error handlers. It supports centralized formatting and per-route overrides with hooks.",
-      "leftIcon": "CheckCircle",
-      "rightIcon": "Shield",
-      "leftVisualText": "IntoResponse",
-      "rightVisualText": "Error handlers"
-    },
-    {
-      "title": "6. ROUTING & EXTRACTORS",
-      "leftTitle": "Extractor-driven handlers",
-      "rightTitle": "Schema + validation routes",
-      "leftDesc": "Axum route handlers are composed of extractors that parse path/query/headers/body into typed values. This tight coupling reduces manual parsing and ensures consistent rejection behavior across endpoints.",
-      "rightDesc": "Fastify route definitions can pair handlers with JSON schema for input/output. Validation happens in the request lifecycle before handler execution, with Ajv-backed compilation for fast repeated checks.",
+      "title": "1. EXECUTION MODEL",
+      "leftTitle": "GGUF-centric",
+      "rightTitle": "Transformer runtime",
+      "leftDesc": "llama.cpp loads GGUF models and runs a tight inference loop (token-by-token or batched internally) optimized for small, local deployments. It heavily relies on quantized weight layouts and CPU kernels.",
+      "rightDesc": "vLLM builds a high-throughput serving runtime around paged attention and a scheduler. It keeps the model resident and multiplexes many concurrent decode requests efficiently across GPU SMs.",
       "leftIcon": "Terminal",
-      "rightIcon": "Globe",
-      "leftVisualText": "Typed extract",
-      "rightVisualText": "Schema routes"
+      "rightIcon": "Server",
+      "leftVisualText": "Local-first",
+      "rightVisualText": "GPU throughput"
     },
     {
-      "title": "7. ECOSYSTEM & OPERABILITY",
-      "leftTitle": "Rust tracing ecosystem",
-      "rightTitle": "Node tooling integration",
-      "leftDesc": "Axum integrates cleanly with Rust observability tools (e.g., tracing via tower-http). Middleware can emit spans/metrics with minimal overhead, and structured logs follow Rust’s type-safe formatting.",
-      "rightDesc": "Fastify integrates with Node observability via common middleware and ecosystem tooling (e.g., OpenTelemetry JS). Plugin scoping helps keep trace context consistent, while tooling around Node remains broadly standardized.",
-      "leftIcon": "Radio",
+      "title": "2. BATCHING STRATEGY",
+      "leftTitle": "Static micro-batching",
+      "rightTitle": "Continuous batching",
+      "leftDesc": "llama.cpp generally batches at the granularity supported by its backend, often focusing on single-user latency. It may use simple batching for throughput, but it doesn’t orchestrate decode-time interleaving like large GPU serving stacks.",
+      "rightDesc": "vLLM performs continuous batching by admitting new requests during decode and interleaving token generation across requests. This reduces idle GPU time and boosts tokens/sec while keeping latency predictable.",
+      "leftIcon": "Workflow",
+      "rightIcon": "FastForward",
+      "leftVisualText": "Latency-aware",
+      "rightVisualText": "Max tokens/sec"
+    },
+    {
+      "title": "3. ATTENTION MEMORY",
+      "leftTitle": "KV cache layout",
+      "rightTitle": "Paged KV cache",
+      "leftDesc": "In llama.cpp, KV cache management is tied to its inference loop and backend-specific implementations, optimized for host RAM or device buffers depending on build. Quantization reduces memory pressure for activations.",
+      "rightDesc": "vLLM uses a paged KV cache (block-based allocation) so sequences grow without reallocating large contiguous buffers. This prevents fragmentation and allows dynamic request admission at scale.",
+      "leftIcon": "HardDrive",
+      "rightIcon": "Layers",
+      "leftVisualText": "Lean KV",
+      "rightVisualText": "No fragmentation"
+    },
+    {
+      "title": "4. QUANTIZATION ECOSYSTEM",
+      "leftTitle": "GGML/GGUF quant",
+      "rightTitle": "Weight/kv policies",
+      "leftDesc": "llama.cpp’s production strength is its broad support for GGUF quantization formats (e.g., Q4/Q5/Q8 families) and corresponding CPU/GPU kernels. It trades some quality for speed and memory fit on limited hardware.",
+      "rightDesc": "vLLM focuses on efficient inference for higher-performance deployment, using quantization support aligned with its GPU kernels and runtime scheduling. KV cache handling and kernel choices drive practical memory/latency outcomes.",
+      "leftIcon": "Shield",
+      "rightIcon": "Cpu",
+      "leftVisualText": "Quant-first",
+      "rightVisualText": "Kernel-aligned"
+    },
+    {
+      "title": "5. DEPLOYMENT SHAPE",
+      "leftTitle": "Single-node binaries",
+      "rightTitle": "Inference service",
+      "leftDesc": "llama.cpp is commonly deployed as a local binary or embedded library, making it ideal for edge devices, developer laptops, or constrained servers. Scaling usually means running multiple replicas behind a load balancer.",
+      "rightDesc": "vLLM is designed for production serving with an API process managing GPU resources, scheduling, and request lifecycles. It fits naturally into multi-instance GPU fleets with autoscaling and metrics pipelines.",
+      "leftIcon": "Box",
       "rightIcon": "Cloud",
-      "leftVisualText": "Tracing-first",
-      "rightVisualText": "Observability ready"
+      "leftVisualText": "Edge ready",
+      "rightVisualText": "Service-native"
+    },
+    {
+      "title": "6. LATENCY BEHAVIOR",
+      "leftTitle": "Predictable local latency",
+      "rightTitle": "Tail-latency control",
+      "leftDesc": "With llama.cpp, latency is often dominated by CPU compute or a specific offload backend, and there’s less complex queueing. For one request, performance is straightforward to reason about.",
+      "rightDesc": "vLLM must manage queueing across many concurrent decodes. Its scheduler targets minimizing stalls by prioritizing active sequences, balancing throughput with mechanisms to reduce tail latency under load.",
+      "leftIcon": "Activity",
+      "rightIcon": "Globe",
+      "leftVisualText": "Simple path",
+      "rightVisualText": "Smart scheduling"
+    },
+    {
+      "title": "7. HARDWARE UTILIZATION",
+      "leftTitle": "CPU/GPU offload options",
+      "rightTitle": "GPU-first acceleration",
+      "leftDesc": "llama.cpp supports CPU execution and optional GPU/offload backends depending on build options. It maximizes usefulness per watt by leveraging quantized math and tailored kernels to fit consumer hardware constraints.",
+      "rightDesc": "vLLM is built to saturate GPUs for large-batch decode. It keeps compute busy by overlapping scheduling decisions with GPU execution and by using memory-efficient attention/KV handling to reduce bandwidth bottlenecks.",
+      "leftIcon": "Compass",
+      "rightIcon": "Flame",
+      "leftVisualText": "Low footprint",
+      "rightVisualText": "GPU saturation"
     }
   ]
 }
