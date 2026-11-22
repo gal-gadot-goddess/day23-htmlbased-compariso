@@ -1,92 +1,92 @@
 {
-  "topLabel": "IN-MEMORY STORES & CACHES",
+  "topLabel": "MODERN WEB FRAMEWORKS",
   "mainTitle": {
-    "left": "Valkey",
-    "right": "Redis",
+    "left": "Axum",
+    "right": "Fastify",
     "vs": "vs"
   },
-  "leftSub": "in-memory K/V",
-  "rightSub": "in-memory K/V",
-  "leftColor": "#38bdf8",
-  "rightColor": "#fb7185",
+  "leftSub": "Rust async, zero-cost",
+  "rightSub": "Node.js schema-first",
+  "leftColor": "#4f46e5",
+  "rightColor": "#fbbf24",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. ORIGIN & COMPATIBILITY",
-      "leftTitle": "Valkey fork",
-      "rightTitle": "Redis upstream",
-      "leftDesc": "Valkey is a community-driven continuation of Redis’ codebase, emphasizing governance and compatibility. It targets a largely Redis-compatible command and protocol surface, but forks can diverge in edge behaviors over time.",
-      "rightDesc": "Redis is the original upstream project with a long-lived release cadence and mature operational tooling. Command semantics and module ecosystems tend to be tightly coupled to Redis’ own compatibility guarantees and versioning policy.",
+      "title": "1. REQUEST PIPELINE",
+      "leftTitle": "Tower service stack",
+      "rightTitle": "Hook-based lifecycle",
+      "leftDesc": "Axum builds handlers atop the Tower ecosystem: requests flow through composable middleware (services) and extractors, with explicit types guiding routing, validation, and response conversion at compile time.",
+      "rightDesc": "Fastify uses a hook/tap architecture: plugins register lifecycle hooks (e.g., preHandler/onSend). It composes handlers dynamically and relies on a highly optimized routing layer plus serialization-aware hooks.",
+      "leftIcon": "Layers",
+      "rightIcon": "Workflow",
+      "leftVisualText": "Typed stack",
+      "rightVisualText": "Plugin hooks"
+    },
+    {
+      "title": "2. TYPE SAFETY",
+      "leftTitle": "Compile-time guarantees",
+      "rightTitle": "Runtime validation",
+      "leftDesc": "Axum’s extractors (e.g., Json, Path, Query) encode payload shapes in Rust types. Many failures become compile-time errors or deterministic runtime rejections without ad-hoc casts or loosely typed middleware.",
+      "rightDesc": "Fastify emphasizes schema-driven runtime validation: request/response JSON schemas can be checked per route. Type safety in Node is mostly provided by TypeScript tooling rather than framework-enforced compile-time types.",
       "leftIcon": "Shield",
-      "rightIcon": "Shield",
-      "leftVisualText": "Community",
-      "rightVisualText": "Upstream"
+      "rightIcon": "Lock",
+      "leftVisualText": "Rust types",
+      "rightVisualText": "Schema checks"
     },
     {
-      "title": "2. REPLICATION MODEL",
-      "leftTitle": "Async replication",
-      "rightTitle": "Async replication",
-      "leftDesc": "Both systems use primary-to-replica propagation for high throughput, typically async replication with PSYNC-style synchronization and incremental replication after full resync. Failover behavior depends on configuration and orchestration layer.",
-      "rightDesc": "Redis replication is well-understood: primaries stream replication commands to replicas, with full sync via RDB transfer when needed. Incremental updates rely on backlog windows and replica offsets for efficient catch-up.",
-      "leftIcon": "Activity",
+      "title": "3. PERFORMANCE MODEL",
+      "leftTitle": "Native async runtime",
+      "rightTitle": "Event-loop efficiency",
+      "leftDesc": "Axum runs on Rust with low overhead futures under Tokio. Handler execution avoids GC pauses, and data movement is controlled via ownership/borrowing, reducing allocations along the hot path.",
+      "rightDesc": "Fastify runs on Node’s single-threaded event loop with highly optimized HTTP parsing and response handling. Performance tuning focuses on minimizing allocations, using the fastest serializers, and controlling backpressure.",
+      "leftIcon": "Flame",
       "rightIcon": "Activity",
-      "leftVisualText": "Failover",
-      "rightVisualText": "Backlog"
+      "leftVisualText": "No GC",
+      "rightVisualText": "Low overhead"
     },
     {
-      "title": "3. PERSISTENCE & DURABILITY",
-      "leftTitle": "RDB/AOF variants",
-      "rightTitle": "RDB/AOF maturity",
-      "leftDesc": "Valkey supports Redis-like persistence patterns: periodic snapshots (RDB) and append-only logs (AOF). Under the hood, it must coordinate background saves, fsync policies, and rewrite mechanics to balance latency and recovery time.",
-      "rightDesc": "Redis persistence is heavily battle-tested across RDB snapshots and AOF with configurable fsync frequency and log rewrite. The server’s background fork/write behavior is designed to minimize pause time while preserving recovery guarantees.",
-      "leftIcon": "HardDrive",
-      "rightIcon": "HardDrive",
-      "leftVisualText": "Recovery",
-      "rightVisualText": "Durability"
-    },
-    {
-      "title": "4. CLUSTERING & SHARDING",
-      "leftTitle": "Cluster bus",
-      "rightTitle": "Cluster implementation",
-      "leftDesc": "Valkey cluster mode shards keys across nodes using a hash slot model and routing tables maintained via cluster messages. Resharding, node joins, and migrations require consistent slot ownership and transient forwarding behavior.",
-      "rightDesc": "Redis Cluster also uses hash slots for deterministic key placement, with node discovery via cluster gossip/meet protocols. Slot migrations involve coordinated handoffs and client redirection semantics to keep routing correct during movement.",
-      "leftIcon": "Network",
-      "rightIcon": "Network",
-      "leftVisualText": "Hash slots",
-      "rightVisualText": "Routing"
-    },
-    {
-      "title": "5. MEMORY MANAGEMENT",
-      "leftTitle": "Allocator behavior",
-      "rightTitle": "Allocator behavior",
-      "leftDesc": "Both rely on efficient in-process allocation strategies for hot key/value workloads, using Jemalloc-style allocators in common builds. Eviction policies and object layout directly influence fragmentation, tail latency, and GC-like memory reclamation costs.",
-      "rightDesc": "Redis’ memory subsystem is tuned for predictable performance: object encoding choices (e.g., compact lists/sets) reduce footprint, while allocator and eviction strategies affect fragmentation. Under pressure, eviction and lazy freeing determine latency spikes.",
-      "leftIcon": "Cpu",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Eviction",
-      "rightVisualText": "Footprint"
-    },
-    {
-      "title": "6. LATENCY PATHS & COMMAND HOT LOOPS",
-      "leftTitle": "Event loop tuning",
-      "rightTitle": "Event loop tuning",
-      "leftDesc": "Valkey’s core request processing is a single-threaded command execution loop with multiplexed I/O, so throughput comes from minimizing per-command overhead, efficient parsing, and avoiding blocking calls. CPU hot paths are critical for tail latency.",
-      "rightDesc": "Redis uses a similar architecture: a single-threaded main loop executes commands deterministically, while I/O is handled via an event-driven model. Optimizations like fast object encoding and streamlined reply generation keep micro-latency low.",
-      "leftIcon": "Zap",
-      "rightIcon": "Zap",
-      "leftVisualText": "Tail latency",
-      "rightVisualText": "Hot path"
-    },
-    {
-      "title": "7. ECOSYSTEM & MODULE COMPAT",
-      "leftTitle": "Module landscape",
-      "rightTitle": "Module ecosystem",
-      "leftDesc": "Valkey’s module API compatibility aims to mirror Redis, enabling many existing modules to compile and run with fewer changes. Differences can surface in internal symbols, replication hooks, and persistence integration points.",
-      "rightDesc": "Redis has a large, mature module ecosystem (e.g., search, time series, and custom data structures). Modules often rely on Redis internals and specific build flags, so upgrading Redis can require coordinated module compatibility testing.",
-      "leftIcon": "GitBranch",
+      "title": "4. MIDDLEWARE COMPOSITION",
+      "leftTitle": "Composable Tower layers",
+      "rightTitle": "Decorators & plugins",
+      "leftDesc": "Tower layers let Axum stack cross-cutting concerns (auth, rate limiting, tracing) as strongly typed services. Middleware ordering and capabilities are expressed in trait bounds, not implicit runtime behavior.",
+      "rightDesc": "Fastify promotes composition through plugins and decorators. Plugins can add shared functionality (decorators) and register scoped hooks, enabling feature modularity while preserving encapsulation per server instance.",
+      "leftIcon": "Code",
       "rightIcon": "GitBranch",
-      "leftVisualText": "Modules",
-      "rightVisualText": "Ecosystem"
+      "leftVisualText": "Layered services",
+      "rightVisualText": "Scoped plugins"
+    },
+    {
+      "title": "5. ERROR HANDLING",
+      "leftTitle": "Infallible-by-type",
+      "rightTitle": "Reply-based flow",
+      "leftDesc": "Axum encourages returning Result types where error variants implement IntoResponse. This yields explicit mapping from errors to HTTP responses, and errors can carry structured data without throwing exceptions.",
+      "rightDesc": "Fastify uses explicit reply lifecycle control and error handlers: thrown errors are caught by the framework and routed to registered error handlers. It supports centralized formatting and per-route overrides with hooks.",
+      "leftIcon": "CheckCircle",
+      "rightIcon": "Shield",
+      "leftVisualText": "IntoResponse",
+      "rightVisualText": "Error handlers"
+    },
+    {
+      "title": "6. ROUTING & EXTRACTORS",
+      "leftTitle": "Extractor-driven handlers",
+      "rightTitle": "Schema + validation routes",
+      "leftDesc": "Axum route handlers are composed of extractors that parse path/query/headers/body into typed values. This tight coupling reduces manual parsing and ensures consistent rejection behavior across endpoints.",
+      "rightDesc": "Fastify route definitions can pair handlers with JSON schema for input/output. Validation happens in the request lifecycle before handler execution, with Ajv-backed compilation for fast repeated checks.",
+      "leftIcon": "Terminal",
+      "rightIcon": "Globe",
+      "leftVisualText": "Typed extract",
+      "rightVisualText": "Schema routes"
+    },
+    {
+      "title": "7. ECOSYSTEM & OPERABILITY",
+      "leftTitle": "Rust tracing ecosystem",
+      "rightTitle": "Node tooling integration",
+      "leftDesc": "Axum integrates cleanly with Rust observability tools (e.g., tracing via tower-http). Middleware can emit spans/metrics with minimal overhead, and structured logs follow Rust’s type-safe formatting.",
+      "rightDesc": "Fastify integrates with Node observability via common middleware and ecosystem tooling (e.g., OpenTelemetry JS). Plugin scoping helps keep trace context consistent, while tooling around Node remains broadly standardized.",
+      "leftIcon": "Radio",
+      "rightIcon": "Cloud",
+      "leftVisualText": "Tracing-first",
+      "rightVisualText": "Observability ready"
     }
   ]
 }

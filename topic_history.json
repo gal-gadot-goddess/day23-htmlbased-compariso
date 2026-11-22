@@ -135,5 +135,6 @@
   "SolidJS vs React",
   "JanusGraph vs OrientDB",
   "Amazon SQS vs Google Cloud Pub/Sub",
-  "Valkey vs Redis"
+  "Valkey vs Redis",
+  "Axum vs Fastify"
 ]
