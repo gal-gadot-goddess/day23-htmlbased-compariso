@@ -1,92 +1,92 @@
 {
-  "topLabel": "AI & LLM INFERENCE ENGINES",
+  "topLabel": "DISTRIBUTED MESSAGING & STREAMING",
   "mainTitle": {
-    "left": "llama.cpp",
-    "right": "vLLM",
+    "left": "Apache Kafka",
+    "right": "Amazon Kinesis Data Streams",
     "vs": "vs"
   },
-  "leftSub": "CPU/GPU quantization",
-  "rightSub": "continuous batching serving",
-  "leftColor": "#22c55e",
-  "rightColor": "#ef4444",
+  "leftSub": "Log-based streaming",
+  "rightSub": "Managed shard streams",
+  "leftColor": "#00d2ff",
+  "rightColor": "#ff5c00",
   "badge": "THE 7 CORE DIFFERENCES",
   "differences": [
     {
-      "title": "1. EXECUTION MODEL",
-      "leftTitle": "GGUF-centric",
-      "rightTitle": "Transformer runtime",
-      "leftDesc": "llama.cpp loads GGUF models and runs a tight inference loop (token-by-token or batched internally) optimized for small, local deployments. It heavily relies on quantized weight layouts and CPU kernels.",
-      "rightDesc": "vLLM builds a high-throughput serving runtime around paged attention and a scheduler. It keeps the model resident and multiplexes many concurrent decode requests efficiently across GPU SMs.",
-      "leftIcon": "Terminal",
-      "rightIcon": "Server",
-      "leftVisualText": "Local-first",
-      "rightVisualText": "GPU throughput"
+      "title": "1. DELIVERY MODEL",
+      "leftTitle": "Consumer offsets",
+      "rightTitle": "Shard iterators",
+      "leftDesc": "Kafka persists records into a replicated partition log; consumers track progress via offsets stored client-side or via commit APIs. Replays are driven by offset selection, enabling flexible rewind and multi-consumer independence.",
+      "rightDesc": "Kinesis stores data in sharded streams and exposes reads via iterators (e.g., Trim HORIZON or AFTER_SEQUENCE_NUMBER). Consumers manage iterator state externally; rewind depends on retention window and shard sequence numbers.",
+      "leftIcon": "Radio",
+      "rightIcon": "Radio",
+      "leftVisualText": "Offsets",
+      "rightVisualText": "Iterators"
     },
     {
-      "title": "2. BATCHING STRATEGY",
-      "leftTitle": "Static micro-batching",
-      "rightTitle": "Continuous batching",
-      "leftDesc": "llama.cpp generally batches at the granularity supported by its backend, often focusing on single-user latency. It may use simple batching for throughput, but it doesn’t orchestrate decode-time interleaving like large GPU serving stacks.",
-      "rightDesc": "vLLM performs continuous batching by admitting new requests during decode and interleaving token generation across requests. This reduces idle GPU time and boosts tokens/sec while keeping latency predictable.",
-      "leftIcon": "Workflow",
-      "rightIcon": "FastForward",
-      "leftVisualText": "Latency-aware",
-      "rightVisualText": "Max tokens/sec"
-    },
-    {
-      "title": "3. ATTENTION MEMORY",
-      "leftTitle": "KV cache layout",
-      "rightTitle": "Paged KV cache",
-      "leftDesc": "In llama.cpp, KV cache management is tied to its inference loop and backend-specific implementations, optimized for host RAM or device buffers depending on build. Quantization reduces memory pressure for activations.",
-      "rightDesc": "vLLM uses a paged KV cache (block-based allocation) so sequences grow without reallocating large contiguous buffers. This prevents fragmentation and allows dynamic request admission at scale.",
-      "leftIcon": "HardDrive",
+      "title": "2. PARTITIONING UNIT",
+      "leftTitle": "Partitions & keys",
+      "rightTitle": "Shards & keys",
+      "leftDesc": "Kafka scales by splitting topics into partitions; a partition is an ordered unit with a leader replica. Producers choose the target partition using partitioner logic or keys, controlling parallelism and ordering guarantees.",
+      "rightDesc": "Kinesis scales via shards, each providing an ordered sequence within the shard. Producers map records to a shard using the partition key; throughput capacity is allocated per shard, making shard planning central to performance.",
+      "leftIcon": "Layers",
       "rightIcon": "Layers",
-      "leftVisualText": "Lean KV",
-      "rightVisualText": "No fragmentation"
+      "leftVisualText": "Partitioned",
+      "rightVisualText": "Sharded"
     },
     {
-      "title": "4. QUANTIZATION ECOSYSTEM",
-      "leftTitle": "GGML/GGUF quant",
-      "rightTitle": "Weight/kv policies",
-      "leftDesc": "llama.cpp’s production strength is its broad support for GGUF quantization formats (e.g., Q4/Q5/Q8 families) and corresponding CPU/GPU kernels. It trades some quality for speed and memory fit on limited hardware.",
-      "rightDesc": "vLLM focuses on efficient inference for higher-performance deployment, using quantization support aligned with its GPU kernels and runtime scheduling. KV cache handling and kernel choices drive practical memory/latency outcomes.",
-      "leftIcon": "Shield",
-      "rightIcon": "Cpu",
-      "leftVisualText": "Quant-first",
-      "rightVisualText": "Kernel-aligned"
-    },
-    {
-      "title": "5. DEPLOYMENT SHAPE",
-      "leftTitle": "Single-node binaries",
-      "rightTitle": "Inference service",
-      "leftDesc": "llama.cpp is commonly deployed as a local binary or embedded library, making it ideal for edge devices, developer laptops, or constrained servers. Scaling usually means running multiple replicas behind a load balancer.",
-      "rightDesc": "vLLM is designed for production serving with an API process managing GPU resources, scheduling, and request lifecycles. It fits naturally into multi-instance GPU fleets with autoscaling and metrics pipelines.",
-      "leftIcon": "Box",
-      "rightIcon": "Cloud",
-      "leftVisualText": "Edge ready",
-      "rightVisualText": "Service-native"
-    },
-    {
-      "title": "6. LATENCY BEHAVIOR",
-      "leftTitle": "Predictable local latency",
-      "rightTitle": "Tail-latency control",
-      "leftDesc": "With llama.cpp, latency is often dominated by CPU compute or a specific offload backend, and there’s less complex queueing. For one request, performance is straightforward to reason about.",
-      "rightDesc": "vLLM must manage queueing across many concurrent decodes. Its scheduler targets minimizing stalls by prioritizing active sequences, balancing throughput with mechanisms to reduce tail latency under load.",
-      "leftIcon": "Activity",
-      "rightIcon": "Globe",
-      "leftVisualText": "Simple path",
-      "rightVisualText": "Smart scheduling"
-    },
-    {
-      "title": "7. HARDWARE UTILIZATION",
-      "leftTitle": "CPU/GPU offload options",
-      "rightTitle": "GPU-first acceleration",
-      "leftDesc": "llama.cpp supports CPU execution and optional GPU/offload backends depending on build options. It maximizes usefulness per watt by leveraging quantized math and tailored kernels to fit consumer hardware constraints.",
-      "rightDesc": "vLLM is built to saturate GPUs for large-batch decode. It keeps compute busy by overlapping scheduling decisions with GPU execution and by using memory-efficient attention/KV handling to reduce bandwidth bottlenecks.",
-      "leftIcon": "Compass",
+      "title": "3. RETENTION & REPLAY",
+      "leftTitle": "Configurable log",
+      "rightTitle": "Retention window",
+      "leftDesc": "Kafka retains data based on time/size policies at the broker level, allowing long reprocessing horizons. Consumers can replay historical events as long as the segment files remain, limited by configured retention.",
+      "rightDesc": "Kinesis retention is bounded by a managed window (commonly up to 365 days, configurable within limits). Once trimmed, older records are not readable; replay is constrained by retention and iterator positioning.",
+      "leftIcon": "Flame",
       "rightIcon": "Flame",
-      "leftVisualText": "Low footprint",
-      "rightVisualText": "GPU saturation"
+      "leftVisualText": "Long replay",
+      "rightVisualText": "Bounded replay"
+    },
+    {
+      "title": "4. REPLICATION & FAILOVER",
+      "leftTitle": "Broker replication",
+      "rightTitle": "AWS-managed HA",
+      "leftDesc": "Kafka replicates each partition across multiple brokers (replication factor) with a leader coordinating writes and reads. Failover promotes an in-sync replica; the ISR set influences durability and acknowledged offsets.",
+      "rightDesc": "Kinesis handles underlying replication and failover internally as a managed service. You provision shard throughput, while AWS maintains the storage durability and availability semantics behind the scenes, exposing a simplified API surface.",
+      "leftIcon": "Shield",
+      "rightIcon": "Shield",
+      "leftVisualText": "ISR-driven",
+      "rightVisualText": "Managed HA"
+    },
+    {
+      "title": "5. PRODUCER BACKPRESSURE",
+      "leftTitle": "Acks and batching",
+      "rightTitle": "Write throughput limits",
+      "leftDesc": "Kafka producer batching and acknowledgements (acks settings) regulate durability vs latency. When brokers are slow, client-side buffering and request retries create backpressure patterns that engineers can tune precisely.",
+      "rightDesc": "Kinesis enforces per-shard write capacity. If producers exceed throughput, writes are throttled, and your producer must handle ProvisionedThroughputExceededException via retries/backoff or batching within shard limits.",
+      "leftIcon": "Zap",
+      "rightIcon": "Zap",
+      "leftVisualText": "Tunable backpressure",
+      "rightVisualText": "Shard limits"
+    },
+    {
+      "title": "6. CONSUMER READ PERFORMANCE",
+      "leftTitle": "Fetch from brokers",
+      "rightTitle": "Scan/seek reads",
+      "leftDesc": "Kafka consumers fetch bytes from brokers using the fetch API; latency is impacted by fetch sizes, batching, and network round trips. Partition parallelism comes from consumer group assignment to partitions.",
+      "rightDesc": "Kinesis consumers retrieve records by iterating over shard data using managed iterators. Performance depends on shard count, iterator age, and polling/read patterns; scaling consumers typically means increasing shard-level parallel reads.",
+      "leftIcon": "Server",
+      "rightIcon": "Server",
+      "leftVisualText": "Group parallelism",
+      "rightVisualText": "Iterator polling"
+    },
+    {
+      "title": "7. OPERATIONAL OWNERSHIP",
+      "leftTitle": "Self-managed cluster",
+      "rightTitle": "Fully managed service",
+      "leftDesc": "Running Kafka often means operating broker nodes, storage, monitoring, and scaling decisions (topic/partition strategy, replication factor). You trade operational effort for maximal control over architecture and costs.",
+      "rightDesc": "Kinesis offloads cluster operations to AWS: scaling, upgrades, and broker/storage management are handled for you. Engineers focus on stream design (partition keys, shard count) and consumption logic rather than infrastructure.",
+      "leftIcon": "Cloud",
+      "rightIcon": "Cloud",
+      "leftVisualText": "Operator control",
+      "rightVisualText": "Managed ops"
     }
   ]
 }

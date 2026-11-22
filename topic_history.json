@@ -137,5 +137,6 @@
   "Amazon SQS vs Google Cloud Pub/Sub",
   "Valkey vs Redis",
   "Axum vs Fastify",
-  "llama.cpp vs vLLM"
+  "llama.cpp vs vLLM",
+  "Apache Kafka vs Amazon Kinesis Data Streams"
 ]
