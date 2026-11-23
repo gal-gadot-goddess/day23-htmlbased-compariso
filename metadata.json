@@ -1,8 +1,8 @@
 {
-  "title": "Kafka vs Kinesis: Which Scales Better? ⚡",
-  "fb_caption": "Apache Kafka vs Amazon Kinesis Data Streams: Which Architecture Actually Scales in Production? ⚡\n\n• Throughput: Kafka excels with raw, high-volume throughput, while Kinesis offers managed scalability with potential for higher latency.\n• Latency: Kafka generally offers lower end-to-end latency for real-time processing.\n• Consistency: Kafka provides stronger ordering guarantees and durability (at-least-once, exactly-once).\n• Failure Modes: Kafka's distributed nature demands careful operational management; Kinesis is managed by AWS, simplifying ops but with vendor lock-in.\n• Operational Overhead: Kafka requires significant self-management; Kinesis is fully managed, reducing operational burden.\n\nRecommendation: For maximum control, raw performance, and lower latency with self-managed infrastructure, choose Kafka. For ease of use, managed scalability, and seamless AWS integration, Kinesis is a strong contender.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "Kafka vs. Kinesis: The ultimate distributed streaming debate! Which platform truly scales for production? 🤔 Dive deep into throughput, latency, and ops. #SystemDesign #CloudComputing https://kreggscode.com",
-  "yt_description": "Kafka vs. Kinesis: Which distributed messaging architecture actually scales in production? We break down throughput, latency, consistency, failure modes, and operational overhead to help you choose the right tool for your high-volume streaming needs. \n\n#Shorts #Kafka #Kinesis #SystemDesign #Streaming\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
+  "title": "NGINX vs Envoy: Which One Actually Scales? ⚡",
+  "fb_caption": "NGINX vs Envoy: Which Architecture Actually Scales in Production? ⚡\n\n*   **Throughput:** NGINX excels with raw request handling for static content; Envoy shines in dynamic, microservice environments with advanced L7 features.\n*   **Latency:** Both offer low latency, but Envoy's dynamic configuration can introduce slight overhead compared to NGINX's static simplicity.\n*   **Consistency:** NGINX offers mature, stable consistency. Envoy's extensibility can lead to more complex, potentially less consistent deployments if not managed carefully.\n*   **Failure Modes:** NGINX is battle-tested with predictable failure modes. Envoy's sophisticated control plane integration can offer more resilient failure handling but also introduces more complex failure vectors.\n*   **Operational Overhead:** NGINX is generally simpler to set up and manage for basic use cases. Envoy requires a deeper understanding of its configuration and ecosystem, especially with a control plane.\n\n**Recommendation:** For simpler, high-traffic static content or traditional web servers, NGINX remains a robust choice. For complex microservice architectures requiring advanced L7 routing, observability, and dynamic configuration, Envoy is the modern, scalable solution.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "NGINX vs Envoy: Which architecture truly scales in production? 🤔 Dive into throughput, latency, and failure modes. Get the insights at https://kreggscode.com",
+  "yt_description": "NGINX vs Envoy: Which Architecture Actually Scales in Production? ⚡\n\nThis short compares NGINX and Envoy, two powerhouses in web servers and reverse proxies. We break down their performance in throughput, latency, consistency, failure modes, and operational overhead to help you choose the right architecture for your production environment.\n\n#Shorts #SystemDesign #WebArchitecture\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -11,10 +11,10 @@
     "technology",
     "artificial intelligence",
     "backend architecture",
-    "apache kafka",
-    "amazon kinesis",
-    "distributed systems",
-    "streaming"
+    "nginx",
+    "envoy",
+    "reverse proxy",
+    "web server"
   ],
   "hashtags": [
     "#kreggscode",

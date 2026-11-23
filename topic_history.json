@@ -138,5 +138,6 @@
   "Valkey vs Redis",
   "Axum vs Fastify",
   "llama.cpp vs vLLM",
-  "Apache Kafka vs Amazon Kinesis Data Streams"
+  "Apache Kafka vs Amazon Kinesis Data Streams",
+  "NGINX vs Envoy"
 ]
