@@ -1,8 +1,8 @@
 {
-  "title": "NGINX vs Envoy: Which One Actually Scales? ⚡",
-  "fb_caption": "NGINX vs Envoy: Which Architecture Actually Scales in Production? ⚡\n\n*   **Throughput:** NGINX excels with raw request handling for static content; Envoy shines in dynamic, microservice environments with advanced L7 features.\n*   **Latency:** Both offer low latency, but Envoy's dynamic configuration can introduce slight overhead compared to NGINX's static simplicity.\n*   **Consistency:** NGINX offers mature, stable consistency. Envoy's extensibility can lead to more complex, potentially less consistent deployments if not managed carefully.\n*   **Failure Modes:** NGINX is battle-tested with predictable failure modes. Envoy's sophisticated control plane integration can offer more resilient failure handling but also introduces more complex failure vectors.\n*   **Operational Overhead:** NGINX is generally simpler to set up and manage for basic use cases. Envoy requires a deeper understanding of its configuration and ecosystem, especially with a control plane.\n\n**Recommendation:** For simpler, high-traffic static content or traditional web servers, NGINX remains a robust choice. For complex microservice architectures requiring advanced L7 routing, observability, and dynamic configuration, Envoy is the modern, scalable solution.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "NGINX vs Envoy: Which architecture truly scales in production? 🤔 Dive into throughput, latency, and failure modes. Get the insights at https://kreggscode.com",
-  "yt_description": "NGINX vs Envoy: Which Architecture Actually Scales in Production? ⚡\n\nThis short compares NGINX and Envoy, two powerhouses in web servers and reverse proxies. We break down their performance in throughput, latency, consistency, failure modes, and operational overhead to help you choose the right architecture for your production environment.\n\n#Shorts #SystemDesign #WebArchitecture\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
+  "title": "Dragonfly vs Memcached: Which One Actually Scales? ⚡",
+  "fb_caption": "Dragonfly vs Memcached: Which Architecture Actually Scales in Production? ⚡\n\nHere's a quick breakdown for your next in-memory store decision:\n\n*   **Throughput:** Dragonfly offers significantly higher throughput, often 4-10x that of Memcached, due to its multi-threaded architecture and efficient memory management.\n*   **Latency:** Both provide low latency, but Dragonfly's modern design can offer more consistent tail latencies under heavy load.\n*   **Consistency:** Both are primarily key-value stores with eventual consistency in distributed setups. Dragonfly has features aimed at better data durability.\n*   **Failure Modes:** Memcached is simpler but can be more fragile. Dragonfly's design incorporates more robust handling of failures and resharding.\n*   **Operational Overhead:** Dragonfly aims for easier operation with a single binary, better resource utilization, and compatibility with Memcached/Redis APIs.\n\n**Recommendation:** For production environments demanding high throughput and scalability, Dragonfly is the more modern and performant choice. Memcached remains viable for simpler caching needs where its maturity is a benefit.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "Dragonfly vs. Memcached: Which in-memory store truly scales in production? ⚡ Discuss the trade-offs in throughput, latency, and reliability. Learn more at https://kreggscode.com #SystemDesign #Databases",
+  "yt_description": "Dragonfly vs Memcached: Which Architecture Actually Scales in Production? ⚡ Dive deep into the performance, scalability, and operational differences between these two popular in-memory stores.  Discover which is best for your high-demand applications.\n\nKey comparison points:\n- Throughput & Performance\n- Latency Characteristics\n- Scalability & Resilience\n- Operational Complexity\n\n#Shorts #SystemDesign #BackendArchitecture #Database #Scalability\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -10,17 +10,13 @@
     "coding",
     "technology",
     "artificial intelligence",
-    "backend architecture",
-    "nginx",
-    "envoy",
-    "reverse proxy",
-    "web server"
+    "backend architecture"
   ],
   "hashtags": [
     "#kreggscode",
     "#systemdesign",
-    "#softwareengineering",
-    "#coding",
-    "#backend"
+    "#backend",
+    "#databases",
+    "#performance"
   ]
 }
