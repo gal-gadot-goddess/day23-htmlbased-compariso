@@ -141,5 +141,6 @@
   "Apache Kafka vs Amazon Kinesis Data Streams",
   "NGINX vs Envoy",
   "Dragonfly vs Memcached",
-  "Valkey vs Aerospike"
+  "Valkey vs Aerospike",
+  "Rspack vs esbuild"
 ]
