@@ -142,5 +142,6 @@
   "NGINX vs Envoy",
   "Dragonfly vs Memcached",
   "Valkey vs Aerospike",
-  "Rspack vs esbuild"
+  "Rspack vs esbuild",
+  "Bleve vs Lucene"
 ]
