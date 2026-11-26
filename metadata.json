@@ -1,8 +1,8 @@
 {
-  "title": "Bleve vs Lucene: Which One Actually Scales? ⚡",
-  "fb_caption": "Bleve vs Lucene: Which Architecture Actually Scales in Production? ⚡\n\n- Throughput: Lucene often offers higher raw throughput due to its mature optimizations, while Bleve is designed for embedded use cases, potentially impacting standalone performance.\n- Latency: Bleve can provide lower latency for embedded scenarios, but Lucene's distributed nature is optimized for large-scale, low-latency queries across clusters.\n- Consistency: Lucene's ecosystem supports stronger consistency models (e.g., near real-time search with updates), whereas Bleve's embedded focus might prioritize availability over immediate consistency.\n- Failure Modes: Lucene's distributed deployments require careful management of cluster health, while Bleve failures are typically localized to the application instance.\n- Operational Overhead: Bleve generally has lower operational overhead as it's embedded within an application. Lucene, especially in a distributed setup, demands significant infrastructure and maintenance.\n\nRecommendation: For embedded, lightweight search needs, Bleve shines. For large-scale, distributed search infrastructure requiring high availability and advanced features, Lucene (and its derivatives like Elasticsearch/Solr) is the robust choice.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "Bleve vs Lucene: Which search engine architecture truly scales in production? A deep dive into throughput, latency, and ops. Discuss! 👇 https://kreggscode.com",
-  "yt_description": "Bleve vs Lucene: Which Architecture Actually Scales in Production? ⚡\n\nA technical breakdown comparing Bleve and Lucene for production environments. We analyze throughput, latency, consistency, failure modes, and operational overhead to help you choose the right search engine for your needs.\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode\n\n#Shorts #SystemDesign #Bleve #Lucene #SearchEngine",
+  "title": "TiDB vs OceanBase: Which One Actually Scales? ⚡",
+  "fb_caption": "TiDB vs OceanBase: Which Architecture Actually Scales in Production? ⚡\n\nAnalyze the key differences between two leading distributed SQL databases:\n\n*   **Throughput & Latency:** Explore how TiDB's hybrid architecture and OceanBase's single-node design impact read/write performance under heavy loads.\n*   **Consistency Models:** Understand the trade-offs between TiDB's strong consistency (TiKV) and OceanBase's AP/CP flexibility.\n*   **Failure Modes & Resilience:** Compare their approaches to fault tolerance, automatic failover, and data recovery in distributed environments.\n*   **Operational Overhead:** Evaluate the complexity of deployment, scaling, tuning, and management for each system.\n\n**Recommendation:** For most production scenarios demanding high availability and strong consistency with flexible scaling, TiDB often presents a more battle-tested and robust solution. OceanBase can be compelling for specific ultra-high throughput requirements where its unique architecture shines.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "TiDB vs OceanBase: Which distributed SQL DB truly scales in production? ⚡ Dive into the technical debate and find out which one meets your needs. Learn more at https://kreggscode.com",
+  "yt_description": "TiDB vs OceanBase: A deep dive into the architectures of two prominent distributed SQL databases. Which one offers superior scalability, lower latency, and better resilience for production environments?\n\nWe break down:\n- Throughput and latency characteristics\n- Consistency guarantees (ACID vs. BASE)\n- Failure handling and disaster recovery\n- Operational complexity and management overhead\n\nUnderstand the core differences to make an informed decision for your next distributed database deployment.\n\n#Shorts #SystemDesign #DistributedDatabases\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -10,13 +10,21 @@
     "coding",
     "technology",
     "artificial intelligence",
-    "backend architecture"
+    "backend architecture",
+    "TiDB",
+    "OceanBase",
+    "distributed databases",
+    "database comparison",
+    "scalability",
+    "performance",
+    "OLAP",
+    "OLTP"
   ],
   "hashtags": [
     "#kreggscode",
     "#systemdesign",
-    "#softwareengineering",
-    "#coding",
-    "#backend"
+    "#databases",
+    "#softwarearchitecture",
+    "#techcomparison"
   ]
 }
