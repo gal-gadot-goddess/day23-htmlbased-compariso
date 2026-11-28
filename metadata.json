@@ -1,8 +1,8 @@
 {
-  "title": "TiDB vs OceanBase: Which One Actually Scales? ⚡",
-  "fb_caption": "TiDB vs OceanBase: Which Architecture Actually Scales in Production? ⚡\n\nAnalyze the key differences between two leading distributed SQL databases:\n\n*   **Throughput & Latency:** Explore how TiDB's hybrid architecture and OceanBase's single-node design impact read/write performance under heavy loads.\n*   **Consistency Models:** Understand the trade-offs between TiDB's strong consistency (TiKV) and OceanBase's AP/CP flexibility.\n*   **Failure Modes & Resilience:** Compare their approaches to fault tolerance, automatic failover, and data recovery in distributed environments.\n*   **Operational Overhead:** Evaluate the complexity of deployment, scaling, tuning, and management for each system.\n\n**Recommendation:** For most production scenarios demanding high availability and strong consistency with flexible scaling, TiDB often presents a more battle-tested and robust solution. OceanBase can be compelling for specific ultra-high throughput requirements where its unique architecture shines.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
-  "threads_caption": "TiDB vs OceanBase: Which distributed SQL DB truly scales in production? ⚡ Dive into the technical debate and find out which one meets your needs. Learn more at https://kreggscode.com",
-  "yt_description": "TiDB vs OceanBase: A deep dive into the architectures of two prominent distributed SQL databases. Which one offers superior scalability, lower latency, and better resilience for production environments?\n\nWe break down:\n- Throughput and latency characteristics\n- Consistency guarantees (ACID vs. BASE)\n- Failure handling and disaster recovery\n- Operational complexity and management overhead\n\nUnderstand the core differences to make an informed decision for your next distributed database deployment.\n\n#Shorts #SystemDesign #DistributedDatabases\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode",
+  "title": "Actix-web vs Axum: Which One Actually Scales? ⚡",
+  "fb_caption": "Actix-web vs Axum: Which Architecture Actually Scales in Production? ⚡\n\n- Throughput: Actix-web generally leads in raw throughput due to its mature Tokio runtime and actor model.\n- Latency: Axum often shows lower latency in specific benchmarks due to its lighter-weight design and integration with Tower.\n- Consistency: Both offer high consistency, but Actix-web's actor model can simplify managing shared state.\n- Failure Modes: Axum's reliance on standard Rust error handling and Tower middleware offers predictable failure management.\n- Operational Overhead: Axum is often considered easier to integrate into existing Rust projects due to its API style.\n\nRecommendation: For extreme throughput and battle-tested performance, Actix-web. For ease of integration and modern Rust features, Axum.\n\n⚡ Follow our official Instagram for daily animated system architecture reels: https://instagram.com/kreggscode (@kreggscode)\n🌐 Interactive visualizers & guides: https://kreggscode.com\n📱 iOS & AI Apps on App Store: https://kreggscode.com/apps/",
+  "threads_caption": "Actix-web vs Axum: Which Rust web framework truly scales in production? Let's debate the performance, latency, and operational differences. Dive deeper at https://kreggscode.com #rustlang #webdev",
+  "yt_description": "Actix-web vs Axum: Which Architecture Actually Scales in Production? ⚡ This video breaks down the key differences in throughput, latency, failure modes, and operational overhead to help you choose the right Rust web framework for your next production deployment.\n\nAre you building a high-performance backend? Understanding these nuances is critical for scalable systems.\n\n🔗 KreggsCode Ecosystem & Verified Resources:\n🌐 Platform & Guides: https://kreggscode.com\n📱 iOS & AI Apps: https://kreggscode.com/apps/\n📸 Instagram: https://www.instagram.com/kreggscode/\n🐦 X (Twitter): https://x.com/kreggscode\n\n#Shorts #Rust #WebFramework #ActixWeb #Axum #SystemDesign #BackendDevelopment #Programming",
   "yt_tags": [
     "kreggscode",
     "system design",
@@ -10,21 +10,13 @@
     "coding",
     "technology",
     "artificial intelligence",
-    "backend architecture",
-    "TiDB",
-    "OceanBase",
-    "distributed databases",
-    "database comparison",
-    "scalability",
-    "performance",
-    "OLAP",
-    "OLTP"
+    "backend architecture"
   ],
   "hashtags": [
     "#kreggscode",
     "#systemdesign",
-    "#databases",
-    "#softwarearchitecture",
-    "#techcomparison"
+    "#softwareengineering",
+    "#coding",
+    "#backend"
   ]
 }
